@@ -10,13 +10,13 @@ public class DebugHelper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DrawPathfindingDebug();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+            DrawPathfindingDebug();
     }
 
     void DrawPathfindingDebug()

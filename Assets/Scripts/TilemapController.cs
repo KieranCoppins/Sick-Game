@@ -40,7 +40,6 @@ public class TilemapController : MonoBehaviour
         {
             for (int y = 0; y < tilemap.cellBounds.size.y; y++)
             {
-                Debug.Log("Tile " + x + "x" + y);
 
                 // Get the tile object at x, y
                 Tile tile = (Tile)allTiles[x + y * tilemap.cellBounds.size.x];
@@ -65,7 +64,6 @@ public class TilemapController : MonoBehaviour
         {
             for (int y = 0; y < tilemap.cellBounds.size.y; y++)
             {
-                Debug.Log("Tile " + x + "x" + y);
                 // Assign neighbours
                 if (x > 0)  // We have a tile in our negative x
                     PathfindingGraph[x, y].neighbours.Add(PathfindingGraph[x - 1, y]);
