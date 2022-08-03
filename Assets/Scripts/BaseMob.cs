@@ -94,9 +94,8 @@ public class BaseMob : MonoBehaviour
         Health = maxHealth;
         PathfindingComponent = GetComponent<PathfindingComponent>();
         rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0;
         path = new Queue<Vector2>();
-
-        movementDirection = Vector2.zero;
 
     }
 

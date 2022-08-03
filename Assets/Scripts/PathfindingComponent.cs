@@ -50,13 +50,14 @@ public class PathfindingComponent : MonoBehaviour
 
         foreach (Node n in tilemapController.PathfindingGraph)
         {
-            open.Add(n);
             gScore[n] = Mathf.Infinity;
             fScore[n] = Mathf.Infinity;
         }
 
         gScore[startNode] = 0;
         fScore[startNode] = CalculateHeristicEstimate(startNode, endNode);
+
+        open.Add(startNode);
 
         while (open.Count > 0)
         {
