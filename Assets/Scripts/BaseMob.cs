@@ -5,25 +5,24 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(PathfindingComponent))]
 [RequireComponent(typeof(Rigidbody2D))]
+[DisallowMultipleComponent]
 public class BaseMob : MonoBehaviour
 {
     [Header("Events")]
-    [Tooltip("This event calls when the mob takes damage")]
     public UnityEvent onTakeDamage;
-    [Tooltip("This event calls when the mob hals")]
     public UnityEvent onHeal;
     public int Health {
         get
         {
-            return Health;
+            return _health;
         }
         protected set
         {
-            Health = value;
-            if (Health > maxHealth)
-                Health = maxHealth;
-            if (Health < 0)
-                Health = 0;
+            _health = value;
+            if (_health > maxHealth)
+                _health = maxHealth;
+            if (_health < 0)
+                _health = 0;
         }
     }
     [Header("Mob Stats")]
@@ -37,10 +36,19 @@ public class BaseMob : MonoBehaviour
 
     protected Queue<Vector2> path;
 
+    private int _health;
+
+    Vector2 movementDirection;
+
     Vector2 desiredPosition;
 
+    bool hasPath;
 
-    protected void TakeDamage(int dmg)
+    [Header("DEBUG VALUES")]
+    [SerializeField] Vector2 debugPosition;
+
+
+    public void TakeDamage(int dmg)
     {
         Health -= dmg;
 
@@ -48,7 +56,7 @@ public class BaseMob : MonoBehaviour
         onTakeDamage?.Invoke();
     }
 
-    protected void Heal(int amount)
+    public void Heal(int amount)
     {
         Health += amount;
         onHeal?.Invoke();
@@ -63,12 +71,22 @@ public class BaseMob : MonoBehaviour
         {
             path.Enqueue(pos);
         }
+        MoveTo();
     }
 
     // Sets the desired position to the next item in the queue
     void MoveTo()
     {
-        desiredPosition = path.Dequeue();
+        if (path.Count == 0)
+        {
+            movementDirection = Vector2.zero;
+            hasPath = false;
+        }
+        else
+        {
+            hasPath = true;
+            desiredPosition = path.Dequeue();
+        }
     }
 
     protected void Awake()
@@ -76,17 +94,34 @@ public class BaseMob : MonoBehaviour
         Health = maxHealth;
         PathfindingComponent = GetComponent<PathfindingComponent>();
         rb = GetComponent<Rigidbody2D>();
+        path = new Queue<Vector2>();
+
+        movementDirection = Vector2.zero;
 
     }
 
     // Implement basic movement following the path as default movement
     void Update()
     {
-        if (Vector2.Distance(transform.position, desiredPosition) < 0.1f)
+        if (Vector2.Distance(transform.position, desiredPosition) <= 0.1f)
         {
             MoveTo();
         }
-        Vector2 direction = desiredPosition - (Vector2)transform.position;
-        rb.velocity = direction.normalized * movementSpeed;
+        if (hasPath)
+        {
+            movementDirection = desiredPosition - (Vector2)transform.position;
+        }
+        rb.velocity = movementDirection.normalized * movementSpeed;
+    }
+
+    public void DEBUG_SetPosition()
+    {
+        CalculatePath(debugPosition);
+        Vector2[] pathArray = path.ToArray();
+        Debug.DrawLine(desiredPosition, pathArray[0], Color.red, 50000.0f);
+        for (int i = 1; i < pathArray.Length; i++)
+        {
+            Debug.DrawLine(pathArray[i-1], pathArray[i], Color.red, 50000.0f);
+        }
     }
 }

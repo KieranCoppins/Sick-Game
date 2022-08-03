@@ -12,6 +12,16 @@ public class PathfindingComponent : MonoBehaviour
         return Vector2.Distance(n, target);
     }
 
+    Vector2[] FormatPath(List<Node> path)
+    {
+        List<Vector2> waypoints = new List<Vector2>();
+        foreach (Node n in path)
+        {
+            waypoints.Add(n);
+        }
+        return waypoints.ToArray();
+    }
+
     Vector2[] ReconstructPath(Dictionary<Node, Node> cameFrom, Node current)
     {
         List<Node> path = new List<Node>();
@@ -188,22 +198,47 @@ public class PathfindingComponent : MonoBehaviour
         foreach (Node n in path)
         {
             // Calculate a direction vector
-            Vector2 direction = n - currentNode;
+            Vector2 direction = currentNode - n;
+
+            Vector2 castLower;
+            Vector2 castUpper;
+
+            // Do the cross product of the current direction and a diagonal vector
+            float dotProd = Mathf.Abs(Vector2.Dot(direction, new Vector2(0.5f, 0.5f).normalized));
+
+            // We're in a forward slash
+            if (dotProd >= 0.75f)
+            {
+                castLower = n.lowerRight();
+                castUpper = n.upperLeft();
+            }
+            // Otherwise its a backward slash
+            else
+            {
+                castLower = n.lowerLeft();
+                castUpper = n.upperRight();
+            }
 
             // Calculate the distance for our raycast to be
             float distance = Vector2.Distance(currentNode, n);
 
             // Cast a ray from currentNode to the node in iteration
-            RaycastHit2D hit = Physics2D.Raycast(currentNode, direction.normalized, distance);
+            RaycastHit2D hitLower = Physics2D.Raycast(castLower, direction.normalized, distance);
+            RaycastHit2D hitUpper = Physics2D.Raycast(castUpper, direction.normalized, distance);
 
             // If the raycast hit something (we cannot move in a straight line to the waypoint) and our previous N isnt null
-            if (hit && prevN != null)
+            if ((hitLower || hitUpper) && prevN != null)
             {
                 // Add the previous point (as it didnt get a hit with the raycast
                 waypoints.Add(prevN);
 
                 // Update our currentNodes
                 currentNode = prevN;
+            }
+            // If we didnt get a hit but we're at our last node anyway we should be able to move to it
+            else if (n == path[path.Count - 1])
+            {
+                waypoints.Add(n);
             }
 
             prevN = n;
