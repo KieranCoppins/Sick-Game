@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [RequireComponent(typeof(Tilemap))]
+[DisallowMultipleComponent]
 public class TilemapController : MonoBehaviour
 {
     [Tooltip("!EXPERIMENTAL! can cause bugs with pathfinding component")]

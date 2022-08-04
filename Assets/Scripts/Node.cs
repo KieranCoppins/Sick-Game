@@ -35,4 +35,23 @@ public class Node
     {
         return new Vector2(a.x - b.x, a.y - b.y);
     }
+
+    public Vector2 lowerLeft()
+    {
+        return new Vector2(x + 0.1f, y + 0.1f);
+    }
+
+    public Vector2 lowerRight()
+    {
+        return new Vector2(x + 0.9f, y + 0.1f);
+    }
+    public Vector2 upperLeft()
+    {
+        return new Vector2(x + 0.1f, y + 0.9f);
+    }
+
+    public Vector2 upperRight()
+    {
+        return new Vector2(x + 0.9f, y + 0.9f);
+    }
 }

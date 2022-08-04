@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+[DisallowMultipleComponent]
 public class PathfindingComponent : MonoBehaviour
 {
     [SerializeField] TilemapController tilemapController;
@@ -12,7 +13,17 @@ public class PathfindingComponent : MonoBehaviour
         return Vector2.Distance(n, target);
     }
 
-    Vector2[] ReconstructPath(Dictionary<Node, Node> cameFrom, Node current)
+    Vector2[] FormatPath(List<Node> path)
+    {
+        List<Vector2> waypoints = new List<Vector2>();
+        foreach (Node n in path)
+        {
+            waypoints.Add(n);
+        }
+        return waypoints.ToArray();
+    }
+
+    Vector2[] ReconstructPath(Dictionary<Node, Node> cameFrom, Node current, Vector3 endPosition)
     {
         List<Node> path = new List<Node>();
         path.Add(current);
@@ -23,7 +34,7 @@ public class PathfindingComponent : MonoBehaviour
             path.Insert(0, current);
         }
 
-        return SmoothPath(path);
+        return SmoothPath(path, endPosition);
     }
 
     // Calculates a path using Dijkstra's Algorithm from start to end and returns a list of points
@@ -40,13 +51,14 @@ public class PathfindingComponent : MonoBehaviour
 
         foreach (Node n in tilemapController.PathfindingGraph)
         {
-            open.Add(n);
             gScore[n] = Mathf.Infinity;
             fScore[n] = Mathf.Infinity;
         }
 
         gScore[startNode] = 0;
         fScore[startNode] = CalculateHeristicEstimate(startNode, endNode);
+
+        open.Add(startNode);
 
         while (open.Count > 0)
         {
@@ -58,7 +70,7 @@ public class PathfindingComponent : MonoBehaviour
             }
 
             if (curr == endNode)
-                return ReconstructPath(cameFrom, curr);
+                return ReconstructPath(cameFrom, curr, end);
 
             open.Remove(curr);
 
@@ -84,91 +96,8 @@ public class PathfindingComponent : MonoBehaviour
         return null;
     }
 
-    // Calculates a path using Dijkstra's Algorithm from start to end and returns a list of points
-    // NOTE: This was added because I was following the wrong pseudocode....
-    public Vector2[] CalculateDijkstraPath(Vector3 start, Vector3 end)
-    {
-        // Get our start and end nodes
-        Node startNode = tilemapController.GetNodeFromGlobalPosition(start);
-        Node endNode = tilemapController.GetNodeFromGlobalPosition(end);
-
-        // Check if we can actually enter our desired tile
-        if (endNode.movementCost == Mathf.Infinity)
-            return null;
-
-        // Dictionary containing the total cost (value) of the path up to node (key)
-        Dictionary<Node, float> dist = new Dictionary<Node, float>();
-
-        // Dictionary containing the previous node (value) to node (key)
-        Dictionary<Node, Node> prev = new Dictionary<Node, Node>();
-
-        List<Node> unvisited = new List<Node> ();
-
-        dist[startNode] = 0;
-        prev[startNode] = null;
-
-        foreach (Node n in tilemapController.PathfindingGraph)
-        {
-            unvisited.Add(n);
-            if (n == startNode)
-                continue;
-            dist[n] = Mathf.Infinity;
-            prev[n] = null;
-        }
-
-        while (unvisited.Count > 0)
-        {
-            Node u = null;
-
-            foreach(Node possibleU in unvisited)
-            {
-                if (u == null || dist[possibleU] < dist[u])
-                {
-                    u = possibleU;
-                }
-            }
-
-            // If we have reached our end node - break
-            if (u == endNode)
-                break;
-
-            unvisited.Remove(u);
-
-            // Iterate through each nodes neighbours
-            foreach (Node n in u.neighbours)
-            {
-                float cost = dist[u] + n.movementCost;
-                if (cost < dist[n])
-                {
-                    dist[n] = cost;
-                    prev[n] = u;
-                }
-            }
-        }
-
-        // Check that we have a path to our goal
-        if (prev[endNode] == null)
-            return null;
-
-        // A list to store our path
-        List<Node> currentPath = new List<Node>();
-
-        // Make our current node our target
-        Node curr = endNode;
-
-        // Until he hit null (our beginging node)
-        while (curr != null)
-        {
-            currentPath.Add(curr);
-            curr = prev[curr];
-        }
-        currentPath.Reverse();
-
-        return SmoothPath(currentPath);
-    }
-
     //Smooth our path
-    Vector2[] SmoothPath(List<Node> path)
+    Vector2[] SmoothPath(List<Node> path, Vector2 endPosition)
     {
         // Lets smooth this path since our movement isn't locked to each tile
 
@@ -188,16 +117,36 @@ public class PathfindingComponent : MonoBehaviour
         foreach (Node n in path)
         {
             // Calculate a direction vector
-            Vector2 direction = n - currentNode;
+            Vector2 direction = currentNode - n;
+
+            Vector2 castLower;
+            Vector2 castUpper;
+
+            // Do the cross product of the current direction and a diagonal vector
+            float dotProd = Mathf.Abs(Vector2.Dot(direction, new Vector2(0.5f, 0.5f).normalized));
+
+            // We're in a forward slash
+            if (dotProd >= 0.75f)
+            {
+                castLower = n.lowerRight();
+                castUpper = n.upperLeft();
+            }
+            // Otherwise its a backward slash
+            else
+            {
+                castLower = n.lowerLeft();
+                castUpper = n.upperRight();
+            }
 
             // Calculate the distance for our raycast to be
             float distance = Vector2.Distance(currentNode, n);
 
             // Cast a ray from currentNode to the node in iteration
-            RaycastHit2D hit = Physics2D.Raycast(currentNode, direction.normalized, distance);
+            RaycastHit2D hitLower = Physics2D.Raycast(castLower, direction.normalized, distance);
+            RaycastHit2D hitUpper = Physics2D.Raycast(castUpper, direction.normalized, distance);
 
             // If the raycast hit something (we cannot move in a straight line to the waypoint) and our previous N isnt null
-            if (hit && prevN != null)
+            if ((hitLower || hitUpper) && prevN != null)
             {
                 // Add the previous point (as it didnt get a hit with the raycast
                 waypoints.Add(prevN);
@@ -205,10 +154,18 @@ public class PathfindingComponent : MonoBehaviour
                 // Update our currentNodes
                 currentNode = prevN;
             }
+            // If we didnt get a hit but we're at our last node anyway we should be able to move to it
+            else if (n == path[path.Count - 1])
+            {
+                waypoints.Add(n);
+            }
 
             prevN = n;
 
         }
+
+        // Add the last position to the end of the waypoints so we reach the desired location
+        waypoints.Add(endPosition);
 
         // Convert our list to an array and return it
         return waypoints.ToArray();

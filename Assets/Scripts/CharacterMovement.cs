@@ -4,6 +4,7 @@ using UnityEngine;
 
 // Character movement needs a rigidbody2D component
 [RequireComponent(typeof(Rigidbody2D))]
+[DisallowMultipleComponent]
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] float movementSpeed = 5f;
