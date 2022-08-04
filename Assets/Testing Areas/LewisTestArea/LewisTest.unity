@@ -134,7 +134,8 @@ GameObject:
   - component: {fileID: 297040658}
   - component: {fileID: 297040657}
   - component: {fileID: 297040660}
-  - component: {fileID: 297040659}
+  - component: {fileID: 297040661}
+  - component: {fileID: 297040662}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -209,20 +210,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &297040659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 297040656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fde27d62b19370940acc75a7aa129c14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 297040660}
-  movementSpeed: 2.5
 --- !u!50 &297040660
 Rigidbody2D:
   serializedVersion: 4
@@ -244,6 +231,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &297040661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297040656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e5ff555c1f4e9b4e83a23a9ddc7cd20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 5
+--- !u!114 &297040662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297040656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020868f389e7e0841a7b9bc85b4a081b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 297040658}
+  maxDistance: 10
 --- !u!1 &329824636
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +356,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 297040658}
-  smoothTime: 0.05
   playerDistance: 2
   speed: 10
 --- !u!1 &2040388626
