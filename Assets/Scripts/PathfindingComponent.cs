@@ -13,13 +13,14 @@ public class PathfindingComponent : MonoBehaviour
         return Vector2.Distance(n, target);
     }
 
-    Vector2[] FormatPath(List<Node> path)
+    Vector2[] FormatPath(List<Node> path, Vector2 endPosition)
     {
         List<Vector2> waypoints = new List<Vector2>();
         foreach (Node n in path)
         {
             waypoints.Add(n);
         }
+        waypoints.Add(endPosition);
         return waypoints.ToArray();
     }
 
@@ -37,7 +38,7 @@ public class PathfindingComponent : MonoBehaviour
         return SmoothPath(path, endPosition);
     }
 
-    // Calculates a path using Dijkstra's Algorithm from start to end and returns a list of points
+    // Calculates a path using A Star Algorithm from start to end and returns a list of points
     public Vector2[] CalculateAStarPath(Vector3 start, Vector3 end)
     {
         // Get our start and end nodes
@@ -60,9 +61,11 @@ public class PathfindingComponent : MonoBehaviour
 
         open.Add(startNode);
 
+        Node curr = null;
+
         while (open.Count > 0)
         {
-            Node curr = null;
+            curr = null;
             foreach (Node n in open)
             {
                 if (curr == null || fScore[curr] > fScore[n])
@@ -75,17 +78,14 @@ public class PathfindingComponent : MonoBehaviour
             open.Remove(curr);
 
             foreach (Node n in curr.neighbours)
-            {
-                float tentativeGScore = Mathf.Infinity;
-
-                if (n.movementCost != Mathf.Infinity)
-                    tentativeGScore = gScore[curr] + n.movementCost;
+            {                   
+                float tentativeGScore = gScore[curr] + n.movementCost;
 
                 if (tentativeGScore < gScore[n])
                 {
                     cameFrom[n] = curr;
                     gScore[n] = tentativeGScore;
-                    fScore[n] = gScore[n] + CalculateHeristicEstimate(n, endNode);
+                    fScore[n] = tentativeGScore + CalculateHeristicEstimate(n, endNode);
                     if (!open.Contains(n))
                     {
                         open.Add(n);
@@ -93,7 +93,7 @@ public class PathfindingComponent : MonoBehaviour
                 }
             }
         }
-        return null;
+        return ReconstructPath(cameFrom, curr, end);
     }
 
     //Smooth our path

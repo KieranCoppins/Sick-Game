@@ -17,6 +17,8 @@ public class Node
     // The movement cost to enter this node
     public readonly float movementCost;
 
+    public Vector2 position;
+
     public Node(int x, int y, List<Node> neighbours, float movementCost)
     {
         this.x = x;

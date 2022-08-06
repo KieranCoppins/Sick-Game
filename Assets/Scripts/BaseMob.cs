@@ -45,7 +45,7 @@ public class BaseMob : MonoBehaviour
     bool hasPath;
 
     [Header("DEBUG VALUES")]
-    [SerializeField] Vector2 debugPosition;
+    [SerializeField] Transform debugTarget;
 
 
     public void TakeDamage(int dmg)
@@ -115,12 +115,12 @@ public class BaseMob : MonoBehaviour
 
     public void DEBUG_SetPosition()
     {
-        CalculatePath(debugPosition);
+        CalculatePath(debugTarget.position);
         Vector2[] pathArray = path.ToArray();
-        Debug.DrawLine(desiredPosition, pathArray[0], Color.red, 50000.0f);
+        Debug.DrawLine(desiredPosition, pathArray[0], Color.red, 20.0f);
         for (int i = 1; i < pathArray.Length; i++)
         {
-            Debug.DrawLine(pathArray[i-1], pathArray[i], Color.red, 50000.0f);
+            Debug.DrawLine(pathArray[i-1], pathArray[i], Color.red, 20.0f);
         }
     }
 }

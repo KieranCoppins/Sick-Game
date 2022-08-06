@@ -28,11 +28,15 @@ public class TilemapController : MonoBehaviour
 
     void GenerateGraph()
     {
-        Debug.Log("Generating graph of " + tilemap.size.x + "x" + tilemap.size.y + " tilemap");
-        Debug.Log("Tile origin of " + tilemap.origin.x + "x" + tilemap.origin.y);
+
+
+        tilemap.CompressBounds();
+
+        Debug.Log("Generating graph of " + tilemap.cellBounds.size.x + "x" + tilemap.cellBounds.size.y + " tilemap");
+        Debug.Log("Tile origin " + tilemap.origin.x + "x" + tilemap.origin.y);
 
         // Initialise our 2D list of pathfinding nodes
-        PathfindingGraph = new Node[tilemap.size.x, tilemap.size.y];
+        PathfindingGraph = new Node[tilemap.cellBounds.size.x, tilemap.cellBounds.size.y];
 
         TileBase[] allTiles = tilemap.GetTilesBlock(tilemap.cellBounds);
 
@@ -41,7 +45,6 @@ public class TilemapController : MonoBehaviour
         {
             for (int y = 0; y < tilemap.cellBounds.size.y; y++)
             {
-
                 // Get the tile object at x, y
                 Tile tile = (Tile)allTiles[x + y * tilemap.cellBounds.size.x];
 
@@ -53,7 +56,7 @@ public class TilemapController : MonoBehaviour
                     movementCost = Mathf.Infinity;
 
                 // Create a new node
-                Node pathfindingNode = new Node(x, y, new List<Node>(), movementCost);
+                Node pathfindingNode = new Node(x + tilemap.cellBounds.min.x, y + tilemap.cellBounds.min.y, new List<Node>(), movementCost);
 
                 // Store node at x, y
                 PathfindingGraph[x, y] = pathfindingNode; 
@@ -72,10 +75,10 @@ public class TilemapController : MonoBehaviour
                 if (y > 0)  // We have a tile in our negative y
                     PathfindingGraph[x, y].neighbours.Add(PathfindingGraph[x, y - 1]);
 
-                if (x < tilemap.cellBounds.max.x - 1) // We have a tile to our positive x
+                if (x < tilemap.cellBounds.size.x - 1) // We have a tile to our positive x
                     PathfindingGraph[x, y].neighbours.Add(PathfindingGraph[x + 1, y]);
 
-                if (y < tilemap.cellBounds.max.y - 1) // We have a tile to our positive y
+                if (y < tilemap.cellBounds.size.y - 1) // We have a tile to our positive y
                     PathfindingGraph[x, y].neighbours.Add(PathfindingGraph[x, y + 1]);
 
                 // Only add these neighbours if we want eight way movement
@@ -84,13 +87,13 @@ public class TilemapController : MonoBehaviour
                     if (x > 0 && y > 0) // We have a tile in our diagonal negative x and y
                         PathfindingGraph[x, y].neighbours.Add(PathfindingGraph[x - 1, y - 1]);
 
-                    if (x < tilemap.cellBounds.max.x - 1 && y < tilemap.cellBounds.max.y - 1) // We have a tile in our diagonal positive x and y
+                    if (x < tilemap.cellBounds.size.x - 1 && y < tilemap.cellBounds.size.y - 1) // We have a tile in our diagonal positive x and y
                         PathfindingGraph[x, y].neighbours.Add(PathfindingGraph[x + 1, y + 1]);
 
-                    if (x > 0 && y < tilemap.cellBounds.max.y - 1) // We have a tile in our diagonal negative x and positive y
+                    if (x > 0 && y < tilemap.cellBounds.size.y - 1) // We have a tile in our diagonal negative x and positive y
                         PathfindingGraph[x, y].neighbours.Add(PathfindingGraph[x - 1, y + 1]);
 
-                    if (x < tilemap.cellBounds.max.x - 1 && y > 0) // We have a tile in our diagonal positive x and negative y
+                    if (x < tilemap.cellBounds.size.x - 1 && y > 0) // We have a tile in our diagonal positive x and negative y
                         PathfindingGraph[x, y].neighbours.Add(PathfindingGraph[x + 1, y - 1]);
                 }
             }
@@ -101,13 +104,14 @@ public class TilemapController : MonoBehaviour
     public TileBase GetTileFromGlobalPosition(Vector3 position)
     {
         Vector3Int tileCoords = tilemap.WorldToCell(position);
+        Debug.Log(tileCoords);
         return tilemap.GetTile(tileCoords);
     }
 
     public Node GetNodeFromGlobalPosition(Vector3 position)
     {
         Vector3Int tileCoords = tilemap.WorldToCell(position);
-        return PathfindingGraph[tileCoords.x, tileCoords.y];
+        return PathfindingGraph[tileCoords.x - tilemap.cellBounds.x, tileCoords.y - tilemap.cellBounds.y];
     }
 
     public Vector2 GetGlobalPositionFromNode(Node node)
