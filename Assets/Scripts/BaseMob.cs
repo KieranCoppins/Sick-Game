@@ -26,15 +26,22 @@ public class BaseMob : MonoBehaviour
         }
     }
     [Header("Mob Stats")]
+
+    [Tooltip("The maximum health of the mob")]
     [SerializeField] protected int maxHealth = 10;
+    [Tooltip("How much damage on attack does this mob deal?")]
     [SerializeField] protected int damage = 1;
     [SerializeField] protected float movementSpeed = 2;
+    [Tooltip("How often in seconds can this mob attack?")]
+    [SerializeField] protected float attackRate = 2;
     [SerializeField] public string mobName { get; protected set; }
 
     protected PathfindingComponent PathfindingComponent;
     protected Rigidbody2D rb;
 
     protected Queue<Vector2> path;
+
+    protected float attackTimer;
 
     private int _health;
 
@@ -43,6 +50,7 @@ public class BaseMob : MonoBehaviour
     Vector2 targetPosition;
 
     bool hasPath;
+    bool stopMoving = false;
 
     [Header("DEBUG VALUES")]
     [SerializeField] bool DebugMode;
@@ -115,7 +123,7 @@ public class BaseMob : MonoBehaviour
     }
 
     // Implement basic movement following the path as default movement
-    void Update()
+    protected virtual void Update()
     {
         if (Vector2.Distance(transform.position, desiredPosition) <= 0.1f)
         {
@@ -125,8 +133,9 @@ public class BaseMob : MonoBehaviour
         {
             movementDirection = desiredPosition - (Vector2)transform.position;
         }
-        rb.velocity = movementDirection.normalized * movementSpeed;
+        rb.velocity = stopMoving ? Vector2.zero : movementDirection.normalized * movementSpeed;
         CalculateNextPosition();
+        attackTimer += Time.deltaTime;
     }
 
     public void DEBUG_SetPosition()
@@ -149,7 +158,7 @@ public class BaseMob : MonoBehaviour
     /// <summary>
     /// Attack the target - should be overwritten for child classes
     /// </summary>
-    public virtual void Attack()
+    public virtual void Attack(GameObject target)
     {
 
     }
@@ -159,12 +168,14 @@ public class BaseMob : MonoBehaviour
     /// </summary>
     /// <param name="position"></param>
     /// <returns>True if the mob has line of sight</returns>
-    protected bool LineOfSight(Vector2 position)
+    protected bool HasLineOfSight(Vector2 position)
     {
         RaycastHit2D hit;
-        Vector2 direction = (Vector2)transform.position - position;
+        Vector3 direction = position - (Vector2)transform.position;
         hit = Physics2D.Raycast(transform.position, direction);
-        if (hit.collider.tag == "Player")
+        if (DebugMode)
+            Debug.DrawRay(transform.position, direction);
+        if (hit.collider.CompareTag("Player"))
             return true;
 
         return false;
@@ -186,5 +197,15 @@ public class BaseMob : MonoBehaviour
             if (DebugMode)
                 DEBUG_DrawPath();
         }
+    }
+
+    public void StopMoving()
+    {
+        stopMoving = true;
+    }
+
+    public void ResumeMoving()
+    {
+        stopMoving = false;
     }
 }
