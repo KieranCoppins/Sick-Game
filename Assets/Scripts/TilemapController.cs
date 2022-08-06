@@ -75,10 +75,10 @@ public class TilemapController : MonoBehaviour
                 if (y > 0)  // We have a tile in our negative y
                     PathfindingGraph[x, y].neighbours.Add(PathfindingGraph[x, y - 1]);
 
-                if (x < tilemap.cellBounds.max.x - 1) // We have a tile to our positive x
+                if (x < tilemap.cellBounds.size.x - 1) // We have a tile to our positive x
                     PathfindingGraph[x, y].neighbours.Add(PathfindingGraph[x + 1, y]);
 
-                if (y < tilemap.cellBounds.max.y - 1) // We have a tile to our positive y
+                if (y < tilemap.cellBounds.size.y - 1) // We have a tile to our positive y
                     PathfindingGraph[x, y].neighbours.Add(PathfindingGraph[x, y + 1]);
 
                 // Only add these neighbours if we want eight way movement
@@ -87,13 +87,13 @@ public class TilemapController : MonoBehaviour
                     if (x > 0 && y > 0) // We have a tile in our diagonal negative x and y
                         PathfindingGraph[x, y].neighbours.Add(PathfindingGraph[x - 1, y - 1]);
 
-                    if (x < tilemap.cellBounds.max.x - 1 && y < tilemap.cellBounds.max.y - 1) // We have a tile in our diagonal positive x and y
+                    if (x < tilemap.cellBounds.size.x - 1 && y < tilemap.cellBounds.size.y - 1) // We have a tile in our diagonal positive x and y
                         PathfindingGraph[x, y].neighbours.Add(PathfindingGraph[x + 1, y + 1]);
 
-                    if (x > 0 && y < tilemap.cellBounds.max.y - 1) // We have a tile in our diagonal negative x and positive y
+                    if (x > 0 && y < tilemap.cellBounds.size.y - 1) // We have a tile in our diagonal negative x and positive y
                         PathfindingGraph[x, y].neighbours.Add(PathfindingGraph[x - 1, y + 1]);
 
-                    if (x < tilemap.cellBounds.max.x - 1 && y > 0) // We have a tile in our diagonal positive x and negative y
+                    if (x < tilemap.cellBounds.size.x - 1 && y > 0) // We have a tile in our diagonal positive x and negative y
                         PathfindingGraph[x, y].neighbours.Add(PathfindingGraph[x + 1, y - 1]);
                 }
             }
