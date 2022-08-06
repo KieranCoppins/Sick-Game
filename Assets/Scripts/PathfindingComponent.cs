@@ -13,13 +13,14 @@ public class PathfindingComponent : MonoBehaviour
         return Vector2.Distance(n, target);
     }
 
-    Vector2[] FormatPath(List<Node> path)
+    Vector2[] FormatPath(List<Node> path, Vector2 endPosition)
     {
         List<Vector2> waypoints = new List<Vector2>();
         foreach (Node n in path)
         {
             waypoints.Add(n);
         }
+        waypoints.Add(endPosition);
         return waypoints.ToArray();
     }
 
