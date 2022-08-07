@@ -2,23 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIAbilityBase : MonoBehaviour
+
+public abstract class AIAbilityBase : ScriptableObject
 {
-    [SerializeField] public string Name { get; protected set; }
-    [SerializeField] public float AbilityCalldown { get; protected set; }
-
-    protected float LastCast { get; private set; }
-
-    protected virtual void Update()
-    {
-        LastCast += Time.deltaTime;
-    }
+    [SerializeField] public string Name;
+    [SerializeField] public float AbilityCooldown;
 
     /// <summary>
     /// Casts the ability
     /// </summary>
-    public virtual void Cast()
-    {
-        LastCast = 0;
-    }
+    public abstract void Cast(Vector2 position, Vector2 direction, Transform target);
 }
