@@ -5,7 +5,7 @@ using UnityEngine;
 public class RangedMob : BaseMob
 {
     [Header("Ranged Mob Attributes")]
-    [SerializeField] GameObject projectile;
+    [SerializeField] AbilityBase ability;
 
     public override void Attack(GameObject target)
     {
@@ -22,13 +22,7 @@ public class RangedMob : BaseMob
 
             Vector3 direction = (target.transform.position - transform.position).normalized;
 
-            // Spawn our projectile
-            GameObject go = Instantiate(projectile, transform.position + direction * 1f, Quaternion.identity);
-
-            // Snap our projectile to face the right direction
-            go.transform.up = direction;
-
-            go.GetComponent<Projectile>().target = target.transform;
+            ability.Cast(transform.position, direction, target.transform);
 
         }
         else

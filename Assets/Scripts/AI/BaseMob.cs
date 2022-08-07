@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(PathfindingComponent))]
 [RequireComponent(typeof(Rigidbody2D))]
 [DisallowMultipleComponent]
-public class BaseMob : MonoBehaviour
+public abstract class BaseMob : MonoBehaviour
 {
     [Header("Events")]
     public UnityEvent onTakeDamage;
@@ -158,10 +158,7 @@ public class BaseMob : MonoBehaviour
     /// <summary>
     /// Attack the target - should be overwritten for child classes
     /// </summary>
-    public virtual void Attack(GameObject target)
-    {
-
-    }
+    public abstract void Attack(GameObject target);
 
     /// <summary>
     /// Checks if the mob has a straight line of sight to position
