@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class AIAbility
 {
-    public float LastCast;
+    [HideInInspector] public float LastCast;
     public AbilityBase ability;
 
     public bool Cast(Transform castFrom, Transform castTo)

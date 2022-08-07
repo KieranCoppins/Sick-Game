@@ -16,6 +16,8 @@ public class TestBoss : BaseBoss
             // We need to determine what ability we want to casts
             float distanceToTarget = Vector2.Distance(transform.position, target.transform.position);
 
+            stages[CurrentStage].abilities[2].Cast(transform, target.transform);
+
             // If the player is far away we shall cast comet
             if (distanceToTarget > 8.0f)
             {
