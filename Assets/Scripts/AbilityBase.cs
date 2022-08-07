@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public abstract class AIAbilityBase : ScriptableObject
+public abstract class AbilityBase : ScriptableObject
 {
-    [SerializeField] public string Name;
     [SerializeField] public float AbilityCooldown;
 
     /// <summary>

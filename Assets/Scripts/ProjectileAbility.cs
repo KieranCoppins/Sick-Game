@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "AI Abilities/Projectile Ability")]
-public class ProjectileAbility : AIAbilityBase
+public class ProjectileAbility : AbilityBase
 {
     [SerializeField] GameObject projectile;
     [SerializeField] float angle;

@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseBoss : BaseMob
+public abstract class BaseBoss : BaseMob
 {
 
     // We need a system of determining stages of the boss battle -
     // different stages will be based on health, stages can change what abilities they use and overall change their combat style
 
     [Header("Boss Values")]
-    [SerializeField] BossStage[] stages;
+    [SerializeField] protected BossStage[] stages;
 
     public int CurrentStage
     {
@@ -44,17 +44,9 @@ public class BaseBoss : BaseMob
         }
     }
 
+    // NOTE in theory the base boss shouldnt have an attack implementation since different bosses will have different attacking logic - for now this will be okay
     public override void Attack(GameObject target)
     {
-        if (attackTimer < attackRate)
-            return;
-
         
-        if (stages[CurrentStage].abilities[0].LastCast >= stages[CurrentStage].abilities[0].ability.AbilityCooldown)
-        {
-            stages[CurrentStage].abilities[0].LastCast = 0;
-            Vector2 direction = (target.transform.position - transform.position).normalized;
-            stages[CurrentStage].abilities[0].ability.Cast(transform.position, direction, target.transform);
-        }
     }
 }

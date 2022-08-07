@@ -7,13 +7,13 @@ using UnityEngine.Events;
 public class BossStage
 {
     public int healthThreshold;
-    [SerializeField] public AIPersonalAbility[] abilities;
+    [SerializeField] public AIAbility[] abilities;
 
     public UnityEvent StartStage;
 
     public void Update()
     {
-        foreach (AIPersonalAbility ability in abilities)
+        foreach (AIAbility ability in abilities)
         {
             ability.LastCast += Time.deltaTime;
         }
