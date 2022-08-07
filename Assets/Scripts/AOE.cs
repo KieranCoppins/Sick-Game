@@ -47,12 +47,10 @@ public class AOE : MonoBehaviour
         {
             if (firstDamage)
             {
-                Debug.Log("Dealing initial damage");
                 collision.GetComponent<BaseMob>().TakeDamage(initialDamage);
             }
             if (dealDamage)
             {
-                Debug.Log("Dealing continuous damage");
                 collision.GetComponent<BaseMob>().TakeDamage(continousDamage);
             }
         }
