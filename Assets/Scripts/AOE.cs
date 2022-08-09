@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(CircleCollider2D))]
 public class AOE : MonoBehaviour
 {
-    CircleCollider2D cc;
     int initialDamage;
     int continousDamage;
     float lifespan;
