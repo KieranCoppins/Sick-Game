@@ -11,6 +11,7 @@ public abstract class BaseMob : MonoBehaviour
     [Header("Events")]
     public UnityEvent onTakeDamage;
     public UnityEvent onHeal;
+    public UnityEvent onDeath;
     public int Health {
         get
         {
@@ -21,8 +22,11 @@ public abstract class BaseMob : MonoBehaviour
             _health = value;
             if (_health > maxHealth)
                 _health = maxHealth;
-            if (_health < 0)
-                _health = 0;
+            if (_health <= 0)
+            {
+                onDeath?.Invoke();
+                Destroy(this.gameObject);
+            }
         }
     }
     [Header("Mob Stats")]

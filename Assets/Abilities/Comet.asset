@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5391c113258b2c045a62f9e0d5caa87c, type: 3}
   m_Name: Comet
   m_EditorClassIdentifier: 
-  Name: 
   AbilityCooldown: 2
-  projectile: {fileID: 4616442037673614323, guid: 363c4827b8395a6498aafa62abef3057, type: 3}
+  projectile: {fileID: 4616442037673614323, guid: 1f3a9e2b401b6984fa561943dc8f9a0a, type: 3}
   angle: 0
   numberProjectiles: 1

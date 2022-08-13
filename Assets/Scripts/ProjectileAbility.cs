@@ -8,9 +8,10 @@ public class ProjectileAbility : AbilityBase
     [SerializeField] GameObject projectile;
     [SerializeField] float angle;
     [SerializeField] int numberProjectiles;
+
+    [SerializeField] float damage;
     public override void Cast(Vector2 position, Vector2 direction, Transform target)
-    {
-        Debug.Log("Casting Projectile Ability");
+    { 
         Vector2 minDirection = Quaternion.AngleAxis(-(angle/2), new Vector3(0, 0, 1)) * direction;
         float angleStep = angle / numberProjectiles;
         for (int i = 0; i < numberProjectiles; i++)

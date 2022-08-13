@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TestBoss : BaseBoss
 {
+    // In theory we should always call the attack function with a boss. Or set their range to be rather large
+    // Since once we encounter a boss which would start off a trigger when entering the boss "arena" the boss
+    // should be attacking the player always
+
+
     public override void Attack(GameObject target)
     {
         if (attackTimer < attackRate)
@@ -15,6 +20,8 @@ public class TestBoss : BaseBoss
 
             // We need to determine what ability we want to casts
             float distanceToTarget = Vector2.Distance(transform.position, target.transform.position);
+
+            stages[CurrentStage].abilities[2].Cast(transform, target.transform);
 
             // If the player is far away we shall cast comet
             if (distanceToTarget > 8.0f)

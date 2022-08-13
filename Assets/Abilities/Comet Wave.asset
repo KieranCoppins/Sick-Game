@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5391c113258b2c045a62f9e0d5caa87c, type: 3}
   m_Name: Comet Wave
   m_EditorClassIdentifier: 
-  Name: 
-  AbilityCooldown: 0
-  projectile: {fileID: 0}
-  angle: 0
-  numberProjectiles: 0
+  AbilityCooldown: 5
+  projectile: {fileID: 4616442037673614323, guid: 363c4827b8395a6498aafa62abef3057, type: 3}
+  angle: 120
+  numberProjectiles: 5
