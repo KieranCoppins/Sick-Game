@@ -259,7 +259,7 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
-  maxHealth: 10
+  _maxHealth: 10
   damage: 1
   movementSpeed: 2
   attackRate: 2
@@ -310,7 +310,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023c27219d88af249ba66bae859ffba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemapController: {fileID: 2043141228}
 --- !u!1 &437616155
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +427,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023c27219d88af249ba66bae859ffba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemapController: {fileID: 2043141228}
 --- !u!1 &600272799
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,7 +869,7 @@ GameObject:
   - component: {fileID: 2043141227}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Tilemap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
