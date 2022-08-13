@@ -6,76 +6,63 @@ using UnityEngine;
 public class AOE : MonoBehaviour
 {
     int initialDamage;
-    int continousDamage;
     float lifespan;
-    float damageRate;
+    int damageRate;
     bool friendlyFire;
 
-    bool firstDamage = true;
-    bool dealDamage = false;
-
-    float duration;
-    float lastDamageDelt;
-
-    protected void Awake()
-    {
-        cc = GetComponent<CircleCollider2D>();
-    }
-
-    public void Initialise(int iD, int cD, float lS, bool fF, float dR)
+    List<Collider2D> colliders;
+    public void Initialise(int iD, float lS, bool fF, int dR)
     {
         initialDamage = iD;
-        continousDamage = cD;
         lifespan = lS;
         friendlyFire = fF;
         damageRate = dR;
+        colliders = new List<Collider2D>();
+        StartCoroutine(DealDamageOnTick());
+        StartCoroutine(DestroyHandler());
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            if (firstDamage)
-            {
-                // deal initial damage to player
-            }
-            // deal continous damage to player
-        }
+        colliders.Add(collision);
+    }
 
-        if (friendlyFire && collision.CompareTag("Mob"))
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        colliders.Remove(collision);
+    }
+
+    void DealDamage(int dmg)
+    {
+        foreach (Collider2D collider in colliders)
         {
-            if (firstDamage)
+            if (friendlyFire && collider.CompareTag("Mob"))
             {
-                collision.GetComponent<BaseMob>().TakeDamage(initialDamage);
+                collider.GetComponent<BaseMob>().TakeDamage(dmg);
             }
-            if (dealDamage)
+            else if (collider.CompareTag("Player"))
             {
-                collision.GetComponent<BaseMob>().TakeDamage(continousDamage);
+                // Deal dmg to player
             }
         }
     }
 
-    protected void FixedUpdate()
+    IEnumerator DealDamageOnTick()
     {
-        duration += Time.fixedDeltaTime;
-        // Make sure our first tick we deal the initial damage
-        if (duration > Time.fixedDeltaTime * 2)
+        yield return new WaitForSeconds(0.2f); // Wait for 200 milliseconds to get all colliders to deal initial damage to
+        DealDamage(initialDamage);
+        yield return new WaitForSeconds(1); // Wait a second then we deal our damage rate
+
+        while (true)
         {
-            firstDamage = false;
+            DealDamage(damageRate);
+            yield return new WaitForSeconds(1);
         }
-        lastDamageDelt += Time.fixedDeltaTime;
-        if (lastDamageDelt >= damageRate)
-        {
-            lastDamageDelt = 0;
-            dealDamage = true;
-        }
-        else
-        {
-            dealDamage = false;
-        }
-        if (duration >= lifespan)
-        {
-            Destroy(this.gameObject);
-        }
+    }
+
+    IEnumerator DestroyHandler()
+    {
+        yield return new WaitForSeconds(lifespan);  // After our life span is up we can destroy ourselves
+        Destroy(gameObject);
     }
 }
