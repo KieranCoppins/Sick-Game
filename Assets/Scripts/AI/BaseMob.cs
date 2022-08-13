@@ -20,8 +20,8 @@ public abstract class BaseMob : MonoBehaviour
         protected set
         {
             _health = value;
-            if (_health > maxHealth)
-                _health = maxHealth;
+            if (_health > _maxHealth)
+                _health = _maxHealth;
             if (_health <= 0)
             {
                 onDeath?.Invoke();
@@ -29,10 +29,22 @@ public abstract class BaseMob : MonoBehaviour
             }
         }
     }
-    [Header("Mob Stats")]
+    public int MaxHealth
+    {
+        get
+        {
+            return _maxHealth;
+        }
+        protected set
+        {
+            if (value > 0)
+                _maxHealth = value;
+        }
+    }
 
+    [Header("Mob Stats")]
     [Tooltip("The maximum health of the mob")]
-    [SerializeField] protected int maxHealth = 10;
+    [SerializeField] int _maxHealth = 10;
     [Tooltip("How much damage on attack does this mob deal?")]
     [SerializeField] protected int damage = 1;
     [SerializeField] protected float movementSpeed = 2;
@@ -47,7 +59,7 @@ public abstract class BaseMob : MonoBehaviour
 
     protected float attackTimer;
 
-    private int _health;
+    private int _health = 10;
 
     Vector2 movementDirection;
     Vector2 desiredPosition;
@@ -67,6 +79,7 @@ public abstract class BaseMob : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         Health -= dmg;
+
 
         // Invoke our take damage event when we take damage
         onTakeDamage?.Invoke();
@@ -118,7 +131,7 @@ public abstract class BaseMob : MonoBehaviour
 
     protected void Awake()
     {
-        Health = maxHealth;
+        Health = MaxHealth;
         PathfindingComponent = GetComponent<PathfindingComponent>();
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;

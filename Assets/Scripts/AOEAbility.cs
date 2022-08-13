@@ -6,9 +6,9 @@ using UnityEngine;
 public class AOEAbility : AbilityBase
 {
     [SerializeField] float lifespan;
-    [SerializeField] float damageRate;
+    [Tooltip("The amount of damage to inflict per second")]
+    [SerializeField] int damageRate;
     [SerializeField] int initialDamage;
-    [SerializeField] int continousDamage;
     [SerializeField] bool friendlyFire;
 
     [SerializeField] GameObject AOEGameObject;
@@ -18,6 +18,6 @@ public class AOEAbility : AbilityBase
     {
         // We could use position and direction for some particle effects to come from the mob casting
         GameObject go = Instantiate(AOEGameObject, target.position, Quaternion.identity);
-        go.GetComponent<AOE>().Initialise(initialDamage, continousDamage, lifespan, friendlyFire, damageRate);
+        go.GetComponent<AOE>().Initialise(initialDamage, lifespan, friendlyFire, damageRate);
     }
 }

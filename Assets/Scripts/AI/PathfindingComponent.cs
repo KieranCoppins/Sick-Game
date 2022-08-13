@@ -6,7 +6,14 @@ using UnityEngine.Tilemaps;
 [DisallowMultipleComponent]
 public class PathfindingComponent : MonoBehaviour
 {
-    [SerializeField] TilemapController tilemapController;
+    TilemapController tilemapController;
+
+    private void Awake()
+    {
+        tilemapController = GameObject.FindGameObjectWithTag("Tilemap").GetComponent<TilemapController>();
+        if (tilemapController == null)
+            throw new MissingComponentException("Can't find Tilemap Controller on Tilemap tagged GameObject");
+    }
 
     float CalculateHeristicEstimate(Node n, Node target)
     {
