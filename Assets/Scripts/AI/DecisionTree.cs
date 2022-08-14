@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,15 +15,49 @@ public abstract class DecisionTree
     protected DecisionTreeNode root;
 
     public abstract void Initialise();
+    public Action Run()
+    {
+        try
+        {
+            return (Action)root.MakeDecision();
+        }
+        catch (InvalidCastException e)
+        {
+            Debug.LogError("Decision Tree did not reach an action node (InvalidCastException)");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e.Message);
+        }
+        return null;
+    }
 }
 
 public abstract class DecisionTreeNode
 {
+    protected BaseMob mob;
+    public DecisionTreeNode(BaseMob mob)
+    {
+        this.mob = mob;
+    }
     public abstract DecisionTreeNode MakeDecision();
 }
 
 public abstract class Action : DecisionTreeNode
 {
+    public Action(BaseMob mob) : base(mob)
+    {
+
+    }
+
+    public bool ASyncAction
+    {
+        get
+        {
+            return _asyncAction;
+        }
+    }
+    protected bool _asyncAction;
     public override DecisionTreeNode MakeDecision()
     {
         return this;
@@ -31,7 +66,7 @@ public abstract class Action : DecisionTreeNode
     /// <summary>
     /// Do this action
     /// </summary>
-    public abstract void Execute();
+    public abstract IEnumerator Execute();
 }
 
 public class Decision : DecisionTreeNode
@@ -52,7 +87,7 @@ public class Decision : DecisionTreeNode
         return GetBranch().MakeDecision();
     }
 
-    public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode, Condition condDelegate)
+    public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode, Condition condDelegate, BaseMob mob) : base(mob)
     {
         this.trueNode = trueNode;
         this.falseNode = falseNode;
@@ -74,7 +109,7 @@ public abstract class Decision<T> : DecisionTreeNode
         return GetBranch().MakeDecision();
     }
 
-    public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode)
+    public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode, BaseMob mob) : base(mob)
     {
         this.trueNode=trueNode;
         this.falseNode=falseNode;

@@ -14,7 +14,7 @@ public class TilemapController : MonoBehaviour
     public Node[,] PathfindingGraph { get; private set; }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         tilemap = GetComponent<Tilemap>();
         GenerateGraph();
@@ -104,7 +104,6 @@ public class TilemapController : MonoBehaviour
     public TileBase GetTileFromGlobalPosition(Vector3 position)
     {
         Vector3Int tileCoords = tilemap.WorldToCell(position);
-        Debug.Log(tileCoords);
         return tilemap.GetTile(tileCoords);
     }
 

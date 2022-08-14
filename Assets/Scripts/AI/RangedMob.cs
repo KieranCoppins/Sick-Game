@@ -7,6 +7,14 @@ public class RangedMob : BaseMob
     [Header("Ranged Mob Attributes")]
     [SerializeField] AbilityBase ability;
 
+    protected override void Start()
+    {
+        base.Start();
+        decisionTree = new DT_RangedMob(this);
+
+        actionManager.ScheduleAction(decisionTree.Run());
+    }
+
     public override void Attack(GameObject target)
     {
         // Check if we have line of sight to our target
@@ -29,5 +37,30 @@ public class RangedMob : BaseMob
         {
             ResumeMoving();
         }
+    }
+}
+
+public class DT_RangedMob : DecisionTree
+{
+    public DT_RangedMob(BaseMob mob) : base(mob)
+    {
+
+    }
+    public override void Initialise()
+    {
+        // Initialise all our Nodes
+
+        /// ACTIONS
+        A_MoveInRangeOfPlayer MoveToPlayer = new A_MoveInRangeOfPlayer(mob);
+
+        /// DECISIONS
+
+        // Initialise our root
+        root = new Decision(MoveToPlayer, null, ShouldMoveToPlayer, mob);
+    }
+
+    bool ShouldMoveToPlayer()
+    {
+        return true;
     }
 }

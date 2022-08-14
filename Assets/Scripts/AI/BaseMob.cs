@@ -42,6 +42,11 @@ public abstract class BaseMob : MonoBehaviour
         }
     }
 
+    public float MovementSpeed
+    {
+        get { return movementSpeed; }
+    }
+
     [Header("Mob Stats")]
     [Tooltip("The maximum health of the mob")]
     [SerializeField] int _maxHealth = 10;
@@ -52,10 +57,8 @@ public abstract class BaseMob : MonoBehaviour
     [SerializeField] protected float attackRate = 2;
     [SerializeField] public string mobName { get; protected set; }
 
-    protected PathfindingComponent PathfindingComponent;
-    protected Rigidbody2D rb;
-
-    protected Queue<Vector2> path;
+    [HideInInspector] public PathfindingComponent PathfindingComponent;
+    [HideInInspector] public Rigidbody2D rb;
 
     protected float attackTimer;
 
@@ -67,6 +70,14 @@ public abstract class BaseMob : MonoBehaviour
 
     bool hasPath;
     bool stopMoving = false;
+
+    protected ActionManager actionManager = new ActionManager();
+    protected DecisionTree decisionTree;
+
+    public delegate void OnFinishDelegate(IEnumerator coroutine);
+    public event OnFinishDelegate onFinish;
+
+    bool executingActions = false;
 
     [Header("DEBUG VALUES")]
     [SerializeField] bool DebugMode;
@@ -95,80 +106,32 @@ public abstract class BaseMob : MonoBehaviour
         onHeal?.Invoke();
     }
 
-    /// <summary>
-    /// Calculates the path to position and adds all waypoints in path to a queue
-    /// </summary>
-    /// <param name="position"></param>
-    protected void CalculatePath(Vector2 position)
-    {
-        Vector2[] p = PathfindingComponent.CalculateAStarPath(transform.position, position);
-        if (p == null)
-        {
-            Debug.LogError("Cannot produce a path to " + position.ToString());
-            return;
-        }
-        path = new Queue<Vector2>();
-        foreach(Vector2 pos in p)
-        {
-            path.Enqueue(pos);
-        }
-        MoveTo();
-    }
-
-    void MoveTo()
-    {
-        if (path.Count == 0)
-        {
-            movementDirection = Vector2.zero;
-            hasPath = false;
-        }
-        else
-        {
-            hasPath = true;
-            desiredPosition = path.Dequeue();
-        }
-    }
-
-    protected void Awake()
+    protected virtual void Start()
     {
         Health = MaxHealth;
         PathfindingComponent = GetComponent<PathfindingComponent>();
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
-        path = new Queue<Vector2>();
+        onFinish += delegate (IEnumerator coroutine)
+        {
+            // Remove this action from current actions
+            actionManager.currentActions.Remove(coroutine);
 
+            // Check if we have any more actions in the current actions
+            if (actionManager.currentActions.Count == 0)
+                executingActions = false;
+        };
     }
 
     // Implement basic movement following the path as default movement
     protected virtual void Update()
     {
-        if (Vector2.Distance(transform.position, desiredPosition) <= 0.1f)
-        {
-            MoveTo();
-        }
-        if (hasPath)
-        {
-            movementDirection = desiredPosition - (Vector2)transform.position;
-        }
-        rb.velocity = stopMoving ? Vector2.zero : movementDirection.normalized * movementSpeed;
-        CalculateNextPosition();
-        attackTimer += Time.deltaTime;
-    }
 
-    public void DEBUG_SetPosition()
-    {
-        CalculatePath(debugTarget.position);
-        DEBUG_DrawPath();
-    }
-
-    void DEBUG_DrawPath()
-    {
-
-        Vector2[] pathArray = path.ToArray();
-        Debug.DrawLine(desiredPosition, pathArray[0], Color.red, 20.0f);
-        for (int i = 1; i < pathArray.Length; i++)
+        // If we aren't executing any actions currently we should pull from the queue and execute them
+        if (!executingActions)
         {
-            Debug.DrawLine(pathArray[i - 1], pathArray[i], Color.red, 20.0f);
+            actionManager.Execute();
+            ExecuteActions();
         }
     }
 
@@ -195,24 +158,6 @@ public abstract class BaseMob : MonoBehaviour
         return false;
     }
 
-    /// <summary>
-    /// Calculate our next position. This function contains the logic on where our next position should be and calculates a path to this position
-    /// </summary>
-    public virtual void CalculateNextPosition()
-    {
-        // By default we'll just pathfind to the player
-        Vector2 newTargetPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-
-        // Check if our target position changed
-        if (Vector2.Distance(newTargetPosition, targetPosition) > 2.0f)
-        {
-            CalculatePath(newTargetPosition);
-            targetPosition = newTargetPosition;
-            if (DebugMode)
-                DEBUG_DrawPath();
-        }
-    }
-
     public void StopMoving()
     {
         stopMoving = true;
@@ -221,5 +166,31 @@ public abstract class BaseMob : MonoBehaviour
     public void ResumeMoving()
     {
         stopMoving = false;
+    }
+
+    IEnumerator ActionWrapper(IEnumerator coroutine)
+    {
+        bool running = true;
+        IEnumerator e = coroutine;
+        while (running)
+        {
+            if (e != null && e.MoveNext())
+                yield return e.Current;
+            else
+                running = false;
+        }
+        OnFinishDelegate handler = onFinish;
+        if (handler != null)
+            handler(coroutine);
+    }
+
+    void ExecuteActions()
+    {
+        executingActions = true;
+        // Execute all actions in current actions
+        foreach (IEnumerator action in actionManager.currentActions)
+        {
+            StartCoroutine(ActionWrapper(action));
+        }
     }
 }

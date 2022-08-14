@@ -48,6 +48,11 @@ public class PathfindingComponent : MonoBehaviour
     // Calculates a path using A Star Algorithm from start to end and returns a list of points
     public Vector2[] CalculateAStarPath(Vector3 start, Vector3 end)
     {
+        if (tilemapController == null)
+        {
+            Debug.LogError("Can't make a path with no tilemap controller");
+            return null;
+        }
         // Get our start and end nodes
         Node startNode = tilemapController.GetNodeFromGlobalPosition(start);
         Node endNode = tilemapController.GetNodeFromGlobalPosition(end);
