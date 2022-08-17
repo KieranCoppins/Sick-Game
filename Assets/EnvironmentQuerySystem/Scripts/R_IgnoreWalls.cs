@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEditor;
 
 [CreateAssetMenu(menuName = "Environment Queries/Ignore Walls")]
 public class R_IgnoreWalls : Rule
@@ -19,5 +20,15 @@ public class R_IgnoreWalls : Rule
         }
 
         return newTiles;
+    }
+}
+
+// A custom inspector to hide attributes for this rule
+[CustomEditor(typeof(R_IgnoreWalls))]
+public class R_IgnoreWallsEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        return;
     }
 }
