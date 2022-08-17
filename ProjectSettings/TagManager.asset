@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Mob
   - Tilemap
+  - EQSManager
   layers:
   - Default
   - TransparentFX

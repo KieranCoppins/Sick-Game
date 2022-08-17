@@ -13,10 +13,6 @@ public class BossStage
 
     public void Update()
     {
-        foreach (AIAbility ability in abilities)
-        {
-            ability.LastCast += Time.deltaTime;
-        }
     }
 
 }

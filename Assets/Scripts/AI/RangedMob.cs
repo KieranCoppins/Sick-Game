@@ -5,62 +5,67 @@ using UnityEngine;
 public class RangedMob : BaseMob
 {
     [Header("Ranged Mob Attributes")]
-    [SerializeField] AbilityBase ability;
+    [SerializeField] public AIAbility ability;
 
     protected override void Start()
     {
         base.Start();
         decisionTree = new DT_RangedMob(this);
-
-        actionManager.ScheduleAction(decisionTree.Run());
+        decisionTree.Initialise();
     }
 
-    public override void Attack(GameObject target)
+    protected override void Update()
     {
-        // Check if we have line of sight to our target
-        if (HasLineOfSight(target.transform.position))
+        base.Update();
+
+        // Constantly try to determine what we should be doing
+        Action actionToBeScheduled = decisionTree.Run();
+
+        // If our action is an interruptor or we're not doing anything, queue our action
+        if (actionToBeScheduled.Interruptor || !actionManager.executingActions)
         {
-            // If we do then we have to cancel movement and fire projectile
-            StopMoving();
-
-            if (attackTimer < attackRate)
-                return;
-
-            attackTimer = 0;
-
-            Vector3 direction = (target.transform.position - transform.position).normalized;
-
-            ability.Cast(transform.position, direction, target.transform);
-
-        }
-        else
-        {
-            ResumeMoving();
+            actionManager.ScheduleAction(actionToBeScheduled);
+            actionManager.Execute();
         }
     }
 }
 
 public class DT_RangedMob : DecisionTree
 {
-    public DT_RangedMob(BaseMob mob) : base(mob)
+    Vector2 playerPrevPos;
+    public DT_RangedMob(RangedMob mob) : base(mob)
     {
 
     }
     public override void Initialise()
     {
+        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
         // Initialise all our Nodes
 
         /// ACTIONS
-        A_MoveInRangeOfPlayer MoveToPlayer = new A_MoveInRangeOfPlayer(mob);
+        A_MoveTo MoveToPlayer = new (mob, player, ((RangedMob)mob).ability.ability.Range - 2.0f);   // We want to move in slightly more than what our ability allows
+        A_Idle idle = new (mob);
+        A_Attack castComet = new(mob, player, ((RangedMob)mob).ability);
+
 
         /// DECISIONS
+        AttackDecision shouldCastComet = new(castComet, idle, mob, ((RangedMob)mob).ability);
 
         // Initialise our root
-        root = new Decision(MoveToPlayer, null, ShouldMoveToPlayer, mob);
+        root = new Decision(MoveToPlayer, shouldCastComet, ShouldMoveToPlayer, mob);
     }
 
     bool ShouldMoveToPlayer()
     {
-        return true;
+        Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        if (Vector2.Distance(mob.transform.position, playerPos) > ((RangedMob)mob).ability.ability.Range || !mob.HasLineOfSight(playerPos))
+        {
+            if (playerPrevPos == null || Vector2.Distance(playerPrevPos, playerPos) > 2.0f)
+            {
+                playerPrevPos = playerPos;
+                return true;
+            }
+        }
+        return false;
     }
 }

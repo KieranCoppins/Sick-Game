@@ -25,6 +25,10 @@ public abstract class DecisionTree
         {
             Debug.LogError("Decision Tree did not reach an action node (InvalidCastException)");
         }
+        catch (NullReferenceException e)
+        {
+            Debug.LogError("Decision tree returned null. Has the tree been initialised?");
+        }
         catch (Exception e)
         {
             Debug.LogError(e.Message);
@@ -45,9 +49,10 @@ public abstract class DecisionTreeNode
 
 public abstract class Action : DecisionTreeNode
 {
-    public Action(BaseMob mob) : base(mob)
+    public Action(BaseMob mob, bool ASyncAction = false, bool Interruptor = false) : base(mob)
     {
-
+        _asyncAction = ASyncAction;
+        _interruptor = Interruptor;
     }
 
     public bool ASyncAction
@@ -57,7 +62,15 @@ public abstract class Action : DecisionTreeNode
             return _asyncAction;
         }
     }
-    protected bool _asyncAction;
+    public bool Interruptor
+    {
+        get
+        {
+            return _interruptor;
+        }
+    }
+    protected bool _asyncAction = false;
+    protected bool _interruptor = false;
     public override DecisionTreeNode MakeDecision()
     {
         return this;

@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Comet
   m_EditorClassIdentifier: 
   AbilityCooldown: 2
+  CastTime: 0.5
+  Range: 10
   projectile: {fileID: 4616442037673614323, guid: 1f3a9e2b401b6984fa561943dc8f9a0a, type: 3}
   angle: 0
   numberProjectiles: 1
+  damage: 0

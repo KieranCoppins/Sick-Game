@@ -8,7 +8,7 @@ public class TestBoss : BaseBoss
     // Since once we encounter a boss which would start off a trigger when entering the boss "arena" the boss
     // should be attacking the player always
 
-
+    /*
     public override void Attack(GameObject target)
     {
         if (attackTimer < attackRate)
@@ -38,5 +38,5 @@ public class TestBoss : BaseBoss
         {
             ResumeMoving();
         }
-    }
+    }*/
 }

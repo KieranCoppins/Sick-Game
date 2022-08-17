@@ -117,4 +117,16 @@ public class TilemapController : MonoBehaviour
     {
         return tilemap.CellToWorld(new Vector3Int(node.x, node.y, 0));
     }
+
+    public Vector2Int[] GetTilesInRange(Vector3Int position, int range)
+    {
+        Vector3Int size = new Vector3Int(range, range, 1);
+        BoundsInt bounds = new BoundsInt(position / 2, size);
+        List<Vector2Int> points = new List<Vector2Int>();
+        foreach (Vector2Int point in bounds.allPositionsWithin)
+        {
+            points.Add(point);
+        }
+        return points.ToArray();
+    }
 }

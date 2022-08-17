@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Burn
   m_EditorClassIdentifier: 
   AbilityCooldown: 16
+  CastTime: 0
+  Range: 3
   lifespan: 8
   damageRate: 1
   initialDamage: 5
-  continousDamage: 1
   friendlyFire: 1
   AOEGameObject: {fileID: 6649049798628890800, guid: e7adb5c6d5bb41743a79a1caf0abc610, type: 3}

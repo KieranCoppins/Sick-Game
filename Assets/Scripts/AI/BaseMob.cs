@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(PathfindingComponent))]
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(ActionManager))]
 [DisallowMultipleComponent]
 public abstract class BaseMob : MonoBehaviour
 {
@@ -71,13 +72,8 @@ public abstract class BaseMob : MonoBehaviour
     bool hasPath;
     bool stopMoving = false;
 
-    protected ActionManager actionManager = new ActionManager();
+    protected ActionManager actionManager;
     protected DecisionTree decisionTree;
-
-    public delegate void OnFinishDelegate(IEnumerator coroutine);
-    public event OnFinishDelegate onFinish;
-
-    bool executingActions = false;
 
     [Header("DEBUG VALUES")]
     [SerializeField] bool DebugMode;
@@ -112,40 +108,20 @@ public abstract class BaseMob : MonoBehaviour
         PathfindingComponent = GetComponent<PathfindingComponent>();
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
-        onFinish += delegate (IEnumerator coroutine)
-        {
-            // Remove this action from current actions
-            actionManager.currentActions.Remove(coroutine);
-
-            // Check if we have any more actions in the current actions
-            if (actionManager.currentActions.Count == 0)
-                executingActions = false;
-        };
+        actionManager = GetComponent<ActionManager>();
     }
 
     // Implement basic movement following the path as default movement
     protected virtual void Update()
     {
-
-        // If we aren't executing any actions currently we should pull from the queue and execute them
-        if (!executingActions)
-        {
-            actionManager.Execute();
-            ExecuteActions();
-        }
     }
-
-    /// <summary>
-    /// Attack the target - should be overwritten for child classes
-    /// </summary>
-    public abstract void Attack(GameObject target);
 
     /// <summary>
     /// Checks if the mob has a straight line of sight to position
     /// </summary>
     /// <param name="position"></param>
     /// <returns>True if the mob has line of sight</returns>
-    protected bool HasLineOfSight(Vector2 position)
+    public bool HasLineOfSight(Vector2 position)
     {
         RaycastHit2D hit;
         Vector3 direction = position - (Vector2)transform.position;
@@ -166,31 +142,5 @@ public abstract class BaseMob : MonoBehaviour
     public void ResumeMoving()
     {
         stopMoving = false;
-    }
-
-    IEnumerator ActionWrapper(IEnumerator coroutine)
-    {
-        bool running = true;
-        IEnumerator e = coroutine;
-        while (running)
-        {
-            if (e != null && e.MoveNext())
-                yield return e.Current;
-            else
-                running = false;
-        }
-        OnFinishDelegate handler = onFinish;
-        if (handler != null)
-            handler(coroutine);
-    }
-
-    void ExecuteActions()
-    {
-        executingActions = true;
-        // Execute all actions in current actions
-        foreach (IEnumerator action in actionManager.currentActions)
-        {
-            StartCoroutine(ActionWrapper(action));
-        }
     }
 }

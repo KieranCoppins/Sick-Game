@@ -43,10 +43,4 @@ public abstract class BaseBoss : BaseMob
             CurrentStage++;
         }
     }
-
-    // NOTE in theory the base boss shouldnt have an attack implementation since different bosses will have different attacking logic - for now this will be okay
-    public override void Attack(GameObject target)
-    {
-        
-    }
 }
