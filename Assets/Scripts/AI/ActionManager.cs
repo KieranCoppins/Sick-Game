@@ -28,7 +28,6 @@ public class ActionManager : MonoBehaviour
 
     public void ScheduleAction(Action action)
     {
-        Debug.Log(action);
         if (action != null)
             actionQueue.Enqueue(action);
     }
