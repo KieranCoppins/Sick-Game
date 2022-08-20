@@ -8,60 +8,33 @@ using UnityEngine.Tilemaps;
 /// </summary>
 public class A_MoveTo : Action
 {
-    PathfindingComponent pathfinding;
-    Transform target;
-    float range;
+    readonly PathfindingComponent pathfinding;
+
+    public delegate Vector2 GetDestination();
+
+    GetDestination destinationDelegate;
 
     // Make this action take a target and a range. Also we always want our move to to be an interruptor
-    public A_MoveTo(BaseMob mob, Transform target, float range = 0) : base(mob, Interruptor: true)
+    public A_MoveTo(BaseMob mob, GetDestination destinationDelegate) : base(mob, Interruptor: true)
     {
         pathfinding = mob.PathfindingComponent;
-        this.target = target;
-        this.range = range;
-    }
-
-    public void SetTarget(Transform target)
-    {
-        this.target = target;
+        this.destinationDelegate = destinationDelegate;
     }
 
     public override IEnumerator Execute()
     {
-        if (target == null)
-            throw new MissingReferenceException("No target assigned to action");
-
-        // First we should find a suitable position in the passed range to the target
-        // ^this can be done with some kind of environment query system or bitmap to highlight suitable tiles
-        Vector2 position;
-        if (range == 0)
-            position = target.position;
-        else
-        {
-            // Get our controller and eqs Manager
-            TilemapController controller = GameObject.FindGameObjectWithTag("Tilemap").GetComponent<TilemapController>();
-            EQSManager eqsManager = GameObject.FindGameObjectWithTag("EQSManager").GetComponent<EQSManager>();
-            // Convert our float vector3 to a int vector 3 by flooring out ints to get the right tile coord
-            Vector3Int pos = new Vector3Int(Mathf.FloorToInt(target.transform.position.x), Mathf.FloorToInt(target.transform.position.y));
-
-            // Use the tilemap controller to get all tiles within range
-            Vector2Int[] tiles = controller.GetTilesInRange(pos, Mathf.CeilToInt(range));
-
-            //Initialise our EQS system with these parameters
-            eqsManager.GetEQS(EQSSystem.RangedMobMoveToPlayer).Initialise(controller, tiles, mob.gameObject);
-            // Run the EQS system to get our tile and get the postiion of the tile
-            position = eqsManager.GetEQS(EQSSystem.RangedMobMoveToPlayer).Run();
-        }
+        // Call our get destination delegate to get the tile we want to pathfind to
+        Vector2 position = destinationDelegate();
 
         // Calculate a path to the position
         Vector2[] p = pathfinding.CalculateAStarPath(mob.transform.position, position);
 
+        // Make sure we have a path
         if (p == null)
             yield break;
 
         // Put our path in a queue for easier access
         Queue<Vector2> path = new Queue<Vector2>(p);
-
-        yield return null;
 
         // Run for as long as we have items in our queue
         while (path.Count > 0)

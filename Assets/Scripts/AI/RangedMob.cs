@@ -43,7 +43,7 @@ public class DT_RangedMob : DecisionTree
         // Initialise all our Nodes
 
         /// ACTIONS
-        A_MoveTo MoveToPlayer = new (mob, player, ((RangedMob)mob).ability.ability.Range - 2.0f);   // We want to move in slightly more than what our ability allows
+        A_MoveTo MoveToPlayer = new (mob, FindTileNearPlayer);   // We want to move in slightly more than what our ability allows
         A_Idle idle = new (mob);
         A_Attack castComet = new(mob, player, ((RangedMob)mob).ability);
 
@@ -67,5 +67,13 @@ public class DT_RangedMob : DecisionTree
             }
         }
         return false;
+    }
+
+    Vector2 FindTileNearPlayer()
+    {
+        Transform target = GameObject.FindGameObjectWithTag("Player").transform;
+        float range = ((RangedMob)mob).ability.ability.Range;
+        Vector2 position = range == 0 ? target.position : GameObject.FindGameObjectWithTag("EQSManager").GetComponent<EQSManager>().RunEQSystem(EQSystem.RangedMobMoveToPlayer, range, target.position, mob.gameObject);
+        return position;
     }
 }
