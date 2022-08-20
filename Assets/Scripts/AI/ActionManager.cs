@@ -49,7 +49,6 @@ public class ActionManager : MonoBehaviour
         {
             if (Time.time - a.time > 2.0f)
             {
-                Debug.Log("Action " + a.action.ToString() + " Expired");
                 tempList.Remove(a);
             }
         }
