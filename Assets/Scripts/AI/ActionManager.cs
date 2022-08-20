@@ -35,8 +35,8 @@ public class ActionManager : MonoBehaviour
     public void Execute()
     {
         bool addActions = true;
-        bool interruptorActive = false;
         bool currentActionsChanged = false;
+        bool acceptASyncActions = false;
         while (addActions && actionQueue.Count > 0)
         {
             // First we want to see if we have any interruptor actions
@@ -47,23 +47,21 @@ public class ActionManager : MonoBehaviour
                     // If we have an interruptor clear all our actions and do this one
                     currentActions.Clear();
                     currentActions.Add(a.Execute());
-                    actionQueue.Clear();
-                    interruptorActive = true;
+                    List<Action> tempList = new List<Action>(actionQueue);
+                    tempList.Remove(a);
+                    actionQueue = new Queue<Action>(tempList);
                     currentActionsChanged = true;
-                    ExecuteActions();
+                    acceptASyncActions = a.ASyncAction;
                     break;
                 }
             }
 
-            if (interruptorActive)
-                break;
-
-            Action action = actionQueue.Dequeue();
             if (currentActions.Count > 0)
             {
-                if (action.ASyncAction)
+                Action action = actionQueue.Peek();
+                if (action.ASyncAction && acceptASyncActions)
                 {
-                    currentActions.Add(action.Execute());
+                    currentActions.Add(actionQueue.Dequeue().Execute());
                     currentActionsChanged = true;
                 }
                 else
@@ -73,8 +71,10 @@ public class ActionManager : MonoBehaviour
             }
             else
             {
+                Action action = actionQueue.Dequeue();
                 currentActions.Add(action.Execute());
                 currentActionsChanged = true;
+                acceptASyncActions = action.ASyncAction;
             }
         }
         if (currentActionsChanged)

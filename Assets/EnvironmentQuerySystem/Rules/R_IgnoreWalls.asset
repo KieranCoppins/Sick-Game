@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a0b320c4cc61a4385311cb55d12388, type: 3}
   m_Name: R_IgnoreWalls
   m_EditorClassIdentifier: 
-  ignoreFailedTiles: 0
+  ignoreFailedTiles: 1
   scoreModifier: 1
   target: 0
