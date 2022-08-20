@@ -69,8 +69,9 @@ public abstract class Action : DecisionTreeNode
             return _interruptor;
         }
     }
-    protected bool _asyncAction = false;
-    protected bool _interruptor = false;
+
+    protected readonly bool _asyncAction = false;
+    protected readonly bool _interruptor = false;
     public override DecisionTreeNode MakeDecision()
     {
         return this;

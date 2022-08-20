@@ -12,20 +12,24 @@ public class RangedMob : BaseMob
         base.Start();
         decisionTree = new DT_RangedMob(this);
         decisionTree.Initialise();
+        StartCoroutine(Think());
     }
 
     protected override void Update()
     {
         base.Update();
+    }
 
-        // Constantly try to determine what we should be doing
-        Action actionToBeScheduled = decisionTree.Run();
-
-        // If our action is an interruptor or we're not doing anything, queue our action
-        if (actionToBeScheduled.Interruptor || !actionManager.executingActions)
+    // Instead of trying to schedule an action every frame, lets do it every second or something
+    IEnumerator Think()
+    {
+        while (true)
         {
+            // Constantly try to determine what we should be doing
+            Action actionToBeScheduled = decisionTree.Run();
             actionManager.ScheduleAction(actionToBeScheduled);
             actionManager.Execute();
+            yield return new WaitForSeconds(1.0f);
         }
     }
 }
@@ -44,8 +48,8 @@ public class DT_RangedMob : DecisionTree
 
         /// ACTIONS
         A_MoveTo MoveToPlayer = new (mob, FindTileNearPlayer);   // We want to move in slightly more than what our ability allows
-        A_Idle idle = new (mob);
         A_Attack castComet = new(mob, player, ((RangedMob)mob).ability);
+        A_Idle idle = new(mob);
 
 
         /// DECISIONS

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ActionManager : MonoBehaviour
 {
-    public Queue<Action> actionQueue = new Queue<Action>();
+    public Queue<ActionPacket> actionQueue = new Queue<ActionPacket>();
     public List<IEnumerator> currentActions = new List<IEnumerator>();
 
     public delegate void OnFinishDelegate(IEnumerator coroutine);
@@ -26,52 +26,69 @@ public class ActionManager : MonoBehaviour
         };
     }
 
+    /// <summary>
+    /// Schedule an action to be executed inside the action manager
+    /// </summary>
+    /// <param name="action"></param>
+    /// <param name="expiryLength"></param>
     public void ScheduleAction(Action action)
     {
         if (action != null)
-            actionQueue.Enqueue(action);
+            actionQueue.Enqueue(new ActionPacket(action));
     }
 
     public void Execute()
     {
-        bool addActions = true;
         bool currentActionsChanged = false;
         bool acceptASyncActions = false;
-        while (addActions && actionQueue.Count > 0)
-        {
-            // First we want to see if we have any interruptor actions
-            foreach (Action a in actionQueue)
-            {
-                if (a.Interruptor)
-                {
-                    // If we have an interruptor clear all our actions and do this one
-                    currentActions.Clear();
-                    currentActions.Add(a.Execute());
-                    List<Action> tempList = new List<Action>(actionQueue);
-                    tempList.Remove(a);
-                    actionQueue = new Queue<Action>(tempList);
-                    currentActionsChanged = true;
-                    acceptASyncActions = a.ASyncAction;
-                    break;
-                }
-            }
 
+        List<ActionPacket> tempList = new List<ActionPacket>(actionQueue);
+
+        // Remove any expired actions
+        foreach (ActionPacket a in actionQueue)
+        {
+            if (Time.time - a.time > 2.0f)
+            {
+                Debug.Log("Action " + a.action.ToString() + " Expired");
+                tempList.Remove(a);
+            }
+        }
+
+        actionQueue = new Queue<ActionPacket>(tempList);
+
+        // First we want to see if we have any interruptor actions
+        foreach (ActionPacket a in actionQueue)
+        {
+            if (a.action.Interruptor)
+            {
+                tempList = new List<ActionPacket>(actionQueue);
+                // If we have an interruptor clear all our actions and do this one
+                currentActions.Clear();
+                currentActions.Add(a.action.Execute());
+                tempList.Remove(a);
+                actionQueue = new Queue<ActionPacket>(tempList);
+                currentActionsChanged = true;
+                acceptASyncActions = a.action.ASyncAction;
+                break;
+            }
+        }
+
+        while (actionQueue.Count > 0)
+        {
             if (currentActions.Count > 0)
             {
-                Action action = actionQueue.Peek();
+                Action action = actionQueue.Peek().action;
                 if (action.ASyncAction && acceptASyncActions)
                 {
-                    currentActions.Add(actionQueue.Dequeue().Execute());
+                    currentActions.Add(actionQueue.Dequeue().action.Execute());
                     currentActionsChanged = true;
                 }
                 else
-                {
-                    addActions = false;
-                }
+                    break;
             }
             else
             {
-                Action action = actionQueue.Dequeue();
+                Action action = actionQueue.Dequeue().action;
                 currentActions.Add(action.Execute());
                 currentActionsChanged = true;
                 acceptASyncActions = action.ASyncAction;
@@ -107,5 +124,17 @@ public class ActionManager : MonoBehaviour
         OnFinishDelegate handler = onFinish;
         if (handler != null)
             handler(coroutine);
+    }
+}
+
+public struct ActionPacket
+{
+    public readonly Action action;
+    public readonly float time;
+
+    public ActionPacket(Action action)
+    {
+        this.action = action;
+        time = Time.time;
     }
 }

@@ -66,7 +66,6 @@ public class A_Idle : Action
 
     public override IEnumerator Execute()
     {
-        // Play some kind of idle animation?
         yield return new WaitForSeconds(1.0f);  // Wait for seconds so we dont spam whilst we debug
     }
 }
