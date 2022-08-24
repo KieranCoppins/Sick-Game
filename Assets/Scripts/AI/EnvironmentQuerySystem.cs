@@ -43,7 +43,8 @@ public class EnvironmentQuerySystem : ScriptableObject
             }
 
             // DEBUG - draw a line and the lighter the red the more ideal the tile was
-            Debug.DrawLine(new Vector3(tile.Key.x, tile.Key.y, 0.0f), new Vector3(tile.Key.x + 1.0f, tile.Key.y + 1.0f, 0), new Color(1.0f - (tile.Value / 8.0f), 0.0f, 0.0f), 20.0f);
+            if (caller.GetComponent<BaseMob>().DebugMode)
+                Debug.DrawLine(new Vector3(tile.Key.x, tile.Key.y, 0.0f), new Vector3(tile.Key.x + 1.0f, tile.Key.y + 1.0f, 0), new Color(1.0f - (tile.Value / 8.0f), 0.0f, 0.0f), 20.0f);
         }
 
         return new Vector2(bestTile.x, bestTile.y);
