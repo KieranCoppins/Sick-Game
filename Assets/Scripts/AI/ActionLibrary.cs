@@ -36,6 +36,12 @@ public class A_MoveTo : Action
         // Put our path in a queue for easier access
         Queue<Vector2> path = new Queue<Vector2>(p);
 
+        if (mob.DebugMode)
+        {
+            for (int i = 1; i < p.Length; i++)
+                Debug.DrawLine(p[i - 1], p[i], Color.red, 20.0f);
+        }
+
         // Run for as long as we have items in our queue
         while (path.Count > 0)
         {

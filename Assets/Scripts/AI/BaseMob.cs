@@ -71,7 +71,7 @@ public abstract class BaseMob : MonoBehaviour
     protected DecisionTree decisionTree;
 
     [Header("DEBUG VALUES")]
-    [SerializeField] bool DebugMode;
+    [SerializeField] public bool DebugMode;
 
     public string GetCurrentActionText()
     {
