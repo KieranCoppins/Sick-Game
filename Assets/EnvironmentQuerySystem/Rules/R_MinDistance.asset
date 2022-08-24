@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e13d976f20181d4594094908ffa6925, type: 3}
+  m_Name: R_MinDistance
+  m_EditorClassIdentifier: 
+  ignoreFailedTiles: 1
+  scoreModifier: 1
+  target: 0
+  distance: 10
+  op: 1
