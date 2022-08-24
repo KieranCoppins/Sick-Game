@@ -151,7 +151,6 @@ public abstract class BaseMob : MonoBehaviour
         upperHit = Physics2D.Raycast(upperStart, position - upperStart);
         if (DebugMode)
         {
-            Debug.Log(angle);
             Debug.DrawRay(lowerStart, position - lowerStart, Color.magenta, 0.5f);
             Debug.DrawRay(upperStart, position - upperStart, Color.magenta, 0.5f);
         }

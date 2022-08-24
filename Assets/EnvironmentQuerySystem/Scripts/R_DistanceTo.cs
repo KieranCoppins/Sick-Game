@@ -22,11 +22,11 @@ public class R_DistanceTo : Rule
 
         tilemapController = GameObject.FindGameObjectWithTag("Tilemap").GetComponent<TilemapController>();
 
-        Vector2Int target = GetTargetTile(caller);
+        Vector2 target = GetTargetPos(caller);
 
         foreach (var tile in tiles)
         {
-            float d = Vector2Int.Distance(tile.Key, target);
+            float d = Vector2.Distance(tile.Key, target);
             if (Decision(d))
                 newTiles[tile.Key] = tiles[tile.Key] + scoreModifier;
             else if (!ignoreFailedTiles)

@@ -10,7 +10,7 @@ public class R_ClosestTo : Rule
     {
         Dictionary<Vector2Int, float> newTiles = new Dictionary<Vector2Int, float>();
 
-        Vector2Int target = GetTargetTile(caller);
+        Vector2 target = GetTargetPos(caller);
         foreach (var tile in tiles)
         {
             newTiles[tile.Key] = tiles[tile.Key] + Vector2.Distance(target, tile.Key) * scoreModifier;

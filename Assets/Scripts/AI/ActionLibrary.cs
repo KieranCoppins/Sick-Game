@@ -39,7 +39,7 @@ public class A_MoveTo : Action
         if (mob.DebugMode)
         {
             for (int i = 1; i < p.Length; i++)
-                Debug.DrawLine(p[i - 1], p[i], Color.red, 20.0f);
+                Debug.DrawLine(p[i - 1], p[i], Color.red, 1.0f);
         }
 
         // Run for as long as we have items in our queue

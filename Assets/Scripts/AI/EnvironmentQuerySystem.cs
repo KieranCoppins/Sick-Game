@@ -67,26 +67,23 @@ public abstract class Rule : ScriptableObject
         tilemapController = GameObject.FindGameObjectWithTag("Tilemap").GetComponent<TilemapController>();
     }
 
-    public Vector2Int GetTargetTile(GameObject caller)
+    public Vector2 GetTargetPos(GameObject caller)
     {
 
-        Vector2Int tileCoord;
         Vector3 pos;
         switch (this.target)
         {
             case RuleTarget.PLAYER:
                 pos = GameObject.FindGameObjectWithTag("Player").transform.position;
-                tileCoord = new Vector2Int(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y));
                 break;
             case RuleTarget.CALLER:
                 pos = caller.transform.position;
-                tileCoord = new Vector2Int(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y));
                 break;
             default:
-                tileCoord = Vector2Int.zero;
+                pos = Vector2.zero;
                 break;
         }
-        return tileCoord;
+        return pos;
     }
 }
 
