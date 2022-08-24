@@ -29,7 +29,7 @@ public class RangedMob : BaseMob
             Action actionToBeScheduled = decisionTree.Run();
             actionManager.ScheduleAction(actionToBeScheduled);
             actionManager.Execute();
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }

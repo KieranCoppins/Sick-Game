@@ -65,11 +65,6 @@ public abstract class BaseMob : MonoBehaviour
 
     private int _health = 10;
 
-    Vector2 movementDirection;
-    Vector2 desiredPosition;
-    Vector2 targetPosition;
-
-    bool hasPath;
     bool stopMoving = false;
 
     protected ActionManager actionManager;
@@ -78,6 +73,28 @@ public abstract class BaseMob : MonoBehaviour
     [Header("DEBUG VALUES")]
     [SerializeField] bool DebugMode;
     [SerializeField] Transform debugTarget;
+
+    public string GetCurrentActionText()
+    {
+        string text = "";
+        foreach (IEnumerator action in actionManager.currentActions)
+        {
+            text += action.ToString() + ", ";
+        }
+
+        return text;
+    }
+
+    public string GetActionQueueText()
+    {
+        string text = "";
+        foreach (ActionPacket action in actionManager.actionQueue)
+        {
+            text += action.action.ToString() + " | " + (Time.time - action.time) + "\n";
+        }
+
+        return text;
+    }
 
     /// <summary>
     /// Takes dmg away from health and invokes the onTakeDamage event

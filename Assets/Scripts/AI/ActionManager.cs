@@ -12,6 +12,8 @@ public class ActionManager : MonoBehaviour
 
     public bool executingActions { get; protected set; }
 
+    bool waitForActions = false;
+
     private void Start()
     {
         executingActions = false;
@@ -22,7 +24,10 @@ public class ActionManager : MonoBehaviour
 
             // Check if we have any more actions in the current actions
             if (currentActions.Count == 0)
+            {
+                waitForActions = false;
                 executingActions = false;
+            }
         };
     }
 
@@ -55,6 +60,9 @@ public class ActionManager : MonoBehaviour
 
         actionQueue = new Queue<ActionPacket>(tempList);
 
+        if (waitForActions)
+            return;
+
         // First we want to see if we have any interruptor actions
         foreach (ActionPacket a in actionQueue)
         {
@@ -68,6 +76,7 @@ public class ActionManager : MonoBehaviour
                 actionQueue = new Queue<ActionPacket>(tempList);
                 currentActionsChanged = true;
                 acceptASyncActions = a.action.ASyncAction;
+                waitForActions = !a.action.Interruptable;
                 break;
             }
         }
@@ -81,6 +90,7 @@ public class ActionManager : MonoBehaviour
                 {
                     currentActions.Add(actionQueue.Dequeue().action.Execute());
                     currentActionsChanged = true;
+                    waitForActions = !action.Interruptable;
                 }
                 else
                     break;
@@ -91,6 +101,7 @@ public class ActionManager : MonoBehaviour
                 currentActions.Add(action.Execute());
                 currentActionsChanged = true;
                 acceptASyncActions = action.ASyncAction;
+                waitForActions = !action.Interruptable;
             }
         }
         if (currentActionsChanged)

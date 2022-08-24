@@ -49,11 +49,14 @@ public abstract class DecisionTreeNode
 
 public abstract class Action : DecisionTreeNode
 {
-    public Action(BaseMob mob, bool ASyncAction = false, bool Interruptor = false) : base(mob)
+    public Action(BaseMob mob, bool ASyncAction = false, bool Interruptor = false, bool Interruptable = true) : base(mob)
     {
         _asyncAction = ASyncAction;
         _interruptor = Interruptor;
+        _interruptable = Interruptable;
     }
+
+    // I dont like this list of bools - maybe move this to some kind of tagging system that uses bitwise logic to determine if they're active or not
 
     public bool ASyncAction
     {
@@ -70,8 +73,18 @@ public abstract class Action : DecisionTreeNode
         }
     }
 
+    public bool Interruptable
+    {
+        get
+        {
+            return _interruptable;
+        }
+    }
+
     protected readonly bool _asyncAction = false;
     protected readonly bool _interruptor = false;
+    protected readonly bool _interruptable = false;
+
     public override DecisionTreeNode MakeDecision()
     {
         return this;

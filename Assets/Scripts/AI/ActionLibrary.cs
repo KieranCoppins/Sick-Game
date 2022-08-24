@@ -75,7 +75,7 @@ public class A_Attack : Action
     Transform target;
     AIAbility ability;
 
-    public A_Attack(BaseMob mob, Transform target, AIAbility ability) : base(mob)
+    public A_Attack(BaseMob mob, Transform target, AIAbility ability) : base(mob, Interruptor: true, Interruptable: false)
     {
         this.target = target;
         this.ability = ability;
@@ -83,6 +83,9 @@ public class A_Attack : Action
 
     public override IEnumerator Execute()
     {
+        // Stop our velocity
+        mob.rb.velocity = Vector2.zero;
+
         // Wait for our casting time
         yield return new WaitForSeconds(ability.ability.CastTime);
 
