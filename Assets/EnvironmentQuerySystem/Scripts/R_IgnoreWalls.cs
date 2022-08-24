@@ -15,7 +15,8 @@ public class R_IgnoreWalls : Rule
         
         foreach (var tile in tiles)
         {
-            if (((Tile)tilemapController.GetTileFromGlobalPosition(new Vector3(tile.Key.x, tile.Key.y, 0.0f))).colliderType == Tile.ColliderType.None)
+            Tile tileObj = (Tile)tilemapController.GetTileFromGlobalPosition(new Vector3(tile.Key.x, tile.Key.y, 0.0f));
+            if (tileObj != null && tileObj.colliderType == Tile.ColliderType.None)
                 newTiles[tile.Key] = tiles[tile.Key];
         }
 
