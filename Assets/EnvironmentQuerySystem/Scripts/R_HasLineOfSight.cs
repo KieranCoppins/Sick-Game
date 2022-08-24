@@ -13,15 +13,21 @@ public class R_HasLineOfSight : Rule
 
         foreach (var tile in tiles)
         {
-            RaycastHit2D hit;
+
             Vector2 tilePos = new Vector3(tile.Key.x + 0.5f, tile.Key.y + 0.5f, 0);
-            Vector2 direction = t - tilePos;
-            Debug.DrawRay(tilePos, direction, Color.white, 1.0f);
-            hit = Physics2D.Raycast(tilePos, direction);
-            if (hit && target == RuleTarget.PLAYER ? hit.collider.CompareTag("Player") : hit.collider == caller.GetComponent<Collider2D>())
+            Vector3 direction = t - tilePos;
+
+            RaycastHit2D lowerHit;
+            RaycastHit2D upperHit;
+            float angle = Vector2.Angle(Vector2.up, (Vector2)direction);
+            angle = direction.x > 0 ? angle : -angle;
+            Vector2 lowerStart = tilePos + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(-0.49f, 0));
+            Vector2 upperStart = tilePos + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(0.49f, 0));
+            lowerHit = Physics2D.Raycast(lowerStart, t - lowerStart);
+            upperHit = Physics2D.Raycast(upperStart, t - upperStart);
+            if (lowerHit && upperHit && target == RuleTarget.PLAYER ? lowerHit.collider.CompareTag("Player") && upperHit.collider.CompareTag("Player") : lowerHit.collider == caller.GetComponent<Collider2D>() && upperHit.collider == caller.GetComponent<Collider2D>())
             {
                 newTiles[tile.Key] = tiles[tile.Key] + scoreModifier;
-                Debug.Log(hit.collider);
             }
             else if (!ignoreFailedTiles)
             {

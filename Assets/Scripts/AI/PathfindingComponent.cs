@@ -114,6 +114,9 @@ public class PathfindingComponent : MonoBehaviour
         // Remove our first node in the path as it maybe sending us backward
         path.RemoveAt(0);
 
+        if (path.Count == 0)
+            return null;
+
         // Lets smooth this path since our movement isn't locked to each tile
 
         // To store our Vector3 positions

@@ -65,8 +65,11 @@ public class DT_RangedMob : DecisionTree
         // We want to move to a distance slightly less than our abilities range so we're not *just* in range
         if (Vector2.Distance(mob.transform.position, playerPos) > ((RangedMob)mob).ability.Range - 1.0f || !mob.HasLineOfSight(playerPos))
         {
-            playerPrevPos = playerPos;
-            return true;
+            if (playerPrevPos == null || Vector2.Distance(playerPrevPos, playerPos) > 0.5f)
+            {
+                playerPrevPos = playerPos;
+                return true;
+            }
         }
         return false;
     }
