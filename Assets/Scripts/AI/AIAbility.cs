@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class AIAbility
 {
-    [HideInInspector] public bool canCast { get; private set; }
+    [HideInInspector] public bool canCast { get; set; }
     public AbilityBase ability;
 
     public AIAbility()
@@ -15,8 +15,6 @@ public class AIAbility
 
     public bool Cast(BaseMob castFrom, Transform castTo)
     {
-        if (!canCast)
-            return false;
         Vector2 direction = (castTo.position - castFrom.transform.position).normalized;
         ability.Cast(castFrom.transform.position, direction, castTo.transform);
         castFrom.StartCoroutine(Cooldown());

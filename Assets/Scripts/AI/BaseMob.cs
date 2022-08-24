@@ -72,7 +72,6 @@ public abstract class BaseMob : MonoBehaviour
 
     [Header("DEBUG VALUES")]
     [SerializeField] bool DebugMode;
-    [SerializeField] Transform debugTarget;
 
     public string GetCurrentActionText()
     {
@@ -140,15 +139,28 @@ public abstract class BaseMob : MonoBehaviour
     /// <returns>True if the mob has line of sight</returns>
     public bool HasLineOfSight(Vector2 position)
     {
-        RaycastHit2D hit;
         Vector3 direction = position - (Vector2)transform.position;
-        hit = Physics2D.Raycast(transform.position, direction);
+
+        RaycastHit2D lowerHit;
+        RaycastHit2D upperHit;
+        float angle = Vector2.Angle(Vector2.up, (Vector2)direction);
+        angle = direction.x > 0 ? angle : -angle;
+        Vector2 lowerStart = (Vector2)transform.position + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(-0.49f, 0));
+        Vector2 upperStart = (Vector2)transform.position + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(0.49f, 0));
+        lowerHit = Physics2D.Raycast(lowerStart, position - lowerStart);
+        upperHit = Physics2D.Raycast(upperStart, position - upperStart);
         if (DebugMode)
-            Debug.DrawRay(transform.position, direction);
-        if (hit.collider.CompareTag("Player"))
+        {
+            Debug.Log(angle);
+            Debug.DrawRay(lowerStart, position - lowerStart, Color.magenta, 0.5f);
+            Debug.DrawRay(upperStart, position - upperStart, Color.magenta, 0.5f);
+        }
+        if (lowerHit.collider.CompareTag("Player") && upperHit.collider.CompareTag("Player"))
             return true;
 
         return false;
+
+
     }
 
     public void StopMoving()

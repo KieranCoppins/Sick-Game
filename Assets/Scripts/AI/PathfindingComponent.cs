@@ -111,6 +111,9 @@ public class PathfindingComponent : MonoBehaviour
     //Smooth our path
     Vector2[] SmoothPath(List<Node> path, Vector2 endPosition)
     {
+        // Remove our first node in the path as it maybe sending us backward
+        path.RemoveAt(0);
+
         // Lets smooth this path since our movement isn't locked to each tile
 
         // To store our Vector3 positions

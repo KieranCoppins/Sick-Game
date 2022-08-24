@@ -40,20 +40,20 @@ public class Node
 
     public Vector2 lowerLeft()
     {
-        return new Vector2(x + 0.1f, y + 0.1f);
+        return new Vector2(x + 0.01f, y + 0.01f);
     }
 
     public Vector2 lowerRight()
     {
-        return new Vector2(x + 0.9f, y + 0.1f);
+        return new Vector2(x + 0.99f, y + 0.01f);
     }
     public Vector2 upperLeft()
     {
-        return new Vector2(x + 0.1f, y + 0.9f);
+        return new Vector2(x + 0.01f, y + 0.99f);
     }
 
     public Vector2 upperRight()
     {
-        return new Vector2(x + 0.9f, y + 0.9f);
+        return new Vector2(x + 0.99f, y + 0.99f);
     }
 }

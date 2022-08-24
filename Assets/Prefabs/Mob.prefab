@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 249532263326025967}
   - component: {fileID: 249532263326025966}
   - component: {fileID: 249532263326025965}
-  - component: {fileID: 249532263326025938}
   - component: {fileID: 249532263326025937}
   - component: {fileID: 4814864310996129434}
   - component: {fileID: 1053818214750552949}
   - component: {fileID: 5877684952458030284}
+  - component: {fileID: 8770602457837502147}
   m_Layer: 0
   m_Name: Mob
   m_TagString: Mob
@@ -100,36 +100,8 @@ MonoBehaviour:
   attackRate: 2
   PathfindingComponent: {fileID: 0}
   rb: {fileID: 0}
-  DebugMode: 0
-  debugTarget: {fileID: 0}
-  ability:
-    ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
---- !u!61 &249532263326025938
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249532263326025964}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.6}
-  m_EdgeRadius: 0
+  DebugMode: 1
+  ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
 --- !u!212 &249532263326025937
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -224,6 +196,22 @@ MonoBehaviour:
   name: {fileID: 5998079021062813532}
   currentAction: {fileID: 1391999465151517241}
   actionQueue: {fileID: 3360728261996388723}
+--- !u!58 &8770602457837502147
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249532263326025964}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.4
 --- !u!1 &1346357473782477518
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class RangedMob : BaseMob
 {
     [Header("Ranged Mob Attributes")]
-    [SerializeField] public AIAbility ability;
+    [SerializeField] public AbilityBase ability;
 
     protected override void Start()
     {
@@ -53,7 +53,7 @@ public class DT_RangedMob : DecisionTree
 
 
         /// DECISIONS
-        AttackDecision shouldCastComet = new(castComet, idle, mob, ((RangedMob)mob).ability);
+        AttackDecision shouldCastComet = new(castComet, idle, mob);
 
         // Initialise our root
         root = new Decision(MoveToPlayer, shouldCastComet, ShouldMoveToPlayer, mob);
@@ -62,9 +62,9 @@ public class DT_RangedMob : DecisionTree
     bool ShouldMoveToPlayer()
     {
         Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        if (Vector2.Distance(mob.transform.position, playerPos) > ((RangedMob)mob).ability.ability.Range || !mob.HasLineOfSight(playerPos))
+        if (Vector2.Distance(mob.transform.position, playerPos) > ((RangedMob)mob).ability.Range || !mob.HasLineOfSight(playerPos))
         {
-            if (playerPrevPos == null || Vector2.Distance(playerPrevPos, playerPos) > 2.0f)
+            if (playerPrevPos == null || Vector2.Distance(playerPrevPos, playerPos) > 0.5f)
             {
                 playerPrevPos = playerPos;
                 return true;
@@ -76,7 +76,7 @@ public class DT_RangedMob : DecisionTree
     Vector2 FindTileNearPlayer()
     {
         Transform target = GameObject.FindGameObjectWithTag("Player").transform;
-        float range = ((RangedMob)mob).ability.ability.Range;
+        float range = ((RangedMob)mob).ability.Range;
         Vector2 position = range == 0 ? target.position : GameObject.FindGameObjectWithTag("EQSManager").GetComponent<EQSManager>().RunEQSystem(EQSystem.RangedMobMoveToPlayer, range, target.position, mob.gameObject);
         return position;
     }

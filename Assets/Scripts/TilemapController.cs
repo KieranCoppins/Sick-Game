@@ -121,7 +121,7 @@ public class TilemapController : MonoBehaviour
     public Vector2Int[] GetTilesInRange(Vector3Int position, int range)
     {
         Vector3Int size = new Vector3Int(range, range, 1);
-        BoundsInt bounds = new BoundsInt(position / 2, size);
+        BoundsInt bounds = new BoundsInt(position - size / 2, size);
         List<Vector2Int> points = new List<Vector2Int>();
         foreach (Vector2Int point in bounds.allPositionsWithin)
         {

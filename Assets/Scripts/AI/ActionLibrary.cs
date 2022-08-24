@@ -72,26 +72,47 @@ public class A_Idle : Action
 
 public class A_Attack : Action
 {
-    Transform target;
-    AIAbility ability;
+    public bool CanCast
+    {
+        get { return _canCast; }
+    }
 
-    public A_Attack(BaseMob mob, Transform target, AIAbility ability) : base(mob, Interruptor: true, Interruptable: false)
+    public AbilityBase Ability
+    {
+        get { return _ability; }
+    }
+
+    readonly Transform target;
+    readonly AbilityBase _ability;
+
+    bool _canCast = true;
+
+    public A_Attack(BaseMob mob, Transform target, AbilityBase ability) : base(mob, Interruptor: true, Interruptable: false)
     {
         this.target = target;
-        this.ability = ability;
+        this._ability = ability;
     }
 
     public override IEnumerator Execute()
     {
         // Stop our velocity
         mob.rb.velocity = Vector2.zero;
+        _canCast = false;
 
         // Wait for our casting time
-        yield return new WaitForSeconds(ability.ability.CastTime);
+        yield return new WaitForSeconds(_ability.CastTime);
 
-        ability.Cast(mob, target);
+        Vector2 direction = (target.position - mob.transform.position).normalized;
+        _ability.Cast(mob.transform.position, direction, target);
+        mob.StartCoroutine(Cooldown());
 
         yield return null;
+    }
+
+    public IEnumerator Cooldown()
+    {
+        yield return new WaitForSeconds(_ability.AbilityCooldown);
+        _canCast = true;
     }
 }
 
@@ -99,10 +120,10 @@ public class A_Attack : Action
 /// DECISIONS
 public class AttackDecision : Decision<float>
 {
-    AIAbility ability;
-    public AttackDecision(DecisionTreeNode tNode, DecisionTreeNode fNode, BaseMob mob, AIAbility ability) : base(tNode, fNode, mob)
+    A_Attack action;
+    public AttackDecision(DecisionTreeNode tNode, DecisionTreeNode fNode, BaseMob mob) : base(tNode, fNode, mob)
     {
-        this.ability = ability;
+        this.action = (A_Attack)tNode;
     }
 
     public override float TestData()
@@ -113,7 +134,7 @@ public class AttackDecision : Decision<float>
     public override DecisionTreeNode GetBranch()
     {
         // If we are in range & have line of sight
-        if (TestData() <= ability.ability.Range && mob.HasLineOfSight(GameObject.FindGameObjectWithTag("Player").transform.position) && ability.canCast)
+        if (TestData() <= action.Ability.Range && mob.HasLineOfSight(GameObject.FindGameObjectWithTag("Player").transform.position) && action.CanCast)
         {
             return trueNode;
         }
