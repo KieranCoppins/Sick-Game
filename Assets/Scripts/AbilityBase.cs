@@ -6,6 +6,8 @@ using UnityEngine;
 public abstract class AbilityBase : ScriptableObject
 {
     [SerializeField] public float AbilityCooldown;
+    [SerializeField] public float CastTime;
+    [SerializeField] public float Range;
 
     /// <summary>
     /// Casts the ability

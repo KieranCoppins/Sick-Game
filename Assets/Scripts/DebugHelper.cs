@@ -15,3 +15,11 @@ public class DebugHelper : MonoBehaviour
             DebugCalls.Invoke();
     }
 }
+
+/// 
+///     BELOW CONTAINS HOW TO IMPLEMENT A DECISION TREE WITH DECISION, DECISION<T> & ACTION NODES.
+///     This decision tree system is very script heavy. It uses plenty of generic classes,
+///     but it doesn't allow for a non programatic workflow. However, it does mean that
+///     it is highly customisable where each action or decision can be unique and made just the way
+///     the programmer wants (An issue with Unreal Engine's Decision trees).
+///

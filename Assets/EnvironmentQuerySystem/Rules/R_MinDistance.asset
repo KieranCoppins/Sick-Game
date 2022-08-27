@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5391c113258b2c045a62f9e0d5caa87c, type: 3}
-  m_Name: Comet Wave
+  m_Script: {fileID: 11500000, guid: 6e13d976f20181d4594094908ffa6925, type: 3}
+  m_Name: R_MinDistance
   m_EditorClassIdentifier: 
-  AbilityCooldown: 5
-  CastTime: 0
-  Range: 5
-  projectile: {fileID: 4616442037673614323, guid: 363c4827b8395a6498aafa62abef3057, type: 3}
-  angle: 120
-  numberProjectiles: 5
-  damage: 0
+  ignoreFailedTiles: 1
+  scoreModifier: 1
+  target: 0
+  distance: 2
+  op: 1

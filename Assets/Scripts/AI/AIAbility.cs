@@ -5,17 +5,26 @@ using UnityEngine;
 [System.Serializable]
 public class AIAbility
 {
-    [HideInInspector] public float LastCast;
+    [HideInInspector] public bool canCast { get; set; }
     public AbilityBase ability;
 
-    public bool Cast(Transform castFrom, Transform castTo)
+    public AIAbility()
     {
-        if (LastCast < ability.AbilityCooldown)
-            return false;
+        canCast = true;
+    }
 
-        LastCast = 0;
-        Vector2 direction = (castTo.position - castFrom.position).normalized;
-        ability.Cast(castFrom.position, direction, castTo.transform);
+    public bool Cast(BaseMob castFrom, Transform castTo)
+    {
+        Vector2 direction = (castTo.position - castFrom.transform.position).normalized;
+        ability.Cast(castFrom.transform.position, direction, castTo.transform);
+        castFrom.StartCoroutine(Cooldown());
         return true;
+    }
+
+    public IEnumerator Cooldown()
+    {
+        canCast = false;
+        yield return new WaitForSeconds(ability.AbilityCooldown);
+        canCast = true;
     }
 }

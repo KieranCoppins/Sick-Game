@@ -5,29 +5,80 @@ using UnityEngine;
 public class RangedMob : BaseMob
 {
     [Header("Ranged Mob Attributes")]
-    [SerializeField] AbilityBase ability;
+    [SerializeField] public AbilityBase ability;
 
-    public override void Attack(GameObject target)
+    protected override void Start()
     {
-        // Check if we have line of sight to our target
-        if (HasLineOfSight(target.transform.position))
+        base.Start();
+        decisionTree = new DT_RangedMob(this);
+        decisionTree.Initialise();
+        StartCoroutine(Think());
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+    }
+
+    // Instead of trying to schedule an action every frame, lets do it every second or something
+    IEnumerator Think()
+    {
+        while (true)
         {
-            // If we do then we have to cancel movement and fire projectile
-            StopMoving();
-
-            if (attackTimer < attackRate)
-                return;
-
-            attackTimer = 0;
-
-            Vector3 direction = (target.transform.position - transform.position).normalized;
-
-            ability.Cast(transform.position, direction, target.transform);
-
+            // Constantly try to determine what we should be doing
+            Action actionToBeScheduled = decisionTree.Run();
+            actionManager.ScheduleAction(actionToBeScheduled);
+            actionManager.Execute();
+            yield return new WaitForSeconds(0.1f);
         }
-        else
+    }
+}
+
+public class DT_RangedMob : DecisionTree
+{
+    Vector2 playerPrevPos;
+    public DT_RangedMob(RangedMob mob) : base(mob)
+    {
+
+    }
+    public override void Initialise()
+    {
+        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+        // Initialise all our Nodes
+
+        /// ACTIONS
+        A_MoveTo MoveToPlayer = new (mob, FindTileNearPlayer);   // We want to move in slightly more than what our ability allows
+        A_Attack castComet = new(mob, player, ((RangedMob)mob).ability);
+        A_Idle idle = new(mob);
+
+
+        /// DECISIONS
+        AttackDecision shouldCastComet = new(castComet, idle, mob);
+
+        // Initialise our root
+        root = new Decision(MoveToPlayer, shouldCastComet, ShouldMoveToPlayer, mob);
+    }
+
+    bool ShouldMoveToPlayer()
+    {
+        Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        // We want to move to a distance slightly less than our abilities range so we're not *just* in range
+        if (Vector2.Distance(mob.transform.position, playerPos) > ((RangedMob)mob).ability.Range - 1.0f || !mob.HasLineOfSight(playerPos))
         {
-            ResumeMoving();
+            if (playerPrevPos == null || Vector2.Distance(playerPrevPos, playerPos) > 0.5f)
+            {
+                playerPrevPos = playerPos;
+                return true;
+            }
         }
+        return false;
+    }
+
+    Vector2 FindTileNearPlayer()
+    {
+        Transform target = GameObject.FindGameObjectWithTag("Player").transform;
+        float range = ((RangedMob)mob).ability.Range;
+        Vector2 position = range == 0 ? target.position : GameObject.FindGameObjectWithTag("EQSManager").GetComponent<EQSManager>().RunEQSystem(EQSystem.RangedMobMoveToPlayer, range, target.position, mob.gameObject);
+        return position;
     }
 }

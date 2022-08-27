@@ -31,7 +31,7 @@ public class PathfindingComponent : MonoBehaviour
         return waypoints.ToArray();
     }
 
-    Vector2[] ReconstructPath(Dictionary<Node, Node> cameFrom, Node current, Vector3 endPosition)
+    Vector2[] ReconstructPath(Dictionary<Node, Node> cameFrom, Node current, Vector3 start, Vector3 end)
     {
         List<Node> path = new List<Node>();
         path.Add(current);
@@ -42,12 +42,17 @@ public class PathfindingComponent : MonoBehaviour
             path.Insert(0, current);
         }
 
-        return SmoothPath(path, endPosition);
+        return SmoothPath(path, start, end);
     }
 
     // Calculates a path using A Star Algorithm from start to end and returns a list of points
     public Vector2[] CalculateAStarPath(Vector3 start, Vector3 end)
     {
+        if (tilemapController == null)
+        {
+            Debug.LogError("Can't make a path with no tilemap controller");
+            return null;
+        }
         // Get our start and end nodes
         Node startNode = tilemapController.GetNodeFromGlobalPosition(start);
         Node endNode = tilemapController.GetNodeFromGlobalPosition(end);
@@ -80,7 +85,7 @@ public class PathfindingComponent : MonoBehaviour
             }
 
             if (curr == endNode)
-                return ReconstructPath(cameFrom, curr, end);
+                return ReconstructPath(cameFrom, curr, start, end);
 
             open.Remove(curr);
 
@@ -100,11 +105,11 @@ public class PathfindingComponent : MonoBehaviour
                 }
             }
         }
-        return ReconstructPath(cameFrom, curr, end);
+        return ReconstructPath(cameFrom, curr, start, end);
     }
 
     //Smooth our path
-    Vector2[] SmoothPath(List<Node> path, Vector2 endPosition)
+    Vector2[] SmoothPath(List<Node> path, Vector2 start, Vector2 end)
     {
         // Lets smooth this path since our movement isn't locked to each tile
 
@@ -116,9 +121,6 @@ public class PathfindingComponent : MonoBehaviour
 
         // Our previous node is null
         Node prevN = null;
-
-        // Add our current node to our waypoints list
-        waypoints.Add(currentNode);
 
         // Iterate through each node in the current path
         foreach (Node n in path)
@@ -152,8 +154,9 @@ public class PathfindingComponent : MonoBehaviour
             RaycastHit2D hitLower = Physics2D.Raycast(castLower, direction.normalized, distance);
             RaycastHit2D hitUpper = Physics2D.Raycast(castUpper, direction.normalized, distance);
 
-            // If the raycast hit something (we cannot move in a straight line to the waypoint) and our previous N isnt null
-            if ((hitLower || hitUpper) && prevN != null)
+            // If the raycast hit the tilemap (we cannot move in a straight line to the waypoint) and our previous N isnt null
+            // We check hit.collider to see if we have hit before trying to call compare tag - if we didnt hit we cant still call it and we'll get a null reference exception - this prevents that
+            if ((hitLower.collider && hitLower.collider.CompareTag("Tilemap")) || (hitUpper.collider && hitUpper.collider.CompareTag("Tilemap")) && prevN != null)
             {
                 // Add the previous point (as it didnt get a hit with the raycast
                 waypoints.Add(prevN);
@@ -172,7 +175,7 @@ public class PathfindingComponent : MonoBehaviour
         }
 
         // Add the last position to the end of the waypoints so we reach the desired location
-        waypoints.Add(endPosition);
+        waypoints.Add(end);
 
         // Convert our list to an array and return it
         return waypoints.ToArray();

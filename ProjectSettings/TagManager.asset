@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Mob
+  - Tilemap
+  - EQSManager
   layers:
   - Default
   - TransparentFX
