@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ignoreFailedTiles: 0
   scoreModifier: 1
-  target: 0
+  target: 1

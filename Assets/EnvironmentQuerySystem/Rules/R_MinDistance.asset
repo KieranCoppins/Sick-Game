@@ -15,5 +15,5 @@ MonoBehaviour:
   ignoreFailedTiles: 1
   scoreModifier: 1
   target: 0
-  distance: 10
+  distance: 2
   op: 1

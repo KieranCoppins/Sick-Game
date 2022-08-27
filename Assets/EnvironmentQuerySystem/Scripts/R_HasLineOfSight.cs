@@ -21,8 +21,8 @@ public class R_HasLineOfSight : Rule
             RaycastHit2D upperHit;
             float angle = Vector2.Angle(Vector2.up, (Vector2)direction);
             angle = direction.x > 0 ? angle : -angle;
-            Vector2 lowerStart = tilePos + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(-0.49f, 0));
-            Vector2 upperStart = tilePos + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(0.49f, 0));
+            Vector2 lowerStart = tilePos + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(-0.42f, 0));
+            Vector2 upperStart = tilePos + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(0.42f, 0));
             lowerHit = Physics2D.Raycast(lowerStart, t - lowerStart);
             upperHit = Physics2D.Raycast(upperStart, t - upperStart);
             if (lowerHit && upperHit && target == RuleTarget.PLAYER ? lowerHit.collider.CompareTag("Player") && upperHit.collider.CompareTag("Player") : lowerHit.collider == caller.GetComponent<Collider2D>() && upperHit.collider == caller.GetComponent<Collider2D>())
