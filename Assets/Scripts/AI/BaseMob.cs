@@ -145,8 +145,8 @@ public abstract class BaseMob : MonoBehaviour
         RaycastHit2D upperHit;
         float angle = Vector2.Angle(Vector2.up, (Vector2)direction);
         angle = direction.x > 0 ? angle : -angle;
-        Vector2 lowerStart = (Vector2)transform.position + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(-0.49f, 0));
-        Vector2 upperStart = (Vector2)transform.position + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(0.49f, 0));
+        Vector2 lowerStart = (Vector2)transform.position + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(-0.42f, 0));
+        Vector2 upperStart = (Vector2)transform.position + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(0.42f, 0));
         lowerHit = Physics2D.Raycast(lowerStart, position - lowerStart);
         upperHit = Physics2D.Raycast(upperStart, position - upperStart);
         if (DebugMode)
