@@ -235,7 +235,7 @@ MonoBehaviour:
   attackRate: 2
   PathfindingComponent: {fileID: 0}
   rb: {fileID: 0}
-  DebugMode: 1
+  DebugMode: 0
   ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
 --- !u!212 &249532263326025937
 SpriteRenderer:
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae38e2151c2412a43bbc00ce75496647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugCanvas: {fileID: 0}
+  debugCanvas: {fileID: 249564351837532400}
   name: {fileID: 870002575}
   currentAction: {fileID: 1391999465151517241}
   actionQueue: {fileID: 3360728261996388723}
