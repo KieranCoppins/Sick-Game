@@ -49,7 +49,7 @@ public class A_MoveTo : Action
             Vector2 pos = path.Dequeue();
 
             // Keep moving towards the position until we're at least 0.1 units close to it
-            while (Vector2.Distance(mob.transform.position, pos) > 0.2f)
+            while (Vector2.Distance(mob.transform.position, pos) > 0.1f)
             {
                 Vector2 dir = pos - (Vector2)mob.transform.position;
                 mob.rb.velocity = dir.normalized * mob.MovementSpeed;
