@@ -35,9 +35,15 @@ public class ActionManager : MonoBehaviour
     /// Schedule an action to be executed inside the action manager
     /// </summary>
     /// <param name="action"></param>
-    /// <param name="expiryLength"></param>
     public void ScheduleAction(Action action)
     {
+        // We need to check if our action is already in our queue
+        foreach (ActionPacket a in actionQueue)
+        {
+            if (a.action == action)
+                return;
+        }
+
         if (action != null)
             actionQueue.Enqueue(new ActionPacket(action));
     }
