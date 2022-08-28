@@ -73,6 +73,8 @@ public abstract class BaseMob : MonoBehaviour
     [Header("DEBUG VALUES")]
     [SerializeField] public bool DebugMode;
 
+    protected List<Vector2> movementDirections;
+
     public string GetCurrentActionText()
     {
         string text = "";
@@ -125,6 +127,17 @@ public abstract class BaseMob : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
         actionManager = GetComponent<ActionManager>();
+
+        // Set up movement directions
+        movementDirections = new List<Vector2>();
+        float angle = 18f;
+        Vector2 dir = Vector2.up;
+        for (int i = 0; i <= 360 / angle; i++)
+        {
+            movementDirections.Add((Quaternion.AngleAxis(angle * i, Vector3.back) * dir).normalized);
+        }
+
+        //GetMovementVector(new Vector2(5, 5));
     }
 
     // Implement basic movement following the path as default movement
@@ -171,4 +184,62 @@ public abstract class BaseMob : MonoBehaviour
     {
         stopMoving = false;
     }
+
+    public Vector2 GetMovementVector(Vector2 target, DirectionWeightFunction moveTowards, DirectionWeightFunction avoidTarget)
+    {
+        Vector2 targetDir = (target - (Vector2)transform.position).normalized;
+        DirectionWeightFunction weightFunction = moveTowards;
+        // We should check for all obstructions around us first
+        
+        for (int i = 0; i < movementDirections.Count; i++)
+        {
+            RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position, movementDirections[i], 1f);
+            Debug.DrawRay((Vector2)transform.position, movementDirections[i], Color.cyan);
+            if (hit && !hit.collider.CompareTag("Tilemap"))
+            {
+                Debug.DrawRay((Vector2)transform.position, movementDirections[i], Color.red);
+                targetDir = movementDirections[i] * -1;
+                weightFunction = avoidTarget;
+                break;
+            }
+        }
+        List<KeyValuePair<Vector2, float>> directionWeights = new List<KeyValuePair<Vector2, float>>();
+
+        // Calculate dot products
+        foreach (Vector2 dir in movementDirections)
+        {
+            KeyValuePair<Vector2, float> pair = new KeyValuePair<Vector2, float>(dir, weightFunction(targetDir, dir));
+            directionWeights.Add(pair);
+        }
+
+        // Sort our weights so the first direction has the best score
+        directionWeights.Sort(new KeyValuePairComparer());
+
+        foreach (KeyValuePair<Vector2, float> pair in directionWeights)
+        {
+            RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position, pair.Key, 1.5f);
+            if (!hit) return pair.Key;
+
+            Debug.DrawRay((Vector2)transform.position, pair.Key, Color.magenta);
+        }
+
+        return Vector2.zero;
+    }
 }
+
+// A custom comparer class that ensures the largest value of the key value pair appears first in the array
+public class KeyValuePairComparer : IComparer<KeyValuePair<Vector2, float>>
+{
+    int IComparer<KeyValuePair<Vector2, float>>.Compare(KeyValuePair<Vector2, float> x, KeyValuePair<Vector2, float> y)
+    {
+        if (x.Value > y.Value)
+            return -1;
+        else if (x.Value == y.Value)
+            return 0;
+        else
+            return 1;
+    }
+}
+
+
+public delegate float DirectionWeightFunction(Vector2 targetDir, Vector2 dir);

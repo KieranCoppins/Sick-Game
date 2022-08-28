@@ -14,6 +14,8 @@ public class A_MoveTo : Action
 
     GetDestination destinationDelegate;
 
+    Vector2 desiredPosition;
+
     // Make this action take a target and a range. Also we always want our move to to be an interruptor
     public A_MoveTo(BaseMob mob, GetDestination destinationDelegate) : base(mob, Interruptor: true)
     {
@@ -25,6 +27,7 @@ public class A_MoveTo : Action
     {
         // Call our get destination delegate to get the tile we want to pathfind to
         Vector2 position = destinationDelegate();
+
 
         // Calculate a path to the position
         Vector2[] p = pathfinding.CalculateAStarPath(mob.transform.position, position);
@@ -46,12 +49,19 @@ public class A_MoveTo : Action
         while (path.Count > 0)
         {
             // Get our next position to move to from the queue
-            Vector2 pos = path.Dequeue();
+            desiredPosition = path.Dequeue();
 
             // Keep moving towards the position until we're at least 0.1 units close to it
-            while (Vector2.Distance(mob.transform.position, pos) > 0.1f)
+            while (Vector2.Distance(mob.transform.position, desiredPosition) > 0.1f)
             {
-                Vector2 dir = pos - (Vector2)mob.transform.position;
+                // Add velocity of move to target
+                Vector2 dir = mob.GetMovementVector(desiredPosition, MoveTowards, AvoidTarget);
+                if(mob.DebugMode || true)
+                {
+                    Debug.DrawRay((Vector2)mob.transform.position + (dir * 0.45f), dir);
+                    Debug.DrawRay((Vector2)mob.transform.position, desiredPosition - (Vector2)mob.transform.position, Color.blue);
+
+                }
                 mob.rb.velocity = dir.normalized * mob.MovementSpeed;
                 yield return null;
             }
@@ -61,10 +71,22 @@ public class A_MoveTo : Action
         mob.rb.velocity = Vector2.zero;
         yield return null;
     }
+
+    float MoveTowards(Vector2 targetDir, Vector2 dir)
+    {
+        return Vector2.Dot(targetDir, dir) + Vector2.Dot(mob.rb.velocity.normalized, dir);
+    }
+
+    float AvoidTarget(Vector2 targetDir, Vector2 dir)
+    {
+        return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - 0.65f) + Vector2.Dot(mob.rb.velocity.normalized, dir); ;
+    }
 }
 
 public class A_Idle : Action
 {
+    Vector2 desiredPosition;
+
     public A_Idle(BaseMob mob) : base(mob)
     {
         
@@ -72,7 +94,31 @@ public class A_Idle : Action
 
     public override IEnumerator Execute()
     {
-        yield return new WaitForSeconds(1.0f);  // Wait for seconds so we dont spam whilst we debug
+        while (true)
+        {
+            desiredPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+            Vector2 dir = mob.GetMovementVector(desiredPosition, MoveTowards, AvoidTarget);
+            if (mob.DebugMode || true)
+            {
+                Debug.DrawRay((Vector2)mob.transform.position + (dir * 0.45f), dir);
+                Debug.DrawRay((Vector2)mob.transform.position, desiredPosition - (Vector2)mob.transform.position, Color.blue);
+
+            }
+            mob.rb.velocity = dir.normalized * mob.MovementSpeed;
+            yield return null;
+        }
+    }
+
+    float MoveTowards(Vector2 targetDir, Vector2 dir)
+    {
+        if (Vector2.Distance(desiredPosition, mob.transform.position) < 5.0f)
+            return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir)) + Vector2.Dot(mob.rb.velocity.normalized, dir);
+        return Vector2.Dot(targetDir, dir) + Vector2.Dot(mob.rb.velocity.normalized, dir);
+    }
+
+    float AvoidTarget(Vector2 targetDir, Vector2 dir)
+    {
+        return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - 0.65f) + Vector2.Dot(mob.rb.velocity.normalized, dir); ;
     }
 }
 
