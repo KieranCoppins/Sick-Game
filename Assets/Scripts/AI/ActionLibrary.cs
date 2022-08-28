@@ -52,11 +52,11 @@ public class A_MoveTo : Action
             desiredPosition = path.Dequeue();
 
             // Keep moving towards the position until we're at least 0.1 units close to it
-            while (Vector2.Distance(mob.transform.position, desiredPosition) > 0.1f)
+            while (Vector2.Distance(mob.transform.position, desiredPosition) > 0.5f)
             {
                 // Add velocity of move to target
                 Vector2 dir = mob.GetMovementVector(desiredPosition, MoveTowards, AvoidTarget);
-                if(mob.DebugMode || true)
+                if(mob.DebugMode)
                 {
                     Debug.DrawRay((Vector2)mob.transform.position + (dir * 0.45f), dir);
                     Debug.DrawRay((Vector2)mob.transform.position, desiredPosition - (Vector2)mob.transform.position, Color.blue);
@@ -83,26 +83,39 @@ public class A_MoveTo : Action
     }
 }
 
-public class A_Idle : Action
+public class A_StrafeAround : Action
 {
+    readonly Transform target;
+    readonly float distance;
+    readonly float spiralModifier;
+
     Vector2 desiredPosition;
 
-    public A_Idle(BaseMob mob) : base(mob)
+    /// <summary>
+    /// Make the mob strafe around the target at distance. Spiral modifier should be between 0 and 1 inclusive,
+    /// larger the number, the more the mob will move towards the target as they spiral
+    /// </summary>
+    /// <param name="mob"></param>
+    /// <param name="target"></param>
+    /// <param name="distance"></param>
+    /// <param name="spiralModifier"></param>
+    public A_StrafeAround(BaseMob mob, Transform target, float distance, float spiralModifier = 0) : base(mob)
     {
-        
+        this.target = target;
+        this.distance = distance;
+        this.spiralModifier = Mathf.Clamp(spiralModifier, 0f, 1f);
     }
 
     public override IEnumerator Execute()
     {
         while (true)
         {
-            desiredPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+            desiredPosition = target.position;
             Vector2 dir = mob.GetMovementVector(desiredPosition, MoveTowards, AvoidTarget);
-            if (mob.DebugMode || true)
+            if (mob.DebugMode)
             {
                 Debug.DrawRay((Vector2)mob.transform.position + (dir * 0.45f), dir);
                 Debug.DrawRay((Vector2)mob.transform.position, desiredPosition - (Vector2)mob.transform.position, Color.blue);
-
             }
             mob.rb.velocity = dir.normalized * mob.MovementSpeed;
             yield return null;
@@ -111,8 +124,8 @@ public class A_Idle : Action
 
     float MoveTowards(Vector2 targetDir, Vector2 dir)
     {
-        if (Vector2.Distance(desiredPosition, mob.transform.position) < 5.0f)
-            return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir)) + Vector2.Dot(mob.rb.velocity.normalized, dir);
+        if (Vector2.Distance(desiredPosition, mob.transform.position) < distance)
+            return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - spiralModifier) + Vector2.Dot(mob.rb.velocity.normalized, dir);
         return Vector2.Dot(targetDir, dir) + Vector2.Dot(mob.rb.velocity.normalized, dir);
     }
 

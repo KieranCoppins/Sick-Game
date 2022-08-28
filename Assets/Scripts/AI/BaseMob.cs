@@ -164,8 +164,8 @@ public abstract class BaseMob : MonoBehaviour
         upperHit = Physics2D.Raycast(upperStart, position - upperStart);
         if (DebugMode)
         {
-            Debug.DrawRay(lowerStart, position - lowerStart, Color.magenta, 0.5f);
-            Debug.DrawRay(upperStart, position - upperStart, Color.magenta, 0.5f);
+            Debug.DrawRay(lowerStart, position - lowerStart, Color.magenta);
+            Debug.DrawRay(upperStart, position - upperStart, Color.magenta);
         }
         if (lowerHit.collider.CompareTag("Player") && upperHit.collider.CompareTag("Player"))
             return true;
