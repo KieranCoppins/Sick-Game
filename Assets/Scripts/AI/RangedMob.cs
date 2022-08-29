@@ -33,23 +33,26 @@ public class RangedMob : BaseMob
         }
     }
 
-    protected override float MoveTowards(Vector2 targetDir, Vector2 dir, Vector2 target)
+    protected override float MoveAround(Vector2 targetDir, Vector2 dir, Vector2 target, bool moveStraight)
     {
         float dist = Vector2.Distance(target, transform.position);
 
+        if (moveStraight)
+            return Vector2.Dot(targetDir, dir) + Vector2.Dot(rb.velocity.normalized, dir);
+
         // Move away from the target if too close
-        if (dist < 5.0f)
-            return ((Vector2.Dot(targetDir, dir) * -1) - 0.4f) + Vector2.Dot(rb.velocity.normalized, dir);
+        if (dist < 2.0f)
+            return ((Vector2.Dot(targetDir, dir) * -1) - 0.4f) + Vector2.Dot(rb.velocity.normalized, dir);  // We add the dot product of our current velocity so that we try and favor where we are currently going - prevents random switches in direction
 
         // Circle the target if in range
-        else if (dist < ability.Range - 2.0f)
+        else if (dist < ability.Range - 1.0f)
             return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir)) + Vector2.Dot(rb.velocity.normalized, dir);
 
         // Otherwise move towards the target
         return Vector2.Dot(targetDir, dir) + Vector2.Dot(rb.velocity.normalized, dir);
     }
 
-    protected override float AvoidTarget(Vector2 targetDir, Vector2 dir, Vector2 target)
+    protected override float AvoidObsticle(Vector2 targetDir, Vector2 dir)
     {
         return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - 0.65f) + Vector2.Dot(rb.velocity.normalized, dir);
     }
@@ -68,9 +71,9 @@ public class DT_RangedMob : DecisionTree
         // Initialise all our Nodes
 
         /// ACTIONS
-        A_MoveTo MoveToPlayer = new (mob, FindTileNearPlayer);   // We want to move in slightly more than what our ability allows
+        A_PathTo MoveToPlayer = new (mob, FindTileNearPlayer);   // We want to move in slightly more than what our ability allows
         A_Attack castComet = new(mob, player, ((RangedMob)mob).ability);
-        A_StrafeAround strafeAroundPlayer = new(mob, player, ((RangedMob)mob).ability.Range - 2.0f);
+        A_StrafeAround strafeAroundPlayer = new(mob, player);
 
 
         /// DECISIONS

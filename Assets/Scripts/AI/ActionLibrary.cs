@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 /// <summary>
-/// A generic move to action node
+/// A generic path to action node
 /// </summary>
-public class A_MoveTo : Action
+public class A_PathTo : Action
 {
     readonly PathfindingComponent pathfinding;
 
@@ -16,8 +16,8 @@ public class A_MoveTo : Action
 
     Vector2 desiredPosition;
 
-    // Make this action take a target and a range. Also we always want our move to to be an interruptor
-    public A_MoveTo(BaseMob mob, GetDestination destinationDelegate) : base(mob, Interruptor: true)
+    // Make this action take a target and a range. Also we always want our path to to be an interruptor
+    public A_PathTo(BaseMob mob, GetDestination destinationDelegate) : base(mob, Interruptor: true)
     {
         pathfinding = mob.PathfindingComponent;
         this.destinationDelegate = destinationDelegate;
@@ -55,11 +55,11 @@ public class A_MoveTo : Action
             while (Vector2.Distance(mob.transform.position, desiredPosition) > 0.5f)
             {
                 // Add velocity of move to target
-                Vector2 dir = (desiredPosition - (Vector2)mob.transform.position).normalized;
-                if(mob.DebugMode)
+                Vector2 dir = mob.GetMovementVector(desiredPosition, true);
+                if (mob.DebugMode)
                 {
                     Debug.DrawRay((Vector2)mob.transform.position + (dir * 0.45f), dir);
-                    Debug.DrawRay((Vector2)mob.transform.position, desiredPosition - (Vector2)mob.transform.position, Color.blue);
+                    Debug.DrawRay((Vector2)mob.transform.position, dir, Color.blue);
 
                 }
                 mob.rb.velocity = dir.normalized * mob.MovementSpeed;
@@ -73,27 +73,18 @@ public class A_MoveTo : Action
     }
 }
 
+/// <summary>
+/// Uses mob's MoveAround and AvoidTarget functions to move around the given target
+/// </summary>
 public class A_StrafeAround : Action
 {
     readonly Transform target;
-    readonly float distance;
-    readonly float spiralModifier;
 
     Vector2 desiredPosition;
 
-    /// <summary>
-    /// Make the mob strafe around the target at distance. Spiral modifier should be between 0 and 1 inclusive,
-    /// larger the number, the more the mob will move towards the target as they spiral
-    /// </summary>
-    /// <param name="mob"></param>
-    /// <param name="target"></param>
-    /// <param name="distance"></param>
-    /// <param name="spiralModifier"></param>
-    public A_StrafeAround(BaseMob mob, Transform target, float distance, float spiralModifier = 0) : base(mob)
+    public A_StrafeAround(BaseMob mob, Transform target) : base(mob)
     {
         this.target = target;
-        this.distance = distance;
-        this.spiralModifier = Mathf.Clamp(spiralModifier, 0f, 1f);
     }
 
     public override IEnumerator Execute()
@@ -112,7 +103,9 @@ public class A_StrafeAround : Action
         }
     }
 }
-
+/// <summary>
+/// A generic attack action that casts the mob's ability when it can and initiates a cool down
+/// </summary>
 public class A_Attack : Action
 {
     public bool CanCast
@@ -152,7 +145,7 @@ public class A_Attack : Action
         yield return null;
     }
 
-    public IEnumerator Cooldown()
+    IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(_ability.AbilityCooldown);
         _canCast = true;
@@ -161,6 +154,7 @@ public class A_Attack : Action
 
 
 /// DECISIONS
+
 public class AttackDecision : Decision<float>
 {
     A_Attack action;

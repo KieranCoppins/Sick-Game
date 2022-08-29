@@ -185,7 +185,7 @@ public abstract class BaseMob : MonoBehaviour
         stopMoving = false;
     }
 
-    public Vector2 GetMovementVector(Vector2 target)
+    public Vector2 GetMovementVector(Vector2 target, bool moveStraight = false)
     {
         Vector2 targetDir = (target - (Vector2)transform.position).normalized;
         bool avoid = false;
@@ -195,7 +195,7 @@ public abstract class BaseMob : MonoBehaviour
         {
             RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position, movementDirections[i], 1f);
             Debug.DrawRay((Vector2)transform.position, movementDirections[i], Color.cyan);
-            if (hit && !hit.collider.CompareTag("Tilemap"))
+            if (hit)
             {
                 Debug.DrawRay((Vector2)transform.position, movementDirections[i], Color.red);
                 targetDir = movementDirections[i] * -1;
@@ -208,7 +208,7 @@ public abstract class BaseMob : MonoBehaviour
         // Calculate dot products
         foreach (Vector2 dir in movementDirections)
         {
-            KeyValuePair<Vector2, float> pair = new KeyValuePair<Vector2, float>(dir, avoid ? AvoidTarget(targetDir, dir, target) : MoveTowards(targetDir, dir, target));
+            KeyValuePair<Vector2, float> pair = new KeyValuePair<Vector2, float>(dir, avoid ? AvoidObsticle(targetDir, dir) : MoveAround(targetDir, dir, target, moveStraight));
             directionWeights.Add(pair);
         }
 
@@ -226,9 +226,24 @@ public abstract class BaseMob : MonoBehaviour
 
         return Vector2.zero;
     }
-    protected abstract float MoveTowards(Vector2 targetDir, Vector2 dir, Vector2 target);
 
-    protected abstract float AvoidTarget(Vector2 targetDir, Vector2 dir, Vector2 target);
+    /// <summary>
+    /// Is called when moving around the target
+    /// </summary>
+    /// <param name="targetDir"></param>
+    /// <param name="dir"></param>
+    /// <param name="target"></param>
+    /// <returns></returns>
+    protected abstract float MoveAround(Vector2 targetDir, Vector2 dir, Vector2 target, bool moveStraight);
+
+    /// <summary>
+    /// Is called when we are next to an obsticle and want to avoid it
+    /// </summary>
+    /// <param name="targetDir"></param>
+    /// <param name="dir"></param>
+    /// <param name="target"></param>
+    /// <returns></returns>
+    protected abstract float AvoidObsticle(Vector2 targetDir, Vector2 dir);
 }
 
 // A custom comparer class that ensures the largest value of the key value pair appears first in the array
