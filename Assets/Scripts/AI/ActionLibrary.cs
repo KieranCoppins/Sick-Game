@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 /// <summary>
-/// A generic move to action node
+/// A generic path to action node
 /// </summary>
-public class A_MoveTo : Action
+public class A_PathTo : Action
 {
     readonly PathfindingComponent pathfinding;
 
@@ -14,8 +14,10 @@ public class A_MoveTo : Action
 
     GetDestination destinationDelegate;
 
-    // Make this action take a target and a range. Also we always want our move to to be an interruptor
-    public A_MoveTo(BaseMob mob, GetDestination destinationDelegate) : base(mob, Interruptor: true)
+    Vector2 desiredPosition;
+
+    // Make this action take a target and a range. Also we always want our path to to be an interruptor
+    public A_PathTo(BaseMob mob, GetDestination destinationDelegate) : base(mob, Interruptor: true)
     {
         pathfinding = mob.PathfindingComponent;
         this.destinationDelegate = destinationDelegate;
@@ -25,6 +27,7 @@ public class A_MoveTo : Action
     {
         // Call our get destination delegate to get the tile we want to pathfind to
         Vector2 position = destinationDelegate();
+
 
         // Calculate a path to the position
         Vector2[] p = pathfinding.CalculateAStarPath(mob.transform.position, position);
@@ -46,12 +49,19 @@ public class A_MoveTo : Action
         while (path.Count > 0)
         {
             // Get our next position to move to from the queue
-            Vector2 pos = path.Dequeue();
+            desiredPosition = path.Dequeue();
 
             // Keep moving towards the position until we're at least 0.1 units close to it
-            while (Vector2.Distance(mob.transform.position, pos) > 0.1f)
+            while (Vector2.Distance(mob.transform.position, desiredPosition) > 0.5f)
             {
-                Vector2 dir = pos - (Vector2)mob.transform.position;
+                // Add velocity of move to target
+                Vector2 dir = mob.GetMovementVector(desiredPosition, true);
+                if (mob.DebugMode)
+                {
+                    Debug.DrawRay((Vector2)mob.transform.position + (dir * 0.45f), dir);
+                    Debug.DrawRay((Vector2)mob.transform.position, dir, Color.blue);
+
+                }
                 mob.rb.velocity = dir.normalized * mob.MovementSpeed;
                 yield return null;
             }
@@ -63,19 +73,39 @@ public class A_MoveTo : Action
     }
 }
 
-public class A_Idle : Action
+/// <summary>
+/// Uses mob's MoveAround and AvoidTarget functions to move around the given target
+/// </summary>
+public class A_StrafeAround : Action
 {
-    public A_Idle(BaseMob mob) : base(mob)
+    readonly Transform target;
+
+    Vector2 desiredPosition;
+
+    public A_StrafeAround(BaseMob mob, Transform target) : base(mob)
     {
-        
+        this.target = target;
     }
 
     public override IEnumerator Execute()
     {
-        yield return new WaitForSeconds(1.0f);  // Wait for seconds so we dont spam whilst we debug
+        while (true)
+        {
+            desiredPosition = target.position;
+            Vector2 dir = mob.GetMovementVector(desiredPosition);
+            if (mob.DebugMode)
+            {
+                Debug.DrawRay((Vector2)mob.transform.position + (dir * 0.45f), dir);
+                Debug.DrawRay((Vector2)mob.transform.position, desiredPosition - (Vector2)mob.transform.position, Color.blue);
+            }
+            mob.rb.velocity = dir.normalized * mob.MovementSpeed;
+            yield return null;
+        }
     }
 }
-
+/// <summary>
+/// A generic attack action that casts the mob's ability when it can and initiates a cool down
+/// </summary>
 public class A_Attack : Action
 {
     public bool CanCast
@@ -115,7 +145,7 @@ public class A_Attack : Action
         yield return null;
     }
 
-    public IEnumerator Cooldown()
+    IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(_ability.AbilityCooldown);
         _canCast = true;
@@ -124,6 +154,7 @@ public class A_Attack : Action
 
 
 /// DECISIONS
+
 public class AttackDecision : Decision<float>
 {
     A_Attack action;
