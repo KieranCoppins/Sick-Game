@@ -32,6 +32,27 @@ public class RangedMob : BaseMob
             yield return new WaitForSeconds(0.1f);
         }
     }
+
+    protected override float MoveTowards(Vector2 targetDir, Vector2 dir, Vector2 target)
+    {
+        float dist = Vector2.Distance(target, transform.position);
+
+        // Move away from the target if too close
+        if (dist < 5.0f)
+            return ((Vector2.Dot(targetDir, dir) * -1) - 0.4f) + Vector2.Dot(rb.velocity.normalized, dir);
+
+        // Circle the target if in range
+        else if (dist < ability.Range - 2.0f)
+            return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir)) + Vector2.Dot(rb.velocity.normalized, dir);
+
+        // Otherwise move towards the target
+        return Vector2.Dot(targetDir, dir) + Vector2.Dot(rb.velocity.normalized, dir);
+    }
+
+    protected override float AvoidTarget(Vector2 targetDir, Vector2 dir, Vector2 target)
+    {
+        return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - 0.65f) + Vector2.Dot(rb.velocity.normalized, dir);
+    }
 }
 
 public class DT_RangedMob : DecisionTree

@@ -185,10 +185,10 @@ public abstract class BaseMob : MonoBehaviour
         stopMoving = false;
     }
 
-    public Vector2 GetMovementVector(Vector2 target, DirectionWeightFunction moveTowards, DirectionWeightFunction avoidTarget)
+    public Vector2 GetMovementVector(Vector2 target)
     {
         Vector2 targetDir = (target - (Vector2)transform.position).normalized;
-        DirectionWeightFunction weightFunction = moveTowards;
+        bool avoid = false;
         // We should check for all obstructions around us first
         
         for (int i = 0; i < movementDirections.Count; i++)
@@ -199,7 +199,7 @@ public abstract class BaseMob : MonoBehaviour
             {
                 Debug.DrawRay((Vector2)transform.position, movementDirections[i], Color.red);
                 targetDir = movementDirections[i] * -1;
-                weightFunction = avoidTarget;
+                avoid = true;
                 break;
             }
         }
@@ -208,7 +208,7 @@ public abstract class BaseMob : MonoBehaviour
         // Calculate dot products
         foreach (Vector2 dir in movementDirections)
         {
-            KeyValuePair<Vector2, float> pair = new KeyValuePair<Vector2, float>(dir, weightFunction(targetDir, dir));
+            KeyValuePair<Vector2, float> pair = new KeyValuePair<Vector2, float>(dir, avoid ? AvoidTarget(targetDir, dir, target) : MoveTowards(targetDir, dir, target));
             directionWeights.Add(pair);
         }
 
@@ -217,6 +217,7 @@ public abstract class BaseMob : MonoBehaviour
 
         foreach (KeyValuePair<Vector2, float> pair in directionWeights)
         {
+            // Check to see if moving in this direction will cause us to hit an obstruction - we dont want this
             RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position, pair.Key, 1.5f);
             if (!hit) return pair.Key;
 
@@ -225,6 +226,9 @@ public abstract class BaseMob : MonoBehaviour
 
         return Vector2.zero;
     }
+    protected abstract float MoveTowards(Vector2 targetDir, Vector2 dir, Vector2 target);
+
+    protected abstract float AvoidTarget(Vector2 targetDir, Vector2 dir, Vector2 target);
 }
 
 // A custom comparer class that ensures the largest value of the key value pair appears first in the array

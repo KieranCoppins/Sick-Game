@@ -9,4 +9,14 @@ public class MeleeMob : BaseMob
     {
         base.Update();
     }
+
+    protected override float MoveTowards(Vector2 targetDir, Vector2 dir, Vector2 target)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    protected override float AvoidTarget(Vector2 targetDir, Vector2 dir, Vector2 target)
+    {
+        throw new System.NotImplementedException();
+    }
 }

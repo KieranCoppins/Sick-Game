@@ -55,7 +55,7 @@ public class A_MoveTo : Action
             while (Vector2.Distance(mob.transform.position, desiredPosition) > 0.5f)
             {
                 // Add velocity of move to target
-                Vector2 dir = mob.GetMovementVector(desiredPosition, MoveTowards, AvoidTarget);
+                Vector2 dir = (desiredPosition - (Vector2)mob.transform.position).normalized;
                 if(mob.DebugMode)
                 {
                     Debug.DrawRay((Vector2)mob.transform.position + (dir * 0.45f), dir);
@@ -70,16 +70,6 @@ public class A_MoveTo : Action
         // Set our velocity to zero once we've arrived
         mob.rb.velocity = Vector2.zero;
         yield return null;
-    }
-
-    float MoveTowards(Vector2 targetDir, Vector2 dir)
-    {
-        return Vector2.Dot(targetDir, dir) + Vector2.Dot(mob.rb.velocity.normalized, dir);
-    }
-
-    float AvoidTarget(Vector2 targetDir, Vector2 dir)
-    {
-        return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - 0.65f) + Vector2.Dot(mob.rb.velocity.normalized, dir); ;
     }
 }
 
@@ -111,7 +101,7 @@ public class A_StrafeAround : Action
         while (true)
         {
             desiredPosition = target.position;
-            Vector2 dir = mob.GetMovementVector(desiredPosition, MoveTowards, AvoidTarget);
+            Vector2 dir = mob.GetMovementVector(desiredPosition);
             if (mob.DebugMode)
             {
                 Debug.DrawRay((Vector2)mob.transform.position + (dir * 0.45f), dir);
@@ -120,18 +110,6 @@ public class A_StrafeAround : Action
             mob.rb.velocity = dir.normalized * mob.MovementSpeed;
             yield return null;
         }
-    }
-
-    float MoveTowards(Vector2 targetDir, Vector2 dir)
-    {
-        if (Vector2.Distance(desiredPosition, mob.transform.position) < distance)
-            return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - spiralModifier) + Vector2.Dot(mob.rb.velocity.normalized, dir);
-        return Vector2.Dot(targetDir, dir) + Vector2.Dot(mob.rb.velocity.normalized, dir);
-    }
-
-    float AvoidTarget(Vector2 targetDir, Vector2 dir)
-    {
-        return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - 0.65f) + Vector2.Dot(mob.rb.velocity.normalized, dir); ;
     }
 }
 
