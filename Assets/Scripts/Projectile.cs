@@ -14,9 +14,6 @@ public class Projectile : MonoBehaviour
     [Tooltip("The target to guide to")]
     public Transform target;
 
-    [Tooltip("The velocity at which the projectile travels")]
-    [SerializeField] float velocity;
-
     [Tooltip("The rotation speed at which the projectile rotates")]
     [SerializeField] float rotationSpeed;
 
@@ -26,6 +23,7 @@ public class Projectile : MonoBehaviour
 
     Rigidbody2D rb;
     float aliveTime = 0;
+    float velocity = 0;
 
 
     private void Awake()
@@ -64,6 +62,8 @@ public class Projectile : MonoBehaviour
     {
         // Put projectile destroy animations here
     }
+
+    public void SetVelocity(float value) { velocity = value; }
 }
 
 public enum ProjectileType
