@@ -135,10 +135,34 @@ public class A_Attack : Action
         mob.rb.velocity = Vector2.zero;
         _canCast = false;
 
+        // Save our targets current position
+        Vector2 prevPos = target.position;
+
         // Wait for our casting time
         yield return new WaitForSeconds(_ability.CastTime);
-
+        
+        // Default to a straight line attack
         Vector2 direction = (target.position - mob.transform.position).normalized;
+
+        // Check if our ability is a projectile ability
+        ProjectileAbility projectileAbility = _ability as ProjectileAbility;
+        if (projectileAbility != null)
+        {
+            Vector2 deltaVector = (Vector2)target.position - prevPos;
+            float targetVelocity = deltaVector.magnitude / _ability.CastTime;
+
+            float distanceFromAI = Vector2.Distance(mob.transform.position, target.position);
+
+            Vector2 predictedLocation = (Vector2)target.position + (deltaVector.normalized * targetVelocity * (distanceFromAI / projectileAbility.GetProjectileVelocity()));
+
+            Vector2 predictedDirection = (predictedLocation - (Vector2)mob.transform.position).normalized;
+
+            if (predictedDirection != Vector2.zero)
+            {
+                direction = predictedDirection;
+            }
+        }
+
         _ability.Cast(mob.transform.position, direction, target);
         mob.StartCoroutine(Cooldown());
 

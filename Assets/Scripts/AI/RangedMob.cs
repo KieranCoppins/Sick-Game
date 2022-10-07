@@ -71,7 +71,7 @@ public class DT_RangedMob : DecisionTree
         // Initialise all our Nodes
 
         /// ACTIONS
-        A_PathTo MoveToPlayer = new (mob, FindTileNearPlayer);   // We want to move in slightly more than what our ability allows
+        A_PathTo MoveToPlayer = new (mob, FindTileNearPlayer);
         A_Attack castComet = new(mob, player, ((RangedMob)mob).ability);
         A_StrafeAround strafeAroundPlayer = new(mob, player);
 
