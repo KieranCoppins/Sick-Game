@@ -7,6 +7,8 @@ public class RangedMob : BaseMob
     [Header("Ranged Mob Attributes")]
     [SerializeField] public AbilityBase ability;
 
+    protected DecisionTree<RangedMob> decisionTree;
+
     protected override void Start()
     {
         base.Start();
@@ -58,7 +60,7 @@ public class RangedMob : BaseMob
     }
 }
 
-public class DT_RangedMob : DecisionTree
+public class DT_RangedMob : DecisionTree<RangedMob>
 {
     Vector2 playerPrevPos;
     public DT_RangedMob(RangedMob mob) : base(mob)
@@ -72,12 +74,12 @@ public class DT_RangedMob : DecisionTree
 
         /// ACTIONS
         A_PathTo MoveToPlayer = new (mob, FindTileNearPlayer);
-        A_Attack castComet = new(mob, player, ((RangedMob)mob).ability);
-        A_StrafeAround strafeAroundPlayer = new(mob, player);
+        A_CastAbility castComet = new(mob, player, mob.ability);
+        A_MoveTowards moveTowardsPlayer = new(mob, player, mob.ability.Range - 2f);
 
 
         /// DECISIONS
-        AttackDecision shouldCastComet = new(castComet, strafeAroundPlayer, mob);
+        AttackDecision shouldCastComet = new(castComet, moveTowardsPlayer, mob, player, mob.ability.Range);
 
         // Initialise our root
         root = new Decision(MoveToPlayer, shouldCastComet, ShouldMoveToPlayer, mob);
@@ -87,7 +89,7 @@ public class DT_RangedMob : DecisionTree
     {
         Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
         // We want to move to a distance slightly less than our abilities range so we're not *just* in range
-        if (Vector2.Distance(mob.transform.position, playerPos) > ((RangedMob)mob).ability.Range - 1.0f || !mob.HasLineOfSight(playerPos))
+        if (Vector2.Distance(mob.transform.position, playerPos) > mob.ability.Range - 1.0f || !mob.HasLineOfSight(playerPos))
         {
             if (playerPrevPos == null || Vector2.Distance(playerPrevPos, playerPos) > 0.5f)
             {
@@ -101,7 +103,7 @@ public class DT_RangedMob : DecisionTree
     Vector2 FindTileNearPlayer()
     {
         Transform target = GameObject.FindGameObjectWithTag("Player").transform;
-        float range = ((RangedMob)mob).ability.Range;
+        float range = mob.ability.Range;
         Vector2 position = range == 0 ? target.position : GameObject.FindGameObjectWithTag("EQSManager").GetComponent<EQSManager>().RunEQSystem(EQSystem.RangedMobMoveToPlayer, range, target.position, mob.gameObject);
         return position;
     }

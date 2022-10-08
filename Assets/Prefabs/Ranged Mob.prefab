@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 5877684952458030284}
   - component: {fileID: 8770602457837502147}
   m_Layer: 0
-  m_Name: Mob
+  m_Name: Ranged Mob
   m_TagString: Mob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

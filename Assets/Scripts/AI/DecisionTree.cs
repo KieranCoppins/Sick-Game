@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class DecisionTree
+public abstract class DecisionTree<T> where T : BaseMob
 {
-    protected BaseMob mob;
-    public DecisionTree(BaseMob mob)
+    protected T mob;
+    public DecisionTree(T mob)
     {
         this.mob = mob;
     }
@@ -23,11 +23,11 @@ public abstract class DecisionTree
         }
         catch (InvalidCastException e)
         {
-            Debug.LogError("Decision Tree did not reach an action node (InvalidCastException)");
+            Debug.LogError("Decision Tree did not reach an action node (InvalidCastException) " + e.Message);
         }
         catch (NullReferenceException e)
         {
-            Debug.LogError("Decision tree returned null. Has the tree been initialised?");
+            Debug.LogError("Decision tree returned null. Has the tree been initialised? " + e.Message);
         }
         catch (Exception e)
         {
@@ -58,6 +58,8 @@ public abstract class Action : DecisionTreeNode
 
     // I dont like this list of bools - maybe move this to some kind of tagging system that uses bitwise logic to determine if they're active or not
 
+
+    // TODO: Convert these to bitwise flags
     public bool ASyncAction
     {
         get

@@ -80,7 +80,6 @@ public abstract class BaseMob : MonoBehaviour
     bool stopMoving = false;
 
     protected ActionManager actionManager;
-    protected DecisionTree decisionTree;
 
     [Header("DEBUG VALUES")]
     [EnumFlags]
