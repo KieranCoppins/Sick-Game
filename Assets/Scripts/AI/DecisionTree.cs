@@ -82,24 +82,24 @@ public class Decision : DecisionTreeNode
     protected readonly DecisionTreeNode trueNode;
     protected readonly DecisionTreeNode falseNode;
 
-    Condition condition;
-
-    public DecisionTreeNode GetBranch()
-    {
-        
-        return condition() ? trueNode : falseNode;
-    }
-
-    public override DecisionTreeNode MakeDecision()
-    {
-        return GetBranch().MakeDecision();
-    }
+    readonly Condition Condition;
 
     public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode, Condition condDelegate, BaseMob mob) : base(mob)
     {
         this.trueNode = trueNode;
         this.falseNode = falseNode;
-        condition = condDelegate;
+        Condition = condDelegate;
+    }
+
+    public DecisionTreeNode GetBranch()
+    {
+        
+        return Condition() ? trueNode : falseNode;
+    }
+
+    public override DecisionTreeNode MakeDecision()
+    {
+        return GetBranch().MakeDecision();
     }
 }
 
@@ -107,6 +107,11 @@ public abstract class Decision<T> : DecisionTreeNode
 {
     protected readonly DecisionTreeNode trueNode;
     protected readonly DecisionTreeNode falseNode;
+    public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode, BaseMob mob) : base(mob)
+    {
+        this.trueNode = trueNode;
+        this.falseNode = falseNode;
+    }
 
     public abstract T TestData();
 
@@ -115,12 +120,6 @@ public abstract class Decision<T> : DecisionTreeNode
     public override DecisionTreeNode MakeDecision()
     {
         return GetBranch().MakeDecision();
-    }
-
-    public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode, BaseMob mob) : base(mob)
-    {
-        this.trueNode=trueNode;
-        this.falseNode=falseNode;
     }
 }
 

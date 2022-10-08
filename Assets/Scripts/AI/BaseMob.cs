@@ -63,11 +63,8 @@ public abstract class BaseMob : MonoBehaviour
     [Header("Mob Stats")]
     [Tooltip("The maximum health of the mob")]
     [SerializeField] int _maxHealth = 10;
-    [Tooltip("How much damage on attack does this mob deal?")]
-    [SerializeField] protected int damage = 1;
+    [Tooltip("The speed at which the mob moves")]
     [SerializeField] protected float movementSpeed = 2;
-    [Tooltip("How often in seconds can this mob attack?")]
-    [SerializeField] protected float attackRate = 2;
     [SerializeField] public string mobName { get; protected set; }
 
     [HideInInspector] public PathfindingComponent PathfindingComponent;
@@ -77,16 +74,13 @@ public abstract class BaseMob : MonoBehaviour
 
     private int _health = 10;
 
-    bool stopMoving = false;
-
     protected ActionManager actionManager;
+    protected List<Vector2> movementDirections;
 
     [Header("DEBUG VALUES")]
     [EnumFlags]
     [SerializeField]
     public DebugFlags debugFlags;
-
-    protected List<Vector2> movementDirections;
 
     public string GetCurrentActionText()
     {
@@ -117,9 +111,6 @@ public abstract class BaseMob : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         Health -= dmg;
-
-
-        // Invoke our take damage event when we take damage
         onTakeDamage?.Invoke();
     }
 
@@ -149,11 +140,8 @@ public abstract class BaseMob : MonoBehaviour
         {
             movementDirections.Add((Quaternion.AngleAxis(angle * i, Vector3.back) * dir).normalized);
         }
-
-        //GetMovementVector(new Vector2(5, 5));
     }
 
-    // Implement basic movement following the path as default movement
     protected virtual void Update()
     {
     }
@@ -186,16 +174,6 @@ public abstract class BaseMob : MonoBehaviour
         return false;
 
 
-    }
-
-    public void StopMoving()
-    {
-        stopMoving = true;
-    }
-
-    public void ResumeMoving()
-    {
-        stopMoving = false;
     }
 
     public Vector2 GetMovementVector(Vector2 target, bool moveStraight = false)

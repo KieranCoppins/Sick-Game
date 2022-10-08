@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class BossStage
 {
     public int healthThreshold;
-    [SerializeField] public AIAbility[] abilities;
+    [SerializeField] public AbilityBase[] abilities;
 
     public UnityEvent StartStage;
 

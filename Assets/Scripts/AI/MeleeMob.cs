@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class MeleeMob : BaseMob
 {
-    [Header("Melee Mob Attributes")]
-    [SerializeField] public float MeleeRange;
+    public float MeleeRange { get { return _meleeRange; } protected set { _meleeRange = value; } }
+    public float MeleeDamage { get { return _meleeDamage; } protected set { _meleeDamage = value; } }
+    public float MeleeSpeed { get { return _meleeSpeed; } protected set { _meleeSpeed = value; } }
 
+    [Header("Melee Mob Attributes")]
+    [SerializeField] float _meleeRange;
+    [SerializeField] float _meleeDamage;
+    [SerializeField] float _meleeSpeed;
 
     protected DecisionTree<MeleeMob> decisionTree;
 
@@ -69,7 +74,7 @@ public class DT_MeleeMob : DecisionTree<MeleeMob>
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
 
         A_PathTo MoveToPlayer = new(mob, FindTileNearPlayer, CancelPathfinding);
-        A_Melee AttackPlayer = new(mob);
+        A_Melee AttackPlayer = new(mob, player, mob.MeleeSpeed);
         A_MoveTowards moveTowardsPlayer = new(mob, player, mob.MeleeRange);
         A_PullBack moveAwayFromPlayer = new(mob, player, 3f);
 
@@ -82,14 +87,14 @@ public class DT_MeleeMob : DecisionTree<MeleeMob>
     bool CancelPathfinding()
     {
         Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        return Vector2.Distance(mob.transform.position, playerPos) <= 8f && mob.HasLineOfSight(playerPos);
+        return mob.HasLineOfSight(playerPos);
     }
 
     bool ShouldMoveToPlayer()
     {
         Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
         // We want to move to a distance slightly less than our abilities range so we're not *just* in range
-        if (Vector2.Distance(mob.transform.position, playerPos) > 8f || !mob.HasLineOfSight(playerPos))
+        if (!mob.HasLineOfSight(playerPos))
         {
             if (playerPrevPos == null || Vector2.Distance(playerPrevPos, playerPos) > 0.5f)
             {

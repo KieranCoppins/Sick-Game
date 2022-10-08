@@ -11,7 +11,7 @@ public class R_IgnoreWalls : Rule
     {
         Dictionary<Vector2Int, float> newTiles = new Dictionary<Vector2Int, float>();
 
-        tilemapController = GameObject.FindGameObjectWithTag("Tilemap").GetComponent<TilemapController>();
+        TilemapController tilemapController = GameObject.FindGameObjectWithTag("Tilemap").GetComponent<TilemapController>();
         
         foreach (var tile in tiles)
         {

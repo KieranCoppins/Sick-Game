@@ -23,7 +23,7 @@ public class EQSManager : MonoBehaviour
         Vector2Int[] tiles = controller.GetTilesInRange(pos, Mathf.CeilToInt(range));
 
         //Initialise our EQS system with these parameters
-        GetEQS(EQSystem.RangedMobMoveToPlayer).Initialise(controller, tiles, caller);
+        GetEQS(EQSystem.RangedMobMoveToPlayer).Initialise(tiles, caller);
         // Run the EQS system to get our tile and get the postiion of the tile
         return GetEQS(EQSystem.RangedMobMoveToPlayer).Run();
     }

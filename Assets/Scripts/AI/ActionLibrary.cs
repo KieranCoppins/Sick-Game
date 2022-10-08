@@ -157,11 +157,13 @@ public abstract class A_Attack : Action
 {
     public bool CanCast { get; protected set; }
 
-    float cooldown = 0;
+    protected readonly float cooldown;
+    protected readonly Transform target;
 
-    public A_Attack(BaseMob mob, float cooldown) : base(mob)
+    public A_Attack(BaseMob mob, Transform target, float cooldown) : base(mob)
     {
         this.cooldown = cooldown;
+        this.target = target;
         CanCast = true;
         Flags |= ActionFlags.Interruptor;       // This action is an interruptor
         Flags &= ~ActionFlags.Interruptable;    // This action is not interruptable
@@ -179,21 +181,13 @@ public abstract class A_Attack : Action
 /// </summary>
 public class A_CastAbility : A_Attack
 {
-
-    public AbilityBase Ability
-    {
-        get { return _ability; }
-    }
-
-    readonly Transform target;
     readonly AbilityBase _ability;
 
     Vector2 totalTargetVelocity;
     int totalVelocityEntries = 0;
 
-    public A_CastAbility(BaseMob mob, Transform target, AbilityBase ability) : base(mob, ability.AbilityCooldown)
+    public A_CastAbility(BaseMob mob, Transform target, AbilityBase ability) : base(mob, target, ability.AbilityCooldown)
     {
-        this.target = target;
         this._ability = ability;
     }
 
@@ -261,14 +255,18 @@ public class A_CastAbility : A_Attack
 /// </summary>
 public class A_Melee : A_Attack
 {
-    public A_Melee(BaseMob mob) : base(mob, 2)
+    public A_Melee(BaseMob mob, Transform target, float attackSpeed) : base(mob, target, attackSpeed)
     {
-
     }
     public override IEnumerator Execute()
     {
         CanCast = false;
-        Debug.Log("Melee Attack");
+
+        // We should play some kind of attack animation
+        // We can do a sphere overlap cast to determine colliders where the melee weapon is.
+        // We can then put an event in the animation to deal damage to all the colliders in the overlap check
+        // This does require characters and animations to be included!
+
         mob.StartCoroutine(Cooldown());
         yield return null;
     }
@@ -282,9 +280,9 @@ public class A_Melee : A_Attack
 /// </summary>
 public class AttackDecision : Decision<float>
 {
-    A_Attack action;
-    float attackRange = 0;
-    Transform target;
+    readonly A_Attack action;
+    readonly float attackRange = 0;
+    readonly Transform target;
     public AttackDecision(A_Attack attackNode, DecisionTreeNode fNode, BaseMob mob, Transform target, float attackRange) : base(attackNode, fNode, mob)
     {
         this.action = attackNode;
@@ -302,7 +300,6 @@ public class AttackDecision : Decision<float>
         // If we are in range & have line of sight
         if (TestData() <= attackRange && mob.HasLineOfSight(target.position) && action.CanCast)
         {
-            Debug.Log("Should attack");
             return trueNode;
         }
         return falseNode;
@@ -315,7 +312,7 @@ public class AttackDecision : Decision<float>
 // Allows for a function to be called every frame whilst we are waiting for the seconds passed
 public class DoTaskWhilstWaitingForSeconds : CustomYieldInstruction
 {
-    UnityAction task;
+    readonly UnityAction task;
     float timer;
     public DoTaskWhilstWaitingForSeconds(UnityAction task, float seconds)
     {

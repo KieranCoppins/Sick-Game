@@ -22,7 +22,7 @@ public class RangedMob : BaseMob
         base.Update();
     }
 
-    // Instead of trying to schedule an action every frame, lets do it every second or something
+    // Instead of trying to schedule an action every frame, lets do it every 100ms
     IEnumerator Think()
     {
         while (true)

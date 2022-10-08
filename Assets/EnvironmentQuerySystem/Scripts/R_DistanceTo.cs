@@ -20,8 +20,6 @@ public class R_DistanceTo : Rule
     {
         Dictionary<Vector2Int, float> newTiles = new Dictionary<Vector2Int, float>();
 
-        tilemapController = GameObject.FindGameObjectWithTag("Tilemap").GetComponent<TilemapController>();
-
         Vector2 target = GetTargetPos(caller);
 
         foreach (var tile in tiles)

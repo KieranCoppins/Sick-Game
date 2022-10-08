@@ -8,16 +8,16 @@ public class ActionManager : MonoBehaviour
     public List<IEnumerator> currentActions = new List<IEnumerator>();
 
     public delegate void OnFinishDelegate(IEnumerator coroutine);
-    public event OnFinishDelegate onFinish;
+    public event OnFinishDelegate OnFinish;
 
-    public bool executingActions { get; protected set; }
+    public bool ExecutingActions { get; protected set; }
 
     bool waitForActions = false;
 
     private void Start()
     {
-        executingActions = false;
-        onFinish += delegate (IEnumerator coroutine)
+        ExecutingActions = false;
+        OnFinish += delegate (IEnumerator coroutine)
         {
             // Remove this action from current actions
             currentActions.Remove(coroutine);
@@ -26,7 +26,7 @@ public class ActionManager : MonoBehaviour
             if (currentActions.Count == 0)
             {
                 waitForActions = false;
-                executingActions = false;
+                ExecutingActions = false;
             }
         };
     }
@@ -121,7 +121,7 @@ public class ActionManager : MonoBehaviour
         // Execute all actions in current actions
         foreach (IEnumerator action in currentActions)
         {
-            executingActions = true;
+            ExecutingActions = true;
             StartCoroutine(ActionWrapper(action));
         }
     }
@@ -137,7 +137,7 @@ public class ActionManager : MonoBehaviour
             else
                 running = false;
         }
-        OnFinishDelegate handler = onFinish;
+        OnFinishDelegate handler = OnFinish;
         if (handler != null)
             handler(coroutine);
     }
