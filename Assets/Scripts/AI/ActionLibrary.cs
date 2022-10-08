@@ -18,10 +18,11 @@ public class A_PathTo : Action
     Vector2 desiredPosition;
 
     // Make this action take a target and a range. Also we always want our path to to be an interruptor
-    public A_PathTo(BaseMob mob, GetDestination destinationDelegate) : base(mob, Interruptor: true)
+    public A_PathTo(BaseMob mob, GetDestination destinationDelegate) : base(mob)
     {
         pathfinding = mob.PathfindingComponent;
         this.destinationDelegate = destinationDelegate;
+        Flags |= ActionFlags.Interruptor;       // This action is an interruptor
     }
 
     public override IEnumerator Execute()
@@ -147,10 +148,12 @@ public abstract class A_Attack : Action
 
     float cooldown = 0;
 
-    public A_Attack(BaseMob mob, float cooldown) : base(mob, Interruptor: true, Interruptable: false)
+    public A_Attack(BaseMob mob, float cooldown) : base(mob)
     {
         this.cooldown = cooldown;
         CanCast = true;
+        Flags |= ActionFlags.Interruptor;       // This action is an interruptor
+        Flags &= ~ActionFlags.Interruptable;    // This action is not interruptable
     }
 
     protected virtual IEnumerator Cooldown()

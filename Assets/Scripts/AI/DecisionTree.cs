@@ -49,43 +49,22 @@ public abstract class DecisionTreeNode
 
 public abstract class Action : DecisionTreeNode
 {
-    public Action(BaseMob mob, bool ASyncAction = false, bool Interruptor = false, bool Interruptable = true) : base(mob)
+    [Flags]
+    public enum ActionFlags
     {
-        _asyncAction = ASyncAction;
-        _interruptor = Interruptor;
-        _interruptable = Interruptable;
+        SyncAction = 1 << 0,
+        Interruptor = 1 << 1,
+        Interruptable = 1 << 2,
     }
 
-    // I dont like this list of bools - maybe move this to some kind of tagging system that uses bitwise logic to determine if they're active or not
-
-
-    // TODO: Convert these to bitwise flags
-    public bool ASyncAction
+    public ActionFlags Flags { get; protected set; }
+    public Action(BaseMob mob) : base(mob)
     {
-        get
-        {
-            return _asyncAction;
-        }
-    }
-    public bool Interruptor
-    {
-        get
-        {
-            return _interruptor;
-        }
-    }
+        Flags = 0;
 
-    public bool Interruptable
-    {
-        get
-        {
-            return _interruptable;
-        }
+        // Default interruptable to true
+        Flags |= ActionFlags.Interruptable;
     }
-
-    protected readonly bool _asyncAction = false;
-    protected readonly bool _interruptor = false;
-    protected readonly bool _interruptable = false;
 
     public override DecisionTreeNode MakeDecision()
     {

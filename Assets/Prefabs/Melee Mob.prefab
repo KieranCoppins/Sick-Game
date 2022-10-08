@@ -823,7 +823,7 @@ MonoBehaviour:
   attackRate: 2
   PathfindingComponent: {fileID: 0}
   rb: {fileID: 0}
-  debugFlags: -1
+  debugFlags: 0
   MeleeRange: 2
 --- !u!212 &3856485209610614427
 SpriteRenderer:

@@ -72,7 +72,7 @@ public class ActionManager : MonoBehaviour
         // First we want to see if we have any interruptor actions
         foreach (ActionPacket a in actionQueue)
         {
-            if (a.action.Interruptor)
+            if ((a.action.Flags & Action.ActionFlags.Interruptor) == Action.ActionFlags.Interruptor)
             {
                 tempList = new List<ActionPacket>(actionQueue);
                 // If we have an interruptor clear all our actions and do this one
@@ -81,8 +81,8 @@ public class ActionManager : MonoBehaviour
                 tempList.Remove(a);
                 actionQueue = new Queue<ActionPacket>(tempList);
                 currentActionsChanged = true;
-                acceptASyncActions = a.action.ASyncAction;
-                waitForActions = !a.action.Interruptable;
+                acceptASyncActions = (a.action.Flags & Action.ActionFlags.SyncAction) == Action.ActionFlags.SyncAction;
+                waitForActions = (a.action.Flags & Action.ActionFlags.Interruptable) != Action.ActionFlags.Interruptable;
                 break;
             }
         }
@@ -92,11 +92,11 @@ public class ActionManager : MonoBehaviour
             if (currentActions.Count > 0)
             {
                 Action action = actionQueue.Peek().action;
-                if (action.ASyncAction && acceptASyncActions)
+                if ((action.Flags & Action.ActionFlags.SyncAction) == Action.ActionFlags.SyncAction && acceptASyncActions)
                 {
                     currentActions.Add(actionQueue.Dequeue().action.Execute());
                     currentActionsChanged = true;
-                    waitForActions = !action.Interruptable;
+                    waitForActions = (action.Flags & Action.ActionFlags.Interruptable) != Action.ActionFlags.Interruptable;
                 }
                 else
                     break;
@@ -106,8 +106,8 @@ public class ActionManager : MonoBehaviour
                 Action action = actionQueue.Dequeue().action;
                 currentActions.Add(action.Execute());
                 currentActionsChanged = true;
-                acceptASyncActions = action.ASyncAction;
-                waitForActions = !action.Interruptable;
+                acceptASyncActions = (action.Flags & Action.ActionFlags.SyncAction) == Action.ActionFlags.SyncAction;
+                waitForActions = (action.Flags & Action.ActionFlags.Interruptable) != Action.ActionFlags.Interruptable;
             }
         }
         if (currentActionsChanged)
