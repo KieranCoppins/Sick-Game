@@ -39,7 +39,10 @@ public class MeleeMob : BaseMob
     {
         float dist = Vector2.Distance(target, transform.position);
 
-        if (dist < 2f || moveStraight)
+        if (moveStraight)
+            return Vector2.Dot(targetDir, dir);
+
+        if (dist < 2f)
             return Vector2.Dot(targetDir, dir) + Vector2.Dot(rb.velocity.normalized, dir);
 
         return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - 0.8f) + Vector2.Dot(rb.velocity.normalized, dir);
@@ -65,15 +68,21 @@ public class DT_MeleeMob : DecisionTree<MeleeMob>
     {
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        A_PathTo MoveToPlayer = new(mob, FindTileNearPlayer);
+        A_PathTo MoveToPlayer = new(mob, FindTileNearPlayer, CancelPathfinding);
         A_Melee AttackPlayer = new(mob);
         A_MoveTowards moveTowardsPlayer = new(mob, player, mob.MeleeRange);
-        A_PullBack moveAwayFromPlayer = new(mob, player, 4f);
+        A_PullBack moveAwayFromPlayer = new(mob, player, 3f);
 
         Decision PullbackDecision = new(moveAwayFromPlayer, moveTowardsPlayer, ShouldPullback, mob);
         AttackDecision attackDecision = new(AttackPlayer, PullbackDecision, mob, player, mob.MeleeRange);
 
         root = new Decision(MoveToPlayer, attackDecision, ShouldMoveToPlayer, mob);
+    }
+
+    bool CancelPathfinding()
+    {
+        Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        return Vector2.Distance(mob.transform.position, playerPos) <= 8f && mob.HasLineOfSight(playerPos);
     }
 
     bool ShouldMoveToPlayer()

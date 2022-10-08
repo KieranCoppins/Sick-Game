@@ -12,16 +12,19 @@ public class A_PathTo : Action
     readonly PathfindingComponent pathfinding;
 
     public delegate Vector2 GetDestination();
-
     GetDestination destinationDelegate;
+
+    public delegate bool CancelPathfinding();
+    CancelPathfinding cancelPathfindingDelegate;
 
     Vector2 desiredPosition;
 
     // Make this action take a target and a range. Also we always want our path to to be an interruptor
-    public A_PathTo(BaseMob mob, GetDestination destinationDelegate) : base(mob)
+    public A_PathTo(BaseMob mob, GetDestination destinationDelegate, CancelPathfinding cancelPathfindingDelegate) : base(mob)
     {
         pathfinding = mob.PathfindingComponent;
         this.destinationDelegate = destinationDelegate;
+        this.cancelPathfindingDelegate = cancelPathfindingDelegate;
         Flags |= ActionFlags.Interruptor;       // This action is an interruptor
     }
 
@@ -50,12 +53,20 @@ public class A_PathTo : Action
         // Run for as long as we have items in our queue
         while (path.Count > 0)
         {
+            // Check if we should stop pathfinding
+            if (cancelPathfindingDelegate())
+                break;
+
             // Get our next position to move to from the queue
             desiredPosition = path.Dequeue();
 
             // Keep moving towards the position until we're at least 0.1 units close to it
             while (Vector2.Distance(mob.transform.position, desiredPosition) > 0.5f)
             {
+                // Check if we should stop pathfinding
+                if (cancelPathfindingDelegate())
+                    break;
+
                 // Add velocity of move to target
                 Vector2 dir = mob.GetMovementVector(desiredPosition, true);
                 if ((mob.debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)

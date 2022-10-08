@@ -809,6 +809,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ranged Mob
       objectReference: {fileID: 0}
+    - target: {fileID: 249532263326025965, guid: 5211a005831c6b94bbee8e5ed70f06e1, type: 3}
+      propertyPath: debugFlags
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5211a005831c6b94bbee8e5ed70f06e1, type: 3}
 --- !u!1 &1989338225
@@ -11675,6 +11679,10 @@ PrefabInstance:
     - target: {fileID: 3856485209610614438, guid: c8615698df53b9b459ef86a0ad9ddf1f, type: 3}
       propertyPath: m_Name
       value: Melee Mob
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711981527638540426, guid: c8615698df53b9b459ef86a0ad9ddf1f, type: 3}
+      propertyPath: debugFlags
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8615698df53b9b459ef86a0ad9ddf1f, type: 3}

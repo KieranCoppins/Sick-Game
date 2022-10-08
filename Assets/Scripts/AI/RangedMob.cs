@@ -40,7 +40,7 @@ public class RangedMob : BaseMob
         float dist = Vector2.Distance(target, transform.position);
 
         if (moveStraight)
-            return Vector2.Dot(targetDir, dir) + Vector2.Dot(rb.velocity.normalized, dir);
+            return Vector2.Dot(targetDir, dir);
 
         // Move away from the target if too close
         if (dist < 2.0f)
@@ -73,9 +73,9 @@ public class DT_RangedMob : DecisionTree<RangedMob>
         // Initialise all our Nodes
 
         /// ACTIONS
-        A_PathTo MoveToPlayer = new (mob, FindTileNearPlayer);
+        A_PathTo MoveToPlayer = new (mob, FindTileNearPlayer, CancelPathfinding);
         A_CastAbility castComet = new(mob, player, mob.ability);
-        A_MoveTowards moveTowardsPlayer = new(mob, player, mob.ability.Range - 2f);
+        A_MoveTowards moveTowardsPlayer = new(mob, player, 0); // Always move towards the player (since moving towards for a ranged mob is actually circling them)
 
 
         /// DECISIONS
@@ -83,6 +83,12 @@ public class DT_RangedMob : DecisionTree<RangedMob>
 
         // Initialise our root
         root = new Decision(MoveToPlayer, shouldCastComet, ShouldMoveToPlayer, mob);
+    }
+
+    bool CancelPathfinding()
+    {
+        Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        return Vector2.Distance(mob.transform.position, playerPos) <= mob.ability.Range - 1.0f && mob.HasLineOfSight(playerPos);
     }
 
     bool ShouldMoveToPlayer()
