@@ -12,16 +12,20 @@ public class A_PathTo : Action
     readonly PathfindingComponent pathfinding;
 
     public delegate Vector2 GetDestination();
-
     GetDestination destinationDelegate;
+
+    public delegate bool CancelPathfinding();
+    CancelPathfinding cancelPathfindingDelegate;
 
     Vector2 desiredPosition;
 
     // Make this action take a target and a range. Also we always want our path to to be an interruptor
-    public A_PathTo(BaseMob mob, GetDestination destinationDelegate) : base(mob, Interruptor: true)
+    public A_PathTo(BaseMob mob, GetDestination destinationDelegate, CancelPathfinding cancelPathfindingDelegate) : base(mob)
     {
         pathfinding = mob.PathfindingComponent;
         this.destinationDelegate = destinationDelegate;
+        this.cancelPathfindingDelegate = cancelPathfindingDelegate;
+        Flags |= ActionFlags.Interruptor;       // This action is an interruptor
     }
 
     public override IEnumerator Execute()
@@ -49,12 +53,20 @@ public class A_PathTo : Action
         // Run for as long as we have items in our queue
         while (path.Count > 0)
         {
+            // Check if we should stop pathfinding
+            if (cancelPathfindingDelegate())
+                break;
+
             // Get our next position to move to from the queue
             desiredPosition = path.Dequeue();
 
             // Keep moving towards the position until we're at least 0.1 units close to it
             while (Vector2.Distance(mob.transform.position, desiredPosition) > 0.5f)
             {
+                // Check if we should stop pathfinding
+                if (cancelPathfindingDelegate())
+                    break;
+
                 // Add velocity of move to target
                 Vector2 dir = mob.GetMovementVector(desiredPosition, true);
                 if ((mob.debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
@@ -77,20 +89,21 @@ public class A_PathTo : Action
 /// <summary>
 /// Uses mob's MoveAround and AvoidTarget functions to move around the given target
 /// </summary>
-public class A_StrafeAround : Action
+public class A_MoveTowards : Action
 {
     readonly Transform target;
-
     Vector2 desiredPosition;
+    readonly float distance;
 
-    public A_StrafeAround(BaseMob mob, Transform target) : base(mob)
+    public A_MoveTowards(BaseMob mob, Transform target, float distance) : base(mob)
     {
         this.target = target;
+        this.distance = distance;
     }
 
     public override IEnumerator Execute()
     {
-        while (true)
+        while (Vector2.Distance(mob.transform.position, target.position) > distance)
         {
             desiredPosition = target.position;
             Vector2 dir = mob.GetMovementVector(desiredPosition);
@@ -102,34 +115,79 @@ public class A_StrafeAround : Action
             mob.rb.velocity = dir.normalized * mob.MovementSpeed;
             yield return null;
         }
+        yield return null;
     }
 }
-/// <summary>
-/// A generic attack action that casts the mob's ability when it can and initiates a cool down
-/// </summary>
-public class A_Attack : Action
+
+public class A_PullBack : Action
 {
-    public bool CanCast
-    {
-        get { return _canCast; }
-    }
-
-    public AbilityBase Ability
-    {
-        get { return _ability; }
-    }
-
     readonly Transform target;
-    readonly AbilityBase _ability;
+    Vector2 desiredPosition;
+    readonly float distance;
 
-    bool _canCast = true;
+    public A_PullBack(BaseMob mob, Transform target, float distance) : base(mob)
+    {
+        this.target = target;
+        this.distance = distance;
+    }
+
+    public override IEnumerator Execute()
+    {
+        while (Vector2.Distance(mob.transform.position, target.position) < distance)
+        {
+            desiredPosition = mob.transform.position + (mob.transform.position - target.position).normalized * 5f;
+            Vector2 dir = mob.GetMovementVector(desiredPosition);
+            if ((mob.debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
+            {
+                Debug.DrawRay((Vector2)mob.transform.position + (dir * 0.45f), dir);
+                Debug.DrawRay((Vector2)mob.transform.position, desiredPosition - (Vector2)mob.transform.position, Color.blue);
+            }
+            mob.rb.velocity = dir.normalized * mob.MovementSpeed;
+            yield return null;
+        }
+        yield return null;
+    }
+
+}
+
+/// <summary>
+/// An abstract attack action that all attack actions should inherit
+/// </summary>
+public abstract class A_Attack : Action
+{
+    public bool CanCast { get; protected set; }
+
+    protected readonly float cooldown;
+    protected readonly Transform target;
+
+    public A_Attack(BaseMob mob, Transform target, float cooldown) : base(mob)
+    {
+        this.cooldown = cooldown;
+        this.target = target;
+        CanCast = true;
+        Flags |= ActionFlags.Interruptor;       // This action is an interruptor
+        Flags &= ~ActionFlags.Interruptable;    // This action is not interruptable
+    }
+
+    protected virtual IEnumerator Cooldown()
+    {
+        yield return new WaitForSeconds(cooldown);
+        CanCast = true;
+    }
+}
+
+/// <summary>
+/// An attack action that casts the mobs given ability
+/// </summary>
+public class A_CastAbility : A_Attack
+{
+    readonly AbilityBase _ability;
 
     Vector2 totalTargetVelocity;
     int totalVelocityEntries = 0;
 
-    public A_Attack(BaseMob mob, Transform target, AbilityBase ability) : base(mob, Interruptor: true, Interruptable: false)
+    public A_CastAbility(BaseMob mob, Transform target, AbilityBase ability) : base(mob, target, ability.AbilityCooldown)
     {
-        this.target = target;
         this._ability = ability;
     }
 
@@ -154,7 +212,7 @@ public class A_Attack : Action
 
             // Stop our velocity
             mob.rb.velocity = Vector2.zero;
-            _canCast = false;
+            CanCast = false;
 
             // Whilst we are casting, we want to get the average of our player's movement vector
             yield return new DoTaskWhilstWaitingForSeconds(() => { totalTargetVelocity += target.GetComponent<Rigidbody2D>().velocity; totalVelocityEntries += 1; }, _ability.CastTime);
@@ -168,12 +226,6 @@ public class A_Attack : Action
         }
 
         yield return null;
-    }
-
-    IEnumerator Cooldown()
-    {
-        yield return new WaitForSeconds(_ability.AbilityCooldown);
-        _canCast = true;
     }
 
     Vector2 PredictLocation()
@@ -198,26 +250,55 @@ public class A_Attack : Action
     }
 }
 
+/// <summary>
+/// An attack action that melees the target
+/// </summary>
+public class A_Melee : A_Attack
+{
+    public A_Melee(BaseMob mob, Transform target, float attackSpeed) : base(mob, target, attackSpeed)
+    {
+    }
+    public override IEnumerator Execute()
+    {
+        CanCast = false;
+
+        // We should play some kind of attack animation
+        // We can do a sphere overlap cast to determine colliders where the melee weapon is.
+        // We can then put an event in the animation to deal damage to all the colliders in the overlap check
+        // This does require characters and animations to be included!
+
+        mob.StartCoroutine(Cooldown());
+        yield return null;
+    }
+}
+
 
 /// DECISIONS
 
+/// <summary>
+/// A generic attack decision that checks if an attack action can be performed
+/// </summary>
 public class AttackDecision : Decision<float>
 {
-    A_Attack action;
-    public AttackDecision(DecisionTreeNode tNode, DecisionTreeNode fNode, BaseMob mob) : base(tNode, fNode, mob)
+    readonly A_Attack action;
+    readonly float attackRange = 0;
+    readonly Transform target;
+    public AttackDecision(A_Attack attackNode, DecisionTreeNode fNode, BaseMob mob, Transform target, float attackRange) : base(attackNode, fNode, mob)
     {
-        this.action = (A_Attack)tNode;
+        this.action = attackNode;
+        this.attackRange = attackRange;
+        this.target = target;
     }
 
     public override float TestData()
     {
-        return Vector2.Distance(mob.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position);
+        return Vector2.Distance(mob.transform.position, target.position);
     }
 
     public override DecisionTreeNode GetBranch()
     {
         // If we are in range & have line of sight
-        if (TestData() <= action.Ability.Range && mob.HasLineOfSight(GameObject.FindGameObjectWithTag("Player").transform.position) && action.CanCast)
+        if (TestData() <= attackRange && mob.HasLineOfSight(target.position) && action.CanCast)
         {
             return trueNode;
         }
@@ -231,7 +312,7 @@ public class AttackDecision : Decision<float>
 // Allows for a function to be called every frame whilst we are waiting for the seconds passed
 public class DoTaskWhilstWaitingForSeconds : CustomYieldInstruction
 {
-    UnityAction task;
+    readonly UnityAction task;
     float timer;
     public DoTaskWhilstWaitingForSeconds(UnityAction task, float seconds)
     {

@@ -6,14 +6,12 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(menuName = "Environment Query System")]
 public class EnvironmentQuerySystem : ScriptableObject
 {
-    TilemapController tilemapController;
     Dictionary<Vector2Int, float> tileScore;
     public List<Rule> rules;
     GameObject caller;
 
-    public void Initialise(TilemapController tilemapController, Vector2Int[] tileCoords, GameObject caller)
+    public void Initialise(Vector2Int[] tileCoords, GameObject caller)
     {
-        this.tilemapController = tilemapController;
         this.caller = caller;
 
         tileScore = new Dictionary<Vector2Int, float>();
@@ -66,20 +64,16 @@ public abstract class Rule : ScriptableObject
     [SerializeField] protected float scoreModifier = 1f;
     [SerializeField] protected RuleTarget target;
 
-    protected TilemapController tilemapController;
-
     public abstract Dictionary<Vector2Int, float> Run(Dictionary<Vector2Int, float> tiles, GameObject caller);
 
     public void Initialise()
     {
-        tilemapController = GameObject.FindGameObjectWithTag("Tilemap").GetComponent<TilemapController>();
     }
 
     public Vector2 GetTargetPos(GameObject caller)
     {
-
         Vector3 pos;
-        switch (this.target)
+        switch (target)
         {
             case RuleTarget.PLAYER:
                 pos = GameObject.FindGameObjectWithTag("Player").transform.position;

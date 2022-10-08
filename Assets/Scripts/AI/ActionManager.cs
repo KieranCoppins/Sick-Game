@@ -8,16 +8,16 @@ public class ActionManager : MonoBehaviour
     public List<IEnumerator> currentActions = new List<IEnumerator>();
 
     public delegate void OnFinishDelegate(IEnumerator coroutine);
-    public event OnFinishDelegate onFinish;
+    public event OnFinishDelegate OnFinish;
 
-    public bool executingActions { get; protected set; }
+    public bool ExecutingActions { get; protected set; }
 
     bool waitForActions = false;
 
     private void Start()
     {
-        executingActions = false;
-        onFinish += delegate (IEnumerator coroutine)
+        ExecutingActions = false;
+        OnFinish += delegate (IEnumerator coroutine)
         {
             // Remove this action from current actions
             currentActions.Remove(coroutine);
@@ -26,7 +26,7 @@ public class ActionManager : MonoBehaviour
             if (currentActions.Count == 0)
             {
                 waitForActions = false;
-                executingActions = false;
+                ExecutingActions = false;
             }
         };
     }
@@ -72,7 +72,7 @@ public class ActionManager : MonoBehaviour
         // First we want to see if we have any interruptor actions
         foreach (ActionPacket a in actionQueue)
         {
-            if (a.action.Interruptor)
+            if ((a.action.Flags & Action.ActionFlags.Interruptor) == Action.ActionFlags.Interruptor)
             {
                 tempList = new List<ActionPacket>(actionQueue);
                 // If we have an interruptor clear all our actions and do this one
@@ -81,8 +81,8 @@ public class ActionManager : MonoBehaviour
                 tempList.Remove(a);
                 actionQueue = new Queue<ActionPacket>(tempList);
                 currentActionsChanged = true;
-                acceptASyncActions = a.action.ASyncAction;
-                waitForActions = !a.action.Interruptable;
+                acceptASyncActions = (a.action.Flags & Action.ActionFlags.SyncAction) == Action.ActionFlags.SyncAction;
+                waitForActions = (a.action.Flags & Action.ActionFlags.Interruptable) != Action.ActionFlags.Interruptable;
                 break;
             }
         }
@@ -92,11 +92,11 @@ public class ActionManager : MonoBehaviour
             if (currentActions.Count > 0)
             {
                 Action action = actionQueue.Peek().action;
-                if (action.ASyncAction && acceptASyncActions)
+                if ((action.Flags & Action.ActionFlags.SyncAction) == Action.ActionFlags.SyncAction && acceptASyncActions)
                 {
                     currentActions.Add(actionQueue.Dequeue().action.Execute());
                     currentActionsChanged = true;
-                    waitForActions = !action.Interruptable;
+                    waitForActions = (action.Flags & Action.ActionFlags.Interruptable) != Action.ActionFlags.Interruptable;
                 }
                 else
                     break;
@@ -106,8 +106,8 @@ public class ActionManager : MonoBehaviour
                 Action action = actionQueue.Dequeue().action;
                 currentActions.Add(action.Execute());
                 currentActionsChanged = true;
-                acceptASyncActions = action.ASyncAction;
-                waitForActions = !action.Interruptable;
+                acceptASyncActions = (action.Flags & Action.ActionFlags.SyncAction) == Action.ActionFlags.SyncAction;
+                waitForActions = (action.Flags & Action.ActionFlags.Interruptable) != Action.ActionFlags.Interruptable;
             }
         }
         if (currentActionsChanged)
@@ -121,7 +121,7 @@ public class ActionManager : MonoBehaviour
         // Execute all actions in current actions
         foreach (IEnumerator action in currentActions)
         {
-            executingActions = true;
+            ExecutingActions = true;
             StartCoroutine(ActionWrapper(action));
         }
     }
@@ -137,7 +137,7 @@ public class ActionManager : MonoBehaviour
             else
                 running = false;
         }
-        OnFinishDelegate handler = onFinish;
+        OnFinishDelegate handler = OnFinish;
         if (handler != null)
             handler(coroutine);
     }

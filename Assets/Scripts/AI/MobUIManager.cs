@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(BaseMob))]
 public class MobUIManager : MonoBehaviour
 {
     [SerializeField] Canvas canvas;
@@ -10,14 +11,10 @@ public class MobUIManager : MonoBehaviour
     [SerializeField] Slider staminaBar; // Dont support stamina just yet
 
     BaseMob mob;
-    IEnumerator coroutine;
 
     private void Awake()
     {
         mob = GetComponent<BaseMob>();
-        if (mob == null)
-            throw new MissingComponentException("Missing a Base Mob component script");
-        coroutine = UpdateUI();
     }
 
     IEnumerator UpdateUI()
@@ -34,13 +31,13 @@ public class MobUIManager : MonoBehaviour
     // We disable and enable the coroutine also - theres no point in updating our UI if we cant see it
     private void OnMouseEnter()
     {
-        StartCoroutine(coroutine);
+        StartCoroutine(UpdateUI());
         canvas.gameObject.SetActive(true);
     }
 
     private void OnMouseExit()
     {
-        StopCoroutine(coroutine);
+        StopCoroutine(UpdateUI());
         canvas.gameObject.SetActive(false);
     }
 }

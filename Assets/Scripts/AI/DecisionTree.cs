@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class DecisionTree
+public abstract class DecisionTree<T> where T : BaseMob
 {
-    protected BaseMob mob;
-    public DecisionTree(BaseMob mob)
+    protected T mob;
+    public DecisionTree(T mob)
     {
         this.mob = mob;
     }
@@ -23,11 +23,11 @@ public abstract class DecisionTree
         }
         catch (InvalidCastException e)
         {
-            Debug.LogError("Decision Tree did not reach an action node (InvalidCastException)");
+            Debug.LogError("Decision Tree did not reach an action node (InvalidCastException) " + e.Message);
         }
         catch (NullReferenceException e)
         {
-            Debug.LogError("Decision tree returned null. Has the tree been initialised?");
+            Debug.LogError("Decision tree returned null. Has the tree been initialised? " + e.Message);
         }
         catch (Exception e)
         {
@@ -49,41 +49,22 @@ public abstract class DecisionTreeNode
 
 public abstract class Action : DecisionTreeNode
 {
-    public Action(BaseMob mob, bool ASyncAction = false, bool Interruptor = false, bool Interruptable = true) : base(mob)
+    [Flags]
+    public enum ActionFlags
     {
-        _asyncAction = ASyncAction;
-        _interruptor = Interruptor;
-        _interruptable = Interruptable;
+        SyncAction = 1 << 0,
+        Interruptor = 1 << 1,
+        Interruptable = 1 << 2,
     }
 
-    // I dont like this list of bools - maybe move this to some kind of tagging system that uses bitwise logic to determine if they're active or not
-
-    public bool ASyncAction
+    public ActionFlags Flags { get; protected set; }
+    public Action(BaseMob mob) : base(mob)
     {
-        get
-        {
-            return _asyncAction;
-        }
-    }
-    public bool Interruptor
-    {
-        get
-        {
-            return _interruptor;
-        }
-    }
+        Flags = 0;
 
-    public bool Interruptable
-    {
-        get
-        {
-            return _interruptable;
-        }
+        // Default interruptable to true
+        Flags |= ActionFlags.Interruptable;
     }
-
-    protected readonly bool _asyncAction = false;
-    protected readonly bool _interruptor = false;
-    protected readonly bool _interruptable = false;
 
     public override DecisionTreeNode MakeDecision()
     {
@@ -101,24 +82,24 @@ public class Decision : DecisionTreeNode
     protected readonly DecisionTreeNode trueNode;
     protected readonly DecisionTreeNode falseNode;
 
-    Condition condition;
-
-    public DecisionTreeNode GetBranch()
-    {
-        
-        return condition() ? trueNode : falseNode;
-    }
-
-    public override DecisionTreeNode MakeDecision()
-    {
-        return GetBranch().MakeDecision();
-    }
+    readonly Condition Condition;
 
     public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode, Condition condDelegate, BaseMob mob) : base(mob)
     {
         this.trueNode = trueNode;
         this.falseNode = falseNode;
-        condition = condDelegate;
+        Condition = condDelegate;
+    }
+
+    public DecisionTreeNode GetBranch()
+    {
+        
+        return Condition() ? trueNode : falseNode;
+    }
+
+    public override DecisionTreeNode MakeDecision()
+    {
+        return GetBranch().MakeDecision();
     }
 }
 
@@ -126,6 +107,11 @@ public abstract class Decision<T> : DecisionTreeNode
 {
     protected readonly DecisionTreeNode trueNode;
     protected readonly DecisionTreeNode falseNode;
+    public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode, BaseMob mob) : base(mob)
+    {
+        this.trueNode = trueNode;
+        this.falseNode = falseNode;
+    }
 
     public abstract T TestData();
 
@@ -134,12 +120,6 @@ public abstract class Decision<T> : DecisionTreeNode
     public override DecisionTreeNode MakeDecision()
     {
         return GetBranch().MakeDecision();
-    }
-
-    public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode, BaseMob mob) : base(mob)
-    {
-        this.trueNode=trueNode;
-        this.falseNode=falseNode;
     }
 }
 
