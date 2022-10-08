@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 
 /// <summary>
@@ -39,7 +40,7 @@ public class A_PathTo : Action
         // Put our path in a queue for easier access
         Queue<Vector2> path = new Queue<Vector2>(p);
 
-        if (mob.DebugMode)
+        if ((mob.debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
         {
             for (int i = 1; i < p.Length; i++)
                 Debug.DrawLine(p[i - 1], p[i], Color.red, 1.0f);
@@ -56,7 +57,7 @@ public class A_PathTo : Action
             {
                 // Add velocity of move to target
                 Vector2 dir = mob.GetMovementVector(desiredPosition, true);
-                if (mob.DebugMode)
+                if ((mob.debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
                 {
                     Debug.DrawRay((Vector2)mob.transform.position + (dir * 0.45f), dir);
                     Debug.DrawRay((Vector2)mob.transform.position, dir, Color.blue);
@@ -93,7 +94,7 @@ public class A_StrafeAround : Action
         {
             desiredPosition = target.position;
             Vector2 dir = mob.GetMovementVector(desiredPosition);
-            if (mob.DebugMode)
+            if ((mob.debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
             {
                 Debug.DrawRay((Vector2)mob.transform.position + (dir * 0.45f), dir);
                 Debug.DrawRay((Vector2)mob.transform.position, desiredPosition - (Vector2)mob.transform.position, Color.blue);
@@ -123,6 +124,9 @@ public class A_Attack : Action
 
     bool _canCast = true;
 
+    Vector2 totalTargetVelocity;
+    int totalVelocityEntries = 0;
+
     public A_Attack(BaseMob mob, Transform target, AbilityBase ability) : base(mob, Interruptor: true, Interruptable: false)
     {
         this.target = target;
@@ -131,40 +135,37 @@ public class A_Attack : Action
 
     public override IEnumerator Execute()
     {
-        // Stop our velocity
-        mob.rb.velocity = Vector2.zero;
-        _canCast = false;
+        totalTargetVelocity = target.GetComponent<Rigidbody2D>().velocity;
+        totalVelocityEntries = 1;
+        // Predict where the target will be
+        Vector2 predictedLocation = PredictLocation();
+        Vector2 predictedDirection = predictedLocation - (Vector2)mob.transform.position;
 
-        // Save our targets current position
-        Vector2 prevPos = target.position;
+        // Do a ray cast to determine if we should start casting
+        RaycastHit2D hit = Physics2D.Raycast((Vector2)mob.transform.position, predictedDirection.normalized, predictedDirection.magnitude);
 
-        // Wait for our casting time
-        yield return new WaitForSeconds(_ability.CastTime);
-        
-        // Default to a straight line attack
-        Vector2 direction = (target.position - mob.transform.position).normalized;
+        if ((mob.debugFlags & DebugFlags.Combat) == DebugFlags.Combat)
+            Debug.DrawRay((Vector2)mob.transform.position, predictedDirection, Color.red, 0.5f);
 
-        // Check if our ability is a projectile ability
-        ProjectileAbility projectileAbility = _ability as ProjectileAbility;
-        if (projectileAbility != null)
+        // We dont get a hit at all, or if we do hit something we hit our target
+        if (!hit || (hit && hit.collider.CompareTag(target.tag)))
         {
-            Vector2 deltaVector = (Vector2)target.position - prevPos;
-            float targetVelocity = deltaVector.magnitude / _ability.CastTime;
+            // Then we're good to start casting our ability
 
-            float distanceFromAI = Vector2.Distance(mob.transform.position, target.position);
+            // Stop our velocity
+            mob.rb.velocity = Vector2.zero;
+            _canCast = false;
 
-            Vector2 predictedLocation = (Vector2)target.position + (deltaVector.normalized * targetVelocity * (distanceFromAI / projectileAbility.GetProjectileVelocity()));
+            // Whilst we are casting, we want to get the average of our player's movement vector
+            yield return new DoTaskWhilstWaitingForSeconds(() => { totalTargetVelocity += target.GetComponent<Rigidbody2D>().velocity; totalVelocityEntries += 1; }, _ability.CastTime);
 
-            Vector2 predictedDirection = (predictedLocation - (Vector2)mob.transform.position).normalized;
+            // Recalculate the predicted movement at the last second since the player may have changed direction during our casting time
+            predictedLocation = PredictLocation();
+            predictedDirection = predictedLocation - (Vector2)mob.transform.position;
 
-            if (predictedDirection != Vector2.zero)
-            {
-                direction = predictedDirection;
-            }
+            _ability.Cast(mob.transform.position, predictedDirection, target);
+            mob.StartCoroutine(Cooldown());
         }
-
-        _ability.Cast(mob.transform.position, direction, target);
-        mob.StartCoroutine(Cooldown());
 
         yield return null;
     }
@@ -173,6 +174,27 @@ public class A_Attack : Action
     {
         yield return new WaitForSeconds(_ability.AbilityCooldown);
         _canCast = true;
+    }
+
+    Vector2 PredictLocation()
+    {
+        // Check if our ability is a projectile ability
+        ProjectileAbility projectileAbility = _ability as ProjectileAbility;
+        if (projectileAbility != null)
+        {
+            // Get the average velocity of our target
+            Vector2 velocityVector = totalTargetVelocity / totalVelocityEntries;
+
+            // Calculate how far away our target is
+            float distanceFromAI = Vector2.Distance(mob.transform.position, target.position);
+
+            // Using our targets position, the velocity they're moving and the velocity of our projectile, determine where they would be
+            Vector2 predictedLocation = (Vector2)target.position + (velocityVector * (distanceFromAI / projectileAbility.GetProjectileVelocity()));
+
+            return predictedLocation;
+        }
+
+        return target.position;
     }
 }
 
@@ -200,6 +222,31 @@ public class AttackDecision : Decision<float>
             return trueNode;
         }
         return falseNode;
+    }
+}
+
+
+/// Custom Yield Instructions
+
+// Allows for a function to be called every frame whilst we are waiting for the seconds passed
+public class DoTaskWhilstWaitingForSeconds : CustomYieldInstruction
+{
+    UnityAction task;
+    float timer;
+    public DoTaskWhilstWaitingForSeconds(UnityAction task, float seconds)
+    {
+        this.task = task;
+        this.timer = seconds;
+    }
+
+    public override bool keepWaiting
+    {
+        get
+        {
+            task.Invoke();
+            timer -= Time.deltaTime;
+            return timer > 0;
+        }
     }
 }
 

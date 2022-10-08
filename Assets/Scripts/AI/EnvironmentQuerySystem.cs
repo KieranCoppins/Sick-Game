@@ -33,6 +33,7 @@ public class EnvironmentQuerySystem : ScriptableObject
             tileScore = rule.Run(tileScore, caller);
         }
         float lowestScore = Mathf.Infinity;
+        float highestScore = 0;
         Vector2Int bestTile = Vector2Int.zero;
         foreach (var tile in tileScore)
         {
@@ -42,9 +43,16 @@ public class EnvironmentQuerySystem : ScriptableObject
                 bestTile = tile.Key;
             }
 
-            // DEBUG - draw a line and the lighter the red the more ideal the tile was
-            if (caller.GetComponent<BaseMob>().DebugMode)
-                Debug.DrawLine(new Vector3(tile.Key.x, tile.Key.y, 0.0f), new Vector3(tile.Key.x + 1.0f, tile.Key.y + 1.0f, 0), new Color(1.0f - (tile.Value / 8.0f), 0.0f, 0.0f), 2.0f);
+            if (tile.Value > highestScore)
+                highestScore = tile.Value;
+        }
+
+        if ((caller.GetComponent<BaseMob>().debugFlags & DebugFlags.EQS) == DebugFlags.EQS)
+        {
+            foreach (var tile in tileScore)
+            {
+                Debug.DrawLine(new Vector3(tile.Key.x, tile.Key.y, 0.0f), new Vector3(tile.Key.x + 1.0f, tile.Key.y + 1.0f, 0), Color.Lerp(Color.red, Color.green, 1 - ((tile.Value - lowestScore) / (highestScore - lowestScore))), 1f);
+            }
         }
 
         return new Vector2(bestTile.x + 0.5f, bestTile.y + 0.5f);

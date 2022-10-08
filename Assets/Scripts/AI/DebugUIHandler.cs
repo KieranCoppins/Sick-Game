@@ -18,12 +18,12 @@ public class DebugUIHandler : MonoBehaviour
     {
         mob = GetComponent<BaseMob>();
         name.text = gameObject.name;
-        debugCanvas.enabled = mob.DebugMode;
+        debugCanvas.enabled = (mob.debugFlags & DebugFlags.DecisionTree) == DebugFlags.DecisionTree;
     }
 
     void FixedUpdate()
     {
-        if (!mob.DebugMode)
+        if (!((mob.debugFlags & DebugFlags.DecisionTree) == DebugFlags.DecisionTree))
             return;
 
         currentAction.text = "Current Action(s): " + mob.GetCurrentActionText();

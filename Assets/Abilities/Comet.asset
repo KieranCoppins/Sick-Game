@@ -18,5 +18,5 @@ MonoBehaviour:
   projectile: {fileID: 4616442037673614323, guid: 363c4827b8395a6498aafa62abef3057, type: 3}
   angle: 0
   numberProjectiles: 1
-  projectileVelocity: 5
+  projectileVelocity: 10
   damage: 0

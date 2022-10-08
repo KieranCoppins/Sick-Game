@@ -2,11 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System;
+
+[Flags]
+public enum DebugFlags
+{
+    None = 0,
+    Pathfinding = 1 << 0,
+    EQS = 1 << 1,
+    Combat = 1 << 2,
+    DecisionTree = 1 << 3,
+}
 
 [RequireComponent(typeof(PathfindingComponent))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(ActionManager))]
 [DisallowMultipleComponent]
+
 public abstract class BaseMob : MonoBehaviour
 {
     [Header("Events")]
@@ -71,7 +83,9 @@ public abstract class BaseMob : MonoBehaviour
     protected DecisionTree decisionTree;
 
     [Header("DEBUG VALUES")]
-    [SerializeField] public bool DebugMode;
+    [EnumFlags]
+    [SerializeField]
+    public DebugFlags debugFlags;
 
     protected List<Vector2> movementDirections;
 
@@ -162,7 +176,7 @@ public abstract class BaseMob : MonoBehaviour
         Vector2 upperStart = (Vector2)transform.position + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(0.42f, 0));
         lowerHit = Physics2D.Raycast(lowerStart, position - lowerStart);
         upperHit = Physics2D.Raycast(upperStart, position - upperStart);
-        if (DebugMode)
+        if ((debugFlags & DebugFlags.Combat) == DebugFlags.Combat)
         {
             Debug.DrawRay(lowerStart, position - lowerStart, Color.magenta);
             Debug.DrawRay(upperStart, position - upperStart, Color.magenta);
@@ -194,10 +208,12 @@ public abstract class BaseMob : MonoBehaviour
         for (int i = 0; i < movementDirections.Count; i++)
         {
             RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position, movementDirections[i], 1f);
-            Debug.DrawRay((Vector2)transform.position, movementDirections[i], Color.cyan);
+            if ((debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
+                Debug.DrawRay((Vector2)transform.position, movementDirections[i], Color.cyan);
             if (hit)
             {
-                Debug.DrawRay((Vector2)transform.position, movementDirections[i], Color.red);
+                if ((debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
+                    Debug.DrawRay((Vector2)transform.position, movementDirections[i], Color.red);
                 targetDir = movementDirections[i] * -1;
                 avoid = true;
                 break;
@@ -220,8 +236,8 @@ public abstract class BaseMob : MonoBehaviour
             // Check to see if moving in this direction will cause us to hit an obstruction - we dont want this
             RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position, pair.Key, 1.5f);
             if (!hit) return pair.Key;
-
-            Debug.DrawRay((Vector2)transform.position, pair.Key, Color.magenta);
+            if ((debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
+                Debug.DrawRay((Vector2)transform.position, pair.Key, Color.magenta);
         }
 
         return Vector2.zero;
@@ -262,3 +278,8 @@ public class KeyValuePairComparer : IComparer<KeyValuePair<Vector2, float>>
 
 
 public delegate float DirectionWeightFunction(Vector2 targetDir, Vector2 dir);
+
+public class EnumFlagsAttribute : PropertyAttribute
+{
+
+}
