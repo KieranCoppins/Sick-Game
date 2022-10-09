@@ -25,7 +25,7 @@ public class R_HasLineOfSight : Rule
             Vector2 upperStart = tilePos + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(0.49f, 0));
             lowerHit = Physics2D.Raycast(lowerStart, t - lowerStart);
             upperHit = Physics2D.Raycast(upperStart, t - upperStart);
-            if (lowerHit && upperHit && target == RuleTarget.PLAYER ? lowerHit.collider.CompareTag("Player") && upperHit.collider.CompareTag("Player") : lowerHit.collider == caller.GetComponent<Collider2D>() && upperHit.collider == caller.GetComponent<Collider2D>())
+            if (lowerHit && upperHit && target == EQSTarget.PLAYER ? lowerHit.collider.CompareTag("Player") && upperHit.collider.CompareTag("Player") : lowerHit.collider == caller.GetComponent<Collider2D>() && upperHit.collider == caller.GetComponent<Collider2D>())
             {
                 newTiles[tile.Key] = tiles[tile.Key] + scoreModifier;
             }

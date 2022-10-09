@@ -24,7 +24,8 @@ public class R_DistanceTo : Rule
 
         foreach (var tile in tiles)
         {
-            float d = Vector2.Distance(tile.Key, target);
+            // Check the distance from the tile's mid point instead of the origin
+            float d = Vector2.Distance(tile.Key + new Vector2(0.5f, 0.5f), target);
             if (Decision(d))
                 newTiles[tile.Key] = tiles[tile.Key] + scoreModifier;
             else if (!ignoreFailedTiles)

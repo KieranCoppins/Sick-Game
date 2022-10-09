@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d3fb38dd6763c64b8220ec2ded6b771, type: 3}
-  m_Name: EQS_MoveToPlayer
+  m_Name: EQS_MeleeMobMoveToPlayer
   m_EditorClassIdentifier: 
   rules:
   - {fileID: 11400000, guid: e52c7791597247f4793bd410cdb7c67b, type: 2}
-  - {fileID: 11400000, guid: 7518ca538fce0f344b77b2298b616555, type: 2}
   - {fileID: 11400000, guid: 5d7dee7ae52575e4d9f009e157f0b681, type: 2}
+  - {fileID: 11400000, guid: f59755d3feb7b144789d6ac212b5e4c5, type: 2}
   - {fileID: 11400000, guid: 8bef3a28a3960f2458a23bb633b449b4, type: 2}
+  _target: 0
+  _tileRange: 3

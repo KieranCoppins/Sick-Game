@@ -108,9 +108,6 @@ public class DT_RangedMob : DecisionTree<RangedMob>
 
     Vector2 FindTileNearPlayer()
     {
-        Transform target = GameObject.FindGameObjectWithTag("Player").transform;
-        float range = mob.ability.Range;
-        Vector2 position = range == 0 ? target.position : GameObject.FindGameObjectWithTag("EQSManager").GetComponent<EQSManager>().RunEQSystem(EQSystem.RangedMobMoveToPlayer, range, target.position, mob.gameObject);
-        return position;
+        return GameObject.FindGameObjectWithTag("EQSManager").GetComponent<EQSManager>().RunEQSystem(EQSystem.RangedMobMoveToPlayer, mob.gameObject);
     }
 }

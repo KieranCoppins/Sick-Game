@@ -19,4 +19,4 @@ MonoBehaviour:
   angle: 0
   numberProjectiles: 1
   projectileVelocity: 10
-  damage: 0
+  damage: 5

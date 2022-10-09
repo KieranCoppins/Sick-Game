@@ -818,13 +818,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _maxHealth: 10
-  damage: 1
   movementSpeed: 2
-  attackRate: 2
   PathfindingComponent: {fileID: 0}
   rb: {fileID: 0}
   debugFlags: 0
-  MeleeRange: 2
+  _meleeRange: 2
+  _meleeDamage: 10
+  _meleeSpeed: 2
 --- !u!212 &3856485209610614427
 SpriteRenderer:
   m_ObjectHideFlags: 0

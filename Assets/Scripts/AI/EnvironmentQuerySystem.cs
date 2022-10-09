@@ -6,8 +6,26 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(menuName = "Environment Query System")]
 public class EnvironmentQuerySystem : ScriptableObject
 {
+
+    public EQSTarget Target
+    {
+        get { return _target; }
+        protected set { _target = value; }
+    }
+    public float TileRange
+    {
+        get { return _tileRange; }
+        protected set { _tileRange = value; }
+    }
+
+    [Tooltip("An array of EQS Rules to run everytime this query is ran")]
+    [SerializeField] protected List<Rule> rules;
+    [Tooltip("The target to check tiles around")]
+    [SerializeField] protected EQSTarget _target;
+    [Tooltip("The radius of tiles around the target to run the EQS Rules on")]
+    [SerializeField] protected float _tileRange;
+
     Dictionary<Vector2Int, float> tileScore;
-    public List<Rule> rules;
     GameObject caller;
 
     public void Initialise(Vector2Int[] tileCoords, GameObject caller)
@@ -49,7 +67,10 @@ public class EnvironmentQuerySystem : ScriptableObject
         {
             foreach (var tile in tileScore)
             {
-                Debug.DrawLine(new Vector3(tile.Key.x, tile.Key.y, 0.0f), new Vector3(tile.Key.x + 1.0f, tile.Key.y + 1.0f, 0), Color.Lerp(Color.red, Color.green, 1 - ((tile.Value - lowestScore) / (highestScore - lowestScore))), 1f);
+                if (tile.Key == bestTile)
+                    Debug.DrawLine(new Vector3(tile.Key.x, tile.Key.y, 0.0f), new Vector3(tile.Key.x + 1.0f, tile.Key.y + 1.0f, 0), Color.yellow, 1f);
+                else
+                    Debug.DrawLine(new Vector3(tile.Key.x, tile.Key.y, 0.0f), new Vector3(tile.Key.x + 1.0f, tile.Key.y + 1.0f, 0), Color.Lerp(Color.red, Color.green, 1 - ((tile.Value - lowestScore) / (highestScore - lowestScore))), 1f);
             }
         }
 
@@ -62,7 +83,7 @@ public abstract class Rule : ScriptableObject
 {
     [SerializeField] protected bool ignoreFailedTiles = false;
     [SerializeField] protected float scoreModifier = 1f;
-    [SerializeField] protected RuleTarget target;
+    [SerializeField] protected EQSTarget target;
 
     public abstract Dictionary<Vector2Int, float> Run(Dictionary<Vector2Int, float> tiles, GameObject caller);
 
@@ -75,10 +96,10 @@ public abstract class Rule : ScriptableObject
         Vector3 pos;
         switch (target)
         {
-            case RuleTarget.PLAYER:
+            case EQSTarget.PLAYER:
                 pos = GameObject.FindGameObjectWithTag("Player").transform.position;
                 break;
-            case RuleTarget.CALLER:
+            case EQSTarget.CALLER:
                 pos = caller.transform.position;
                 break;
             default:
@@ -89,7 +110,7 @@ public abstract class Rule : ScriptableObject
     }
 }
 
-public enum RuleTarget
+public enum EQSTarget
 {
     PLAYER,
     CALLER

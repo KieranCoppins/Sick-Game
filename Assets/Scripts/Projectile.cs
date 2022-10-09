@@ -25,6 +25,8 @@ public class Projectile : MonoBehaviour
     float aliveTime = 0;
     float velocity = 0;
 
+    public int damage;
+
 
     private void Awake()
     {
@@ -51,9 +53,14 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Player")
+        if (collision.collider.CompareTag("Player"))
         {
             // Deal damage to player here
+            collision.gameObject.GetComponent<CharacterMovement>().TakeDamage(damage);
+        }
+        else if (collision.collider.CompareTag("Mob"))
+        {
+            collision.gameObject.GetComponent<BaseMob>().TakeDamage(damage);
         }
         Destroy(this.gameObject);
     }

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f698656a4845e5a4bb8697bb1e5fbc3f, type: 3}
-  m_Name: R_ClosestToPlayer
+  m_Name: R_ClosestToCaller
   m_EditorClassIdentifier: 
   ignoreFailedTiles: 0
-  scoreModifier: 2
-  target: 0
+  scoreModifier: 1
+  target: 1

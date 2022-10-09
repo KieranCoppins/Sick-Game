@@ -118,14 +118,16 @@ public class TilemapController : MonoBehaviour
         return tilemap.CellToWorld(new Vector3Int(node.x, node.y, 0));
     }
 
-    public Vector2Int[] GetTilesInRange(Vector3Int position, int range)
+    public Vector2Int[] GetTilesInRange(Vector3Int position, int radius)
     {
-        Vector3Int size = new Vector3Int(range, range, 1);
+        Vector3Int size = new Vector3Int(radius * 2, radius * 2, 1);
         BoundsInt bounds = new BoundsInt(position - size / 2, size);
         List<Vector2Int> points = new List<Vector2Int>();
+        Vector2 tileOffset = new Vector2(0.5f, 0.5f);
         foreach (Vector2Int point in bounds.allPositionsWithin)
         {
-            points.Add(point);
+            if (((point + tileOffset) - (Vector2Int)position).sqrMagnitude <= Mathf.Pow(radius, 2))
+                points.Add(point);
         }
         return points.ToArray();
     }

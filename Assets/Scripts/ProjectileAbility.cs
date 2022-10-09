@@ -18,7 +18,7 @@ public class ProjectileAbility : AbilityBase
     [SerializeField] float projectileVelocity;
 
     [Tooltip("The amount of damage our projectile should do when it hits something")]
-    [SerializeField] float damage;
+    [SerializeField] int damage;
 
     public override void Cast(Vector2 position, Vector2 direction, Transform target)
     { 
@@ -32,6 +32,7 @@ public class ProjectileAbility : AbilityBase
             Projectile projectileComp = go.GetComponent<Projectile>();
             projectileComp.target = target;
             projectileComp.SetVelocity(projectileVelocity);
+            projectileComp.damage = damage;
         }
     }
 
