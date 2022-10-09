@@ -50,20 +50,13 @@ public class MeleeMob : BaseMob
         if (dist < 2f)
             return Vector2.Dot(targetDir, dir) + Vector2.Dot(rb.velocity.normalized, dir);
 
-        return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - 0.8f) + Vector2.Dot(rb.velocity.normalized, dir);
+        return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - 0.9f) + Vector2.Dot(rb.velocity.normalized, dir);
 
-    }
-
-    protected override float AvoidObsticle(Vector2 targetDir, Vector2 dir)
-    {
-        return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - 0.65f) + Vector2.Dot(rb.velocity.normalized, dir);
     }
 }
 
 public class DT_MeleeMob : DecisionTree<MeleeMob>
 {
-    Vector2 playerPrevPos;
-
     public DT_MeleeMob(MeleeMob mob) : base(mob)
     {
 
@@ -73,36 +66,17 @@ public class DT_MeleeMob : DecisionTree<MeleeMob>
     {
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
 
+        /// Actions
         A_PathTo MoveToPlayer = new(mob, FindTileNearPlayer, CancelPathfinding);
         A_Melee AttackPlayer = new(mob, player, mob.MeleeSpeed);
-        A_MoveTowards moveTowardsPlayer = new(mob, player, mob.MeleeRange);
+        A_MoveTowards moveTowardsPlayer = new(mob, player);
         A_PullBack moveAwayFromPlayer = new(mob, player, 3f);
 
+        /// Decisions
         Decision PullbackDecision = new(moveAwayFromPlayer, moveTowardsPlayer, ShouldPullback, mob);
         AttackDecision attackDecision = new(AttackPlayer, PullbackDecision, mob, player, mob.MeleeRange);
 
         root = new Decision(MoveToPlayer, attackDecision, ShouldMoveToPlayer, mob);
-    }
-
-    bool CancelPathfinding()
-    {
-        Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        return mob.HasLineOfSight(playerPos);
-    }
-
-    bool ShouldMoveToPlayer()
-    {
-        Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        // We want to move to a distance slightly less than our abilities range so we're not *just* in range
-        if (!mob.HasLineOfSight(playerPos))
-        {
-            if (playerPrevPos == null || Vector2.Distance(playerPrevPos, playerPos) > 0.5f)
-            {
-                playerPrevPos = playerPos;
-                return true;
-            }
-        }
-        return false;
     }
 
     bool ShouldPullback()

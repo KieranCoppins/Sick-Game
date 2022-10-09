@@ -14,6 +14,8 @@ public abstract class DecisionTree<T> where T : BaseMob
 
     protected DecisionTreeNode root;
 
+    private Vector2 playerPrevPos;
+
     public abstract void Initialise();
     public Action Run()
     {
@@ -34,6 +36,24 @@ public abstract class DecisionTree<T> where T : BaseMob
             Debug.LogError(e.Message);
         }
         return null;
+    }
+
+    /// Some protected functions that maybe useful for all decision making
+
+    protected virtual bool ShouldMoveToPlayer()
+    {
+        Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        if (!mob.HasLineOfSight(playerPos))
+        {
+            playerPrevPos = playerPos;
+            return true;
+        }
+        return false;
+    }
+    protected virtual bool CancelPathfinding()
+    {
+        Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        return mob.HasLineOfSight(playerPos) || Vector2.Distance(playerPrevPos, playerPos) > 0.5f;
     }
 }
 

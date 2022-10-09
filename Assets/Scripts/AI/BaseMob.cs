@@ -179,29 +179,13 @@ public abstract class BaseMob : MonoBehaviour
     public Vector2 GetMovementVector(Vector2 target, bool moveStraight = false)
     {
         Vector2 targetDir = (target - (Vector2)transform.position).normalized;
-        bool avoid = false;
-        // We should check for all obstructions around us first
         
-        for (int i = 0; i < movementDirections.Count; i++)
-        {
-            RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position, movementDirections[i], 1f);
-            if ((debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
-                Debug.DrawRay((Vector2)transform.position, movementDirections[i], Color.cyan);
-            if (hit)
-            {
-                if ((debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
-                    Debug.DrawRay((Vector2)transform.position, movementDirections[i], Color.red);
-                targetDir = movementDirections[i] * -1;
-                avoid = true;
-                break;
-            }
-        }
         List<KeyValuePair<Vector2, float>> directionWeights = new List<KeyValuePair<Vector2, float>>();
 
         // Calculate dot products
         foreach (Vector2 dir in movementDirections)
         {
-            KeyValuePair<Vector2, float> pair = new KeyValuePair<Vector2, float>(dir, avoid ? AvoidObsticle(targetDir, dir) : MoveAround(targetDir, dir, target, moveStraight));
+            KeyValuePair<Vector2, float> pair = new KeyValuePair<Vector2, float>(dir, MoveAround(targetDir, dir, target, moveStraight));
             directionWeights.Add(pair);
         }
 
@@ -211,10 +195,10 @@ public abstract class BaseMob : MonoBehaviour
         foreach (KeyValuePair<Vector2, float> pair in directionWeights)
         {
             // Check to see if moving in this direction will cause us to hit an obstruction - we dont want this
-            RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position, pair.Key, 1.5f);
+            RaycastHit2D hit = Physics2D.CircleCast((Vector2)transform.position, .5f, pair.Key, 1f);
             if (!hit) return pair.Key;
             if ((debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
-                Debug.DrawRay((Vector2)transform.position, pair.Key, Color.magenta);
+                Debug.DrawRay((Vector2)transform.position, pair.Key * 2f, Color.magenta);
         }
 
         return Vector2.zero;
@@ -228,15 +212,6 @@ public abstract class BaseMob : MonoBehaviour
     /// <param name="target"></param>
     /// <returns></returns>
     protected abstract float MoveAround(Vector2 targetDir, Vector2 dir, Vector2 target, bool moveStraight);
-
-    /// <summary>
-    /// Is called when we are next to an obsticle and want to avoid it
-    /// </summary>
-    /// <param name="targetDir"></param>
-    /// <param name="dir"></param>
-    /// <param name="target"></param>
-    /// <returns></returns>
-    protected abstract float AvoidObsticle(Vector2 targetDir, Vector2 dir);
 }
 
 // A custom comparer class that ensures the largest value of the key value pair appears first in the array

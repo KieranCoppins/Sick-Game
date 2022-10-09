@@ -25,7 +25,6 @@ public class A_PathTo : Action
         pathfinding = mob.PathfindingComponent;
         this.destinationDelegate = destinationDelegate;
         this.cancelPathfindingDelegate = cancelPathfindingDelegate;
-        Flags |= ActionFlags.Interruptor;       // This action is an interruptor
     }
 
     public override IEnumerator Execute()
@@ -93,17 +92,15 @@ public class A_MoveTowards : Action
 {
     readonly Transform target;
     Vector2 desiredPosition;
-    readonly float distance;
 
-    public A_MoveTowards(BaseMob mob, Transform target, float distance) : base(mob)
+    public A_MoveTowards(BaseMob mob, Transform target) : base(mob)
     {
         this.target = target;
-        this.distance = distance;
     }
 
     public override IEnumerator Execute()
     {
-        while (Vector2.Distance(mob.transform.position, target.position) > distance)
+        while (mob.HasLineOfSight(target.position))
         {
             desiredPosition = target.position;
             Vector2 dir = mob.GetMovementVector(desiredPosition);

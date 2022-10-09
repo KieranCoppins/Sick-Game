@@ -44,9 +44,4 @@ public class TestBoss : BaseBoss
     {
         throw new System.NotImplementedException();
     }
-
-    protected override float AvoidObsticle(Vector2 targetDir, Vector2 dir)
-    {
-        throw new System.NotImplementedException();
-    }
 }

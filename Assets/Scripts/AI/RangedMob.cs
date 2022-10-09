@@ -43,8 +43,8 @@ public class RangedMob : BaseMob
             return Vector2.Dot(targetDir, dir);
 
         // Move away from the target if too close
-        if (dist < 2.0f)
-            return ((Vector2.Dot(targetDir, dir) * -1) - 0.4f) + Vector2.Dot(rb.velocity.normalized, dir);  // We add the dot product of our current velocity so that we try and favor where we are currently going - prevents random switches in direction
+        if (dist < 4.0f)
+            return 1f - Mathf.Abs(Vector2.Dot(targetDir * -1f, dir) - 0.65f) + Vector2.Dot(rb.velocity.normalized, dir);  // We add the dot product of our current velocity so that we try and favor where we are currently going - prevents random switches in direction
 
         // Circle the target if in range
         else if (dist < ability.Range - 1.0f)
@@ -53,16 +53,10 @@ public class RangedMob : BaseMob
         // Otherwise move towards the target
         return Vector2.Dot(targetDir, dir) + Vector2.Dot(rb.velocity.normalized, dir);
     }
-
-    protected override float AvoidObsticle(Vector2 targetDir, Vector2 dir)
-    {
-        return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - 0.65f) + Vector2.Dot(rb.velocity.normalized, dir);
-    }
 }
 
 public class DT_RangedMob : DecisionTree<RangedMob>
 {
-    Vector2 playerPrevPos;
     public DT_RangedMob(RangedMob mob) : base(mob)
     {
 
@@ -75,7 +69,7 @@ public class DT_RangedMob : DecisionTree<RangedMob>
         /// ACTIONS
         A_PathTo MoveToPlayer = new (mob, FindTileNearPlayer, CancelPathfinding);
         A_CastAbility castComet = new(mob, player, mob.ability);
-        A_MoveTowards moveTowardsPlayer = new(mob, player, 0); // Always move towards the player (since moving towards for a ranged mob is actually circling them)
+        A_MoveTowards moveTowardsPlayer = new(mob, player); // Always move towards the player (since moving towards for a ranged mob is actually circling them)
 
 
         /// DECISIONS
@@ -83,27 +77,6 @@ public class DT_RangedMob : DecisionTree<RangedMob>
 
         // Initialise our root
         root = new Decision(MoveToPlayer, shouldCastComet, ShouldMoveToPlayer, mob);
-    }
-
-    bool CancelPathfinding()
-    {
-        Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        return Vector2.Distance(mob.transform.position, playerPos) <= mob.ability.Range - 1.0f && mob.HasLineOfSight(playerPos);
-    }
-
-    bool ShouldMoveToPlayer()
-    {
-        Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        // We want to move to a distance slightly less than our abilities range so we're not *just* in range
-        if (Vector2.Distance(mob.transform.position, playerPos) > mob.ability.Range - 1.0f || !mob.HasLineOfSight(playerPos))
-        {
-            if (playerPrevPos == null || Vector2.Distance(playerPrevPos, playerPos) > 0.5f)
-            {
-                playerPrevPos = playerPos;
-                return true;
-            }
-        }
-        return false;
     }
 
     Vector2 FindTileNearPlayer()
