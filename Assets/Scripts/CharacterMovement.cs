@@ -16,7 +16,11 @@ public class CharacterMovement : MonoBehaviour
     [Header("Player Stats")]
     [SerializeField] int MaxHealth;
     [SerializeField] int MaxStamina;
-    [SerializeField] int MaxMana;    
+    [SerializeField] float StaminaRegenCooldown;
+    [SerializeField] int StaminaRegentAmount;
+    [SerializeField] int MaxMana;
+
+    float StaminaRegenTimer;
 
     public int Health { 
         get { return _health; } 
@@ -37,7 +41,11 @@ public class CharacterMovement : MonoBehaviour
     public int Stamina { 
         get { return _stamina; } 
         private set 
-        { 
+        {
+            // If we deplete our stamina, then we want to initiate our regen calldown
+            if (value < _stamina)
+                StaminaRegenTimer = StaminaRegenCooldown;
+
             _stamina = Mathf.Clamp(value, 0, MaxStamina); 
 
             // Update stamina UI
@@ -79,9 +87,27 @@ public class CharacterMovement : MonoBehaviour
         Health = MaxHealth;
         Stamina = MaxStamina;
         Mana = MaxMana;
+
+        StartCoroutine(RegenStats());
     }
 
-    // Update is called once per frame
+    IEnumerator RegenStats()
+    {
+        while (true)
+        {
+            if (StaminaRegenTimer <= 0)
+                Stamina += StaminaRegentAmount;
+
+            yield return new WaitForSeconds(0.1f);
+        }
+
+    }
+
+    private void Update()
+    {
+        StaminaRegenTimer -= Time.deltaTime;
+    }
+
     void FixedUpdate()
     {
         // Create a vector from this and normalise it. Multiply it by the movementSpeed and use this as our velocity for the rigidbody
@@ -99,7 +125,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void Roll(InputAction.CallbackContext context)
     {
-        if (context.started && !rolling)
+        if (context.started && !rolling && Stamina >= 10)
         {
             StartCoroutine(DoRoll(movementVelocity.normalized));
             Stamina -= 10;
