@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Comet Wave
   m_EditorClassIdentifier: 
   AbilityCooldown: 5
-  CastTime: 0
-  Range: 5
+  CastTime: 0.5
+  Range: 8
   projectile: {fileID: 4616442037673614323, guid: 363c4827b8395a6498aafa62abef3057, type: 3}
   angle: 120
   numberProjectiles: 5
-  damage: 0
+  projectileVelocity: 10
+  damage: 5

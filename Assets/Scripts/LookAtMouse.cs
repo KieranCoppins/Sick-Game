@@ -5,15 +5,21 @@ using UnityEngine;
 public class LookAtMouse : MonoBehaviour
 {
 
-    public Transform player;
-
-    public float maxDistance;
+    [SerializeField] float maxDistance;
+    [SerializeField] GameObject weaponGO;
 
     Vector3 mousePos;
-
-    Vector3 playerPos;
-
     Vector2 direction;
+
+    SpriteRenderer weaponRenderer;
+    SpriteRenderer characterRenderer;
+
+
+    private void Start()
+    {
+        weaponRenderer = weaponGO.GetComponentInChildren<SpriteRenderer>();
+        characterRenderer = GetComponent<SpriteRenderer>();
+    }
 
     void Update()
     {
@@ -21,12 +27,22 @@ public class LookAtMouse : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
 
-        playerPos = player.transform.position;
+        direction = (mousePos - transform.position).normalized;
+        weaponGO.transform.position = (Vector2)transform.position + direction * 0.5f;
 
-        direction = (mousePos - playerPos).normalized;
-
-        Physics2D.Raycast(playerPos, direction, maxDistance);
+        // Flip our weapon and character sprites depending on where we're looking
+        if (direction.x < 0)
+        {
+            weaponRenderer.flipX = true;
+            characterRenderer.flipX = true;
+        } 
+        else
+        {
+            weaponGO.GetComponentInChildren<SpriteRenderer>().flipX = false;
+            characterRenderer.flipX = false;
+        }
+        Physics2D.Raycast(transform.position, direction, maxDistance);
         
-        Debug.DrawRay(playerPos, direction);
+        Debug.DrawRay(transform.position, direction);
     }
 }

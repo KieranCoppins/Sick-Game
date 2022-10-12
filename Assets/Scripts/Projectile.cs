@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEditor;
 
-[RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class Projectile : MonoBehaviour
@@ -19,8 +19,10 @@ public class Projectile : MonoBehaviour
 
     [Tooltip("How long in seconds before the projectile destroys itself")]
     [SerializeField] float lifespan;
-    
 
+    [SerializeField] UnityEvent OnAwake;
+    [SerializeField] UnityEvent OnDeath;
+    
     Rigidbody2D rb;
     float aliveTime = 0;
     float velocity = 0;
@@ -32,6 +34,7 @@ public class Projectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
+        OnAwake?.Invoke();
     }
 
     void Update()
@@ -48,7 +51,10 @@ public class Projectile : MonoBehaviour
 
         aliveTime += Time.deltaTime;
         if (aliveTime >= lifespan)
+        {
+            OnDeath?.Invoke();
             Destroy(this.gameObject);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -62,6 +68,7 @@ public class Projectile : MonoBehaviour
         {
             collision.gameObject.GetComponent<BaseMob>().TakeDamage(damage);
         }
+        OnDeath?.Invoke();
         Destroy(this.gameObject);
     }
 
