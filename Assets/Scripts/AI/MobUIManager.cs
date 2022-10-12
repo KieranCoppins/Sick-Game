@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(BaseMob))]
-public class MobUIManager : MonoBehaviour
+public class MobUIManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] Canvas canvas;
     [SerializeField] Slider healthBar;
@@ -26,16 +27,13 @@ public class MobUIManager : MonoBehaviour
         }
     }
 
-    // WHEN DID THESE FUNCTIONS EXIST?! - Show UI if our mouse is over the enemy
-    // We could also add if a key is down show UI, if we do this move enabling and disabling into a function and call that
-    // We disable and enable the coroutine also - theres no point in updating our UI if we cant see it
-    private void OnMouseEnter()
+    void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
     {
         StartCoroutine(UpdateUI());
         canvas.gameObject.SetActive(true);
     }
 
-    private void OnMouseExit()
+    void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
     {
         StopCoroutine(UpdateUI());
         canvas.gameObject.SetActive(false);

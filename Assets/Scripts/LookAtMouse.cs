@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class LookAtMouse : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class LookAtMouse : MonoBehaviour
     void Update()
     {
 
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         mousePos.z = 0;
 
         direction = (mousePos - transform.position).normalized;

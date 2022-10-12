@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 // Character movement needs a rigidbody2D component
@@ -15,6 +16,9 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] int MaxHealth;
     [SerializeField] int MaxStamina;
     [SerializeField] int MaxMana;
+
+    float horizontalMovement;
+    float verticalMovement;
 
     public int Health { 
         get { return _health; } 
@@ -62,6 +66,8 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] Slider StaminaBar;
     [SerializeField] Slider ManaBar;
 
+    Vector2 movementVelocity;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,13 +85,19 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        // Get our raw axis input so no gliding occures
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
 
         // Create a vector from this and normalise it. Multiply it by the movementSpeed and use this as our velocity for the rigidbody
-        rb.velocity = new Vector2(horizontal, vertical).normalized * movementSpeed;
+        rb.velocity = movementVelocity.normalized * movementSpeed;
     }
+
+    public void Move(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            movementVelocity = context.ReadValue<Vector2>().normalized * movementSpeed;
+        else
+            movementVelocity = Vector2.zero;
+    }
+
 
     public void TakeDamage(int damage)
     {
