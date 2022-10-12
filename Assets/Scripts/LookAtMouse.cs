@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class LookAtMouse : MonoBehaviour
 {
@@ -14,20 +15,27 @@ public class LookAtMouse : MonoBehaviour
     SpriteRenderer weaponRenderer;
     SpriteRenderer characterRenderer;
 
+    PlayerInput playerInput;
+
 
     private void Start()
     {
         weaponRenderer = weaponGO.GetComponentInChildren<SpriteRenderer>();
         characterRenderer = GetComponent<SpriteRenderer>();
+
+        playerInput = GetComponent<PlayerInput>();
     }
 
     void Update()
     {
+        if (playerInput.currentControlScheme == "Keyboard&Mouse")
+        {
+            mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            mousePos.z = 0;
 
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0;
+            direction = (mousePos - transform.position).normalized;
+        }
 
-        direction = (mousePos - transform.position).normalized;
         weaponGO.transform.position = (Vector2)transform.position + direction * 0.5f;
 
         // Flip our weapon and character sprites depending on where we're looking
@@ -44,5 +52,13 @@ public class LookAtMouse : MonoBehaviour
         Physics2D.Raycast(transform.position, direction, maxDistance);
         
         Debug.DrawRay(transform.position, direction);
+    }
+
+    public void UpdateDirection(InputAction.CallbackContext context)
+    {
+        if (playerInput.currentControlScheme == "Gamepad" && context.performed)
+        {
+            direction = context.ReadValue<Vector2>().normalized;
+        }
     }
 }

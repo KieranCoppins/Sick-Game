@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class WeaponHandler : MonoBehaviour
 {
@@ -23,11 +24,15 @@ public class WeaponHandler : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !attacking)
-            StartCoroutine(Attack());
     }
 
-    IEnumerator Attack()
+    public void Attack(InputAction.CallbackContext context)
+    {
+        if (!attacking)
+            StartCoroutine(DoAttack());
+    }
+
+    IEnumerator DoAttack()
     {
         Debug.Log("Attacking");
         attacking = true;
