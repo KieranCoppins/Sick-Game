@@ -10,15 +10,13 @@ using UnityEngine.UI;
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] float movementSpeed = 5f;
+    [SerializeField] float rollSpeed = 5f;
     Rigidbody2D rb;
 
     [Header("Player Stats")]
     [SerializeField] int MaxHealth;
     [SerializeField] int MaxStamina;
-    [SerializeField] int MaxMana;
-
-    float horizontalMovement;
-    float verticalMovement;
+    [SerializeField] int MaxMana;    
 
     public int Health { 
         get { return _health; } 
@@ -66,6 +64,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] Slider StaminaBar;
     [SerializeField] Slider ManaBar;
 
+    bool rolling = false; 
     Vector2 movementVelocity;
 
     // Start is called before the first frame update
@@ -85,17 +84,40 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
         // Create a vector from this and normalise it. Multiply it by the movementSpeed and use this as our velocity for the rigidbody
-        rb.velocity = movementVelocity.normalized * movementSpeed;
+        if (!rolling)
+            rb.velocity = movementVelocity * movementSpeed;
     }
 
     public void Move(InputAction.CallbackContext context)
     {
         if (context.performed)
-            movementVelocity = context.ReadValue<Vector2>().normalized * movementSpeed;
+            movementVelocity = context.ReadValue<Vector2>();
         else
             movementVelocity = Vector2.zero;
+    }
+
+    public void Roll(InputAction.CallbackContext context)
+    {
+        if (context.started && !rolling)
+        {
+            StartCoroutine(DoRoll(movementVelocity.normalized));
+            Stamina -= 10;
+        }
+    }
+
+    IEnumerator DoRoll(Vector2 direction)
+    {
+        float rollTime = .2f;
+        rolling = true;
+        while (rollTime > 0f)
+        {
+            rollTime -= Time.deltaTime;
+            rb.velocity = direction * rollSpeed;
+            yield return null;
+        }
+        rolling = false;
+        yield return null;
     }
 
 

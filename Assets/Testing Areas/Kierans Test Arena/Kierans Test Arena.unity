@@ -648,6 +648,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 4af633fc-a391-4ad6-8a63-db3ed8f0be7e
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 54856435-5b83-4527-ad76-3979f2de1260
+    m_ActionName: Player/Roll[/Keyboard/leftCtrl]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -11926,6 +11930,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 4af633fc-a391-4ad6-8a63-db3ed8f0be7e
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2128248287}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: Roll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 54856435-5b83-4527-ad76-3979f2de1260
+    m_ActionName: Player/Roll[/Keyboard/leftCtrl]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -11976,6 +11996,10 @@ PrefabInstance:
     - target: {fileID: 4088660768547200392, guid: 884cc7dc1a5c6ef4bb14e4c145c113fe, type: 3}
       propertyPath: MaxHealth
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088660768547200392, guid: 884cc7dc1a5c6ef4bb14e4c145c113fe, type: 3}
+      propertyPath: rollSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4088660768547200392, guid: 884cc7dc1a5c6ef4bb14e4c145c113fe, type: 3}
       propertyPath: MaxStamina
