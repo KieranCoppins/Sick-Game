@@ -200,7 +200,7 @@ public abstract class BaseMob : MonoBehaviour
         }
 
         // Sort our weights so the first direction has the best score
-        directionWeights.Sort(new KeyValuePairComparer());
+        directionWeights.Sort(new KeyValuePairComparer<Vector2, float>());
 
         foreach (KeyValuePair<Vector2, float> pair in directionWeights)
         {
@@ -222,20 +222,6 @@ public abstract class BaseMob : MonoBehaviour
     /// <param name="target"></param>
     /// <returns></returns>
     protected abstract float MoveAround(Vector2 targetDir, Vector2 dir, Vector2 target, bool moveStraight);
-}
-
-// A custom comparer class that ensures the largest value of the key value pair appears first in the array
-public class KeyValuePairComparer : IComparer<KeyValuePair<Vector2, float>>
-{
-    int IComparer<KeyValuePair<Vector2, float>>.Compare(KeyValuePair<Vector2, float> x, KeyValuePair<Vector2, float> y)
-    {
-        if (x.Value > y.Value)
-            return -1;
-        else if (x.Value == y.Value)
-            return 0;
-        else
-            return 1;
-    }
 }
 
 
