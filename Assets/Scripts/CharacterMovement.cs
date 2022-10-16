@@ -21,6 +21,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] int StaminaRegentAmount;
     [SerializeField] int MaxMana;
     [SerializeField] int Damage;
+    [SerializeField] AbilityBase ability;
 
     float StaminaRegenTimer;
 
@@ -74,7 +75,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] Slider StaminaBar;
     [SerializeField] Slider ManaBar;
 
-    bool rolling = false; 
+    bool CanMove = true; 
     Vector2 movementVelocity;
 
     Animator animator;
@@ -136,10 +137,10 @@ public class CharacterMovement : MonoBehaviour
     void FixedUpdate()
     {
         // Create a vector from this and normalise it. Multiply it by the movementSpeed and use this as our velocity for the rigidbody
-        if (!rolling && attackStage == 0)
+        if (CanMove && attackStage == 0)
             rb.velocity = movementVelocity * movementSpeed;
 
-        animator.SetBool("Moving", !rolling && rb.velocity.sqrMagnitude > 0);
+        animator.SetBool("Moving", CanMove && rb.velocity.sqrMagnitude > 0);
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -154,7 +155,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void Roll(InputAction.CallbackContext context)
     {
-        if (context.started && !rolling && Stamina >= 10)
+        if (context.started && CanMove && Stamina >= 10)
         {
             StartCoroutine(DoRoll(movementVelocity.normalized));
             Stamina -= 10;
@@ -164,7 +165,7 @@ public class CharacterMovement : MonoBehaviour
     IEnumerator DoRoll(Vector2 direction)
     {
         float rollTime = .2f;
-        rolling = true;
+        CanMove = false;
         animator.SetBool("Rolling", true);
         while (rollTime > 0f)
         {
@@ -172,7 +173,7 @@ public class CharacterMovement : MonoBehaviour
             rb.velocity = direction * rollSpeed;
             yield return null;
         }
-        rolling = false;
+        CanMove = true;
         animator.SetBool("Rolling", false);
         yield return null;
     }
@@ -273,5 +274,25 @@ public class CharacterMovement : MonoBehaviour
             targetWeightPair.Sort(new KeyValuePairComparer<Transform, float>());
             Target = targetWeightPair[0].Key;
         }
+    }
+
+    public void DoCast(InputAction.CallbackContext context)
+    {
+        if (!context.started)
+            return;
+        if (Mana >= 10)
+        {
+            CanMove = false;
+            rb.velocity = Vector2.zero;
+            animator.SetBool("CastAbility", true);
+        }
+    }
+
+    public void CastAbility()
+    {
+        Mana -= 10;
+        ability.Cast(transform.position, lookAtMouse.LookDirection, Target);
+        animator.SetBool("CastAbility", false);
+        CanMove = true;
     }
 }
