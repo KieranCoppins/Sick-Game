@@ -7,12 +7,11 @@ public class LookAtMouse : MonoBehaviour
 {
 
     [SerializeField] float maxDistance;
-    [SerializeField] GameObject weaponGO;
+    [SerializeField] Transform hitTarget;
 
     Vector3 mousePos;
     Vector2 direction;
 
-    SpriteRenderer weaponRenderer;
     SpriteRenderer characterRenderer;
 
     PlayerInput playerInput;
@@ -20,10 +19,8 @@ public class LookAtMouse : MonoBehaviour
 
     private void Start()
     {
-        weaponRenderer = weaponGO.GetComponentInChildren<SpriteRenderer>();
-        characterRenderer = GetComponent<SpriteRenderer>();
-
         playerInput = GetComponent<PlayerInput>();
+        characterRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     void Update()
@@ -35,18 +32,14 @@ public class LookAtMouse : MonoBehaviour
 
             direction = (mousePos - transform.position).normalized;
         }
-
-        weaponGO.transform.position = (Vector2)transform.position + direction * 0.5f;
-
+        hitTarget.position = transform.position + (Vector3)direction * 1.5f;
         // Flip our weapon and character sprites depending on where we're looking
         if (direction.x < 0)
         {
-            weaponRenderer.flipX = true;
             characterRenderer.flipX = true;
         } 
         else
         {
-            weaponGO.GetComponentInChildren<SpriteRenderer>().flipX = false;
             characterRenderer.flipX = false;
         }
         Physics2D.Raycast(transform.position, direction, maxDistance);

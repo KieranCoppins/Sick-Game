@@ -82,6 +82,8 @@ public abstract class BaseMob : MonoBehaviour
     [SerializeField]
     public DebugFlags debugFlags;
 
+    protected bool Stunned;
+
     public string GetCurrentActionText()
     {
         string text = "";
@@ -112,6 +114,14 @@ public abstract class BaseMob : MonoBehaviour
     {
         Health -= dmg;
         onTakeDamage?.Invoke();
+        StartCoroutine(Stun(2f));
+    }
+
+    IEnumerator Stun(float time)
+    {
+        Stunned = true;
+        yield return new DoTaskWhilstWaitingForSeconds(() => { rb.velocity = Vector2.zero; }, time);
+        Stunned = false;
     }
 
     /// <summary>

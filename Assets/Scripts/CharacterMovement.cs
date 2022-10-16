@@ -19,6 +19,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] float StaminaRegenCooldown;
     [SerializeField] int StaminaRegentAmount;
     [SerializeField] int MaxMana;
+    [SerializeField] int Damage;
 
     float StaminaRegenTimer;
 
@@ -75,10 +76,15 @@ public class CharacterMovement : MonoBehaviour
     bool rolling = false; 
     Vector2 movementVelocity;
 
+    Animator animator;
+    int attackStage = 0;
+    bool QueueAttack = true;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         // We dont want gravity since technically down in unity is at the bottom of the screen
         rb.gravityScale = 0f;
@@ -111,8 +117,10 @@ public class CharacterMovement : MonoBehaviour
     void FixedUpdate()
     {
         // Create a vector from this and normalise it. Multiply it by the movementSpeed and use this as our velocity for the rigidbody
-        if (!rolling)
+        if (!rolling && attackStage == 0)
             rb.velocity = movementVelocity * movementSpeed;
+
+        animator.SetBool("Moving", !rolling && rb.velocity.sqrMagnitude > 0);
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -121,6 +129,8 @@ public class CharacterMovement : MonoBehaviour
             movementVelocity = context.ReadValue<Vector2>();
         else
             movementVelocity = Vector2.zero;
+
+        animator.SetFloat("MovementScale", movementVelocity.magnitude);
     }
 
     public void Roll(InputAction.CallbackContext context)
@@ -136,6 +146,7 @@ public class CharacterMovement : MonoBehaviour
     {
         float rollTime = .2f;
         rolling = true;
+        animator.SetBool("Rolling", true);
         while (rollTime > 0f)
         {
             rollTime -= Time.deltaTime;
@@ -143,6 +154,7 @@ public class CharacterMovement : MonoBehaviour
             yield return null;
         }
         rolling = false;
+        animator.SetBool("Rolling", false);
         yield return null;
     }
 
@@ -150,5 +162,37 @@ public class CharacterMovement : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Health -= damage;
+    }
+
+    public void Attack(InputAction.CallbackContext context)
+    {
+        if (QueueAttack && Stamina >= 10)
+        {
+            rb.velocity = Vector2.zero;
+            attackStage++;
+            animator.SetInteger("AttackStage", attackStage);
+            QueueAttack = false;
+            Stamina -= 10;
+        }
+    }
+    public void ResetAttackStage() 
+    { 
+        attackStage = 0; 
+        animator.SetInteger("AttackStage", attackStage);
+        QueueAttack = true;
+    }
+    public void CanQueueAttack() { QueueAttack = true; }
+
+    public void DealDamage()
+    {
+
+        Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, 1.5f);
+        foreach (Collider2D target in targets)
+        {
+            if (target.CompareTag("Mob"))
+            {
+                target.GetComponent<BaseMob>().TakeDamage(Damage);
+            }
+        }
     }
 }

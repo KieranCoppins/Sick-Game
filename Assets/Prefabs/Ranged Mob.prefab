@@ -230,12 +230,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _maxHealth: 10
-  damage: 1
   movementSpeed: 2
-  attackRate: 2
   PathfindingComponent: {fileID: 0}
   rb: {fileID: 0}
-  DebugMode: 0
+  debugFlags: 0
   ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
 --- !u!212 &249532263326025937
 SpriteRenderer:
