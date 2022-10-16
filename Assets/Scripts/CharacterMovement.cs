@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 // Character movement needs a rigidbody2D component
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(LookAtMouse))]
 [DisallowMultipleComponent]
 public class CharacterMovement : MonoBehaviour
 {
@@ -80,11 +81,24 @@ public class CharacterMovement : MonoBehaviour
     int attackStage = 0;
     bool QueueAttack = true;
 
+    [SerializeField] GameObject TargetGraphic;
+    public Transform Target { 
+        get { return _target; }
+        private set
+        {
+            TargetGraphic.SetActive(value != null);
+            _target = value;
+        }
+    }
+    Transform _target;
+    LookAtMouse lookAtMouse;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        lookAtMouse = GetComponent<LookAtMouse>();
 
         // We dont want gravity since technically down in unity is at the bottom of the screen
         rb.gravityScale = 0f;
@@ -112,6 +126,11 @@ public class CharacterMovement : MonoBehaviour
     private void Update()
     {
         StaminaRegenTimer -= Time.deltaTime;
+        if (Target != null)
+            TargetGraphic.transform.position = Target.transform.position;
+        else
+            TargetGraphic.SetActive(false);
+
     }
 
     void FixedUpdate()
@@ -194,5 +213,35 @@ public class CharacterMovement : MonoBehaviour
                 target.GetComponent<BaseMob>().TakeDamage(Damage);
             }
         }
+    }
+
+    public void ToggleTargetLock(InputAction.CallbackContext context)
+    {
+        if (!context.started)
+            return;
+
+        if (Target == null)
+        {
+            float targetRange = 14f;
+            // Get all our targets in a radius around the player (we dont want to lock onto a target miles away)
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, targetRange / 2f);
+
+            List<KeyValuePair<Transform, float>> targetWeightPair = new List<KeyValuePair<Transform, float>>();
+
+            foreach (Collider2D collider in colliders)
+            {
+                if (collider.CompareTag("Mob"))
+                {
+                    float dist = targetRange - Vector2.Distance(transform.position, collider.transform.position);
+                    float dotProd = Vector2.Dot((collider.transform.position - transform.position).normalized, lookAtMouse.LookDirection.normalized) * targetRange * 0.8f;
+                    targetWeightPair.Add(new KeyValuePair<Transform, float>(collider.transform, dist + dotProd));
+                }
+            }
+
+            targetWeightPair.Sort(new KeyValuePairComparer<Transform, float>());
+            Target = targetWeightPair[0].Key;
+        }
+        else
+            Target = null;
     }
 }
