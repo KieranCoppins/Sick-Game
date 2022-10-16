@@ -87,7 +87,17 @@ public class CharacterMovement : MonoBehaviour
         get { return _target; }
         private set
         {
+            // Show a target graphic if we have a target
             TargetGraphic.SetActive(value != null);
+            
+            // Enable UI on our new target
+            if (value != null)
+                value.GetComponent<MobUIManager>().EnableUI();
+
+            // Disable UI on our old target
+            if (_target != null)
+                _target.GetComponent<MobUIManager>().DisableUI();
+
             _target = value;
         }
     }

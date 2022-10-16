@@ -29,11 +29,21 @@ public class MobUIManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
     {
+        EnableUI();
+    }
+
+    void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
+    {
+        DisableUI();
+    }
+
+    public void EnableUI()
+    {
         StartCoroutine(UpdateUI());
         canvas.gameObject.SetActive(true);
     }
 
-    void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
+    public void DisableUI()
     {
         StopCoroutine(UpdateUI());
         canvas.gameObject.SetActive(false);
