@@ -244,4 +244,34 @@ public class CharacterMovement : MonoBehaviour
         else
             Target = null;
     }
+
+
+    public void SwitchTarget(InputAction.CallbackContext context)
+    {
+        if (!context.started)
+            return;
+
+        if (Target != null)
+        {
+            Vector2 nextTargetDir = context.ReadValue<Vector2>();
+            float targetRange = 14f;
+            // Get all our targets in a radius around the player (we dont want to lock onto a target miles away)
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(Target.transform.position, targetRange / 2f);
+
+            List<KeyValuePair<Transform, float>> targetWeightPair = new List<KeyValuePair<Transform, float>>();
+
+            foreach (Collider2D collider in colliders)
+            {
+                if (collider.CompareTag("Mob"))
+                {
+                    float dist = targetRange - Vector2.Distance(Target.transform.position, collider.transform.position);
+                    float dotProd = Vector2.Dot((collider.transform.position - Target.transform.position).normalized, nextTargetDir.normalized) * targetRange * 0.8f;
+                    targetWeightPair.Add(new KeyValuePair<Transform, float>(collider.transform, dist + dotProd));
+                }
+            }
+
+            targetWeightPair.Sort(new KeyValuePairComparer<Transform, float>());
+            Target = targetWeightPair[0].Key;
+        }
+    }
 }

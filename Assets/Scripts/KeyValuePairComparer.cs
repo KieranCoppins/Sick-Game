@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-// A custom comparer class that ensures the largest value of the key value pair appears first in the array
+// A custom comparer class for lists of key value pairs
 public class KeyValuePairComparer<T, P> : IComparer<KeyValuePair<T, P>> where P : IComparable<P>
 {
     bool ascending;
