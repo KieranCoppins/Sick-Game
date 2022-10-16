@@ -221,6 +221,7 @@ MonoBehaviour:
   StaminaRegentAmount: 3
   MaxMana: 100
   Damage: 5
+  ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
   HealthBar: {fileID: 0}
   StaminaBar: {fileID: 0}
   ManaBar: {fileID: 0}
@@ -400,6 +401,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 48f24688-a38f-414d-a469-0adc3f8083de
     m_ActionName: Player/SwitchTarget[/DualSenseGamepadHID/rightStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8571517083040486851}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: DoCast
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cfb2811b-82e1-4610-9cdf-0c1bdce76e79
+    m_ActionName: Player/CastAbility[/DualSenseGamepadHID/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
