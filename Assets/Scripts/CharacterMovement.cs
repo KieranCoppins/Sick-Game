@@ -10,7 +10,12 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] float movementSpeed = 5f;
+    public float MovementSpeed
+    {
+        get { return _movementSpeed; }
+        private set { _movementSpeed = value; }
+    }
+    [SerializeField] float _movementSpeed;
     [SerializeField] float rollSpeed = 5f;
     Rigidbody2D rb;
 
@@ -148,7 +153,7 @@ public class CharacterMovement : MonoBehaviour
     {
         // Create a vector from this and normalise it. Multiply it by the movementSpeed and use this as our velocity for the rigidbody
         if (CanMove && attackStage == 0)
-            rb.velocity = movementVelocity * movementSpeed;
+            rb.velocity = movementVelocity * MovementSpeed;
 
         animator.SetBool("Moving", CanMove && rb.velocity.sqrMagnitude > 0);
     }

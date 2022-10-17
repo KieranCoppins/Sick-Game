@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    public Transform player;
-
-    public float playerDistance;
-
-    public float speed;
-
-    Vector3 CAMERA_OFFSET = new(0, 0, -10);
+    [SerializeField] float playerDistance;
+    [Tooltip("Camera speed = player speed * speed modifier")]
+    [Range(1.1f, 2f)]
+    [SerializeField] float speedModifier;
 
     bool idle = true;
 
+    Rigidbody2D playerRb;
+    CharacterMovement characterMovement;
+    Transform player;
+
+    Vector3 CAMERAOFFSET = Vector3.zero;
+
     void Start()
     {
-        transform.position = player.transform.position + CAMERA_OFFSET;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        CAMERAOFFSET.z =  transform.position.z;
+        playerRb = player.GetComponent<Rigidbody2D>();
+        characterMovement = player.GetComponent<CharacterMovement>();
     }
 
     void Update()
@@ -30,13 +36,13 @@ public class FollowPlayer : MonoBehaviour
 
     IEnumerator MoveToPlayer()
     {
-        while (Vector2.Distance(transform.position, player.transform.position) > 0.000001)
+        while (Vector2.Distance(transform.position, player.transform.position) > 0.01)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position + CAMERA_OFFSET, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position + CAMERAOFFSET, characterMovement.MovementSpeed * speedModifier * Time.deltaTime);
             yield return null;
         }
 
-        yield return SnapToPlayer();
+        StartCoroutine(SnapToPlayer());
 
         idle = true;
         yield break;
@@ -44,12 +50,11 @@ public class FollowPlayer : MonoBehaviour
 
     IEnumerator SnapToPlayer()
     {
-        while (player.GetComponent<Rigidbody2D>().velocity.magnitude != 0)
+        while (playerRb.velocity.magnitude != 0)
         {
-            transform.position = player.transform.position + CAMERA_OFFSET;
+            transform.position = player.transform.position + CAMERAOFFSET;
             yield return null;
         }
-
         yield break;
     }
 }
