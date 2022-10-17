@@ -10,7 +10,12 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] float movementSpeed = 5f;
+    public float MovementSpeed
+    {
+        get { return _movementSpeed; }
+        private set { _movementSpeed = value; }
+    }
+    [SerializeField] float _movementSpeed;
     [SerializeField] float rollSpeed = 5f;
     Rigidbody2D rb;
 
@@ -89,14 +94,14 @@ public class CharacterMovement : MonoBehaviour
         {
             // Show a target graphic if we have a target
             TargetGraphic.SetActive(value != null);
-            
-            // Enable UI on our new target
-            if (value != null)
-                value.GetComponent<MobUIManager>().EnableUI();
 
             // Disable UI on our old target
             if (_target != null)
                 _target.GetComponent<MobUIManager>().DisableUI();
+
+            // Enable UI on our new target
+            if (value != null)
+                value.GetComponent<MobUIManager>().EnableUI();
 
             _target = value;
         }
@@ -142,22 +147,20 @@ public class CharacterMovement : MonoBehaviour
         else
             TargetGraphic.SetActive(false);
 
+        animator.SetBool("Moving", CanMove && rb.velocity.magnitude > 0);
     }
 
     void FixedUpdate()
     {
-        // Create a vector from this and normalise it. Multiply it by the movementSpeed and use this as our velocity for the rigidbody
         if (CanMove && attackStage == 0)
-            rb.velocity = movementVelocity * movementSpeed;
-
-        animator.SetBool("Moving", CanMove && rb.velocity.sqrMagnitude > 0);
+            rb.velocity = movementVelocity * MovementSpeed;
     }
 
     public void Move(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && CanMove)
             movementVelocity = context.ReadValue<Vector2>();
-        else
+        else 
             movementVelocity = Vector2.zero;
 
         animator.SetFloat("MovementScale", movementVelocity.magnitude);
@@ -198,11 +201,11 @@ public class CharacterMovement : MonoBehaviour
     {
         if (QueueAttack && Stamina >= 10)
         {
-            rb.velocity = Vector2.zero;
             attackStage++;
             animator.SetInteger("AttackStage", attackStage);
             QueueAttack = false;
             Stamina -= 10;
+            rb.velocity = movementVelocity * MovementSpeed;
         }
     }
     public void ResetAttackStage() 
@@ -290,7 +293,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (!context.started)
             return;
-        if (Mana >= 10)
+        if (Mana >= 10 && !animator.GetBool("CastAbility"))
         {
             CanMove = false;
             rb.velocity = Vector2.zero;
@@ -302,6 +305,10 @@ public class CharacterMovement : MonoBehaviour
     {
         Mana -= 10;
         ability.Cast(transform.position, lookAtMouse.LookDirection, Target);
+    }
+
+    public void FinishCast()
+    {
         animator.SetBool("CastAbility", false);
         CanMove = true;
     }
