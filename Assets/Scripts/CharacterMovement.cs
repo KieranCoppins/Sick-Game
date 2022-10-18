@@ -195,11 +195,20 @@ public class CharacterMovement : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Health -= damage;
+        StartCoroutine(Stun(0.5f));
+    }
+
+    IEnumerator Stun(float time)
+    {
+        CanMove = false;
+        rb.velocity = Vector2.zero;
+        yield return new WaitForSeconds(time);
+        CanMove = true;
     }
 
     public void Attack(InputAction.CallbackContext context)
     {
-        if (QueueAttack && Stamina >= 10)
+        if (QueueAttack && Stamina >= 10 && context.started && CanMove)
         {
             attackStage++;
             animator.SetInteger("AttackStage", attackStage);
