@@ -199,7 +199,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext context)
     {
-        if (QueueAttack && Stamina >= 10)
+        if (QueueAttack && Stamina >= 10 && context.started)
         {
             attackStage++;
             animator.SetInteger("AttackStage", attackStage);
