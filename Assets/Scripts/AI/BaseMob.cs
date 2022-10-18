@@ -114,7 +114,7 @@ public abstract class BaseMob : MonoBehaviour
     {
         Health -= dmg;
         onTakeDamage?.Invoke();
-        StartCoroutine(Stun(.2f));
+        StartCoroutine(Stun(.5f));
     }
 
     IEnumerator Stun(float time)
