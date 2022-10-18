@@ -114,13 +114,13 @@ public abstract class BaseMob : MonoBehaviour
     {
         Health -= dmg;
         onTakeDamage?.Invoke();
-        StartCoroutine(Stun(2f));
+        StartCoroutine(Stun(.2f));
     }
 
     IEnumerator Stun(float time)
     {
         Stunned = true;
-        yield return new DoTaskWhilstWaitingForSeconds(() => { rb.velocity = Vector2.zero; }, time);
+        yield return new WaitForSeconds(time);
         Stunned = false;
     }
 
@@ -154,6 +154,12 @@ public abstract class BaseMob : MonoBehaviour
 
     protected virtual void Update()
     {
+    }
+
+    protected virtual void LateUpdate()
+    {
+        if (Stunned)
+            rb.velocity = Vector2.zero;
     }
 
     /// <summary>
