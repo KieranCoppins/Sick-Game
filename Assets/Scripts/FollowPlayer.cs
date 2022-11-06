@@ -14,6 +14,7 @@ public class FollowPlayer : MonoBehaviour
     Rigidbody2D playerRb;
     CharacterMovement characterMovement;
     Transform player;
+    Camera camera;
 
     Vector3 CAMERAOFFSET = Vector3.zero;
 
@@ -23,6 +24,7 @@ public class FollowPlayer : MonoBehaviour
         CAMERAOFFSET.z =  transform.position.z;
         playerRb = player.GetComponent<Rigidbody2D>();
         characterMovement = player.GetComponent<CharacterMovement>();
+        camera = GetComponent<Camera>();
     }
 
     void Update()
@@ -56,5 +58,19 @@ public class FollowPlayer : MonoBehaviour
             yield return null;
         }
         yield break;
+    }
+
+
+    void MakePixelPerfect()
+    {
+        transform.position = new Vector3(RoundToNearestPixel(transform.position.x, camera), RoundToNearestPixel(transform.position.y, camera)) + CAMERAOFFSET;
+    }
+
+    public static float RoundToNearestPixel(float unityUnits, Camera viewingCamera)
+    {
+        float valueInPixels = (Screen.height / (viewingCamera.orthographicSize * 2)) * unityUnits;
+        valueInPixels = Mathf.Round(valueInPixels);
+        float adjustedUnityUnits = valueInPixels / (Screen.height / (viewingCamera.orthographicSize * 2));
+        return adjustedUnityUnits;
     }
 }
