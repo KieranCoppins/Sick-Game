@@ -13,7 +13,7 @@ public class MeleeMob : BaseMob
     [SerializeField] float _meleeDamage;
     [SerializeField] float _meleeSpeed;
 
-    protected DecisionTree<MeleeMob> decisionTree;
+    protected DecisionTreeGeneric<MeleeMob> decisionTree;
 
     protected override void Start()
     {
@@ -55,13 +55,14 @@ public class MeleeMob : BaseMob
     }
 }
 
-public class DT_MeleeMob : DecisionTree<MeleeMob>
+public class DT_MeleeMob : DecisionTreeGeneric<MeleeMob>
 {
     public DT_MeleeMob(MeleeMob mob) : base(mob)
     {
 
     }
 
+    /*
     public override void Initialise()
     {
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -78,6 +79,7 @@ public class DT_MeleeMob : DecisionTree<MeleeMob>
 
         root = new Decision(MoveToPlayer, attackDecision, ShouldMoveToPlayer, mob);
     }
+    */
 
     bool ShouldPullback()
     {

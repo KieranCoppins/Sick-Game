@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [CreateAssetMenu(menuName = "Environment Query System")]
-public class EnvironmentQuerySystem : ScriptableObject
+public class EnvironmentQuerySystem : DecisionTreeEditorNode
 {
 
     public EQSTarget Target
@@ -27,6 +27,9 @@ public class EnvironmentQuerySystem : ScriptableObject
 
     Dictionary<Vector2Int, float> tileScore;
     GameObject caller;
+
+    /// Editor Values
+    [HideInInspector] public Dictionary<string, DecisionTreeNode> connections = new Dictionary<string, DecisionTreeNode>();
 
     public void Initialise(Vector2Int[] tileCoords, GameObject caller)
     {

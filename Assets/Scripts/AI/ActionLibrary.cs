@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 
+public delegate Vector2 GetDestination();
+public delegate bool CancelPathfinding();
+
 /// <summary>
 /// A generic path to action node
 /// </summary>
@@ -11,13 +14,16 @@ public class A_PathTo : Action
 {
     readonly PathfindingComponent pathfinding;
 
-    public delegate Vector2 GetDestination();
-    GetDestination destinationDelegate;
+    public GetDestination destinationDelegate;
 
-    public delegate bool CancelPathfinding();
-    CancelPathfinding cancelPathfindingDelegate;
+    public CancelPathfinding cancelPathfindingDelegate;
 
     Vector2 desiredPosition;
+
+    public A_PathTo()
+    {
+
+    }
 
     // Make this action take a target and a range. Also we always want our path to to be an interruptor
     public A_PathTo(BaseMob mob, GetDestination destinationDelegate, CancelPathfinding cancelPathfindingDelegate) : base(mob)
@@ -93,6 +99,11 @@ public class A_MoveTowards : Action
     readonly Transform target;
     Vector2 desiredPosition;
 
+    public A_MoveTowards()
+    {
+
+    }
+
     public A_MoveTowards(BaseMob mob, Transform target) : base(mob)
     {
         this.target = target;
@@ -121,6 +132,11 @@ public class A_PullBack : Action
     readonly Transform target;
     Vector2 desiredPosition;
     readonly float distance;
+
+    public A_PullBack()
+    {
+
+    }
 
     public A_PullBack(BaseMob mob, Transform target, float distance) : base(mob)
     {
@@ -157,6 +173,11 @@ public abstract class A_Attack : Action
     protected readonly float cooldown;
     protected readonly Transform target;
 
+    public A_Attack()
+    {
+
+    }
+
     public A_Attack(BaseMob mob, Transform target, float cooldown) : base(mob)
     {
         this.cooldown = cooldown;
@@ -182,6 +203,11 @@ public class A_CastAbility : A_Attack
 
     Vector2 totalTargetVelocity;
     int totalVelocityEntries = 0;
+
+    public A_CastAbility()
+    {
+
+    }
 
     public A_CastAbility(BaseMob mob, Transform target, AbilityBase ability) : base(mob, target, ability.AbilityCooldown)
     {
@@ -252,6 +278,10 @@ public class A_CastAbility : A_Attack
 /// </summary>
 public class A_Melee : A_Attack
 {
+    public A_Melee()
+    {
+
+    }
     public A_Melee(BaseMob mob, Transform target, float attackSpeed) : base(mob, target, attackSpeed)
     {
     }
@@ -280,6 +310,14 @@ public class AttackDecision : Decision<float>
     readonly A_Attack action;
     readonly float attackRange = 0;
     readonly Transform target;
+
+
+
+    public AttackDecision()
+    {
+
+    }
+
     public AttackDecision(A_Attack attackNode, DecisionTreeNode fNode, BaseMob mob, Transform target, float attackRange) : base(attackNode, fNode, mob)
     {
         this.action = attackNode;

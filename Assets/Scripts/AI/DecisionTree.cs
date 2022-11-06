@@ -3,20 +3,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEditor;
 
-public abstract class DecisionTree<T> where T : BaseMob
+public class DecisionTreeGeneric<T> : DecisionTree where T : BaseMob
 {
     protected T mob;
-    public DecisionTree(T mob)
+    public DecisionTreeGeneric()
+    {
+
+    }
+    public DecisionTreeGeneric(T mob) : base(mob)
+    {
+        this.mob = mob;
+    }
+}
+
+[CreateAssetMenu(menuName = "Decision Tree/Decision Tree")]
+public class DecisionTree : ScriptableObject
+{
+    [SerializeField] private BaseMob mob;
+    public DecisionTree()
+    {
+    }
+
+    public DecisionTree(BaseMob mob)
     {
         this.mob = mob;
     }
 
-    protected DecisionTreeNode root;
+    public RootNode root;
 
     private Vector2 playerPrevPos;
 
-    public abstract void Initialise();
+    /// Editor Values
+    // A list of nodes for our editor, they don't have to be linked to the tree
+    [HideInInspector] public List<DecisionTreeEditorNode> nodes;
+
+
+    public void Initialise()
+    {
+
+    }
     public Action Run()
     {
         try
@@ -38,6 +65,14 @@ public abstract class DecisionTree<T> where T : BaseMob
         return null;
     }
 
+    public DecisionTree Clone()
+    {
+        DecisionTree tree = Instantiate(this);
+        tree.root = root.Clone() as RootNode;
+        return tree;
+    }
+
+
     /// Some protected functions that maybe useful for all decision making
 
     protected virtual bool ShouldMoveToPlayer()
@@ -55,16 +90,76 @@ public abstract class DecisionTree<T> where T : BaseMob
         Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
         return mob.HasLineOfSight(playerPos) || Vector2.Distance(playerPrevPos, playerPos) > 0.5f;
     }
+
+    /// Editor Functions
+
+    public DecisionTreeEditorNode CreateNode(System.Type type)
+    {
+        DecisionTreeEditorNode node = ScriptableObject.CreateInstance(type) as DecisionTreeEditorNode;
+        node.name = type.Name;
+        node.guid = GUID.Generate().ToString();
+        nodes.Add(node);
+
+        AssetDatabase.AddObjectToAsset(node, this);
+        AssetDatabase.SaveAssets();
+        return node;
+    }
+
+    public void DeleteNode(DecisionTreeEditorNode node)
+    {
+        nodes.Remove(node);
+        AssetDatabase.RemoveObjectFromAsset(node);
+        AssetDatabase.SaveAssets();
+    }
 }
 
-public abstract class DecisionTreeNode
+public abstract class DecisionTreeEditorNode : ScriptableObject
 {
-    protected BaseMob mob;
+    /// Editor Values
+    [HideInInspector] public string guid;
+    [HideInInspector] public Rect positionalData;
+
+
+}
+
+public abstract class DecisionTreeNode : DecisionTreeEditorNode
+{
+    [SerializeField] protected BaseMob mob;
+
+    public DecisionTreeNode()
+    {
+
+    }
+
     public DecisionTreeNode(BaseMob mob)
     {
         this.mob = mob;
     }
     public abstract DecisionTreeNode MakeDecision();
+
+    public virtual DecisionTreeNode Clone()
+    {
+        return Instantiate(this);
+    }
+
+
+}
+
+public class RootNode : DecisionTreeNode
+{
+    public DecisionTreeNode child;
+
+    public override DecisionTreeNode MakeDecision()
+    {
+        return child.MakeDecision();
+    }
+
+    public override DecisionTreeNode Clone()
+    {
+        RootNode node = Instantiate(this);
+        node.child = child.Clone();
+        return node;
+    }
 }
 
 public abstract class Action : DecisionTreeNode
@@ -78,6 +173,12 @@ public abstract class Action : DecisionTreeNode
     }
 
     public ActionFlags Flags { get; protected set; }
+
+    public Action()
+    {
+
+    }
+
     public Action(BaseMob mob) : base(mob)
     {
         Flags = 0;
@@ -99,10 +200,15 @@ public abstract class Action : DecisionTreeNode
 
 public class Decision : DecisionTreeNode
 {
-    protected readonly DecisionTreeNode trueNode;
-    protected readonly DecisionTreeNode falseNode;
+    [HideInInspector] public DecisionTreeNode trueNode;
+    [HideInInspector] public DecisionTreeNode falseNode;
 
     readonly Condition Condition;
+
+    public Decision()
+    {
+
+    }
 
     public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode, Condition condDelegate, BaseMob mob) : base(mob)
     {
@@ -111,7 +217,7 @@ public class Decision : DecisionTreeNode
         Condition = condDelegate;
     }
 
-    public DecisionTreeNode GetBranch()
+    public virtual DecisionTreeNode GetBranch()
     {
         
         return Condition() ? trueNode : falseNode;
@@ -121,13 +227,23 @@ public class Decision : DecisionTreeNode
     {
         return GetBranch().MakeDecision();
     }
+
+    public override DecisionTreeNode Clone()
+    {
+        Decision node = Instantiate(this);
+        node.trueNode = trueNode.Clone();
+        node.falseNode = falseNode.Clone();
+        return node;
+    }
 }
 
-public abstract class Decision<T> : DecisionTreeNode
+public abstract class Decision<T> : Decision
 {
-    protected readonly DecisionTreeNode trueNode;
-    protected readonly DecisionTreeNode falseNode;
-    public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode, BaseMob mob) : base(mob)
+    public Decision()
+    {
+
+    }
+    public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode, BaseMob mob)
     {
         this.trueNode = trueNode;
         this.falseNode = falseNode;
@@ -135,12 +251,16 @@ public abstract class Decision<T> : DecisionTreeNode
 
     public abstract T TestData();
 
-    public abstract DecisionTreeNode GetBranch();
+    public override abstract DecisionTreeNode GetBranch();
 
-    public override DecisionTreeNode MakeDecision()
+    public override DecisionTreeNode Clone()
     {
-        return GetBranch().MakeDecision();
+        Decision<T> node = Instantiate(this);
+        node.trueNode = trueNode.Clone();
+        node.falseNode = falseNode.Clone();
+        return node;
     }
+
 }
 
 public delegate bool Condition();

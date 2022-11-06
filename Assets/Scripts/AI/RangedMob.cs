@@ -7,7 +7,7 @@ public class RangedMob : BaseMob
     [Header("Ranged Mob Attributes")]
     [SerializeField] public AbilityBase ability;
 
-    protected DecisionTree<RangedMob> decisionTree;
+    protected DecisionTreeGeneric<RangedMob> decisionTree;
 
     protected override void Start()
     {
@@ -55,14 +55,20 @@ public class RangedMob : BaseMob
     }
 }
 
-public class DT_RangedMob : DecisionTree<RangedMob>
+public class DT_RangedMob : DecisionTreeGeneric<RangedMob>
 {
+    public DT_RangedMob() 
+    {
+        
+    }
     public DT_RangedMob(RangedMob mob) : base(mob)
     {
-
+        this.mob = mob;
     }
+    /*
     public override void Initialise()
     {
+
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
         // Initialise all our Nodes
 
@@ -78,7 +84,7 @@ public class DT_RangedMob : DecisionTree<RangedMob>
         // Initialise our root
         root = new Decision(MoveToPlayer, shouldCastComet, ShouldMoveToPlayer, mob);
     }
-
+    */
     Vector2 FindTileNearPlayer()
     {
         return GameObject.FindGameObjectWithTag("EQSManager").GetComponent<EQSManager>().RunEQSystem(EQSystem.RangedMobMoveToPlayer, mob.gameObject);
