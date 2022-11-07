@@ -227,18 +227,7 @@ public abstract class Decision : DecisionTreeNode
 
     }
 
-    public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode, Condition condDelegate)
-    {
-        this.trueNode = trueNode;
-        this.falseNode = falseNode;
-        Condition = condDelegate;
-    }
-
-    public virtual DecisionTreeNode GetBranch()
-    {
-        
-        return Condition() ? trueNode : falseNode;
-    }
+    public abstract DecisionTreeNode GetBranch();
 
     public override DecisionTreeNode MakeDecision()
     {

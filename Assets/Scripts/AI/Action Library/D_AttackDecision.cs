@@ -7,9 +7,9 @@ using UnityEngine;
 /// </summary>
 public class D_AttackDecision : Decision
 {
-    readonly A_Attack action;
-    readonly float attackRange = 0;
-    readonly Transform target;
+    A_Attack action;
+    [SerializeField] float attackRange = 0;
+    Transform target;
 
 
 
@@ -18,11 +18,13 @@ public class D_AttackDecision : Decision
 
     }
 
-    public D_AttackDecision(A_Attack attackNode, DecisionTreeNode fNode, Condition cond, Transform target, float attackRange) : base(attackNode, fNode, cond)
+    public override void Initialise()
     {
-        this.action = attackNode;
-        this.attackRange = attackRange;
-        this.target = target;
+        base.Initialise();
+        target = GameObject.FindGameObjectWithTag("Player").transform; // TODO make the target a parameter so we can define different targets
+        action = trueNode as A_Attack;
+        if (action == null)
+            Debug.LogError("True node of D_AttackDecision doesn't point to an A_Attack action");
     }
 
     float TestData()
