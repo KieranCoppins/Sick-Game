@@ -9,7 +9,7 @@
             <ui:Label text="Inspector" display-tooltip-when-elided="true" name="Title" style="margin-left: 0; padding-left: 15px;" />
         </ui:VisualElement>
         <ui:VisualElement name="right-panel">
-            <DecisionTreeView focusable="true" style="flex-grow: 1;">
+            <DecisionTreeView focusable="true" name="TreeView" style="flex-grow: 1;">
                 <ui:Label text="Tree View" display-tooltip-when-elided="true" name="Title" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 15px;" />
             </DecisionTreeView>
         </ui:VisualElement>

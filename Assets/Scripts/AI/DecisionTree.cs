@@ -93,11 +93,13 @@ public class DecisionTree : ScriptableObject
 
     /// Editor Functions
 
-    public DecisionTreeEditorNode CreateNode(System.Type type)
+    public DecisionTreeEditorNode CreateNode(System.Type type, Vector2 creationPos)
     {
         DecisionTreeEditorNode node = ScriptableObject.CreateInstance(type) as DecisionTreeEditorNode;
         node.name = type.Name;
         node.guid = GUID.Generate().ToString();
+        node.positionalData.xMin = creationPos.x;
+        node.positionalData.yMin = creationPos.y;
         nodes.Add(node);
 
         AssetDatabase.AddObjectToAsset(node, this);

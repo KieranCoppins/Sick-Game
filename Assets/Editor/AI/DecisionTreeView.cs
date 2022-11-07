@@ -47,7 +47,7 @@ public class DecisionTreeView : GraphView
 
         if (tree.root == null)
         {
-            tree.root = tree.CreateNode(typeof(RootNode)) as RootNode;
+            tree.root = tree.CreateNode(typeof(RootNode), Vector2.zero) as RootNode;
             EditorUtility.SetDirty(tree);
             AssetDatabase.SaveAssets();
         }
@@ -115,6 +115,7 @@ public class DecisionTreeView : GraphView
 
     public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
     {
+        Vector2 clickPoint = viewTransform.matrix.inverse.MultiplyPoint(evt.localMousePosition);
         var types = TypeCache.GetTypesDerivedFrom<DecisionTreeEditorNode>();
         foreach(var type in types)
         {
@@ -127,14 +128,14 @@ public class DecisionTreeView : GraphView
                     pathString = $"{rootBaseType.Name}/" + pathString;
                     rootBaseType = rootBaseType.BaseType;
                 }
-                evt.menu.AppendAction(pathString + $"{type.Name}", (a) => CreateNode(type));
+                evt.menu.AppendAction(pathString + $"{type.Name}", (a) => CreateNode(type, clickPoint));
             }
         }
     }
 
-    void CreateNode(System.Type type)
+    void CreateNode(System.Type type, Vector2 creationPos)
     {
-        DecisionTreeEditorNode node = tree.CreateNode(type);
+        DecisionTreeEditorNode node = tree.CreateNode(type, creationPos);
         if (node is DecisionTreeNode)
             CreateNodeView(node as DecisionTreeNode);
         else if (node is EnvironmentQuerySystem)
@@ -169,6 +170,10 @@ public class DecisionTreeView : GraphView
                 if (nodeView != null)
                     tree.DeleteNode(nodeView.node);
 
+                EQSView eqsView = elem as EQSView;
+                if (eqsView != null)
+                    tree.DeleteNode(eqsView.eqs);
+
                 // If our element is an edge, delete the edge
                 Edge edge = elem as Edge;
                 if (edge != null)
@@ -189,7 +194,7 @@ public class DecisionTreeView : GraphView
                         if (rootNode != null)
                             rootNode.child = null;
                     }
-                    EQSView eqsView = edge.output.node as EQSView;
+                    eqsView = edge.output.node as EQSView;
                     if (eqsView != null)
                     {
                         DecisionTreeNodeView childView = edge.input.node as DecisionTreeNodeView;
