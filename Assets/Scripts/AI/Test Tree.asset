@@ -15,35 +15,12 @@ MonoBehaviour:
   guid: c56cdd7525abc6e488bce317d14ba2b5
   positionalData:
     serializedVersion: 2
-    x: 337.9999
-    y: 280.15002
+    x: 449
+    y: -151
     width: 121
     height: 77
   mob: {fileID: 0}
-  ability: {fileID: 0}
---- !u!114 &-5888102790501934362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d3fb38dd6763c64b8220ec2ded6b771, type: 3}
-  m_Name: EnvironmentQuerySystem
-  m_EditorClassIdentifier: 
-  guid: 5134f62ef6a7b0b4bb13ccbe8c164861
-  positionalData:
-    serializedVersion: 2
-    x: 81
-    y: -172
-    width: -81
-    height: 172
-  mob: {fileID: 0}
-  rules: []
-  _target: 0
-  _tileRange: 0
+  ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
 --- !u!114 &-948769117322203111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +41,7 @@ MonoBehaviour:
     width: 0
     height: 0
   mob: {fileID: 0}
-  child: {fileID: 0}
+  child: {fileID: -770408498093224201}
 --- !u!114 &-770408498093224201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,13 +57,13 @@ MonoBehaviour:
   guid: 30412be5b5955a14abea8d1ff2a32b5b
   positionalData:
     serializedVersion: 2
-    x: 75
-    y: 179
+    x: 172
+    y: -10
     width: 146
     height: 101
   mob: {fileID: 0}
-  trueNode: {fileID: 0}
-  falseNode: {fileID: 0}
+  trueNode: {fileID: -6292324885527174513}
+  falseNode: {fileID: 2839636901410841377}
   attackRange: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -103,31 +80,10 @@ MonoBehaviour:
   root: {fileID: -948769117322203111}
   nodes:
   - {fileID: -948769117322203111}
-  - {fileID: 685533384659959002}
   - {fileID: -6292324885527174513}
   - {fileID: -770408498093224201}
   - {fileID: 2839636901410841377}
-  - {fileID: -5888102790501934362}
---- !u!114 &685533384659959002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 197d4de144500a94eabadaf44135e35a, type: 3}
-  m_Name: A_MoveTowards
-  m_EditorClassIdentifier: 
-  guid: 3e8f0f49168a8fe4cb694a0e2f541aaa
-  positionalData:
-    serializedVersion: 2
-    x: 318.10004
-    y: 118.40001
-    width: 141
-    height: 77
-  mob: {fileID: 0}
+  - {fileID: 5184336638811150259}
 --- !u!114 &2839636901410841377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,8 +99,35 @@ MonoBehaviour:
   guid: 12250050e812b524ba81d1adc8cd713f
   positionalData:
     serializedVersion: 2
-    x: 288
-    y: -74
+    x: 449
+    y: 91
     width: 181
     height: 125
   mob: {fileID: 0}
+--- !u!114 &5184336638811150259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3fb38dd6763c64b8220ec2ded6b771, type: 3}
+  m_Name: EQS_RangedMobMoveToPlayer(Clone)
+  m_EditorClassIdentifier: 
+  guid: 89a8f97152c20e34daed3c0354d04c86
+  positionalData:
+    serializedVersion: 2
+    x: 67.99998
+    y: 326.85
+    width: 268
+    height: 77
+  mob: {fileID: 0}
+  rules:
+  - {fileID: 11400000, guid: e52c7791597247f4793bd410cdb7c67b, type: 2}
+  - {fileID: 11400000, guid: 7518ca538fce0f344b77b2298b616555, type: 2}
+  - {fileID: 11400000, guid: 5d7dee7ae52575e4d9f009e157f0b681, type: 2}
+  - {fileID: 11400000, guid: 8bef3a28a3960f2458a23bb633b449b4, type: 2}
+  _target: 0
+  _tileRange: 4

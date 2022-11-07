@@ -121,7 +121,7 @@ public class DecisionTreeView : GraphView
         var types = TypeCache.GetTypesDerivedFrom<DecisionTreeEditorNode>();
         foreach(var type in types)
         {
-            if (!type.IsAbstract && type != typeof(RootNode))
+            if (!type.IsAbstract && type != typeof(RootNode) && type != typeof(EnvironmentQuerySystem))
             {
                 System.Type rootBaseType = type.BaseType;
                 string pathString = "";
@@ -133,6 +133,20 @@ public class DecisionTreeView : GraphView
                 evt.menu.AppendAction(pathString + $"{type.Name}", (a) => CreateNode(type, clickPoint));
             }
         }
+
+        string[] guids = AssetDatabase.FindAssets("t:" + typeof(EnvironmentQuerySystem).Name);
+
+        for (int i = 0; i < guids.Length; i++)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guids[i]);
+            EnvironmentQuerySystem eqs = AssetDatabase.LoadAssetAtPath<EnvironmentQuerySystem>(path);
+            evt.menu.AppendAction($"Environment Query Systems/{eqs.name}", (a) =>
+            {
+                EnvironmentQuerySystem eqsClone = Object.Instantiate(eqs);
+                CreateNode(eqsClone, clickPoint);
+            });
+        }
+
     }
 
     void CreateNode(System.Type type, Vector2 creationPos)
@@ -143,6 +157,16 @@ public class DecisionTreeView : GraphView
         else if (node is EnvironmentQuerySystem)
             CreateNodeView(node as EnvironmentQuerySystem);
     }
+
+    void CreateNode(ScriptableObject scriptableObject, Vector2 creationPos)
+    {
+        DecisionTreeEditorNode node = tree.CreateNode(scriptableObject, creationPos);
+        if (node is DecisionTreeNode)
+            CreateNodeView(node as DecisionTreeNode);
+        else if (node is EnvironmentQuerySystem)
+            CreateNodeView(node as EnvironmentQuerySystem);
+    }
+
 
     public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
     {

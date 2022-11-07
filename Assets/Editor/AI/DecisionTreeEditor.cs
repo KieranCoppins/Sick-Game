@@ -10,7 +10,7 @@ public class DecisionTreeEditor : EditorWindow
     InspectorView inspectorView;
     DecisionTreeView treeView;
 
-    [MenuItem("Window/UI Toolkit/DecisionTreeEditor")]
+    [MenuItem("Window/AI/Decision Tree Editor")]
     public static void ShowExample()
     {
         DecisionTreeEditor wnd = GetWindow<DecisionTreeEditor>();

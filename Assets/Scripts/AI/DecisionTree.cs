@@ -113,6 +113,20 @@ public class DecisionTree : ScriptableObject
         return node;
     }
 
+    public DecisionTreeEditorNode CreateNode(ScriptableObject scriptableObject, Vector2 creationPos)
+    {
+        DecisionTreeEditorNode node = ScriptableObject.Instantiate(scriptableObject) as DecisionTreeEditorNode;
+        node.name = scriptableObject.name;
+        node.guid = GUID.Generate().ToString();
+        node.positionalData.xMin = creationPos.x;
+        node.positionalData.yMin = creationPos.y;
+        nodes.Add(node);
+
+        AssetDatabase.AddObjectToAsset(node, this);
+        AssetDatabase.SaveAssets();
+        return node;
+    }
+
     public void DeleteNode(DecisionTreeEditorNode node)
     {
         nodes.Remove(node);
