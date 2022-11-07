@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class A_PullBack : Action
 {
-    readonly Transform target;
+    Transform target;
     Vector2 desiredPosition;
-    readonly float distance;
+    [SerializeField] float distance;
 
     public A_PullBack()
     {
 
     }
-
-    public A_PullBack(Transform target, float distance)
+    public override void Initialise()
     {
-        this.target = target;
-        this.distance = distance;
+        base.Initialise();
+        target = GameObject.FindGameObjectWithTag("Player").transform; // TODO make the target a parameter so we can define different targets
     }
 
     public override IEnumerator Execute()

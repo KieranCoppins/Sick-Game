@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class A_MoveTowards : Action
 {
-    readonly Transform target;
+    Transform target;
     Vector2 desiredPosition;
 
     public A_MoveTowards()
@@ -15,9 +15,10 @@ public class A_MoveTowards : Action
 
     }
 
-    public A_MoveTowards(Transform target)
+    public override void Initialise()
     {
-        this.target = target;
+        base.Initialise();
+        target = GameObject.FindGameObjectWithTag("Player").transform; // TODO make the target a parameter so we can define different targets
     }
 
     public override IEnumerator Execute()
