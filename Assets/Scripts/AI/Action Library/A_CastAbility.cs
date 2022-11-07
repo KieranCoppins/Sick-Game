@@ -16,10 +16,6 @@ public class A_CastAbility : A_Attack
     {
     }
 
-    public A_CastAbility(Transform target) : base(target)
-    {
-    }
-
     public override void Initialise()
     {
         base.Initialise();

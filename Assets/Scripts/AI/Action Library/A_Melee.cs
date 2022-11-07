@@ -13,10 +13,6 @@ public class A_Melee : A_Attack
     {
 
     }
-    public A_Melee(Transform target) : base(target)
-    {
-
-    }
 
     public override void Initialise()
     {

@@ -200,18 +200,16 @@ public abstract class A_Attack : Action
         CanCast = true;
     }
 
-    public A_Attack(Transform target)
-    {
-        this.target = target;
-        CanCast = true;
-        Flags |= ActionFlags.Interruptor;       // This action is an interruptor
-        Flags &= ~ActionFlags.Interruptable;    // This action is not interruptable
-    }
-
     protected virtual IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(cooldown);
         CanCast = true;
+    }
+
+    public override void Initialise()
+    {
+        base.Initialise();
+        target = GameObject.FindGameObjectWithTag("Player").transform; // TODO make the target a parameter so we can define different targets
     }
 }
 
