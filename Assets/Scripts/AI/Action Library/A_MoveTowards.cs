@@ -15,7 +15,7 @@ public class A_MoveTowards : Action
 
     }
 
-    public A_MoveTowards(BaseMob mob, Transform target) : base(mob)
+    public A_MoveTowards(Transform target)
     {
         this.target = target;
     }

@@ -14,10 +14,9 @@ public class A_CastAbility : A_Attack
 
     public A_CastAbility()
     {
-
     }
 
-    public A_CastAbility(BaseMob mob, Transform target, AbilityBase ability) : base(mob, target, ability.AbilityCooldown)
+    public A_CastAbility(Transform target, AbilityBase ability) : base(target, ability.AbilityCooldown)
     {
         this._ability = ability;
     }

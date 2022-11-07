@@ -116,6 +116,7 @@ public class DecisionTreeView : GraphView
     public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
     {
         Vector2 clickPoint = viewTransform.matrix.inverse.MultiplyPoint(evt.localMousePosition);
+        GridBackground grid = contentContainer[0] as GridBackground;
         var types = TypeCache.GetTypesDerivedFrom<DecisionTreeEditorNode>();
         foreach(var type in types)
         {

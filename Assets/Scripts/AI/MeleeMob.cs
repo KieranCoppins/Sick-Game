@@ -19,7 +19,7 @@ public class MeleeMob : BaseMob
     {
         base.Start();
         decisionTree = new DT_MeleeMob(this);
-        decisionTree.Initialise();
+        decisionTree.Initialise(this);
         StartCoroutine(Think());
     }
 

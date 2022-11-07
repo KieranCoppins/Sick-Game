@@ -11,7 +11,7 @@ public class A_Melee : A_Attack
     {
 
     }
-    public A_Melee(BaseMob mob, Transform target, float attackSpeed) : base(mob, target, attackSpeed)
+    public A_Melee(Transform target, float attackSpeed) : base(target, attackSpeed)
     {
     }
     public override IEnumerator Execute()

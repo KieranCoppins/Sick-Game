@@ -13,7 +13,7 @@ public class A_PullBack : Action
 
     }
 
-    public A_PullBack(BaseMob mob, Transform target, float distance) : base(mob)
+    public A_PullBack(Transform target, float distance)
     {
         this.target = target;
         this.distance = distance;

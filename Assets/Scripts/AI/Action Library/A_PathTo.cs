@@ -24,7 +24,7 @@ public class A_PathTo : Action
     }
 
     // Make this action take a target and a range. Also we always want our path to to be an interruptor
-    public A_PathTo(BaseMob mob, GetDestination destinationDelegate, CancelPathfinding cancelPathfindingDelegate) : base(mob)
+    public A_PathTo(GetDestination destinationDelegate, CancelPathfinding cancelPathfindingDelegate)
     {
         pathfinding = mob.PathfindingComponent;
         this.destinationDelegate = destinationDelegate;

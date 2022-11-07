@@ -40,9 +40,14 @@ public class DecisionTree : ScriptableObject
     [HideInInspector] public List<DecisionTreeEditorNode> nodes = new List<DecisionTreeEditorNode>();
 
 
-    public void Initialise()
+    public void Initialise(BaseMob mob)
     {
+        this.mob = mob;
 
+        nodes.ForEach(node =>
+        {
+            node.mob = mob;
+        });
     }
     public Action Run()
     {
@@ -121,21 +126,17 @@ public abstract class DecisionTreeEditorNode : ScriptableObject
     [HideInInspector] public string guid;
     [HideInInspector] public Rect positionalData;
 
+    [HideInInspector] public BaseMob mob;
+
 
 }
 
 public abstract class DecisionTreeNode : DecisionTreeEditorNode
 {
-    [SerializeField] protected BaseMob mob;
 
     public DecisionTreeNode()
     {
 
-    }
-
-    public DecisionTreeNode(BaseMob mob)
-    {
-        this.mob = mob;
     }
     public abstract DecisionTreeNode MakeDecision();
 
@@ -161,11 +162,6 @@ public abstract class Action : DecisionTreeNode
     public ActionFlags Flags { get; protected set; }
 
     public Action()
-    {
-
-    }
-
-    public Action(BaseMob mob) : base(mob)
     {
         Flags = 0;
 
@@ -200,7 +196,7 @@ public abstract class A_Attack : Action
         Flags &= ~ActionFlags.Interruptable;    // This action is not interruptable
     }
 
-    public A_Attack(BaseMob mob, Transform target, float cooldown) : base(mob)
+    public A_Attack(Transform target, float cooldown)
     {
         this.cooldown = cooldown;
         this.target = target;
@@ -230,7 +226,7 @@ public abstract class Decision : DecisionTreeNode
 
     }
 
-    public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode, Condition condDelegate, BaseMob mob) : base(mob)
+    public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode, Condition condDelegate)
     {
         this.trueNode = trueNode;
         this.falseNode = falseNode;

@@ -18,7 +18,7 @@ public class D_AttackDecision : Decision
 
     }
 
-    public D_AttackDecision(A_Attack attackNode, DecisionTreeNode fNode, Condition cond, BaseMob mob, Transform target, float attackRange) : base(attackNode, fNode, cond, mob)
+    public D_AttackDecision(A_Attack attackNode, DecisionTreeNode fNode, Condition cond, Transform target, float attackRange) : base(attackNode, fNode, cond)
     {
         this.action = attackNode;
         this.attackRange = attackRange;

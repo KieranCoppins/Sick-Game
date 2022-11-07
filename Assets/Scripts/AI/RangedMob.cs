@@ -13,7 +13,7 @@ public class RangedMob : BaseMob
     {
         base.Start();
         decisionTree = new DT_RangedMob(this);
-        decisionTree.Initialise();
+        decisionTree.Initialise(this);
         StartCoroutine(Think());
     }
 
