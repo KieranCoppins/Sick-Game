@@ -7,13 +7,26 @@ using UnityEngine;
 /// </summary>
 public class A_Melee : A_Attack
 {
+    [SerializeField] float attackSpeed;
+
     public A_Melee()
     {
 
     }
-    public A_Melee(Transform target, float attackSpeed) : base(target, attackSpeed)
+    public A_Melee(Transform target) : base(target)
     {
+
     }
+
+    public override void Initialise()
+    {
+        base.Initialise();
+
+        cooldown = attackSpeed;
+
+    }
+
+
     public override IEnumerator Execute()
     {
         CanCast = false;

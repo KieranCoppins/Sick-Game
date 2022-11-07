@@ -85,8 +85,4 @@ public class DT_RangedMob : DecisionTreeGeneric<RangedMob>
         root = new Decision(MoveToPlayer, shouldCastComet, ShouldMoveToPlayer, mob);
     }
     */
-    Vector2 FindTileNearPlayer()
-    {
-        return GameObject.FindGameObjectWithTag("EQSManager").GetComponent<EQSManager>().RunEQSystem(EQSystem.RangedMobMoveToPlayer, mob.gameObject);
-    }
 }

@@ -21,7 +21,7 @@ public class DecisionTreeGeneric<T> : DecisionTree where T : BaseMob
 [CreateAssetMenu(menuName = "Decision Tree/Decision Tree")]
 public class DecisionTree : ScriptableObject
 {
-    [SerializeField] private BaseMob mob;
+    private BaseMob mob;
     public DecisionTree()
     {
     }
@@ -31,7 +31,7 @@ public class DecisionTree : ScriptableObject
         this.mob = mob;
     }
 
-    public RootNode root;
+    [HideInInspector] public RootNode root;
 
     private Vector2 playerPrevPos;
 
@@ -128,7 +128,10 @@ public abstract class DecisionTreeEditorNode : ScriptableObject
 
     [HideInInspector] public BaseMob mob;
 
-
+    public virtual void Initialise()
+    {
+        
+    }
 }
 
 public abstract class DecisionTreeNode : DecisionTreeEditorNode
@@ -187,18 +190,18 @@ public abstract class A_Attack : Action
 {
     public bool CanCast { get; protected set; }
 
-    protected readonly float cooldown;
-    protected readonly Transform target;
+    protected float cooldown;
+    protected Transform target;
 
     public A_Attack()
     {
         Flags |= ActionFlags.Interruptor;       // This action is an interruptor
         Flags &= ~ActionFlags.Interruptable;    // This action is not interruptable
+        CanCast = true;
     }
 
-    public A_Attack(Transform target, float cooldown)
+    public A_Attack(Transform target)
     {
-        this.cooldown = cooldown;
         this.target = target;
         CanCast = true;
         Flags |= ActionFlags.Interruptor;       // This action is an interruptor

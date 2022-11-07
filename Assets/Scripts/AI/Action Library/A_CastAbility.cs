@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class A_CastAbility : A_Attack
 {
-    readonly AbilityBase _ability;
+    [SerializeField] AbilityBase ability;
 
     Vector2 totalTargetVelocity;
     int totalVelocityEntries = 0;
@@ -16,9 +16,15 @@ public class A_CastAbility : A_Attack
     {
     }
 
-    public A_CastAbility(Transform target, AbilityBase ability) : base(target, ability.AbilityCooldown)
+    public A_CastAbility(Transform target) : base(target)
     {
-        this._ability = ability;
+    }
+
+    public override void Initialise()
+    {
+        base.Initialise();
+
+        cooldown = ability.AbilityCooldown;
     }
 
     public override IEnumerator Execute()
@@ -45,13 +51,13 @@ public class A_CastAbility : A_Attack
             CanCast = false;
 
             // Whilst we are casting, we want to get the average of our player's movement vector
-            yield return new DoTaskWhilstWaitingForSeconds(() => { totalTargetVelocity += target.GetComponent<Rigidbody2D>().velocity; totalVelocityEntries += 1; }, _ability.CastTime);
+            yield return new DoTaskWhilstWaitingForSeconds(() => { totalTargetVelocity += target.GetComponent<Rigidbody2D>().velocity; totalVelocityEntries += 1; }, ability.CastTime);
 
             // Recalculate the predicted movement at the last second since the player may have changed direction during our casting time
             predictedLocation = PredictLocation();
             predictedDirection = predictedLocation - (Vector2)mob.transform.position;
 
-            _ability.Cast(mob.transform.position, predictedDirection, target);
+            ability.Cast(mob.transform.position, predictedDirection, target);
             mob.StartCoroutine(Cooldown());
         }
 
@@ -61,7 +67,7 @@ public class A_CastAbility : A_Attack
     Vector2 PredictLocation()
     {
         // Check if our ability is a projectile ability
-        ProjectileAbility projectileAbility = _ability as ProjectileAbility;
+        ProjectileAbility projectileAbility = ability as ProjectileAbility;
         if (projectileAbility != null)
         {
             // Get the average velocity of our target

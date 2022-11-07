@@ -86,9 +86,4 @@ public class DT_MeleeMob : DecisionTreeGeneric<MeleeMob>
         Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
         return Vector2.Distance(mob.transform.position, playerPos) < mob.MeleeRange;
     }
-
-    Vector2 FindTileNearPlayer()
-    {
-        return GameObject.FindGameObjectWithTag("EQSManager").GetComponent<EQSManager>().RunEQSystem(EQSystem.MeleeMobMoveToPlayer, mob.gameObject);
-    }
 }
