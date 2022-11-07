@@ -16,7 +16,7 @@ public class EQSView : UnityEditor.Experimental.GraphView.Node
         style.top = eqs.positionalData.yMin;
         this.viewDataKey = eqs.guid;
 
-        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(Vector2));
+        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(GetDestination));
         output.portName = "Position";
         outputContainer.Add(output);
     }

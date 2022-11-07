@@ -89,9 +89,12 @@ public class DecisionTreeView : GraphView
             if (rootNode != null)
             {
                 DecisionTreeNodeView parentView = FindNodeView(rootNode) as DecisionTreeNodeView;
-                DecisionTreeNodeView childNodeView = FindNodeView(rootNode.child) as DecisionTreeNodeView;
-                Edge edge = parentView.outputPorts["main"].ConnectTo(childNodeView.inputPorts["main"]);
-                AddElement(edge);
+                if (rootNode.child != null)
+                {
+                    DecisionTreeNodeView childNodeView = FindNodeView(rootNode.child) as DecisionTreeNodeView;
+                    Edge edge = parentView.outputPorts["main"].ConnectTo(childNodeView.inputPorts["main"]);
+                    AddElement(edge);
+                }
             }
 
             EnvironmentQuerySystem eqs = node as EnvironmentQuerySystem;
@@ -112,24 +115,21 @@ public class DecisionTreeView : GraphView
 
     public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
     {
-        var types = TypeCache.GetTypesDerivedFrom<Action>();
+        var types = TypeCache.GetTypesDerivedFrom<DecisionTreeEditorNode>();
         foreach(var type in types)
         {
-            evt.menu.AppendAction($"{type.BaseType.Name}/{type.Name}", (a) => CreateNode(type));
+            if (!type.IsAbstract && type != typeof(RootNode))
+            {
+                System.Type rootBaseType = type.BaseType;
+                string pathString = "";
+                while (rootBaseType != null && rootBaseType != typeof(DecisionTreeEditorNode))
+                {
+                    pathString = $"{rootBaseType.Name}/" + pathString;
+                    rootBaseType = rootBaseType.BaseType;
+                }
+                evt.menu.AppendAction(pathString + $"{type.Name}", (a) => CreateNode(type));
+            }
         }
-
-        types = TypeCache.GetTypesDerivedFrom<Decision>();
-        foreach (var type in types)
-        {
-            evt.menu.AppendAction($"{type.BaseType.Name}/{type.Name}", (a) => CreateNode(type));
-        }
-        types = TypeCache.GetTypesDerivedFrom<DecisionTreeEditorNode>();
-        foreach (var type in types)
-        {
-            if (type == typeof(EnvironmentQuerySystem))
-                evt.menu.AppendAction($"{type.BaseType.Name}/{type.Name}", (a) => CreateNode(type));
-        }
-
     }
 
     void CreateNode(System.Type type)

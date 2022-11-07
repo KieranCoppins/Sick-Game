@@ -37,7 +37,7 @@ public class DecisionTree : ScriptableObject
 
     /// Editor Values
     // A list of nodes for our editor, they don't have to be linked to the tree
-    [HideInInspector] public List<DecisionTreeEditorNode> nodes;
+    [HideInInspector] public List<DecisionTreeEditorNode> nodes = new List<DecisionTreeEditorNode>();
 
 
     public void Initialise()
@@ -145,22 +145,6 @@ public abstract class DecisionTreeNode : DecisionTreeEditorNode
 
 }
 
-public class RootNode : DecisionTreeNode
-{
-    public DecisionTreeNode child;
-
-    public override DecisionTreeNode MakeDecision()
-    {
-        return child.MakeDecision();
-    }
-
-    public override DecisionTreeNode Clone()
-    {
-        RootNode node = Instantiate(this);
-        node.child = child.Clone();
-        return node;
-    }
-}
 
 public abstract class Action : DecisionTreeNode
 {
@@ -198,7 +182,41 @@ public abstract class Action : DecisionTreeNode
     public abstract IEnumerator Execute();
 }
 
-public class Decision : DecisionTreeNode
+/// <summary>
+/// An abstract attack action that all attack actions should inherit
+/// </summary>
+public abstract class A_Attack : Action
+{
+    public bool CanCast { get; protected set; }
+
+    protected readonly float cooldown;
+    protected readonly Transform target;
+
+    public A_Attack()
+    {
+        Flags |= ActionFlags.Interruptor;       // This action is an interruptor
+        Flags &= ~ActionFlags.Interruptable;    // This action is not interruptable
+    }
+
+    public A_Attack(BaseMob mob, Transform target, float cooldown) : base(mob)
+    {
+        this.cooldown = cooldown;
+        this.target = target;
+        CanCast = true;
+        Flags |= ActionFlags.Interruptor;       // This action is an interruptor
+        Flags &= ~ActionFlags.Interruptable;    // This action is not interruptable
+    }
+
+    protected virtual IEnumerator Cooldown()
+    {
+        yield return new WaitForSeconds(cooldown);
+        CanCast = true;
+    }
+}
+
+
+public delegate bool Condition();
+public abstract class Decision : DecisionTreeNode
 {
     [HideInInspector] public DecisionTreeNode trueNode;
     [HideInInspector] public DecisionTreeNode falseNode;
@@ -237,30 +255,26 @@ public class Decision : DecisionTreeNode
     }
 }
 
-public abstract class Decision<T> : Decision
+/// Custom Yield Instructions
+
+// Allows for a function to be called every frame whilst we are waiting for the seconds passed
+public class DoTaskWhilstWaitingForSeconds : CustomYieldInstruction
 {
-    public Decision()
+    readonly UnityAction task;
+    float timer;
+    public DoTaskWhilstWaitingForSeconds(UnityAction task, float seconds)
     {
-
-    }
-    public Decision(DecisionTreeNode trueNode, DecisionTreeNode falseNode, BaseMob mob)
-    {
-        this.trueNode = trueNode;
-        this.falseNode = falseNode;
+        this.task = task;
+        this.timer = seconds;
     }
 
-    public abstract T TestData();
-
-    public override abstract DecisionTreeNode GetBranch();
-
-    public override DecisionTreeNode Clone()
+    public override bool keepWaiting
     {
-        Decision<T> node = Instantiate(this);
-        node.trueNode = trueNode.Clone();
-        node.falseNode = falseNode.Clone();
-        return node;
+        get
+        {
+            task.Invoke();
+            timer -= Time.deltaTime;
+            return timer > 0;
+        }
     }
-
 }
-
-public delegate bool Condition();
