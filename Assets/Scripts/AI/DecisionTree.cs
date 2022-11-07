@@ -47,6 +47,7 @@ public class DecisionTree : ScriptableObject
         nodes.ForEach(node =>
         {
             node.mob = mob;
+            node.Initialise();
         });
     }
     public Action Run()

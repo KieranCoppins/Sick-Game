@@ -7,12 +7,12 @@ public class RangedMob : BaseMob
     [Header("Ranged Mob Attributes")]
     [SerializeField] public AbilityBase ability;
 
-    protected DecisionTreeGeneric<RangedMob> decisionTree;
+    [SerializeField] protected DecisionTree decisionTree;
 
     protected override void Start()
     {
         base.Start();
-        decisionTree = new DT_RangedMob(this);
+        decisionTree = decisionTree.Clone();
         decisionTree.Initialise(this);
         StartCoroutine(Think());
     }

@@ -8,6 +8,7 @@ using System.Linq;
 
 public class DecisionTreeView : GraphView
 {
+    public System.Action<UnityEditor.Experimental.GraphView.Node> OnNodeSelected;
     public new class UxmlFactory : UxmlFactory<DecisionTreeView, UxmlTraits> { };
     DecisionTree tree;
     public DecisionTreeView()
@@ -151,12 +152,14 @@ public class DecisionTreeView : GraphView
     void CreateNodeView(DecisionTreeNode node)
     {
         DecisionTreeNodeView nodeView = new(node);
+        nodeView.OnNodeSelected = OnNodeSelected;
         AddElement(nodeView);
     }
 
     void CreateNodeView(EnvironmentQuerySystem eqs)
     {
         EQSView nodeView = new(eqs);
+        nodeView.OnNodeSelected = OnNodeSelected;
         AddElement(nodeView);
     }
 

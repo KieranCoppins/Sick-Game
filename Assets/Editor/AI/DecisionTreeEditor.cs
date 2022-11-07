@@ -33,7 +33,7 @@ public class DecisionTreeEditor : EditorWindow
 
         inspectorView = root.Q<InspectorView>();
         treeView = root.Q<DecisionTreeView>();
-
+        treeView.OnNodeSelected = OnNodeSelectionChanged;
 
         OnSelectionChange();
     }
@@ -46,5 +46,10 @@ public class DecisionTreeEditor : EditorWindow
         {
             treeView.PopulateView(decisionTree);
         }
+    }
+
+    void OnNodeSelectionChanged(UnityEditor.Experimental.GraphView.Node nodeView)
+    {
+        inspectorView.UpdateSelection(nodeView);
     }
 }

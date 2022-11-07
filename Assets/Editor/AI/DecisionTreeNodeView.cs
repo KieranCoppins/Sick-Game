@@ -5,6 +5,7 @@ using UnityEditor.Experimental.GraphView;
 
 public class DecisionTreeNodeView : UnityEditor.Experimental.GraphView.Node
 {
+    public System.Action<UnityEditor.Experimental.GraphView.Node> OnNodeSelected;
     public DecisionTreeNode node;
     public Dictionary<string, Port> inputPorts;
     public Dictionary<string, Port> outputPorts;
@@ -23,6 +24,13 @@ public class DecisionTreeNodeView : UnityEditor.Experimental.GraphView.Node
 
         CreateInputPorts();
         CreateOutputPorts();
+    }
+
+    public override void OnSelected()
+    {
+        base.OnSelected();
+        if (OnNodeSelected != null)
+            OnNodeSelected.Invoke(this);
     }
 
     public override void SetPosition(Rect newPos)

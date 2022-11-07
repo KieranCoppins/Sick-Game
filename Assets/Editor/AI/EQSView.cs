@@ -5,6 +5,7 @@ using UnityEditor.Experimental.GraphView;
 
 public class EQSView : UnityEditor.Experimental.GraphView.Node
 {
+    public System.Action<UnityEditor.Experimental.GraphView.Node> OnNodeSelected;
     public EnvironmentQuerySystem eqs;
     public Port output;
     public EQSView(EnvironmentQuerySystem eqs)
@@ -27,5 +28,10 @@ public class EQSView : UnityEditor.Experimental.GraphView.Node
         eqs.positionalData = newPos;
     }
 
-
+    public override void OnSelected()
+    {
+        base.OnSelected();
+        if (OnNodeSelected != null)
+            OnNodeSelected.Invoke(this);
+    }
 }
