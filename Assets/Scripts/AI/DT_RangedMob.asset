@@ -44,6 +44,7 @@ MonoBehaviour:
   - {fileID: 2873401398325037708}
   - {fileID: 7355294504948294302}
   - {fileID: 4733141747619518986}
+  - {fileID: 5440893340888606005}
   inputs:
   - inputGUID: 8303d485f42aad44d89f635f4491e74a
     inputPortName: main
@@ -65,6 +66,10 @@ MonoBehaviour:
     inputPortName: main
     outputGUID: dd50b0844410d034499b5231e1fab070
     outputPortName: TRUE
+  - inputGUID: 86fe8e06c736cb24580199183461cefd
+    inputPortName: destinationQuery
+    outputGUID: 7bdc75171a9a1434eb5ab9a58dc9b00c
+    outputPortName: Position
 --- !u!114 &648282896621251169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +110,8 @@ MonoBehaviour:
     width: 181
     height: 125
   mob: {fileID: 0}
+  destinationQuery: {fileID: 4733141747619518986}
+  CancelPathfindingCondition: {fileID: 0}
 --- !u!114 &4733141747619518986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,10 +127,10 @@ MonoBehaviour:
   guid: 7bdc75171a9a1434eb5ab9a58dc9b00c
   positionalData:
     serializedVersion: 2
-    x: 118.450005
-    y: -154.10002
-    width: -118.450005
-    height: 154.10002
+    x: -80.03008
+    y: -225.8051
+    width: 268
+    height: 77
   mob: {fileID: 0}
   rules:
   - {fileID: 11400000, guid: e52c7791597247f4793bd410cdb7c67b, type: 2}
@@ -132,6 +139,26 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8bef3a28a3960f2458a23bb633b449b4, type: 2}
   _target: 0
   _tileRange: 4
+--- !u!114 &5440893340888606005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29bb9684270320c4ca28493d4bb85617, type: 3}
+  m_Name: C_CancelPathfinding
+  m_EditorClassIdentifier: 
+  guid: d5f2324ebf09c6040ad45bd4cc2add12
+  positionalData:
+    serializedVersion: 2
+    x: 190
+    y: -55
+    width: -190
+    height: 55
+  mob: {fileID: 0}
 --- !u!114 &7084128849031132433
 MonoBehaviour:
   m_ObjectHideFlags: 0

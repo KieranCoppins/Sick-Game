@@ -60,7 +60,8 @@ public class DecisionTreeView : GraphView
                 CreateNodeView(node as DecisionTreeNode);
             else if (node is EnvironmentQuerySystem)
                 CreateNodeView(node as EnvironmentQuerySystem);
-                
+            else if (GenericHelpers.IsSubClassOfRawGeneric(typeof(Function<>), node.GetType()))
+                CreateNodeView(node);
         });
 
         // Create edges
@@ -120,6 +121,9 @@ public class DecisionTreeView : GraphView
             CreateNodeView(node as DecisionTreeNode);
         else if (node is EnvironmentQuerySystem)
             CreateNodeView(node as EnvironmentQuerySystem);
+        else if (GenericHelpers.IsSubClassOfRawGeneric(typeof(Function<>), node.GetType()))
+            CreateNodeView(node);
+
     }
 
     void CreateNode(ScriptableObject scriptableObject, Vector2 creationPos)
@@ -129,6 +133,8 @@ public class DecisionTreeView : GraphView
             CreateNodeView(node as DecisionTreeNode);
         else if (node is EnvironmentQuerySystem)
             CreateNodeView(node as EnvironmentQuerySystem);
+        else if (GenericHelpers.IsSubClassOfRawGeneric(typeof(Function<>), node.GetType()))
+            CreateNodeView(node);
     }
 
 
@@ -151,6 +157,13 @@ public class DecisionTreeView : GraphView
         AddElement(nodeView);
     }
 
+    void CreateNodeView(object node)
+    {
+        FunctionNodeView nodeView = new(node);
+        nodeView.OnNodeSelected = OnNodeSelected;
+        AddElement(nodeView);
+    }
+
     private GraphViewChange OnGraphViewChanged(GraphViewChange graphViewChange)
     {
         if (graphViewChange.elementsToRemove != null)
@@ -168,6 +181,21 @@ public class DecisionTreeView : GraphView
                 {
                     BaseNodeView inputNode = edge.input.node as BaseNodeView;
                     tree.inputs = tree.inputs.Where((input) => input != edge).ToList();
+
+                    var constructors = inputNode.node.GetType().GetConstructors();
+                    foreach (var constructor in constructors)
+                    {
+                        if (constructor.GetParameters().Length > 0)
+                        {
+                            foreach (var param in constructor.GetParameters())
+                            {
+                                if (edge.input.portType == param.ParameterType && edge.input.portName == param.Name)
+                                {
+                                    inputNode.node.GetType().GetField(param.Name).SetValue(inputNode.node, null);
+                                }
+                            }
+                        }
+                    }
                 }
 
             });
@@ -186,6 +214,7 @@ public class DecisionTreeView : GraphView
 
                 // If we're a decision node
                 Decision decisionNode = outputNode.node as Decision;
+                RootNode rootNode = outputNode.node as RootNode;
                 if (decisionNode != null)
                 {
                     if (input.outputPortName == "TRUE")
@@ -197,25 +226,26 @@ public class DecisionTreeView : GraphView
                 }
 
                 // If we're a root node
-                RootNode rootNode = outputNode.node as RootNode;
-                if(rootNode != null)
+                else if(rootNode != null)
                 {
                     rootNode.child = inputNode.node as DecisionTreeNode;
                 }
 
-                // If we're an EQS node
-                EnvironmentQuerySystem eqsNode = outputNode.node as EnvironmentQuerySystem;
-                if(eqsNode != null)
+                // Otherwise we can add these dynamically
+                else
                 {
-                    if (elem.input.portType == typeof(EnvironmentQuerySystem))
+                    var constructors = inputNode.node.GetType().GetConstructors();
+                    foreach(var constructor in constructors)
                     {
-                        A_PathTo pathToAction = inputNode.node as A_PathTo;
-                        if (pathToAction != null)
+                        if (constructor.GetParameters().Length > 0)
                         {
-                            Debug.Log(pathToAction.destinationQuery);
-                            pathToAction.destinationQuery = eqsNode;
-                            Debug.Log(pathToAction.destinationQuery);
-
+                            foreach (var param in constructor.GetParameters())
+                            {
+                                if (elem.input.portType == param.ParameterType && elem.input.portName == param.Name)
+                                {
+                                    inputNode.node.GetType().GetField(param.Name).SetValue(inputNode.node, outputNode.node);
+                                }
+                            }
                         }
                     }
                 }

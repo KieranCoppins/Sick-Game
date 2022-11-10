@@ -225,14 +225,10 @@ public abstract class A_Attack : Action
     }
 }
 
-
-public delegate bool Condition();
 public abstract class Decision : DecisionTreeNode
 {
     public DecisionTreeNode trueNode;
     public DecisionTreeNode falseNode;
-
-    readonly Condition Condition;
 
     public Decision()
     {
@@ -260,6 +256,22 @@ public abstract class Decision : DecisionTreeNode
         trueNode.Initialise(mob);
         falseNode.Initialise(mob);
     }
+}
+
+// A base function node that can return a given value
+public abstract class Function<T> : DecisionTreeEditorNode where T : System.IConvertible
+{
+    public Function()
+    {
+
+    }
+
+    // The condition to invoke
+    public abstract T Invoke();
+}
+
+public abstract class F_Condition : Function<bool>
+{
 }
 
 /// Custom Yield Instructions

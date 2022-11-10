@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public delegate bool CancelPathfinding();
-
 /// <summary>
 /// A generic path to action node
 /// </summary>
@@ -13,19 +10,20 @@ public class A_PathTo : Action
     PathfindingComponent pathfinding;
 
     public EnvironmentQuerySystem destinationQuery;
+    public F_Condition CancelPathfindingCondition;
 
     Vector2 desiredPosition;
 
     public A_PathTo()
     {
-
     }
 
     // Make this action take a target and a range. Also we always want our path to to be an interruptor
-    public A_PathTo(EnvironmentQuerySystem destinationQuery, CancelPathfinding cancelPathfindingDelegate)
+    public A_PathTo(EnvironmentQuerySystem destinationQuery, F_Condition CancelPathfindingCondition)
     {
         pathfinding = mob.PathfindingComponent;
         this.destinationQuery = destinationQuery;
+        this.CancelPathfindingCondition = CancelPathfindingCondition;
     }
 
     public override IEnumerator Execute()
@@ -33,6 +31,8 @@ public class A_PathTo : Action
         // Call our get destination delegate to get the tile we want to pathfind to
         Vector2 position = destinationQuery.Run();
 
+        // If our CancelPathFindingCondition is true then we will set this var and break out of the path
+        bool breakOut = false;
 
         // Calculate a path to the position
         Vector2[] p = pathfinding.CalculateAStarPath(mob.transform.position, position);
@@ -53,8 +53,7 @@ public class A_PathTo : Action
         // Run for as long as we have items in our queue
         while (path.Count > 0)
         {
-            // Check if we should stop pathfinding
-            if (false)
+            if (breakOut)
                 break;
 
             // Get our next position to move to from the queue
@@ -64,8 +63,11 @@ public class A_PathTo : Action
             while (Vector2.Distance(mob.transform.position, desiredPosition) > 0.5f)
             {
                 // Check if we should stop pathfinding
-                if (false)
+                if (CancelPathfindingCondition && CancelPathfindingCondition.Invoke())
+                {
+                    breakOut = true;
                     break;
+                }
 
                 // Add velocity of move to target
                 Vector2 dir = mob.GetMovementVector(desiredPosition, true);
@@ -88,14 +90,16 @@ public class A_PathTo : Action
     public override void Initialise(BaseMob mob)
     {
         base.Initialise(mob);
-        destinationQuery.mob = mob;
-        pathfinding = mob.GetComponent<PathfindingComponent>();
+        destinationQuery.Initialise(mob);
+        CancelPathfindingCondition.Initialise(mob);
+        pathfinding = mob.PathfindingComponent;
     }
 
     public override DecisionTreeNode Clone()
     {
         A_PathTo clone = Instantiate(this);
-        clone.destinationQuery = destinationQuery;
+        clone.destinationQuery = Instantiate(destinationQuery);
+        clone.CancelPathfindingCondition = Instantiate(CancelPathfindingCondition);
         return clone;
     }
 }
