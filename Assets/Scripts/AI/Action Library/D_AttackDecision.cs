@@ -18,9 +18,9 @@ public class D_AttackDecision : Decision
 
     }
 
-    public override void Initialise()
+    public override void Initialise(BaseMob mob)
     {
-        base.Initialise();
+        base.Initialise(mob);
         target = GameObject.FindGameObjectWithTag("Player").transform; // TODO make the target a parameter so we can define different targets
         action = trueNode as A_Attack;
         if (action == null)

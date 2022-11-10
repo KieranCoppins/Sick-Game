@@ -11,6 +11,12 @@ public class RootNode : DecisionTreeNode
         return child.MakeDecision();
     }
 
+    public override void Initialise(BaseMob mob)
+    {
+        base.Initialise(mob);
+        child.Initialise(mob);
+    }
+
     public override DecisionTreeNode Clone()
     {
         RootNode node = Instantiate(this);

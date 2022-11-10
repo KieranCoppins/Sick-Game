@@ -176,10 +176,46 @@ public class DecisionTreeView : GraphView
         {
             graphViewChange.edgesToCreate.ForEach(elem =>
             {
+                // Create the edge graphically
                 BaseNodeView inputNode = elem.input.node as BaseNodeView;
                 BaseNodeView outputNode = elem.output.node as BaseNodeView;
 
                 InputOutputPorts input = new(inputNode.node.guid, elem.input.name, outputNode.node.guid, elem.output.name);
+
+                // Apply the edge for real
+
+                // If we're a decision node
+                Decision decisionNode = outputNode.node as Decision;
+                if (decisionNode != null)
+                {
+                    if (input.outputPortName == "TRUE")
+                        decisionNode.trueNode = inputNode.node as DecisionTreeNode;
+                    else if (input.outputPortName == "FALSE")
+                        decisionNode.falseNode = inputNode.node as DecisionTreeNode;
+                    else
+                        Debug.LogError("Decision node was set from an invalid output?!");
+                }
+
+                // If we're a root node
+                RootNode rootNode = outputNode.node as RootNode;
+                if(rootNode != null)
+                {
+                    rootNode.child = inputNode.node as DecisionTreeNode;
+                }
+
+                // If we're an EQS node
+                EnvironmentQuerySystem eqsNode = outputNode.node as EnvironmentQuerySystem;
+                if(eqsNode != null)
+                {
+                    if (elem.input.portType == typeof(GetDestination))
+                    {
+                        A_PathTo pathToAction = inputNode.node as A_PathTo;
+                        if (pathToAction != null)
+                        {
+                            pathToAction.destinationDelegate = eqsNode.Run;
+                        }
+                    }
+                }
 
                 tree.inputs.Add(input);
             });

@@ -14,9 +14,9 @@ public class A_Melee : A_Attack
 
     }
 
-    public override void Initialise()
+    public override void Initialise(BaseMob mob)
     {
-        base.Initialise();
+        base.Initialise(mob);
 
         cooldown = attackSpeed;
 

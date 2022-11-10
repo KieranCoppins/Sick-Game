@@ -16,9 +16,9 @@ public class A_CastAbility : A_Attack
     {
     }
 
-    public override void Initialise()
+    public override void Initialise(BaseMob mob)
     {
-        base.Initialise();
+        base.Initialise(mob);
 
         cooldown = ability.AbilityCooldown;
     }

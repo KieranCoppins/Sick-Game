@@ -23,6 +23,16 @@ public class DecisionTreeGeneric<T> : DecisionTree where T : BaseMob
 public class DecisionTree : ScriptableObject
 {
     private BaseMob mob;
+
+    public RootNode root;
+
+    private Vector2 playerPrevPos;
+
+    /// Editor Values
+    // A list of nodes for our editor, they don't have to be linked to the tree
+    [HideInInspector] public List<DecisionTreeEditorNode> nodes = new List<DecisionTreeEditorNode>();
+    [HideInInspector] public List<InputOutputPorts> inputs = new List<InputOutputPorts>();
+
     public DecisionTree()
     {
     }
@@ -32,30 +42,16 @@ public class DecisionTree : ScriptableObject
         this.mob = mob;
     }
 
-    [HideInInspector] public RootNode root;
-
-    private Vector2 playerPrevPos;
-
-    /// Editor Values
-    // A list of nodes for our editor, they don't have to be linked to the tree
-    [HideInInspector] public List<DecisionTreeEditorNode> nodes = new List<DecisionTreeEditorNode>();
-    [HideInInspector] public List<InputOutputPorts> inputs = new List<InputOutputPorts>();
-
     public void Initialise(BaseMob mob)
     {
         this.mob = mob;
-
-        nodes.ForEach(node =>
-        {
-            node.mob = mob;
-            node.Initialise();
-        });
+        root.Initialise(mob);
     }
     public Action Run()
     {
         try
         {
-            return (Action)root.MakeDecision();
+            return root.MakeDecision() as Action;
         }
         catch (InvalidCastException e)
         {
@@ -144,9 +140,9 @@ public abstract class DecisionTreeEditorNode : ScriptableObject
 
     [HideInInspector] public BaseMob mob;
 
-    public virtual void Initialise()
+    public virtual void Initialise(BaseMob mob)
     {
-        
+        this.mob = mob;
     }
 }
 
@@ -222,9 +218,9 @@ public abstract class A_Attack : Action
         CanCast = true;
     }
 
-    public override void Initialise()
+    public override void Initialise(BaseMob mob)
     {
-        base.Initialise();
+        base.Initialise(mob);
         target = GameObject.FindGameObjectWithTag("Player").transform; // TODO make the target a parameter so we can define different targets
     }
 }
@@ -233,8 +229,8 @@ public abstract class A_Attack : Action
 public delegate bool Condition();
 public abstract class Decision : DecisionTreeNode
 {
-    [HideInInspector] public DecisionTreeNode trueNode;
-    [HideInInspector] public DecisionTreeNode falseNode;
+    public DecisionTreeNode trueNode;
+    public DecisionTreeNode falseNode;
 
     readonly Condition Condition;
 
@@ -256,6 +252,13 @@ public abstract class Decision : DecisionTreeNode
         node.trueNode = trueNode.Clone();
         node.falseNode = falseNode.Clone();
         return node;
+    }
+
+    public override void Initialise(BaseMob mob)
+    {
+        base.Initialise(mob);
+        trueNode.Initialise(mob);
+        falseNode.Initialise(mob);
     }
 }
 

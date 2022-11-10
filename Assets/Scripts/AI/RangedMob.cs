@@ -14,6 +14,7 @@ public class RangedMob : BaseMob
         base.Start();
         decisionTree = decisionTree.Clone();
         decisionTree.Initialise(this);
+
         StartCoroutine(Think());
     }
 
