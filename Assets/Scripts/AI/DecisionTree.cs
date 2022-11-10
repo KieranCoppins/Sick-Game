@@ -286,6 +286,8 @@ public class DoTaskWhilstWaitingForSeconds : CustomYieldInstruction
     }
 }
 
+///  Editor classes that are also referenced in engine
+
 [System.Serializable]
 public class InputOutputPorts
 {

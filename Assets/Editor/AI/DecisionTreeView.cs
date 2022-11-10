@@ -207,12 +207,15 @@ public class DecisionTreeView : GraphView
                 EnvironmentQuerySystem eqsNode = outputNode.node as EnvironmentQuerySystem;
                 if(eqsNode != null)
                 {
-                    if (elem.input.portType == typeof(GetDestination))
+                    if (elem.input.portType == typeof(EnvironmentQuerySystem))
                     {
                         A_PathTo pathToAction = inputNode.node as A_PathTo;
                         if (pathToAction != null)
                         {
-                            pathToAction.destinationDelegate = eqsNode.Run;
+                            Debug.Log(pathToAction.destinationQuery);
+                            pathToAction.destinationQuery = eqsNode;
+                            Debug.Log(pathToAction.destinationQuery);
+
                         }
                     }
                 }

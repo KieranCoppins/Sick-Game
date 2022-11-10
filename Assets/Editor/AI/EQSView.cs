@@ -7,7 +7,7 @@ public class EQSView : BaseNodeView
 {
     public EQSView(EnvironmentQuerySystem eqs) : base(eqs)
     {
-        Port port = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(GetDestination));
+        Port port = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(EnvironmentQuerySystem));
         port.portName = "Position";
         port.name = "Position";
         outputPorts.Add("Position", port);

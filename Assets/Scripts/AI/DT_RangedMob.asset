@@ -20,9 +20,9 @@ MonoBehaviour:
     width: 146
     height: 101
   mob: {fileID: 0}
-  trueNode: {fileID: 0}
-  falseNode: {fileID: 0}
-  attackRange: 0
+  trueNode: {fileID: 7084128849031132433}
+  falseNode: {fileID: 648282896621251169}
+  attackRange: 6
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,6 +41,9 @@ MonoBehaviour:
   - {fileID: 648282896621251169}
   - {fileID: 7084128849031132433}
   - {fileID: -1362160417680047096}
+  - {fileID: 2873401398325037708}
+  - {fileID: 7355294504948294302}
+  - {fileID: 4733141747619518986}
   inputs:
   - inputGUID: 8303d485f42aad44d89f635f4491e74a
     inputPortName: main
@@ -52,8 +55,16 @@ MonoBehaviour:
     outputPortName: FALSE
   - inputGUID: 4f893894630ccb7429dae747c5bd0e1e
     inputPortName: main
+    outputGUID: dd50b0844410d034499b5231e1fab070
+    outputPortName: FALSE
+  - inputGUID: dd50b0844410d034499b5231e1fab070
+    inputPortName: main
     outputGUID: bbaf843feec78ff478c9b682e007f39f
     outputPortName: main
+  - inputGUID: 86fe8e06c736cb24580199183461cefd
+    inputPortName: main
+    outputGUID: dd50b0844410d034499b5231e1fab070
+    outputPortName: TRUE
 --- !u!114 &648282896621251169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,11 +80,58 @@ MonoBehaviour:
   guid: ad51958129094dc418d46b51d6cb893f
   positionalData:
     serializedVersion: 2
-    x: 570.50006
-    y: 271.0325
+    x: 571
+    y: 246
     width: 141
     height: 77
   mob: {fileID: 0}
+--- !u!114 &2873401398325037708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98960a538db55a349ae37816390b2d84, type: 3}
+  m_Name: A_PathTo
+  m_EditorClassIdentifier: 
+  guid: 86fe8e06c736cb24580199183461cefd
+  positionalData:
+    serializedVersion: 2
+    x: 346
+    y: -124.99991
+    width: 181
+    height: 125
+  mob: {fileID: 0}
+--- !u!114 &4733141747619518986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3fb38dd6763c64b8220ec2ded6b771, type: 3}
+  m_Name: EQS_RangedMobMoveToPlayer(Clone)
+  m_EditorClassIdentifier: 
+  guid: 7bdc75171a9a1434eb5ab9a58dc9b00c
+  positionalData:
+    serializedVersion: 2
+    x: 118.450005
+    y: -154.10002
+    width: -118.450005
+    height: 154.10002
+  mob: {fileID: 0}
+  rules:
+  - {fileID: 11400000, guid: e52c7791597247f4793bd410cdb7c67b, type: 2}
+  - {fileID: 11400000, guid: 7518ca538fce0f344b77b2298b616555, type: 2}
+  - {fileID: 11400000, guid: 5d7dee7ae52575e4d9f009e157f0b681, type: 2}
+  - {fileID: 11400000, guid: 8bef3a28a3960f2458a23bb633b449b4, type: 2}
+  _target: 0
+  _tileRange: 4
 --- !u!114 &7084128849031132433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,12 +147,34 @@ MonoBehaviour:
   guid: 8303d485f42aad44d89f635f4491e74a
   positionalData:
     serializedVersion: 2
-    x: 570.50006
-    y: 99.032524
+    x: 571
+    y: 68
     width: 121
     height: 77
   mob: {fileID: 0}
   ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
+--- !u!114 &7355294504948294302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98ab3a159d021f4fa45b32585793841, type: 3}
+  m_Name: D_ShouldPathfindToPlayer
+  m_EditorClassIdentifier: 
+  guid: dd50b0844410d034499b5231e1fab070
+  positionalData:
+    serializedVersion: 2
+    x: -43.500042
+    y: 0
+    width: 197
+    height: 101
+  mob: {fileID: 0}
+  trueNode: {fileID: 2873401398325037708}
+  falseNode: {fileID: -1362160417680047096}
 --- !u!114 &7962675181092683881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,9 +190,9 @@ MonoBehaviour:
   guid: bbaf843feec78ff478c9b682e007f39f
   positionalData:
     serializedVersion: 2
-    x: 0
+    x: -308.20255
     y: 0
-    width: 0
-    height: 0
+    width: 103
+    height: 77
   mob: {fileID: 0}
-  child: {fileID: 0}
+  child: {fileID: 7355294504948294302}

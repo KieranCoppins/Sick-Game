@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate Vector2 GetDestination();
+[System.Serializable]
 public delegate bool CancelPathfinding();
 
 /// <summary>
@@ -10,11 +10,9 @@ public delegate bool CancelPathfinding();
 /// </summary>
 public class A_PathTo : Action
 {
-    readonly PathfindingComponent pathfinding;
+    PathfindingComponent pathfinding;
 
-    public GetDestination destinationDelegate;
-
-    public CancelPathfinding cancelPathfindingDelegate;
+    public EnvironmentQuerySystem destinationQuery;
 
     Vector2 desiredPosition;
 
@@ -24,17 +22,16 @@ public class A_PathTo : Action
     }
 
     // Make this action take a target and a range. Also we always want our path to to be an interruptor
-    public A_PathTo(GetDestination destinationDelegate, CancelPathfinding cancelPathfindingDelegate)
+    public A_PathTo(EnvironmentQuerySystem destinationQuery, CancelPathfinding cancelPathfindingDelegate)
     {
         pathfinding = mob.PathfindingComponent;
-        this.destinationDelegate = destinationDelegate;
-        this.cancelPathfindingDelegate = cancelPathfindingDelegate;
+        this.destinationQuery = destinationQuery;
     }
 
     public override IEnumerator Execute()
     {
         // Call our get destination delegate to get the tile we want to pathfind to
-        Vector2 position = destinationDelegate();
+        Vector2 position = destinationQuery.Run();
 
 
         // Calculate a path to the position
@@ -57,7 +54,7 @@ public class A_PathTo : Action
         while (path.Count > 0)
         {
             // Check if we should stop pathfinding
-            if (cancelPathfindingDelegate())
+            if (false)
                 break;
 
             // Get our next position to move to from the queue
@@ -67,7 +64,7 @@ public class A_PathTo : Action
             while (Vector2.Distance(mob.transform.position, desiredPosition) > 0.5f)
             {
                 // Check if we should stop pathfinding
-                if (cancelPathfindingDelegate())
+                if (false)
                     break;
 
                 // Add velocity of move to target
@@ -86,5 +83,19 @@ public class A_PathTo : Action
         // Set our velocity to zero once we've arrived
         mob.rb.velocity = Vector2.zero;
         yield return null;
+    }
+
+    public override void Initialise(BaseMob mob)
+    {
+        base.Initialise(mob);
+        destinationQuery.mob = mob;
+        pathfinding = mob.GetComponent<PathfindingComponent>();
+    }
+
+    public override DecisionTreeNode Clone()
+    {
+        A_PathTo clone = Instantiate(this);
+        clone.destinationQuery = destinationQuery;
+        return clone;
     }
 }
