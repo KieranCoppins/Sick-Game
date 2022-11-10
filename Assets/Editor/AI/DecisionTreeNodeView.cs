@@ -3,40 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Experimental.GraphView;
 
-public class DecisionTreeNodeView : UnityEditor.Experimental.GraphView.Node
+public class DecisionTreeNodeView : BaseNodeView
 {
-    public System.Action<UnityEditor.Experimental.GraphView.Node> OnNodeSelected;
-    public DecisionTreeNode node;
-    public Dictionary<string, Port> inputPorts;
-    public Dictionary<string, Port> outputPorts;
 
-    public DecisionTreeNodeView(DecisionTreeNode node)
+    public DecisionTreeNodeView(DecisionTreeNode node) : base(node)
     {
-        this.node = node;
-        this.title = node.name;
-
-        style.left = node.positionalData.xMin;
-        style.top = node.positionalData.yMin;
-        this.viewDataKey = node.guid;
-
-        inputPorts = new Dictionary<string, Port>();
-        outputPorts = new Dictionary<string, Port>();
 
         CreateInputPorts();
         CreateOutputPorts();
-    }
-
-    public override void OnSelected()
-    {
-        base.OnSelected();
-        if (OnNodeSelected != null)
-            OnNodeSelected.Invoke(this);
-    }
-
-    public override void SetPosition(Rect newPos)
-    {
-        base.SetPosition(newPos);
-        node.positionalData = newPos;
     }
 
     void CreateInputPorts()
@@ -46,6 +20,7 @@ public class DecisionTreeNodeView : UnityEditor.Experimental.GraphView.Node
 
         Port port = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single, typeof(bool));
         port.portName = "";
+        port.name = "main";
         inputPorts.Add("main", port);
         inputContainer.Add(port);
         var constructors = node.GetType().GetConstructors();
@@ -57,6 +32,7 @@ public class DecisionTreeNodeView : UnityEditor.Experimental.GraphView.Node
                 {
                     port = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single, parameter.ParameterType);
                     port.portName = parameter.Name;
+                    port.name = parameter.Name;
                     inputPorts.Add(parameter.Name, port);
                     inputContainer.Add(port);
                 }
@@ -74,11 +50,13 @@ public class DecisionTreeNodeView : UnityEditor.Experimental.GraphView.Node
         {
             Port port = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
             port.portName = "TRUE";
+            port.name = "TRUE";
             outputPorts.Add("TRUE", port);
             outputContainer.Add(port);
 
 
             port = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
+            port.name = "FALSE";
             port.portName = "FALSE";
             outputPorts.Add("FALSE", port);
             outputContainer.Add(port);
@@ -86,6 +64,7 @@ public class DecisionTreeNodeView : UnityEditor.Experimental.GraphView.Node
         else if (node is RootNode)
         {
             Port port = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
+            port.name = "main";
             port.portName = "";
             outputPorts.Add("main", port);
             outputContainer.Add(port);

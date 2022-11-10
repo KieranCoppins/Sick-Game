@@ -8,7 +8,7 @@ using System.Linq;
 
 public class DecisionTreeView : GraphView
 {
-    public System.Action<UnityEditor.Experimental.GraphView.Node> OnNodeSelected;
+    public System.Action<BaseNodeView> OnNodeSelected;
     public new class UxmlFactory : UxmlFactory<DecisionTreeView, UxmlTraits> { };
     DecisionTree tree;
     public DecisionTreeView()
@@ -63,52 +63,13 @@ public class DecisionTreeView : GraphView
                 
         });
 
-        // Create node edges
-        tree.nodes.ForEach(node =>
+        // Create edges
+        tree.inputs.ForEach(input =>
         {
-            Decision decisionNode = node as Decision;
-
-            if (decisionNode != null)
-            {
-                DecisionTreeNodeView parentView = FindNodeView(decisionNode) as DecisionTreeNodeView;
-                if (decisionNode.trueNode != null)
-                {
-                    DecisionTreeNodeView trueView = FindNodeView(decisionNode.trueNode) as DecisionTreeNodeView;
-                    Edge edge = parentView.outputPorts["TRUE"].ConnectTo(trueView.inputPorts["main"]);
-                    AddElement(edge);
-                }
-                if (decisionNode.falseNode != null)
-                {
-                    DecisionTreeNodeView falseView = FindNodeView(decisionNode.falseNode) as DecisionTreeNodeView;
-                    Edge edge = parentView.outputPorts["FALSE"].ConnectTo(falseView.inputPorts["main"]);
-                    AddElement(edge);
-                }
-            }
-
-
-            RootNode rootNode = node as RootNode;
-            if (rootNode != null)
-            {
-                DecisionTreeNodeView parentView = FindNodeView(rootNode) as DecisionTreeNodeView;
-                if (rootNode.child != null)
-                {
-                    DecisionTreeNodeView childNodeView = FindNodeView(rootNode.child) as DecisionTreeNodeView;
-                    Edge edge = parentView.outputPorts["main"].ConnectTo(childNodeView.inputPorts["main"]);
-                    AddElement(edge);
-                }
-            }
-
-            EnvironmentQuerySystem eqs = node as EnvironmentQuerySystem;
-            if (eqs != null)
-            {
-                EQSView parentView = FindNodeView(eqs) as EQSView;
-                foreach (var connection in eqs.connections)
-                {
-                    DecisionTreeNodeView nodeView = FindNodeView(connection.Value) as DecisionTreeNodeView;
-                    Edge edge = parentView.output.ConnectTo(nodeView.inputPorts[connection.Key]);
-                    AddElement(edge);
-                }
-            }
+            var inputNode = GetNodeByGuid(input.inputGUID) as BaseNodeView;
+            var outputNode = GetNodeByGuid(input.outputGUID) as BaseNodeView;
+            Edge edge = outputNode.outputPorts[input.outputPortName].ConnectTo(inputNode.inputPorts[input.inputPortName]);
+            AddElement(edge);
         });
 
     }
@@ -121,6 +82,7 @@ public class DecisionTreeView : GraphView
         var types = TypeCache.GetTypesDerivedFrom<DecisionTreeEditorNode>();
         foreach(var type in types)
         {
+            // We want to ignore any abstract types, root node and environment query systems (these are handled later)
             if (!type.IsAbstract && type != typeof(RootNode) && type != typeof(EnvironmentQuerySystem))
             {
                 System.Type rootBaseType = type.BaseType;
@@ -134,6 +96,7 @@ public class DecisionTreeView : GraphView
             }
         }
 
+        // Load all EQSes using the asset database, that way we can add existing EQSes to the tree
         string[] guids = AssetDatabase.FindAssets("t:" + typeof(EnvironmentQuerySystem).Name);
 
         for (int i = 0; i < guids.Length; i++)
@@ -142,6 +105,7 @@ public class DecisionTreeView : GraphView
             EnvironmentQuerySystem eqs = AssetDatabase.LoadAssetAtPath<EnvironmentQuerySystem>(path);
             evt.menu.AppendAction($"Environment Query Systems/{eqs.name}", (a) =>
             {
+                // We want to make a clone of the EQSes incase of any changes we make.
                 EnvironmentQuerySystem eqsClone = Object.Instantiate(eqs);
                 CreateNode(eqsClone, clickPoint);
             });
@@ -194,41 +158,16 @@ public class DecisionTreeView : GraphView
             graphViewChange.elementsToRemove.ForEach(elem =>
             {
                 // Delete our node from our tree
-                DecisionTreeNodeView nodeView = elem as DecisionTreeNodeView;
+                BaseNodeView nodeView = elem as BaseNodeView;
                 if (nodeView != null)
                     tree.DeleteNode(nodeView.node);
-
-                EQSView eqsView = elem as EQSView;
-                if (eqsView != null)
-                    tree.DeleteNode(eqsView.eqs);
 
                 // If our element is an edge, delete the edge
                 Edge edge = elem as Edge;
                 if (edge != null)
                 {
-                    DecisionTreeNodeView decisionView = edge.output.node as DecisionTreeNodeView;
-                    if (decisionView != null)
-                    {
-                        Decision decisionNode = decisionView.node as Decision;
-                        if (decisionNode)
-                        {
-                            if (edge.output.portName == "TRUE")
-                                decisionNode.trueNode = null;
-                            else
-                                decisionNode.falseNode = null;
-                        }
-
-                        RootNode rootNode = decisionView.node as RootNode;
-                        if (rootNode != null)
-                            rootNode.child = null;
-                    }
-                    eqsView = edge.output.node as EQSView;
-                    if (eqsView != null)
-                    {
-                        DecisionTreeNodeView childView = edge.input.node as DecisionTreeNodeView;
-                        childView.node.GetType().GetField(edge.input.portName).SetValue(childView.node, null);
-                        eqsView.eqs.connections.Remove(edge.input.portName);
-                    }
+                    BaseNodeView inputNode = edge.input.node as BaseNodeView;
+                    tree.inputs = tree.inputs.Where((input) => input != edge).ToList();
                 }
 
             });
@@ -237,42 +176,12 @@ public class DecisionTreeView : GraphView
         {
             graphViewChange.edgesToCreate.ForEach(elem =>
             {
-                // Assign the correct node to the correct child;
-                DecisionTreeNodeView decisionView = elem.output.node as DecisionTreeNodeView;
+                BaseNodeView inputNode = elem.input.node as BaseNodeView;
+                BaseNodeView outputNode = elem.output.node as BaseNodeView;
 
-                if (decisionView != null)
-                {
-                    DecisionTreeNodeView childView = elem.input.node as DecisionTreeNodeView;
+                InputOutputPorts input = new(inputNode.node.guid, elem.input.name, outputNode.node.guid, elem.output.name);
 
-                    Decision decisionNode = decisionView.node as Decision;
-                    if (decisionNode)
-                    {
-                        if (elem.output.portName == "TRUE")
-                            decisionNode.trueNode = childView.node;
-                        else
-                            decisionNode.falseNode = childView.node;
-                    }
-
-                    RootNode rootNode = decisionView.node as RootNode;
-                    if (rootNode != null)
-                        rootNode.child = childView.node;
-                }
-
-                EQSView eqsView = elem.output.node as EQSView;
-                if (eqsView != null)
-                {
-                    DecisionTreeNodeView childView = elem.input.node as DecisionTreeNodeView;
-                    EnvironmentQuerySystem eqs = eqsView.eqs;
-                    if (eqs != null)
-                    {
-                        if (elem.input.portType == typeof(GetDestination))
-                        {
-                            GetDestination del = eqs.Run;
-                            childView.node.GetType().GetField (elem.input.portName).SetValue(childView.node, del);
-                            eqs.connections[elem.input.portName] = childView.node;
-                        }
-                    }
-                }
+                tree.inputs.Add(input);
             });
         }
         return graphViewChange;

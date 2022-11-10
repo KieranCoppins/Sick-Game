@@ -28,7 +28,8 @@ public class EnvironmentQuerySystem : DecisionTreeEditorNode
     GameObject caller;
 
     /// Editor Values
-    [HideInInspector] public Dictionary<string, DecisionTreeNode> connections = new Dictionary<string, DecisionTreeNode>();
+    // Stores the port name as the key and the nodeView GUID as the value
+    [HideInInspector] public List<KeyValuePair<string, string>> connections = new List<KeyValuePair<string, string>>(){ };
 
     public Vector2 Run()
     {

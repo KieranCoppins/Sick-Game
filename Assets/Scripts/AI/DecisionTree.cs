@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 
 public class DecisionTreeGeneric<T> : DecisionTree where T : BaseMob
 {
@@ -38,7 +39,7 @@ public class DecisionTree : ScriptableObject
     /// Editor Values
     // A list of nodes for our editor, they don't have to be linked to the tree
     [HideInInspector] public List<DecisionTreeEditorNode> nodes = new List<DecisionTreeEditorNode>();
-
+    [HideInInspector] public List<InputOutputPorts> inputs = new List<InputOutputPorts>();
 
     public void Initialise(BaseMob mob)
     {
@@ -281,3 +282,96 @@ public class DoTaskWhilstWaitingForSeconds : CustomYieldInstruction
         }
     }
 }
+
+[System.Serializable]
+public class InputOutputPorts
+{
+    public string inputGUID;
+    public string inputPortName;
+    public string outputGUID;
+    public string outputPortName;
+
+    public InputOutputPorts(string inputGUID, string inputPortName, string outputGUID, string outputPortName)
+    {
+        this.inputGUID = inputGUID;
+        this.inputPortName = inputPortName;
+        this.outputGUID = outputGUID;
+        this.outputPortName = outputPortName;
+    }
+
+    public override string ToString()
+    {
+        return $"In GUID: {inputGUID} | In Port: {inputPortName} | Out GUID: {outputGUID} | Out Port: {outputPortName}";
+    }
+
+    public static bool operator !=(InputOutputPorts input, Edge edge)
+    {
+        return !(input == edge);
+    }
+
+    public static bool operator ==(InputOutputPorts input, Edge edge)
+    {
+        BaseNodeView inputNodeView = edge.input.node as BaseNodeView;
+        BaseNodeView outputNodeView = edge.output.node as BaseNodeView;
+        return input.inputGUID == inputNodeView.node.guid &&
+            input.inputPortName == edge.input.name &&
+            input.outputGUID == outputNodeView.node.guid &&
+            input.outputPortName == edge.output.name;
+    }
+
+    public bool Equals(InputOutputPorts input)
+    {
+        return this.inputGUID == input.inputGUID && 
+            this.inputPortName == input.inputPortName && 
+            this.outputGUID == input.outputGUID && 
+            this.outputPortName == input.outputPortName;
+    }
+
+    public override bool Equals(object obj)
+    {
+        return Equals(obj as InputOutputPorts);
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
+
+}
+
+public abstract class BaseNodeView : UnityEditor.Experimental.GraphView.Node
+{
+    public System.Action<BaseNodeView> OnNodeSelected;
+
+    public DecisionTreeEditorNode node;
+
+    public Dictionary<string, Port> inputPorts;
+    public Dictionary<string, Port> outputPorts;
+
+    public BaseNodeView(DecisionTreeEditorNode node)
+    {
+        this.node = node;
+        this.title = node.name;
+
+        style.left = node.positionalData.xMin;
+        style.top = node.positionalData.yMin;
+        this.viewDataKey = node.guid;
+        inputPorts = new Dictionary<string, Port>();
+        outputPorts = new Dictionary<string, Port>();
+    }
+
+    public override void SetPosition(Rect newPos)
+    {
+        base.SetPosition(newPos);
+        node.positionalData = newPos;
+    }
+
+    public override void OnSelected()
+    {
+        base.OnSelected();
+        if (OnNodeSelected != null)
+            OnNodeSelected.Invoke(this);
+    }
+
+}
+

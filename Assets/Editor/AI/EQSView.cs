@@ -3,35 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Experimental.GraphView;
 
-public class EQSView : UnityEditor.Experimental.GraphView.Node
+public class EQSView : BaseNodeView
 {
-    public System.Action<UnityEditor.Experimental.GraphView.Node> OnNodeSelected;
-    public EnvironmentQuerySystem eqs;
-    public Port output;
-    public EQSView(EnvironmentQuerySystem eqs)
+    public EQSView(EnvironmentQuerySystem eqs) : base(eqs)
     {
-        this.eqs = eqs;
-        this.title = eqs.name;
-
-        style.left = eqs.positionalData.xMin;
-        style.top = eqs.positionalData.yMin;
-        this.viewDataKey = eqs.guid;
-
-        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(GetDestination));
-        output.portName = "Position";
-        outputContainer.Add(output);
-    }
-
-    public override void SetPosition(Rect newPos)
-    {
-        base.SetPosition(newPos);
-        eqs.positionalData = newPos;
-    }
-
-    public override void OnSelected()
-    {
-        base.OnSelected();
-        if (OnNodeSelected != null)
-            OnNodeSelected.Invoke(this);
+        Port port = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(GetDestination));
+        port.portName = "Position";
+        port.name = "Position";
+        outputPorts.Add("Position", port);
+        outputContainer.Add(port);
     }
 }

@@ -12,15 +12,13 @@ public class InspectorView : VisualElement
 
     }
 
-    public void UpdateSelection(UnityEditor.Experimental.GraphView.Node nodeView)
+    public void UpdateSelection(BaseNodeView nodeView)
     {
         Clear();
 
         UnityEngine.Object.DestroyImmediate(editor);
-        if (nodeView.GetType() == typeof(DecisionTreeNodeView))
-            editor = Editor.CreateEditor((nodeView as DecisionTreeNodeView).node);
-        if (nodeView.GetType() == typeof(EQSView))
-            editor = Editor.CreateEditor((nodeView as EQSView).eqs);
+
+        editor = Editor.CreateEditor(nodeView.node);
 
         IMGUIContainer container = new(() => { editor.OnInspectorGUI(); });
         Add(container);

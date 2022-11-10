@@ -1,7 +1,6 @@
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEditor.UIElements;
 
 
 public class DecisionTreeEditor : EditorWindow
@@ -14,7 +13,7 @@ public class DecisionTreeEditor : EditorWindow
     public static void ShowExample()
     {
         DecisionTreeEditor wnd = GetWindow<DecisionTreeEditor>();
-        wnd.titleContent = new GUIContent("DecisionTreeEditor");
+        wnd.titleContent = new GUIContent("Decision Tree Editor");
     }
 
     public void CreateGUI()
@@ -43,12 +42,10 @@ public class DecisionTreeEditor : EditorWindow
     {
         DecisionTree decisionTree = Selection.activeObject as DecisionTree;
         if (decisionTree && AssetDatabase.CanOpenAssetInEditor(decisionTree.GetInstanceID()))
-        {
             treeView.PopulateView(decisionTree);
-        }
     }
 
-    void OnNodeSelectionChanged(UnityEditor.Experimental.GraphView.Node nodeView)
+    void OnNodeSelectionChanged(BaseNodeView nodeView)
     {
         inspectorView.UpdateSelection(nodeView);
     }
