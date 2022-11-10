@@ -55,35 +55,3 @@ public class RangedMob : BaseMob
         return Vector2.Dot(targetDir, dir) + Vector2.Dot(rb.velocity.normalized, dir);
     }
 }
-
-public class DT_RangedMob : DecisionTreeGeneric<RangedMob>
-{
-    public DT_RangedMob() 
-    {
-        
-    }
-    public DT_RangedMob(RangedMob mob) : base(mob)
-    {
-        this.mob = mob;
-    }
-    /*
-    public override void Initialise()
-    {
-
-        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
-        // Initialise all our Nodes
-
-        /// ACTIONS
-        A_PathTo MoveToPlayer = new (mob, FindTileNearPlayer, CancelPathfinding);
-        A_CastAbility castComet = new(mob, player, mob.ability);
-        A_MoveTowards moveTowardsPlayer = new(mob, player); // Always move towards the player (since moving towards for a ranged mob is actually circling them)
-
-
-        /// DECISIONS
-        AttackDecision shouldCastComet = new(castComet, moveTowardsPlayer, mob, player, mob.ability.Range);
-
-        // Initialise our root
-        root = new Decision(MoveToPlayer, shouldCastComet, ShouldMoveToPlayer, mob);
-    }
-    */
-}

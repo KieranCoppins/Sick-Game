@@ -54,36 +54,3 @@ public class MeleeMob : BaseMob
 
     }
 }
-
-public class DT_MeleeMob : DecisionTreeGeneric<MeleeMob>
-{
-    public DT_MeleeMob(MeleeMob mob) : base(mob)
-    {
-
-    }
-
-    /*
-    public override void Initialise()
-    {
-        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
-
-        /// Actions
-        A_PathTo MoveToPlayer = new(mob, FindTileNearPlayer, CancelPathfinding);
-        A_Melee AttackPlayer = new(mob, player, mob.MeleeSpeed);
-        A_MoveTowards moveTowardsPlayer = new(mob, player);
-        A_PullBack moveAwayFromPlayer = new(mob, player, 3f);
-
-        /// Decisions
-        Decision PullbackDecision = new(moveAwayFromPlayer, moveTowardsPlayer, ShouldPullback, mob);
-        AttackDecision attackDecision = new(AttackPlayer, PullbackDecision, mob, player, mob.MeleeRange);
-
-        root = new Decision(MoveToPlayer, attackDecision, ShouldMoveToPlayer, mob);
-    }
-    */
-
-    bool ShouldPullback()
-    {
-        Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        return Vector2.Distance(mob.transform.position, playerPos) < mob.MeleeRange;
-    }
-}
