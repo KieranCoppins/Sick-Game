@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [CreateAssetMenu(menuName = "Environment Query System")]
-public class EnvironmentQuerySystem : ScriptableObject
+public class EnvironmentQuerySystem : DecisionTreeEditorNode
 {
-
     public EQSTarget Target
     {
         get { return _target; }
@@ -28,23 +27,50 @@ public class EnvironmentQuerySystem : ScriptableObject
     Dictionary<Vector2Int, float> tileScore;
     GameObject caller;
 
-    public void Initialise(Vector2Int[] tileCoords, GameObject caller)
+    /// Editor Values
+    // Stores the port name as the key and the nodeView GUID as the value
+    [HideInInspector] public List<KeyValuePair<string, string>> connections = new List<KeyValuePair<string, string>>(){ };
+
+    public Vector2 Run()
     {
-        this.caller = caller;
+        // Get our controller
+        TilemapController controller = GameObject.FindGameObjectWithTag("Tilemap").GetComponent<TilemapController>();
+
+        Transform target;
+
+        // Get the target for this given eqs system
+        switch (Target)
+        {
+            case (EQSTarget.PLAYER):
+                target = GameObject.FindGameObjectWithTag("Player").transform;
+                break;
+            case (EQSTarget.CALLER):
+                target = caller.transform;
+                break;
+            default:
+                Debug.LogError("EQS system does not have a valid EQSTarget");
+                return Vector2.zero;
+        }
+
+        // Convert our float vector3 to a int vector 3 by flooring out ints to get the right tile coord
+        Vector3Int pos = new Vector3Int(Mathf.FloorToInt(target.position.x), Mathf.FloorToInt(target.position.y));
+
+        // Use the tilemap controller to get all tiles within range
+        Vector2Int[] tiles = controller.GetTilesInRange(pos, Mathf.CeilToInt(TileRange));
+
+        //Initialise our EQS system with these parameters
+        caller = mob.gameObject;
 
         tileScore = new Dictionary<Vector2Int, float>();
 
         // Default all tiles in the query to have a score of 1;
-        for (int i = 0; i < tileCoords.Length; i++)
+        for (int i = 0; i < tiles.Length; i++)
         {
-            this.tileScore.Add(tileCoords[i], 1f);
+            this.tileScore.Add(tiles[i], 1f);
         }
 
-    }
 
-    public Vector2 Run()
-    {
-        foreach(Rule rule in rules)
+        foreach (Rule rule in rules)
         {
             tileScore = rule.Run(tileScore, caller);
         }

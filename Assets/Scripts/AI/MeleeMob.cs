@@ -13,26 +13,10 @@ public class MeleeMob : BaseMob
     [SerializeField] float _meleeDamage;
     [SerializeField] float _meleeSpeed;
 
-    protected DecisionTree<MeleeMob> decisionTree;
 
     protected override void Start()
     {
         base.Start();
-        decisionTree = new DT_MeleeMob(this);
-        decisionTree.Initialise();
-        StartCoroutine(Think());
-    }
-
-    IEnumerator Think()
-    {
-        while (true)
-        {
-            // Constantly try to determine what we should be doing
-            Action actionToBeScheduled = decisionTree.Run();
-            actionManager.ScheduleAction(actionToBeScheduled);
-            actionManager.Execute();
-            yield return new WaitForSeconds(0.1f);
-        }
     }
 
     protected override void Update()
@@ -52,41 +36,5 @@ public class MeleeMob : BaseMob
 
         return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - 0.9f) + Vector2.Dot(rb.velocity.normalized, dir);
 
-    }
-}
-
-public class DT_MeleeMob : DecisionTree<MeleeMob>
-{
-    public DT_MeleeMob(MeleeMob mob) : base(mob)
-    {
-
-    }
-
-    public override void Initialise()
-    {
-        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
-
-        /// Actions
-        A_PathTo MoveToPlayer = new(mob, FindTileNearPlayer, CancelPathfinding);
-        A_Melee AttackPlayer = new(mob, player, mob.MeleeSpeed);
-        A_MoveTowards moveTowardsPlayer = new(mob, player);
-        A_PullBack moveAwayFromPlayer = new(mob, player, 3f);
-
-        /// Decisions
-        Decision PullbackDecision = new(moveAwayFromPlayer, moveTowardsPlayer, ShouldPullback, mob);
-        AttackDecision attackDecision = new(AttackPlayer, PullbackDecision, mob, player, mob.MeleeRange);
-
-        root = new Decision(MoveToPlayer, attackDecision, ShouldMoveToPlayer, mob);
-    }
-
-    bool ShouldPullback()
-    {
-        Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        return Vector2.Distance(mob.transform.position, playerPos) < mob.MeleeRange;
-    }
-
-    Vector2 FindTileNearPlayer()
-    {
-        return GameObject.FindGameObjectWithTag("EQSManager").GetComponent<EQSManager>().RunEQSystem(EQSystem.MeleeMobMoveToPlayer, mob.gameObject);
     }
 }

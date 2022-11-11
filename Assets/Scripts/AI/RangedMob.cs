@@ -7,32 +7,15 @@ public class RangedMob : BaseMob
     [Header("Ranged Mob Attributes")]
     [SerializeField] public AbilityBase ability;
 
-    protected DecisionTree<RangedMob> decisionTree;
 
     protected override void Start()
     {
         base.Start();
-        decisionTree = new DT_RangedMob(this);
-        decisionTree.Initialise();
-        StartCoroutine(Think());
     }
 
     protected override void Update()
     {
         base.Update();
-    }
-
-    // Instead of trying to schedule an action every frame, lets do it every 100ms
-    IEnumerator Think()
-    {
-        while (true)
-        {
-            // Constantly try to determine what we should be doing
-            Action actionToBeScheduled = decisionTree.Run();
-            actionManager.ScheduleAction(actionToBeScheduled);
-            actionManager.Execute();
-            yield return new WaitForSeconds(0.1f);
-        }
     }
 
     protected override float MoveAround(Vector2 targetDir, Vector2 dir, Vector2 target, bool moveStraight)
@@ -52,35 +35,5 @@ public class RangedMob : BaseMob
 
         // Otherwise move towards the target
         return Vector2.Dot(targetDir, dir) + Vector2.Dot(rb.velocity.normalized, dir);
-    }
-}
-
-public class DT_RangedMob : DecisionTree<RangedMob>
-{
-    public DT_RangedMob(RangedMob mob) : base(mob)
-    {
-
-    }
-    public override void Initialise()
-    {
-        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
-        // Initialise all our Nodes
-
-        /// ACTIONS
-        A_PathTo MoveToPlayer = new (mob, FindTileNearPlayer, CancelPathfinding);
-        A_CastAbility castComet = new(mob, player, mob.ability);
-        A_MoveTowards moveTowardsPlayer = new(mob, player); // Always move towards the player (since moving towards for a ranged mob is actually circling them)
-
-
-        /// DECISIONS
-        AttackDecision shouldCastComet = new(castComet, moveTowardsPlayer, mob, player, mob.ability.Range);
-
-        // Initialise our root
-        root = new Decision(MoveToPlayer, shouldCastComet, ShouldMoveToPlayer, mob);
-    }
-
-    Vector2 FindTileNearPlayer()
-    {
-        return GameObject.FindGameObjectWithTag("EQSManager").GetComponent<EQSManager>().RunEQSystem(EQSystem.RangedMobMoveToPlayer, mob.gameObject);
     }
 }
