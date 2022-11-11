@@ -7,33 +7,15 @@ public class RangedMob : BaseMob
     [Header("Ranged Mob Attributes")]
     [SerializeField] public AbilityBase ability;
 
-    [SerializeField] protected DecisionTree decisionTree;
 
     protected override void Start()
     {
         base.Start();
-        decisionTree = decisionTree.Clone();
-        decisionTree.Initialise(this);
-
-        StartCoroutine(Think());
     }
 
     protected override void Update()
     {
         base.Update();
-    }
-
-    // Instead of trying to schedule an action every frame, lets do it every 100ms
-    IEnumerator Think()
-    {
-        while (true)
-        {
-            // Constantly try to determine what we should be doing
-            Action actionToBeScheduled = decisionTree.Run();
-            actionManager.ScheduleAction(actionToBeScheduled);
-            actionManager.Execute();
-            yield return new WaitForSeconds(0.1f);
-        }
     }
 
     protected override float MoveAround(Vector2 targetDir, Vector2 dir, Vector2 target, bool moveStraight)

@@ -8,7 +8,7 @@ public class A_PullBack : Action
     Vector2 desiredPosition;
     [SerializeField] float distance;
 
-    public A_PullBack()
+    public A_PullBack() : base()
     {
 
     }

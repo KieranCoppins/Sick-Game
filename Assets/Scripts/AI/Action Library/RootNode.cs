@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RootNode : DecisionTreeNode
 {
-    public DecisionTreeNode child;
+    [HideInInspector] public DecisionTreeNode child;
 
     public override DecisionTreeNode MakeDecision()
     {

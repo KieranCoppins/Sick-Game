@@ -70,6 +70,10 @@ MonoBehaviour:
     inputPortName: destinationQuery
     outputGUID: 7bdc75171a9a1434eb5ab9a58dc9b00c
     outputPortName: Position
+  - inputGUID: 86fe8e06c736cb24580199183461cefd
+    inputPortName: CancelPathfindingCondition
+    outputGUID: d5f2324ebf09c6040ad45bd4cc2add12
+    outputPortName: Output
 --- !u!114 &648282896621251169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +115,7 @@ MonoBehaviour:
     height: 125
   mob: {fileID: 0}
   destinationQuery: {fileID: 4733141747619518986}
-  CancelPathfindingCondition: {fileID: 0}
+  CancelPathfindingCondition: {fileID: 5440893340888606005}
 --- !u!114 &4733141747619518986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,10 +158,10 @@ MonoBehaviour:
   guid: d5f2324ebf09c6040ad45bd4cc2add12
   positionalData:
     serializedVersion: 2
-    x: 190
-    y: -55
-    width: -190
-    height: 55
+    x: 24
+    y: -125
+    width: 164
+    height: 77
   mob: {fileID: 0}
 --- !u!114 &7084128849031132433
 MonoBehaviour:

@@ -13,26 +13,10 @@ public class MeleeMob : BaseMob
     [SerializeField] float _meleeDamage;
     [SerializeField] float _meleeSpeed;
 
-    protected DecisionTreeGeneric<MeleeMob> decisionTree;
 
     protected override void Start()
     {
         base.Start();
-        decisionTree = new DT_MeleeMob(this);
-        decisionTree.Initialise(this);
-        StartCoroutine(Think());
-    }
-
-    IEnumerator Think()
-    {
-        while (true)
-        {
-            // Constantly try to determine what we should be doing
-            Action actionToBeScheduled = decisionTree.Run();
-            actionManager.ScheduleAction(actionToBeScheduled);
-            actionManager.Execute();
-            yield return new WaitForSeconds(0.1f);
-        }
     }
 
     protected override void Update()

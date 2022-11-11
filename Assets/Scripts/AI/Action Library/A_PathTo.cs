@@ -9,17 +9,17 @@ public class A_PathTo : Action
 {
     PathfindingComponent pathfinding;
 
-    public EnvironmentQuerySystem destinationQuery;
-    public F_Condition CancelPathfindingCondition;
+    [HideInInspector] public EnvironmentQuerySystem destinationQuery;
+    [HideInInspector] public Function<bool> CancelPathfindingCondition;
 
     Vector2 desiredPosition;
 
-    public A_PathTo()
+    public A_PathTo() : base()
     {
     }
 
     // Make this action take a target and a range. Also we always want our path to to be an interruptor
-    public A_PathTo(EnvironmentQuerySystem destinationQuery, F_Condition CancelPathfindingCondition)
+    public A_PathTo(EnvironmentQuerySystem destinationQuery, Function<bool> CancelPathfindingCondition) : base()
     {
         pathfinding = mob.PathfindingComponent;
         this.destinationQuery = destinationQuery;

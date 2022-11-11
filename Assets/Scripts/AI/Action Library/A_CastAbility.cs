@@ -12,14 +12,13 @@ public class A_CastAbility : A_Attack
     Vector2 totalTargetVelocity;
     int totalVelocityEntries = 0;
 
-    public A_CastAbility()
+    public A_CastAbility() : base()
     {
     }
 
     public override void Initialise(BaseMob mob)
     {
         base.Initialise(mob);
-
         cooldown = ability.AbilityCooldown;
     }
 

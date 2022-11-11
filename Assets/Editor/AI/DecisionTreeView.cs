@@ -90,7 +90,12 @@ public class DecisionTreeView : GraphView
                 string pathString = "";
                 while (rootBaseType != null && rootBaseType != typeof(DecisionTreeEditorNode))
                 {
-                    pathString = $"{rootBaseType.Name}/" + pathString;
+                    Debug.Log(rootBaseType.FullName);
+                    Debug.Log(rootBaseType.Name);
+                    if (rootBaseType.IsGenericType && rootBaseType.GetGenericTypeDefinition() == typeof(Function<>))
+                        pathString = $"Function Node/" + pathString;
+                    else
+                        pathString = $"{rootBaseType.Name}/" + pathString;
                     rootBaseType = rootBaseType.BaseType;
                 }
                 evt.menu.AppendAction(pathString + $"{type.Name}", (a) => CreateNode(type, clickPoint));
@@ -104,6 +109,9 @@ public class DecisionTreeView : GraphView
         {
             string path = AssetDatabase.GUIDToAssetPath(guids[i]);
             EnvironmentQuerySystem eqs = AssetDatabase.LoadAssetAtPath<EnvironmentQuerySystem>(path);
+            // We dont want to add clones to our drop menu
+            if (eqs.name.Contains("(Clone)"))
+                continue;
             evt.menu.AppendAction($"Environment Query Systems/{eqs.name}", (a) =>
             {
                 // We want to make a clone of the EQSes incase of any changes we make.

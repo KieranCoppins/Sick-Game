@@ -24,7 +24,7 @@ public class DecisionTree : ScriptableObject
 {
     private BaseMob mob;
 
-    public RootNode root;
+    [HideInInspector] public RootNode root;
 
     private Vector2 playerPrevPos;
 
@@ -227,8 +227,8 @@ public abstract class A_Attack : Action
 
 public abstract class Decision : DecisionTreeNode
 {
-    public DecisionTreeNode trueNode;
-    public DecisionTreeNode falseNode;
+    [HideInInspector] public DecisionTreeNode trueNode;
+    [HideInInspector] public DecisionTreeNode falseNode;
 
     public Decision()
     {

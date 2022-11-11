@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class D_Condition : Decision
 {
-    public F_Condition Condition;
+    [HideInInspector] public Function<bool> Condition;
 
-    public D_Condition()
+    public D_Condition() : base()
     {
 
     }

@@ -9,7 +9,7 @@ public class A_Melee : A_Attack
 {
     [SerializeField] float attackSpeed;
 
-    public A_Melee()
+    public A_Melee() : base()
     {
 
     }

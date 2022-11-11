@@ -11,9 +11,7 @@ public class D_AttackDecision : Decision
     [SerializeField] float attackRange = 0;
     Transform target;
 
-
-
-    public D_AttackDecision()
+    public D_AttackDecision() : base()
     {
 
     }

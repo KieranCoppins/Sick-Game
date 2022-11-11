@@ -10,7 +10,7 @@ public class A_MoveTowards : Action
     Transform target;
     Vector2 desiredPosition;
 
-    public A_MoveTowards()
+    public A_MoveTowards() : base()
     {
 
     }

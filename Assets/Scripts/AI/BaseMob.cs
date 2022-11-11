@@ -22,9 +22,9 @@ public enum DebugFlags
 public abstract class BaseMob : MonoBehaviour
 {
     [Header("Events")]
-    public UnityEvent onTakeDamage;
-    public UnityEvent onHeal;
-    public UnityEvent onDeath;
+    protected UnityEvent onTakeDamage;
+    protected UnityEvent onHeal;
+    protected UnityEvent onDeath;
     public int Health {
         get
         {
@@ -65,7 +65,11 @@ public abstract class BaseMob : MonoBehaviour
     [SerializeField] int _maxHealth = 10;
     [Tooltip("The speed at which the mob moves")]
     [SerializeField] protected float movementSpeed = 2;
-    [SerializeField] public string mobName { get; protected set; }
+    [SerializeField] public string mobName;
+
+    [Header("AI")]
+    [Tooltip("The decision tree for this mob to run")]
+    [SerializeField] protected DecisionTree decisionTree;
 
     [HideInInspector] public PathfindingComponent PathfindingComponent;
     [HideInInspector] public Rigidbody2D rb;
@@ -150,6 +154,11 @@ public abstract class BaseMob : MonoBehaviour
         {
             movementDirections.Add((Quaternion.AngleAxis(angle * i, Vector3.back) * dir).normalized);
         }
+
+        // Initialise our decision tree
+        decisionTree = decisionTree.Clone();
+        decisionTree.Initialise(this);
+        StartCoroutine(Think());
     }
 
     protected virtual void Update()
@@ -228,6 +237,22 @@ public abstract class BaseMob : MonoBehaviour
     /// <param name="target"></param>
     /// <returns></returns>
     protected abstract float MoveAround(Vector2 targetDir, Vector2 dir, Vector2 target, bool moveStraight);
+
+    /// <summary>
+    /// Finds a new action in the decision tree and adds it to the action manager every 100ms. Automatically starts running at runtime
+    /// </summary>
+    /// <returns></returns>
+    protected IEnumerator Think()
+    {
+        while (true)
+        {
+            // Constantly try to determine what we should be doing
+            Action actionToBeScheduled = decisionTree.Run();
+            actionManager.ScheduleAction(actionToBeScheduled);
+            actionManager.Execute();
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
 }
 
 
