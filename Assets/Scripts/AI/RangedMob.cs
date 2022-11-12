@@ -11,6 +11,7 @@ public class RangedMob : BaseMob
     protected override void Start()
     {
         base.Start();
+        Consumeable cons = new Consumeable();
     }
 
     protected override void Update()

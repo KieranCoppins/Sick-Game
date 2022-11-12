@@ -10,12 +10,12 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public class CharacterMovement : MonoBehaviour
 {
-    public float MovementSpeed
+    public int MovementSpeed
     {
         get { return _movementSpeed; }
         private set { _movementSpeed = value; }
     }
-    [SerializeField] float _movementSpeed;
+    [SerializeField] int _movementSpeed;
     [SerializeField] float rollSpeed = 5f;
     Rigidbody2D rb;
 
@@ -109,6 +109,8 @@ public class CharacterMovement : MonoBehaviour
     Transform _target;
     LookAtMouse lookAtMouse;
 
+    public Consumeable testConsumeable;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -125,6 +127,8 @@ public class CharacterMovement : MonoBehaviour
         Mana = MaxMana;
 
         StartCoroutine(RegenStats());
+
+        testConsumeable.Consume(this);
     }
 
     IEnumerator RegenStats()

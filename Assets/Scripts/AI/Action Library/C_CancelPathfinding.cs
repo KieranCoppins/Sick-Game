@@ -19,7 +19,6 @@ public class C_CancelPathfinding : F_Condition
         bool shouldCancel = mob.HasLineOfSight(playerPos) || Vector2.Distance(prevPlayerPos, playerPos) > 3f;
         if (shouldCancel)
             prevPlayerPos = playerPos;
-        Debug.Log(shouldCancel);
         return shouldCancel;
     }
 }
