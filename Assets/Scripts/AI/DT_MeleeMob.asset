@@ -111,7 +111,7 @@ MonoBehaviour:
   mob: {fileID: 0}
   trueNode: {fileID: 8954273575360968739}
   falseNode: {fileID: 8094503768301490085}
-  attackRange: 0
+  attackRange: 1
 --- !u!114 &-459227180729119608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +191,10 @@ MonoBehaviour:
     inputPortName: main
     outputGUID: c2c1ae666bbd6864b95459c50c54fc1f
     outputPortName: TRUE
+  - inputGUID: b76697922bf5f9d48a30805308124b3a
+    inputPortName: main
+    outputGUID: c2c1ae666bbd6864b95459c50c54fc1f
+    outputPortName: FALSE
 --- !u!114 &2127230805361811938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,8 +258,8 @@ MonoBehaviour:
     height: 101
   mob: {fileID: 0}
   trueNode: {fileID: -4871000498216146179}
-  falseNode: {fileID: 0}
-  pullbackDistance: 0
+  falseNode: {fileID: -4408042197376082275}
+  pullbackDistance: 1
 --- !u!114 &8954273575360968739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,4 +280,4 @@ MonoBehaviour:
     width: 95
     height: 77
   mob: {fileID: 0}
-  attackSpeed: 0
+  attackSpeed: 1
