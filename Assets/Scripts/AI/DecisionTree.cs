@@ -186,7 +186,6 @@ public abstract class A_Attack : Action
     public bool CanCast { get; protected set; }
 
     protected float cooldown;
-    protected Transform target;
 
     public A_Attack()
     {
@@ -204,7 +203,6 @@ public abstract class A_Attack : Action
     public override void Initialise(BaseMob mob)
     {
         base.Initialise(mob);
-        target = GameObject.FindGameObjectWithTag("Player").transform; // TODO make the target a parameter so we can define different targets
     }
 }
 

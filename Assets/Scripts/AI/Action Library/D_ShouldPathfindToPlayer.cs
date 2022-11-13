@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class D_ShouldPathfindToPlayer : Decision
 {
-    Transform target;
 
     public override void Initialise(BaseMob mob)
     {
         base.Initialise(mob);
-        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
     public override DecisionTreeNode GetBranch()
     {
-        if (!mob.HasLineOfSight(target.position))
+        if (!mob.HasLineOfSight(mob.Target.position))
         {
             return trueNode;
         }

@@ -5,12 +5,10 @@ using UnityEngine;
 public class D_ShouldPullBack : Decision
 {
     [SerializeField] float pullbackDistance;
-    Transform target;
 
     public override void Initialise(BaseMob mob)
     {
         base.Initialise(mob);
-        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     public override DecisionTreeNode GetBranch()
@@ -20,6 +18,6 @@ public class D_ShouldPullBack : Decision
 
     bool TestData()
     {
-        return Vector2.Distance(mob.transform.position, target.position) < pullbackDistance;
+        return Vector2.Distance(mob.transform.position, mob.Target.position) < pullbackDistance;
     }
 }

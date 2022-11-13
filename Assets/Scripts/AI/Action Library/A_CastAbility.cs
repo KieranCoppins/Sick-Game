@@ -24,7 +24,7 @@ public class A_CastAbility : A_Attack
 
     public override IEnumerator Execute()
     {
-        totalTargetVelocity = target.GetComponent<Rigidbody2D>().velocity;
+        totalTargetVelocity = mob.Target.GetComponent<Rigidbody2D>().velocity;
         totalVelocityEntries = 1;
         // Predict where the target will be
         Vector2 predictedLocation = PredictLocation();
@@ -37,7 +37,7 @@ public class A_CastAbility : A_Attack
             Debug.DrawRay((Vector2)mob.transform.position, predictedDirection, Color.red, 0.5f);
 
         // We dont get a hit at all, or if we do hit something we hit our target
-        if (!hit || (hit && hit.collider.CompareTag(target.tag)))
+        if (!hit || (hit && hit.collider.CompareTag(mob.Target.tag)))
         {
             // Then we're good to start casting our ability
 
@@ -46,13 +46,13 @@ public class A_CastAbility : A_Attack
             CanCast = false;
 
             // Whilst we are casting, we want to get the average of our player's movement vector
-            yield return new DoTaskWhilstWaitingForSeconds(() => { totalTargetVelocity += target.GetComponent<Rigidbody2D>().velocity; totalVelocityEntries += 1; }, ability.CastTime);
+            yield return new DoTaskWhilstWaitingForSeconds(() => { totalTargetVelocity += mob.Target.GetComponent<Rigidbody2D>().velocity; totalVelocityEntries += 1; }, ability.CastTime);
 
             // Recalculate the predicted movement at the last second since the player may have changed direction during our casting time
             predictedLocation = PredictLocation();
             predictedDirection = predictedLocation - (Vector2)mob.transform.position;
 
-            ability.Cast(mob.transform.position, predictedDirection, target);
+            ability.Cast(mob.transform.position, predictedDirection, mob.Target);
             mob.StartCoroutine(Cooldown());
         }
 
@@ -69,14 +69,14 @@ public class A_CastAbility : A_Attack
             Vector2 velocityVector = totalTargetVelocity / totalVelocityEntries;
 
             // Calculate how far away our target is
-            float distanceFromAI = Vector2.Distance(mob.transform.position, target.position);
+            float distanceFromAI = Vector2.Distance(mob.transform.position, mob.Target.position);
 
             // Using our targets position, the velocity they're moving and the velocity of our projectile, determine where they would be
-            Vector2 predictedLocation = (Vector2)target.position + (velocityVector * (distanceFromAI / projectileAbility.GetProjectileVelocity()));
+            Vector2 predictedLocation = (Vector2)mob.Target.position + (velocityVector * (distanceFromAI / projectileAbility.GetProjectileVelocity()));
 
             return predictedLocation;
         }
 
-        return target.position;
+        return mob.Target.position;
     }
 }

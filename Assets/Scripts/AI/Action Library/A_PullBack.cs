@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class A_PullBack : Action
 {
-    Transform target;
     Vector2 desiredPosition;
     [SerializeField] float distance;
 
@@ -15,14 +14,13 @@ public class A_PullBack : Action
     public override void Initialise(BaseMob mob)
     {
         base.Initialise(mob);
-        target = GameObject.FindGameObjectWithTag("Player").transform; // TODO make the target a parameter so we can define different targets
     }
 
     public override IEnumerator Execute()
     {
-        while (Vector2.Distance(mob.transform.position, target.position) < distance)
+        while (Vector2.Distance(mob.transform.position, mob.Target.position) < distance)
         {
-            desiredPosition = mob.transform.position + (mob.transform.position - target.position).normalized * 5f;
+            desiredPosition = mob.transform.position + (mob.transform.position - mob.Target.position).normalized * 5f;
             Vector2 dir = mob.GetMovementVector(desiredPosition);
             if ((mob.debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
             {

@@ -13,7 +13,6 @@ public class A_UseItem : Action
 
     public override IEnumerator Execute()
     {
-        Debug.Log("use");
         // TODO: use some kind of animation here
         mob.inventory.Use(item);
         yield return new WaitForSeconds(0.1f);

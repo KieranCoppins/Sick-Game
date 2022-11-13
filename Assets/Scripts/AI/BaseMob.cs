@@ -117,7 +117,10 @@ public abstract class BaseMob : BaseCharacter
         for (int i = 0; i <= 360 / angle; i++)
         {
             movementDirections.Add((Quaternion.AngleAxis(angle * i, Vector3.back) * dir).normalized);
-        
+        }
+
+        // Default target to player - TODO in the future we can have perceptions so when the mob sees an enemy it will set it as its target
+        Target = GameObject.FindGameObjectWithTag("Player").transform;
 
         // Initialise our decision tree
         decisionTree = decisionTree.Clone(this.name);
