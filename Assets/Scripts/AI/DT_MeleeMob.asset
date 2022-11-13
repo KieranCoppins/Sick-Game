@@ -47,7 +47,7 @@ MonoBehaviour:
     width: 108
     height: 77
   mob: {fileID: 0}
-  distance: 0
+  distance: 5
 --- !u!114 &-4408042197376082275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +259,7 @@ MonoBehaviour:
   mob: {fileID: 0}
   trueNode: {fileID: -4871000498216146179}
   falseNode: {fileID: -4408042197376082275}
-  pullbackDistance: 1
+  pullbackDistance: 5
 --- !u!114 &8954273575360968739
 MonoBehaviour:
   m_ObjectHideFlags: 0

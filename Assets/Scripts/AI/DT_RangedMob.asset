@@ -1,5 +1,71 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8369162758046403060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23917ac286aa0b14ea7ea4499cd41951, type: 3}
+  m_Name: A_UseItem
+  m_EditorClassIdentifier: 
+  guid: 75b9e629126868d4db921c694c0db2c7
+  positionalData:
+    serializedVersion: 2
+    x: -168.70006
+    y: -76.999985
+    width: 107
+    height: 77
+  mob: {fileID: 0}
+  item: {fileID: 11400000, guid: d2bfb97dbfcec1b41bf1867ed51d1012, type: 2}
+--- !u!114 &-7797976778729428134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85b1451e83f78845aae53a45e0df335, type: 3}
+  m_Name: C_CanUseItem
+  m_EditorClassIdentifier: 
+  guid: 2be677c7176814b4e95bd2e126026791
+  positionalData:
+    serializedVersion: 2
+    x: -812
+    y: 272
+    width: 130
+    height: 77
+  mob: {fileID: 0}
+  item: {fileID: 11400000, guid: d2bfb97dbfcec1b41bf1867ed51d1012, type: 2}
+--- !u!114 &-3369003342890522012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf10bdb7b213684b806a30dfa5d302e, type: 3}
+  m_Name: C_StatComparison
+  m_EditorClassIdentifier: 
+  guid: 486f9f0d9ab3976438a1eafc3ae88dde
+  positionalData:
+    serializedVersion: 2
+    x: -807
+    y: 154
+    width: 152
+    height: 77
+  mob: {fileID: 0}
+  stat:
+    statName: _health
+  operation: 0
+  value: 10
 --- !u!114 &-1362160417680047096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23,6 +89,28 @@ MonoBehaviour:
   trueNode: {fileID: 7084128849031132433}
   falseNode: {fileID: 648282896621251169}
   attackRange: 6
+--- !u!114 &-242621378756389807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7c75edb9280bd43ae234556ca98f4c, type: 3}
+  m_Name: F_AND
+  m_EditorClassIdentifier: 
+  guid: ecabc0fdffab05045aa308c6c418eb70
+  positionalData:
+    serializedVersion: 2
+    x: -575.00006
+    y: 225.40001
+    width: 575.00006
+    height: -225.40001
+  mob: {fileID: 0}
+  A: {fileID: 0}
+  B: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,6 +133,11 @@ MonoBehaviour:
   - {fileID: 7355294504948294302}
   - {fileID: 4733141747619518986}
   - {fileID: 5440893340888606005}
+  - {fileID: 2886043550655442086}
+  - {fileID: -7797976778729428134}
+  - {fileID: -3369003342890522012}
+  - {fileID: -8369162758046403060}
+  - {fileID: -242621378756389807}
   inputs:
   - inputGUID: 8303d485f42aad44d89f635f4491e74a
     inputPortName: main
@@ -58,10 +151,6 @@ MonoBehaviour:
     inputPortName: main
     outputGUID: dd50b0844410d034499b5231e1fab070
     outputPortName: FALSE
-  - inputGUID: dd50b0844410d034499b5231e1fab070
-    inputPortName: main
-    outputGUID: bbaf843feec78ff478c9b682e007f39f
-    outputPortName: main
   - inputGUID: 86fe8e06c736cb24580199183461cefd
     inputPortName: main
     outputGUID: dd50b0844410d034499b5231e1fab070
@@ -74,6 +163,18 @@ MonoBehaviour:
     inputPortName: CancelPathfindingCondition
     outputGUID: d5f2324ebf09c6040ad45bd4cc2add12
     outputPortName: Output
+  - inputGUID: 75b9e629126868d4db921c694c0db2c7
+    inputPortName: main
+    outputGUID: 68a618ddfbe33a942938aba85219166e
+    outputPortName: TRUE
+  - inputGUID: 68a618ddfbe33a942938aba85219166e
+    inputPortName: main
+    outputGUID: bbaf843feec78ff478c9b682e007f39f
+    outputPortName: main
+  - inputGUID: dd50b0844410d034499b5231e1fab070
+    inputPortName: main
+    outputGUID: 68a618ddfbe33a942938aba85219166e
+    outputPortName: FALSE
 --- !u!114 &648282896621251169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +217,29 @@ MonoBehaviour:
   mob: {fileID: 0}
   destinationQuery: {fileID: 4733141747619518986}
   CancelPathfindingCondition: {fileID: 5440893340888606005}
+--- !u!114 &2886043550655442086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88d7021ba7ce534448f5fffacec31f34, type: 3}
+  m_Name: D_Condition
+  m_EditorClassIdentifier: 
+  guid: 68a618ddfbe33a942938aba85219166e
+  positionalData:
+    serializedVersion: 2
+    x: -374.10132
+    y: -11.000015
+    width: 158
+    height: 101
+  mob: {fileID: 0}
+  trueNode: {fileID: -8369162758046403060}
+  falseNode: {fileID: 7355294504948294302}
+  Condition: {fileID: 0}
 --- !u!114 &4733141747619518986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,8 +282,8 @@ MonoBehaviour:
   guid: d5f2324ebf09c6040ad45bd4cc2add12
   positionalData:
     serializedVersion: 2
-    x: 24
-    y: -125
+    x: 1.3059826
+    y: -115.50001
     width: 164
     height: 77
   mob: {fileID: 0}
@@ -221,9 +345,9 @@ MonoBehaviour:
   guid: bbaf843feec78ff478c9b682e007f39f
   positionalData:
     serializedVersion: 2
-    x: -308.20255
+    x: -583.92
     y: 0
     width: 103
     height: 77
   mob: {fileID: 0}
-  child: {fileID: 7355294504948294302}
+  child: {fileID: 2886043550655442086}

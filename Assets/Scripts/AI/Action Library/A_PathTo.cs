@@ -95,11 +95,11 @@ public class A_PathTo : Action
         pathfinding = mob.PathfindingComponent;
     }
 
-    public override DecisionTreeNode Clone()
+    public override DecisionTreeEditorNode Clone()
     {
         A_PathTo clone = Instantiate(this);
-        clone.destinationQuery = Instantiate(destinationQuery);
-        clone.CancelPathfindingCondition = Instantiate(CancelPathfindingCondition);
+        clone.destinationQuery = (EnvironmentQuerySystem)destinationQuery.Clone();
+        clone.CancelPathfindingCondition = (Function<bool>)CancelPathfindingCondition.Clone();
         return clone;
     }
 }

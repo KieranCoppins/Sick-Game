@@ -12,12 +12,6 @@ public class Consumeable : InventoryItem
     [Tooltip("The icon to be displayed for this consumeable in UI (Currently unused)")]
     public Image icon;
 
-
-    public Consumeable()
-    {
-
-    }
-
     public override void Use(BaseCharacter character)
     {
         foreach (var statusEffect in StatusEffects)

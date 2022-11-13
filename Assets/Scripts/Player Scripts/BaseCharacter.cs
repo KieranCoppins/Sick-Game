@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(InventorySystem))]
 [DisallowMultipleComponent]
 public abstract class BaseCharacter : MonoBehaviour
 {
@@ -75,6 +76,7 @@ public abstract class BaseCharacter : MonoBehaviour
 
     public Rigidbody2D rb { get; protected set; }
     protected Animator animator;
+    public InventorySystem inventory { get; protected set; }
 
     protected virtual bool Stunned { get; set; }
 
@@ -83,6 +85,7 @@ public abstract class BaseCharacter : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        inventory = GetComponent<InventorySystem>();
 
         // We dont want gravity since technically down in unity is at the bottom of the screen
         rb.gravityScale = 0f;

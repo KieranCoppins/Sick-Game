@@ -76,4 +76,16 @@ public class InventorySystem : MonoBehaviour
             Add(item, 99);
         }
     }
+
+    /// <summary>
+    /// Returns true if we have at least 1 of the given item
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns></returns>
+    public bool Has(InventoryItem item)
+    {
+        if (inventory.ContainsKey(item))
+            return inventory[item] > 0;
+        return false;
+    }
 }

@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 1053818214750552949}
   - component: {fileID: 5877684952458030284}
   - component: {fileID: 8770602457837502147}
+  - component: {fileID: 7558836245570500217}
   m_Layer: 0
   m_Name: Ranged Mob
   m_TagString: Mob
@@ -222,15 +223,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementSpeed: 3
   rollSpeed: 5
-  _maxHealth: 10
+  _maxHealth: 20
   _maxStamina: 0
   StaminaRegenCooldown: 0
   StaminaRegentAmount: 0
   _maxMana: 0
+  inventory: {fileID: 0}
   mobName: 
   decisionTree: {fileID: 11400000, guid: c25f5b6e360b04740a37aabe2380bde5, type: 2}
   PathfindingComponent: {fileID: 0}
-  debugFlags: -1
+  debugFlags: 0
   ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
 --- !u!212 &249532263326025937
 SpriteRenderer:
@@ -344,6 +346,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!114 &7558836245570500217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249532263326025964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920d8ea184ebb8d4090997fc53145979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1346357473782477518
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,11 +27,7 @@ public class StatusEffect : ScriptableObject
 
     public IEnumerator Apply(BaseCharacter character)
     {
-        System.Reflection.BindingFlags getFieldFlags = System.Reflection.BindingFlags.Default;
-        getFieldFlags |= System.Reflection.BindingFlags.Public;
-        getFieldFlags |= System.Reflection.BindingFlags.NonPublic;
-        getFieldFlags |= System.Reflection.BindingFlags.Instance;
-        System.Reflection.FieldInfo field = typeof(BaseCharacter).GetField(stat, getFieldFlags);
+        System.Reflection.FieldInfo field = typeof(BaseCharacter).GetField(stat, GenericHelpers.getFieldFlags);
         int previousValue = (int)field.GetValue(character);
         if ((flags & StatusEffectFlags.shouldHappenOverTime) == StatusEffectFlags.shouldHappenOverTime)
         {

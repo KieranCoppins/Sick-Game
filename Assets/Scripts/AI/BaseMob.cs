@@ -117,10 +117,10 @@ public abstract class BaseMob : BaseCharacter
         for (int i = 0; i <= 360 / angle; i++)
         {
             movementDirections.Add((Quaternion.AngleAxis(angle * i, Vector3.back) * dir).normalized);
-        }
+        
 
         // Initialise our decision tree
-        decisionTree = decisionTree.Clone();
+        decisionTree = decisionTree.Clone(this.name);
         decisionTree.Initialise(this);
         StartCoroutine(Think());
     }
@@ -217,6 +217,7 @@ public abstract class BaseMob : BaseCharacter
             actionManager.Execute();
             yield return new WaitForSeconds(0.1f);
         }
+
     }
 }
 

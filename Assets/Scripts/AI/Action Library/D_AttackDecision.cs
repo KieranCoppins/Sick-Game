@@ -11,11 +11,6 @@ public class D_AttackDecision : Decision
     [SerializeField] float attackRange = 0;
     Transform target;
 
-    public D_AttackDecision() : base()
-    {
-
-    }
-
     public override void Initialise(BaseMob mob)
     {
         base.Initialise(mob);

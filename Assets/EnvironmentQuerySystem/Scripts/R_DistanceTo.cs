@@ -6,12 +6,6 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(menuName = "Environment Queries/Distance To")]
 public class R_DistanceTo : Rule
 {
-    enum Operators
-    {
-        LessThan,
-        GreaterThan,
-        EqualTo
-    }
 
     [SerializeField] float distance;
     [SerializeField] Operators op;

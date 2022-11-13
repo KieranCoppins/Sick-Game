@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RootNode : DecisionTreeNode
 {
-    [HideInInspector] public DecisionTreeNode child;
+    public DecisionTreeNode child;
 
     public override DecisionTreeNode MakeDecision()
     {
@@ -17,10 +17,10 @@ public class RootNode : DecisionTreeNode
         child.Initialise(mob);
     }
 
-    public override DecisionTreeNode Clone()
+    public override DecisionTreeEditorNode Clone()
     {
         RootNode node = Instantiate(this);
-        node.child = child.Clone();
+        node.child = (DecisionTreeNode)child.Clone();
         return node;
     }
 }
