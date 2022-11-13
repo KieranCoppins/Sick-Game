@@ -5,8 +5,5 @@ using UnityEngine;
 public class C_CanUseItem : F_Condition
 {
     [SerializeField] InventoryItem item;
-    public override bool Invoke()
-    {
-        return mob.inventory.Has(item);
-    }
+    public override bool Invoke() => mob.inventory.Has(item);
 }

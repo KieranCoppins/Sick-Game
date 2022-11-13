@@ -21,6 +21,26 @@ MonoBehaviour:
     height: 77
   mob: {fileID: 0}
   item: {fileID: 11400000, guid: d2bfb97dbfcec1b41bf1867ed51d1012, type: 2}
+--- !u!114 &-8365475868609450945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a935e8e996597974089d93ecf3116799, type: 3}
+  m_Name: C_HasLineOfSight
+  m_EditorClassIdentifier: 
+  guid: 1982c7683e0ce434fb41beb75326c6a4
+  positionalData:
+    serializedVersion: 2
+    x: -172.50002
+    y: 179.40002
+    width: 172.50002
+    height: -179.40002
+  mob: {fileID: 0}
 --- !u!114 &-7797976778729428134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +86,29 @@ MonoBehaviour:
     statName: _health
   operation: 0
   value: 10
+--- !u!114 &-2484423893942029080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88d7021ba7ce534448f5fffacec31f34, type: 3}
+  m_Name: D_Condition
+  m_EditorClassIdentifier: 
+  guid: b9b185fc332341a41bdd7a6938809ca4
+  positionalData:
+    serializedVersion: 2
+    x: 59.90253
+    y: 43.99998
+    width: 158
+    height: 101
+  mob: {fileID: 0}
+  trueNode: {fileID: 0}
+  falseNode: {fileID: 0}
+  Condition: {fileID: 0}
 --- !u!114 &-1362160417680047096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,13 +147,13 @@ MonoBehaviour:
   guid: ecabc0fdffab05045aa308c6c418eb70
   positionalData:
     serializedVersion: 2
-    x: -575.00006
-    y: 225.40001
-    width: 575.00006
-    height: -225.40001
+    x: -556.60004
+    y: 190.49998
+    width: 117
+    height: 101
   mob: {fileID: 0}
-  A: {fileID: 0}
-  B: {fileID: 0}
+  A: {fileID: -3369003342890522012}
+  B: {fileID: -7797976778729428134}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +173,6 @@ MonoBehaviour:
   - {fileID: 7084128849031132433}
   - {fileID: -1362160417680047096}
   - {fileID: 2873401398325037708}
-  - {fileID: 7355294504948294302}
   - {fileID: 4733141747619518986}
   - {fileID: 5440893340888606005}
   - {fileID: 2886043550655442086}
@@ -138,6 +180,8 @@ MonoBehaviour:
   - {fileID: -3369003342890522012}
   - {fileID: -8369162758046403060}
   - {fileID: -242621378756389807}
+  - {fileID: -2484423893942029080}
+  - {fileID: -8365475868609450945}
   inputs:
   - inputGUID: 8303d485f42aad44d89f635f4491e74a
     inputPortName: main
@@ -147,14 +191,6 @@ MonoBehaviour:
     inputPortName: main
     outputGUID: 4f893894630ccb7429dae747c5bd0e1e
     outputPortName: FALSE
-  - inputGUID: 4f893894630ccb7429dae747c5bd0e1e
-    inputPortName: main
-    outputGUID: dd50b0844410d034499b5231e1fab070
-    outputPortName: FALSE
-  - inputGUID: 86fe8e06c736cb24580199183461cefd
-    inputPortName: main
-    outputGUID: dd50b0844410d034499b5231e1fab070
-    outputPortName: TRUE
   - inputGUID: 86fe8e06c736cb24580199183461cefd
     inputPortName: destinationQuery
     outputGUID: 7bdc75171a9a1434eb5ab9a58dc9b00c
@@ -171,10 +207,18 @@ MonoBehaviour:
     inputPortName: main
     outputGUID: bbaf843feec78ff478c9b682e007f39f
     outputPortName: main
-  - inputGUID: dd50b0844410d034499b5231e1fab070
-    inputPortName: main
-    outputGUID: 68a618ddfbe33a942938aba85219166e
-    outputPortName: FALSE
+  - inputGUID: ecabc0fdffab05045aa308c6c418eb70
+    inputPortName: A
+    outputGUID: 486f9f0d9ab3976438a1eafc3ae88dde
+    outputPortName: Output
+  - inputGUID: ecabc0fdffab05045aa308c6c418eb70
+    inputPortName: B
+    outputGUID: 2be677c7176814b4e95bd2e126026791
+    outputPortName: Output
+  - inputGUID: 68a618ddfbe33a942938aba85219166e
+    inputPortName: Condition
+    outputGUID: ecabc0fdffab05045aa308c6c418eb70
+    outputPortName: Output
 --- !u!114 &648282896621251169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,8 +282,8 @@ MonoBehaviour:
     height: 101
   mob: {fileID: 0}
   trueNode: {fileID: -8369162758046403060}
-  falseNode: {fileID: 7355294504948294302}
-  Condition: {fileID: 0}
+  falseNode: {fileID: 0}
+  Condition: {fileID: -242621378756389807}
 --- !u!114 &4733141747619518986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,28 +352,6 @@ MonoBehaviour:
     height: 77
   mob: {fileID: 0}
   ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
---- !u!114 &7355294504948294302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98ab3a159d021f4fa45b32585793841, type: 3}
-  m_Name: D_ShouldPathfindToPlayer
-  m_EditorClassIdentifier: 
-  guid: dd50b0844410d034499b5231e1fab070
-  positionalData:
-    serializedVersion: 2
-    x: -43.500042
-    y: 0
-    width: 197
-    height: 101
-  mob: {fileID: 0}
-  trueNode: {fileID: 2873401398325037708}
-  falseNode: {fileID: -1362160417680047096}
 --- !u!114 &7962675181092683881
 MonoBehaviour:
   m_ObjectHideFlags: 0
