@@ -7,28 +7,6 @@ using UnityEngine.UIElements;
 [CustomPropertyDrawer(typeof(PlayerStat))]
 public class PlayerStatPropertyDraw : PropertyDrawer
 {
-    /*
-    public override VisualElement CreatePropertyGUI(SerializedProperty property)
-    {
-        var container = new VisualElement();
-
-        List<System.Reflection.PropertyInfo> playerStats = new List<System.Reflection.PropertyInfo>();
-        List<string> playerStatsLabels = new List<string>();
-        var properties = typeof(CharacterMovement).GetProperties();
-        foreach (var p in properties)
-        {
-            if (p.PropertyType == typeof(int) || p.PropertyType == typeof(float))
-            {
-                playerStats.Add(p);
-                playerStatsLabels.Add(p.Name);
-            }
-        }
-
-        int statSelection = EditorGUI.Popup() 
-
-        return container;
-    }
-    */
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
@@ -38,7 +16,7 @@ public class PlayerStatPropertyDraw : PropertyDrawer
         getFieldFlags |= System.Reflection.BindingFlags.Public;
         getFieldFlags |= System.Reflection.BindingFlags.NonPublic;
         getFieldFlags |= System.Reflection.BindingFlags.Instance;
-        var fields = typeof(CharacterMovement).GetFields(getFieldFlags);
+        var fields = typeof(BaseCharacter).GetFields(getFieldFlags);
         int currentChoice = 0;
         for (int i = 0; i < fields.Length; i++)
         {

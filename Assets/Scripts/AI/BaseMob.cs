@@ -15,56 +15,33 @@ public enum DebugFlags
 }
 
 [RequireComponent(typeof(PathfindingComponent))]
-[RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(ActionManager))]
 [DisallowMultipleComponent]
 
-public abstract class BaseMob : MonoBehaviour
+public abstract class BaseMob : BaseCharacter
 {
     [Header("Events")]
     protected UnityEvent onTakeDamage;
     protected UnityEvent onHeal;
     protected UnityEvent onDeath;
-    public int Health {
+    public override int Health
+    {
         get
         {
-            return _health;
+            return base.Health;
         }
         protected set
         {
-            _health = value;
-            if (_health > _maxHealth)
-                _health = _maxHealth;
-            if (_health <= 0)
+            base.Health = value;
+            if (Health <= 0)
             {
                 onDeath?.Invoke();
                 Destroy(this.gameObject);
             }
         }
     }
-    public int MaxHealth
-    {
-        get
-        {
-            return _maxHealth;
-        }
-        protected set
-        {
-            if (value > 0)
-                _maxHealth = value;
-        }
-    }
-
-    public float MovementSpeed
-    {
-        get { return movementSpeed; }
-    }
 
     [Header("Mob Stats")]
-    [Tooltip("The maximum health of the mob")]
-    [SerializeField] int _maxHealth = 10;
-    [Tooltip("The speed at which the mob moves")]
-    [SerializeField] protected float movementSpeed = 2;
     [SerializeField] public string mobName;
 
     [Header("AI")]
@@ -72,11 +49,8 @@ public abstract class BaseMob : MonoBehaviour
     [SerializeField] protected DecisionTree decisionTree;
 
     [HideInInspector] public PathfindingComponent PathfindingComponent;
-    [HideInInspector] public Rigidbody2D rb;
 
     protected float attackTimer;
-
-    private int _health = 10;
 
     protected ActionManager actionManager;
     protected List<Vector2> movementDirections;
@@ -86,7 +60,6 @@ public abstract class BaseMob : MonoBehaviour
     [SerializeField]
     public DebugFlags debugFlags;
 
-    protected bool Stunned;
 
     public string GetCurrentActionText()
     {
@@ -121,13 +94,6 @@ public abstract class BaseMob : MonoBehaviour
         StartCoroutine(Stun(.5f));
     }
 
-    IEnumerator Stun(float time)
-    {
-        Stunned = true;
-        yield return new WaitForSeconds(time);
-        Stunned = false;
-    }
-
     /// <summary>
     /// Adds amount to health and invokes the onHeal event
     /// </summary>
@@ -138,12 +104,10 @@ public abstract class BaseMob : MonoBehaviour
         onHeal?.Invoke();
     }
 
-    protected virtual void Start()
+    protected override void Start()
     {
-        Health = MaxHealth;
+        base.Start();
         PathfindingComponent = GetComponent<PathfindingComponent>();
-        rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = 0;
         actionManager = GetComponent<ActionManager>();
 
         // Set up movement directions
@@ -161,8 +125,9 @@ public abstract class BaseMob : MonoBehaviour
         StartCoroutine(Think());
     }
 
-    protected virtual void Update()
+    protected override void Update()
     {
+        base.Update();
     }
 
     protected virtual void LateUpdate()

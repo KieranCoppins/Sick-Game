@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ff84f55c88832428ef59f86e97f4d2, type: 3}
   m_Name: Test#
   m_EditorClassIdentifier: 
-  StatusEffects: []
-  stat: 0
-  value: 0
-  duration: 0
+  StatusEffects:
+  - {fileID: 11400000, guid: 00184c35024ad1f469bee9896a0a95c4, type: 2}

@@ -5,147 +5,46 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 // Character movement needs a rigidbody2D component
-[RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(LookAtMouse))]
 [DisallowMultipleComponent]
-public class CharacterMovement : MonoBehaviour
+public class CharacterMovement : BaseCharacter
 {
-    public int MovementSpeed
-    {
-        get { return _movementSpeed; }
-        private set { _movementSpeed = value; }
-    }
-    [SerializeField] int _movementSpeed;
-    [SerializeField] float rollSpeed = 5f;
-    Rigidbody2D rb;
-
-    [Header("Player Stats")]
-    [SerializeField] int MaxHealth;
-    [SerializeField] int MaxStamina;
-    [SerializeField] float StaminaRegenCooldown;
-    [SerializeField] int StaminaRegentAmount;
-    [SerializeField] int MaxMana;
     [SerializeField] int Damage;
     [SerializeField] AbilityBase ability;
-
-    float StaminaRegenTimer;
-
-    public int Health { 
-        get { return _health; } 
-        private set 
-        { 
-            _health = Mathf.Clamp(value, 0, MaxHealth);
-            // Update health UI
-            HealthBar.value = (float)_health / (float)MaxHealth;
-
-            if (_health <= 0)
-            {
-
-                // Enter death code
-            }
-
-        } 
-    }
-    public int Stamina { 
-        get { return _stamina; } 
-        private set 
-        {
-            // If we deplete our stamina, then we want to initiate our regen calldown
-            if (value < _stamina)
-                StaminaRegenTimer = StaminaRegenCooldown;
-
-            _stamina = Mathf.Clamp(value, 0, MaxStamina); 
-
-            // Update stamina UI
-            StaminaBar.value = (float)_stamina / (float)MaxStamina;
-        } 
-    }
-    public int Mana { 
-        get { return _mana; } 
-        private set 
-        { 
-            _mana = Mathf.Clamp(value, 0, MaxMana); 
-
-            // Update mana UI
-            ManaBar.value = (float)_mana / (float)MaxMana;
-        } 
-    }
-
-    int _health;
-    int _stamina;
-    int _mana;
 
     [Header("UI Elements")]
     [SerializeField] Slider HealthBar;
     [SerializeField] Slider StaminaBar;
     [SerializeField] Slider ManaBar;
+    [SerializeField] GameObject TargetGraphic;
 
     bool CanMove = true; 
     Vector2 movementVelocity;
 
-    Animator animator;
     int attackStage = 0;
     bool QueueAttack = true;
 
-    [SerializeField] GameObject TargetGraphic;
-    public Transform Target { 
-        get { return _target; }
-        private set
-        {
-            // Show a target graphic if we have a target
-            TargetGraphic.SetActive(value != null);
-
-            // Disable UI on our old target
-            if (_target != null)
-                _target.GetComponent<MobUIManager>().DisableUI();
-
-            // Enable UI on our new target
-            if (value != null)
-                value.GetComponent<MobUIManager>().EnableUI();
-
-            _target = value;
-        }
-    }
-    Transform _target;
     LookAtMouse lookAtMouse;
 
-    public Consumeable testConsumeable;
+    protected override bool Stunned { 
+        get => base.Stunned;
+        set
+        {
+            base.Stunned = value;
+            CanMove = !value;
+        }
+    }
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        base.Start();
         lookAtMouse = GetComponent<LookAtMouse>();
-
-        // We dont want gravity since technically down in unity is at the bottom of the screen
-        rb.gravityScale = 0f;
-
-        // Initialise stats
-        Health = MaxHealth;
-        Stamina = MaxStamina;
-        Mana = MaxMana;
-
-        StartCoroutine(RegenStats());
-
-        testConsumeable.Consume(this);
     }
 
-    IEnumerator RegenStats()
+    protected override void Update()
     {
-        while (true)
-        {
-            if (StaminaRegenTimer <= 0)
-                Stamina += StaminaRegentAmount;
-
-            yield return new WaitForSeconds(0.1f);
-        }
-
-    }
-
-    private void Update()
-    {
-        StaminaRegenTimer -= Time.deltaTime;
+        base.Update();
         if (Target != null)
             TargetGraphic.transform.position = Target.transform.position;
         else
@@ -158,16 +57,16 @@ public class CharacterMovement : MonoBehaviour
     {
         if (CanMove && attackStage == 0)
             rb.velocity = movementVelocity * MovementSpeed;
+
+        animator.SetFloat("MovementScale", rb.velocity.magnitude / MovementSpeed);
     }
 
     public void Move(InputAction.CallbackContext context)
     {
-        if (context.performed && CanMove)
+        if (context.performed)
             movementVelocity = context.ReadValue<Vector2>();
         else 
             movementVelocity = Vector2.zero;
-
-        animator.SetFloat("MovementScale", movementVelocity.magnitude);
     }
 
     public void Roll(InputAction.CallbackContext context)
@@ -200,14 +99,6 @@ public class CharacterMovement : MonoBehaviour
     {
         Health -= damage;
         StartCoroutine(Stun(0.5f));
-    }
-
-    IEnumerator Stun(float time)
-    {
-        CanMove = false;
-        rb.velocity = Vector2.zero;
-        yield return new WaitForSeconds(time);
-        CanMove = true;
     }
 
     public void Attack(InputAction.CallbackContext context)

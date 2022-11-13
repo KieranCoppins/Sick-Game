@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestStrength
   m_EditorClassIdentifier: 
   stat:
-    statName: 
-  value: 0
-  duration: 0
-  flags: 0
+    statName: _movementSpeed
+  value: 10
+  duration: 5
+  flags: 1

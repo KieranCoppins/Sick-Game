@@ -808,19 +808,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9f4000d4051fc4fbd30be31ba30963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onTakeDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  onHeal:
-    m_PersistentCalls:
-      m_Calls: []
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
+  _movementSpeed: 4
+  rollSpeed: 5
   _maxHealth: 10
-  movementSpeed: 2
+  _maxStamina: 0
+  StaminaRegenCooldown: 0
+  StaminaRegentAmount: 0
+  _maxMana: 0
+  mobName: 
+  decisionTree: {fileID: 11400000, guid: 50c4d2d06b3a5384e83d07845cdd114f, type: 2}
   PathfindingComponent: {fileID: 0}
-  rb: {fileID: 0}
   debugFlags: 0
   _meleeRange: 2
   _meleeDamage: 10

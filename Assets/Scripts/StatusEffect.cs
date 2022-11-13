@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Flags]
 public enum StatusEffectFlags
@@ -21,14 +22,16 @@ public class StatusEffect : ScriptableObject
     [SerializeField] float duration;
     [EnumFlags]
     [SerializeField] StatusEffectFlags flags;
+    [Tooltip("The icon to display this status effect on the affected (Currently unused)")]
+    public Image icon;
 
-    public IEnumerator Apply(CharacterMovement character)
+    public IEnumerator Apply(BaseCharacter character)
     {
         System.Reflection.BindingFlags getFieldFlags = System.Reflection.BindingFlags.Default;
         getFieldFlags |= System.Reflection.BindingFlags.Public;
         getFieldFlags |= System.Reflection.BindingFlags.NonPublic;
         getFieldFlags |= System.Reflection.BindingFlags.Instance;
-        System.Reflection.FieldInfo field = typeof(CharacterMovement).GetField(stat, getFieldFlags);
+        System.Reflection.FieldInfo field = typeof(BaseCharacter).GetField(stat, getFieldFlags);
         int previousValue = (int)field.GetValue(character);
         if ((flags & StatusEffectFlags.shouldHappenOverTime) == StatusEffectFlags.shouldHappenOverTime)
         {
