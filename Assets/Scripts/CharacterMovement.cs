@@ -242,9 +242,13 @@ public class CharacterMovement : BaseCharacter
 
             targetWeightPair.Sort(new KeyValuePairComparer<Transform, float>());
             Target = targetWeightPair[0].Key;
+            TargetGraphic.SetActive(true);
         }
         else
+        {
             Target = null;
+            TargetGraphic.SetActive(false);
+        }
     }
 
 
