@@ -9,9 +9,6 @@ public class Consumeable : InventoryItem
     [Tooltip("The status effects this consumeable will apply to the player")]
     public List<StatusEffect> StatusEffects;
 
-    [Tooltip("The icon to be displayed for this consumeable in UI (Currently unused)")]
-    public Image icon;
-
     public override void Use(BaseCharacter character)
     {
         foreach (var statusEffect in StatusEffects)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
 
 // Character movement needs a rigidbody2D component
 [RequireComponent(typeof(LookAtMouse))]
@@ -17,6 +18,7 @@ public class CharacterMovement : BaseCharacter
     [SerializeField] Slider StaminaBar;
     [SerializeField] Slider ManaBar;
     [SerializeField] GameObject TargetGraphic;
+    [SerializeField] Image CurrentItemImage;
 
     bool CanMove = true; 
     Vector2 movementVelocity;
@@ -25,6 +27,78 @@ public class CharacterMovement : BaseCharacter
     bool QueueAttack = true;
 
     LookAtMouse lookAtMouse;
+
+    List<InventoryItem> quickbar = new List<InventoryItem>();
+
+    public int QuickbarIndex
+    {
+        get { return _quickbarIndex; }
+        protected set
+        {
+            _quickbarIndex = value;
+            CurrentItemImage.sprite = quickbar[QuickbarIndex].icon;
+        }
+    }
+    int _quickbarIndex = 0;
+
+    /// Base character attribute overrides
+
+    public override int Health { 
+        get => base.Health;
+        protected set
+        {
+            base.Health = value;
+            HealthBar.value = (float)Health / (float)MaxHealth;
+
+        }
+    }
+
+    public override int Stamina { 
+        get => base.Stamina;
+        protected set 
+        { 
+            base.Stamina = value; 
+            StaminaBar.value = (float)Stamina / (float)MaxStamina;
+        }
+    }
+
+    public override int Mana { 
+        get => base.Mana;
+        protected set
+        {
+            base.Mana = value;
+            ManaBar.value = (float)Mana / (float)MaxMana;
+        }
+    }
+
+    public override int MaxHealth { 
+        get => base.MaxHealth;
+        protected set
+        {
+            base.MaxHealth = value;
+            HealthBar.value = (float)Health / (float)MaxHealth;
+        }
+    }
+
+    public override int MaxStamina 
+    { 
+        get => base.MaxStamina;
+        protected set
+        {
+            base.MaxStamina = value;
+            StaminaBar.value = (float)Stamina / (float)MaxStamina;
+        }
+    }
+
+    public override int MaxMana { 
+        get => base.MaxMana;
+        protected set
+        {
+            base.MaxMana = value;
+            ManaBar.value = (float)Mana / (float)MaxMana;
+        }
+    }
+
 
     protected override bool Stunned { 
         get => base.Stunned;
@@ -40,6 +114,16 @@ public class CharacterMovement : BaseCharacter
     {
         base.Start();
         lookAtMouse = GetComponent<LookAtMouse>();
+
+        inventory.DEBUG_AddAllItems();
+
+        // Populate our quickbar with all the items we have at the moment - this should be changed in the future
+        foreach (var item in inventory.GetItems())
+        {
+            quickbar.Add(item);
+        }
+
+        QuickbarIndex = 0;
     }
 
     protected override void Update()
@@ -215,5 +299,30 @@ public class CharacterMovement : BaseCharacter
     {
         animator.SetBool("CastAbility", false);
         CanMove = true;
+    }
+
+    public void UseItem(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            inventory.Use(quickbar[QuickbarIndex]);
+    }
+
+    public void NextItem(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            QuickbarIndex = (QuickbarIndex + 1) % quickbar.Count;
+    }
+
+    public void PrevItem(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            QuickbarIndex = (((QuickbarIndex - 1) % quickbar.Count) + quickbar.Count) % quickbar.Count;
+        }
+    }
+
+    protected override void Die()
+    {
+        Debug.Log("Player dead");
     }
 }

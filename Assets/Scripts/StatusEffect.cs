@@ -27,15 +27,15 @@ public class StatusEffect : ScriptableObject
 
     public IEnumerator Apply(BaseCharacter character)
     {
-        System.Reflection.FieldInfo field = typeof(BaseCharacter).GetField(stat, GenericHelpers.getFieldFlags);
-        int previousValue = (int)field.GetValue(character);
+        System.Reflection.PropertyInfo property = typeof(BaseCharacter).GetProperty(stat, GenericHelpers.getFieldFlags);
+        int previousValue = (int)property.GetValue(character);
         if ((flags & StatusEffectFlags.shouldHappenOverTime) == StatusEffectFlags.shouldHappenOverTime)
         {
             float timeLeft = duration;
             int newValue = value;
             while (timeLeft > 0)
             {
-                field.SetValue(character, previousValue + newValue);
+                property.SetValue(character, previousValue + newValue);
                 newValue += value;
                 timeLeft -= Time.deltaTime;
                 yield return null;
@@ -43,12 +43,12 @@ public class StatusEffect : ScriptableObject
         }
         else
         {
-            field.SetValue(character, previousValue + value);
+            property.SetValue(character, previousValue + value);
             yield return new WaitForSeconds(duration);
         }
         if ((flags & StatusEffectFlags.shouldReset) == StatusEffectFlags.shouldReset)
         {
-            field.SetValue(character, previousValue);
+            property.SetValue(character, previousValue);
         }
         yield return null;
     }

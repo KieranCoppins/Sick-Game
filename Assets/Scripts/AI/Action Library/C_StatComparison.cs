@@ -9,7 +9,7 @@ public class C_StatComparison : F_Condition
     [SerializeField] float value;
     public override bool Invoke()
     {
-        int statValue = (int)typeof(BaseCharacter).GetField(stat, GenericHelpers.getFieldFlags).GetValue(mob);
+        int statValue = (int)typeof(BaseCharacter).GetProperty(stat, GenericHelpers.getFieldFlags).GetValue(mob);
         switch (operation)
         {
             case (Operators.LessThan):

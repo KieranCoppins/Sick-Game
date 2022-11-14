@@ -224,11 +224,10 @@ MonoBehaviour:
   _movementSpeed: 3
   rollSpeed: 5
   _maxHealth: 20
-  _maxStamina: 0
-  StaminaRegenCooldown: 0
-  StaminaRegentAmount: 0
-  _maxMana: 0
-  inventory: {fileID: 0}
+  _maxStamina: 10
+  StaminaRegenCooldown: 1
+  StaminaRegentAmount: 1
+  _maxMana: 10
   mobName: 
   decisionTree: {fileID: 11400000, guid: c25f5b6e360b04740a37aabe2380bde5, type: 2}
   PathfindingComponent: {fileID: 0}

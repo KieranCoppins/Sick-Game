@@ -12,18 +12,14 @@ public class PlayerStatPropertyDraw : PropertyDrawer
     {
         EditorGUI.BeginProperty(position, label, property);
         List<string> playerStatsLabels = new List<string>();
-        System.Reflection.BindingFlags getFieldFlags = System.Reflection.BindingFlags.Default;
-        getFieldFlags |= System.Reflection.BindingFlags.Public;
-        getFieldFlags |= System.Reflection.BindingFlags.NonPublic;
-        getFieldFlags |= System.Reflection.BindingFlags.Instance;
-        var fields = typeof(BaseCharacter).GetFields(getFieldFlags);
+        var properties = typeof(BaseCharacter).GetProperties(GenericHelpers.getFieldFlags);
         int currentChoice = 0;
-        for (int i = 0; i < fields.Length; i++)
+        for (int i = 0; i < properties.Length; i++)
         {
-            if (fields[i].FieldType == typeof(int) || fields[i].FieldType == typeof(float))
+            if (properties[i].PropertyType == typeof(int) || properties[i].PropertyType == typeof(float))
             {
-                playerStatsLabels.Add(fields[i].Name);
-                if (fields[i].Name == property.FindPropertyRelative("statName").stringValue)
+                playerStatsLabels.Add(properties[i].Name);
+                if (properties[i].Name == property.FindPropertyRelative("statName").stringValue)
                     currentChoice = i;
 
             }

@@ -24,22 +24,6 @@ public abstract class BaseMob : BaseCharacter
     protected UnityEvent onTakeDamage;
     protected UnityEvent onHeal;
     protected UnityEvent onDeath;
-    public override int Health
-    {
-        get
-        {
-            return base.Health;
-        }
-        protected set
-        {
-            base.Health = value;
-            if (Health <= 0)
-            {
-                onDeath?.Invoke();
-                Destroy(this.gameObject);
-            }
-        }
-    }
 
     [Header("Mob Stats")]
     [SerializeField] public string mobName;
@@ -221,6 +205,12 @@ public abstract class BaseMob : BaseCharacter
             yield return new WaitForSeconds(0.1f);
         }
 
+    }
+
+    protected override void Die()
+    {
+        onDeath?.Invoke();
+        Destroy(this.gameObject);
     }
 }
 

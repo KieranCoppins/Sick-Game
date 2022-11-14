@@ -14,14 +14,14 @@ public abstract class BaseCharacter : MonoBehaviour
     }
     [SerializeField] int _movementSpeed;
     [SerializeField] protected float rollSpeed = 5f;
-    public virtual int MaxHealth { get { return _maxHealth; } protected set { _maxHealth = value; } }
+    public virtual int MaxHealth { get { return _maxHealth; } protected set { _maxHealth = value; Health = Health; } }
     [Header("Stats")]
     [SerializeField] int _maxHealth;
-    public virtual int MaxStamina { get { return _maxStamina; } protected set { _maxStamina = value; } }
+    public virtual int MaxStamina { get { return _maxStamina; } protected set { _maxStamina = value; Stamina = Stamina; } }
     [SerializeField] int _maxStamina;
     [SerializeField] protected float StaminaRegenCooldown;
     [SerializeField] protected int StaminaRegentAmount;
-    public virtual int MaxMana { get { return _maxMana; } protected set { _maxMana = value; } }
+    public virtual int MaxMana { get { return _maxMana; } protected set { _maxMana = value; Mana = Mana; } }
     [SerializeField] int _maxMana;
 
     float StaminaRegenTimer;
@@ -35,8 +35,7 @@ public abstract class BaseCharacter : MonoBehaviour
 
             if (_health <= 0)
             {
-                // Enter death code
-
+                Die();
             }
         }
     }
@@ -123,4 +122,6 @@ public abstract class BaseCharacter : MonoBehaviour
         yield return new WaitForSeconds(time);
         Stunned = false;
     }
+
+    protected abstract void Die();
 }
