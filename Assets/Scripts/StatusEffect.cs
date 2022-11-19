@@ -15,13 +15,13 @@ public class StatusEffect : ScriptableObject
 {
     [Header("Status Effect")]
     [Tooltip("The stat this Status Effect will modify")]
-    [SerializeField] PlayerStat stat;
+    [SerializeField] public PlayerStat stat;
     [Tooltip("The amount this Status Effect will modify the stat")]
-    [SerializeField] int value;
+    [SerializeField] public int value;
     [Tooltip("The duration in seconds of this Status Effect")]
-    [SerializeField] float duration;
+    [SerializeField] public float duration;
     [EnumFlags]
-    [SerializeField] StatusEffectFlags flags;
+    [SerializeField] public StatusEffectFlags flags;
     [Tooltip("The icon to display this status effect on the affected (Currently unused)")]
     public Image icon;
 
@@ -31,14 +31,15 @@ public class StatusEffect : ScriptableObject
         int previousValue = (int)property.GetValue(character);
         if ((flags & StatusEffectFlags.shouldHappenOverTime) == StatusEffectFlags.shouldHappenOverTime)
         {
-            float timeLeft = duration;
+            float timeStart = Time.time;
+            float timeSince = 0f;
             int newValue = value;
-            while (timeLeft > 0)
+            while (timeSince < duration)
             {
                 property.SetValue(character, previousValue + newValue);
                 newValue += value;
-                timeLeft -= Time.deltaTime;
-                yield return null;
+                timeSince = Time.time - timeStart;
+                yield return new WaitForSeconds(1);
             }
         }
         else

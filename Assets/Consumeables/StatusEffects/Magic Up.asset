@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 522f432b4e280154c8616cd14cc6bd6c, type: 3}
-  m_Name: Minor Heal
+  m_Name: Magic Up
   m_EditorClassIdentifier: 
   stat:
-    statName: Health
-  value: 10
-  duration: 0
-  flags: 0
+    statName: MaxMana
+  value: 20
+  duration: 10
+  flags: -1
   icon: {fileID: 0}

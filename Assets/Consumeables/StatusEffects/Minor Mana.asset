@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Minor Mana
   m_EditorClassIdentifier: 
   stat:
-    statName: 
-  value: 0
+    statName: Mana
+  value: 10
   duration: 0
   flags: 0
   icon: {fileID: 0}

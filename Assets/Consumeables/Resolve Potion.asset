@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ff84f55c88832428ef59f86e97f4d2, type: 3}
   m_Name: Resolve Potion
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  StatusEffects: []
+  icon: {fileID: 816647509, guid: 5aa0e3dc593636849b2bdf4c991df64d, type: 3}
+  StatusEffects:
+  - {fileID: 11400000, guid: fa394b2d1f9f25c4e9ea875907e092d2, type: 2}

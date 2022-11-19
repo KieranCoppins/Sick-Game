@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Minor Stamina
   m_EditorClassIdentifier: 
   stat:
-    statName: 
-  value: 0
+    statName: Stamina
+  value: 10
   duration: 0
   flags: 0
   icon: {fileID: 0}

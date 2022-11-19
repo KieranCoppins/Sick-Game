@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Minor Resolve
   m_EditorClassIdentifier: 
   stat:
-    statName: 
-  value: 0
-  duration: 0
-  flags: 0
+    statName: MaxHealth
+  value: 50
+  duration: 5
+  flags: 1
   icon: {fileID: 0}

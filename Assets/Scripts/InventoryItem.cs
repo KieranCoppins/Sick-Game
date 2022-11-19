@@ -8,4 +8,6 @@ public abstract class InventoryItem : ScriptableObject
     [Tooltip("The icon to be displayed for this consumeable in UI (Currently unused)")]
     public Sprite icon;
     public abstract void Use(BaseCharacter character);
+
+    public abstract string GetDescription();
 }

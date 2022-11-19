@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Mana Potion
   m_EditorClassIdentifier: 
   icon: {fileID: 247299105, guid: 5aa0e3dc593636849b2bdf4c991df64d, type: 3}
-  StatusEffects: []
+  StatusEffects:
+  - {fileID: 11400000, guid: b010e2cf3721d6045a807aa2ca71cb0c, type: 2}

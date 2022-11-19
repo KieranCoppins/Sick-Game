@@ -227,6 +227,9 @@ MonoBehaviour:
   StaminaBar: {fileID: 0}
   ManaBar: {fileID: 0}
   TargetGraphic: {fileID: 0}
+  quickbar: []
+  radialMenu: {fileID: 0}
+  selectedItem: {fileID: 0}
 --- !u!114 &5641306165676389782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,6 +421,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: cfb2811b-82e1-4610-9cdf-0c1bdce76e79
     m_ActionName: Player/CastAbility[/DualSenseGamepadHID/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8571517083040486851}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 68e6cab5-5e14-41d6-a85a-9fce0576941b
+    m_ActionName: Player/UseItem[/Keyboard/c,/DualSenseGamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8571517083040486851}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: InventoryRadialMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6eceaefe-9bc2-4a08-9505-274be3018c46
+    m_ActionName: Player/InventoryRadialMenu[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

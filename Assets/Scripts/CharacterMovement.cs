@@ -18,7 +18,6 @@ public class CharacterMovement : BaseCharacter
     [SerializeField] Slider StaminaBar;
     [SerializeField] Slider ManaBar;
     [SerializeField] GameObject TargetGraphic;
-    [SerializeField] Image CurrentItemImage;
 
     bool CanMove = true; 
     Vector2 movementVelocity;
@@ -28,18 +27,10 @@ public class CharacterMovement : BaseCharacter
 
     LookAtMouse lookAtMouse;
 
-    List<InventoryItem> quickbar = new List<InventoryItem>();
+    public List<InventoryItem> quickbar = new List<InventoryItem>();
+    [SerializeField] InventoryRadialMenu radialMenu;
 
-    public int QuickbarIndex
-    {
-        get { return _quickbarIndex; }
-        protected set
-        {
-            _quickbarIndex = value;
-            CurrentItemImage.sprite = quickbar[QuickbarIndex].icon;
-        }
-    }
-    int _quickbarIndex = 0;
+    public InventoryItem selectedItem;
 
     /// Base character attribute overrides
 
@@ -123,7 +114,7 @@ public class CharacterMovement : BaseCharacter
             quickbar.Add(item);
         }
 
-        QuickbarIndex = 0;
+        radialMenu.LoadData();
     }
 
     protected override void Update()
@@ -254,6 +245,11 @@ public class CharacterMovement : BaseCharacter
 
     public void SwitchTarget(InputAction.CallbackContext context)
     {
+        // If we're using our radial menu, then we want to use the right stick for manouvering the radial menu
+        Debug.Log(context.ReadValue<Vector2>());
+        if (!context.canceled && radialMenu.Open)
+            radialMenu.SelectItem(context.ReadValue<Vector2>());
+
         if (!context.started)
             return;
 
@@ -305,24 +301,19 @@ public class CharacterMovement : BaseCharacter
         CanMove = true;
     }
 
+    public void InventoryRadialMenu(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            radialMenu.Display();
+
+        if (context.canceled)
+            radialMenu.Close();
+    }
+
     public void UseItem(InputAction.CallbackContext context)
     {
-        if (context.performed)
-            inventory.Use(quickbar[QuickbarIndex]);
-    }
-
-    public void NextItem(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-            QuickbarIndex = (QuickbarIndex + 1) % quickbar.Count;
-    }
-
-    public void PrevItem(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            QuickbarIndex = (((QuickbarIndex - 1) % quickbar.Count) + quickbar.Count) % quickbar.Count;
-        }
+        if (context.performed && inventory.Has(selectedItem))
+            inventory.Use(selectedItem);
     }
 
     protected override void Die()

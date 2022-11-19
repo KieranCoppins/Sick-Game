@@ -108,7 +108,7 @@ MonoBehaviour:
     width: 0
     height: 0
   mob: {fileID: 0}
-  child: {fileID: 0}
+  child: {fileID: -2168461752854891204}
 --- !u!114 &-2168461752854891204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,9 +129,9 @@ MonoBehaviour:
     width: 158
     height: 101
   mob: {fileID: 0}
-  trueNode: {fileID: 0}
-  falseNode: {fileID: 0}
-  Condition: {fileID: 0}
+  trueNode: {fileID: -1647833163952485665}
+  falseNode: {fileID: -459227180729119608}
+  Condition: {fileID: -8989099845390755580}
 --- !u!114 &-1647833163952485665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +227,22 @@ MonoBehaviour:
     inputPortName: main
     outputGUID: c2c1ae666bbd6864b95459c50c54fc1f
     outputPortName: FALSE
+  - inputGUID: 1ba4c18397a5f5744ac275762a8895f6
+    inputPortName: main
+    outputGUID: 744290a49affdba49b9df3ebbbfb46cf
+    outputPortName: main
+  - inputGUID: 1ba4c18397a5f5744ac275762a8895f6
+    inputPortName: Condition
+    outputGUID: 3b7e1a7e0c8d35d4e82a785e7ff11833
+    outputPortName: Output
+  - inputGUID: 7859cec84dc4b694fa0c9f040ea8f47c
+    inputPortName: main
+    outputGUID: 1ba4c18397a5f5744ac275762a8895f6
+    outputPortName: FALSE
+  - inputGUID: fcdb252360e47084b9ab366c8fe9e4bf
+    inputPortName: main
+    outputGUID: 1ba4c18397a5f5744ac275762a8895f6
+    outputPortName: TRUE
 --- !u!114 &2127230805361811938
 MonoBehaviour:
   m_ObjectHideFlags: 0

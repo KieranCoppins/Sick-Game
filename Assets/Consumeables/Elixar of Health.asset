@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522f432b4e280154c8616cd14cc6bd6c, type: 3}
-  m_Name: Minor Heal
+  m_Script: {fileID: 11500000, guid: 75ff84f55c88832428ef59f86e97f4d2, type: 3}
+  m_Name: Elixar of Health
   m_EditorClassIdentifier: 
-  stat:
-    statName: Health
-  value: 10
-  duration: 0
-  flags: 0
   icon: {fileID: 0}
+  StatusEffects:
+  - {fileID: 11400000, guid: f94296ad018720a498eb6de9e0a0b8e2, type: 2}

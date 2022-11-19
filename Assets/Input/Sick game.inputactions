@@ -78,18 +78,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "NextItem",
+                    "name": "InventoryRadialMenu",
                     "type": "Button",
-                    "id": "9593d671-d2b7-4517-9a27-c1d10015a703",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "PrevItem",
-                    "type": "Button",
-                    "id": "80baaf80-9d7c-471f-bbaa-d49ef8558086",
+                    "id": "6eceaefe-9bc2-4a08-9505-274be3018c46",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -407,45 +398,23 @@
                 },
                 {
                     "name": "",
-                    "id": "6fbede5b-b118-4382-a979-218b51fe6111",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "NextItem",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0760a11f-d907-43e7-abc7-d46da0afbc87",
-                    "path": "<Gamepad>/dpad/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "NextItem",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4146c858-fb46-41b3-9b45-224e86f7706c",
+                    "id": "74ce62f7-2141-4efc-9c9b-93b0689f2580",
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "PrevItem",
+                    "action": "InventoryRadialMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "99c6a942-2d1f-46b3-af3b-ba3779c0cbb6",
-                    "path": "<Gamepad>/dpad/left",
+                    "id": "398c5b1e-97ed-4294-9829-67c43b9703e1",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "PrevItem",
+                    "action": "InventoryRadialMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
