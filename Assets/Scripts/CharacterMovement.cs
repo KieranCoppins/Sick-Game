@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using TMPro;
+
+public delegate void CharacterInteractable(BaseCharacter character);
 
 // Character movement needs a rigidbody2D component
 [RequireComponent(typeof(LookAtMouse))]
@@ -31,6 +32,8 @@ public class CharacterMovement : BaseCharacter
     [SerializeField] InventoryRadialMenu radialMenu;
 
     public InventoryItem selectedItem;
+
+    public CharacterInteractable onCharacterInteraction;
 
     /// Base character attribute overrides
 
@@ -246,7 +249,6 @@ public class CharacterMovement : BaseCharacter
     public void SwitchTarget(InputAction.CallbackContext context)
     {
         // If we're using our radial menu, then we want to use the right stick for manouvering the radial menu
-        Debug.Log(context.ReadValue<Vector2>());
         if (!context.canceled && radialMenu.Open)
             radialMenu.SelectItem(context.ReadValue<Vector2>());
 
@@ -314,6 +316,14 @@ public class CharacterMovement : BaseCharacter
     {
         if (context.performed && inventory.Has(selectedItem))
             inventory.Use(selectedItem);
+    }
+
+    public void Interact(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            onCharacterInteraction?.Invoke(this);
+        }
     }
 
     protected override void Die()
