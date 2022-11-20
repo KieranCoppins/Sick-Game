@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.Linq;
 
 public class InventorySystem : MonoBehaviour
 {
@@ -55,6 +56,16 @@ public class InventorySystem : MonoBehaviour
         return items.ToArray();
     }
 
+    public InventoryItem GetItem(string name)
+    {
+        foreach(var item in inventory)
+        {
+            if (item.Key.name == name)
+                return item.Key;
+        }
+        return null;
+    }
+
     /// <summary>
     /// Wipes our inventory of all items
     /// </summary>
@@ -87,5 +98,17 @@ public class InventorySystem : MonoBehaviour
         if (inventory.ContainsKey(item))
             return inventory[item] > 0;
         return false;
+    }
+
+    /// <summary>
+    /// Gets the quantity of the given item in our inventory
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns></returns>
+    public int GetQuantity(InventoryItem item)
+    {
+        if (Has(item))
+            return inventory[item];
+        return 0;
     }
 }

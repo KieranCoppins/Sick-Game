@@ -22,6 +22,8 @@ public abstract class RadialMenu : MonoBehaviour
 
     public void Display()
     {
+        menuOptions.Clear();
+        LoadData();
         Open = true;
         gameObject.SetActive(true);
         float radianSeperation = (Mathf.PI * 2) / menuOptions.Count;

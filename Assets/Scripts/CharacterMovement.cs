@@ -30,6 +30,7 @@ public class CharacterMovement : BaseCharacter
 
     public List<InventoryItem> quickbar = new List<InventoryItem>();
     [SerializeField] InventoryRadialMenu radialMenu;
+    [SerializeField] GameObject pauseMenu;
 
     public InventoryItem selectedItem;
 
@@ -108,16 +109,6 @@ public class CharacterMovement : BaseCharacter
     {
         base.Start();
         lookAtMouse = GetComponent<LookAtMouse>();
-
-        inventory.DEBUG_AddAllItems();
-
-        // Populate our quickbar with all the items we have at the moment - this should be changed in the future
-        foreach (var item in inventory.GetItems())
-        {
-            quickbar.Add(item);
-        }
-
-        radialMenu.LoadData();
     }
 
     protected override void Update()
@@ -141,7 +132,10 @@ public class CharacterMovement : BaseCharacter
 
     public void Move(InputAction.CallbackContext context)
     {
-        if (context.performed)
+
+        if (context.started && pauseMenu.activeInHierarchy)
+            pauseMenu.GetComponentInChildren<InventoryListMenu>().SelectItem(context.ReadValue<Vector2>());
+        else if (context.performed && !pauseMenu.activeInHierarchy)
             movementVelocity = context.ReadValue<Vector2>();
         else 
             movementVelocity = Vector2.zero;
@@ -181,13 +175,24 @@ public class CharacterMovement : BaseCharacter
 
     public void Attack(InputAction.CallbackContext context)
     {
-        if (QueueAttack && Stamina >= 10 && context.started && CanMove)
+        if (context.started)
         {
-            attackStage++;
-            animator.SetInteger("AttackStage", attackStage);
-            QueueAttack = false;
-            Stamina -= 10;
-            rb.velocity = movementVelocity * MovementSpeed;
+            if (pauseMenu.activeInHierarchy)
+            {
+                ListMenu listMenu = pauseMenu.GetComponentInChildren<ListMenu>();
+                if (listMenu.IsSubmenuOpen())
+                    listMenu.CloseSubmenu();
+                else
+                    listMenu.OpenSubmenu();
+            }
+            else if (QueueAttack && Stamina >= 10 && CanMove)
+            {
+                attackStage++;
+                animator.SetInteger("AttackStage", attackStage);
+                QueueAttack = false;
+                Stamina -= 10;
+                rb.velocity = movementVelocity * MovementSpeed;
+            }
         }
     }
     public void ResetAttackStage() 
@@ -315,7 +320,13 @@ public class CharacterMovement : BaseCharacter
     public void UseItem(InputAction.CallbackContext context)
     {
         if (context.performed && inventory.Has(selectedItem))
+        {
             inventory.Use(selectedItem);
+            if (!inventory.Has(selectedItem))
+            {
+                quickbar.Remove(selectedItem);
+            }
+        }
     }
 
     public void Interact(InputAction.CallbackContext context)
@@ -323,6 +334,15 @@ public class CharacterMovement : BaseCharacter
         if (context.performed)
         {
             onCharacterInteraction?.Invoke(this);
+        }
+    }
+
+    public void TogglePauseMenu(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
+            pauseMenu.GetComponentInChildren<ListMenu>().Display();
         }
     }
 
