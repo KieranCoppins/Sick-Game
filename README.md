@@ -12,6 +12,7 @@ Once you have cloned and opened this project you can create a folder called "Tes
 
 ## Showcases [yyyy-mm-dd]
 A list of all the existing showcases, the most recent ones will be shown at the top
+  - Inventory System [[2022-11-20](https://youtu.be/fsAmt_4c6Rc)]
   - Decision Tree Visual Editor [[2022-11-11](https://youtu.be/0ccavuVyBpU)]
   - Character with Animations and Attacking [[2022-10-17](https://youtu.be/OO1svi8NlZo)]
   - AI with Debug Info Showcase [[2022-10-08](https://youtu.be/ZRC6CZEzEYo)]
