@@ -9,17 +9,10 @@ public class D_AttackDecision : Decision
 {
     A_Attack action;
     [SerializeField] float attackRange = 0;
-    Transform target;
-
-    public D_AttackDecision() : base()
-    {
-
-    }
 
     public override void Initialise(BaseMob mob)
     {
         base.Initialise(mob);
-        target = GameObject.FindGameObjectWithTag("Player").transform; // TODO make the target a parameter so we can define different targets
         action = trueNode as A_Attack;
         if (action == null)
             Debug.LogError("True node of D_AttackDecision doesn't point to an A_Attack action");
@@ -27,13 +20,13 @@ public class D_AttackDecision : Decision
 
     float TestData()
     {
-        return Vector2.Distance(mob.transform.position, target.position);
+        return Vector2.Distance(mob.transform.position, mob.Target.position);
     }
 
     public override DecisionTreeNode GetBranch()
     {
         // If we are in range & have line of sight
-        if (TestData() <= attackRange && mob.HasLineOfSight(target.position) && action.CanCast)
+        if (TestData() <= attackRange && mob.HasLineOfSight(mob.Target.position) && action.CanCast)
         {
             return trueNode;
         }

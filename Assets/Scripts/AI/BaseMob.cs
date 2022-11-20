@@ -15,56 +15,17 @@ public enum DebugFlags
 }
 
 [RequireComponent(typeof(PathfindingComponent))]
-[RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(ActionManager))]
 [DisallowMultipleComponent]
 
-public abstract class BaseMob : MonoBehaviour
+public abstract class BaseMob : BaseCharacter
 {
     [Header("Events")]
     protected UnityEvent onTakeDamage;
     protected UnityEvent onHeal;
     protected UnityEvent onDeath;
-    public int Health {
-        get
-        {
-            return _health;
-        }
-        protected set
-        {
-            _health = value;
-            if (_health > _maxHealth)
-                _health = _maxHealth;
-            if (_health <= 0)
-            {
-                onDeath?.Invoke();
-                Destroy(this.gameObject);
-            }
-        }
-    }
-    public int MaxHealth
-    {
-        get
-        {
-            return _maxHealth;
-        }
-        protected set
-        {
-            if (value > 0)
-                _maxHealth = value;
-        }
-    }
-
-    public float MovementSpeed
-    {
-        get { return movementSpeed; }
-    }
 
     [Header("Mob Stats")]
-    [Tooltip("The maximum health of the mob")]
-    [SerializeField] int _maxHealth = 10;
-    [Tooltip("The speed at which the mob moves")]
-    [SerializeField] protected float movementSpeed = 2;
     [SerializeField] public string mobName;
 
     [Header("AI")]
@@ -72,11 +33,8 @@ public abstract class BaseMob : MonoBehaviour
     [SerializeField] protected DecisionTree decisionTree;
 
     [HideInInspector] public PathfindingComponent PathfindingComponent;
-    [HideInInspector] public Rigidbody2D rb;
 
     protected float attackTimer;
-
-    private int _health = 10;
 
     protected ActionManager actionManager;
     protected List<Vector2> movementDirections;
@@ -86,7 +44,6 @@ public abstract class BaseMob : MonoBehaviour
     [SerializeField]
     public DebugFlags debugFlags;
 
-    protected bool Stunned;
 
     public string GetCurrentActionText()
     {
@@ -121,13 +78,6 @@ public abstract class BaseMob : MonoBehaviour
         StartCoroutine(Stun(.5f));
     }
 
-    IEnumerator Stun(float time)
-    {
-        Stunned = true;
-        yield return new WaitForSeconds(time);
-        Stunned = false;
-    }
-
     /// <summary>
     /// Adds amount to health and invokes the onHeal event
     /// </summary>
@@ -138,12 +88,10 @@ public abstract class BaseMob : MonoBehaviour
         onHeal?.Invoke();
     }
 
-    protected virtual void Start()
+    protected override void Start()
     {
-        Health = MaxHealth;
+        base.Start();
         PathfindingComponent = GetComponent<PathfindingComponent>();
-        rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = 0;
         actionManager = GetComponent<ActionManager>();
 
         // Set up movement directions
@@ -155,14 +103,18 @@ public abstract class BaseMob : MonoBehaviour
             movementDirections.Add((Quaternion.AngleAxis(angle * i, Vector3.back) * dir).normalized);
         }
 
+        // Default target to player - TODO in the future we can have perceptions so when the mob sees an enemy it will set it as its target
+        Target = GameObject.FindGameObjectWithTag("Player").transform;
+
         // Initialise our decision tree
-        decisionTree = decisionTree.Clone();
+        decisionTree = decisionTree.Clone(this.name);
         decisionTree.Initialise(this);
         StartCoroutine(Think());
     }
 
-    protected virtual void Update()
+    protected override void Update()
     {
+        base.Update();
     }
 
     protected virtual void LateUpdate()
@@ -252,6 +204,13 @@ public abstract class BaseMob : MonoBehaviour
             actionManager.Execute();
             yield return new WaitForSeconds(0.1f);
         }
+
+    }
+
+    protected override void Die()
+    {
+        onDeath?.Invoke();
+        Destroy(this.gameObject);
     }
 }
 

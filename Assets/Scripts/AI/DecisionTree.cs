@@ -49,28 +49,14 @@ public class DecisionTree : ScriptableObject
     }
     public Action Run()
     {
-        try
-        {
-            return root.MakeDecision() as Action;
-        }
-        catch (InvalidCastException e)
-        {
-            Debug.LogError("Decision Tree did not reach an action node (InvalidCastException) " + e.Message);
-        }
-        catch (NullReferenceException e)
-        {
-            Debug.LogError("Decision tree returned null. Has the tree been initialised? " + e.Message);
-        }
-        catch (Exception e)
-        {
-            Debug.LogError(e.Message);
-        }
-        return null;
+        return root.MakeDecision() as Action;
     }
 
-    public DecisionTree Clone()
+    public DecisionTree Clone(string name = null)
     {
         DecisionTree tree = Instantiate(this);
+        if (name != null)
+            tree.name = name;
         tree.root = root.Clone() as RootNode;
         return tree;
     }
@@ -144,6 +130,10 @@ public abstract class DecisionTreeEditorNode : ScriptableObject
     {
         this.mob = mob;
     }
+    public virtual DecisionTreeEditorNode Clone()
+    {
+        return Instantiate(this);
+    }
 }
 
 public abstract class DecisionTreeNode : DecisionTreeEditorNode
@@ -154,13 +144,6 @@ public abstract class DecisionTreeNode : DecisionTreeEditorNode
 
     }
     public abstract DecisionTreeNode MakeDecision();
-
-    public virtual DecisionTreeNode Clone()
-    {
-        return Instantiate(this);
-    }
-
-
 }
 
 
@@ -203,7 +186,6 @@ public abstract class A_Attack : Action
     public bool CanCast { get; protected set; }
 
     protected float cooldown;
-    protected Transform target;
 
     public A_Attack()
     {
@@ -221,7 +203,6 @@ public abstract class A_Attack : Action
     public override void Initialise(BaseMob mob)
     {
         base.Initialise(mob);
-        target = GameObject.FindGameObjectWithTag("Player").transform; // TODO make the target a parameter so we can define different targets
     }
 }
 
@@ -242,11 +223,11 @@ public abstract class Decision : DecisionTreeNode
         return GetBranch().MakeDecision();
     }
 
-    public override DecisionTreeNode Clone()
+    public override DecisionTreeEditorNode Clone()
     {
         Decision node = Instantiate(this);
-        node.trueNode = trueNode.Clone();
-        node.falseNode = falseNode.Clone();
+        node.trueNode = (DecisionTreeNode)trueNode.Clone();
+        node.falseNode = (DecisionTreeNode)falseNode.Clone();
         return node;
     }
 
@@ -272,6 +253,34 @@ public abstract class Function<T> : DecisionTreeEditorNode where T : System.ICon
 
 public abstract class F_Condition : Function<bool>
 {
+}
+
+
+public abstract class F_LogicGate : Function<bool>
+{
+    public Function<bool> A;
+    public Function<bool> B;
+
+    public F_LogicGate(Function<bool> A, Function<bool> B)
+    {
+        this.A = A;
+        this.B = B;
+    }
+
+    public override void Initialise(BaseMob mob)
+    {
+        base.Initialise(mob);
+        A.Initialise(mob);
+        B.Initialise(mob);
+    }
+
+    public override DecisionTreeEditorNode Clone()
+    {
+        F_LogicGate node = Instantiate(this);
+        node.A = (Function<bool>)A.Clone();
+        node.B = (Function<bool>)B.Clone();
+        return node;
+    }
 }
 
 /// Custom Yield Instructions

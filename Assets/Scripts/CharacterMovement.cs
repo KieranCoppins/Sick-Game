@@ -4,144 +4,116 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+public delegate void CharacterInteractable(BaseCharacter character);
+
 // Character movement needs a rigidbody2D component
-[RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(LookAtMouse))]
 [DisallowMultipleComponent]
-public class CharacterMovement : MonoBehaviour
+public class CharacterMovement : BaseCharacter
 {
-    public float MovementSpeed
-    {
-        get { return _movementSpeed; }
-        private set { _movementSpeed = value; }
-    }
-    [SerializeField] float _movementSpeed;
-    [SerializeField] float rollSpeed = 5f;
-    Rigidbody2D rb;
-
-    [Header("Player Stats")]
-    [SerializeField] int MaxHealth;
-    [SerializeField] int MaxStamina;
-    [SerializeField] float StaminaRegenCooldown;
-    [SerializeField] int StaminaRegentAmount;
-    [SerializeField] int MaxMana;
     [SerializeField] int Damage;
     [SerializeField] AbilityBase ability;
-
-    float StaminaRegenTimer;
-
-    public int Health { 
-        get { return _health; } 
-        private set 
-        { 
-            _health = Mathf.Clamp(value, 0, MaxHealth);
-            // Update health UI
-            HealthBar.value = (float)_health / (float)MaxHealth;
-
-            if (_health <= 0)
-            {
-
-                // Enter death code
-            }
-
-        } 
-    }
-    public int Stamina { 
-        get { return _stamina; } 
-        private set 
-        {
-            // If we deplete our stamina, then we want to initiate our regen calldown
-            if (value < _stamina)
-                StaminaRegenTimer = StaminaRegenCooldown;
-
-            _stamina = Mathf.Clamp(value, 0, MaxStamina); 
-
-            // Update stamina UI
-            StaminaBar.value = (float)_stamina / (float)MaxStamina;
-        } 
-    }
-    public int Mana { 
-        get { return _mana; } 
-        private set 
-        { 
-            _mana = Mathf.Clamp(value, 0, MaxMana); 
-
-            // Update mana UI
-            ManaBar.value = (float)_mana / (float)MaxMana;
-        } 
-    }
-
-    int _health;
-    int _stamina;
-    int _mana;
 
     [Header("UI Elements")]
     [SerializeField] Slider HealthBar;
     [SerializeField] Slider StaminaBar;
     [SerializeField] Slider ManaBar;
+    [SerializeField] GameObject TargetGraphic;
 
     bool CanMove = true; 
     Vector2 movementVelocity;
 
-    Animator animator;
     int attackStage = 0;
     bool QueueAttack = true;
 
-    [SerializeField] GameObject TargetGraphic;
-    public Transform Target { 
-        get { return _target; }
-        private set
-        {
-            // Show a target graphic if we have a target
-            TargetGraphic.SetActive(value != null);
-
-            // Disable UI on our old target
-            if (_target != null)
-                _target.GetComponent<MobUIManager>().DisableUI();
-
-            // Enable UI on our new target
-            if (value != null)
-                value.GetComponent<MobUIManager>().EnableUI();
-
-            _target = value;
-        }
-    }
-    Transform _target;
     LookAtMouse lookAtMouse;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        lookAtMouse = GetComponent<LookAtMouse>();
+    public List<InventoryItem> quickbar = new List<InventoryItem>();
+    [SerializeField] InventoryRadialMenu radialMenu;
+    [SerializeField] GameObject pauseMenu;
 
-        // We dont want gravity since technically down in unity is at the bottom of the screen
-        rb.gravityScale = 0f;
+    public InventoryItem selectedItem;
 
-        // Initialise stats
-        Health = MaxHealth;
-        Stamina = MaxStamina;
-        Mana = MaxMana;
+    public CharacterInteractable onCharacterInteraction;
 
-        StartCoroutine(RegenStats());
-    }
+    /// Base character attribute overrides
 
-    IEnumerator RegenStats()
-    {
-        while (true)
+    public override int Health { 
+        get => base.Health;
+        protected set
         {
-            if (StaminaRegenTimer <= 0)
-                Stamina += StaminaRegentAmount;
+            base.Health = value;
+            HealthBar.value = (float)Health / (float)MaxHealth;
 
-            yield return new WaitForSeconds(0.1f);
         }
-
     }
 
-    private void Update()
+    public override int Stamina { 
+        get => base.Stamina;
+        protected set 
+        { 
+            base.Stamina = value; 
+            StaminaBar.value = (float)Stamina / (float)MaxStamina;
+        }
+    }
+
+    public override int Mana { 
+        get => base.Mana;
+        protected set
+        {
+            base.Mana = value;
+            ManaBar.value = (float)Mana / (float)MaxMana;
+        }
+    }
+
+    public override int MaxHealth { 
+        get => base.MaxHealth;
+        protected set
+        {
+            base.MaxHealth = value;
+            HealthBar.value = (float)Health / (float)MaxHealth;
+        }
+    }
+
+    public override int MaxStamina 
+    { 
+        get => base.MaxStamina;
+        protected set
+        {
+            base.MaxStamina = value;
+            StaminaBar.value = (float)Stamina / (float)MaxStamina;
+        }
+    }
+
+    public override int MaxMana { 
+        get => base.MaxMana;
+        protected set
+        {
+            base.MaxMana = value;
+            ManaBar.value = (float)Mana / (float)MaxMana;
+        }
+    }
+
+
+    protected override bool Stunned { 
+        get => base.Stunned;
+        set
+        {
+            base.Stunned = value;
+            CanMove = !value;
+        }
+    }
+
+    // Start is called before the first frame update
+    protected override void Start()
     {
-        StaminaRegenTimer -= Time.deltaTime;
+        base.Start();
+        lookAtMouse = GetComponent<LookAtMouse>();
+    }
+
+    protected override void Update()
+    {
+        base.Update();
         if (Target != null)
             TargetGraphic.transform.position = Target.transform.position;
         else
@@ -154,16 +126,19 @@ public class CharacterMovement : MonoBehaviour
     {
         if (CanMove && attackStage == 0)
             rb.velocity = movementVelocity * MovementSpeed;
+
+        animator.SetFloat("MovementScale", rb.velocity.magnitude / MovementSpeed);
     }
 
     public void Move(InputAction.CallbackContext context)
     {
-        if (context.performed && CanMove)
+
+        if (context.started && pauseMenu.activeInHierarchy)
+            pauseMenu.GetComponentInChildren<InventoryListMenu>().SelectItem(context.ReadValue<Vector2>());
+        else if (context.performed && !pauseMenu.activeInHierarchy)
             movementVelocity = context.ReadValue<Vector2>();
         else 
             movementVelocity = Vector2.zero;
-
-        animator.SetFloat("MovementScale", movementVelocity.magnitude);
     }
 
     public void Roll(InputAction.CallbackContext context)
@@ -198,23 +173,26 @@ public class CharacterMovement : MonoBehaviour
         StartCoroutine(Stun(0.5f));
     }
 
-    IEnumerator Stun(float time)
-    {
-        CanMove = false;
-        rb.velocity = Vector2.zero;
-        yield return new WaitForSeconds(time);
-        CanMove = true;
-    }
-
     public void Attack(InputAction.CallbackContext context)
     {
-        if (QueueAttack && Stamina >= 10 && context.started && CanMove)
+        if (context.started)
         {
-            attackStage++;
-            animator.SetInteger("AttackStage", attackStage);
-            QueueAttack = false;
-            Stamina -= 10;
-            rb.velocity = movementVelocity * MovementSpeed;
+            if (pauseMenu.activeInHierarchy)
+            {
+                ListMenu listMenu = pauseMenu.GetComponentInChildren<ListMenu>();
+                if (listMenu.IsSubmenuOpen())
+                    listMenu.CloseSubmenu();
+                else
+                    listMenu.OpenSubmenu();
+            }
+            else if (QueueAttack && Stamina >= 10 && CanMove)
+            {
+                attackStage++;
+                animator.SetInteger("AttackStage", attackStage);
+                QueueAttack = false;
+                Stamina -= 10;
+                rb.velocity = movementVelocity * MovementSpeed;
+            }
         }
     }
     public void ResetAttackStage() 
@@ -263,14 +241,22 @@ public class CharacterMovement : MonoBehaviour
 
             targetWeightPair.Sort(new KeyValuePairComparer<Transform, float>());
             Target = targetWeightPair[0].Key;
+            TargetGraphic.SetActive(true);
         }
         else
+        {
             Target = null;
+            TargetGraphic.SetActive(false);
+        }
     }
 
 
     public void SwitchTarget(InputAction.CallbackContext context)
     {
+        // If we're using our radial menu, then we want to use the right stick for manouvering the radial menu
+        if (!context.canceled && radialMenu.Open)
+            radialMenu.SelectItem(context.ReadValue<Vector2>());
+
         if (!context.started)
             return;
 
@@ -320,5 +306,48 @@ public class CharacterMovement : MonoBehaviour
     {
         animator.SetBool("CastAbility", false);
         CanMove = true;
+    }
+
+    public void InventoryRadialMenu(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            radialMenu.Display();
+
+        if (context.canceled)
+            radialMenu.Close();
+    }
+
+    public void UseItem(InputAction.CallbackContext context)
+    {
+        if (context.performed && inventory.Has(selectedItem))
+        {
+            inventory.Use(selectedItem);
+            if (!inventory.Has(selectedItem))
+            {
+                quickbar.Remove(selectedItem);
+            }
+        }
+    }
+
+    public void Interact(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            onCharacterInteraction?.Invoke(this);
+        }
+    }
+
+    public void TogglePauseMenu(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
+            pauseMenu.GetComponentInChildren<ListMenu>().Display();
+        }
+    }
+
+    protected override void Die()
+    {
+        Debug.Log("Player dead");
     }
 }

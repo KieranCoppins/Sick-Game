@@ -7,7 +7,6 @@ using UnityEngine;
 /// </summary>
 public class A_MoveTowards : Action
 {
-    Transform target;
     Vector2 desiredPosition;
 
     public A_MoveTowards() : base()
@@ -18,14 +17,13 @@ public class A_MoveTowards : Action
     public override void Initialise(BaseMob mob)
     {
         base.Initialise(mob);
-        target = GameObject.FindGameObjectWithTag("Player").transform; // TODO make the target a parameter so we can define different targets
     }
 
     public override IEnumerator Execute()
     {
-        while (mob.HasLineOfSight(target.position))
+        while (mob.HasLineOfSight(mob.Target.position))
         {
-            desiredPosition = target.position;
+            desiredPosition = mob.Target.position;
             Vector2 dir = mob.GetMovementVector(desiredPosition);
             if ((mob.debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
             {

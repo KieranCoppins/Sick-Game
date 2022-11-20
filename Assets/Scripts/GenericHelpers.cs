@@ -5,6 +5,10 @@ using UnityEngine;
 // A class of static generic helpers that help with dealing with generics
 public static class GenericHelpers
 {
+    public static readonly System.Reflection.BindingFlags getFieldFlags = System.Reflection.BindingFlags.Default
+        | System.Reflection.BindingFlags.Public
+        | System.Reflection.BindingFlags.NonPublic
+        | System.Reflection.BindingFlags.Instance;
     /// <summary>
     /// Check if type toCheck is derived from generic where generic is an unbound generic class
     /// </summary>
@@ -43,4 +47,11 @@ public static class GenericHelpers
         }
         return type;
     }
+}
+
+public enum Operators
+{
+    LessThan,
+    GreaterThan,
+    EqualTo
 }

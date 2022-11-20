@@ -90,8 +90,6 @@ public class DecisionTreeView : GraphView
                 string pathString = "";
                 while (rootBaseType != null && rootBaseType != typeof(DecisionTreeEditorNode))
                 {
-                    Debug.Log(rootBaseType.FullName);
-                    Debug.Log(rootBaseType.Name);
                     if (rootBaseType.IsGenericType && rootBaseType.GetGenericTypeDefinition() == typeof(Function<>))
                         pathString = $"Function Node/" + pathString;
                     else

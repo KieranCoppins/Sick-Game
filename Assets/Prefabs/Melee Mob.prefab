@@ -740,6 +740,7 @@ GameObject:
   - component: {fileID: 4066067176629763391}
   - component: {fileID: 7450013482277409414}
   - component: {fileID: 5711981527638540425}
+  - component: {fileID: 7624387157773597081}
   m_Layer: 0
   m_Name: Melee Mob
   m_TagString: Mob
@@ -808,19 +809,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9f4000d4051fc4fbd30be31ba30963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onTakeDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  onHeal:
-    m_PersistentCalls:
-      m_Calls: []
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
+  _movementSpeed: 3
+  rollSpeed: 5
   _maxHealth: 10
-  movementSpeed: 2
+  _maxStamina: 0
+  StaminaRegenCooldown: 0
+  StaminaRegentAmount: 0
+  _maxMana: 0
+  mobName: 
+  decisionTree: {fileID: 11400000, guid: 50c4d2d06b3a5384e83d07845cdd114f, type: 2}
   PathfindingComponent: {fileID: 0}
-  rb: {fileID: 0}
   debugFlags: 0
   _meleeRange: 2
   _meleeDamage: 10
@@ -937,6 +935,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!114 &7624387157773597081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3856485209610614438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920d8ea184ebb8d4090997fc53145979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3959359620135539142
 GameObject:
   m_ObjectHideFlags: 0
