@@ -566,7 +566,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icons_22
+      name: Stamina
       rect:
         serializedVersion: 2
         x: 72
@@ -587,7 +587,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icons_23
+      name: Health
       rect:
         serializedVersion: 2
         x: 80
@@ -608,7 +608,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icons_24
+      name: Mana
       rect:
         serializedVersion: 2
         x: 88
@@ -662,14 +662,13 @@ TextureImporter:
     nameFileIdTable:
       Icons_5: 320023221
       Icons_14: 1975500857
-      Icons_24: 651805389
+      Mana: 651805389
+      Health: 1959293380
       Icons_20: 327923183
       Icon_H: -748590915
       Icon_P: 247299105
       Icons_11: -323019889
       Icons_10: 1575245446
-      Icons_23: 1959293380
-      Icons_22: 507768095
       Icons_25: -895841148
       Icon_F: 1200733920
       Icons_13: 138019680
@@ -679,6 +678,7 @@ TextureImporter:
       Icons_12: 725346812
       Icons_4: 314434970
       Icons_6: -1990402446
+      Stamina: 507768095
       Icon_S: -815055954
       Icons_2: 696006076
       Icons_7: 1709008715

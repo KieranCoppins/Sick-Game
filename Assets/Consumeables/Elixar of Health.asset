@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ff84f55c88832428ef59f86e97f4d2, type: 3}
   m_Name: Elixar of Health
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 1959293380, guid: 5aa0e3dc593636849b2bdf4c991df64d, type: 3}
   StatusEffects:
   - {fileID: 11400000, guid: f94296ad018720a498eb6de9e0a0b8e2, type: 2}

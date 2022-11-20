@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ff84f55c88832428ef59f86e97f4d2, type: 3}
   m_Name: Elixar of Stamina
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 507768095, guid: 5aa0e3dc593636849b2bdf4c991df64d, type: 3}
   StatusEffects:
   - {fileID: 11400000, guid: 9d9192dbf0362064ea5906f92adb6772, type: 2}

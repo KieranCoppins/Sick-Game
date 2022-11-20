@@ -12,7 +12,6 @@ public abstract class RadialMenu : MonoBehaviour
     List<GameObject> openOptions = new List<GameObject>();
     [SerializeField] GameObject menuOptionPrefab;
 
-    [SerializeField] TextMeshProUGUI titleLabel;
     [SerializeField] TextMeshProUGUI descriptionLabel;
 
     protected RadialMenuOption selectedOption;
@@ -72,8 +71,7 @@ public abstract class RadialMenu : MonoBehaviour
     /// <param name="option"></param>
     public virtual void SelectItem(RadialMenuOption option)
     {
-        titleLabel.text = option.label;
-        descriptionLabel.text = option.description;
+        descriptionLabel.text = $"<style=\"H1\">{option.label}</style>\n{option.description}";
         selectedOption = option;
     }
 
