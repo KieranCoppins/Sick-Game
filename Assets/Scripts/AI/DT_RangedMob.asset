@@ -62,6 +62,29 @@ MonoBehaviour:
     height: 77
   mob: {fileID: 0}
   item: {fileID: 11400000, guid: d2bfb97dbfcec1b41bf1867ed51d1012, type: 2}
+--- !u!114 &-7177066275393696203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88d7021ba7ce534448f5fffacec31f34, type: 3}
+  m_Name: D_Condition
+  m_EditorClassIdentifier: 
+  guid: edd2312de6f479447820af86e403f4e4
+  positionalData:
+    serializedVersion: 2
+    x: -602.54083
+    y: -10.999992
+    width: 158
+    height: 101
+  mob: {fileID: 0}
+  trueNode: {fileID: 2886043550655442086}
+  falseNode: {fileID: 0}
+  Condition: {fileID: -1018918571556626022}
 --- !u!114 &-3369003342890522012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +155,26 @@ MonoBehaviour:
   trueNode: {fileID: 7084128849031132433}
   falseNode: {fileID: 648282896621251169}
   attackRange: 6
+--- !u!114 &-1018918571556626022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e769246224ddb478e62acf2c7919ff, type: 3}
+  m_Name: C_HasTarget
+  m_EditorClassIdentifier: 
+  guid: 2b939ce6b7594034e9db3504bfbd3126
+  positionalData:
+    serializedVersion: 2
+    x: -744
+    y: 65.99997
+    width: 120
+    height: 77
+  mob: {fileID: 0}
 --- !u!114 &-242621378756389807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +225,9 @@ MonoBehaviour:
   - {fileID: -242621378756389807}
   - {fileID: -2484423893942029080}
   - {fileID: -8365475868609450945}
+  - {fileID: -7177066275393696203}
+  - {fileID: -1018918571556626022}
+  - {fileID: 7897397628156961917}
   inputs:
   - inputGUID: 8303d485f42aad44d89f635f4491e74a
     inputPortName: main
@@ -203,10 +249,6 @@ MonoBehaviour:
     inputPortName: main
     outputGUID: 68a618ddfbe33a942938aba85219166e
     outputPortName: TRUE
-  - inputGUID: 68a618ddfbe33a942938aba85219166e
-    inputPortName: main
-    outputGUID: bbaf843feec78ff478c9b682e007f39f
-    outputPortName: main
   - inputGUID: ecabc0fdffab05045aa308c6c418eb70
     inputPortName: A
     outputGUID: 486f9f0d9ab3976438a1eafc3ae88dde
@@ -234,6 +276,18 @@ MonoBehaviour:
   - inputGUID: 4f893894630ccb7429dae747c5bd0e1e
     inputPortName: main
     outputGUID: b9b185fc332341a41bdd7a6938809ca4
+    outputPortName: TRUE
+  - inputGUID: edd2312de6f479447820af86e403f4e4
+    inputPortName: Condition
+    outputGUID: 2b939ce6b7594034e9db3504bfbd3126
+    outputPortName: Output
+  - inputGUID: edd2312de6f479447820af86e403f4e4
+    inputPortName: main
+    outputGUID: bbaf843feec78ff478c9b682e007f39f
+    outputPortName: main
+  - inputGUID: 68a618ddfbe33a942938aba85219166e
+    inputPortName: main
+    outputGUID: edd2312de6f479447820af86e403f4e4
     outputPortName: TRUE
 --- !u!114 &648282896621251169
 MonoBehaviour:
@@ -368,6 +422,28 @@ MonoBehaviour:
     height: 77
   mob: {fileID: 0}
   ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
+--- !u!114 &7897397628156961917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb26ca2680039d54fa3e8e0503007f41, type: 3}
+  m_Name: A_Wander
+  m_EditorClassIdentifier: 
+  guid: 723711a914babd14e892fb71493ba560
+  positionalData:
+    serializedVersion: 2
+    x: -369.57263
+    y: -292.008
+    width: 369.57263
+    height: 292.008
+  mob: {fileID: 0}
+  wanderRange: 0
+  wanderSpeed: 0
 --- !u!114 &7962675181092683881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,9 +459,9 @@ MonoBehaviour:
   guid: bbaf843feec78ff478c9b682e007f39f
   positionalData:
     serializedVersion: 2
-    x: -583.92
-    y: 0
+    x: -846.5408
+    y: -10.999992
     width: 103
     height: 77
   mob: {fileID: 0}
-  child: {fileID: 2886043550655442086}
+  child: {fileID: -7177066275393696203}

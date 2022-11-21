@@ -13,10 +13,14 @@ public class C_CancelPathfinding : F_Condition
 
     public override bool Invoke()
     {
-        Vector2 playerPos = mob.Target.position;
-        bool shouldCancel = mob.HasLineOfSight(playerPos) || Vector2.Distance(prevPlayerPos, playerPos) > 3f;
-        if (shouldCancel)
-            prevPlayerPos = playerPos;
-        return shouldCancel;
+        if (mob.Target != null)
+        {
+            Vector2 playerPos = mob.Target.position;
+            bool shouldCancel = mob.HasLineOfSight(playerPos) || Vector2.Distance(prevPlayerPos, playerPos) > 3f;
+            if (shouldCancel)
+                prevPlayerPos = playerPos;
+            return shouldCancel;
+        }
+        return true;
     }
 }

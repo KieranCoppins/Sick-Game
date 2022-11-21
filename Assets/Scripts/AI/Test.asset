@@ -15,13 +15,13 @@ MonoBehaviour:
   guid: f9984c0d4466e5541ba79d757599033d
   positionalData:
     serializedVersion: 2
-    x: 313
-    y: -22
-    width: -313
-    height: 22
+    x: 224
+    y: 0
+    width: 104
+    height: 77
   mob: {fileID: 0}
-  wanderRange: 0
-  wanderSpeed: 0
+  wanderRange: 7
+  wanderSpeed: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,7 +38,11 @@ MonoBehaviour:
   nodes:
   - {fileID: 6430198210974327107}
   - {fileID: -5107250109344091096}
-  inputs: []
+  inputs:
+  - inputGUID: f9984c0d4466e5541ba79d757599033d
+    inputPortName: main
+    outputGUID: d20b2d9ec7a985d4090dc1b598dedc05
+    outputPortName: main
 --- !u!114 &6430198210974327107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,4 +63,4 @@ MonoBehaviour:
     width: 0
     height: 0
   mob: {fileID: 0}
-  child: {fileID: 0}
+  child: {fileID: -5107250109344091096}

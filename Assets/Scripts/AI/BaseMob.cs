@@ -104,9 +104,6 @@ public abstract class BaseMob : BaseCharacter
             movementDirections.Add((Quaternion.AngleAxis(angle * i, Vector3.back) * dir).normalized);
         }
 
-        // Default target to player - TODO in the future we can have perceptions so when the mob sees an enemy it will set it as its target
-        Target = GameObject.FindGameObjectWithTag("Player").transform;
-
         // Initialise our decision tree
         decisionTree = decisionTree.Clone(this.name);
         decisionTree.Initialise(this);
@@ -146,7 +143,7 @@ public abstract class BaseMob : BaseCharacter
             Debug.DrawRay(lowerStart, position - lowerStart, Color.magenta);
             Debug.DrawRay(upperStart, position - upperStart, Color.magenta);
         }
-        if (lowerHit.collider.CompareTag("Player") && upperHit.collider.CompareTag("Player"))
+        if ((Vector2)lowerHit.collider.transform.position == position && (Vector2)upperHit.collider.transform.position == position)
             return true;
 
         return false;
@@ -242,6 +239,28 @@ public abstract class BaseMob : BaseCharacter
     {
         onDeath?.Invoke();
         Destroy(this.gameObject);
+    }
+
+    protected virtual void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Target == null)
+        {
+            BaseCharacter character = collision.GetComponent<BaseCharacter>();
+            // If we dont have a target and the character is of a different faction and we can see them
+            if (character != null && character.Faction != Faction && HasLineOfSight(collision.transform.position))
+            {
+                Target = character.transform;
+            }
+        }
+
+    }
+
+    protected virtual void OnTriggerExit2D(Collider2D collision)
+    {
+        if (Target != null && collision.transform == Target)
+        {
+            Target = null;
+        }
     }
 }
 

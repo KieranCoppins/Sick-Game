@@ -41,16 +41,18 @@ public class EnvironmentQuerySystem : DecisionTreeEditorNode
         // Get the target for this given eqs system
         switch (Target)
         {
-            case (EQSTarget.PLAYER):
-                target = GameObject.FindGameObjectWithTag("Player").transform;
+            case (EQSTarget.TARGET):
+                target = mob.Target;
                 break;
             case (EQSTarget.CALLER):
-                target = caller.transform;
+                target = mob.transform;
                 break;
             default:
                 Debug.LogError("EQS system does not have a valid EQSTarget");
                 return Vector2.zero;
         }
+
+        if (target== null) { return Vector2.zero; }
 
         // Convert our float vector3 to a int vector 3 by flooring out ints to get the right tile coord
         Vector3Int pos = new Vector3Int(Mathf.FloorToInt(target.position.x), Mathf.FloorToInt(target.position.y));
@@ -122,8 +124,9 @@ public abstract class Rule : ScriptableObject
         Vector3 pos;
         switch (target)
         {
-            case EQSTarget.PLAYER:
-                pos = GameObject.FindGameObjectWithTag("Player").transform.position;
+            case EQSTarget.TARGET:
+                BaseMob mob = caller.GetComponent<BaseMob>();
+                pos = mob.Target.position;
                 break;
             case EQSTarget.CALLER:
                 pos = caller.transform.position;
@@ -138,6 +141,6 @@ public abstract class Rule : ScriptableObject
 
 public enum EQSTarget
 {
-    PLAYER,
+    TARGET,
     CALLER
 }
