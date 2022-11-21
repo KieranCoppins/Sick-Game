@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Factions
+{
+    Ally,
+    Enemy
+}
+
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(InventorySystem))]
 [DisallowMultipleComponent]
@@ -14,6 +20,10 @@ public abstract class BaseCharacter : MonoBehaviour
     }
     [SerializeField] int _movementSpeed;
     [SerializeField] protected float rollSpeed = 5f;
+
+    public Factions Faction { get { return _Faction; } protected set { _Faction = value; } }
+    [SerializeField] Factions _Faction;
+
     public virtual int MaxHealth { get { return _maxHealth; } protected set { _maxHealth = value; Health = Health; } }
     [Header("Stats")]
     [SerializeField] int _maxHealth;

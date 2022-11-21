@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System;
+using static UnityEngine.GraphicsBuffer;
 
 [Flags]
 public enum DebugFlags
@@ -189,6 +190,36 @@ public abstract class BaseMob : BaseCharacter
     /// <param name="target"></param>
     /// <returns></returns>
     protected abstract float MoveAround(Vector2 targetDir, Vector2 dir, Vector2 target, bool moveStraight);
+
+    public Vector2 WanderVector(Vector2 originPoint, float range)
+    {
+        Vector2 returnVector = (originPoint - (Vector2)transform.position).normalized;
+        List<KeyValuePair<Vector2, float>> directionWeights = new List<KeyValuePair<Vector2, float>>();
+
+        float distanceFromOrigin = Vector2.Distance(originPoint, transform.position);
+
+        foreach(Vector2 dir in movementDirections)
+        {
+            // Our shaping function for wandering around an origin point
+            float weight = (Vector2.Dot(dir, returnVector) * (distanceFromOrigin / range)) + (Vector2.Dot(dir, rb.velocity.normalized) + (1.0f - Mathf.PerlinNoise(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f))));
+            KeyValuePair<Vector2, float> pair = new KeyValuePair<Vector2, float>(dir, weight);
+            directionWeights.Add(pair);
+            Debug.DrawRay(transform.position, dir * weight, Color.blue);
+        }
+
+        directionWeights.Sort(new KeyValuePairComparer<Vector2, float>());
+
+        foreach (KeyValuePair<Vector2, float> pair in directionWeights)
+        {
+            // Check to see if moving in this direction will cause us to hit an obstruction - we dont want this
+            RaycastHit2D hit = Physics2D.CircleCast((Vector2)transform.position, .5f, pair.Key, 1f);
+            if (!hit) return pair.Key;
+            if ((debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
+                Debug.DrawRay((Vector2)transform.position, pair.Key * 2f, Color.magenta);
+        }
+
+        return Vector2.zero;
+    }
 
     /// <summary>
     /// Finds a new action in the decision tree and adds it to the action manager every 100ms. Automatically starts running at runtime
