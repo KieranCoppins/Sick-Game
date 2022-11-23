@@ -20,6 +20,7 @@ MonoBehaviour:
     width: 107
     height: 77
   mob: {fileID: 0}
+  _flags: 1
   item: {fileID: 11400000, guid: d2bfb97dbfcec1b41bf1867ed51d1012, type: 2}
 --- !u!114 &-8365475868609450945
 MonoBehaviour:
@@ -83,8 +84,31 @@ MonoBehaviour:
     height: 101
   mob: {fileID: 0}
   trueNode: {fileID: 2886043550655442086}
-  falseNode: {fileID: 0}
+  falseNode: {fileID: -4083986176518393918}
   Condition: {fileID: -1018918571556626022}
+--- !u!114 &-4083986176518393918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88d7021ba7ce534448f5fffacec31f34, type: 3}
+  m_Name: D_Condition
+  m_EditorClassIdentifier: 
+  guid: 5781910ab0eb84d41b8780f265dbbe5f
+  positionalData:
+    serializedVersion: 2
+    x: -395
+    y: -206
+    width: 158
+    height: 101
+  mob: {fileID: 0}
+  trueNode: {fileID: 7087621849069156641}
+  falseNode: {fileID: 7897397628156961917}
+  Condition: {fileID: 0}
 --- !u!114 &-3369003342890522012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +252,9 @@ MonoBehaviour:
   - {fileID: -7177066275393696203}
   - {fileID: -1018918571556626022}
   - {fileID: 7897397628156961917}
+  - {fileID: -4083986176518393918}
+  - {fileID: 7087621849069156641}
+  - {fileID: 3989429699906073092}
   inputs:
   - inputGUID: 8303d485f42aad44d89f635f4491e74a
     inputPortName: main
@@ -289,6 +316,18 @@ MonoBehaviour:
     inputPortName: main
     outputGUID: edd2312de6f479447820af86e403f4e4
     outputPortName: TRUE
+  - inputGUID: 5781910ab0eb84d41b8780f265dbbe5f
+    inputPortName: main
+    outputGUID: edd2312de6f479447820af86e403f4e4
+    outputPortName: FALSE
+  - inputGUID: 723711a914babd14e892fb71493ba560
+    inputPortName: main
+    outputGUID: 5781910ab0eb84d41b8780f265dbbe5f
+    outputPortName: FALSE
+  - inputGUID: f5510edd14a0bd44ca08196f57c8715f
+    inputPortName: main
+    outputGUID: 5781910ab0eb84d41b8780f265dbbe5f
+    outputPortName: TRUE
 --- !u!114 &648282896621251169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +348,7 @@ MonoBehaviour:
     width: 141
     height: 77
   mob: {fileID: 0}
+  _flags: -1
 --- !u!114 &2873401398325037708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,6 +369,7 @@ MonoBehaviour:
     width: 187
     height: 125
   mob: {fileID: 0}
+  _flags: -1
   destinationQuery: {fileID: 4733141747619518986}
   CancelPathfindingCondition: {fileID: 5440893340888606005}
 --- !u!114 &2886043550655442086
@@ -354,6 +395,26 @@ MonoBehaviour:
   trueNode: {fileID: -8369162758046403060}
   falseNode: {fileID: -2484423893942029080}
   Condition: {fileID: -242621378756389807}
+--- !u!114 &3989429699906073092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87fb9e4796b9a84793f1ee01af6cc6f, type: 3}
+  m_Name: C_HasIdlePath
+  m_EditorClassIdentifier: 
+  guid: e88f040f8c166a94298922eb4845c878
+  positionalData:
+    serializedVersion: 2
+    x: -546.1925
+    y: -183.82748
+    width: 546.1925
+    height: 183.82748
+  mob: {fileID: 0}
 --- !u!114 &4733141747619518986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,7 +482,31 @@ MonoBehaviour:
     width: 121
     height: 77
   mob: {fileID: 0}
+  _flags: 2
   ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
+--- !u!114 &7087621849069156641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1427d3405bde1b46a6bcbe79f1aad39, type: 3}
+  m_Name: A_FollowPath
+  m_EditorClassIdentifier: 
+  guid: f5510edd14a0bd44ca08196f57c8715f
+  positionalData:
+    serializedVersion: 2
+    x: -153.99997
+    y: -282.99997
+    width: 123
+    height: 77
+  mob: {fileID: 0}
+  _flags: 4
+  walkSpeed: 1
+  waitTime: 2
 --- !u!114 &7897397628156961917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,13 +522,14 @@ MonoBehaviour:
   guid: 723711a914babd14e892fb71493ba560
   positionalData:
     serializedVersion: 2
-    x: -369.57263
-    y: -292.008
-    width: 369.57263
-    height: 292.008
+    x: -153.99997
+    y: -182.00002
+    width: 104
+    height: 77
   mob: {fileID: 0}
-  wanderRange: 0
-  wanderSpeed: 0
+  _flags: 4
+  wanderRange: 5
+  wanderSpeed: 1
 --- !u!114 &7962675181092683881
 MonoBehaviour:
   m_ObjectHideFlags: 0

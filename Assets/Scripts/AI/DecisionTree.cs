@@ -138,7 +138,10 @@ public abstract class Action : DecisionTreeNode
         Interruptable = 1 << 2,
     }
 
-    public ActionFlags Flags { get; protected set; }
+    public ActionFlags Flags { get { return _flags; } protected set { _flags = value; } }
+    [EnumFlags]
+    [SerializeField]
+    ActionFlags _flags;
 
     public Action()
     {

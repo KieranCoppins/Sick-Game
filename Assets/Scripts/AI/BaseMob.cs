@@ -32,6 +32,8 @@ public abstract class BaseMob : BaseCharacter
     [Header("AI")]
     [Tooltip("The decision tree for this mob to run")]
     [SerializeField] protected DecisionTree decisionTree;
+    [Tooltip("Nodes of a path that the AI will follow if they are out of combat")]
+    public Transform[] IdlePathNodes;
 
     [HideInInspector] public PathfindingComponent PathfindingComponent;
 
@@ -253,14 +255,6 @@ public abstract class BaseMob : BaseCharacter
             }
         }
 
-    }
-
-    protected virtual void OnTriggerExit2D(Collider2D collision)
-    {
-        if (Target != null && collision.transform == Target)
-        {
-            Target = null;
-        }
     }
 }
 
