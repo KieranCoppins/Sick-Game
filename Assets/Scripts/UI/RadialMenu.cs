@@ -24,6 +24,9 @@ public abstract class RadialMenu : MonoBehaviour
     {
         menuOptions.Clear();
         LoadData();
+        if (menuOptions.Count == 0)
+            return;
+
         Open = true;
         gameObject.SetActive(true);
         float radianSeperation = (Mathf.PI * 2) / menuOptions.Count;
@@ -43,8 +46,11 @@ public abstract class RadialMenu : MonoBehaviour
 
     public virtual void Close()
     {
-        Open = false;
-        StartCoroutine(CloseAnimated());
+        if (Open)
+        {
+            Open = false;
+            StartCoroutine(CloseAnimated());
+        }
     }
 
     IEnumerator CloseAnimated()

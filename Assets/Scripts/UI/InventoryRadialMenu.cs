@@ -21,7 +21,10 @@ public class InventoryRadialMenu : RadialMenu
 
     public override void Close()
     {
-        character.selectedItem = character.quickbar[menuOptions.IndexOf(selectedOption)];
-        base.Close();
+        if (Open)
+        {
+            character.selectedItem = character.quickbar[menuOptions.IndexOf(selectedOption)];
+            base.Close();
+        }
     }
 }

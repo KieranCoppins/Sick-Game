@@ -59,13 +59,15 @@ public class A_CastAbility : A_Attack
                 CanCast = true;
                 yield return null;
             }
+            else
+            {
+                // Recalculate the predicted movement at the last second since the player may have changed direction during our casting time
+                predictedLocation = PredictLocation();
+                predictedDirection = predictedLocation - (Vector2)mob.transform.position;
 
-            // Recalculate the predicted movement at the last second since the player may have changed direction during our casting time
-            predictedLocation = PredictLocation();
-            predictedDirection = predictedLocation - (Vector2)mob.transform.position;
-
-            ability.Cast(mob.transform.position, predictedDirection, mob.Target);
-            mob.StartCoroutine(Cooldown());
+                ability.Cast(mob.transform.position, predictedDirection, mob.Target);
+                mob.StartCoroutine(Cooldown());
+            }
         }
 
         yield return null;
