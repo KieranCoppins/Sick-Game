@@ -1,0 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class #SCRIPTNAME# : Decision
+{
+    public override void Initialise(BaseMob mob)
+    {
+        base.Initialise(mob);
+    }
+
+    public override DecisionTreeNode GetBranch()
+    {
+        #NOTRIM#
+    }
+}
