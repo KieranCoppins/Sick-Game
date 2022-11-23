@@ -203,7 +203,6 @@ public abstract class BaseMob : BaseCharacter
             float weight = (Vector2.Dot(dir, returnVector) * (distanceFromOrigin / range)) + (Vector2.Dot(dir, rb.velocity.normalized) + (1.0f - Mathf.PerlinNoise(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f))));
             KeyValuePair<Vector2, float> pair = new KeyValuePair<Vector2, float>(dir, weight);
             directionWeights.Add(pair);
-            Debug.DrawRay(transform.position, dir * weight, Color.blue);
         }
 
         directionWeights.Sort(new KeyValuePairComparer<Vector2, float>());

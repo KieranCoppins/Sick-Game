@@ -25,7 +25,6 @@ public class A_FollowPath : Action
             while (distance > 0.3f)
             {
                 Vector2 dir = mob.GetMovementVector(mob.IdlePathNodes[currentWaypoint].position, true);
-                Debug.Log(dir);
                 mob.rb.velocity = dir * walkSpeed;
                 distance = Vector2.Distance(mob.transform.position, mob.IdlePathNodes[currentWaypoint].position);
                 yield return null;
