@@ -21,7 +21,7 @@ public class A_MoveTowards : Action
 
     public override IEnumerator Execute()
     {
-        while (mob.HasLineOfSight(mob.Target.position))
+        while (mob.Target != null && mob.HasLineOfSight(mob.Target.position))
         {
             desiredPosition = mob.Target.position;
             Vector2 dir = mob.GetMovementVector(desiredPosition);

@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 5877684952458030284}
   - component: {fileID: 8770602457837502147}
   - component: {fileID: 7558836245570500217}
+  - component: {fileID: 2663242326529640192}
   m_Layer: 0
   m_Name: Ranged Mob
   m_TagString: Mob
@@ -223,6 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementSpeed: 3
   rollSpeed: 5
+  _Faction: 1
   _maxHealth: 20
   _maxStamina: 10
   StaminaRegenCooldown: 1
@@ -357,6 +359,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 920d8ea184ebb8d4090997fc53145979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &2663242326529640192
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249532263326025964}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 10
 --- !u!1 &1346357473782477518
 GameObject:
   m_ObjectHideFlags: 0

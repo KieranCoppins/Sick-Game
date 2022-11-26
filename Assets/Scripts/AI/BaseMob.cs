@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System;
+using static UnityEngine.GraphicsBuffer;
 
 [Flags]
 public enum DebugFlags
@@ -12,6 +13,13 @@ public enum DebugFlags
     EQS = 1 << 1,
     Combat = 1 << 2,
     DecisionTree = 1 << 3,
+}
+
+public enum CombatState
+{
+    Idle,
+    Investigate,
+    Combat
 }
 
 [RequireComponent(typeof(PathfindingComponent))]
@@ -31,6 +39,8 @@ public abstract class BaseMob : BaseCharacter
     [Header("AI")]
     [Tooltip("The decision tree for this mob to run")]
     [SerializeField] protected DecisionTree decisionTree;
+    [Tooltip("Nodes of a path that the AI will follow if they are out of combat")]
+    public Transform[] IdlePathNodes;
 
     [HideInInspector] public PathfindingComponent PathfindingComponent;
 
@@ -38,6 +48,10 @@ public abstract class BaseMob : BaseCharacter
 
     protected ActionManager actionManager;
     protected List<Vector2> movementDirections;
+
+    public Vector2 AreaOfInterest { get; set; }
+
+    public CombatState State { get; set; }
 
     [Header("DEBUG VALUES")]
     [EnumFlags]
@@ -103,8 +117,7 @@ public abstract class BaseMob : BaseCharacter
             movementDirections.Add((Quaternion.AngleAxis(angle * i, Vector3.back) * dir).normalized);
         }
 
-        // Default target to player - TODO in the future we can have perceptions so when the mob sees an enemy it will set it as its target
-        Target = GameObject.FindGameObjectWithTag("Player").transform;
+        State = CombatState.Idle;
 
         // Initialise our decision tree
         decisionTree = decisionTree.Clone(this.name);
@@ -145,7 +158,8 @@ public abstract class BaseMob : BaseCharacter
             Debug.DrawRay(lowerStart, position - lowerStart, Color.magenta);
             Debug.DrawRay(upperStart, position - upperStart, Color.magenta);
         }
-        if (lowerHit.collider.CompareTag("Player") && upperHit.collider.CompareTag("Player"))
+        if ((lowerHit.collider == null && lowerHit.collider == null) || 
+            ((Vector2)lowerHit.collider.transform.position == position && (Vector2)upperHit.collider.transform.position == position))
             return true;
 
         return false;
@@ -190,6 +204,35 @@ public abstract class BaseMob : BaseCharacter
     /// <returns></returns>
     protected abstract float MoveAround(Vector2 targetDir, Vector2 dir, Vector2 target, bool moveStraight);
 
+    public Vector2 WanderVector(Vector2 originPoint, float range)
+    {
+        Vector2 returnVector = (originPoint - (Vector2)transform.position).normalized;
+        List<KeyValuePair<Vector2, float>> directionWeights = new List<KeyValuePair<Vector2, float>>();
+
+        float distanceFromOrigin = Vector2.Distance(originPoint, transform.position);
+
+        foreach(Vector2 dir in movementDirections)
+        {
+            // Our shaping function for wandering around an origin point
+            float weight = (Vector2.Dot(dir, returnVector) * (distanceFromOrigin / range)) + (Vector2.Dot(dir, rb.velocity.normalized) + (1.0f - Mathf.PerlinNoise(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f))));
+            KeyValuePair<Vector2, float> pair = new KeyValuePair<Vector2, float>(dir, weight);
+            directionWeights.Add(pair);
+        }
+
+        directionWeights.Sort(new KeyValuePairComparer<Vector2, float>());
+
+        foreach (KeyValuePair<Vector2, float> pair in directionWeights)
+        {
+            // Check to see if moving in this direction will cause us to hit an obstruction - we dont want this
+            RaycastHit2D hit = Physics2D.CircleCast((Vector2)transform.position, .5f, pair.Key, 1f);
+            if (!hit) return pair.Key;
+            if ((debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
+                Debug.DrawRay((Vector2)transform.position, pair.Key * 2f, Color.magenta);
+        }
+
+        return Vector2.zero;
+    }
+
     /// <summary>
     /// Finds a new action in the decision tree and adds it to the action manager every 100ms. Automatically starts running at runtime
     /// </summary>
@@ -211,6 +254,29 @@ public abstract class BaseMob : BaseCharacter
     {
         onDeath?.Invoke();
         Destroy(this.gameObject);
+    }
+
+    public void AlertListener(Vector2 origin)
+    {
+        if (State == CombatState.Idle)
+        {
+            AreaOfInterest = origin;
+            State = CombatState.Investigate;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.isTrigger || State == CombatState.Combat)
+            return;
+
+        BaseCharacter character = collision.GetComponent<BaseCharacter>();
+        if (character != null && character.Faction != Faction && HasLineOfSight(character.transform.position))
+        {
+            State = CombatState.Combat;
+            Target = collision.transform;
+            EmitAlert.Emit(transform.position, 10f);
+        }
     }
 }
 

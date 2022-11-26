@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class #SCRIPTNAME# : Action
+{
+    public #SCRIPTNAME#() : base()
+    {
+        #NOTRIM#
+    }
+
+    public override void Initialise(BaseMob mob)
+    {
+        base.Initialise(mob);
+    }
+
+    public override IEnumerator Execute()
+    {
+        #NOTRIM#
+    }
+}

@@ -46,14 +46,28 @@ public class A_CastAbility : A_Attack
             CanCast = false;
 
             // Whilst we are casting, we want to get the average of our player's movement vector
-            yield return new DoTaskWhilstWaitingForSeconds(() => { totalTargetVelocity += mob.Target.GetComponent<Rigidbody2D>().velocity; totalVelocityEntries += 1; }, ability.CastTime);
+            yield return new DoTaskWhilstWaitingForSeconds(() => {
+                if (mob.Target != null)
+                {
+                    totalTargetVelocity += mob.Target.GetComponent<Rigidbody2D>().velocity;
+                    totalVelocityEntries += 1;
+                }
+            }, ability.CastTime);
 
-            // Recalculate the predicted movement at the last second since the player may have changed direction during our casting time
-            predictedLocation = PredictLocation();
-            predictedDirection = predictedLocation - (Vector2)mob.transform.position;
+            if (mob.Target == null)
+            {
+                CanCast = true;
+                yield return null;
+            }
+            else
+            {
+                // Recalculate the predicted movement at the last second since the player may have changed direction during our casting time
+                predictedLocation = PredictLocation();
+                predictedDirection = predictedLocation - (Vector2)mob.transform.position;
 
-            ability.Cast(mob.transform.position, predictedDirection, mob.Target);
-            mob.StartCoroutine(Cooldown());
+                ability.Cast(mob.transform.position, predictedDirection, mob.Target);
+                mob.StartCoroutine(Cooldown());
+            }
         }
 
         yield return null;

@@ -28,6 +28,10 @@ public class DebugUIHandler : MonoBehaviour
 
         currentAction.text = "Current Action(s): " + mob.GetCurrentActionText();
         actionQueue.text = "Action Queue: \n" + mob.GetActionQueueText();
-        hasLOS.text = "LoS: " + mob.HasLineOfSight(GameObject.FindGameObjectWithTag("Player").transform.position);
+        if (mob.Target != null)
+            hasLOS.text = "LoS: " + mob.HasLineOfSight(mob.Target.position);
+        else
+            hasLOS.text = "LoS: null";
+
     }
 }

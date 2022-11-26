@@ -61,25 +61,6 @@ public class DecisionTree : ScriptableObject
         return tree;
     }
 
-
-    /// Some protected functions that maybe useful for all decision making
-
-    protected virtual bool ShouldMoveToPlayer()
-    {
-        Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        if (!mob.HasLineOfSight(playerPos))
-        {
-            playerPrevPos = playerPos;
-            return true;
-        }
-        return false;
-    }
-    protected virtual bool CancelPathfinding()
-    {
-        Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        return mob.HasLineOfSight(playerPos) || Vector2.Distance(playerPrevPos, playerPos) > 0.5f;
-    }
-
     /// Editor Functions
 
     public DecisionTreeEditorNode CreateNode(System.Type type, Vector2 creationPos)
@@ -157,7 +138,10 @@ public abstract class Action : DecisionTreeNode
         Interruptable = 1 << 2,
     }
 
-    public ActionFlags Flags { get; protected set; }
+    public ActionFlags Flags { get { return _flags; } protected set { _flags = value; } }
+    [EnumFlags]
+    [SerializeField]
+    ActionFlags _flags;
 
     public Action()
     {
@@ -240,7 +224,7 @@ public abstract class Decision : DecisionTreeNode
 }
 
 // A base function node that can return a given value
-public abstract class Function<T> : DecisionTreeEditorNode where T : System.IConvertible
+public abstract class Function<T> : DecisionTreeEditorNode
 {
     public Function()
     {
