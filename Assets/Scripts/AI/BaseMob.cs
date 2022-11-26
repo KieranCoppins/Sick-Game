@@ -51,7 +51,7 @@ public abstract class BaseMob : BaseCharacter
 
     public Vector2 AreaOfInterest { get; set; }
 
-    public CombatState State;
+    public CombatState State { get; set; }
 
     [Header("DEBUG VALUES")]
     [EnumFlags]

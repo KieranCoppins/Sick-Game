@@ -38,8 +38,6 @@ public class EnvironmentQuerySystem : DecisionTreeEditorNode
 
         Transform target;
 
-        Debug.Log(mob);
-
         // Get the target for this given eqs system
         switch (Target)
         {
