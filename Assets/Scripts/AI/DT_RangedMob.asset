@@ -15,8 +15,8 @@ MonoBehaviour:
   guid: 75b9e629126868d4db921c694c0db2c7
   positionalData:
     serializedVersion: 2
-    x: 54.000046
-    y: -134
+    x: -708.99994
+    y: -437.55356
     width: 107
     height: 77
   mob: {fileID: 0}
@@ -37,8 +37,8 @@ MonoBehaviour:
   guid: 1982c7683e0ce434fb41beb75326c6a4
   positionalData:
     serializedVersion: 2
-    x: -117.00002
-    y: 144.99997
+    x: -879.9999
+    y: -158.55357
     width: 149
     height: 77
   mob: {fileID: 0}
@@ -57,8 +57,8 @@ MonoBehaviour:
   guid: 2be677c7176814b4e95bd2e126026791
   positionalData:
     serializedVersion: 2
-    x: -521.99994
-    y: -57.000004
+    x: -1284.9999
+    y: -360.5536
     width: 130
     height: 77
   mob: {fileID: 0}
@@ -78,13 +78,13 @@ MonoBehaviour:
   guid: edd2312de6f479447820af86e403f4e4
   positionalData:
     serializedVersion: 2
-    x: -582
-    y: 43.999977
+    x: -1344.9998
+    y: -259.55362
     width: 158
     height: 101
   mob: {fileID: 0}
   trueNode: {fileID: 2886043550655442086}
-  falseNode: {fileID: -4083986176518393918}
+  falseNode: {fileID: 4908094041304604105}
   Condition: {fileID: -1018918571556626022}
 --- !u!114 &-5922914683547421507
 MonoBehaviour:
@@ -145,8 +145,8 @@ MonoBehaviour:
   guid: 486f9f0d9ab3976438a1eafc3ae88dde
   positionalData:
     serializedVersion: 2
-    x: -543.99994
-    y: -234.99997
+    x: -1306.9998
+    y: -538.5536
     width: 152
     height: 77
   mob: {fileID: 0}
@@ -189,8 +189,8 @@ MonoBehaviour:
   guid: b9b185fc332341a41bdd7a6938809ca4
   positionalData:
     serializedVersion: 2
-    x: 59.90253
-    y: 43.99998
+    x: -702.9999
+    y: -259.55362
     width: 158
     height: 101
   mob: {fileID: 0}
@@ -212,8 +212,8 @@ MonoBehaviour:
   guid: 4f893894630ccb7429dae747c5bd0e1e
   positionalData:
     serializedVersion: 2
-    x: 310.99997
-    y: -57.00006
+    x: -451.99982
+    y: -360.5536
     width: 146
     height: 101
   mob: {fileID: 0}
@@ -235,8 +235,8 @@ MonoBehaviour:
   guid: 2b939ce6b7594034e9db3504bfbd3126
   positionalData:
     serializedVersion: 2
-    x: -725.00006
-    y: 161.00005
+    x: -1526
+    y: -180.99997
     width: 120
     height: 77
   mob: {fileID: 0}
@@ -278,8 +278,8 @@ MonoBehaviour:
   guid: 09e2480623666864880295cf572e8ad5
   positionalData:
     serializedVersion: 2
-    x: 127.60006
-    y: 231.50002
+    x: -634.9998
+    y: -71.55359
     width: 105
     height: 77
   mob: {fileID: 0}
@@ -320,8 +320,8 @@ MonoBehaviour:
   guid: ecabc0fdffab05045aa308c6c418eb70
   positionalData:
     serializedVersion: 2
-    x: -356.99997
-    y: -157.99998
+    x: -1119.9998
+    y: -461.55362
     width: 117
     height: 101
   mob: {fileID: 0}
@@ -469,6 +469,10 @@ MonoBehaviour:
     inputPortName: destinationQuery
     outputGUID: 657ee5dbbb5a5b749aa59b802e908417
     outputPortName: Output
+  - inputGUID: 484fdd4e0805c17438c2c86d329906f1
+    inputPortName: main
+    outputGUID: edd2312de6f479447820af86e403f4e4
+    outputPortName: FALSE
 --- !u!114 &578562867296612398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,8 +511,8 @@ MonoBehaviour:
   guid: ad51958129094dc418d46b51d6cb893f
   positionalData:
     serializedVersion: 2
-    x: 536
-    y: 44
+    x: -226.99994
+    y: -259.55362
     width: 141
     height: 77
   mob: {fileID: 0}
@@ -528,8 +532,8 @@ MonoBehaviour:
   guid: 86fe8e06c736cb24580199183461cefd
   positionalData:
     serializedVersion: 2
-    x: 310.99994
-    y: 145.00003
+    x: -451.99982
+    y: -158.55357
     width: 187
     height: 125
   mob: {fileID: 0}
@@ -551,8 +555,8 @@ MonoBehaviour:
   guid: 68a618ddfbe33a942938aba85219166e
   positionalData:
     serializedVersion: 2
-    x: -215.00003
-    y: -56.99997
+    x: -977.99976
+    y: -360.5536
     width: 158
     height: 101
   mob: {fileID: 0}
@@ -579,7 +583,7 @@ MonoBehaviour:
     width: 187
     height: 125
   mob: {fileID: 0}
-  _flags: 4
+  _flags: -1
   destinationQuery: {fileID: -2891666888716575074}
   CancelPathfindingCondition: {fileID: 0}
 --- !u!114 &3989429699906073092
@@ -617,10 +621,10 @@ MonoBehaviour:
   guid: 484fdd4e0805c17438c2c86d329906f1
   positionalData:
     serializedVersion: 2
-    x: -331.55078
-    y: 193.1511
-    width: 331.55078
-    height: -193.1511
+    x: -1133.9999
+    y: -180.55359
+    width: 156
+    height: 77
   mob: {fileID: 0}
   _flags: 4
   state: 0
@@ -639,8 +643,8 @@ MonoBehaviour:
   guid: d5f2324ebf09c6040ad45bd4cc2add12
   positionalData:
     serializedVersion: 2
-    x: 105.999794
-    y: 362.5
+    x: -656.9999
+    y: 59.446423
     width: 164
     height: 77
   mob: {fileID: 0}
@@ -659,8 +663,8 @@ MonoBehaviour:
   guid: 8303d485f42aad44d89f635f4491e74a
   positionalData:
     serializedVersion: 2
-    x: 536
-    y: -134.00006
+    x: -226.99994
+    y: -437.55356
     width: 121
     height: 77
   mob: {fileID: 0}
@@ -686,7 +690,7 @@ MonoBehaviour:
     width: 123
     height: 77
   mob: {fileID: 0}
-  _flags: 4
+  _flags: 5
   walkSpeed: 1
   waitTime: 2
 --- !u!114 &7897397628156961917
@@ -709,7 +713,7 @@ MonoBehaviour:
     width: 104
     height: 77
   mob: {fileID: 0}
-  _flags: 4
+  _flags: 5
   wanderRange: 5
   wanderSpeed: 1
 --- !u!114 &7962675181092683881
