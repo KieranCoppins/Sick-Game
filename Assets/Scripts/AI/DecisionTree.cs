@@ -224,7 +224,7 @@ public abstract class Decision : DecisionTreeNode
 }
 
 // A base function node that can return a given value
-public abstract class Function<T> : DecisionTreeEditorNode where T : System.IConvertible
+public abstract class Function<T> : DecisionTreeEditorNode
 {
     public Function()
     {

@@ -9,7 +9,7 @@ public class A_PathTo : Action
 {
     PathfindingComponent pathfinding;
 
-    [HideInInspector] public EnvironmentQuerySystem destinationQuery;
+    [HideInInspector] public Function<Vector2> destinationQuery;
     [HideInInspector] public Function<bool> CancelPathfindingCondition;
 
     Vector2 desiredPosition;
@@ -19,7 +19,7 @@ public class A_PathTo : Action
     }
 
     // Make this action take a target and a range. Also we always want our path to to be an interruptor
-    public A_PathTo(EnvironmentQuerySystem destinationQuery, Function<bool> CancelPathfindingCondition) : base()
+    public A_PathTo(Function<Vector2> destinationQuery, Function<bool> CancelPathfindingCondition) : base()
     {
         pathfinding = mob.PathfindingComponent;
         this.destinationQuery = destinationQuery;
@@ -29,7 +29,7 @@ public class A_PathTo : Action
     public override IEnumerator Execute()
     {
         // Call our get destination delegate to get the tile we want to pathfind to
-        Vector2 position = destinationQuery.Run();
+        Vector2 position = destinationQuery.Invoke();
 
         // If our CancelPathFindingCondition is true then we will set this var and break out of the path
         bool breakOut = false;
@@ -91,15 +91,15 @@ public class A_PathTo : Action
     {
         base.Initialise(mob);
         destinationQuery.Initialise(mob);
-        CancelPathfindingCondition.Initialise(mob);
+        CancelPathfindingCondition?.Initialise(mob);
         pathfinding = mob.PathfindingComponent;
     }
 
     public override DecisionTreeEditorNode Clone()
     {
         A_PathTo clone = Instantiate(this);
-        clone.destinationQuery = (EnvironmentQuerySystem)destinationQuery.Clone();
-        clone.CancelPathfindingCondition = (Function<bool>)CancelPathfindingCondition.Clone();
+        clone.destinationQuery = (Function<Vector2>)destinationQuery.Clone();
+        clone.CancelPathfindingCondition = (Function<bool>)CancelPathfindingCondition?.Clone();
         return clone;
     }
 }

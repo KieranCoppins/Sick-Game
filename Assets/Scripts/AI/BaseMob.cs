@@ -15,6 +15,13 @@ public enum DebugFlags
     DecisionTree = 1 << 3,
 }
 
+public enum CombatState
+{
+    Idle,
+    Investigate,
+    Combat
+}
+
 [RequireComponent(typeof(PathfindingComponent))]
 [RequireComponent(typeof(ActionManager))]
 [DisallowMultipleComponent]
@@ -41,6 +48,10 @@ public abstract class BaseMob : BaseCharacter
 
     protected ActionManager actionManager;
     protected List<Vector2> movementDirections;
+
+    public Vector2 AreaOfInterest { get; set; }
+
+    public CombatState State;
 
     [Header("DEBUG VALUES")]
     [EnumFlags]
@@ -106,6 +117,8 @@ public abstract class BaseMob : BaseCharacter
             movementDirections.Add((Quaternion.AngleAxis(angle * i, Vector3.back) * dir).normalized);
         }
 
+        State = CombatState.Idle;
+
         // Initialise our decision tree
         decisionTree = decisionTree.Clone(this.name);
         decisionTree.Initialise(this);
@@ -145,7 +158,8 @@ public abstract class BaseMob : BaseCharacter
             Debug.DrawRay(lowerStart, position - lowerStart, Color.magenta);
             Debug.DrawRay(upperStart, position - upperStart, Color.magenta);
         }
-        if ((Vector2)lowerHit.collider.transform.position == position && (Vector2)upperHit.collider.transform.position == position)
+        if ((lowerHit.collider == null && lowerHit.collider == null) || 
+            ((Vector2)lowerHit.collider.transform.position == position && (Vector2)upperHit.collider.transform.position == position))
             return true;
 
         return false;
@@ -242,18 +256,27 @@ public abstract class BaseMob : BaseCharacter
         Destroy(this.gameObject);
     }
 
-    protected virtual void OnTriggerStay2D(Collider2D collision)
+    public void AlertListener(Vector2 origin)
     {
-        if (Target == null)
+        if (State == CombatState.Idle)
         {
-            BaseCharacter character = collision.GetComponent<BaseCharacter>();
-            // If we dont have a target and the character is of a different faction and we can see them
-            if (character != null && character.Faction != Faction && HasLineOfSight(collision.transform.position))
-            {
-                Target = character.transform;
-            }
+            AreaOfInterest = origin;
+            State = CombatState.Investigate;
         }
+    }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.isTrigger || State == CombatState.Combat)
+            return;
+
+        BaseCharacter character = collision.GetComponent<BaseCharacter>();
+        if (character != null && character.Faction != Faction && HasLineOfSight(character.transform.position))
+        {
+            State = CombatState.Combat;
+            Target = collision.transform;
+            EmitAlert.Emit(transform.position, 10f);
+        }
     }
 }
 
