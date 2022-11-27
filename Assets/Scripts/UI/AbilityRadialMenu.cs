@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class InventoryRadialMenu : RadialMenu
+public class AbilityRadialMenu : RadialMenu
 {
     [SerializeField] CharacterMovement character;
 
@@ -12,9 +11,12 @@ public class InventoryRadialMenu : RadialMenu
         if (menuOptions.Count > 0)
             menuOptions.Clear();
 
-        foreach (var item in character.inventoryQuickbar)
+        Debug.Log(character);
+        Debug.Log(character.abilityQuickbar);
+
+        foreach (var ability in character.abilityQuickbar)
         {
-            RadialMenuOption menuOption = new RadialMenuOption(item.name, item.GetDescription(), item.icon);
+            RadialMenuOption menuOption = new RadialMenuOption(ability.name, ability.GetDescription(), ability.icon);
             menuOptions.Add(menuOption);
         }
     }
@@ -23,7 +25,7 @@ public class InventoryRadialMenu : RadialMenu
     {
         if (Open)
         {
-            character.selectedItem = character.inventoryQuickbar[menuOptions.IndexOf(selectedOption)];
+            character.selectedAbility = character.abilityQuickbar[menuOptions.IndexOf(selectedOption)];
             base.Close();
         }
     }

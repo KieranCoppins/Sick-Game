@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 8407486281627853752}
   - component: {fileID: 8407486281627853759}
   m_Layer: 5
-  m_Name: RadialMenu
+  m_Name: InventoryRadialMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

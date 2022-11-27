@@ -36,6 +36,12 @@ public class ProjectileAbility : AbilityBase
         }
     }
 
+    public override string GetDescription()
+    {
+        string desc = $"Fires {numberProjectiles} projectile(s) within a {angle} cone. Each projectile dealing {damage} points of damage.";
+        desc += projectile.GetComponent<Projectile>().type == ProjectileType.Guided ? " This projectile is guided to target." : "";
+        return desc;
+    }
 
     public float GetProjectileVelocity() { return projectileVelocity; }
 }

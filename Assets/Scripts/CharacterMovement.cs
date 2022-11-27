@@ -12,7 +12,6 @@ public delegate void CharacterInteractable(BaseCharacter character);
 public class CharacterMovement : BaseCharacter
 {
     [SerializeField] int Damage;
-    [SerializeField] AbilityBase ability;
 
     [Header("UI Elements")]
     [SerializeField] Slider HealthBar;
@@ -28,11 +27,14 @@ public class CharacterMovement : BaseCharacter
 
     LookAtMouse lookAtMouse;
 
-    public List<InventoryItem> quickbar = new List<InventoryItem>();
-    [SerializeField] InventoryRadialMenu radialMenu;
+    public List<InventoryItem> inventoryQuickbar = new List<InventoryItem>();
+    public List<AbilityBase> abilityQuickbar = new List<AbilityBase>();
+    [SerializeField] InventoryRadialMenu inventoryRadialMenu;
+    [SerializeField] AbilityRadialMenu abilityRadialMenu;
     [SerializeField] GameObject pauseMenu;
 
     public InventoryItem selectedItem;
+    public AbilityBase selectedAbility;
 
     public CharacterInteractable onCharacterInteraction;
 
@@ -254,8 +256,8 @@ public class CharacterMovement : BaseCharacter
     public void SwitchTarget(InputAction.CallbackContext context)
     {
         // If we're using our radial menu, then we want to use the right stick for manouvering the radial menu
-        if (!context.canceled && radialMenu.Open)
-            radialMenu.SelectItem(context.ReadValue<Vector2>());
+        if (!context.canceled && inventoryRadialMenu.Open)
+            inventoryRadialMenu.SelectItem(context.ReadValue<Vector2>());
 
         if (!context.started)
             return;
@@ -299,7 +301,7 @@ public class CharacterMovement : BaseCharacter
     public void CastAbility()
     {
         Mana -= 10;
-        ability.Cast(transform.position, lookAtMouse.LookDirection, Target);
+        selectedAbility.Cast(transform.position, lookAtMouse.LookDirection, Target);
     }
 
     public void FinishCast()
@@ -311,10 +313,19 @@ public class CharacterMovement : BaseCharacter
     public void InventoryRadialMenu(InputAction.CallbackContext context)
     {
         if (context.performed)
-            radialMenu.Display();
+            inventoryRadialMenu.Display();
 
         if (context.canceled)
-            radialMenu.Close();
+            inventoryRadialMenu.Close();
+    }
+
+    public void AbilityRadialMenu(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            abilityRadialMenu.Display();
+
+        if (context.canceled)
+            abilityRadialMenu.Close();
     }
 
     public void UseItem(InputAction.CallbackContext context)
@@ -324,7 +335,7 @@ public class CharacterMovement : BaseCharacter
             inventory.Use(selectedItem);
             if (!inventory.Has(selectedItem))
             {
-                quickbar.Remove(selectedItem);
+                inventoryQuickbar.Remove(selectedItem);
             }
         }
     }

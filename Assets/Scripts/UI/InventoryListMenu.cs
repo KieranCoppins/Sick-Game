@@ -11,7 +11,7 @@ public class InventoryListMenu : ListMenu
         InventoryItem[] items = character.inventory.GetItems();
         foreach (var item in items)
         {
-            string favourited = character.quickbar.Contains(item) ? "*" : "";
+            string favourited = character.inventoryQuickbar.Contains(item) ? "*" : "";
             ListMenuOption lmo = new ListMenuOption($"{item.name}{favourited} <pos=92%>x{character.inventory.GetQuantity(item)}</pos>", item.GetDescription(), item.icon);
             lmo.Metadata = item;
             menuOptions.Add(lmo);
@@ -28,10 +28,10 @@ public class InventoryListMenu : ListMenu
         InventoryItem item = (InventoryItem)SelectedOption.Metadata;
         if (item != null)
         {
-            if (character.quickbar.Contains(item))
-                character.quickbar.Remove(item);
+            if (character.inventoryQuickbar.Contains(item))
+                character.inventoryQuickbar.Remove(item);
             else
-                character.quickbar.Add(item);
+                character.inventoryQuickbar.Add(item);
         }
     }
 }
