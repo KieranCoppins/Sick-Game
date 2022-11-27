@@ -256,8 +256,18 @@ public class CharacterMovement : BaseCharacter
     public void SwitchTarget(InputAction.CallbackContext context)
     {
         // If we're using our radial menu, then we want to use the right stick for manouvering the radial menu
-        if (!context.canceled && inventoryRadialMenu.Open)
-            inventoryRadialMenu.SelectItem(context.ReadValue<Vector2>());
+        if (!context.canceled)
+        {
+            if (inventoryRadialMenu.Open)
+            {
+                inventoryRadialMenu.SelectItem(context.ReadValue<Vector2>());
+            }
+            if (abilityRadialMenu.Open)
+            {
+
+                abilityRadialMenu.SelectItem(context.ReadValue<Vector2>());
+            }
+        }
 
         if (!context.started)
             return;

@@ -11,9 +11,6 @@ public class AbilityRadialMenu : RadialMenu
         if (menuOptions.Count > 0)
             menuOptions.Clear();
 
-        Debug.Log(character);
-        Debug.Log(character.abilityQuickbar);
-
         foreach (var ability in character.abilityQuickbar)
         {
             RadialMenuOption menuOption = new RadialMenuOption(ability.name, ability.GetDescription(), ability.icon);
