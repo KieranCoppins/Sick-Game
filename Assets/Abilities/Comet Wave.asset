@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5391c113258b2c045a62f9e0d5caa87c, type: 3}
   m_Name: Comet Wave
   m_EditorClassIdentifier: 
+  icon: {fileID: 314434970, guid: 5aa0e3dc593636849b2bdf4c991df64d, type: 3}
   AbilityCooldown: 5
   CastTime: 0.5
   Range: 8

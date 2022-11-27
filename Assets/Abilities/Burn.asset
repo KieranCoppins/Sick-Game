@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c285d8bc0115d46879be9c77a5d0ae, type: 3}
   m_Name: Burn
   m_EditorClassIdentifier: 
+  icon: {fileID: 1959293380, guid: 5aa0e3dc593636849b2bdf4c991df64d, type: 3}
   AbilityCooldown: 16
   CastTime: 0
   Range: 3
