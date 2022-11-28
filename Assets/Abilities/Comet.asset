@@ -16,6 +16,7 @@ MonoBehaviour:
   AbilityCooldown: 2
   CastTime: 0.5
   Range: 8
+  ManaCost: 10
   projectile: {fileID: 4616442037673614323, guid: 363c4827b8395a6498aafa62abef3057, type: 3}
   angle: 0
   numberProjectiles: 1

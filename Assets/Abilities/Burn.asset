@@ -16,6 +16,7 @@ MonoBehaviour:
   AbilityCooldown: 16
   CastTime: 0
   Range: 3
+  ManaCost: 15
   lifespan: 8
   damageRate: 1
   initialDamage: 5
