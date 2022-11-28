@@ -10,6 +10,7 @@ public abstract class AbilityBase : ScriptableObject
     [SerializeField] public float AbilityCooldown;
     [SerializeField] public float CastTime;
     [SerializeField] public float Range;
+    [SerializeField] public int ManaCost;
 
     /// <summary>
     /// Casts the ability

@@ -27,11 +27,10 @@ public class CharacterMovement : BaseCharacter
 
     LookAtMouse lookAtMouse;
 
+    public List<AbilityBase> AllAbilities = new List<AbilityBase>();
+
     public List<InventoryItem> inventoryQuickbar = new List<InventoryItem>();
     public List<AbilityBase> abilityQuickbar = new List<AbilityBase>();
-    [SerializeField] InventoryRadialMenu inventoryRadialMenu;
-    [SerializeField] AbilityRadialMenu abilityRadialMenu;
-    [SerializeField] GameObject pauseMenu;
 
     public InventoryItem selectedItem;
     public AbilityBase selectedAbility;
@@ -134,12 +133,9 @@ public class CharacterMovement : BaseCharacter
 
     public void Move(InputAction.CallbackContext context)
     {
-
-        if (context.started && pauseMenu.activeInHierarchy)
-            pauseMenu.GetComponentInChildren<InventoryListMenu>().SelectItem(context.ReadValue<Vector2>());
-        else if (context.performed && !pauseMenu.activeInHierarchy)
+        if (context.performed)
             movementVelocity = context.ReadValue<Vector2>();
-        else 
+        else
             movementVelocity = Vector2.zero;
     }
 
@@ -177,24 +173,13 @@ public class CharacterMovement : BaseCharacter
 
     public void Attack(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && QueueAttack && Stamina >= 10 && CanMove)
         {
-            if (pauseMenu.activeInHierarchy)
-            {
-                ListMenu listMenu = pauseMenu.GetComponentInChildren<ListMenu>();
-                if (listMenu.IsSubmenuOpen())
-                    listMenu.CloseSubmenu();
-                else
-                    listMenu.OpenSubmenu();
-            }
-            else if (QueueAttack && Stamina >= 10 && CanMove)
-            {
-                attackStage++;
-                animator.SetInteger("AttackStage", attackStage);
-                QueueAttack = false;
-                Stamina -= 10;
-                rb.velocity = movementVelocity * MovementSpeed;
-            }
+            attackStage++;
+            animator.SetInteger("AttackStage", attackStage);
+            QueueAttack = false;
+            Stamina -= 10;
+            rb.velocity = movementVelocity * MovementSpeed;   
         }
     }
     public void ResetAttackStage() 
@@ -255,20 +240,6 @@ public class CharacterMovement : BaseCharacter
 
     public void SwitchTarget(InputAction.CallbackContext context)
     {
-        // If we're using our radial menu, then we want to use the right stick for manouvering the radial menu
-        if (!context.canceled)
-        {
-            if (inventoryRadialMenu.Open)
-            {
-                inventoryRadialMenu.SelectItem(context.ReadValue<Vector2>());
-            }
-            if (abilityRadialMenu.Open)
-            {
-
-                abilityRadialMenu.SelectItem(context.ReadValue<Vector2>());
-            }
-        }
-
         if (!context.started)
             return;
 
@@ -300,7 +271,7 @@ public class CharacterMovement : BaseCharacter
     {
         if (!context.started)
             return;
-        if (Mana >= 10 && !animator.GetBool("CastAbility"))
+        if (Mana >= selectedAbility.ManaCost && !animator.GetBool("CastAbility"))
         {
             CanMove = false;
             rb.velocity = Vector2.zero;
@@ -310,7 +281,7 @@ public class CharacterMovement : BaseCharacter
 
     public void CastAbility()
     {
-        Mana -= 10;
+        Mana -= selectedAbility.ManaCost;
         selectedAbility.Cast(transform.position, lookAtMouse.LookDirection, Target);
     }
 
@@ -318,24 +289,6 @@ public class CharacterMovement : BaseCharacter
     {
         animator.SetBool("CastAbility", false);
         CanMove = true;
-    }
-
-    public void InventoryRadialMenu(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-            inventoryRadialMenu.Display();
-
-        if (context.canceled)
-            inventoryRadialMenu.Close();
-    }
-
-    public void AbilityRadialMenu(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-            abilityRadialMenu.Display();
-
-        if (context.canceled)
-            abilityRadialMenu.Close();
     }
 
     public void UseItem(InputAction.CallbackContext context)
@@ -355,15 +308,6 @@ public class CharacterMovement : BaseCharacter
         if (context.performed)
         {
             onCharacterInteraction?.Invoke(this);
-        }
-    }
-
-    public void TogglePauseMenu(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
-            pauseMenu.GetComponentInChildren<ListMenu>().Display();
         }
     }
 
