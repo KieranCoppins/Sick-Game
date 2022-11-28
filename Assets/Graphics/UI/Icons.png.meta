@@ -125,7 +125,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icons_1
+      name: Comet
       rect:
         serializedVersion: 2
         x: 8
@@ -188,7 +188,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icons_4
+      name: Comet Wave
       rect:
         serializedVersion: 2
         x: 32
@@ -587,7 +587,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Health
+      name: Burn
       rect:
         serializedVersion: 2
         x: 80
@@ -663,7 +663,7 @@ TextureImporter:
       Icons_5: 320023221
       Icons_14: 1975500857
       Mana: 651805389
-      Health: 1959293380
+      Comet: -1860567321
       Icons_20: 327923183
       Icon_H: -748590915
       Icon_P: 247299105
@@ -672,14 +672,14 @@ TextureImporter:
       Icons_25: -895841148
       Icon_F: 1200733920
       Icons_13: 138019680
-      Icons_1: -1860567321
+      Burn: 1959293380
       Icon_A: 1073892561
       Icons_19: 1963505639
       Icons_12: 725346812
-      Icons_4: 314434970
       Icons_6: -1990402446
       Stamina: 507768095
       Icon_S: -815055954
+      Comet Wave: 314434970
       Icons_2: 696006076
       Icons_7: 1709008715
       Icons_21: 1766426729

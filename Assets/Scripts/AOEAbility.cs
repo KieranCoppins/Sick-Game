@@ -20,4 +20,11 @@ public class AOEAbility : AbilityBase
         GameObject go = Instantiate(AOEGameObject, target.position, Quaternion.identity);
         go.GetComponent<AOE>().Initialise(initialDamage, lifespan, friendlyFire, damageRate);
     }
+
+    public override string GetDescription()
+    {
+        string description = $"An area of effect ability that deals {initialDamage} points of initial damage and then {damageRate} points of damage over {lifespan} seconds.";
+        description += friendlyFire ? "Does damage to allies" : "Doesn't damage allies";
+        return description;
+    }
 }

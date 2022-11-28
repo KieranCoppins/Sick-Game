@@ -36,7 +36,9 @@ public abstract class ListMenu : MonoBehaviour
 
 
         if (menuOptions.Count > 0)
+        {
             SelectItem(menuOptions[0]);
+        }
     }
 
     public virtual void SelectItem(ListMenuOption option)
