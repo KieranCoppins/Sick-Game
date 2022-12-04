@@ -130,12 +130,6 @@ public abstract class BaseMob : BaseCharacter
             if (character.Faction != Faction)
                 Target = character.transform;
 
-        Debug.Log($"----{name}'s aggression table----");
-        foreach (var item in aggressionWeights)
-        {
-            Debug.Log($"    {item.Key.name}: {item.Value}");
-        }
-        Debug.Log($"----{name}'s target: {Target.name}----");
         StartCoroutine(Stun(.5f));
     }
 
