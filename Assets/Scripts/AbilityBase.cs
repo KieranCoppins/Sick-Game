@@ -15,7 +15,7 @@ public abstract class AbilityBase : ScriptableObject
     /// <summary>
     /// Casts the ability
     /// </summary>
-    public abstract void Cast(Vector2 position, Vector2 direction, Transform target);
+    public abstract void Cast(Vector2 position, Vector2 direction, Transform target, BaseCharacter caster);
 
     public abstract string GetDescription();
 }

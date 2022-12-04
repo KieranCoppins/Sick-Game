@@ -20,7 +20,7 @@ public class ProjectileAbility : AbilityBase
     [Tooltip("The amount of damage our projectile should do when it hits something")]
     [SerializeField] int damage;
 
-    public override void Cast(Vector2 position, Vector2 direction, Transform target)
+    public override void Cast(Vector2 position, Vector2 direction, Transform target, BaseCharacter caster)
     { 
         Vector2 minDirection = Quaternion.AngleAxis(-(angle/2), new Vector3(0, 0, 1)) * direction;
         float angleStep = angle / numberProjectiles;
@@ -33,6 +33,7 @@ public class ProjectileAbility : AbilityBase
             projectileComp.target = target;
             projectileComp.SetVelocity(projectileVelocity);
             projectileComp.damage = damage;
+            projectileComp.caster = caster;
         }
     }
 

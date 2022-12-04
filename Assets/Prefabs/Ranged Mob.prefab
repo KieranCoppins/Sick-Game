@@ -230,9 +230,16 @@ MonoBehaviour:
   StaminaRegenCooldown: 1
   StaminaRegentAmount: 1
   _maxMana: 10
+  _Aggression: 1
   mobName: 
   decisionTree: {fileID: 11400000, guid: c25f5b6e360b04740a37aabe2380bde5, type: 2}
-  PathfindingComponent: {fileID: 0}
+  AggressionSystem: 1
+  AggressionThreshold: 2
+  IdlePathNodes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   debugFlags: 0
   ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
 --- !u!212 &249532263326025937
@@ -327,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugCanvas: {fileID: 249564351837532400}
-  name: {fileID: 870002575}
+  Name: {fileID: 870002575}
   currentAction: {fileID: 1391999465151517241}
   actionQueue: {fileID: 3360728261996388723}
   hasLOS: {fileID: 5998079021062813532}

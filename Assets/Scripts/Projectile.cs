@@ -29,6 +29,8 @@ public class Projectile : MonoBehaviour
 
     public int damage;
 
+    public BaseCharacter caster;
+
 
     private void Awake()
     {
@@ -66,7 +68,7 @@ public class Projectile : MonoBehaviour
         }
         else if (collision.collider.CompareTag("Mob"))
         {
-            collision.gameObject.GetComponent<BaseMob>().TakeDamage(damage);
+            collision.gameObject.GetComponent<BaseMob>().TakeDamage(caster, damage);
         }
         OnDeath?.Invoke();
         Destroy(this.gameObject);

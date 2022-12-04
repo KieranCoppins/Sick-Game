@@ -29,11 +29,11 @@ public class CharacterMovement : BaseCharacter
 
     public List<AbilityBase> AllAbilities = new List<AbilityBase>();
 
-    public List<InventoryItem> inventoryQuickbar = new List<InventoryItem>();
-    public List<AbilityBase> abilityQuickbar = new List<AbilityBase>();
+    [HideInInspector] public List<InventoryItem> inventoryQuickbar = new List<InventoryItem>();
+    [HideInInspector] public List<AbilityBase> abilityQuickbar = new List<AbilityBase>();
 
-    public InventoryItem selectedItem;
-    public AbilityBase selectedAbility;
+    [HideInInspector] public InventoryItem selectedItem;
+    [HideInInspector] public AbilityBase selectedAbility;
 
     public CharacterInteractable onCharacterInteraction;
 
@@ -198,7 +198,7 @@ public class CharacterMovement : BaseCharacter
         {
             if (target.CompareTag("Mob"))
             {
-                target.GetComponent<BaseMob>().TakeDamage(Damage);
+                target.GetComponent<BaseMob>().TakeDamage(this, Damage);
             }
         }
     }
@@ -282,7 +282,7 @@ public class CharacterMovement : BaseCharacter
     public void CastAbility()
     {
         Mana -= selectedAbility.ManaCost;
-        selectedAbility.Cast(transform.position, lookAtMouse.LookDirection, Target);
+        selectedAbility.Cast(transform.position, lookAtMouse.LookDirection, Target, this);
     }
 
     public void FinishCast()
