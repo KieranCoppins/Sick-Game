@@ -10,13 +10,16 @@ public class AOE : MonoBehaviour
     int damageRate;
     bool friendlyFire;
 
+    BaseCharacter caster;
+
     List<Collider2D> colliders;
-    public void Initialise(int iD, float lS, bool fF, int dR)
+    public void Initialise(int initialDamage, float lifespan, bool friendlyFire, int damageRate, BaseCharacter caster)
     {
-        initialDamage = iD;
-        lifespan = lS;
-        friendlyFire = fF;
-        damageRate = dR;
+        this.initialDamage = initialDamage;
+        this.lifespan = lifespan;
+        this.friendlyFire = friendlyFire;
+        this.damageRate = damageRate;
+        this.caster = caster;
         colliders = new List<Collider2D>();
         StartCoroutine(DealDamageOnTick());
         StartCoroutine(DestroyHandler());
@@ -38,7 +41,7 @@ public class AOE : MonoBehaviour
         {
             if (friendlyFire && collider.CompareTag("Mob"))
             {
-                collider.GetComponent<BaseMob>().TakeDamage(dmg);
+                collider.GetComponent<BaseMob>().TakeDamage(caster, dmg);
             }
             else if (collider.CompareTag("Player"))
             {

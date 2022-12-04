@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System;
-using static UnityEngine.GraphicsBuffer;
 
 [Flags]
 public enum DebugFlags
@@ -20,6 +19,12 @@ public enum CombatState
     Idle,
     Investigate,
     Combat
+}
+
+public enum AggressionSystems
+{
+    Timebased,
+    Damagebased
 }
 
 [RequireComponent(typeof(PathfindingComponent))]
@@ -39,19 +44,22 @@ public abstract class BaseMob : BaseCharacter
     [Header("AI")]
     [Tooltip("The decision tree for this mob to run")]
     [SerializeField] protected DecisionTree decisionTree;
+    [Tooltip("The aggression system this mob uses")]
+    [SerializeField] protected AggressionSystems AggressionSystem;
+    [Tooltip("The threshold for our aggression system")]
+    [SerializeField] protected float AggressionThreshold;
     [Tooltip("Nodes of a path that the AI will follow if they are out of combat")]
     public Transform[] IdlePathNodes;
 
-    [HideInInspector] public PathfindingComponent PathfindingComponent;
-
+    public PathfindingComponent PathfindingComponent { get; protected set; }
     protected float attackTimer;
-
     protected ActionManager actionManager;
     protected List<Vector2> movementDirections;
+    public Vector2 AreaOfInterest { get; protected set; }
+    [HideInInspector] public CombatState State { get; set; }
 
-    public Vector2 AreaOfInterest { get; set; }
-
-    public CombatState State { get; set; }
+    // Values for our aggression system
+    protected Dictionary<BaseCharacter, float> aggressionWeights = new Dictionary<BaseCharacter, float>();
 
     [Header("DEBUG VALUES")]
     [EnumFlags]
@@ -84,11 +92,50 @@ public abstract class BaseMob : BaseCharacter
     /// <summary>
     /// Takes dmg away from health and invokes the onTakeDamage event
     /// </summary>
+    /// <param name="character"></param>
     /// <param name="dmg"></param>
-    public void TakeDamage(int dmg)
+    public void TakeDamage(BaseCharacter character, int dmg)
     {
         Health -= dmg;
         onTakeDamage?.Invoke();
+        switch (AggressionSystem)
+        {
+            case AggressionSystems.Timebased:
+                aggressionWeights[character] = Time.time;
+                break;
+            case AggressionSystems.Damagebased:
+                if (aggressionWeights.ContainsKey(character))
+                    aggressionWeights[character] += dmg * character.Aggression;
+                else
+                    aggressionWeights[character] = dmg * character.Aggression;
+                break;
+        }
+        // Check if we have a target, if not assign the target to the character that attacked us
+        if (Target)
+        {
+            BaseCharacter targetBaseCharacter = Target.GetComponent<BaseCharacter>();
+            // Check if our target has ever attacked us, theres a chance our target is just the first character we saw. If they're not, then target the character that is actually attacking us
+            if (aggressionWeights.ContainsKey(targetBaseCharacter))
+            {
+                // check if the character is of an enemy faction AND if the character's aggression weights is higher than our target's aggression weights plus our threshold
+                if (character.Faction != Faction && (aggressionWeights[character] >= aggressionWeights[targetBaseCharacter] + AggressionThreshold))
+                    Target = character.transform;
+            }
+            else
+                if (character.Faction != Faction)
+                    Target = character.transform;
+
+        }
+        else
+            if (character.Faction != Faction)
+                Target = character.transform;
+
+        Debug.Log($"----{name}'s aggression table----");
+        foreach (var item in aggressionWeights)
+        {
+            Debug.Log($"    {item.Key.name}: {item.Value}");
+        }
+        Debug.Log($"----{name}'s target: {Target.name}----");
         StartCoroutine(Stun(.5f));
     }
 

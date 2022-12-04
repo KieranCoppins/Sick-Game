@@ -65,7 +65,7 @@ public class A_CastAbility : A_Attack
                 predictedLocation = PredictLocation();
                 predictedDirection = predictedLocation - (Vector2)mob.transform.position;
 
-                ability.Cast(mob.transform.position, predictedDirection, mob.Target);
+                ability.Cast(mob.transform.position, predictedDirection, mob.Target, mob);
                 mob.StartCoroutine(Cooldown());
             }
         }

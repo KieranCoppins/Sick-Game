@@ -7,7 +7,7 @@ using TMPro;
 public class DebugUIHandler : MonoBehaviour
 {
     [SerializeField] Canvas debugCanvas;
-    [SerializeField] TMP_Text name;
+    [SerializeField] TMP_Text Name;
     [SerializeField] TMP_Text currentAction;
     [SerializeField] TMP_Text actionQueue;
     [SerializeField] TMP_Text hasLOS;
@@ -17,7 +17,7 @@ public class DebugUIHandler : MonoBehaviour
     void Start()
     {
         mob = GetComponent<BaseMob>();
-        name.text = gameObject.name;
+        Name.text = gameObject.name;
         debugCanvas.enabled = (mob.debugFlags & DebugFlags.DecisionTree) == DebugFlags.DecisionTree;
     }
 

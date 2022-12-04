@@ -18,7 +18,10 @@ public abstract class BaseCharacter : MonoBehaviour
         get { return _movementSpeed; }
         protected set { _movementSpeed = value; }
     }
+
+    [Tooltip("How quickly does this character move?")]
     [SerializeField] int _movementSpeed;
+    [Tooltip("How quickly does this character roll/dodge?")]
     [SerializeField] protected float rollSpeed = 5f;
 
     public Factions Faction { get { return _Faction; } protected set { _Faction = value; } }
@@ -26,13 +29,21 @@ public abstract class BaseCharacter : MonoBehaviour
 
     public virtual int MaxHealth { get { return _maxHealth; } protected set { _maxHealth = value; Health = Health; } }
     [Header("Stats")]
+    [Tooltip("The maximum health this character can have")]
     [SerializeField] int _maxHealth;
     public virtual int MaxStamina { get { return _maxStamina; } protected set { _maxStamina = value; Stamina = Stamina; } }
+    [Tooltip("The maximum stamina this character can have")]
     [SerializeField] int _maxStamina;
+    [Tooltip("How long does the character have to go without using any stamina to start naturally regnerating (in seconds)")]
     [SerializeField] protected float StaminaRegenCooldown;
+    [Tooltip("The amount this character naturally regenerates their stamina every 100ms")]
     [SerializeField] protected int StaminaRegentAmount;
     public virtual int MaxMana { get { return _maxMana; } protected set { _maxMana = value; Mana = Mana; } }
+    [Tooltip("The maximum mana this character can have")]
     [SerializeField] int _maxMana;
+    public int Aggression { get { return _Aggression; } protected set { _Aggression = value; } }
+    [Tooltip("The aggression of this character, this affects how mobs will agro the character in a damage-based aggression system")]
+    [SerializeField] int _Aggression = 1;
 
     float StaminaRegenTimer;
 
