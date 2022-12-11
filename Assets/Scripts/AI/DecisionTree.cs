@@ -167,21 +167,18 @@ public abstract class Action : DecisionTreeNode
 /// </summary>
 public abstract class A_Attack : Action
 {
-    public bool CanCast { get; protected set; }
-
     protected float cooldown;
 
     public A_Attack()
     {
         Flags |= ActionFlags.Interruptor;       // This action is an interruptor
         Flags &= ~ActionFlags.Interruptable;    // This action is not interruptable
-        CanCast = true;
     }
 
     protected virtual IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(cooldown);
-        CanCast = true;
+        mob.CanAttack = true;
     }
 
     public override void Initialise(BaseMob mob)

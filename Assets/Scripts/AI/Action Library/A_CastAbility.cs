@@ -43,7 +43,9 @@ public class A_CastAbility : A_Attack
 
             // Stop our velocity
             mob.rb.velocity = Vector2.zero;
-            CanCast = false;
+            mob.CanAttack = false;
+
+            mob.animator.Play("Attack");
 
             // Whilst we are casting, we want to get the average of our player's movement vector
             yield return new DoTaskWhilstWaitingForSeconds(() => {
@@ -56,7 +58,7 @@ public class A_CastAbility : A_Attack
 
             if (mob.Target == null)
             {
-                CanCast = true;
+                mob.CanAttack = true;
                 yield return null;
             }
             else

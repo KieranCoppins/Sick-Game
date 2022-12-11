@@ -56,7 +56,10 @@ public abstract class BaseCharacter : MonoBehaviour
 
             if (_health <= 0)
             {
-                Die();
+                if (animator != null)
+                    animator.Play("Die");
+                else
+                    Die();
             }
         }
     }
@@ -94,9 +97,14 @@ public abstract class BaseCharacter : MonoBehaviour
     }
     Transform _target;
 
+
+    public Vector2 LookDirection { get; set; }
+
     public Rigidbody2D rb { get; protected set; }
-    protected Animator animator;
+    public Animator animator { get; protected set; }
     public InventorySystem inventory { get; protected set; }
+
+    public SpriteRenderer spriteRenderer { get; protected set; }
 
     protected virtual bool Stunned { get; set; }
 
@@ -106,6 +114,7 @@ public abstract class BaseCharacter : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         inventory = GetComponent<InventorySystem>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         // We dont want gravity since technically down in unity is at the bottom of the screen
         rb.gravityScale = 0f;
@@ -145,4 +154,6 @@ public abstract class BaseCharacter : MonoBehaviour
     }
 
     protected abstract void Die();
+
+    public abstract void TakeDamage(BaseCharacter character, int damage);
 }

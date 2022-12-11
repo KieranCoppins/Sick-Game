@@ -165,7 +165,7 @@ public class CharacterMovement : BaseCharacter
     }
 
 
-    public void TakeDamage(int damage)
+    public override void TakeDamage(BaseCharacter character, int damage)
     {
         Health -= damage;
         StartCoroutine(Stun(0.5f));
@@ -221,7 +221,7 @@ public class CharacterMovement : BaseCharacter
                 if (collider.CompareTag("Mob"))
                 {
                     float dist = targetRange - Vector2.Distance(transform.position, collider.transform.position);
-                    float dotProd = Vector2.Dot((collider.transform.position - transform.position).normalized, lookAtMouse.LookDirection.normalized) * targetRange * 0.8f;
+                    float dotProd = Vector2.Dot((collider.transform.position - transform.position).normalized, LookDirection.normalized) * targetRange * 0.8f;
                     targetWeightPair.Add(new KeyValuePair<Transform, float>(collider.transform, dist + dotProd));
                 }
             }
@@ -282,7 +282,7 @@ public class CharacterMovement : BaseCharacter
     public void CastAbility()
     {
         Mana -= selectedAbility.ManaCost;
-        selectedAbility.Cast(transform.position, lookAtMouse.LookDirection, Target, this);
+        selectedAbility.Cast(transform.position, LookDirection, Target, this);
     }
 
     public void FinishCast()

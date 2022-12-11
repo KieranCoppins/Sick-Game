@@ -25,12 +25,14 @@ public class A_Melee : A_Attack
 
     public override IEnumerator Execute()
     {
-        CanCast = false;
+        mob.CanAttack = false;
 
         // We should play some kind of attack animation
         // We can do a sphere overlap cast to determine colliders where the melee weapon is.
         // We can then put an event in the animation to deal damage to all the colliders in the overlap check
         // This does require characters and animations to be included!
+        mob.animator.Play("Attack");
+        yield return new WaitForSeconds(0.5f);
 
         mob.StartCoroutine(Cooldown());
         yield return null;

@@ -18,7 +18,7 @@ public class A_PullBack : Action
 
     public override IEnumerator Execute()
     {
-        while (Vector2.Distance(mob.transform.position, mob.Target.position) < distance)
+        while (mob.Target != null && Vector2.Distance(mob.transform.position, mob.Target.position) < distance)
         {
             desiredPosition = mob.transform.position + (mob.transform.position - mob.Target.position).normalized * 5f;
             Vector2 dir = mob.GetMovementVector(desiredPosition);
