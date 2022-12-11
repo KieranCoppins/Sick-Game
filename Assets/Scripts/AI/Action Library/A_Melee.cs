@@ -32,6 +32,7 @@ public class A_Melee : A_Attack
         // We can then put an event in the animation to deal damage to all the colliders in the overlap check
         // This does require characters and animations to be included!
         mob.animator.Play("Attack");
+        EmitAlert.Emit(mob.transform.position, 10f);
         yield return new WaitForSeconds(0.5f);
 
         mob.StartCoroutine(Cooldown());

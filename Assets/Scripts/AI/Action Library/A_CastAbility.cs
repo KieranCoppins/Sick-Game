@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 /// <summary>
 /// An attack action that casts the mobs given ability
@@ -46,6 +47,7 @@ public class A_CastAbility : A_Attack
             mob.CanAttack = false;
 
             mob.animator.Play("Attack");
+            EmitAlert.Emit(mob.transform.position, 10f);
 
             // Whilst we are casting, we want to get the average of our player's movement vector
             yield return new DoTaskWhilstWaitingForSeconds(() => {
