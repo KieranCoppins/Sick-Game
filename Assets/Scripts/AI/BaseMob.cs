@@ -194,9 +194,6 @@ public abstract class BaseMob : BaseCharacter
             // We want to look in the direction we are moving
             LookDirection = rb.velocity.normalized;
         }
-        // Flip our sprite if needed
-        if (LookDirection.x != 0f)
-            spriteRenderer.flipX = LookDirection.x < 0;
 
     }
 

@@ -48,17 +48,24 @@ public class A_CastAbility : A_Attack
 
             mob.animator.Play("Attack");
             EmitAlert.Emit(mob.transform.position, 10f);
+            float timer = ability.CastTime;
+            yield return null;
 
             // Whilst we are casting, we want to get the average of our player's movement vector
-            yield return new DoTaskWhilstWaitingForSeconds(() => {
+            yield return new DoTaskWhilstWaitingUntil(() => {
                 if (mob.Target != null)
                 {
                     totalTargetVelocity += mob.Target.GetComponent<Rigidbody2D>().velocity;
                     totalVelocityEntries += 1;
                 }
-            }, ability.CastTime);
+            }, 
+            () =>
+            {
+                timer -= Time.deltaTime;
+                return !mob.animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") || !mob.Target || timer <= 0f;
+            });
 
-            if (mob.Target == null)
+            if (!mob.Target)
             {
                 mob.CanAttack = true;
                 yield return null;
@@ -74,7 +81,7 @@ public class A_CastAbility : A_Attack
             }
         }
 
-        yield return null;
+        yield return new WaitUntil(() => !mob.animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"));
     }
 
     Vector2 PredictLocation()

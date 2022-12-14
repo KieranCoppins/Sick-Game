@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
+using Unity.VisualScripting;
 
 public class DecisionTreeGeneric<T> : DecisionTree where T : BaseMob
 {
@@ -288,6 +289,27 @@ public class DoTaskWhilstWaitingForSeconds : CustomYieldInstruction
     }
 }
 
+// Does task every frame until condition is true
+public class DoTaskWhilstWaitingUntil : CustomYieldInstruction
+{
+    readonly UnityAction task;
+    Func<bool> condition;
+    public DoTaskWhilstWaitingUntil(UnityAction task, Func<bool> condition)
+    {
+        this.task = task;
+        this.condition = condition;
+    }
+
+    public override bool keepWaiting
+    {
+        get
+        {
+            task.Invoke();
+            return !condition.Invoke();
+        }
+    }
+}
+
 ///  Editor classes that are also referenced in engine
 
 [System.Serializable]
@@ -311,12 +333,12 @@ public class InputOutputPorts
         return $"In GUID: {inputGUID} | In Port: {inputPortName} | Out GUID: {outputGUID} | Out Port: {outputPortName}";
     }
 
-    public static bool operator !=(InputOutputPorts input, Edge edge)
+    public static bool operator !=(InputOutputPorts input, UnityEditor.Experimental.GraphView.Edge edge)
     {
         return !(input == edge);
     }
 
-    public static bool operator ==(InputOutputPorts input, Edge edge)
+    public static bool operator ==(InputOutputPorts input, UnityEditor.Experimental.GraphView.Edge edge)
     {
         BaseNodeView inputNodeView = edge.input.node as BaseNodeView;
         BaseNodeView outputNodeView = edge.output.node as BaseNodeView;

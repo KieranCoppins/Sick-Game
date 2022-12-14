@@ -33,7 +33,9 @@ public class A_Melee : A_Attack
         // This does require characters and animations to be included!
         mob.animator.Play("Attack");
         EmitAlert.Emit(mob.transform.position, 10f);
-        yield return new WaitForSeconds(0.5f);
+        yield return null;
+
+        yield return new WaitUntil(() => { return !mob.animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"); });
 
         mob.StartCoroutine(Cooldown());
         yield return null;

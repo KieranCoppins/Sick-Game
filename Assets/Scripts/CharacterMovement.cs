@@ -19,7 +19,7 @@ public class CharacterMovement : BaseCharacter
     [SerializeField] Slider ManaBar;
     [SerializeField] GameObject TargetGraphic;
 
-    bool CanMove = true; 
+    public bool CanMove { get; private set; } 
     Vector2 movementVelocity;
 
     int attackStage = 0;
@@ -110,6 +110,8 @@ public class CharacterMovement : BaseCharacter
     {
         base.Start();
         lookAtMouse = GetComponent<LookAtMouse>();
+
+        CanMove = true;
     }
 
     protected override void Update()
@@ -141,7 +143,7 @@ public class CharacterMovement : BaseCharacter
 
     public void Roll(InputAction.CallbackContext context)
     {
-        if (context.started && CanMove && Stamina >= 10)
+        if (context.started && CanMove && Stamina >= 10 && movementVelocity.magnitude != 0)
         {
             StartCoroutine(DoRoll(movementVelocity.normalized));
             Stamina -= 10;
@@ -152,15 +154,16 @@ public class CharacterMovement : BaseCharacter
     {
         float rollTime = .2f;
         CanMove = false;
-        animator.SetBool("Rolling", true);
-        while (rollTime > 0f)
+        animator.Play("Slide");
+        yield return null;
+        while (animator.GetCurrentAnimatorStateInfo(0).IsName("Slide"))
         {
+            LookDirection = direction.normalized;
             rollTime -= Time.deltaTime;
-            rb.velocity = direction * rollSpeed;
+            rb.velocity = direction.normalized * rollSpeed;
             yield return null;
         }
         CanMove = true;
-        animator.SetBool("Rolling", false);
         yield return null;
     }
 
@@ -176,7 +179,7 @@ public class CharacterMovement : BaseCharacter
         if (context.started && QueueAttack && Stamina >= 10 && CanMove)
         {
             attackStage++;
-            animator.SetInteger("AttackStage", attackStage);
+            animator.Play($"Attack{attackStage}");
             QueueAttack = false;
             Stamina -= 10;
             rb.velocity = movementVelocity * MovementSpeed;   
@@ -185,7 +188,6 @@ public class CharacterMovement : BaseCharacter
     public void ResetAttackStage() 
     { 
         attackStage = 0; 
-        animator.SetInteger("AttackStage", attackStage);
         QueueAttack = true;
     }
     public void CanQueueAttack() { QueueAttack = true; }
@@ -271,11 +273,11 @@ public class CharacterMovement : BaseCharacter
     {
         if (!context.started)
             return;
-        if (Mana >= selectedAbility.ManaCost && !animator.GetBool("CastAbility"))
+        if (Mana >= selectedAbility.ManaCost && CanMove)
         {
             CanMove = false;
             rb.velocity = Vector2.zero;
-            animator.SetBool("CastAbility", true);
+            animator.Play("Cast");
         }
     }
 
@@ -287,7 +289,6 @@ public class CharacterMovement : BaseCharacter
 
     public void FinishCast()
     {
-        animator.SetBool("CastAbility", false);
         CanMove = true;
     }
 

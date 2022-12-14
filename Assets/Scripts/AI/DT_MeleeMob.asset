@@ -145,13 +145,13 @@ MonoBehaviour:
   guid: ae3564bf19de3e548a76608aef87c09a
   positionalData:
     serializedVersion: 2
-    x: 556.77246
-    y: -80.67249
-    width: -556.77246
-    height: 80.67249
+    x: 478.00006
+    y: -95.0001
+    width: 108
+    height: 77
   mob: {fileID: 0}
   _flags: 4
-  distance: 0
+  distance: 5
 --- !u!114 &-2759440480214774912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
   guid: 6405210ad58e686418a4ea1c8fb7ab06
   positionalData:
     serializedVersion: 2
-    x: -610.3503
+    x: -610
     y: 561.00006
     width: 158
     height: 101
@@ -458,6 +458,10 @@ MonoBehaviour:
     inputPortName: main
     outputGUID: 06bace612c3de99409b45c9ffb2d29fe
     outputPortName: FALSE
+  - inputGUID: ae3564bf19de3e548a76608aef87c09a
+    inputPortName: main
+    outputGUID: c2c1ae666bbd6864b95459c50c54fc1f
+    outputPortName: TRUE
 --- !u!114 &2127230805361811938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,7 +586,7 @@ MonoBehaviour:
     width: 148
     height: 101
   mob: {fileID: 0}
-  trueNode: {fileID: 0}
+  trueNode: {fileID: -4257245336603236218}
   falseNode: {fileID: -4408042197376082275}
   pullbackDistance: 5
 --- !u!114 &8954273575360968739

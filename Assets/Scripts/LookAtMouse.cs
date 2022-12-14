@@ -23,24 +23,26 @@ public class LookAtMouse : MonoBehaviour
 
     void Update()
     {
-        if (characterMovement.Target != null)
+        // Only update our look direction is we are able to move
+        if (characterMovement.CanMove)
         {
-            characterMovement.LookDirection = (characterMovement.Target.position - transform.position).normalized;
-        }
-        else
-        {
-            if (playerInput.currentControlScheme == "Keyboard&Mouse")
+            if (characterMovement.Target != null)
             {
-                mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-                mousePos.z = 0;
-
-                characterMovement.LookDirection = (mousePos - transform.position).normalized;
+                characterMovement.LookDirection = (characterMovement.Target.position - transform.position).normalized;
             }
-        }
+            else
+            {
+                if (playerInput.currentControlScheme == "Keyboard&Mouse")
+                {
+                    mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+                    mousePos.z = 0;
 
-        hitTarget.position = transform.position + (Vector3)characterMovement.LookDirection * 1.5f;
-        // Flip our weapon and character sprites depending on where we're looking
-        characterMovement.spriteRenderer.flipX = characterMovement.LookDirection.x < 0;
+                    characterMovement.LookDirection = (mousePos - transform.position).normalized;
+                }
+            }
+
+            hitTarget.position = transform.position + (Vector3)characterMovement.LookDirection * 1.5f;
+        }
     }
 
     public void UpdateDirection(InputAction.CallbackContext context)
