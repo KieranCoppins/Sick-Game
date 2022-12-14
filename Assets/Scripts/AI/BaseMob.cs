@@ -34,9 +34,9 @@ public enum AggressionSystems
 public abstract class BaseMob : BaseCharacter
 {
     [Header("Events")]
-    protected UnityEvent onTakeDamage;
-    protected UnityEvent onHeal;
-    protected UnityEvent onDeath;
+    protected UnityEvent onTakeDamage = new UnityEvent();
+    protected UnityEvent onHeal = new UnityEvent();
+    protected UnityEvent onDeath = new UnityEvent();
 
     [Header("Mob Stats")]
     [SerializeField] public string mobName;
@@ -57,6 +57,7 @@ public abstract class BaseMob : BaseCharacter
     protected List<Vector2> movementDirections;
     public Vector2 AreaOfInterest { get; protected set; }
     [HideInInspector] public CombatState State { get; set; }
+    [HideInInspector] public bool CanAttack = true;
 
     // Values for our aggression system
     protected Dictionary<BaseCharacter, float> aggressionWeights = new Dictionary<BaseCharacter, float>();
@@ -65,6 +66,7 @@ public abstract class BaseMob : BaseCharacter
     [EnumFlags]
     [SerializeField]
     public DebugFlags debugFlags;
+
 
 
     public string GetCurrentActionText()
@@ -94,8 +96,10 @@ public abstract class BaseMob : BaseCharacter
     /// </summary>
     /// <param name="character"></param>
     /// <param name="dmg"></param>
-    public void TakeDamage(BaseCharacter character, int dmg)
+    public override void TakeDamage(BaseCharacter character, int dmg)
     {
+        if (animator)
+            animator?.Play("Take Hit");
         Health -= dmg;
         onTakeDamage?.Invoke();
         switch (AggressionSystem)
@@ -149,6 +153,8 @@ public abstract class BaseMob : BaseCharacter
         PathfindingComponent = GetComponent<PathfindingComponent>();
         actionManager = GetComponent<ActionManager>();
 
+        CanAttack = true;
+
         // Set up movement directions
         movementDirections = new List<Vector2>();
         float angle = 18f;
@@ -163,18 +169,41 @@ public abstract class BaseMob : BaseCharacter
         // Initialise our decision tree
         decisionTree = decisionTree.Clone(this.name);
         decisionTree.Initialise(this);
+
+        // Subscribe onDeath to destroy this gameobject
+        onDeath.AddListener(() =>
+        {
+            Destroy(this.gameObject);
+        });
+
         StartCoroutine(Think());
     }
 
     protected override void Update()
     {
         base.Update();
+
+        // Update our look direction
+        if (Target)
+        {
+            // We want to look at our target
+            LookDirection = (Target.position - transform.position).normalized;
+        }
+        else
+        {
+            // We want to look in the direction we are moving
+            LookDirection = rb.velocity.normalized;
+        }
+
     }
 
     protected virtual void LateUpdate()
     {
         if (Stunned)
             rb.velocity = Vector2.zero;
+
+        if (animator)
+            animator?.SetBool("Moving", rb.velocity.magnitude > 0);
     }
 
     /// <summary>
@@ -294,7 +323,6 @@ public abstract class BaseMob : BaseCharacter
     protected override void Die()
     {
         onDeath?.Invoke();
-        Destroy(this.gameObject);
     }
 
     public void AlertListener(Vector2 origin)

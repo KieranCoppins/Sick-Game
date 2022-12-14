@@ -29,6 +29,7 @@ public class A_FollowPath : Action
                 distance = Vector2.Distance(mob.transform.position, mob.IdlePathNodes[currentWaypoint].position);
                 yield return null;
             }
+            mob.rb.velocity = Vector2.zero;
             currentWaypoint++;
             if (currentWaypoint > mob.IdlePathNodes.Length - 1)
                 currentWaypoint = 0;

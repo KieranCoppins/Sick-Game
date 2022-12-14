@@ -26,7 +26,7 @@ public class D_AttackDecision : Decision
     public override DecisionTreeNode GetBranch()
     {
         // If we are in range & have line of sight
-        if (TestData() <= attackRange && mob.HasLineOfSight(mob.Target.position) && action.CanCast)
+        if (TestData() <= attackRange && mob.HasLineOfSight(mob.Target.position) && mob.CanAttack)
         {
             return trueNode;
         }

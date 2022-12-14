@@ -55,23 +55,19 @@ public class Projectile : MonoBehaviour
         if (aliveTime >= lifespan)
         {
             OnDeath?.Invoke();
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        BaseCharacter character = collision.collider.GetComponent<BaseCharacter>();
+        if (character)
         {
-            // Deal damage to player here
-            collision.gameObject.GetComponent<CharacterMovement>().TakeDamage(damage);
-        }
-        else if (collision.collider.CompareTag("Mob"))
-        {
-            collision.gameObject.GetComponent<BaseMob>().TakeDamage(caster, damage);
+            character.TakeDamage(caster, damage);
         }
         OnDeath?.Invoke();
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 
     private void OnDestroy()

@@ -26,7 +26,7 @@ public class RangedMob : BaseMob
             return Vector2.Dot(targetDir, dir);
 
         // Move away from the target if too close
-        if (dist < 4.0f)
+        if (dist < ability.Range - 3.0f)
             return 1f - Mathf.Abs(Vector2.Dot(targetDir * -1f, dir) - 0.65f) + Vector2.Dot(rb.velocity.normalized, dir);  // We add the dot product of our current velocity so that we try and favor where we are currently going - prevents random switches in direction
 
         // Circle the target if in range
