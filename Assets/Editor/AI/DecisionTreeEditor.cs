@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -14,6 +15,17 @@ public class DecisionTreeEditor : EditorWindow
     {
         DecisionTreeEditor wnd = GetWindow<DecisionTreeEditor>();
         wnd.titleContent = new GUIContent("Decision Tree Editor");
+    }
+
+    [OnOpenAsset]
+    public static bool OnOpenAsset(int instanceId, int line)
+    {
+        if (Selection.activeObject is DecisionTree)
+        {
+            ShowExample();
+            return true;
+        }
+        return false;
     }
 
     public void CreateGUI()
