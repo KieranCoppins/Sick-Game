@@ -32,4 +32,9 @@ public class D_AttackDecision : Decision
         }
         return falseNode;
     }
+
+    public override string GetDescription()
+    {
+        return $"If the mob has line of sight to the target and is within {attackRange} units, it will {trueNode.GetTitle().ToLower()}.";
+    }
 }

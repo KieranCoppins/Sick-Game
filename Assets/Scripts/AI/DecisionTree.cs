@@ -6,6 +6,8 @@ using UnityEngine.Events;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using Unity.VisualScripting;
+using System.Reflection.Emit;
+using UnityEngine.UIElements;
 
 public class DecisionTreeGeneric<T> : DecisionTree where T : BaseMob
 {
@@ -116,6 +118,16 @@ public abstract class DecisionTreeEditorNode : ScriptableObject
     {
         return Instantiate(this);
     }
+
+    public virtual string GetTitle()
+    {
+        return GenericHelpers.SplitCamelCase(name.Substring(2));
+    }
+
+    public virtual string GetDescription()
+    {
+        return "This is the default description of a DecisionTreeEditorNode";
+    }
 }
 
 public abstract class DecisionTreeNode : DecisionTreeEditorNode
@@ -186,6 +198,11 @@ public abstract class A_Attack : Action
     {
         base.Initialise(mob);
     }
+
+    public override string GetDescription()
+    {
+        return $"Attack the mob's target. The attack has a {cooldown} second cooldown";
+    }
 }
 
 public abstract class Decision : DecisionTreeNode
@@ -235,15 +252,25 @@ public abstract class Function<T> : DecisionTreeEditorNode
 
 public abstract class F_Condition : Function<bool>
 {
+    public override string GetDescription()
+    {
+        return $"Returns true if {GetSummary()}.";
+    }
+
+    /// <summary>
+    /// This should return a quick summary of what the function does. NOT THE DESCRIPTION. This will be used within the description of other nodes.
+    /// </summary>
+    /// <returns></returns>
+    public abstract string GetSummary();
 }
 
 
-public abstract class F_LogicGate : Function<bool>
+public abstract class F_LogicGate : F_Condition
 {
-    public Function<bool> A;
-    public Function<bool> B;
+    public F_Condition A;
+    public F_Condition B;
 
-    public F_LogicGate(Function<bool> A, Function<bool> B)
+    public F_LogicGate(F_Condition A, F_Condition B)
     {
         this.A = A;
         this.B = B;
@@ -259,8 +286,8 @@ public abstract class F_LogicGate : Function<bool>
     public override DecisionTreeEditorNode Clone()
     {
         F_LogicGate node = Instantiate(this);
-        node.A = (Function<bool>)A.Clone();
-        node.B = (Function<bool>)B.Clone();
+        node.A = (F_Condition)A.Clone();
+        node.B = (F_Condition)B.Clone();
         return node;
     }
 }
@@ -377,10 +404,17 @@ public abstract class BaseNodeView : UnityEditor.Experimental.GraphView.Node
     public Dictionary<string, Port> inputPorts;
     public Dictionary<string, Port> outputPorts;
 
-    public BaseNodeView(DecisionTreeEditorNode node)
+    readonly UnityEngine.UIElements.Label descriptionLabel;
+
+    public string description {  get { return descriptionLabel.text; } set { descriptionLabel.text = value; } }
+
+    public BaseNodeView(DecisionTreeEditorNode node) : base("Assets/Editor/AI/DecisionTreeNodeView.uxml")
     {
         this.node = node;
-        this.title = node.name;
+        this.title = node.GetTitle();
+
+        descriptionLabel = this.Q<UnityEngine.UIElements.Label>("description");
+        this.description = node.GetDescription();
 
         style.left = node.positionalData.xMin;
         style.top = node.positionalData.yMin;

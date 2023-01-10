@@ -24,4 +24,9 @@ public class F_RunEQS : Function<Vector2>
         clone.eqs = (EnvironmentQuerySystem)eqs.Clone();
         return clone;
     }
+
+    public override string GetDescription()
+    {
+        return $"Returns the destination returned from the eqs query: {GenericHelpers.SplitCamelCase(eqs.name.Substring(4))}";
+    }
 }

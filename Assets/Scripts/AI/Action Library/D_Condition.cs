@@ -6,7 +6,7 @@ using UnityEditor;
 
 public class D_Condition : Decision
 {
-    [HideInInspector] public Function<bool> Condition;
+    [HideInInspector] public F_Condition Condition;
 
     public D_Condition(F_Condition Condition)
     {
@@ -30,7 +30,19 @@ public class D_Condition : Decision
         D_Condition node = Instantiate(this);
         node.trueNode = (DecisionTreeNode)trueNode.Clone();
         node.falseNode = (DecisionTreeNode)falseNode.Clone();
-        node.Condition = (Function<bool>)Condition.Clone();
+        node.Condition = (F_Condition)Condition.Clone();
         return node;
+    }
+
+    public override string GetDescription()
+    {
+        try
+        {
+            return $"The mob will {trueNode.GetTitle().ToLower()} if {Condition.GetSummary().ToLower()}. Otherwise the mob will {falseNode.GetTitle().ToLower()}.";
+        }
+        catch
+        {
+            return "There was an issue with this description";
+        }
     }
 }

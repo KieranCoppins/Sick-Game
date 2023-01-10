@@ -1,0 +1,122 @@
+#selection-border {
+    border-left-color: rgba(3, 219, 191, 255);
+    border-right-color: rgba(3, 219, 191, 255);
+    border-top-color: rgba(3, 219, 191, 255);
+    border-bottom-color: rgba(3, 219, 191, 255);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+:hover > #selection-border {
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+}
+
+:selected > #selection-border {
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-left-color: rgba(2, 137, 120, 255);
+    border-right-color: rgba(2, 137, 120, 255);
+    border-top-color: rgba(2, 137, 120, 255);
+    border-bottom-color: rgba(2, 137, 120, 255);
+}
+
+:selected:hover > #selection-border {
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-left-color: rgba(3, 219, 191, 255);
+    border-right-color: rgba(3, 219, 191, 255);
+    border-top-color: rgba(3, 219, 191, 255);
+    border-bottom-color: rgba(3, 219, 191, 255);
+}
+
+#node-border {
+    background-color: rgb(56, 56, 56);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#input {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#output {
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.port {
+}
+
+.node {
+    min-width: 150px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#title {
+    width: 100%;
+    -unity-text-align: middle-center;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(31, 31, 31, 255);
+    border-right-color: rgba(31, 31, 31, 255);
+    border-top-color: rgba(31, 31, 31, 255);
+    border-bottom-color: rgba(31, 31, 31, 255);
+    -unity-font-style: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.action #title {
+    background-color: rgba(73, 111, 93, 255);
+    color: rgba(210, 210, 210, 255);
+}
+
+.decision #title {
+    background-color: rgba(73, 81, 111, 255);
+}
+
+.function #title {
+    background-color: rgba(250, 243, 62, 255);
+    color: rgba(34, 34, 34, 255);
+}
+
+.root #title {
+    background-color: rgba(117, 79, 91, 255);
+}
+
+#description {
+    font-size: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    white-space: normal;
+    max-width: 250px;
+    -unity-text-align: upper-left;
+}

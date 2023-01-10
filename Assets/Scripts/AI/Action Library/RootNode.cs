@@ -23,4 +23,14 @@ public class RootNode : DecisionTreeNode
         node.child = (DecisionTreeNode)child.Clone();
         return node;
     }
+
+    public override string GetTitle()
+    {
+        return GenericHelpers.SplitCamelCase(name);
+    }
+
+    public override string GetDescription()
+    {
+        return "This is the root node of the decision tree. This is your starting point.";
+    }
 }

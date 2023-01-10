@@ -104,4 +104,17 @@ public class A_CastAbility : A_Attack
 
         return mob.Target.position;
     }
+
+    public override string GetDescription()
+    {
+        return $"Casts {ability?.name} at the mob's target with a {cooldown} second cooldown.";
+    }
+
+    public override string GetTitle()
+    {
+        if (ability != null)
+            return $"Cast {ability.name}";
+
+        return base.GetTitle();
+    }
 }

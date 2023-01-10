@@ -23,4 +23,9 @@ public class C_StatComparison : F_Condition
                 return false;
         }
     }
+
+    public override string GetSummary()
+    {
+        return $"{GenericHelpers.SplitCamelCase(stat)} is {GenericHelpers.SplitCamelCase(operation.ToString()).ToLower()} {value}";
+    }
 }

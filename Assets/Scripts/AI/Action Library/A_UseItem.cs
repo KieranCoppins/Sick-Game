@@ -18,4 +18,9 @@ public class A_UseItem : Action
         yield return new WaitForSeconds(0.1f);
         yield return null;
     }
+
+    public override string GetDescription()
+    {
+        return $"The mob will use {item.name} if they have it in their inventory.";
+    }
 }

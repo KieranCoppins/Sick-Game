@@ -102,4 +102,9 @@ public class A_PathTo : Action
         clone.CancelPathfindingCondition = (Function<bool>)CancelPathfindingCondition?.Clone();
         return clone;
     }
+
+    public override string GetDescription()
+    {
+        return "Use A* to pathfind to the position given by our EQS query.";
+    }
 }

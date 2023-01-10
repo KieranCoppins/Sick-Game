@@ -10,4 +10,9 @@ public class F_GetAreaOfInterest : Function<Vector2>
     {
         return mob.AreaOfInterest;
     }
+
+    public override string GetDescription()
+    {
+        return "Returns the mob's area of interest.";
+    }
 }

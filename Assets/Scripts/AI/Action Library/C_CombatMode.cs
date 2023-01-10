@@ -14,4 +14,9 @@ public class C_CombatMode : F_Condition
     {
         return mob.State == state;
     }
+
+    public override string GetSummary()
+    {
+        return $"the mob's combat state is {state}";
+    }
 }

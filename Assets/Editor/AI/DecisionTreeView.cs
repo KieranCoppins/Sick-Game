@@ -198,12 +198,13 @@ public class DecisionTreeView : GraphView
                                 if (edge.input.portType == param.ParameterType && edge.input.portName == param.Name)
                                 {
                                     inputNode.node.GetType().GetField(param.Name).SetValue(inputNode.node, null);
+                                    inputNode.title = inputNode.node.GetTitle();
+                                    inputNode.description = inputNode.node.GetDescription();
                                 }
                             }
                         }
                     }
                 }
-
             });
         }
         if (graphViewChange.edgesToCreate != null)
@@ -256,6 +257,10 @@ public class DecisionTreeView : GraphView
                     }
                 }
 
+                inputNode.title = inputNode.node.GetTitle();
+                inputNode.description = inputNode.node.GetDescription();
+                outputNode.title = outputNode.node.GetTitle();
+                outputNode.description = outputNode.node.GetDescription();
                 tree.inputs.Add(input);
             });
         }

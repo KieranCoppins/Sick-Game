@@ -8,4 +8,9 @@ public class C_HasTarget : F_Condition
     {
         return mob.Target != null;
     }
+
+    public override string GetSummary()
+    {
+        return "the mob has a target.";
+    }
 }

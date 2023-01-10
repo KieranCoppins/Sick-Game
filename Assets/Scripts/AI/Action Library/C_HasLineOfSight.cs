@@ -5,4 +5,9 @@ using UnityEngine;
 public class C_HasLineOfSight : F_Condition
 {
     public override bool Invoke() => mob.HasLineOfSight(mob.Target.position);
+
+    public override string GetSummary()
+    {
+        return "the mob has line of sight to the player";
+    }
 }

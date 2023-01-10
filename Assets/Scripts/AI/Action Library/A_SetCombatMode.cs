@@ -20,4 +20,9 @@ public class A_SetCombatMode : Action
         mob.State = state;
         yield return null;
     }
+
+    public override string GetDescription()
+    {
+        return $"Set the mobs combat state to {state}";
+    }
 }
