@@ -102,6 +102,8 @@ public class DecisionTree : ScriptableObject
     }
 }
 
+public delegate void DecisionTreeEditorNodeOnValidate();
+
 public abstract class DecisionTreeEditorNode : ScriptableObject
 {
     /// Editor Values
@@ -109,6 +111,8 @@ public abstract class DecisionTreeEditorNode : ScriptableObject
     [HideInInspector] public Rect positionalData;
 
     [HideInInspector] public BaseMob mob;
+
+    public DecisionTreeEditorNodeOnValidate OnValidateCallback { get; set; }
 
     public virtual void Initialise(BaseMob mob)
     {
@@ -127,6 +131,11 @@ public abstract class DecisionTreeEditorNode : ScriptableObject
     public virtual string GetDescription(BaseNodeView nodeView)
     {
         return "This is the default description of a DecisionTreeEditorNode";
+    }
+
+    private void OnValidate()
+    { 
+        OnValidateCallback?.Invoke();
     }
 }
 
@@ -456,6 +465,7 @@ public abstract class BaseNodeView : UnityEditor.Experimental.GraphView.Node
         connectedNodes = new List<BaseNodeView>();
 
         this.node = node;
+        node.OnValidateCallback += OnValidate;
         this.title = node.GetTitle();
 
         // Default our error to be hidden
@@ -483,6 +493,12 @@ public abstract class BaseNodeView : UnityEditor.Experimental.GraphView.Node
         base.OnSelected();
         if (OnNodeSelected != null)
             OnNodeSelected.Invoke(this);
+    }
+
+    void OnValidate()
+    {
+        title = node.GetTitle();
+        description = node.GetDescription(this);
     }
 
 }
