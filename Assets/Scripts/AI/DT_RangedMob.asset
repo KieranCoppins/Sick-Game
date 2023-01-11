@@ -328,10 +328,6 @@ MonoBehaviour:
     inputPortName: Condition
     outputGUID: 1982c7683e0ce434fb41beb75326c6a4
     outputPortName: Output
-  - inputGUID: 86fe8e06c736cb24580199183461cefd
-    inputPortName: main
-    outputGUID: b9b185fc332341a41bdd7a6938809ca4
-    outputPortName: FALSE
   - inputGUID: edd2312de6f479447820af86e403f4e4
     inputPortName: Condition
     outputGUID: 2b939ce6b7594034e9db3504bfbd3126
@@ -376,10 +372,6 @@ MonoBehaviour:
     inputPortName: main
     outputGUID: d5f1ef43f1ab3034d8bd294fb8725180
     outputPortName: FALSE
-  - inputGUID: 18b2186a44a7d5d459e785b9a38f497b
-    inputPortName: destinationQuery
-    outputGUID: 657ee5dbbb5a5b749aa59b802e908417
-    outputPortName: Output
   - inputGUID: 484fdd4e0805c17438c2c86d329906f1
     inputPortName: main
     outputGUID: edd2312de6f479447820af86e403f4e4
@@ -388,18 +380,10 @@ MonoBehaviour:
     inputPortName: main
     outputGUID: 95fef5d7cca2665479baf34b9937d062
     outputPortName: FALSE
-  - inputGUID: 8303d485f42aad44d89f635f4491e74a
-    inputPortName: main
-    outputGUID: 4f893894630ccb7429dae747c5bd0e1e
-    outputPortName: TRUE
   - inputGUID: ad51958129094dc418d46b51d6cb893f
     inputPortName: main
     outputGUID: 4f893894630ccb7429dae747c5bd0e1e
     outputPortName: FALSE
-  - inputGUID: 4f893894630ccb7429dae747c5bd0e1e
-    inputPortName: main
-    outputGUID: b9b185fc332341a41bdd7a6938809ca4
-    outputPortName: TRUE
   - inputGUID: d5f1ef43f1ab3034d8bd294fb8725180
     inputPortName: Condition
     outputGUID: f335412ff2d3f5544b578852c48921a6
@@ -408,26 +392,42 @@ MonoBehaviour:
     inputPortName: CancelPathfindingCondition
     outputGUID: d5f2324ebf09c6040ad45bd4cc2add12
     outputPortName: Output
-  - inputGUID: b9b185fc332341a41bdd7a6938809ca4
-    inputPortName: main
-    outputGUID: 68a618ddfbe33a942938aba85219166e
-    outputPortName: FALSE
-  - inputGUID: 75b9e629126868d4db921c694c0db2c7
-    inputPortName: main
-    outputGUID: 68a618ddfbe33a942938aba85219166e
-    outputPortName: TRUE
   - inputGUID: 68a618ddfbe33a942938aba85219166e
     inputPortName: Condition
     outputGUID: ecabc0fdffab05045aa308c6c418eb70
     outputPortName: Output
   - inputGUID: ecabc0fdffab05045aa308c6c418eb70
-    inputPortName: B
-    outputGUID: 2be677c7176814b4e95bd2e126026791
-    outputPortName: Output
-  - inputGUID: ecabc0fdffab05045aa308c6c418eb70
     inputPortName: A
     outputGUID: a283f878c9783da4197d974c45f955a0
     outputPortName: Output
+  - inputGUID: 75b9e629126868d4db921c694c0db2c7
+    inputPortName: main
+    outputGUID: 68a618ddfbe33a942938aba85219166e
+    outputPortName: TRUE
+  - inputGUID: b9b185fc332341a41bdd7a6938809ca4
+    inputPortName: main
+    outputGUID: 68a618ddfbe33a942938aba85219166e
+    outputPortName: FALSE
+  - inputGUID: 4f893894630ccb7429dae747c5bd0e1e
+    inputPortName: main
+    outputGUID: b9b185fc332341a41bdd7a6938809ca4
+    outputPortName: TRUE
+  - inputGUID: 86fe8e06c736cb24580199183461cefd
+    inputPortName: main
+    outputGUID: b9b185fc332341a41bdd7a6938809ca4
+    outputPortName: FALSE
+  - inputGUID: ecabc0fdffab05045aa308c6c418eb70
+    inputPortName: B
+    outputGUID: 2be677c7176814b4e95bd2e126026791
+    outputPortName: Output
+  - inputGUID: 18b2186a44a7d5d459e785b9a38f497b
+    inputPortName: destinationQuery
+    outputGUID: 657ee5dbbb5a5b749aa59b802e908417
+    outputPortName: Output
+  - inputGUID: 8303d485f42aad44d89f635f4491e74a
+    inputPortName: main
+    outputGUID: 4f893894630ccb7429dae747c5bd0e1e
+    outputPortName: TRUE
 --- !u!114 &5926887326889380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,10 +622,10 @@ MonoBehaviour:
   guid: d5f2324ebf09c6040ad45bd4cc2add12
   positionalData:
     serializedVersion: 2
-    x: -96
-    y: 886
-    width: 256
-    height: 118
+    x: 44
+    y: 895
+    width: 535
+    height: 94
   mob: {fileID: 0}
 --- !u!114 &6964031788485736498
 MonoBehaviour:

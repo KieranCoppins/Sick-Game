@@ -105,6 +105,11 @@ public class A_PathTo : Action
 
     public override string GetDescription(BaseNodeView nodeView)
     {
+        if (destinationQuery == null)
+            nodeView.error = "A destination query is needed to pathfind to!";
+        else
+            nodeView.error = "";
+
         return "Use A* to pathfind to the position given by our EQS query.";
     }
 }
