@@ -105,7 +105,7 @@ public class A_CastAbility : A_Attack
         return mob.Target.position;
     }
 
-    public override string GetDescription()
+    public override string GetDescription(BaseNodeView nodeView)
     {
         return $"Casts {ability?.name} at the mob's target with a {cooldown} second cooldown.";
     }

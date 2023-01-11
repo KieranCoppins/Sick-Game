@@ -33,8 +33,17 @@ public class D_AttackDecision : Decision
         return falseNode;
     }
 
-    public override string GetDescription()
+    public override string GetDescription(BaseNodeView nodeView)
     {
-        return $"If the mob has line of sight to the target and is within {attackRange} units, it will {trueNode.GetTitle().ToLower()}.";
+        try
+        {
+            nodeView.error = "";
+            return $"If the mob has line of sight to the target and is within {attackRange} units, it will {trueNode.GetTitle().ToLower()}.";
+        }
+        catch(System.Exception e)
+        {
+            nodeView.error = e.Message;
+            return "";
+        }
     }
 }

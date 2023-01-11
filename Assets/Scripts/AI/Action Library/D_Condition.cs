@@ -34,14 +34,16 @@ public class D_Condition : Decision
         return node;
     }
 
-    public override string GetDescription()
+    public override string GetDescription(BaseNodeView nodeView)
     {
         try
         {
-            return $"The mob will {trueNode.GetTitle().ToLower()} if {Condition.GetSummary().ToLower()}. Otherwise the mob will {falseNode.GetTitle().ToLower()}.";
+            nodeView.error = "";
+            return $"The mob will {trueNode.GetTitle().ToLower()} if {Condition.GetSummary(nodeView).ToLower()}. Otherwise the mob will {falseNode.GetTitle().ToLower()}.";
         }
-        catch
+        catch (System.Exception e)
         {
+            nodeView.error = e.Message;
             return "There was an issue with this description";
         }
     }

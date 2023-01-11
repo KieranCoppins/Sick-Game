@@ -36,7 +36,7 @@ public class A_MoveTowards : Action
         yield return null;
     }
 
-    public override string GetDescription()
+    public override string GetDescription(BaseNodeView nodeView)
     {
         return "Move towards the mob's target using the mobs custom movement vectors.";
     }

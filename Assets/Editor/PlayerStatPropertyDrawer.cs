@@ -27,7 +27,7 @@ public class PlayerStatPropertyDraw : PropertyDrawer
 
         EditorGUI.BeginChangeCheck();
         int choiceIndex = EditorGUI.Popup(position, label.text, currentChoice, playerStatsLabels.ToArray());
-        Debug.Log(choiceIndex);
+
         if (EditorGUI.EndChangeCheck())
         {
             property.FindPropertyRelative("statName").stringValue = playerStatsLabels[choiceIndex];

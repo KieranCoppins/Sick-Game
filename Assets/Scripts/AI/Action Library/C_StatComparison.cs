@@ -24,8 +24,17 @@ public class C_StatComparison : F_Condition
         }
     }
 
-    public override string GetSummary()
+    public override string GetSummary(BaseNodeView nodeView)
     {
-        return $"{GenericHelpers.SplitCamelCase(stat)} is {GenericHelpers.SplitCamelCase(operation.ToString()).ToLower()} {value}";
+        try 
+        {
+            nodeView.error = "";
+            return $"{GenericHelpers.SplitCamelCase(stat)} is {GenericHelpers.SplitCamelCase(operation.ToString()).ToLower()} {value}";
+        }
+        catch (System.Exception e)
+        {
+            nodeView.error = e.Message;
+            return "";
+        }
     }
 }

@@ -9,7 +9,7 @@ public class C_HasTarget : F_Condition
         return mob.Target != null;
     }
 
-    public override string GetSummary()
+    public override string GetSummary(BaseNodeView nodeView)
     {
         return "the mob has a target.";
     }

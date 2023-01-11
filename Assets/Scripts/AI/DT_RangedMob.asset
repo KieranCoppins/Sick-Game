@@ -15,10 +15,10 @@ MonoBehaviour:
   guid: 75b9e629126868d4db921c694c0db2c7
   positionalData:
     serializedVersion: 2
-    x: -968.9966
-    y: 709.7529
-    width: 150
-    height: 94
+    x: -1109
+    y: 744
+    width: 256
+    height: 106
   mob: {fileID: 0}
   _flags: 1
   item: {fileID: 11400000, guid: d2bfb97dbfcec1b41bf1867ed51d1012, type: 2}
@@ -109,30 +109,6 @@ MonoBehaviour:
   trueNode: {fileID: 7087621849069156641}
   falseNode: {fileID: 7897397628156961917}
   Condition: {fileID: 3989429699906073092}
---- !u!114 &-3369003342890522012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daf10bdb7b213684b806a30dfa5d302e, type: 3}
-  m_Name: C_StatComparison
-  m_EditorClassIdentifier: 
-  guid: 486f9f0d9ab3976438a1eafc3ae88dde
-  positionalData:
-    serializedVersion: 2
-    x: -1064
-    y: 271
-    width: 242
-    height: 94
-  mob: {fileID: 0}
-  stat:
-    statName: Aggression
-  operation: 0
-  value: 10
 --- !u!114 &-2891666888716575074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +280,7 @@ MonoBehaviour:
     width: 256
     height: 130
   mob: {fileID: 0}
-  A: {fileID: -3369003342890522012}
+  A: {fileID: 5926887326889380}
   B: {fileID: -7797976778729428134}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -328,7 +304,6 @@ MonoBehaviour:
   - {fileID: 5440893340888606005}
   - {fileID: 2886043550655442086}
   - {fileID: -7797976778729428134}
-  - {fileID: -3369003342890522012}
   - {fileID: -8369162758046403060}
   - {fileID: -242621378756389807}
   - {fileID: -2484423893942029080}
@@ -347,19 +322,8 @@ MonoBehaviour:
   - {fileID: -2891666888716575074}
   - {fileID: 4908094041304604105}
   - {fileID: 6964031788485736498}
+  - {fileID: 5926887326889380}
   inputs:
-  - inputGUID: 75b9e629126868d4db921c694c0db2c7
-    inputPortName: main
-    outputGUID: 68a618ddfbe33a942938aba85219166e
-    outputPortName: TRUE
-  - inputGUID: ecabc0fdffab05045aa308c6c418eb70
-    inputPortName: B
-    outputGUID: 2be677c7176814b4e95bd2e126026791
-    outputPortName: Output
-  - inputGUID: b9b185fc332341a41bdd7a6938809ca4
-    inputPortName: main
-    outputGUID: 68a618ddfbe33a942938aba85219166e
-    outputPortName: FALSE
   - inputGUID: b9b185fc332341a41bdd7a6938809ca4
     inputPortName: Condition
     outputGUID: 1982c7683e0ce434fb41beb75326c6a4
@@ -436,22 +400,58 @@ MonoBehaviour:
     inputPortName: main
     outputGUID: b9b185fc332341a41bdd7a6938809ca4
     outputPortName: TRUE
+  - inputGUID: d5f1ef43f1ab3034d8bd294fb8725180
+    inputPortName: Condition
+    outputGUID: f335412ff2d3f5544b578852c48921a6
+    outputPortName: Output
   - inputGUID: 86fe8e06c736cb24580199183461cefd
     inputPortName: CancelPathfindingCondition
     outputGUID: d5f2324ebf09c6040ad45bd4cc2add12
     outputPortName: Output
+  - inputGUID: b9b185fc332341a41bdd7a6938809ca4
+    inputPortName: main
+    outputGUID: 68a618ddfbe33a942938aba85219166e
+    outputPortName: FALSE
+  - inputGUID: 75b9e629126868d4db921c694c0db2c7
+    inputPortName: main
+    outputGUID: 68a618ddfbe33a942938aba85219166e
+    outputPortName: TRUE
   - inputGUID: 68a618ddfbe33a942938aba85219166e
     inputPortName: Condition
     outputGUID: ecabc0fdffab05045aa308c6c418eb70
     outputPortName: Output
   - inputGUID: ecabc0fdffab05045aa308c6c418eb70
+    inputPortName: B
+    outputGUID: 2be677c7176814b4e95bd2e126026791
+    outputPortName: Output
+  - inputGUID: ecabc0fdffab05045aa308c6c418eb70
     inputPortName: A
-    outputGUID: 486f9f0d9ab3976438a1eafc3ae88dde
+    outputGUID: a283f878c9783da4197d974c45f955a0
     outputPortName: Output
-  - inputGUID: d5f1ef43f1ab3034d8bd294fb8725180
-    inputPortName: Condition
-    outputGUID: f335412ff2d3f5544b578852c48921a6
-    outputPortName: Output
+--- !u!114 &5926887326889380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf10bdb7b213684b806a30dfa5d302e, type: 3}
+  m_Name: C_StatComparison
+  m_EditorClassIdentifier: 
+  guid: a283f878c9783da4197d974c45f955a0
+  positionalData:
+    serializedVersion: 2
+    x: -1166
+    y: 283
+    width: 189
+    height: 94
+  mob: {fileID: 0}
+  stat:
+    statName: Health
+  operation: 0
+  value: 10
 --- !u!114 &578562867296612398
 MonoBehaviour:
   m_ObjectHideFlags: 0

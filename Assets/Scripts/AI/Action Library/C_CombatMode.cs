@@ -15,7 +15,7 @@ public class C_CombatMode : F_Condition
         return mob.State == state;
     }
 
-    public override string GetSummary()
+    public override string GetSummary(BaseNodeView nodeView)
     {
         return $"the mob's combat state is {state}";
     }

@@ -19,8 +19,17 @@ public class A_UseItem : Action
         yield return null;
     }
 
-    public override string GetDescription()
+    public override string GetDescription(BaseNodeView nodeView)
     {
-        return $"The mob will use {item.name} if they have it in their inventory.";
+        try
+        {
+            nodeView.error = "";
+            return $"The mob will use {item.name} if they have it in their inventory.";
+        }
+        catch (System.Exception e)
+        {
+            nodeView.error=e.Message;
+            return "There was an issue with this node";
+        }
     }
 }

@@ -13,9 +13,17 @@ public class F_AND : F_LogicGate
         return A.Invoke() && B.Invoke();
     }
 
-    public override string GetSummary()
+    public override string GetSummary(BaseNodeView nodeView)
     {
-        //if (A != null && B != null)
-        return $"{A?.GetSummary()} AND {B?.GetSummary()}";
+        try
+        {
+            nodeView.error = "";
+            return $"{A.GetSummary(nodeView)} AND {B.GetSummary(nodeView)}";
+        }
+        catch(System.Exception e)
+        {
+            nodeView.error += e.Message;
+            return "";
+        }
     }
 }

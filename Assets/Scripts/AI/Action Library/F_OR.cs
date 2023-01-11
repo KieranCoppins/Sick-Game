@@ -13,8 +13,17 @@ public class F_OR : F_LogicGate
         return A.Invoke() || B.Invoke();
     }
 
-    public override string GetSummary()
+    public override string GetSummary(BaseNodeView nodeView)
     {
-        return $"{A.GetSummary()} or {B.GetSummary()}";
+        try
+        {
+            nodeView.error = "";
+            return $"{A.GetSummary(nodeView)} or {B.GetSummary(nodeView)}";
+        } 
+        catch (System.Exception e)
+        {
+            nodeView.error = e.Message;
+            return "";
+        }
     }
 }

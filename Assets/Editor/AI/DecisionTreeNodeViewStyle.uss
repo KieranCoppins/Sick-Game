@@ -1,8 +1,8 @@
 #selection-border {
-    border-left-color: rgba(3, 219, 191, 255);
-    border-right-color: rgba(3, 219, 191, 255);
-    border-top-color: rgba(3, 219, 191, 255);
-    border-bottom-color: rgba(3, 219, 191, 255);
+    border-left-color: rgb(3, 219, 191);
+    border-right-color: rgb(3, 219, 191);
+    border-top-color: rgb(3, 219, 191);
+    border-bottom-color: rgb(3, 219, 191);
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -26,10 +26,10 @@
     border-right-width: 3px;
     border-top-width: 3px;
     border-bottom-width: 3px;
-    border-left-color: rgba(2, 137, 120, 255);
-    border-right-color: rgba(2, 137, 120, 255);
-    border-top-color: rgba(2, 137, 120, 255);
-    border-bottom-color: rgba(2, 137, 120, 255);
+    border-left-color: rgb(2, 137, 120);
+    border-right-color: rgb(2, 137, 120);
+    border-top-color: rgb(2, 137, 120);
+    border-bottom-color: rgb(2, 137, 120);
 }
 
 :selected:hover > #selection-border {
@@ -37,10 +37,10 @@
     border-right-width: 3px;
     border-top-width: 3px;
     border-bottom-width: 3px;
-    border-left-color: rgba(3, 219, 191, 255);
-    border-right-color: rgba(3, 219, 191, 255);
-    border-top-color: rgba(3, 219, 191, 255);
-    border-bottom-color: rgba(3, 219, 191, 255);
+    border-left-color: rgb(3, 219, 191);
+    border-right-color: rgb(3, 219, 191);
+    border-top-color: rgb(3, 219, 191);
+    border-bottom-color: rgb(3, 219, 191);
 }
 
 #node-border {
@@ -83,31 +83,30 @@
     padding-bottom: 10px;
     border-top-width: 1px;
     border-bottom-width: 1px;
-    border-left-color: rgba(31, 31, 31, 255);
-    border-right-color: rgba(31, 31, 31, 255);
-    border-top-color: rgba(31, 31, 31, 255);
-    border-bottom-color: rgba(31, 31, 31, 255);
+    border-left-color: rgb(31, 31, 31);
+    border-right-color: rgb(31, 31, 31);
+    border-top-color: rgb(31, 31, 31);
+    border-bottom-color: rgb(31, 31, 31);
     -unity-font-style: bold;
     padding-left: 20px;
     padding-right: 20px;
+    color: rgb(34, 34, 34);
 }
 
 .action #title {
-    background-color: rgba(73, 111, 93, 255);
-    color: rgba(210, 210, 210, 255);
+    background-color: rgb(145, 250, 62);
 }
 
 .decision #title {
-    background-color: rgba(73, 81, 111, 255);
+    background-color: rgb(62, 150, 250);
 }
 
 .function #title {
-    background-color: rgba(250, 243, 62, 255);
-    color: rgba(34, 34, 34, 255);
+    background-color: rgb(250, 243, 62);
 }
 
 .root #title {
-    background-color: rgba(117, 79, 91, 255);
+    background-color: rgb(238, 62, 250);
 }
 
 #description {
@@ -119,4 +118,23 @@
     white-space: normal;
     max-width: 250px;
     -unity-text-align: upper-left;
+}
+
+#error {
+    -unity-text-align: middle-center;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: rgba(250, 69, 62, 255);
+    color: rgba(34, 34, 34, 255);
+    -unity-font-style: bold-and-italic;
+    font-size: 10px;
+    max-width: 250px;
+    white-space: normal;
+}
+
+#error-label {
+    white-space: normal;
+    max-width: 250px;
 }

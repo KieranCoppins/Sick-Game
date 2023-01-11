@@ -14,7 +14,7 @@ public class C_HasIdlePath : F_Condition
         return mob.IdlePathNodes.Length > 0;
     }
 
-    public override string GetSummary()
+    public override string GetSummary(BaseNodeView nodeView)
     {
         return "the mob has an idle path.";
     }

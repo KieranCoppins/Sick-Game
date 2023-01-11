@@ -29,7 +29,7 @@ public class RootNode : DecisionTreeNode
         return GenericHelpers.SplitCamelCase(name);
     }
 
-    public override string GetDescription()
+    public override string GetDescription(BaseNodeView nodeView)
     {
         return "This is the root node of the decision tree. This is your starting point.";
     }

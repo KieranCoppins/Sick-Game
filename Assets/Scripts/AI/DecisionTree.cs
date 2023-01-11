@@ -124,7 +124,7 @@ public abstract class DecisionTreeEditorNode : ScriptableObject
         return GenericHelpers.SplitCamelCase(name.Substring(2));
     }
 
-    public virtual string GetDescription()
+    public virtual string GetDescription(BaseNodeView nodeView)
     {
         return "This is the default description of a DecisionTreeEditorNode";
     }
@@ -199,7 +199,7 @@ public abstract class A_Attack : Action
         base.Initialise(mob);
     }
 
-    public override string GetDescription()
+    public override string GetDescription(BaseNodeView nodeView)
     {
         return $"Attack the mob's target. The attack has a {cooldown} second cooldown";
     }
@@ -252,16 +252,16 @@ public abstract class Function<T> : DecisionTreeEditorNode
 
 public abstract class F_Condition : Function<bool>
 {
-    public override string GetDescription()
+    public override string GetDescription(BaseNodeView nodeView)
     {
-        return $"Returns true if {GetSummary()}.";
+        return $"Returns true if {GetSummary(nodeView)}.";
     }
 
     /// <summary>
     /// This should return a quick summary of what the function does. NOT THE DESCRIPTION. This will be used within the description of other nodes.
     /// </summary>
     /// <returns></returns>
-    public abstract string GetSummary();
+    public abstract string GetSummary(BaseNodeView nodeView);
 }
 
 
@@ -404,23 +404,72 @@ public abstract class BaseNodeView : UnityEditor.Experimental.GraphView.Node
     public Dictionary<string, Port> inputPorts;
     public Dictionary<string, Port> outputPorts;
 
-    readonly UnityEngine.UIElements.Label descriptionLabel;
+    public List<BaseNodeView> connectedNodes;
 
-    public string description {  get { return descriptionLabel.text; } set { descriptionLabel.text = value; } }
+    readonly UnityEngine.UIElements.Label descriptionLabel;
+    readonly UnityEngine.UIElements.Label errorLabel;
+    readonly UnityEngine.UIElements.VisualElement errorContainer;
+
+    public string description {  
+        get { return descriptionLabel.text; } 
+        
+        set
+        {
+            if (value != description)
+            {
+                descriptionLabel.text = value;
+
+                // Update all nodes connected to this node until theres no change to be made
+                foreach (var node in connectedNodes)
+                {
+                    node.description = node.node.GetDescription(node);
+                }
+            }
+        } 
+    }
+
+    public string error
+    {
+        get { return errorLabel.text; }
+        set
+        {
+            if (value == null || value == "")
+            {
+                errorLabel.style.display = DisplayStyle.None;
+                errorContainer.style.display = DisplayStyle.None;
+                errorLabel.text = "";
+            }
+            else
+            {
+                errorLabel.style.display = DisplayStyle.Flex;
+                errorContainer.style.display = DisplayStyle.Flex;
+                errorLabel.text = value;
+            }
+        }
+    }
+
 
     public BaseNodeView(DecisionTreeEditorNode node) : base("Assets/Editor/AI/DecisionTreeNodeView.uxml")
     {
+        inputPorts = new Dictionary<string, Port>();
+        outputPorts = new Dictionary<string, Port>();
+        connectedNodes = new List<BaseNodeView>();
+
         this.node = node;
         this.title = node.GetTitle();
 
+        // Default our error to be hidden
+        errorLabel = this.Q<UnityEngine.UIElements.Label>("error-label");
+        errorContainer = this.Q<UnityEngine.UIElements.VisualElement>("error");
+        errorLabel.style.display = DisplayStyle.None;
+        errorContainer.style.display = DisplayStyle.None;
+
         descriptionLabel = this.Q<UnityEngine.UIElements.Label>("description");
-        this.description = node.GetDescription();
+        this.description = node.GetDescription(this);
 
         style.left = node.positionalData.xMin;
         style.top = node.positionalData.yMin;
         this.viewDataKey = node.guid;
-        inputPorts = new Dictionary<string, Port>();
-        outputPorts = new Dictionary<string, Port>();
     }
 
     public override void SetPosition(Rect newPos)

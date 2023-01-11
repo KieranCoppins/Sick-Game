@@ -103,7 +103,7 @@ public class A_PathTo : Action
         return clone;
     }
 
-    public override string GetDescription()
+    public override string GetDescription(BaseNodeView nodeView)
     {
         return "Use A* to pathfind to the position given by our EQS query.";
     }

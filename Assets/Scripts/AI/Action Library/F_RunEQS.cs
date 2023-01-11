@@ -25,8 +25,17 @@ public class F_RunEQS : Function<Vector2>
         return clone;
     }
 
-    public override string GetDescription()
+    public override string GetDescription(BaseNodeView nodeView)
     {
-        return $"Returns the destination returned from the eqs query: {GenericHelpers.SplitCamelCase(eqs.name.Substring(4))}";
+        try
+        {
+            nodeView.error = "";
+            return $"Returns the destination returned from the eqs query: {GenericHelpers.SplitCamelCase(eqs.name.Substring(4))}";
+        } 
+        catch (System.Exception e)
+        {
+            nodeView.error = e.Message;
+            return "";
+        }
     }
 }

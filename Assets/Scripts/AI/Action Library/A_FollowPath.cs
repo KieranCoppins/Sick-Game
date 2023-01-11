@@ -37,7 +37,7 @@ public class A_FollowPath : Action
         }
     }
 
-    public override string GetDescription()
+    public override string GetDescription(BaseNodeView nodeView)
     {
         return "The mob will follow along the idle path the mob has.";
     }

@@ -7,8 +7,17 @@ public class C_CanUseItem : F_Condition
     [SerializeField] InventoryItem item;
     public override bool Invoke() => mob.inventory.Has(item);
 
-    public override string GetSummary()
+    public override string GetSummary(BaseNodeView nodeView)
     {
-        return $"the player has a {item.name}";
+        try
+        {
+            nodeView.error = "";
+            return $"the player has a {item.name}";
+        }
+        catch (System.Exception e)
+        {
+            nodeView.error = e.Message;
+            return "";
+        }
     }
 }

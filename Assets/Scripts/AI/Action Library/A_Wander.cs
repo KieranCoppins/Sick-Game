@@ -30,7 +30,7 @@ public class A_Wander : Action
         }
     }
 
-    public override string GetDescription()
+    public override string GetDescription(BaseNodeView nodeView)
     {
         return $"Wander around the point at which wondering started within a range of {wanderRange}. During wandering the mob will move at {wanderSpeed}.";
     }
