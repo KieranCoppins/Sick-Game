@@ -79,10 +79,10 @@ MonoBehaviour:
   guid: 78f8e219bd70a9e4391d0866710b7ece
   positionalData:
     serializedVersion: 2
-    x: 92.34012
-    y: 560.5626
-    width: 104
-    height: 77
+    x: -609.99994
+    y: 1000
+    width: 256
+    height: 118
   mob: {fileID: 0}
   _flags: 5
   wanderRange: 5
@@ -167,10 +167,10 @@ MonoBehaviour:
   guid: 278a2d2f32584f94e9d59da5b287146d
   positionalData:
     serializedVersion: 2
-    x: -418.0001
-    y: 561.00006
-    width: 129
-    height: 77
+    x: -868.00024
+    y: 561
+    width: 208
+    height: 94
   mob: {fileID: 0}
 --- !u!114 &-2276174694420429698
 MonoBehaviour:
@@ -231,10 +231,10 @@ MonoBehaviour:
   guid: bc8b3b561390562418e71f7b1a6ec229
   positionalData:
     serializedVersion: 2
-    x: -208.65984
-    y: 459.56262
-    width: 158
-    height: 101
+    x: -801.0002
+    y: 781.8624
+    width: 256
+    height: 130
   mob: {fileID: 0}
   trueNode: {fileID: 9189338031068557002}
   falseNode: {fileID: -5519335335071833942}
@@ -254,12 +254,12 @@ MonoBehaviour:
   guid: 985ac0c6c55518f43b67a2ac3b29beb8
   positionalData:
     serializedVersion: 2
-    x: -209.00003
-    y: 662.0001
-    width: 187
-    height: 125
+    x: -416.0001
+    y: 781.99994
+    width: 366
+    height: 106
   mob: {fileID: 0}
-  _flags: 4
+  _flags: 5
   destinationQuery: {fileID: 5577340059197536130}
   CancelPathfindingCondition: {fileID: 0}
 --- !u!114 &-1671870441242991292
@@ -497,10 +497,10 @@ MonoBehaviour:
   guid: 421d99577c3da734eaaf4b3ce6dc2de4
   positionalData:
     serializedVersion: 2
-    x: -768.3502
-    y: 662.00006
-    width: 138
-    height: 77
+    x: -545.00006
+    y: 388.24258
+    width: 231
+    height: 94
   mob: {fileID: 0}
   state: 0
 --- !u!114 &5577340059197536130
@@ -518,10 +518,10 @@ MonoBehaviour:
   guid: ee656d24e15226c43b723419a1d0d563
   positionalData:
     serializedVersion: 2
-    x: -451.99997
-    y: 787.0001
-    width: 163
-    height: 77
+    x: -277.99985
+    y: 561
+    width: 195
+    height: 94
   mob: {fileID: 0}
 --- !u!114 &5985426041796537181
 MonoBehaviour:
@@ -538,10 +538,10 @@ MonoBehaviour:
   guid: 776604dcd5ee1a54b8156f27672aaefc
   positionalData:
     serializedVersion: 2
-    x: -954.2485
-    y: -35.49993
-    width: 120
-    height: 77
+    x: -705.00006
+    y: -337.57797
+    width: 190
+    height: 94
   mob: {fileID: 0}
 --- !u!114 &6666647594882256306
 MonoBehaviour:
@@ -558,10 +558,10 @@ MonoBehaviour:
   guid: 771a24d28cc3ed54c8352f1a813ce531
   positionalData:
     serializedVersion: 2
-    x: -1020.0282
-    y: 82.78475
-    width: 158
-    height: 101
+    x: -1250
+    y: 258.0001
+    width: 256
+    height: 130
   mob: {fileID: 0}
   trueNode: {fileID: -7523003861680438715}
   falseNode: {fileID: -1671870441242991292}
@@ -626,10 +626,10 @@ MonoBehaviour:
   guid: b51328ffae7e9e446b798cc953a95edc
   positionalData:
     serializedVersion: 2
-    x: -1217.0283
-    y: 197.78479
-    width: 138
-    height: 77
+    x: -994.0001
+    y: 71.00001
+    width: 252
+    height: 94
   mob: {fileID: 0}
   state: 2
 --- !u!114 &9189338031068557002
@@ -647,10 +647,10 @@ MonoBehaviour:
   guid: 07a66340e0959384199600ae48b774b0
   positionalData:
     serializedVersion: 2
-    x: 92.34012
-    y: 382.56262
-    width: 123
-    height: 77
+    x: -1024.0002
+    y: 1000
+    width: 256
+    height: 106
   mob: {fileID: 0}
   _flags: 5
   walkSpeed: 1.5
