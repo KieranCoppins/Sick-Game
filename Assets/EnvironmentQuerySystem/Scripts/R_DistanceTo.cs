@@ -39,4 +39,9 @@ public class R_DistanceTo : Rule
             return d == distance;
         return false;
     }
+
+    public override string GetSummary()
+    {
+        return $"The tile's distance is {GenericHelpers.SplitCamelCase(op.ToString()).ToLower()} {distance}";
+    }
 }

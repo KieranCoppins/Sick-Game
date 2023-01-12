@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 [CreateAssetMenu(menuName = "Environment Queries/Has Line Of Sight")]
 public class R_HasLineOfSight : Rule
@@ -36,5 +37,10 @@ public class R_HasLineOfSight : Rule
             }
         }
         return newTiles;
+    }
+
+    public override string GetSummary()
+    {
+        return $"The tile has line of sight to the {target.ToString().ToLower()}";
     }
 }

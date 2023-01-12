@@ -27,15 +27,12 @@ public class F_RunEQS : Function<Vector2>
 
     public override string GetDescription(BaseNodeView nodeView)
     {
-        try
+        if (eqs == null)
         {
-            nodeView.error = "";
-            return $"Returns the destination returned from the eqs query: {GenericHelpers.SplitCamelCase(eqs.name.Substring(4))}";
-        } 
-        catch (System.Exception e)
-        {
-            nodeView.error = e.Message;
+            nodeView.error = "Theres no Environment Query System in this function!";
             return "";
         }
+        nodeView.error = "";
+        return eqs.GetDescription(nodeView);
     }
 }
