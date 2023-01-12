@@ -19,6 +19,18 @@ public class A_UseItem : Action
         yield return null;
     }
 
+    public override string GetTitle()
+    {
+        try
+        {
+            return $"Use {item.name}";
+        }
+        catch
+        {
+            return "Use Item";
+        }
+    }
+
     public override string GetDescription(BaseNodeView nodeView)
     {
         try
