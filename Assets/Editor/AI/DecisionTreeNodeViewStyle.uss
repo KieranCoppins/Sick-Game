@@ -49,6 +49,7 @@
     border-bottom-left-radius: 8px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+    width: 100%;
 }
 
 #input {
@@ -118,6 +119,7 @@
     padding-bottom: 5px;
     white-space: normal;
     -unity-text-align: upper-left;
+    width: 100%;
 }
 
 #error {
@@ -142,8 +144,8 @@
 }
 
 #description-container {
-    width: 100%;
     overflow: hidden;
+    width: 100%;
     max-width: 250px;
 }
 
