@@ -5,9 +5,10 @@ using UnityEngine;
 public class ActionManager : MonoBehaviour
 {
     public Queue<ActionPacket> actionQueue = new Queue<ActionPacket>();
-    public List<IEnumerator> currentActions = new List<IEnumerator>();
+    public List<Action> currentActions = new List<Action>();
+    public List<Action> runningActions = new List<Action>();
 
-    public delegate void OnFinishDelegate(IEnumerator coroutine);
+    public delegate void OnFinishDelegate(Action action);
     public event OnFinishDelegate OnFinish;
 
     public bool ExecutingActions { get; protected set; }
@@ -17,10 +18,11 @@ public class ActionManager : MonoBehaviour
     private void Start()
     {
         ExecutingActions = false;
-        OnFinish += delegate (IEnumerator coroutine)
+        OnFinish += delegate (Action action)
         {
             // Remove this action from current actions
-            currentActions.Remove(coroutine);
+            currentActions.Remove(action);
+            runningActions.Remove(action);
 
             // Check if we have any more actions in the current actions
             if (currentActions.Count == 0)
@@ -77,7 +79,7 @@ public class ActionManager : MonoBehaviour
                 tempList = new List<ActionPacket>(actionQueue);
                 // If we have an interruptor clear all our actions and do this one
                 currentActions.Clear();
-                currentActions.Add(a.action.Execute());
+                currentActions.Add(a.action);
                 tempList.Remove(a);
                 actionQueue = new Queue<ActionPacket>(tempList);
                 currentActionsChanged = true;
@@ -94,7 +96,7 @@ public class ActionManager : MonoBehaviour
                 Action action = actionQueue.Peek().action;
                 if ((action.Flags & Action.ActionFlags.SyncAction) == Action.ActionFlags.SyncAction && acceptASyncActions)
                 {
-                    currentActions.Add(actionQueue.Dequeue().action.Execute());
+                    currentActions.Add(actionQueue.Dequeue().action);
                     currentActionsChanged = true;
                     waitForActions = (action.Flags & Action.ActionFlags.Interruptable) != Action.ActionFlags.Interruptable;
                 }
@@ -104,7 +106,7 @@ public class ActionManager : MonoBehaviour
             else
             {
                 Action action = actionQueue.Dequeue().action;
-                currentActions.Add(action.Execute());
+                currentActions.Add(action);
                 currentActionsChanged = true;
                 acceptASyncActions = (action.Flags & Action.ActionFlags.SyncAction) == Action.ActionFlags.SyncAction;
                 waitForActions = (action.Flags & Action.ActionFlags.Interruptable) != Action.ActionFlags.Interruptable;
@@ -118,18 +120,25 @@ public class ActionManager : MonoBehaviour
     protected void ExecuteActions()
     {
         StopAllCoroutines();    // they should already be stopped unless there is an interruptor
+        foreach (var action in runningActions)
+        {
+            action.nodeState = DecisionTreeNodeRunningState.Interrupted;
+        }
+        runningActions.Clear();
         // Execute all actions in current actions
-        foreach (IEnumerator action in currentActions)
+        foreach (var action in currentActions)
         {
             ExecutingActions = true;
             StartCoroutine(ActionWrapper(action));
         }
     }
 
-    IEnumerator ActionWrapper(IEnumerator coroutine)
+    IEnumerator ActionWrapper(Action action)
     {
         bool running = true;
-        IEnumerator e = coroutine;
+        runningActions.Add(action);
+        action.nodeState = DecisionTreeNodeRunningState.Running;
+        IEnumerator e = action.Execute();
         while (running)
         {
             if (e != null && e.MoveNext())
@@ -137,9 +146,10 @@ public class ActionManager : MonoBehaviour
             else
                 running = false;
         }
+        action.nodeState = DecisionTreeNodeRunningState.Finished;
         OnFinishDelegate handler = OnFinish;
         if (handler != null)
-            handler(coroutine);
+            handler(action);
     }
 }
 

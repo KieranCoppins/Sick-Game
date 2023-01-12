@@ -8,6 +8,7 @@ using UnityEditor.Experimental.GraphView;
 using Unity.VisualScripting;
 using System.Reflection.Emit;
 using UnityEngine.UIElements;
+using TreeEditor;
 
 public class DecisionTreeGeneric<T> : DecisionTree where T : BaseMob
 {
@@ -55,12 +56,32 @@ public class DecisionTree : ScriptableObject
         return root.MakeDecision() as Action;
     }
 
+    public List<DecisionTreeEditorNode> GetChildren(DecisionTreeEditorNode node)
+    {
+        return node.GetChildren();
+    }
+
+    public void Traverse(DecisionTreeEditorNode node, System.Action<DecisionTreeEditorNode> visiter)
+    {
+        if (node)
+        {
+            visiter.Invoke(node);
+            var children = GetChildren(node);
+            children?.ForEach((n) => { if (n) Traverse(n, visiter); });
+        }
+    }
+
     public DecisionTree Clone(string name = null)
     {
         DecisionTree tree = Instantiate(this);
         if (name != null)
             tree.name = name;
         tree.root = root.Clone() as RootNode;
+        tree.nodes = new List<DecisionTreeEditorNode>();
+        Traverse(tree.root, (n) =>
+        {
+            tree.nodes.Add(n);
+        });
         return tree;
     }
 
@@ -102,6 +123,14 @@ public class DecisionTree : ScriptableObject
     }
 }
 
+public enum DecisionTreeNodeRunningState
+{
+    Idle,
+    Running,
+    Finished,
+    Interrupted,
+}
+
 public delegate void DecisionTreeEditorNodeOnValidate();
 
 public abstract class DecisionTreeEditorNode : ScriptableObject
@@ -111,6 +140,7 @@ public abstract class DecisionTreeEditorNode : ScriptableObject
     [HideInInspector] public Rect positionalData;
 
     [HideInInspector] public BaseMob mob;
+    [HideInInspector] public DecisionTreeNodeRunningState nodeState;
 
     public DecisionTreeEditorNodeOnValidate OnValidateCallback { get; set; }
 
@@ -123,9 +153,11 @@ public abstract class DecisionTreeEditorNode : ScriptableObject
         return Instantiate(this);
     }
 
+    public virtual List<DecisionTreeEditorNode> GetChildren() => null;
+
     public virtual string GetTitle()
     {
-        return GenericHelpers.SplitCamelCase(name.Substring(2));
+        return GenericHelpers.SplitCamelCase(name[2..]);
     }
 
     public virtual string GetDescription(BaseNodeView nodeView)
@@ -245,6 +277,11 @@ public abstract class Decision : DecisionTreeNode
         trueNode.Initialise(mob);
         falseNode.Initialise(mob);
     }
+
+    public override List<DecisionTreeEditorNode> GetChildren()
+    {
+        return new () { trueNode, falseNode };
+    }
 }
 
 // A base function node that can return a given value
@@ -298,6 +335,11 @@ public abstract class F_LogicGate : F_Condition
         node.A = (F_Condition)A.Clone();
         node.B = (F_Condition)B.Clone();
         return node;
+    }
+
+    public override List<DecisionTreeEditorNode> GetChildren()
+    {
+        return new() { A, B };
     }
 }
 
@@ -499,6 +541,33 @@ public abstract class BaseNodeView : UnityEditor.Experimental.GraphView.Node
     {
         title = node.GetTitle();
         description = node.GetDescription(this);
+    }
+
+    public void UpdateState()
+    {
+        RemoveFromClassList("running");
+        RemoveFromClassList("finished");
+        RemoveFromClassList("idle");
+        RemoveFromClassList("interrupted");
+
+        if (Application.isPlaying)
+        {
+            switch (node.nodeState)
+            {
+                case DecisionTreeNodeRunningState.Running:
+                    AddToClassList("running");
+                    break;
+                case DecisionTreeNodeRunningState.Finished:
+                    AddToClassList("finished");
+                    break;
+                case DecisionTreeNodeRunningState.Idle:
+                    AddToClassList("idle");
+                    break;
+                case DecisionTreeNodeRunningState.Interrupted:
+                    AddToClassList("interrupted");
+                    break;
+            }
+        }
     }
 
 }

@@ -295,4 +295,13 @@ public class DecisionTreeView : GraphView
         }
         return graphViewChange;
     }
+
+    public void UpdateNodeStates()
+    {
+        nodes.ForEach(node =>
+        {
+            BaseNodeView nodeView = node as BaseNodeView;
+            nodeView.UpdateState();
+        });
+    }
 }

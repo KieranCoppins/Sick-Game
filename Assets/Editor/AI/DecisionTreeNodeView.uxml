@@ -1,5 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/Editor/AI/DecisionTreeNodeViewStyle.uss?fileID=7433441132597879392&amp;guid=01b1591bc435261499853aefe7582359&amp;type=3#DecisionTreeNodeViewStyle" />
+    <ui:VisualElement name="state-border" />
     <ui:VisualElement name="node-border">
         <ui:VisualElement name="contents">
             <ui:VisualElement name="divider" class="horizontal" />

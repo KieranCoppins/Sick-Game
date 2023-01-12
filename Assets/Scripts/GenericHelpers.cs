@@ -59,7 +59,7 @@ public static class GenericHelpers
             ),
             @"(\p{Ll})(\P{Ll})",
             "$1 $2"
-        );
+        ).Replace("( Clone )", "");
     }
 }
 

@@ -92,7 +92,5 @@ public class DecisionTreeNodeView : BaseNodeView
             outputContainer.Add(port);
             //port.style.flexDirection = FlexDirection.ColumnReverse;
         }
-
-
     }
 }

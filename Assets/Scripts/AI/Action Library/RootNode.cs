@@ -33,4 +33,10 @@ public class RootNode : DecisionTreeNode
     {
         return "This is the root node of the decision tree. This is your starting point.";
     }
+
+
+    public override List<DecisionTreeEditorNode> GetChildren()
+    {
+        return new() { child };
+    }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using UnityEngine;
 
 /// <summary>
@@ -111,5 +112,10 @@ public class A_PathTo : Action
             nodeView.error = "";
 
         return "Use A* to pathfind to the position given by our EQS query.";
+    }
+
+    public override List<DecisionTreeEditorNode> GetChildren()
+    {
+        return new() { destinationQuery, CancelPathfindingCondition };
     }
 }

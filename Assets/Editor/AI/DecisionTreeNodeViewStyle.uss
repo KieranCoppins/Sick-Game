@@ -126,8 +126,8 @@
     padding-right: 8px;
     padding-top: 8px;
     padding-bottom: 8px;
-    background-color: rgba(250, 69, 62, 255);
-    color: rgba(34, 34, 34, 255);
+    background-color: rgb(250, 69, 62);
+    color: rgb(34, 34, 34);
     -unity-font-style: bold-and-italic;
     font-size: 10px;
     white-space: normal;
@@ -149,4 +149,53 @@
 
 #top {
     align-items: center;
+}
+
+#state-border {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.running #state-border {
+    border-left-color: rgb(46, 255, 0);
+    border-right-color: rgb(46, 255, 0);
+    border-top-color: rgb(46, 255, 0);
+    border-bottom-color: rgb(46, 255, 0);
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+}
+
+.finished #state-border {
+    border-left-color: rgba(107, 147, 63, 255);
+    border-right-color: rgba(107, 147, 63, 255);
+    border-top-color: rgba(107, 147, 63, 255);
+    border-bottom-color: rgba(107, 147, 63, 255);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+}
+
+.interrupted #state-border {
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-left-color: rgba(147, 127, 63, 255);
+    border-right-color: rgba(147, 127, 63, 255);
+    border-top-color: rgba(147, 127, 63, 255);
+    border-bottom-color: rgba(147, 127, 63, 255);
 }

@@ -47,4 +47,9 @@ public class D_Condition : Decision
             return "There was an issue with this description";
         }
     }
+
+    public override List<DecisionTreeEditorNode> GetChildren()
+    {
+        return new() { trueNode, falseNode, Condition };
+    }
 }
