@@ -19,4 +19,9 @@ public class R_ClosestTo : Rule
         return newTiles;
 
     }
+
+    public override string GetSummary()
+    {
+        return $"The closest tile to {target.ToString().ToLower()}";
+    }
 }

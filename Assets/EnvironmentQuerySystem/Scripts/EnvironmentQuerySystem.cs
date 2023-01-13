@@ -105,6 +105,22 @@ public class EnvironmentQuerySystem : DecisionTreeEditorNode
         return new Vector2(bestTile.x + 0.5f, bestTile.y + 0.5f);
     }
 
+    public override string GetDescription(BaseNodeView nodeView)
+    {
+        if (rules.Count == 0)
+        {
+            nodeView.error = "There are no rules in this Environment Query System!";
+            return "";
+        }
+        nodeView.error = "";
+        string desc = "Returns the location that satisfies these rules:\n";
+        foreach (var rule in rules)
+        {
+            desc += $"{rule.GetSummary()}. \n";
+        }
+        return desc;
+    }
+
 }
 
 public abstract class Rule : ScriptableObject
@@ -137,6 +153,8 @@ public abstract class Rule : ScriptableObject
         }
         return pos;
     }
+
+    public abstract string GetSummary();
 }
 
 public enum EQSTarget

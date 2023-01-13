@@ -6,8 +6,6 @@ public class D_ShouldPullBack : Decision
 {
     [SerializeField] float pullbackDistance;
 
-    A_Attack attackNode;
-
     public override void Initialise(BaseMob mob)
     {
         base.Initialise(mob);
@@ -22,5 +20,10 @@ public class D_ShouldPullBack : Decision
     bool TestData()
     {
         return Vector2.Distance(mob.transform.position, mob.Target.position) < pullbackDistance && !mob.CanAttack;
+    }
+
+    public override string GetDescription(BaseNodeView nodeView)
+    {
+        return $"Returns true if the mob is within {pullbackDistance} units of its target and if the mob can attack";
     }
 }

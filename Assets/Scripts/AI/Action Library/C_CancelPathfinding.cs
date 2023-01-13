@@ -23,4 +23,9 @@ public class C_CancelPathfinding : F_Condition
         }
         return true;
     }
+
+    public override string GetSummary(BaseNodeView nodeView)
+    {
+        return "the player no longer has line of sight to the target or if the player has moved more than 3 units";
+    }
 }

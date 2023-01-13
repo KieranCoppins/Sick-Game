@@ -18,4 +18,30 @@ public class A_UseItem : Action
         yield return new WaitForSeconds(0.1f);
         yield return null;
     }
+
+    public override string GetTitle()
+    {
+        try
+        {
+            return $"Use {item.name}";
+        }
+        catch
+        {
+            return "Use Item";
+        }
+    }
+
+    public override string GetDescription(BaseNodeView nodeView)
+    {
+        try
+        {
+            nodeView.error = "";
+            return $"The mob will use {item.name} if they have it in their inventory.";
+        }
+        catch (System.Exception e)
+        {
+            nodeView.error=e.Message;
+            return "There was an issue with this node";
+        }
+    }
 }

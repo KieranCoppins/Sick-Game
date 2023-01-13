@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using UnityEngine;
 
 /// <summary>
@@ -101,5 +102,20 @@ public class A_PathTo : Action
         clone.destinationQuery = (Function<Vector2>)destinationQuery.Clone();
         clone.CancelPathfindingCondition = (Function<bool>)CancelPathfindingCondition?.Clone();
         return clone;
+    }
+
+    public override string GetDescription(BaseNodeView nodeView)
+    {
+        if (destinationQuery == null)
+            nodeView.error = "A destination query is needed to pathfind to!";
+        else
+            nodeView.error = "";
+
+        return "Use A* to pathfind to the position given by our EQS query.";
+    }
+
+    public override List<DecisionTreeEditorNode> GetChildren()
+    {
+        return new() { destinationQuery, CancelPathfindingCondition };
     }
 }

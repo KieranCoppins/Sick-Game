@@ -36,4 +36,9 @@ public class A_FollowPath : Action
             yield return new WaitForSeconds(waitTime);
         }
     }
+
+    public override string GetDescription(BaseNodeView nodeView)
+    {
+        return "The mob will follow along the idle path the mob has.";
+    }
 }

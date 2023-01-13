@@ -6,6 +6,9 @@ using UnityEngine.Events;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using Unity.VisualScripting;
+using System.Reflection.Emit;
+using UnityEngine.UIElements;
+using TreeEditor;
 
 public class DecisionTreeGeneric<T> : DecisionTree where T : BaseMob
 {
@@ -53,12 +56,32 @@ public class DecisionTree : ScriptableObject
         return root.MakeDecision() as Action;
     }
 
+    public List<DecisionTreeEditorNode> GetChildren(DecisionTreeEditorNode node)
+    {
+        return node.GetChildren();
+    }
+
+    public void Traverse(DecisionTreeEditorNode node, System.Action<DecisionTreeEditorNode> visiter)
+    {
+        if (node)
+        {
+            visiter.Invoke(node);
+            var children = GetChildren(node);
+            children?.ForEach((n) => { if (n) Traverse(n, visiter); });
+        }
+    }
+
     public DecisionTree Clone(string name = null)
     {
         DecisionTree tree = Instantiate(this);
         if (name != null)
             tree.name = name;
         tree.root = root.Clone() as RootNode;
+        tree.nodes = new List<DecisionTreeEditorNode>();
+        Traverse(tree.root, (n) =>
+        {
+            tree.nodes.Add(n);
+        });
         return tree;
     }
 
@@ -100,6 +123,16 @@ public class DecisionTree : ScriptableObject
     }
 }
 
+public enum DecisionTreeNodeRunningState
+{
+    Idle,
+    Running,
+    Finished,
+    Interrupted,
+}
+
+public delegate void DecisionTreeEditorNodeOnValidate();
+
 public abstract class DecisionTreeEditorNode : ScriptableObject
 {
     /// Editor Values
@@ -107,6 +140,9 @@ public abstract class DecisionTreeEditorNode : ScriptableObject
     [HideInInspector] public Rect positionalData;
 
     [HideInInspector] public BaseMob mob;
+    [HideInInspector] public DecisionTreeNodeRunningState nodeState;
+
+    public DecisionTreeEditorNodeOnValidate OnValidateCallback { get; set; }
 
     public virtual void Initialise(BaseMob mob)
     {
@@ -115,6 +151,23 @@ public abstract class DecisionTreeEditorNode : ScriptableObject
     public virtual DecisionTreeEditorNode Clone()
     {
         return Instantiate(this);
+    }
+
+    public virtual List<DecisionTreeEditorNode> GetChildren() => null;
+
+    public virtual string GetTitle()
+    {
+        return GenericHelpers.SplitCamelCase(name[2..]);
+    }
+
+    public virtual string GetDescription(BaseNodeView nodeView)
+    {
+        return "This is the default description of a DecisionTreeEditorNode";
+    }
+
+    private void OnValidate()
+    { 
+        OnValidateCallback?.Invoke();
     }
 }
 
@@ -186,6 +239,11 @@ public abstract class A_Attack : Action
     {
         base.Initialise(mob);
     }
+
+    public override string GetDescription(BaseNodeView nodeView)
+    {
+        return $"Attack the mob's target. The attack has a {cooldown} second cooldown";
+    }
 }
 
 public abstract class Decision : DecisionTreeNode
@@ -219,6 +277,11 @@ public abstract class Decision : DecisionTreeNode
         trueNode.Initialise(mob);
         falseNode.Initialise(mob);
     }
+
+    public override List<DecisionTreeEditorNode> GetChildren()
+    {
+        return new () { trueNode, falseNode };
+    }
 }
 
 // A base function node that can return a given value
@@ -235,15 +298,25 @@ public abstract class Function<T> : DecisionTreeEditorNode
 
 public abstract class F_Condition : Function<bool>
 {
+    public override string GetDescription(BaseNodeView nodeView)
+    {
+        return $"Returns true if {GetSummary(nodeView)}.";
+    }
+
+    /// <summary>
+    /// This should return a quick summary of what the function does. NOT THE DESCRIPTION. This will be used within the description of other nodes.
+    /// </summary>
+    /// <returns></returns>
+    public abstract string GetSummary(BaseNodeView nodeView);
 }
 
 
-public abstract class F_LogicGate : Function<bool>
+public abstract class F_LogicGate : F_Condition
 {
-    public Function<bool> A;
-    public Function<bool> B;
+    public F_Condition A;
+    public F_Condition B;
 
-    public F_LogicGate(Function<bool> A, Function<bool> B)
+    public F_LogicGate(F_Condition A, F_Condition B)
     {
         this.A = A;
         this.B = B;
@@ -259,9 +332,14 @@ public abstract class F_LogicGate : Function<bool>
     public override DecisionTreeEditorNode Clone()
     {
         F_LogicGate node = Instantiate(this);
-        node.A = (Function<bool>)A.Clone();
-        node.B = (Function<bool>)B.Clone();
+        node.A = (F_Condition)A.Clone();
+        node.B = (F_Condition)B.Clone();
         return node;
+    }
+
+    public override List<DecisionTreeEditorNode> GetChildren()
+    {
+        return new() { A, B };
     }
 }
 
@@ -377,16 +455,73 @@ public abstract class BaseNodeView : UnityEditor.Experimental.GraphView.Node
     public Dictionary<string, Port> inputPorts;
     public Dictionary<string, Port> outputPorts;
 
-    public BaseNodeView(DecisionTreeEditorNode node)
+    public List<BaseNodeView> connectedNodes;
+
+    readonly UnityEngine.UIElements.Label descriptionLabel;
+    readonly UnityEngine.UIElements.Label errorLabel;
+    readonly UnityEngine.UIElements.VisualElement errorContainer;
+
+    public string description {  
+        get { return descriptionLabel.text; } 
+        
+        set
+        {
+            if (value != description)
+            {
+                descriptionLabel.text = value;
+
+                // Update all nodes connected to this node until theres no change to be made
+                foreach (var node in connectedNodes)
+                {
+                    node.description = node.node.GetDescription(node);
+                }
+            }
+        } 
+    }
+
+    public string error
     {
+        get { return errorLabel.text; }
+        set
+        {
+            if (value == null || value == "")
+            {
+                errorLabel.style.display = DisplayStyle.None;
+                errorContainer.style.display = DisplayStyle.None;
+                errorLabel.text = "";
+            }
+            else
+            {
+                errorLabel.style.display = DisplayStyle.Flex;
+                errorContainer.style.display = DisplayStyle.Flex;
+                errorLabel.text = value;
+            }
+        }
+    }
+
+
+    public BaseNodeView(DecisionTreeEditorNode node) : base("Assets/Editor/AI/DecisionTreeNodeView.uxml")
+    {
+        inputPorts = new Dictionary<string, Port>();
+        outputPorts = new Dictionary<string, Port>();
+        connectedNodes = new List<BaseNodeView>();
+
         this.node = node;
-        this.title = node.name;
+        node.OnValidateCallback += OnValidate;
+        this.title = node.GetTitle();
+
+        // Default our error to be hidden
+        errorLabel = this.Q<UnityEngine.UIElements.Label>("error-label");
+        errorContainer = this.Q<UnityEngine.UIElements.VisualElement>("error");
+        errorLabel.style.display = DisplayStyle.None;
+        errorContainer.style.display = DisplayStyle.None;
+
+        descriptionLabel = this.Q<UnityEngine.UIElements.Label>("description");
+        this.description = node.GetDescription(this);
 
         style.left = node.positionalData.xMin;
         style.top = node.positionalData.yMin;
         this.viewDataKey = node.guid;
-        inputPorts = new Dictionary<string, Port>();
-        outputPorts = new Dictionary<string, Port>();
     }
 
     public override void SetPosition(Rect newPos)
@@ -400,6 +535,39 @@ public abstract class BaseNodeView : UnityEditor.Experimental.GraphView.Node
         base.OnSelected();
         if (OnNodeSelected != null)
             OnNodeSelected.Invoke(this);
+    }
+
+    void OnValidate()
+    {
+        title = node.GetTitle();
+        description = node.GetDescription(this);
+    }
+
+    public void UpdateState()
+    {
+        RemoveFromClassList("running");
+        RemoveFromClassList("finished");
+        RemoveFromClassList("idle");
+        RemoveFromClassList("interrupted");
+
+        if (Application.isPlaying)
+        {
+            switch (node.nodeState)
+            {
+                case DecisionTreeNodeRunningState.Running:
+                    AddToClassList("running");
+                    break;
+                case DecisionTreeNodeRunningState.Finished:
+                    AddToClassList("finished");
+                    break;
+                case DecisionTreeNodeRunningState.Idle:
+                    AddToClassList("idle");
+                    break;
+                case DecisionTreeNodeRunningState.Interrupted:
+                    AddToClassList("interrupted");
+                    break;
+            }
+        }
     }
 
 }

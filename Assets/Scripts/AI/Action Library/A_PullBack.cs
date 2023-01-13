@@ -33,4 +33,8 @@ public class A_PullBack : Action
         yield return null;
     }
 
+    public override string GetDescription(BaseNodeView nodeView)
+    {
+        return $"The mob will retreat away from the target until they are {distance} units away.";
+    }
 }

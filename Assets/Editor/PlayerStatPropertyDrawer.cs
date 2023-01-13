@@ -20,13 +20,14 @@ public class PlayerStatPropertyDraw : PropertyDrawer
             {
                 playerStatsLabels.Add(properties[i].Name);
                 if (properties[i].Name == property.FindPropertyRelative("statName").stringValue)
-                    currentChoice = i;
+                    currentChoice = i != 0 ? i - 1 : 0;
 
             }
         }
 
         EditorGUI.BeginChangeCheck();
         int choiceIndex = EditorGUI.Popup(position, label.text, currentChoice, playerStatsLabels.ToArray());
+
         if (EditorGUI.EndChangeCheck())
         {
             property.FindPropertyRelative("statName").stringValue = playerStatsLabels[choiceIndex];

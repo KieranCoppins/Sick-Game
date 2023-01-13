@@ -24,4 +24,15 @@ public class F_RunEQS : Function<Vector2>
         clone.eqs = (EnvironmentQuerySystem)eqs.Clone();
         return clone;
     }
+
+    public override string GetDescription(BaseNodeView nodeView)
+    {
+        if (eqs == null)
+        {
+            nodeView.error = "Theres no Environment Query System in this function!";
+            return "";
+        }
+        nodeView.error = "";
+        return eqs.GetDescription(nodeView);
+    }
 }

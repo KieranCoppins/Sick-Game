@@ -40,4 +40,9 @@ public class A_Melee : A_Attack
         mob.StartCoroutine(Cooldown());
         yield return null;
     }
+
+    public override string GetDescription(BaseNodeView nodeView)
+    {
+        return "Melee's the mob's target.";
+    }
 }

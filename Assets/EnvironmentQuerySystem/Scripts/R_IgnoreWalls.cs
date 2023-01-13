@@ -22,6 +22,11 @@ public class R_IgnoreWalls : Rule
 
         return newTiles;
     }
+
+    public override string GetSummary()
+    {
+        return "The tile is not a wall";
+    }
 }
 
 // A custom inspector to hide attributes for this rule

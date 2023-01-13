@@ -41,9 +41,14 @@ public abstract class BaseMob : BaseCharacter
     [Header("Mob Stats")]
     [SerializeField] public string mobName;
 
+    public DecisionTree decisionTree
+    {
+        get { return _decisionTree; }
+        protected set { _decisionTree = value; }
+    }
     [Header("AI")]
     [Tooltip("The decision tree for this mob to run")]
-    [SerializeField] protected DecisionTree decisionTree;
+    [SerializeField] private DecisionTree _decisionTree;
     [Tooltip("The aggression system this mob uses")]
     [SerializeField] protected AggressionSystems AggressionSystem;
     [Tooltip("The threshold for our aggression system")]
@@ -72,7 +77,7 @@ public abstract class BaseMob : BaseCharacter
     public string GetCurrentActionText()
     {
         string text = "";
-        foreach (IEnumerator action in actionManager.currentActions)
+        foreach (Action action in actionManager.currentActions)
         {
             text += action.ToString() + ", ";
         }
