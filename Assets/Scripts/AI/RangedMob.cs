@@ -5,8 +5,7 @@ using UnityEngine;
 public class RangedMob : BaseMob
 {
     [Header("Ranged Mob Attributes")]
-    [SerializeField] public AbilityBase ability;
-
+    [SerializeField] public AbilityBase Ability;
 
     protected override void Start()
     {
@@ -26,14 +25,14 @@ public class RangedMob : BaseMob
             return Vector2.Dot(targetDir, dir);
 
         // Move away from the target if too close
-        if (dist < ability.Range - 3.0f)
-            return 1f - Mathf.Abs(Vector2.Dot(targetDir * -1f, dir) - 0.65f) + Vector2.Dot(rb.velocity.normalized, dir);  // We add the dot product of our current velocity so that we try and favor where we are currently going - prevents random switches in direction
+        if (dist < Ability.Range - 3.0f)
+            return 1f - Mathf.Abs(Vector2.Dot(targetDir * -1f, dir) - 0.65f) + Vector2.Dot(RigidBody.velocity.normalized, dir);  // We add the dot product of our current velocity so that we try and favor where we are currently going - prevents random switches in direction
 
         // Circle the target if in range
-        else if (dist < ability.Range - 1.0f)
-            return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir)) + Vector2.Dot(rb.velocity.normalized, dir);
+        else if (dist < Ability.Range - 1.0f)
+            return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir)) + Vector2.Dot(RigidBody.velocity.normalized, dir);
 
         // Otherwise move towards the target
-        return Vector2.Dot(targetDir, dir) + Vector2.Dot(rb.velocity.normalized, dir);
+        return Vector2.Dot(targetDir, dir) + Vector2.Dot(RigidBody.velocity.normalized, dir);
     }
 }

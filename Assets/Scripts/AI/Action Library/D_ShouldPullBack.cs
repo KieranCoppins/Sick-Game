@@ -1,29 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using KieranCoppins.DecisionTrees;
 
-public class D_ShouldPullBack : Decision
+public class D_ShouldPullBack : CustomDecision
 {
-    [SerializeField] float pullbackDistance;
-
-    public override void Initialise(BaseMob mob)
-    {
-        base.Initialise(mob);
-
-    }
+    [SerializeField] private float _pullbackDistance;
 
     public override DecisionTreeNode GetBranch()
     {
-        return TestData() ? trueNode : falseNode;
+        return TestData() ? TrueNode : FalseNode;
     }
 
-    bool TestData()
+    private bool TestData()
     {
-        return Vector2.Distance(mob.transform.position, mob.Target.position) < pullbackDistance && !mob.CanAttack;
+        return Vector2.Distance(Mob.transform.position, Mob.Target.position) < _pullbackDistance && !Mob.CanAttack;
     }
 
     public override string GetDescription(BaseNodeView nodeView)
     {
-        return $"Returns true if the mob is within {pullbackDistance} units of its target and if the mob can attack";
+        return $"Returns true if the mob is within {_pullbackDistance} units of its target and if the mob can attack.";
     }
 }

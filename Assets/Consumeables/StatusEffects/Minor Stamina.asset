@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 522f432b4e280154c8616cd14cc6bd6c, type: 3}
   m_Name: Minor Stamina
   m_EditorClassIdentifier: 
-  stat:
-    statName: Stamina
-  value: 10
-  duration: 0
-  flags: 0
-  icon: {fileID: 0}
+  Stat:
+    _statName: Stamina
+  Value: 10
+  Duration: 0
+  Flags: 0
+  Icon: {fileID: 0}

@@ -6,8 +6,8 @@ using UnityEngine.Events;
 [System.Serializable]
 public class BossStage
 {
-    public int healthThreshold;
-    [SerializeField] public AbilityBase[] abilities;
+    public int HealthThreshold;
+    [SerializeField] public AbilityBase[] Abilities;
 
     public UnityEvent StartStage;
 

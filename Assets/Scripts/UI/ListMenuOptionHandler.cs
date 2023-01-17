@@ -7,14 +7,12 @@ using UnityEngine.EventSystems;
 
 public class ListMenuOptionHandler : MonoBehaviour, IPointerEnterHandler, IPointerUpHandler
 {
-    Sprite icon;
-    string label;
-    string description;
+    private string _label;
 
-    ListMenuOption optionData;
+    private ListMenuOption _optionData;
 
-    [SerializeField] TextMeshProUGUI nameText;
-    [SerializeField] Image selectionImage;
+    [SerializeField] private TextMeshProUGUI _nameText;
+    [SerializeField] private Image _selectionImage;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -24,18 +22,18 @@ public class ListMenuOptionHandler : MonoBehaviour, IPointerEnterHandler, IPoint
         {
             if (!menu.IsSubmenuOpen())
             {
-                menu.SelectItem(optionData);
+                menu.SelectItem(_optionData);
             }
         }
         else if (submenuHandler)
         {
-            foreach (var item in submenuHandler.menuGameObjects)
+            foreach (var item in submenuHandler.MenuGameObjects)
             {
                 ListMenuOptionHandler handler = item.GetComponent<ListMenuOptionHandler>();
-                if (handler.label == label)
+                if (handler._label == _label)
                 {
                     submenuHandler.Select(false);
-                    submenuHandler.selectedIndex = submenuHandler.menuGameObjects.IndexOf(item);
+                    submenuHandler.SelectedIndex = submenuHandler.MenuGameObjects.IndexOf(item);
                     submenuHandler.Select(true);
                     break;
                 }
@@ -53,14 +51,12 @@ public class ListMenuOptionHandler : MonoBehaviour, IPointerEnterHandler, IPoint
             menu.OpenSubmenu();
     }
 
-    public void Select(bool value) => selectionImage.enabled = value;
+    public void Select(bool value) => _selectionImage.enabled = value;
 
     public void SetOptionData(ListMenuOption option)
     {
-        icon= option.icon;
-        label= option.label;
-        nameText.text = label;
-        description= option.description;
-        optionData = option;
+        _label= option.Label;
+        _nameText.text = _label;
+        _optionData = option;
     }
 }

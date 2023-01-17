@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using KieranCoppins.DecisionTrees;
 
 [CreateAssetMenu(menuName = "Environment Query System")]
-public class EnvironmentQuerySystem : DecisionTreeEditorNode
+public class EnvironmentQuerySystem : ScriptableObject
 {
     public EQSTarget Target
     {
-        get { return _target; }
-        protected set { _target = value; }
+        get;
+        protected set;
     }
     public float TileRange
     {
@@ -17,19 +18,17 @@ public class EnvironmentQuerySystem : DecisionTreeEditorNode
         protected set { _tileRange = value; }
     }
 
+    protected BaseMob Mob { get; set; }
+
     [Tooltip("An array of EQS Rules to run everytime this query is ran")]
-    [SerializeField] protected List<Rule> rules;
+    [SerializeField] protected List<Rule> Rules;
     [Tooltip("The target to check tiles around")]
-    [SerializeField] protected EQSTarget _target;
+    [SerializeField] private EQSTarget _target;
     [Tooltip("The radius of tiles around the target to run the EQS Rules on")]
-    [SerializeField] protected float _tileRange;
+    [SerializeField] private float _tileRange;
 
-    Dictionary<Vector2Int, float> tileScore;
-    GameObject caller;
-
-    /// Editor Values
-    // Stores the port name as the key and the nodeView GUID as the value
-    [HideInInspector] public List<KeyValuePair<string, string>> connections = new List<KeyValuePair<string, string>>(){ };
+    private Dictionary<Vector2Int, float> _tileScore;
+    private GameObject _caller;
 
     public Vector2 Run()
     {
@@ -42,10 +41,10 @@ public class EnvironmentQuerySystem : DecisionTreeEditorNode
         switch (Target)
         {
             case (EQSTarget.TARGET):
-                target = mob.Target;
+                target = Mob.Target;
                 break;
             case (EQSTarget.CALLER):
-                target = mob.transform;
+                target = Mob.transform;
                 break;
             default:
                 Debug.LogError("EQS system does not have a valid EQSTarget");
@@ -61,25 +60,25 @@ public class EnvironmentQuerySystem : DecisionTreeEditorNode
         Vector2Int[] tiles = controller.GetTilesInRange(pos, Mathf.CeilToInt(TileRange));
 
         //Initialise our EQS system with these parameters
-        caller = mob.gameObject;
+        _caller = Mob.gameObject;
 
-        tileScore = new Dictionary<Vector2Int, float>();
+        _tileScore = new Dictionary<Vector2Int, float>();
 
         // Default all tiles in the query to have a score of 1;
         for (int i = 0; i < tiles.Length; i++)
         {
-            this.tileScore.Add(tiles[i], 1f);
+            this._tileScore.Add(tiles[i], 1f);
         }
 
 
-        foreach (Rule rule in rules)
+        foreach (Rule rule in Rules)
         {
-            tileScore = rule.Run(tileScore, caller);
+            _tileScore = rule.Run(_tileScore, _caller);
         }
         float lowestScore = Mathf.Infinity;
         float highestScore = 0;
         Vector2Int bestTile = Vector2Int.zero;
-        foreach (var tile in tileScore)
+        foreach (var tile in _tileScore)
         {
             if (tile.Value < lowestScore)
             {
@@ -91,9 +90,9 @@ public class EnvironmentQuerySystem : DecisionTreeEditorNode
                 highestScore = tile.Value;
         }
 
-        if ((caller.GetComponent<BaseMob>().debugFlags & DebugFlags.EQS) == DebugFlags.EQS)
+        if ((_caller.GetComponent<BaseMob>().DebugFlags & DebugFlags.EQS) == DebugFlags.EQS)
         {
-            foreach (var tile in tileScore)
+            foreach (var tile in _tileScore)
             {
                 if (tile.Key == bestTile)
                     Debug.DrawLine(new Vector3(tile.Key.x, tile.Key.y, 0.0f), new Vector3(tile.Key.x + 1.0f, tile.Key.y + 1.0f, 0), Color.yellow, 1f);
@@ -105,16 +104,26 @@ public class EnvironmentQuerySystem : DecisionTreeEditorNode
         return new Vector2(bestTile.x + 0.5f, bestTile.y + 0.5f);
     }
 
-    public override string GetDescription(BaseNodeView nodeView)
+    public void Initialise(BaseMob mob)
     {
-        if (rules.Count == 0)
+        Mob = mob;
+    }
+
+    public EnvironmentQuerySystem Clone()
+    {
+        return Instantiate(this) as EnvironmentQuerySystem;
+    }
+
+    public string GetDescription(BaseNodeView nodeView)
+    {
+        if (Rules.Count == 0)
         {
-            nodeView.error = "There are no rules in this Environment Query System!";
+            nodeView.Error = "There are no rules in this Environment Query System!";
             return "";
         }
-        nodeView.error = "";
+        nodeView.Error = "";
         string desc = "Returns the location that satisfies these rules:\n";
-        foreach (var rule in rules)
+        foreach (var rule in Rules)
         {
             desc += $"{rule.GetSummary()}. \n";
         }

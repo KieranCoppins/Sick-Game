@@ -1,33 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using KieranCoppins.DecisionTrees;
 
-public class A_PullBack : Action
+public class A_PullBack : CustomAction
 {
-    Vector2 desiredPosition;
-    [SerializeField] float distance;
-
-    public A_PullBack() : base()
-    {
-
-    }
-    public override void Initialise(BaseMob mob)
-    {
-        base.Initialise(mob);
-    }
+    private Vector2 _desiredPosition;
+    [SerializeField] private float _distance;
 
     public override IEnumerator Execute()
     {
-        while (mob.Target != null && Vector2.Distance(mob.transform.position, mob.Target.position) < distance)
+        while (Mob.Target != null && Vector2.Distance(Mob.transform.position, Mob.Target.position) < _distance)
         {
-            desiredPosition = mob.transform.position + (mob.transform.position - mob.Target.position).normalized * 5f;
-            Vector2 dir = mob.GetMovementVector(desiredPosition);
-            if ((mob.debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
+            _desiredPosition = Mob.transform.position + (Mob.transform.position - Mob.Target.position).normalized * 5f;
+            Vector2 dir = Mob.GetMovementVector(_desiredPosition);
+            if ((Mob.DebugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
             {
-                Debug.DrawRay((Vector2)mob.transform.position + (dir * 0.45f), dir);
-                Debug.DrawRay((Vector2)mob.transform.position, desiredPosition - (Vector2)mob.transform.position, Color.blue);
+                Debug.DrawRay((Vector2)Mob.transform.position + (dir * 0.45f), dir);
+                Debug.DrawRay((Vector2)Mob.transform.position, _desiredPosition - (Vector2)Mob.transform.position, Color.blue);
             }
-            mob.rb.velocity = dir.normalized * mob.MovementSpeed;
+            Mob.RigidBody.velocity = dir.normalized * Mob.MovementSpeed;
             yield return null;
         }
         yield return null;
@@ -35,6 +27,6 @@ public class A_PullBack : Action
 
     public override string GetDescription(BaseNodeView nodeView)
     {
-        return $"The mob will retreat away from the target until they are {distance} units away.";
+        return $"The mob will retreat away from the target until they are {_distance} units away.";
     }
 }

@@ -38,7 +38,7 @@ public abstract class BaseBoss : BaseMob
         stages[CurrentStage].Update();
 
         // Move to our next stage if our health is below the threshold
-        if (Health < stages[CurrentStage].healthThreshold)
+        if (Health < stages[CurrentStage].HealthThreshold)
         {
             CurrentStage++;
         }

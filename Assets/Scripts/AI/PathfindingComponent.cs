@@ -6,21 +6,21 @@ using UnityEngine.Tilemaps;
 [DisallowMultipleComponent]
 public class PathfindingComponent : MonoBehaviour
 {
-    TilemapController tilemapController;
+    private TilemapController _tilemapController;
 
     private void Awake()
     {
-        tilemapController = GameObject.FindGameObjectWithTag("Tilemap").GetComponent<TilemapController>();
-        if (tilemapController == null)
+        _tilemapController = GameObject.FindGameObjectWithTag("Tilemap").GetComponent<TilemapController>();
+        if (_tilemapController == null)
             throw new MissingComponentException("Can't find Tilemap Controller on Tilemap tagged GameObject");
     }
 
-    float CalculateHeristicEstimate(Node n, Node target)
+    private float CalculateHeristicEstimate(Node n, Node target)
     {
         return Vector2.Distance(n, target);
     }
 
-    Vector2[] FormatPath(List<Node> path, Vector2 endPosition)
+    private Vector2[] FormatPath(List<Node> path, Vector2 endPosition)
     {
         List<Vector2> waypoints = new List<Vector2>();
         foreach (Node n in path)
@@ -31,7 +31,7 @@ public class PathfindingComponent : MonoBehaviour
         return waypoints.ToArray();
     }
 
-    Vector2[] ReconstructPath(Dictionary<Node, Node> cameFrom, Node current, Vector3 start, Vector3 end)
+    private Vector2[] ReconstructPath(Dictionary<Node, Node> cameFrom, Node current, Vector3 start, Vector3 end)
     {
         List<Node> path = new List<Node>();
         path.Add(current);
@@ -48,21 +48,21 @@ public class PathfindingComponent : MonoBehaviour
     // Calculates a path using A Star Algorithm from start to end and returns a list of points
     public Vector2[] CalculateAStarPath(Vector3 start, Vector3 end)
     {
-        if (tilemapController == null)
+        if (_tilemapController == null)
         {
             Debug.LogError("Can't make a path with no tilemap controller");
             return null;
         }
         // Get our start and end nodes
-        Node startNode = tilemapController.GetNodeFromGlobalPosition(start);
-        Node endNode = tilemapController.GetNodeFromGlobalPosition(end);
+        Node startNode = _tilemapController.GetNodeFromGlobalPosition(start);
+        Node endNode = _tilemapController.GetNodeFromGlobalPosition(end);
 
         List<Node> open = new List<Node>();
         Dictionary<Node, Node> cameFrom = new Dictionary<Node, Node>();
         Dictionary<Node, float> gScore = new Dictionary<Node, float>();
         Dictionary<Node, float> fScore = new Dictionary<Node, float>();
 
-        foreach (Node n in tilemapController.PathfindingGraph)
+        foreach (Node n in _tilemapController.PathfindingGraph)
         {
             gScore[n] = Mathf.Infinity;
             fScore[n] = Mathf.Infinity;
@@ -89,9 +89,9 @@ public class PathfindingComponent : MonoBehaviour
 
             open.Remove(curr);
 
-            foreach (Node n in curr.neighbours)
+            foreach (Node n in curr.Neighbours)
             {                   
-                float tentativeGScore = gScore[curr] + n.movementCost;
+                float tentativeGScore = gScore[curr] + n.MovementCost;
 
                 if (tentativeGScore < gScore[n])
                 {
@@ -109,7 +109,7 @@ public class PathfindingComponent : MonoBehaviour
     }
 
     //Smooth our path
-    Vector2[] SmoothPath(List<Node> path, Vector2 start, Vector2 end)
+    private Vector2[] SmoothPath(List<Node> path, Vector2 start, Vector2 end)
     {
         // Lets smooth this path since our movement isn't locked to each tile
 
@@ -137,14 +137,14 @@ public class PathfindingComponent : MonoBehaviour
             // We're in a forward slash
             if (dotProd >= 0.75f)
             {
-                castLower = n.lowerRight();
-                castUpper = n.upperLeft();
+                castLower = n.LowerRight();
+                castUpper = n.UpperLeft();
             }
             // Otherwise its a backward slash
             else
             {
-                castLower = n.lowerLeft();
-                castUpper = n.upperRight();
+                castLower = n.LowerLeft();
+                castUpper = n.UpperRight();
             }
 
             // Calculate the distance for our raycast to be

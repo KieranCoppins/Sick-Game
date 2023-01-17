@@ -1,28 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using KieranCoppins.DecisionTrees;
 
-public class A_SetCombatMode : Action
+public class A_SetCombatMode : CustomAction
 {
-    [SerializeField] CombatState state;
+    [SerializeField] private CombatState _state;
+
     public A_SetCombatMode() : base()
     {
         
     }
 
-    public override void Initialise(BaseMob mob)
-    {
-        base.Initialise(mob);
-    }
-
     public override IEnumerator Execute()
     {
-        mob.State = state;
+        Mob.State = _state;
         yield return null;
     }
 
     public override string GetDescription(BaseNodeView nodeView)
     {
-        return $"Set the mobs combat state to {state}";
+        return $"Set the mobs combat state to {_state}";
     }
 }

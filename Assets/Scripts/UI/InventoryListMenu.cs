@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class InventoryListMenu : ListMenu
 {
-    [SerializeField] CharacterMovement character;
+    [SerializeField] private CharacterMovement _character;
     public override void LoadData()
     {
-        menuOptions.Clear();
-        InventoryItem[] items = character.inventory.GetItems();
+        MenuOptions.Clear();
+        InventoryItem[] items = _character.Inventory.GetItems();
         foreach (var item in items)
         {
-            string favourited = character.inventoryQuickbar.Contains(item) ? "*" : "";
-            ListMenuOption lmo = new ListMenuOption($"{item.name}{favourited} <pos=92%>x{character.inventory.GetQuantity(item)}</pos>", item.GetDescription(), item.icon);
+            string favourited = _character.InventoryQuickbar.Contains(item) ? "*" : "";
+            ListMenuOption lmo = new ListMenuOption($"{item.name}{favourited} <pos=92%>x{_character.Inventory.GetQuantity(item)}</pos>", item.GetDescription(), item.Icon);
             lmo.Metadata = item;
-            menuOptions.Add(lmo);
+            MenuOptions.Add(lmo);
         }
     }
 
     public void UseSelectedItem()
     {
-        character.inventory.Use((InventoryItem)SelectedOption.Metadata);
+        _character.Inventory.Use((InventoryItem)SelectedOption.Metadata);
     }
 
     public void FavouriteSelectedItem()
@@ -28,10 +28,10 @@ public class InventoryListMenu : ListMenu
         InventoryItem item = (InventoryItem)SelectedOption.Metadata;
         if (item != null)
         {
-            if (character.inventoryQuickbar.Contains(item))
-                character.inventoryQuickbar.Remove(item);
+            if (_character.InventoryQuickbar.Contains(item))
+                _character.InventoryQuickbar.Remove(item);
             else
-                character.inventoryQuickbar.Add(item);
+                _character.InventoryQuickbar.Add(item);
         }
     }
 }

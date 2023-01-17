@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using KieranCoppins.DecisionTrees;
+using KieranCoppins.GenericHelpers;
 
-public class C_StatComparison : F_Condition
+public class C_StatComparison : CustomFunction<bool>
 {
     [SerializeField] PlayerStat stat;
     [SerializeField] Operators operation;
     [SerializeField] float value;
     public override bool Invoke()
     {
-        int statValue = (int)typeof(BaseCharacter).GetProperty(stat, GenericHelpers.getFieldFlags).GetValue(mob);
+        int statValue = (int)typeof(BaseCharacter).GetProperty(stat, GenericHelpers.GetFieldFlags).GetValue(Mob);
         switch (operation)
         {
             case (Operators.LessThan):
@@ -28,13 +30,18 @@ public class C_StatComparison : F_Condition
     {
         try 
         {
-            nodeView.error = "";
+            nodeView.Error = "";
             return $"{GenericHelpers.SplitCamelCase(stat)} is {GenericHelpers.SplitCamelCase(operation.ToString()).ToLower()} {value}";
         }
         catch (System.Exception e)
         {
-            nodeView.error = e.Message;
+            nodeView.Error = e.Message;
             return "";
         }
+    }
+
+    public override string GetDescription(BaseNodeView nodeView)
+    {
+        return $"Returns true if {GetSummary(nodeView)}.";
     }
 }

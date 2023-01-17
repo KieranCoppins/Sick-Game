@@ -5,17 +5,17 @@ using UnityEngine.Events;
 
 public class InventoryRadialMenu : RadialMenu
 {
-    [SerializeField] CharacterMovement character;
+    [SerializeField] private CharacterMovement _character;
 
     public override void LoadData()
     {
-        if (menuOptions.Count > 0)
-            menuOptions.Clear();
+        if (MenuOptions.Count > 0)
+            MenuOptions.Clear();
 
-        foreach (var item in character.inventoryQuickbar)
+        foreach (var item in _character.InventoryQuickbar)
         {
-            RadialMenuOption menuOption = new RadialMenuOption(item.name, item.GetDescription(), item.icon);
-            menuOptions.Add(menuOption);
+            RadialMenuOption menuOption = new RadialMenuOption(item.name, item.GetDescription(), item.Icon);
+            MenuOptions.Add(menuOption);
         }
     }
 
@@ -23,7 +23,7 @@ public class InventoryRadialMenu : RadialMenu
     {
         if (Open)
         {
-            character.selectedItem = character.inventoryQuickbar[menuOptions.IndexOf(selectedOption)];
+            _character.SelectedItem = _character.InventoryQuickbar[MenuOptions.IndexOf(SelectedOption)];
             base.Close();
         }
     }

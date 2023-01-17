@@ -1,30 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using KieranCoppins.DecisionTrees;
 
-public class A_Wander : Action
+public class A_Wander : CustomAction
 {
-    [SerializeField] float wanderRange;
-    [SerializeField] float wanderSpeed;
+    [SerializeField] private float _wanderRange;
+    [SerializeField] private float _wanderSpeed;
+
     public override IEnumerator Execute()
     {
-        Vector2 originPoint = mob.transform.position;
+        Vector2 originPoint = Mob.transform.position;
         while (true) 
         {
             if (Random.Range(0f, 1f) <= 0.1f)
             {
-                yield return new DoTaskWhilstWaitingForSeconds(() => mob.rb.velocity = Vector2.zero, Random.Range(0.3f, 2.0f));
+                yield return new DoTaskWhilstWaitingForSeconds(() => Mob.RigidBody.velocity = Vector2.zero, Random.Range(0.3f, 2.0f));
             }
             else
             {
-                Vector2 dir = mob.WanderVector(originPoint, wanderRange);
+                Vector2 dir = Mob.WanderVector(originPoint, _wanderRange);
                 yield return new DoTaskWhilstWaitingForSeconds(() =>
                 {
-                    if ((mob.debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
+                    if ((Mob.DebugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
                     {
-                        Debug.DrawRay((Vector2)mob.transform.position + (dir * 0.45f), dir);
+                        Debug.DrawRay((Vector2)Mob.transform.position + (dir * 0.45f), dir);
                     }
-                    mob.rb.velocity = dir.normalized * wanderSpeed;
+                    Mob.RigidBody.velocity = dir.normalized * _wanderSpeed;
                 }, Random.Range(0.3f, 2.0f));
             }
         }
@@ -32,6 +34,6 @@ public class A_Wander : Action
 
     public override string GetDescription(BaseNodeView nodeView)
     {
-        return $"Wander around the point at which wondering started within a range of {wanderRange}. During wandering the mob will move at {wanderSpeed}.";
+        return $"Wander around the point at which wondering started within a range of {_wanderRange}. During wandering the mob will move at {_wanderSpeed}.";
     }
 }

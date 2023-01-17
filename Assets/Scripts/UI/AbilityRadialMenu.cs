@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class AbilityRadialMenu : RadialMenu
 {
-    [SerializeField] CharacterMovement character;
+    [SerializeField] private CharacterMovement _character;
 
     public override void LoadData()
     {
-        if (menuOptions.Count > 0)
-            menuOptions.Clear();
+        if (MenuOptions.Count > 0)
+            MenuOptions.Clear();
 
-        foreach (var ability in character.abilityQuickbar)
+        foreach (var ability in _character.AbilityQuickbar)
         {
-            RadialMenuOption menuOption = new RadialMenuOption(ability.name, ability.GetDescription(), ability.icon);
-            menuOptions.Add(menuOption);
+            RadialMenuOption menuOption = new RadialMenuOption(ability.name, ability.GetDescription(), ability.Icon);
+            MenuOptions.Add(menuOption);
         }
     }
 
@@ -22,7 +22,7 @@ public class AbilityRadialMenu : RadialMenu
     {
         if (Open)
         {
-            character.selectedAbility = character.abilityQuickbar[menuOptions.IndexOf(selectedOption)];
+            _character.SelectedAbility = _character.AbilityQuickbar[MenuOptions.IndexOf(SelectedOption)];
             base.Close();
         }
     }

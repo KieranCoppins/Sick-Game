@@ -11,41 +11,42 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] GameObject inventoryRadialMenu;
-    [SerializeField] GameObject abilityRadialMenu;
-    [SerializeField] GameObject playerHUD;
+    [SerializeField] private GameObject _inventoryRadialMenu;
+    [SerializeField] private GameObject _abilityRadialMenu;
+    [SerializeField] private GameObject _playerHUD;
 
-    [SerializeField] GameObject pauseMenu;
-    [SerializeField] List<GameObject> pauseMenuScreens = new List<GameObject>();
+    [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private List<GameObject> _pauseMenuScreens = new List<GameObject>();
 
-    int CurrentMenuIndex
+    protected int CurrentMenuIndex
     {
         get { return _currentMenuIndex; }
-        set
+        private set
         {
-            if (value >= pauseMenuScreens.Count)
+            if (value >= _pauseMenuScreens.Count)
                 _currentMenuIndex = 0;
             else if (value < 0)
-                _currentMenuIndex = pauseMenuScreens.Count - 1;
+                _currentMenuIndex = _pauseMenuScreens.Count - 1;
             else
                 _currentMenuIndex = value;
         }
     }
-    int _currentMenuIndex = 0;
 
-    Dictionary<UIElement, GameObject> uiElements= new Dictionary<UIElement, GameObject>();
+    private int _currentMenuIndex;
+
+    private Dictionary<UIElement, GameObject> _uiElements= new Dictionary<UIElement, GameObject>();
 
     private void Start()
     {
-        uiElements.Add(UIElement.InventoryRadialMenu, inventoryRadialMenu);
-        uiElements.Add(UIElement.AbilityRadialMenu, abilityRadialMenu);
-        uiElements.Add(UIElement.PauseMenu, pauseMenu);
+        _uiElements.Add(UIElement.InventoryRadialMenu, _inventoryRadialMenu);
+        _uiElements.Add(UIElement.AbilityRadialMenu, _abilityRadialMenu);
+        _uiElements.Add(UIElement.PauseMenu, _pauseMenu);
 
     }
 
     void Open(UIElement uiElement)
     {
-        foreach (var item in uiElements) 
+        foreach (var item in _uiElements) 
         {
             if (item.Key == uiElement)
             {
@@ -55,10 +56,10 @@ public class UIManager : MonoBehaviour
                     radialMenu.Display();
                 else if (item.Key == UIElement.PauseMenu)
                 {
-                    playerHUD.SetActive(false);
-                    pauseMenu.SetActive(true);
-                    pauseMenuScreens[CurrentMenuIndex].SetActive(true);
-                    pauseMenuScreens[CurrentMenuIndex].GetComponentInChildren<ListMenu>().Display();
+                    _playerHUD.SetActive(false);
+                    _pauseMenu.SetActive(true);
+                    _pauseMenuScreens[CurrentMenuIndex].SetActive(true);
+                    _pauseMenuScreens[CurrentMenuIndex].GetComponentInChildren<ListMenu>().Display();
                 }
                 else
                     item.Value.SetActive(true);
@@ -73,7 +74,7 @@ public class UIManager : MonoBehaviour
 
     void Close(UIElement uiElement)
     {
-        foreach (var item in uiElements)
+        foreach (var item in _uiElements)
         {
             if (item.Key == uiElement)
             {
@@ -85,9 +86,9 @@ public class UIManager : MonoBehaviour
                         radialMenu.Close();
                     else if (item.Key == UIElement.PauseMenu)
                     {
-                        playerHUD.SetActive(true);
+                        _playerHUD.SetActive(true);
                         item.Value.SetActive(false);
-                        pauseMenuScreens[CurrentMenuIndex].SetActive(false);
+                        _pauseMenuScreens[CurrentMenuIndex].SetActive(false);
                     }
                     else
                         item.Value.SetActive(false);
@@ -100,7 +101,7 @@ public class UIManager : MonoBehaviour
     
     public void OpenInventoryRadial(InputAction.CallbackContext context)
     {
-        if (!pauseMenu.activeSelf)
+        if (!_pauseMenu.activeSelf)
         {
             if (context.performed)
                 Open(UIElement.InventoryRadialMenu);
@@ -111,7 +112,7 @@ public class UIManager : MonoBehaviour
 
     public void OpenAbilityRadial(InputAction.CallbackContext context)
     {
-        if (!pauseMenu.activeSelf)
+        if (!_pauseMenu.activeSelf)
         {
             if (context.performed)
                 Open(UIElement.AbilityRadialMenu);
@@ -125,7 +126,7 @@ public class UIManager : MonoBehaviour
         if (context.started)
         {
 
-            if (pauseMenu.activeSelf)
+            if (_pauseMenu.activeSelf)
                 Close(UIElement.PauseMenu);
             else
                 Open(UIElement.PauseMenu);
@@ -134,23 +135,23 @@ public class UIManager : MonoBehaviour
 
     public void NextPauseMenu(InputAction.CallbackContext context)
     {
-        if (context.started && pauseMenu.activeSelf)
+        if (context.started && _pauseMenu.activeSelf)
         {
-            pauseMenuScreens[CurrentMenuIndex].SetActive(false);
+            _pauseMenuScreens[CurrentMenuIndex].SetActive(false);
             CurrentMenuIndex++;
-            pauseMenuScreens[CurrentMenuIndex].SetActive(true);
-            pauseMenuScreens[CurrentMenuIndex].GetComponentInChildren<ListMenu>().Display();
+            _pauseMenuScreens[CurrentMenuIndex].SetActive(true);
+            _pauseMenuScreens[CurrentMenuIndex].GetComponentInChildren<ListMenu>().Display();
         }
     }
 
     public void PrevPauseMenu(InputAction.CallbackContext context)
     {
-        if (context.started && pauseMenu.activeSelf)
+        if (context.started && _pauseMenu.activeSelf)
         {
-            pauseMenuScreens[CurrentMenuIndex].SetActive(false);
+            _pauseMenuScreens[CurrentMenuIndex].SetActive(false);
             CurrentMenuIndex--;
-            pauseMenuScreens[CurrentMenuIndex].SetActive(true);
-            pauseMenuScreens[CurrentMenuIndex].GetComponentInChildren<ListMenu>().Display();
+            _pauseMenuScreens[CurrentMenuIndex].SetActive(true);
+            _pauseMenuScreens[CurrentMenuIndex].GetComponentInChildren<ListMenu>().Display();
         }
     }
 
@@ -159,13 +160,13 @@ public class UIManager : MonoBehaviour
         // If we're using our radial menu, then we want to use the right stick for manouvering the radial menu
         if (!context.canceled)
         {
-            InventoryRadialMenu inventoryMenu = inventoryRadialMenu.GetComponent<InventoryRadialMenu>();
+            InventoryRadialMenu inventoryMenu = _inventoryRadialMenu.GetComponent<InventoryRadialMenu>();
             if (inventoryMenu && inventoryMenu.Open)
             {
                 inventoryMenu.SelectItem(context.ReadValue<Vector2>());
                 return;
             }
-            AbilityRadialMenu abilityMenu = abilityRadialMenu.GetComponent<AbilityRadialMenu>();
+            AbilityRadialMenu abilityMenu = _abilityRadialMenu.GetComponent<AbilityRadialMenu>();
             if (abilityMenu && abilityMenu.Open)
             {
                 abilityMenu.SelectItem(context.ReadValue<Vector2>());
@@ -175,15 +176,15 @@ public class UIManager : MonoBehaviour
 
     public void NavigateList(InputAction.CallbackContext context)
     {
-        if (context.started && pauseMenu.activeInHierarchy)
-            pauseMenuScreens[CurrentMenuIndex].GetComponentInChildren<ListMenu>().SelectItem(context.ReadValue<Vector2>());
+        if (context.started && _pauseMenu.activeInHierarchy)
+            _pauseMenuScreens[CurrentMenuIndex].GetComponentInChildren<ListMenu>().SelectItem(context.ReadValue<Vector2>());
     }
 
     public void Select(InputAction.CallbackContext context)
     {
-        if (context.started && pauseMenu.activeInHierarchy)
+        if (context.started && _pauseMenu.activeInHierarchy)
         {
-            ListMenu listMenu = pauseMenuScreens[CurrentMenuIndex].GetComponentInChildren<ListMenu>();
+            ListMenu listMenu = _pauseMenuScreens[CurrentMenuIndex].GetComponentInChildren<ListMenu>();
             if (listMenu.IsSubmenuOpen())
                 listMenu.CloseSubmenu();
             else

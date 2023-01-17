@@ -5,7 +5,7 @@ using UnityEngine;
 public class DieAfterSeconds : MonoBehaviour
 {
     [Tooltip("The number of seconds before this gameobject is destroyed")]
-    [SerializeField] float seconds;
+    [SerializeField] private float _seconds;
 
     public void StartSelfDestruct()
     {
@@ -14,7 +14,7 @@ public class DieAfterSeconds : MonoBehaviour
 
     IEnumerator CountDown()
     {
-        yield return new WaitForSeconds(seconds);
+        yield return new WaitForSeconds(_seconds);
         Destroy(gameObject);
     }
 }

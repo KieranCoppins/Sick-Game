@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using KieranCoppins.GenericHelpers;
 
 [CreateAssetMenu(menuName = "Environment Queries/Distance To")]
 public class R_DistanceTo : Rule
 {
 
-    [SerializeField] float distance;
-    [SerializeField] Operators op;
+    [SerializeField] private float _distance;
+    [SerializeField] private Operators _operation;
 
     public override Dictionary<Vector2Int, float> Run(Dictionary<Vector2Int, float> tiles, GameObject caller)
     {
@@ -31,17 +32,17 @@ public class R_DistanceTo : Rule
 
     public bool Decision(float d)
     {
-        if (op == Operators.LessThan)
-            return d < distance;
-        else if (op == Operators.GreaterThan)
-            return d > distance;
-        else if (op == Operators.EqualTo)
-            return d == distance;
+        if (_operation == Operators.LessThan)
+            return d < _distance;
+        else if (_operation == Operators.GreaterThan)
+            return d > _distance;
+        else if (_operation == Operators.EqualTo)
+            return d == _distance;
         return false;
     }
 
     public override string GetSummary()
     {
-        return $"The tile's distance is {GenericHelpers.SplitCamelCase(op.ToString()).ToLower()} {distance}";
+        return $"The tile's distance is {GenericHelpers.SplitCamelCase(_operation.ToString()).ToLower()} {_distance}";
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ff84f55c88832428ef59f86e97f4d2, type: 3}
   m_Name: God Mode
   m_EditorClassIdentifier: 
-  icon: {fileID: 1575245446, guid: 5aa0e3dc593636849b2bdf4c991df64d, type: 3}
+  Icon: {fileID: 1575245446, guid: 5aa0e3dc593636849b2bdf4c991df64d, type: 3}
   StatusEffects:
   - {fileID: 11400000, guid: 1643d7e697eda90498f4f323b1d7eb7d, type: 2}
   - {fileID: 11400000, guid: fa394b2d1f9f25c4e9ea875907e092d2, type: 2}

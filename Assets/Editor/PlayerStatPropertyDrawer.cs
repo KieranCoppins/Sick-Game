@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
+using KieranCoppins.GenericHelpers;
 
 [CustomPropertyDrawer(typeof(PlayerStat))]
 public class PlayerStatPropertyDraw : PropertyDrawer
@@ -12,14 +13,14 @@ public class PlayerStatPropertyDraw : PropertyDrawer
     {
         EditorGUI.BeginProperty(position, label, property);
         List<string> playerStatsLabels = new List<string>();
-        var properties = typeof(BaseCharacter).GetProperties(GenericHelpers.getFieldFlags);
+        var properties = typeof(BaseCharacter).GetProperties(GenericHelpers.GetFieldFlags);
         int currentChoice = 0;
         for (int i = 0; i < properties.Length; i++)
         {
             if (properties[i].PropertyType == typeof(int) || properties[i].PropertyType == typeof(float))
             {
                 playerStatsLabels.Add(properties[i].Name);
-                if (properties[i].Name == property.FindPropertyRelative("statName").stringValue)
+                if (properties[i].Name == property.FindPropertyRelative("_statName").stringValue)
                     currentChoice = i != 0 ? i - 1 : 0;
 
             }
@@ -30,7 +31,7 @@ public class PlayerStatPropertyDraw : PropertyDrawer
 
         if (EditorGUI.EndChangeCheck())
         {
-            property.FindPropertyRelative("statName").stringValue = playerStatsLabels[choiceIndex];
+            property.FindPropertyRelative("_statName").stringValue = playerStatsLabels[choiceIndex];
         }
         EditorGUI.EndProperty();
     }

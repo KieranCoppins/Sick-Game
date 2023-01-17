@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 522f432b4e280154c8616cd14cc6bd6c, type: 3}
   m_Name: Magic Up
   m_EditorClassIdentifier: 
-  stat:
-    statName: MaxMana
-  value: 20
-  duration: 10
-  flags: -1
-  icon: {fileID: 0}
+  Stat:
+    _statName: MaxMana
+  Value: 30
+  Duration: 10
+  Flags: 1
+  Icon: {fileID: 0}

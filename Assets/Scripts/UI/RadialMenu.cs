@@ -7,14 +7,14 @@ using UnityEngine.InputSystem;
 
 public abstract class RadialMenu : MonoBehaviour
 {
-    [SerializeField] float radius;
-    public List<RadialMenuOption> menuOptions = new List<RadialMenuOption>();
-    List<GameObject> openOptions = new List<GameObject>();
-    [SerializeField] GameObject menuOptionPrefab;
+    [SerializeField] private float _radius;
+    public List<RadialMenuOption> MenuOptions = new List<RadialMenuOption>();
+    private List<GameObject> _openOptions = new List<GameObject>();
+    [SerializeField] private GameObject _menuOptionPrefab;
 
-    [SerializeField] TextMeshProUGUI descriptionLabel;
+    [SerializeField] private TextMeshProUGUI _descriptionLabel;
 
-    protected RadialMenuOption selectedOption;
+    protected RadialMenuOption SelectedOption;
 
     public bool Open { get; private set; }
 
@@ -22,26 +22,26 @@ public abstract class RadialMenu : MonoBehaviour
 
     public void Display()
     {
-        menuOptions.Clear();
+        MenuOptions.Clear();
         LoadData();
-        if (menuOptions.Count == 0)
+        if (MenuOptions.Count == 0)
             return;
 
         Open = true;
         gameObject.SetActive(true);
-        float radianSeperation = (Mathf.PI * 2) / menuOptions.Count;
+        float radianSeperation = (Mathf.PI * 2) / MenuOptions.Count;
 
-        for(int i = 0; i < menuOptions.Count; i++)
+        for(int i = 0; i < MenuOptions.Count; i++)
         {
-            Vector3 offset = new Vector3(Mathf.Sin(radianSeperation * i) * radius, Mathf.Cos(radianSeperation * i) * radius);
-            GameObject go = Instantiate(menuOptionPrefab, transform);
-            openOptions.Add(go);
+            Vector3 offset = new Vector3(Mathf.Sin(radianSeperation * i) * _radius, Mathf.Cos(radianSeperation * i) * _radius);
+            GameObject go = Instantiate(_menuOptionPrefab, transform);
+            _openOptions.Add(go);
             RadialMenuOptionHandler oh = go.GetComponent<RadialMenuOptionHandler>();
-            oh.SetOptionData(menuOptions[i]);
+            oh.SetOptionData(MenuOptions[i]);
             oh.SetPosition(offset);
         }
 
-        SelectItem(menuOptions[0]);
+        SelectItem(MenuOptions[0]);
     }
 
     public virtual void Close()
@@ -55,19 +55,19 @@ public abstract class RadialMenu : MonoBehaviour
 
     IEnumerator CloseAnimated()
     {
-        for (int i = 0; i < openOptions.Count; i++)
+        for (int i = 0; i < _openOptions.Count; i++)
         {
-            RadialMenuOptionHandler oh = openOptions[i].GetComponent<RadialMenuOptionHandler>();
+            RadialMenuOptionHandler oh = _openOptions[i].GetComponent<RadialMenuOptionHandler>();
             oh.SetPosition(Vector3.zero);
         }
 
         yield return new WaitForSeconds(0.2f);
 
-        for (int i = 0; i < openOptions.Count; i++)
+        for (int i = 0; i < _openOptions.Count; i++)
         {
-            Destroy(openOptions[i]);
+            Destroy(_openOptions[i]);
         }
-        openOptions.Clear();
+        _openOptions.Clear();
         gameObject.SetActive(false);
 
         yield return null;
@@ -79,8 +79,8 @@ public abstract class RadialMenu : MonoBehaviour
     /// <param name="option"></param>
     public virtual void SelectItem(RadialMenuOption option)
     {
-        descriptionLabel.text = $"<style=\"H1\">{option.label}</style>\n{option.description}";
-        selectedOption = option;
+        _descriptionLabel.text = $"<style=\"H1\">{option.Label}</style>\n{option.Description}";
+        SelectedOption = option;
     }
 
     /// <summary>
@@ -91,7 +91,7 @@ public abstract class RadialMenu : MonoBehaviour
     {
         float bestDot = -1;
         GameObject option = null;
-        foreach(var handler in openOptions)
+        foreach(var handler in _openOptions)
         {
             Vector2 pos = handler.GetComponent<RadialMenuOptionHandler>().GetPosition();
             float dot = Vector2.Dot(pos.normalized, direction.normalized);

@@ -5,16 +5,16 @@ using static UnityEditor.Progress;
 
 public class AbilityListMenu : ListMenu
 {
-    [SerializeField] CharacterMovement character;
+    [SerializeField] private CharacterMovement _character;
     public override void LoadData()
     {
-        menuOptions.Clear();
-        foreach (var ability in character.AllAbilities)
+        MenuOptions.Clear();
+        foreach (var ability in _character.AllAbilities)
         {
-            string favourited = character.abilityQuickbar.Contains(ability) ? "*" : "";
-            ListMenuOption lmo = new ListMenuOption($"{ability.name}{favourited} <pos=80%>{ability.ManaCost} MP</pos>", ability.GetDescription(), ability.icon);
+            string favourited = _character.AbilityQuickbar.Contains(ability) ? "*" : "";
+            ListMenuOption lmo = new ListMenuOption($"{ability.name}{favourited} <pos=80%>{ability.ManaCost} MP</pos>", ability.GetDescription(), ability.Icon);
             lmo.Metadata = ability;
-            menuOptions.Add(lmo);
+            MenuOptions.Add(lmo);
         }
     }
 
@@ -23,10 +23,10 @@ public class AbilityListMenu : ListMenu
         AbilityBase ability = (AbilityBase)SelectedOption.Metadata;
         if (ability != null)
         {
-            if (character.abilityQuickbar.Contains(ability))
-                character.abilityQuickbar.Remove(ability);
+            if (_character.AbilityQuickbar.Contains(ability))
+                _character.AbilityQuickbar.Remove(ability);
             else
-                character.abilityQuickbar.Add(ability);
+                _character.AbilityQuickbar.Add(ability);
         }
     }
 }

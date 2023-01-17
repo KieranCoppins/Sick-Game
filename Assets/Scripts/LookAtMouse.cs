@@ -5,51 +5,49 @@ using UnityEngine.InputSystem;
 
 public class LookAtMouse : MonoBehaviour
 {
+    [SerializeField] private Transform _hitTarget;
 
-    [SerializeField] float maxDistance;
-    [SerializeField] Transform hitTarget;
+    private Vector3 _mousePos;
 
-    Vector3 mousePos;
-
-    PlayerInput playerInput;
-    CharacterMovement characterMovement;
+    private PlayerInput _playerInput;
+    private CharacterMovement _characterMovement;
 
 
     private void Start()
     {
-        playerInput = GetComponent<PlayerInput>();
-        characterMovement = GetComponent<CharacterMovement>();
+        _playerInput = GetComponent<PlayerInput>();
+        _characterMovement = GetComponent<CharacterMovement>();
     }
 
     void Update()
     {
         // Only update our look direction is we are able to move
-        if (characterMovement.CanMove)
+        if (_characterMovement.CanMove)
         {
-            if (characterMovement.Target != null)
+            if (_characterMovement.Target != null)
             {
-                characterMovement.LookDirection = (characterMovement.Target.position - transform.position).normalized;
+                _characterMovement.LookDirection = (_characterMovement.Target.position - transform.position).normalized;
             }
             else
             {
-                if (playerInput.currentControlScheme == "Keyboard&Mouse")
+                if (_playerInput.currentControlScheme == "Keyboard&Mouse")
                 {
-                    mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-                    mousePos.z = 0;
+                    _mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+                    _mousePos.z = 0;
 
-                    characterMovement.LookDirection = (mousePos - transform.position).normalized;
+                    _characterMovement.LookDirection = (_mousePos - transform.position).normalized;
                 }
             }
 
-            hitTarget.position = transform.position + (Vector3)characterMovement.LookDirection * 1.5f;
+            _hitTarget.position = transform.position + (Vector3)_characterMovement.LookDirection * 1.5f;
         }
     }
 
     public void UpdateDirection(InputAction.CallbackContext context)
     {
-        if (playerInput.currentControlScheme == "Gamepad" && context.performed && characterMovement.Target == null)
+        if (_playerInput.currentControlScheme == "Gamepad" && context.performed && _characterMovement.Target == null)
         {
-            characterMovement.LookDirection = context.ReadValue<Vector2>().normalized;
+            _characterMovement.LookDirection = context.ReadValue<Vector2>().normalized;
         }
     }
 }

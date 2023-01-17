@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c285d8bc0115d46879be9c77a5d0ae, type: 3}
   m_Name: Burn
   m_EditorClassIdentifier: 
-  icon: {fileID: 1959293380, guid: 5aa0e3dc593636849b2bdf4c991df64d, type: 3}
+  Icon: {fileID: 1959293380, guid: 5aa0e3dc593636849b2bdf4c991df64d, type: 3}
   AbilityCooldown: 16
   CastTime: 0
   Range: 3
   ManaCost: 15
-  lifespan: 8
-  damageRate: 1
-  initialDamage: 5
-  friendlyFire: 1
-  AOEGameObject: {fileID: 6649049798628890800, guid: e7adb5c6d5bb41743a79a1caf0abc610, type: 3}
+  _lifespan: 5
+  _damageRate: 2
+  _initialDamage: 10
+  _friendlyFire: 1
+  _AOEGameObject: {fileID: 6649049798628890800, guid: e7adb5c6d5bb41743a79a1caf0abc610, type: 3}

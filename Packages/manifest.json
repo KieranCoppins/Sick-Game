@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "com.kierancoppins.decision-trees": "https://github.com/KieranCoppins/Decision-Tree-Package.git",
+    "com.kierancoppins.generic-helpers": "https://github.com/KieranCoppins/Generic-Helpers.git",
     "com.unity.collab-proxy": "1.15.18",
     "com.unity.feature.2d": "1.0.0",
     "com.unity.ide.rider": "3.0.15",
@@ -42,5 +44,14 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "Kieran Coppins Packages",
+      "url": "https://npm.pkg.github.com/@kierancoppins",
+      "scopes": [
+        "com.kierancoppins"
+      ]
+    }
+  ]
 }

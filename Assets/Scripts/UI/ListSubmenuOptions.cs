@@ -7,12 +7,12 @@ using UnityEngine.Events;
 [Serializable]
 public class ListSubmenuOptions
 {
-    public UnityEvent onSubmenuOptionClicked;
-    public string label;
+    public UnityEvent OnSubmenuOptionClicked;
+    public string Label;
 
     public void Invoke()
     {
-        onSubmenuOptionClicked.Invoke();
+        OnSubmenuOptionClicked.Invoke();
     }
 
 }

@@ -1,21 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using KieranCoppins.DecisionTrees;
 
-public class C_HasIdlePath : F_Condition
+public class C_HasIdlePath : CustomFunction<bool>
 {
-    public override void Initialise(BaseMob mob)
-    {
-        base.Initialise(mob);
-    }
-
     public override bool Invoke()
     {
-        return mob.IdlePathNodes.Length > 0;
+        return Mob.IdlePathNodes.Length > 0;
     }
 
     public override string GetSummary(BaseNodeView nodeView)
     {
-        return "the mob has an idle path.";
+        return "the mob has an idle path";
+    }
+
+    public override string GetDescription(BaseNodeView nodeView)
+    {
+        return $"Returns true if {GetSummary(nodeView)}";
     }
 }
