@@ -6,7 +6,7 @@ using System.Linq;
 
 public class InventorySystem : MonoBehaviour
 {
-    Dictionary<InventoryItem, int> inventory = new Dictionary<InventoryItem, int>();
+    private Dictionary<InventoryItem, int> _inventory = new Dictionary<InventoryItem, int>();
 
     /// <summary>
     /// Adds item to inventory. Returns true if item was successfully added
@@ -16,13 +16,13 @@ public class InventorySystem : MonoBehaviour
     /// <returns></returns>
     public bool Add(InventoryItem item, int quantity = 1)
     {
-        if (inventory.ContainsKey(item))
-            if (inventory[item] < 99)
-                inventory[item] += quantity;
+        if (_inventory.ContainsKey(item))
+            if (_inventory[item] < 99)
+                _inventory[item] += quantity;
             else
                 return false;
         else
-            inventory.Add(item, quantity);
+            _inventory.Add(item, quantity);
 
         return true;
     }
@@ -34,9 +34,9 @@ public class InventorySystem : MonoBehaviour
     /// <returns></returns>
     public bool Use(InventoryItem item)
     {
-        if (inventory[item] > 0)
+        if (_inventory[item] > 0)
         {
-            inventory[item]--;
+            _inventory[item]--;
             item.Use(GetComponent<BaseCharacter>());
             return true;
         }
@@ -50,7 +50,7 @@ public class InventorySystem : MonoBehaviour
     public InventoryItem[] GetItems()
     {
         List<InventoryItem> items = new List<InventoryItem>();
-        foreach(var item in inventory)
+        foreach(var item in _inventory)
             if (item.Value > 0)
                 items.Add(item.Key);
         return items.ToArray();
@@ -58,7 +58,7 @@ public class InventorySystem : MonoBehaviour
 
     public InventoryItem GetItem(string name)
     {
-        foreach(var item in inventory)
+        foreach(var item in _inventory)
         {
             if (item.Key.name == name)
                 return item.Key;
@@ -71,7 +71,7 @@ public class InventorySystem : MonoBehaviour
     /// </summary>
     public void Clear()
     {
-        inventory = new Dictionary<InventoryItem, int>();
+        _inventory = new Dictionary<InventoryItem, int>();
     }
 
     /// <summary>
@@ -95,8 +95,8 @@ public class InventorySystem : MonoBehaviour
     /// <returns></returns>
     public bool Has(InventoryItem item)
     {
-        if (inventory.ContainsKey(item))
-            return inventory[item] > 0;
+        if (_inventory.ContainsKey(item))
+            return _inventory[item] > 0;
         return false;
     }
 
@@ -108,7 +108,7 @@ public class InventorySystem : MonoBehaviour
     public int GetQuantity(InventoryItem item)
     {
         if (Has(item))
-            return inventory[item];
+            return _inventory[item];
         return 0;
     }
 }

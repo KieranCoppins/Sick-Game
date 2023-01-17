@@ -1,36 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using KieranCoppins.DecisionTrees;
 
 /// <summary>
 /// Uses mob's MoveAround and AvoidTarget functions to move around the given target
 /// </summary>
-public class A_MoveTowards : Action
+public class A_MoveTowards : CustomAction
 {
-    Vector2 desiredPosition;
-
-    public A_MoveTowards() : base()
-    {
-
-    }
-
-    public override void Initialise(BaseMob mob)
-    {
-        base.Initialise(mob);
-    }
+    private Vector2 _desiredPosition;
 
     public override IEnumerator Execute()
     {
-        while (mob.Target != null && mob.HasLineOfSight(mob.Target.position))
+        while (Mob.Target != null && Mob.HasLineOfSight(Mob.Target.position))
         {
-            desiredPosition = mob.Target.position;
-            Vector2 dir = mob.GetMovementVector(desiredPosition);
-            if ((mob.debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
+            _desiredPosition = Mob.Target.position;
+            Vector2 dir = Mob.GetMovementVector(_desiredPosition);
+            if ((Mob.DebugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
             {
-                Debug.DrawRay((Vector2)mob.transform.position + (dir * 0.45f), dir);
-                Debug.DrawRay((Vector2)mob.transform.position, desiredPosition - (Vector2)mob.transform.position, Color.blue);
+                Debug.DrawRay((Vector2)Mob.transform.position + (dir * 0.45f), dir);
+                Debug.DrawRay((Vector2)Mob.transform.position, _desiredPosition - (Vector2)Mob.transform.position, Color.blue);
             }
-            mob.rb.velocity = dir.normalized * mob.MovementSpeed;
+            Mob.RigidBody.velocity = dir.normalized * Mob.MovementSpeed;
             yield return null;
         }
         yield return null;

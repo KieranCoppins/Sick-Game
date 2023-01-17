@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class AbilityBase : ScriptableObject
 {
-    public Sprite icon;
+    public Sprite Icon;
 
     [SerializeField] public float AbilityCooldown;
     [SerializeField] public float CastTime;

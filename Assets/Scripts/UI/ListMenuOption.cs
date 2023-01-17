@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class ListMenuOption
 {
-    public readonly string label;
-    public readonly string description;
-    public readonly Sprite icon;
-    public GameObject go;
+    public readonly string Label;
+    public readonly string Description;
+    public readonly Sprite Icon;
+    public GameObject GO;
 
     public object Metadata;
 
     public ListMenuOption(string label, string description, Sprite icon)
     {
-        this.label = label;
-        this.description = description;
-        this.icon = icon;
+        Label = label;
+        Description = description;
+        Icon = icon;
     }
 
     public ListMenuOption(string label, string description, Sprite icon, object metadata)
     {
-        this.label = label;
-        this.description = description;
-        this.icon = icon;
-        this.Metadata = metadata;
+        Label = label;
+        Description = description;
+        Icon = icon;
+        Metadata = metadata;
     }
 }

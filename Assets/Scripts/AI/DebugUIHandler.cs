@@ -6,32 +6,29 @@ using TMPro;
 
 public class DebugUIHandler : MonoBehaviour
 {
-    [SerializeField] Canvas debugCanvas;
-    [SerializeField] TMP_Text Name;
-    [SerializeField] TMP_Text currentAction;
-    [SerializeField] TMP_Text actionQueue;
-    [SerializeField] TMP_Text hasLOS;
+    [SerializeField] private Canvas _debugCanvas;
+    [SerializeField] private TMP_Text _name;
+    [SerializeField] private TMP_Text _currentAction;
+    [SerializeField] private TMP_Text _actionQueue;
+    [SerializeField] private TMP_Text _hasLOS;
 
-    BaseMob mob;
+    private BaseMob _mob;
 
     void Start()
     {
-        mob = GetComponent<BaseMob>();
-        Name.text = gameObject.name;
-        debugCanvas.enabled = (mob.debugFlags & DebugFlags.DecisionTree) == DebugFlags.DecisionTree;
+        _mob = GetComponent<BaseMob>();
+        _name.text = gameObject.name;
+        _debugCanvas.enabled = (_mob.DebugFlags & DebugFlags.DecisionTree) == DebugFlags.DecisionTree;
     }
 
     void FixedUpdate()
     {
-        if (!((mob.debugFlags & DebugFlags.DecisionTree) == DebugFlags.DecisionTree))
+        if (!((_mob.DebugFlags & DebugFlags.DecisionTree) == DebugFlags.DecisionTree))
             return;
-
-        currentAction.text = "Current Action(s): " + mob.GetCurrentActionText();
-        actionQueue.text = "Action Queue: \n" + mob.GetActionQueueText();
-        if (mob.Target != null)
-            hasLOS.text = "LoS: " + mob.HasLineOfSight(mob.Target.position);
+        if (_mob.Target != null)
+            _hasLOS.text = "LoS: " + _mob.HasLineOfSight(_mob.Target.position);
         else
-            hasLOS.text = "LoS: null";
+            _hasLOS.text = "LoS: null";
 
     }
 }

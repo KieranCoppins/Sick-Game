@@ -897,21 +897,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 3
-  rollSpeed: 5
-  _Faction: 1
+  RollSpeed: 5
+  _faction: 0
   _maxHealth: 40
   _maxStamina: 10
   StaminaRegenCooldown: 1
   StaminaRegentAmount: 1
   _maxMana: 10
-  _Aggression: 2
-  mobName: 
-  decisionTree: {fileID: 11400000, guid: 50c4d2d06b3a5384e83d07845cdd114f, type: 2}
+  _aggression: 1
+  _mobName: 
+  _decisionTree: {fileID: 11400000, guid: 2331b47e3ca83ab4eb5c91be24b01585, type: 2}
   AggressionSystem: 1
   AggressionThreshold: 2
   IdlePathNodes: []
   CanAttack: 0
-  debugFlags: 0
+  DebugFlags: 0
   _meleeRange: 2
   _meleeDamage: 10
   _meleeSpeed: 2
@@ -927,9 +927,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be796e5a9d9da4e44967f51c2ec21507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 1481408295977827137}
-  healthBar: {fileID: 904012879549928674}
-  staminaBar: {fileID: 0}
+  _canvas: {fileID: 1481408295977827137}
+  _healthBar: {fileID: 904012879549928674}
+  _staminaBar: {fileID: 3904132709178182682}
 --- !u!114 &4066067176629763391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,11 +954,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae38e2151c2412a43bbc00ce75496647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugCanvas: {fileID: 3856446789780442810}
-  Name: {fileID: 3959359620135539141}
-  currentAction: {fileID: 2712038594394762355}
-  actionQueue: {fileID: 1752406118459924281}
-  hasLOS: {fileID: 7336097229243189526}
+  _debugCanvas: {fileID: 3856446789780442810}
+  _name: {fileID: 3959359620135539141}
+  _currentAction: {fileID: 2712038594394762355}
+  _actionQueue: {fileID: 1752406118459924281}
+  _hasLOS: {fileID: 7336097229243189526}
 --- !u!58 &5711981527638540425
 CircleCollider2D:
   m_ObjectHideFlags: 0

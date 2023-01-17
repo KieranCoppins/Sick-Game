@@ -23,16 +23,16 @@ public class Consumeable : InventoryItem
         string description = "";
         foreach (var statusEffect in StatusEffects)
         {
-            string actionWord = statusEffect.value >= 0 ? "Increases" : "Decreases";
+            string actionWord = statusEffect.Value >= 0 ? "Increases" : "Decreases";
             string timePhrase = "";
-            if (statusEffect.duration > 0)
+            if (statusEffect.Duration > 0)
             {
-                if ((statusEffect.flags & StatusEffectFlags.shouldHappenOverTime) == StatusEffectFlags.shouldHappenOverTime)
+                if ((statusEffect.Flags & StatusEffectFlags.shouldHappenOverTime) == StatusEffectFlags.shouldHappenOverTime)
                 {
                     timePhrase += $" every second";
                 }
-                timePhrase += $" for {statusEffect.duration} seconds";
-                if ((statusEffect.flags & StatusEffectFlags.shouldReset) == StatusEffectFlags.shouldReset)
+                timePhrase += $" for {statusEffect.Duration} seconds";
+                if ((statusEffect.Flags & StatusEffectFlags.shouldReset) == StatusEffectFlags.shouldReset)
                 {
                     timePhrase += $" then resets";
                 }
@@ -41,7 +41,7 @@ public class Consumeable : InventoryItem
             {
                 timePhrase = " instantly";
             }
-            description += $"{actionWord} {Mathf.Abs(statusEffect.value)} points of {statusEffect.stat}{timePhrase}. ";
+            description += $"{actionWord} {Mathf.Abs(statusEffect.Value)} points of {statusEffect.Stat}{timePhrase}. ";
         }
 
         return description;

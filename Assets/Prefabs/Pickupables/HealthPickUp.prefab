@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d05dda30d185a141acc7447cc2229f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: d2bfb97dbfcec1b41bf1867ed51d1012, type: 2}
-  pickupUI: {fileID: 7395353720738030606}
+  _item: {fileID: 11400000, guid: d2bfb97dbfcec1b41bf1867ed51d1012, type: 2}
+  _pickupUI: {fileID: 7395353720738030606}
 --- !u!58 &7395353719865380656
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -273,7 +273,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: -748590915, guid: 5aa0e3dc593636849b2bdf4c991df64d, type: 3}
+  m_Sprite: {fileID: 1575245446, guid: 5aa0e3dc593636849b2bdf4c991df64d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

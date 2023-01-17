@@ -6,54 +6,54 @@ using UnityEngine;
 public class Node
 {
     // The x coordinate of this node
-    public readonly int x;
+    public int X { get; }
 
     // The y coordinate of this node
-    public readonly int y;
+    public int Y { get; }
 
     // A list of neighbours connected to this node
-    public List<Node> neighbours;
+    public List<Node> Neighbours { get; }
 
     // The movement cost to enter this node
-    public readonly float movementCost;
+    public float MovementCost { get; }
 
-    public Vector2 position;
+    public Vector2 Position { get; }
 
     public Node(int x, int y, List<Node> neighbours, float movementCost)
     {
-        this.x = x;
-        this.y = y;
-        this.neighbours = neighbours;
-        this.movementCost = movementCost;
+        X = x;
+        Y = y;
+        Neighbours = neighbours;
+        MovementCost = movementCost;
     }
 
     // Use the x and y values of the node for a vector 2
     public static implicit operator Vector2(Node n)
     {
-        return new Vector2(n.x + 0.5f, n.y + 0.5f);
+        return new Vector2(n.X + 0.5f, n.Y + 0.5f);
     }
 
     public static Vector2 operator -(Node a, Node b)
     {
-        return new Vector2(a.x - b.x, a.y - b.y);
+        return new Vector2(a.X - b.X, a.Y - b.Y);
     }
 
-    public Vector2 lowerLeft()
+    public Vector2 LowerLeft()
     {
-        return new Vector2(x + 0.01f, y + 0.01f);
+        return new Vector2(X + 0.01f, Y + 0.01f);
     }
 
-    public Vector2 lowerRight()
+    public Vector2 LowerRight()
     {
-        return new Vector2(x + 0.99f, y + 0.01f);
+        return new Vector2(X + 0.99f, Y + 0.01f);
     }
-    public Vector2 upperLeft()
+    public Vector2 UpperLeft()
     {
-        return new Vector2(x + 0.01f, y + 0.99f);
+        return new Vector2(X + 0.01f, Y + 0.99f);
     }
 
-    public Vector2 upperRight()
+    public Vector2 UpperRight()
     {
-        return new Vector2(x + 0.99f, y + 0.99f);
+        return new Vector2(X + 0.99f, Y + 0.99f);
     }
 }

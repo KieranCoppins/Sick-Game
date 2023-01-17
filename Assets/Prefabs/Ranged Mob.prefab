@@ -308,21 +308,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 3
-  rollSpeed: 5
-  _Faction: 1
+  RollSpeed: 5
+  _faction: 1
   _maxHealth: 20
   _maxStamina: 10
   StaminaRegenCooldown: 1
   StaminaRegentAmount: 1
   _maxMana: 10
-  _Aggression: 1
-  mobName: 
-  decisionTree: {fileID: 11400000, guid: c25f5b6e360b04740a37aabe2380bde5, type: 2}
+  _aggression: 1
+  _mobName: 
+  _decisionTree: {fileID: 11400000, guid: bc25a8ebad3fee244bcdb804a7b0e098, type: 2}
   AggressionSystem: 1
   AggressionThreshold: 2
   IdlePathNodes: []
-  debugFlags: 0
-  ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
+  CanAttack: 1
+  DebugFlags: 0
+  Ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
 --- !u!114 &4814864310996129434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,9 +336,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be796e5a9d9da4e44967f51c2ec21507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 2485279355278476555}
-  healthBar: {fileID: 4213621528062651048}
-  staminaBar: {fileID: 0}
+  _canvas: {fileID: 2485279355278476555}
+  _healthBar: {fileID: 4213621528062651048}
+  _staminaBar: {fileID: 61991133263426128}
 --- !u!114 &1053818214750552949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,11 +363,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae38e2151c2412a43bbc00ce75496647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugCanvas: {fileID: 249564351837532400}
-  Name: {fileID: 870002575}
-  currentAction: {fileID: 1391999465151517241}
-  actionQueue: {fileID: 3360728261996388723}
-  hasLOS: {fileID: 5998079021062813532}
+  _debugCanvas: {fileID: 249564351837532400}
+  _name: {fileID: 870002575}
+  _currentAction: {fileID: 1391999465151517241}
+  _actionQueue: {fileID: 3360728261996388723}
+  _hasLOS: {fileID: 5998079021062813532}
 --- !u!58 &8770602457837502147
 CircleCollider2D:
   m_ObjectHideFlags: 0

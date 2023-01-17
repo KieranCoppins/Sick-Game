@@ -9,9 +9,9 @@ public class MeleeMob : BaseMob
     public float MeleeSpeed { get { return _meleeSpeed; } protected set { _meleeSpeed = value; } }
 
     [Header("Melee Mob Attributes")]
-    [SerializeField] float _meleeRange;
-    [SerializeField] int _meleeDamage;
-    [SerializeField] float _meleeSpeed;
+    [SerializeField] private float _meleeRange;
+    [SerializeField] private int _meleeDamage;
+    [SerializeField] private float _meleeSpeed;
 
 
     protected override void Start()
@@ -32,9 +32,9 @@ public class MeleeMob : BaseMob
             return Vector2.Dot(targetDir, dir);
 
         if (dist < 2f)
-            return Vector2.Dot(targetDir, dir) + Vector2.Dot(rb.velocity.normalized, dir);
+            return Vector2.Dot(targetDir, dir) + Vector2.Dot(RigidBody.velocity.normalized, dir);
 
-        return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - 0.9f) + Vector2.Dot(rb.velocity.normalized, dir);
+        return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - 0.9f) + Vector2.Dot(RigidBody.velocity.normalized, dir);
 
     }
 

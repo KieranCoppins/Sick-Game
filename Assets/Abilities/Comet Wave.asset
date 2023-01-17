@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5391c113258b2c045a62f9e0d5caa87c, type: 3}
   m_Name: Comet Wave
   m_EditorClassIdentifier: 
-  icon: {fileID: 314434970, guid: 5aa0e3dc593636849b2bdf4c991df64d, type: 3}
+  Icon: {fileID: 314434970, guid: 5aa0e3dc593636849b2bdf4c991df64d, type: 3}
   AbilityCooldown: 5
   CastTime: 0.5
   Range: 8
   ManaCost: 20
-  projectile: {fileID: 4616442037673614323, guid: 363c4827b8395a6498aafa62abef3057, type: 3}
-  angle: 120
-  numberProjectiles: 5
-  projectileVelocity: 10
-  damage: 5
+  _projectile: {fileID: 4616442037673614323, guid: 363c4827b8395a6498aafa62abef3057, type: 3}
+  _angle: 90
+  _numberProjectiles: 5
+  _projectileVelocity: 10
+  _damage: 3

@@ -10,37 +10,37 @@ public delegate void OptionClickedDelegate();
 
 public class RadialMenuOptionHandler : MonoBehaviour, IPointerEnterHandler
 {
-    [SerializeField] TextMeshProUGUI label;
-    [SerializeField] Image icon;
+    [SerializeField] private TextMeshProUGUI _label;
+    [SerializeField] private Image _icon;
 
-    RadialMenuOption optionData;
+    private RadialMenuOption _optionData;
 
-    Vector3 desiredPos;
+    private Vector3 _desiredPos;
 
-    RectTransform rect;
+    private RectTransform _rect;
 
     public void SetOptionData(RadialMenuOption optionData)
     {
-        this.optionData = optionData;
-        label.text = optionData.label;
-        icon.sprite = optionData.icon;
+        _optionData = optionData;
+        _label.text = optionData.Label;
+        _icon.sprite = optionData.Icon;
     }
-    public void SetPosition(Vector3 pos) => desiredPos = pos;
-    public Vector3 GetPosition() => desiredPos;
-    public RadialMenuOption GetOptionData() => optionData;
+    public void SetPosition(Vector3 pos) => _desiredPos = pos;
+    public Vector3 GetPosition() => _desiredPos;
+    public RadialMenuOption GetOptionData() => _optionData;
 
     private void OnEnable()
     {
-        rect = GetComponent<RectTransform>();
+        _rect = GetComponent<RectTransform>();
     }
 
     private void Update()
     {
-        rect.anchoredPosition = Vector3.Lerp(rect.anchoredPosition, desiredPos, 0.03f);
+        _rect.anchoredPosition = Vector3.Lerp(_rect.anchoredPosition, _desiredPos, 0.03f);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        GetComponentInParent<RadialMenu>().SelectItem(optionData);
+        GetComponentInParent<RadialMenu>().SelectItem(_optionData);
     }
 }

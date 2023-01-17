@@ -9,52 +9,52 @@ using UnityEditor;
 public class Projectile : MonoBehaviour
 {
     [Tooltip("Guided missiles rotate to face the target")]
-    public ProjectileType type;
+    public ProjectileType Type;
 
     [Tooltip("The target to guide to")]
-    public Transform target;
+    public Transform Target;
 
     [Tooltip("The rotation speed at which the projectile rotates")]
-    [SerializeField] float rotationSpeed;
+    [SerializeField] private float RotationSpeed;
 
     [Tooltip("How long in seconds before the projectile destroys itself")]
-    [SerializeField] float lifespan;
+    [SerializeField] private float Lifespan;
 
-    [SerializeField] UnityEvent OnAwake;
-    [SerializeField] UnityEvent OnDeath;
+    [SerializeField] private UnityEvent _onAwake;
+    [SerializeField] private UnityEvent _onDeath;
     
-    Rigidbody2D rb;
-    float aliveTime = 0;
-    float velocity = 0;
+    private Rigidbody2D _rigidBody;
+    private float _aliveTime = 0;
+    private float _velocity = 0;
 
-    public int damage;
+    public int Damage;
 
-    public BaseCharacter caster;
+    public BaseCharacter Caster;
 
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = 0;
-        OnAwake?.Invoke();
+        _rigidBody = GetComponent<Rigidbody2D>();
+        _rigidBody.gravityScale = 0;
+        _onAwake?.Invoke();
     }
 
     void Update()
     {
         // If we are a guided type, we want to rotate the projectile towards the target
-        if (type == ProjectileType.Guided)
+        if (Type == ProjectileType.Guided)
         {
-            Vector2 directionToTarget = (target.position - transform.position).normalized;
-            Vector2 rot = Vector2.Lerp(transform.up, directionToTarget, Time.deltaTime * rotationSpeed);
+            Vector2 directionToTarget = (Target.position - transform.position).normalized;
+            Vector2 rot = Vector2.Lerp(transform.up, directionToTarget, Time.deltaTime * RotationSpeed);
             transform.up = rot;
         }
-        Vector2 desiredVelocity = transform.up * velocity;
-        rb.velocity = desiredVelocity;
+        Vector2 desiredVelocity = transform.up * _velocity;
+        _rigidBody.velocity = desiredVelocity;
 
-        aliveTime += Time.deltaTime;
-        if (aliveTime >= lifespan)
+        _aliveTime += Time.deltaTime;
+        if (_aliveTime >= Lifespan)
         {
-            OnDeath?.Invoke();
+            _onDeath?.Invoke();
             Destroy(gameObject);
         }
     }
@@ -64,9 +64,9 @@ public class Projectile : MonoBehaviour
         BaseCharacter character = collision.collider.GetComponent<BaseCharacter>();
         if (character)
         {
-            character.TakeDamage(caster, damage);
+            character.TakeDamage(Caster, Damage);
         }
-        OnDeath?.Invoke();
+        _onDeath?.Invoke();
         Destroy(gameObject);
     }
 
@@ -75,7 +75,7 @@ public class Projectile : MonoBehaviour
         // Put projectile destroy animations here
     }
 
-    public void SetVelocity(float value) { velocity = value; }
+    public void SetVelocity(float value) { _velocity = value; }
 }
 
 public enum ProjectileType

@@ -7,22 +7,22 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(BaseMob))]
 public class MobUIManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] Canvas canvas;
-    [SerializeField] Slider healthBar;
-    [SerializeField] Slider staminaBar; // Dont support stamina just yet
+    [SerializeField] private Canvas _canvas;
+    [SerializeField] private Slider _healthBar;
+    [SerializeField] private Slider _staminaBar;
 
-    BaseMob mob;
+    private BaseMob Mob;
 
     private void Awake()
     {
-        mob = GetComponent<BaseMob>();
+        Mob = GetComponent<BaseMob>();
     }
 
     IEnumerator UpdateUI()
     {
         while (true)
         {
-            healthBar.value = (float)mob.Health / (float)mob.MaxHealth;
+            _healthBar.value = (float)Mob.Health / (float)Mob.MaxHealth;
             yield return null;
         }
     }
@@ -40,12 +40,12 @@ public class MobUIManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void EnableUI()
     {
         StartCoroutine(UpdateUI());
-        canvas.gameObject.SetActive(true);
+        _canvas.gameObject.SetActive(true);
     }
 
     public void DisableUI()
     {
         StopCoroutine(UpdateUI());
-        canvas.gameObject.SetActive(false);
+        _canvas.gameObject.SetActive(false);
     }
 }

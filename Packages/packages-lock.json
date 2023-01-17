@@ -1,5 +1,21 @@
 {
   "dependencies": {
+    "com.kierancoppins.decision-trees": {
+      "version": "https://github.com/KieranCoppins/Decision-Tree-Package.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.kierancoppins.generic-helpers": "1.0.2"
+      },
+      "hash": "2e9680bcbe4b883dcf7735b95e2954da3d95ad63"
+    },
+    "com.kierancoppins.generic-helpers": {
+      "version": "https://github.com/KieranCoppins/Generic-Helpers.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ed3224fd6e8f9b812e5c954087a4cc9510cf11e5"
+    },
     "com.unity.2d.animation": {
       "version": "7.0.6",
       "depth": 1,

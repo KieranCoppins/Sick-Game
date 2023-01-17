@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System;
+using KieranCoppins.DecisionTrees;
 
 [Flags]
 public enum DebugFlags
@@ -34,14 +35,14 @@ public enum AggressionSystems
 public abstract class BaseMob : BaseCharacter
 {
     [Header("Events")]
-    protected UnityEvent onTakeDamage = new UnityEvent();
-    protected UnityEvent onHeal = new UnityEvent();
-    protected UnityEvent onDeath = new UnityEvent();
+    protected UnityEvent OnTakeDamage = new UnityEvent();
+    protected UnityEvent OnHeal = new UnityEvent();
+    protected UnityEvent OnDeath = new UnityEvent();
 
     [Header("Mob Stats")]
-    [SerializeField] public string mobName;
+    [SerializeField] private string _mobName;
 
-    public DecisionTree decisionTree
+    public DecisionTree DecisionTree
     {
         get { return _decisionTree; }
         protected set { _decisionTree = value; }
@@ -57,44 +58,20 @@ public abstract class BaseMob : BaseCharacter
     public Transform[] IdlePathNodes;
 
     public PathfindingComponent PathfindingComponent { get; protected set; }
-    protected float attackTimer;
-    protected ActionManager actionManager;
-    protected List<Vector2> movementDirections;
+    protected float AttackTimer;
+    protected ActionManager ActionManager;
+    protected List<Vector2> MovementDirections;
     public Vector2 AreaOfInterest { get; protected set; }
     [HideInInspector] public CombatState State { get; set; }
     [HideInInspector] public bool CanAttack = true;
 
     // Values for our aggression system
-    protected Dictionary<BaseCharacter, float> aggressionWeights = new Dictionary<BaseCharacter, float>();
+    protected Dictionary<BaseCharacter, float> AggressionWeights = new Dictionary<BaseCharacter, float>();
 
     [Header("DEBUG VALUES")]
     [EnumFlags]
     [SerializeField]
-    public DebugFlags debugFlags;
-
-
-
-    public string GetCurrentActionText()
-    {
-        string text = "";
-        foreach (Action action in actionManager.currentActions)
-        {
-            text += action.ToString() + ", ";
-        }
-
-        return text;
-    }
-
-    public string GetActionQueueText()
-    {
-        string text = "";
-        foreach (ActionPacket action in actionManager.actionQueue)
-        {
-            text += action.action.ToString() + " | " + (Time.time - action.time) + "\n";
-        }
-
-        return text;
-    }
+    public DebugFlags DebugFlags;
 
     /// <summary>
     /// Takes dmg away from health and invokes the onTakeDamage event
@@ -103,20 +80,20 @@ public abstract class BaseMob : BaseCharacter
     /// <param name="dmg"></param>
     public override void TakeDamage(BaseCharacter character, int dmg)
     {
-        if (animator)
-            animator?.Play("Take Hit");
+        if (Animator)
+            Animator?.Play("Take Hit");
         Health -= dmg;
-        onTakeDamage?.Invoke();
+        OnTakeDamage?.Invoke();
         switch (AggressionSystem)
         {
             case AggressionSystems.Timebased:
-                aggressionWeights[character] = Time.time;
+                AggressionWeights[character] = Time.time;
                 break;
             case AggressionSystems.Damagebased:
-                if (aggressionWeights.ContainsKey(character))
-                    aggressionWeights[character] += dmg * character.Aggression;
+                if (AggressionWeights.ContainsKey(character))
+                    AggressionWeights[character] += dmg * character.Aggression;
                 else
-                    aggressionWeights[character] = dmg * character.Aggression;
+                    AggressionWeights[character] = dmg * character.Aggression;
                 break;
         }
         // Check if we have a target, if not assign the target to the character that attacked us
@@ -124,10 +101,10 @@ public abstract class BaseMob : BaseCharacter
         {
             BaseCharacter targetBaseCharacter = Target.GetComponent<BaseCharacter>();
             // Check if our target has ever attacked us, theres a chance our target is just the first character we saw. If they're not, then target the character that is actually attacking us
-            if (aggressionWeights.ContainsKey(targetBaseCharacter))
+            if (AggressionWeights.ContainsKey(targetBaseCharacter))
             {
                 // check if the character is of an enemy faction AND if the character's aggression weights is higher than our target's aggression weights plus our threshold
-                if (character.Faction != Faction && (aggressionWeights[character] >= aggressionWeights[targetBaseCharacter] + AggressionThreshold))
+                if (character.Faction != Faction && (AggressionWeights[character] >= AggressionWeights[targetBaseCharacter] + AggressionThreshold))
                     Target = character.transform;
             }
             else
@@ -149,34 +126,34 @@ public abstract class BaseMob : BaseCharacter
     public void Heal(int amount)
     {
         Health += amount;
-        onHeal?.Invoke();
+        OnHeal?.Invoke();
     }
 
     protected override void Start()
     {
         base.Start();
         PathfindingComponent = GetComponent<PathfindingComponent>();
-        actionManager = GetComponent<ActionManager>();
+        ActionManager = GetComponent<ActionManager>();
 
         CanAttack = true;
 
         // Set up movement directions
-        movementDirections = new List<Vector2>();
+        MovementDirections = new List<Vector2>();
         float angle = 18f;
         Vector2 dir = Vector2.up;
         for (int i = 0; i <= 360 / angle; i++)
         {
-            movementDirections.Add((Quaternion.AngleAxis(angle * i, Vector3.back) * dir).normalized);
+            MovementDirections.Add((Quaternion.AngleAxis(angle * i, Vector3.back) * dir).normalized);
         }
 
         State = CombatState.Idle;
 
         // Initialise our decision tree
-        decisionTree = decisionTree.Clone(this.name);
-        decisionTree.Initialise(this);
+        DecisionTree = DecisionTree.Clone(this.name);
+        DecisionTree.Initialise(this);
 
         // Subscribe onDeath to destroy this gameobject
-        onDeath.AddListener(() =>
+        OnDeath.AddListener(() =>
         {
             Destroy(this.gameObject);
         });
@@ -197,7 +174,7 @@ public abstract class BaseMob : BaseCharacter
         else
         {
             // We want to look in the direction we are moving
-            LookDirection = rb.velocity.normalized;
+            LookDirection = RigidBody.velocity.normalized;
         }
 
     }
@@ -205,10 +182,10 @@ public abstract class BaseMob : BaseCharacter
     protected virtual void LateUpdate()
     {
         if (Stunned)
-            rb.velocity = Vector2.zero;
+            RigidBody.velocity = Vector2.zero;
 
-        if (animator)
-            animator?.SetBool("Moving", rb.velocity.magnitude > 0);
+        if (Animator)
+            Animator?.SetBool("Moving", RigidBody.velocity.magnitude > 0);
     }
 
     /// <summary>
@@ -228,7 +205,7 @@ public abstract class BaseMob : BaseCharacter
         Vector2 upperStart = (Vector2)transform.position + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(0.42f, 0));
         lowerHit = Physics2D.Raycast(lowerStart, position - lowerStart);
         upperHit = Physics2D.Raycast(upperStart, position - upperStart);
-        if ((debugFlags & DebugFlags.Combat) == DebugFlags.Combat)
+        if ((DebugFlags & DebugFlags.Combat) == DebugFlags.Combat)
         {
             Debug.DrawRay(lowerStart, position - lowerStart, Color.magenta);
             Debug.DrawRay(upperStart, position - upperStart, Color.magenta);
@@ -249,7 +226,7 @@ public abstract class BaseMob : BaseCharacter
         List<KeyValuePair<Vector2, float>> directionWeights = new List<KeyValuePair<Vector2, float>>();
 
         // Calculate dot products
-        foreach (Vector2 dir in movementDirections)
+        foreach (Vector2 dir in MovementDirections)
         {
             KeyValuePair<Vector2, float> pair = new KeyValuePair<Vector2, float>(dir, MoveAround(targetDir, dir, target, moveStraight));
             directionWeights.Add(pair);
@@ -263,7 +240,7 @@ public abstract class BaseMob : BaseCharacter
             // Check to see if moving in this direction will cause us to hit an obstruction - we dont want this
             RaycastHit2D hit = Physics2D.CircleCast((Vector2)transform.position, .5f, pair.Key, 1f);
             if (!hit) return pair.Key;
-            if ((debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
+            if ((DebugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
                 Debug.DrawRay((Vector2)transform.position, pair.Key * 2f, Color.magenta);
         }
 
@@ -286,10 +263,10 @@ public abstract class BaseMob : BaseCharacter
 
         float distanceFromOrigin = Vector2.Distance(originPoint, transform.position);
 
-        foreach(Vector2 dir in movementDirections)
+        foreach(Vector2 dir in MovementDirections)
         {
             // Our shaping function for wandering around an origin point
-            float weight = (Vector2.Dot(dir, returnVector) * (distanceFromOrigin / range)) + (Vector2.Dot(dir, rb.velocity.normalized) + (1.0f - Mathf.PerlinNoise(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f))));
+            float weight = (Vector2.Dot(dir, returnVector) * (distanceFromOrigin / range)) + (Vector2.Dot(dir, RigidBody.velocity.normalized) + (1.0f - Mathf.PerlinNoise(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f))));
             KeyValuePair<Vector2, float> pair = new KeyValuePair<Vector2, float>(dir, weight);
             directionWeights.Add(pair);
         }
@@ -301,7 +278,7 @@ public abstract class BaseMob : BaseCharacter
             // Check to see if moving in this direction will cause us to hit an obstruction - we dont want this
             RaycastHit2D hit = Physics2D.CircleCast((Vector2)transform.position, .5f, pair.Key, 1f);
             if (!hit) return pair.Key;
-            if ((debugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
+            if ((DebugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
                 Debug.DrawRay((Vector2)transform.position, pair.Key * 2f, Color.magenta);
         }
 
@@ -317,9 +294,9 @@ public abstract class BaseMob : BaseCharacter
         while (true)
         {
             // Constantly try to determine what we should be doing
-            Action actionToBeScheduled = decisionTree.Run();
-            actionManager.ScheduleAction(actionToBeScheduled);
-            actionManager.Execute();
+            KieranCoppins.DecisionTrees.Action actionToBeScheduled = DecisionTree.Run();
+            ActionManager.ScheduleAction(actionToBeScheduled);
+            ActionManager.Execute();
             yield return new WaitForSeconds(0.1f);
         }
 
@@ -327,7 +304,7 @@ public abstract class BaseMob : BaseCharacter
 
     protected override void Die()
     {
-        onDeath?.Invoke();
+        OnDeath?.Invoke();
     }
 
     public void AlertListener(Vector2 origin)
@@ -354,10 +331,4 @@ public abstract class BaseMob : BaseCharacter
     }
 }
 
-
 public delegate float DirectionWeightFunction(Vector2 targetDir, Vector2 dir);
-
-public class EnumFlagsAttribute : PropertyAttribute
-{
-
-}

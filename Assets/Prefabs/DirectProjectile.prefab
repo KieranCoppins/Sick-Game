@@ -4999,7 +4999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eda3bda9d8f38e439b82537629ecd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seconds: 3
+  _seconds: 0
 --- !u!1 &4616442037673614323
 GameObject:
   m_ObjectHideFlags: 0
@@ -5095,89 +5095,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c336cb5c70c5c438e29768f3835467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  target: {fileID: 0}
-  rotationSpeed: 5
-  lifespan: 5
-  OnAwake:
+  Type: 1
+  Target: {fileID: 0}
+  RotationSpeed: 20
+  Lifespan: 5
+  _onAwake:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 72010151167072048}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDeath:
+      m_Calls: []
+  _onDeath:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6843961607741893939}
-        m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
-        m_MethodName: DetachChildren
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 72010151167072048}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3484464805631899598}
-        m_TargetAssemblyTypeName: DieAfterSeconds, Assembly-CSharp
-        m_MethodName: StartSelfDestruct
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1739463303}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8569097924576400562}
-        m_TargetAssemblyTypeName: DieAfterSeconds, Assembly-CSharp
-        m_MethodName: StartSelfDestruct
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  damage: 0
+      m_Calls: []
+  Damage: 0
+  Caster: {fileID: 0}
 --- !u!1 &6027199456154920570
 GameObject:
   m_ObjectHideFlags: 0
@@ -10120,4 +10049,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eda3bda9d8f38e439b82537629ecd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seconds: 3
+  _seconds: 0

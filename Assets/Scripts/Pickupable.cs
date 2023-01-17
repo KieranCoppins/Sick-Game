@@ -6,17 +6,17 @@ using UnityEngine.UI;
 
 public class Pickupable : MonoBehaviour
 {
-    [SerializeField] InventoryItem item;
-    [SerializeField] Canvas pickupUI;
+    [SerializeField] private InventoryItem _item;
+    [SerializeField] private Canvas _pickupUI;
 
     private void Start()
     {
-        pickupUI.GetComponentInChildren<TextMeshProUGUI>().text= $"Pick up {item.name}";
+        _pickupUI.GetComponentInChildren<TextMeshProUGUI>().text= $"Pick up {_item.name}";
     }
 
     public void PickUp(BaseCharacter character)
     {
-        character.inventory.Add(item);
+        character.Inventory.Add(_item);
         Destroy(gameObject);
     }
 
@@ -25,8 +25,8 @@ public class Pickupable : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             // Show pick up prompt
-            collision.GetComponent<CharacterMovement>().onCharacterInteraction += PickUp;
-            pickupUI.gameObject.SetActive(true);
+            collision.GetComponent<CharacterMovement>().OnCharacterInteraction += PickUp;
+            _pickupUI.gameObject.SetActive(true);
         }
     }
 
@@ -35,8 +35,8 @@ public class Pickupable : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             // Remove pick up prompt
-            collision.GetComponent<CharacterMovement>().onCharacterInteraction -= PickUp;
-            pickupUI.gameObject.SetActive(false);
+            collision.GetComponent<CharacterMovement>().OnCharacterInteraction -= PickUp;
+            _pickupUI.gameObject.SetActive(false);
         }
     }
 }

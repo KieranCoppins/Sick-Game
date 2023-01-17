@@ -14,28 +14,27 @@ public class CharacterMovement : BaseCharacter
     [SerializeField] int Damage;
 
     [Header("UI Elements")]
-    [SerializeField] Slider HealthBar;
-    [SerializeField] Slider StaminaBar;
-    [SerializeField] Slider ManaBar;
-    [SerializeField] GameObject TargetGraphic;
+    [SerializeField] private Slider _healthBar;
+    [SerializeField] private Slider _staminaBar;
+    [SerializeField] private Slider _manaBar;
+    [SerializeField] private GameObject _targetGraphic;
 
     public bool CanMove { get; private set; } 
-    Vector2 movementVelocity;
+    private Vector2 _movementVelocity;
 
-    int attackStage = 0;
-    bool QueueAttack = true;
-
-    LookAtMouse lookAtMouse;
+    private int _attackStage = 0;
+    private bool _queueAttack = true;
 
     public List<AbilityBase> AllAbilities = new List<AbilityBase>();
 
-    [HideInInspector] public List<InventoryItem> inventoryQuickbar = new List<InventoryItem>();
-    [HideInInspector] public List<AbilityBase> abilityQuickbar = new List<AbilityBase>();
+    [HideInInspector] public List<InventoryItem> InventoryQuickbar = new List<InventoryItem>();
+    [HideInInspector] public List<AbilityBase> AbilityQuickbar = new List<AbilityBase>();
 
-    [HideInInspector] public InventoryItem selectedItem;
-    [HideInInspector] public AbilityBase selectedAbility;
+    public InventoryItem SelectedItem { get; set; }
 
-    public CharacterInteractable onCharacterInteraction;
+    public AbilityBase SelectedAbility { get; set; }
+
+    public CharacterInteractable OnCharacterInteraction;
 
     /// Base character attribute overrides
 
@@ -44,7 +43,7 @@ public class CharacterMovement : BaseCharacter
         protected set
         {
             base.Health = value;
-            HealthBar.value = (float)Health / (float)MaxHealth;
+            _healthBar.value = (float)Health / (float)MaxHealth;
 
         }
     }
@@ -54,7 +53,7 @@ public class CharacterMovement : BaseCharacter
         protected set 
         { 
             base.Stamina = value; 
-            StaminaBar.value = (float)Stamina / (float)MaxStamina;
+            _staminaBar.value = (float)Stamina / (float)MaxStamina;
         }
     }
 
@@ -63,7 +62,7 @@ public class CharacterMovement : BaseCharacter
         protected set
         {
             base.Mana = value;
-            ManaBar.value = (float)Mana / (float)MaxMana;
+            _manaBar.value = (float)Mana / (float)MaxMana;
         }
     }
 
@@ -72,7 +71,7 @@ public class CharacterMovement : BaseCharacter
         protected set
         {
             base.MaxHealth = value;
-            HealthBar.value = (float)Health / (float)MaxHealth;
+            _healthBar.value = (float)Health / (float)MaxHealth;
         }
     }
 
@@ -82,7 +81,7 @@ public class CharacterMovement : BaseCharacter
         protected set
         {
             base.MaxStamina = value;
-            StaminaBar.value = (float)Stamina / (float)MaxStamina;
+            _staminaBar.value = (float)Stamina / (float)MaxStamina;
         }
     }
 
@@ -91,7 +90,7 @@ public class CharacterMovement : BaseCharacter
         protected set
         {
             base.MaxMana = value;
-            ManaBar.value = (float)Mana / (float)MaxMana;
+            _manaBar.value = (float)Mana / (float)MaxMana;
         }
     }
 
@@ -109,7 +108,6 @@ public class CharacterMovement : BaseCharacter
     protected override void Start()
     {
         base.Start();
-        lookAtMouse = GetComponent<LookAtMouse>();
 
         CanMove = true;
     }
@@ -118,34 +116,34 @@ public class CharacterMovement : BaseCharacter
     {
         base.Update();
         if (Target != null)
-            TargetGraphic.transform.position = Target.transform.position;
+            _targetGraphic.transform.position = Target.transform.position;
         else
-            TargetGraphic.SetActive(false);
+            _targetGraphic.SetActive(false);
 
-        animator.SetBool("Moving", CanMove && rb.velocity.magnitude > 0);
+        Animator.SetBool("Moving", CanMove && RigidBody.velocity.magnitude > 0);
     }
 
     void FixedUpdate()
     {
-        if (CanMove && attackStage == 0)
-            rb.velocity = movementVelocity * MovementSpeed;
+        if (CanMove && _attackStage == 0)
+            RigidBody.velocity = _movementVelocity * MovementSpeed;
 
-        animator.SetFloat("MovementScale", rb.velocity.magnitude / MovementSpeed);
+        Animator.SetFloat("MovementScale", RigidBody.velocity.magnitude / MovementSpeed);
     }
 
     public void Move(InputAction.CallbackContext context)
     {
         if (context.performed)
-            movementVelocity = context.ReadValue<Vector2>();
+            _movementVelocity = context.ReadValue<Vector2>();
         else
-            movementVelocity = Vector2.zero;
+            _movementVelocity = Vector2.zero;
     }
 
     public void Roll(InputAction.CallbackContext context)
     {
-        if (context.started && CanMove && Stamina >= 10 && movementVelocity.magnitude != 0)
+        if (context.started && CanMove && Stamina >= 10 && _movementVelocity.magnitude != 0)
         {
-            StartCoroutine(DoRoll(movementVelocity.normalized));
+            StartCoroutine(DoRoll(_movementVelocity.normalized));
             Stamina -= 10;
         }
     }
@@ -154,13 +152,13 @@ public class CharacterMovement : BaseCharacter
     {
         float rollTime = .2f;
         CanMove = false;
-        animator.Play("Slide");
+        Animator.Play("Slide");
         yield return null;
-        while (animator.GetCurrentAnimatorStateInfo(0).IsName("Slide"))
+        while (Animator.GetCurrentAnimatorStateInfo(0).IsName("Slide"))
         {
             LookDirection = direction.normalized;
             rollTime -= Time.deltaTime;
-            rb.velocity = direction.normalized * rollSpeed;
+            RigidBody.velocity = direction.normalized * RollSpeed;
             yield return null;
         }
         CanMove = true;
@@ -176,21 +174,21 @@ public class CharacterMovement : BaseCharacter
 
     public void Attack(InputAction.CallbackContext context)
     {
-        if (context.started && QueueAttack && Stamina >= 10 && CanMove)
+        if (context.started && _queueAttack && Stamina >= 10 && CanMove)
         {
-            attackStage++;
-            animator.Play($"Attack{attackStage}");
-            QueueAttack = false;
+            _attackStage++;
+            Animator.Play($"Attack{_attackStage}");
+            _queueAttack = false;
             Stamina -= 10;
-            rb.velocity = movementVelocity * MovementSpeed;   
+            RigidBody.velocity = _movementVelocity * MovementSpeed;   
         }
     }
     public void ResetAttackStage() 
     { 
-        attackStage = 0; 
-        QueueAttack = true;
+        _attackStage = 0; 
+        _queueAttack = true;
     }
-    public void CanQueueAttack() { QueueAttack = true; }
+    public void CanQueueAttack() { _queueAttack = true; }
 
     public void DealDamage()
     {
@@ -230,12 +228,12 @@ public class CharacterMovement : BaseCharacter
 
             targetWeightPair.Sort(new KeyValuePairComparer<Transform, float>());
             Target = targetWeightPair[0].Key;
-            TargetGraphic.SetActive(true);
+            _targetGraphic.SetActive(true);
         }
         else
         {
             Target = null;
-            TargetGraphic.SetActive(false);
+            _targetGraphic.SetActive(false);
         }
     }
 
@@ -273,18 +271,18 @@ public class CharacterMovement : BaseCharacter
     {
         if (!context.started)
             return;
-        if (Mana >= selectedAbility.ManaCost && CanMove)
+        if (Mana >= SelectedAbility.ManaCost && CanMove)
         {
             CanMove = false;
-            rb.velocity = Vector2.zero;
-            animator.Play("Cast");
+            RigidBody.velocity = Vector2.zero;
+            Animator.Play("Cast");
         }
     }
 
     public void CastAbility()
     {
-        Mana -= selectedAbility.ManaCost;
-        selectedAbility.Cast(transform.position, LookDirection, Target, this);
+        Mana -= SelectedAbility.ManaCost;
+        SelectedAbility.Cast(transform.position, LookDirection, Target, this);
     }
 
     public void FinishCast()
@@ -294,12 +292,12 @@ public class CharacterMovement : BaseCharacter
 
     public void UseItem(InputAction.CallbackContext context)
     {
-        if (context.performed && inventory.Has(selectedItem))
+        if (context.performed && Inventory.Has(SelectedItem))
         {
-            inventory.Use(selectedItem);
-            if (!inventory.Has(selectedItem))
+            Inventory.Use(SelectedItem);
+            if (!Inventory.Has(SelectedItem))
             {
-                inventoryQuickbar.Remove(selectedItem);
+                InventoryQuickbar.Remove(SelectedItem);
             }
         }
     }
@@ -308,7 +306,7 @@ public class CharacterMovement : BaseCharacter
     {
         if (context.performed)
         {
-            onCharacterInteraction?.Invoke(this);
+            OnCharacterInteraction?.Invoke(this);
         }
     }
 

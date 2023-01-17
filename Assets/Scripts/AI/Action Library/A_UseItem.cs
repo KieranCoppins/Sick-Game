@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using KieranCoppins.DecisionTrees;
 
-public class A_UseItem : Action
+public class A_UseItem : CustomAction
 {
-    [SerializeField] InventoryItem item;
+    [SerializeField] private InventoryItem _item;
 
     public A_UseItem() : base()
     {
@@ -14,7 +15,7 @@ public class A_UseItem : Action
     public override IEnumerator Execute()
     {
         // TODO: use some kind of animation here
-        mob.inventory.Use(item);
+        Mob.Inventory.Use(_item);
         yield return new WaitForSeconds(0.1f);
         yield return null;
     }
@@ -23,7 +24,7 @@ public class A_UseItem : Action
     {
         try
         {
-            return $"Use {item.name}";
+            return $"Use {_item.name}";
         }
         catch
         {
@@ -35,12 +36,12 @@ public class A_UseItem : Action
     {
         try
         {
-            nodeView.error = "";
-            return $"The mob will use {item.name} if they have it in their inventory.";
+            nodeView.Error = "";
+            return $"The mob will use {_item.name} if they have it in their inventory.";
         }
         catch (System.Exception e)
         {
-            nodeView.error=e.Message;
+            nodeView.Error=e.Message;
             return "There was an issue with this node";
         }
     }

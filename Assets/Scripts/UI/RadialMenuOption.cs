@@ -7,14 +7,14 @@ using UnityEngine.UI;
 [Serializable]
 public class RadialMenuOption
 {
-    [SerializeField] public readonly string label;
-    [SerializeField] public readonly string description;
-    [SerializeField] public readonly Sprite icon;
+    [SerializeField] public readonly string Label;
+    [SerializeField] public readonly string Description;
+    [SerializeField] public readonly Sprite Icon;
 
     public RadialMenuOption(string label, string description, Sprite icon)
     {
-        this.label = label;
-        this.description = description;
-        this.icon = icon;
+        Label = label;
+        Description = description;
+        Icon = icon;
     }
 }

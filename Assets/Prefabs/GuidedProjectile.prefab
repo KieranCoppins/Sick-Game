@@ -146,14 +146,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c336cb5c70c5c438e29768f3835467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  target: {fileID: 0}
-  rotationSpeed: 5
-  lifespan: 5
-  OnAwake:
+  Type: 0
+  Target: {fileID: 0}
+  RotationSpeed: 20
+  Lifespan: 5
+  _onAwake:
     m_PersistentCalls:
       m_Calls: []
-  OnDeath:
+  _onDeath:
     m_PersistentCalls:
       m_Calls: []
-  damage: 0
+  Damage: 0
+  Caster: {fileID: 0}
