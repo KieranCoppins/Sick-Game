@@ -180,8 +180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b172a3453879dc42b31ffab07278046, type: 3}
   m_Name: Ranged Mob Decision Tree
   m_EditorClassIdentifier: 
-  _viewPosition: {x: 415, y: 91, z: 0}
-  _viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
+  _viewPosition: {x: 780, y: -136, z: 0}
+  _viewScale: {x: 0.49717674, y: 0.49717674, z: 1}
   Root: {fileID: 8143352960183102081}
   Nodes:
   - {fileID: 8143352960183102081}
