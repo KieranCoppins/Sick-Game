@@ -147,7 +147,7 @@ MonoBehaviour:
     height: 130
   TrueNode: {fileID: -3276493038177235220}
   FalseNode: {fileID: 4751656255184309380}
-  _pullbackDistance: 0
+  _pullbackDistance: 5
 --- !u!114 &-3276493038177235220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,7 +209,7 @@ MonoBehaviour:
     height: 147
   TrueNode: {fileID: -1171055390889947812}
   FalseNode: {fileID: -3426700646990903084}
-  _attackRange: 0
+  _attackRange: 2
 --- !u!114 &-1171055390889947812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b172a3453879dc42b31ffab07278046, type: 3}
   m_Name: Melee Mob Decision Tree
   m_EditorClassIdentifier: 
-  _viewPosition: {x: 125, y: -221, z: 0}
+  _viewPosition: {x: 1017, y: -229, z: 0}
   _viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
   Root: {fileID: 2284205306676989956}
   Nodes:
