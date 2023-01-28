@@ -39,38 +39,50 @@ public abstract class BaseMob : BaseCharacter
     protected UnityEvent OnHeal = new UnityEvent();
     protected UnityEvent OnDeath = new UnityEvent();
 
-    [Header("Mob Stats")]
-    [SerializeField] private string _mobName;
+    [Header("Mob Stats"), SerializeField]
+    private string _mobName;
 
     public DecisionTree DecisionTree
     {
         get { return _decisionTree; }
         protected set { _decisionTree = value; }
     }
-    [Header("AI")]
-    [Tooltip("The decision tree for this mob to run")]
-    [SerializeField] private DecisionTree _decisionTree;
-    [Tooltip("The aggression system this mob uses")]
-    [SerializeField] protected AggressionSystems AggressionSystem;
-    [Tooltip("The threshold for our aggression system")]
-    [SerializeField] protected float AggressionThreshold;
+
+    [Header("AI"), Tooltip("The decision tree for this mob to run"), SerializeField]
+    private DecisionTree _decisionTree;
+
+    [Tooltip("The aggression system this mob uses"), SerializeField]
+    protected AggressionSystems AggressionSystem;
+
+    [Tooltip("The threshold for our aggression system"), SerializeField]
+    protected float AggressionThreshold;
+
     [Tooltip("Nodes of a path that the AI will follow if they are out of combat")]
     public Transform[] IdlePathNodes;
 
+    protected AnimationCurve MovementCurve
+    {
+        get { return _MovementCurve;}
+    }
+
+    [Curve(-1f, 1f, 0f, 1f), SerializeField, Tooltip("The movement curve this mob will follow where X is the dot product and Y is the weight")]
+    private AnimationCurve _MovementCurve;
+
     public PathfindingComponent PathfindingComponent { get; protected set; }
+
     protected float AttackTimer;
     protected ActionManager ActionManager;
     protected List<Vector2> MovementDirections;
+
     public Vector2 AreaOfInterest { get; protected set; }
     [HideInInspector] public CombatState State { get; set; }
+
     [HideInInspector] public bool CanAttack = true;
 
     // Values for our aggression system
     protected Dictionary<BaseCharacter, float> AggressionWeights = new Dictionary<BaseCharacter, float>();
 
-    [Header("DEBUG VALUES")]
-    [EnumFlags]
-    [SerializeField]
+    [Header("DEBUG VALUES"), EnumFlags, SerializeField]
     public DebugFlags DebugFlags;
 
     /// <summary>

@@ -321,8 +321,41 @@ MonoBehaviour:
   AggressionSystem: 1
   AggressionThreshold: 2
   IdlePathNodes: []
+  _MovementCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -1
+      value: 0
+      inSlope: 0.5555556
+      outSlope: 0.5555556
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8
+      value: 1
+      inSlope: 0.5555556
+      outSlope: -5.0000005
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -5.0000005
+      outSlope: -5.0000005
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   CanAttack: 1
-  DebugFlags: 0
+  DebugFlags: -1
   Ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
 --- !u!114 &4814864310996129434
 MonoBehaviour:

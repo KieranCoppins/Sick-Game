@@ -28,13 +28,10 @@ public class MeleeMob : BaseMob
     {
         float dist = Vector2.Distance(target, transform.position);
 
-        if (moveStraight)
-            return Vector2.Dot(targetDir, dir);
-
-        if (dist < 2f)
-            return Vector2.Dot(targetDir, dir) + Vector2.Dot(RigidBody.velocity.normalized, dir);
-
-        return 1.0f - Mathf.Abs(Vector2.Dot(targetDir, dir) - 0.9f) + Vector2.Dot(RigidBody.velocity.normalized, dir);
+        if (!moveStraight && dist > 2f)
+            return MovementCurve.Evaluate(Vector2.Dot(targetDir, dir)) + Vector2.Dot(RigidBody.velocity.normalized, dir);
+        
+        return Vector2.Dot(targetDir, dir);
 
     }
 

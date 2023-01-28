@@ -825,7 +825,6 @@ GameObject:
   - component: {fileID: 5711981527638540425}
   - component: {fileID: 7624387157773597081}
   - component: {fileID: 990173768}
-  - component: {fileID: 291321131}
   - component: {fileID: 291321130}
   m_Layer: 0
   m_Name: Melee Mob
@@ -898,7 +897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementSpeed: 3
   RollSpeed: 5
-  _faction: 0
+  _faction: 1
   _maxHealth: 40
   _maxStamina: 10
   StaminaRegenCooldown: 1
@@ -910,8 +909,41 @@ MonoBehaviour:
   AggressionSystem: 1
   AggressionThreshold: 2
   IdlePathNodes: []
+  _MovementCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -1
+      value: 0
+      inSlope: 0.5555556
+      outSlope: 0.5555556
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8
+      value: 1
+      inSlope: 0.5555556
+      outSlope: -5.0000005
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -5.0000005
+      outSlope: -5.0000005
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   CanAttack: 0
-  DebugFlags: 0
+  DebugFlags: 1
   _meleeRange: 2
   _meleeDamage: 10
   _meleeSpeed: 2
@@ -988,22 +1020,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!58 &990173768
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3856485209610614438}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.18, y: -0.06}
-  serializedVersion: 2
-  m_Radius: 10
---- !u!58 &291321131
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
