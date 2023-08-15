@@ -1,5 +1,7 @@
 # Sick-Game
-A really really sick game. Source: trust me bro
+Due to lack of artistic talent, this project is now in hybernation until art becomes a good skill. The coding foundations are there currently. It contains good fun A.I which are fun to combat against. A working faction system. Inventory system with item pickups and consumeables. Different enemy types, animations with some art taken from itch.io. Uses my own decision tree library complete with a visual editor to allow game designs to easily create A.I scripts, equipt with my own custom version of Unreal's Environment Query System (EQS) for smart pathing. Perhaps one day this project will be revived, but the next logical steps requires art and animations. Jira project is still active fornow with plenty of stories to work on once the art is there.
+
+For now, I open it to the public to play with
 
 ## Setup
 To set up the project you need to install the version of Unity this project uses (2021.1.16f1). You can find all version of unity [here](https://unity3d.com/get-unity/download/archive) and install them through the Unity Hub.
