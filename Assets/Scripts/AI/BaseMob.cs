@@ -62,7 +62,7 @@ public abstract class BaseMob : BaseCharacter
 
     protected AnimationCurve MovementCurve
     {
-        get { return _MovementCurve;}
+        get { return _MovementCurve; }
     }
 
     [Curve(-1f, 1f, 0f, 1f), SerializeField, Tooltip("The movement curve this mob will follow where X is the dot product and Y is the weight")]
@@ -92,6 +92,7 @@ public abstract class BaseMob : BaseCharacter
     /// <param name="dmg"></param>
     public override void TakeDamage(BaseCharacter character, int dmg)
     {
+        if (Health <= 0) return;
         if (Animator)
             Animator?.Play("Take Hit");
         Health -= dmg;
@@ -121,12 +122,12 @@ public abstract class BaseMob : BaseCharacter
             }
             else
                 if (character.Faction != Faction)
-                    Target = character.transform;
+                Target = character.transform;
 
         }
         else
             if (character.Faction != Faction)
-                Target = character.transform;
+            Target = character.transform;
 
         StartCoroutine(Stun(.5f));
     }
@@ -222,7 +223,7 @@ public abstract class BaseMob : BaseCharacter
             Debug.DrawRay(lowerStart, position - lowerStart, Color.magenta);
             Debug.DrawRay(upperStart, position - upperStart, Color.magenta);
         }
-        if ((lowerHit.collider == null && lowerHit.collider == null) || 
+        if ((lowerHit.collider == null && lowerHit.collider == null) ||
             ((Vector2)lowerHit.collider.transform.position == position && (Vector2)upperHit.collider.transform.position == position))
             return true;
 
@@ -234,7 +235,7 @@ public abstract class BaseMob : BaseCharacter
     public Vector2 GetMovementVector(Vector2 target, bool moveStraight = false)
     {
         Vector2 targetDir = (target - (Vector2)transform.position).normalized;
-        
+
         List<KeyValuePair<Vector2, float>> directionWeights = new List<KeyValuePair<Vector2, float>>();
 
         // Calculate dot products
@@ -275,7 +276,7 @@ public abstract class BaseMob : BaseCharacter
 
         float distanceFromOrigin = Vector2.Distance(originPoint, transform.position);
 
-        foreach(Vector2 dir in MovementDirections)
+        foreach (Vector2 dir in MovementDirections)
         {
             // Our shaping function for wandering around an origin point
             float weight = (Vector2.Dot(dir, returnVector) * (distanceFromOrigin / range)) + (Vector2.Dot(dir, RigidBody.velocity.normalized) + (1.0f - Mathf.PerlinNoise(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f))));
@@ -303,7 +304,7 @@ public abstract class BaseMob : BaseCharacter
     /// <returns></returns>
     protected IEnumerator Think()
     {
-        while (true)
+        while (Health > 0)
         {
             // Constantly try to determine what we should be doing
             KieranCoppins.DecisionTrees.Action actionToBeScheduled = DecisionTree.Run();

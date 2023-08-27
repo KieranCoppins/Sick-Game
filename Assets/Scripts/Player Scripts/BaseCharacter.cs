@@ -148,11 +148,6 @@ public abstract class BaseCharacter : MonoBehaviour
     protected virtual void Update()
     {
         _staminaRegenTimer -= Time.deltaTime;
-
-
-        // Flip our sprite if needed
-        if (LookDirection.x != 0f)
-            SpriteRenderer.flipX = LookDirection.x < 0f;
     }
 
     private IEnumerator RegenStats()

@@ -20,14 +20,14 @@ public class ProjectileAbility : AbilityBase
     [Tooltip("The amount of damage our projectile should do when it hits something")]
     [SerializeField] private int _damage;
 
-    public override void Cast(Vector2 position, Vector2 direction, Transform target, BaseCharacter caster)
-    { 
-        Vector2 minDirection = Quaternion.AngleAxis(-(_angle/2), new Vector3(0, 0, 1)) * direction;
+    public override void Cast(Vector2 position, Vector2 direction, Transform target, BaseCharacter caster, float directionalOffset = 1.0f)
+    {
+        Vector2 minDirection = Quaternion.AngleAxis(-(_angle / 2), new Vector3(0, 0, 1)) * direction;
         float angleStep = _angle / _numberProjectiles;
         for (int i = 0; i < _numberProjectiles; i++)
         {
             Vector2 projectileDirection = Quaternion.AngleAxis(angleStep * i, new Vector3(0, 0, 1)) * minDirection;
-            GameObject go = Instantiate(_projectile, position + projectileDirection.normalized * 1.0f, Quaternion.identity);
+            GameObject go = Instantiate(_projectile, position + projectileDirection.normalized * directionalOffset, Quaternion.identity);
             go.transform.up = projectileDirection.normalized;
             Projectile projectileComp = go.GetComponent<Projectile>();
             projectileComp.Target = target;

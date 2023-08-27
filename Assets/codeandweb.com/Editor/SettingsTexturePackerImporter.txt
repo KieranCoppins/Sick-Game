@@ -1,0 +1,41 @@
+version: 2
+tpsheetFileNames:
+- Assets/Graphics/Pre Rendered Assets/Character V2/attack-1-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character V2/attack-2-cut-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character V2/attack-2-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character V2/attack-heavy-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character V2/casting-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character V2/death-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character V2/idle-hit-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character V2/idle-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character V2/kick-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character V2/roll-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character V2/run-back-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character V2/run-unity.tpsheet
+textureFileNames:
+- Assets/Graphics/Pre Rendered Assets/Character V2/attack-1-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character V2/attack-2-cut-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character V2/attack-2-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character V2/attack-heavy-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character V2/casting-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character V2/death-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character V2/idle-hit-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character V2/idle-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character V2/kick-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character V2/roll-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character V2/run-back-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character V2/run-unity.png
+normalmapFileNames:
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+enableDebugOutput: 0

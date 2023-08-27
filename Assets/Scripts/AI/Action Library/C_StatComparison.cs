@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using KieranCoppins.DecisionTrees;
 using KieranCoppins.GenericHelpers;
@@ -28,7 +26,7 @@ public class C_StatComparison : CustomFunction<bool>
 
     public override string GetSummary(BaseNodeView nodeView)
     {
-        try 
+        try
         {
             nodeView.Error = "";
             return $"{GenericHelpers.SplitCamelCase(stat)} is {GenericHelpers.SplitCamelCase(operation.ToString()).ToLower()} {value}";

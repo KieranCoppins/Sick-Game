@@ -355,7 +355,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   CanAttack: 1
-  DebugFlags: -1
+  DebugFlags: 1
   Ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
 --- !u!114 &4814864310996129434
 MonoBehaviour:
@@ -456,7 +456,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 769451d9b9557ae4c9906e0cdf599a84, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0

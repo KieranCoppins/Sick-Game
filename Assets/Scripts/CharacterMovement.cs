@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public delegate void CharacterInteractable(BaseCharacter character);
 
 // Character movement needs a rigidbody2D component
-[RequireComponent(typeof(LookAtMouse))]
+[RequireComponent(typeof(PlayerInput))]
 [DisallowMultipleComponent]
 public class CharacterMovement : BaseCharacter
 {
@@ -19,7 +19,7 @@ public class CharacterMovement : BaseCharacter
     [SerializeField] private Slider _manaBar;
     [SerializeField] private GameObject _targetGraphic;
 
-    public bool CanMove { get; private set; } 
+    public bool CanMove { get; private set; }
     private Vector2 _movementVelocity;
 
     private int _attackStage = 0;
@@ -38,7 +38,8 @@ public class CharacterMovement : BaseCharacter
 
     /// Base character attribute overrides
 
-    public override int Health { 
+    public override int Health
+    {
         get => base.Health;
         protected set
         {
@@ -48,16 +49,18 @@ public class CharacterMovement : BaseCharacter
         }
     }
 
-    public override int Stamina { 
+    public override int Stamina
+    {
         get => base.Stamina;
-        protected set 
-        { 
-            base.Stamina = value; 
+        protected set
+        {
+            base.Stamina = value;
             _staminaBar.value = (float)Stamina / (float)MaxStamina;
         }
     }
 
-    public override int Mana { 
+    public override int Mana
+    {
         get => base.Mana;
         protected set
         {
@@ -66,7 +69,8 @@ public class CharacterMovement : BaseCharacter
         }
     }
 
-    public override int MaxHealth { 
+    public override int MaxHealth
+    {
         get => base.MaxHealth;
         protected set
         {
@@ -75,8 +79,8 @@ public class CharacterMovement : BaseCharacter
         }
     }
 
-    public override int MaxStamina 
-    { 
+    public override int MaxStamina
+    {
         get => base.MaxStamina;
         protected set
         {
@@ -85,7 +89,8 @@ public class CharacterMovement : BaseCharacter
         }
     }
 
-    public override int MaxMana { 
+    public override int MaxMana
+    {
         get => base.MaxMana;
         protected set
         {
@@ -95,7 +100,8 @@ public class CharacterMovement : BaseCharacter
     }
 
 
-    protected override bool Stunned { 
+    protected override bool Stunned
+    {
         get => base.Stunned;
         set
         {
@@ -104,12 +110,21 @@ public class CharacterMovement : BaseCharacter
         }
     }
 
+    [Header("Functional References")]
+    [SerializeField] private Transform abilityCastPosition;
+    private PlayerInput playerInput;
+
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
 
         CanMove = true;
+
+        // Default looking right on start
+        LookDirection = new Vector2(1, 0);
+        playerInput = GetComponent<PlayerInput>();
+
     }
 
     protected override void Update()
@@ -121,12 +136,18 @@ public class CharacterMovement : BaseCharacter
             _targetGraphic.SetActive(false);
 
         Animator.SetBool("Moving", CanMove && RigidBody.velocity.magnitude > 0);
+        Animator.SetFloat("Vertical", Mathf.RoundToInt(LookDirection.y));
+        Animator.SetFloat("Horizontal", Mathf.RoundToInt(LookDirection.x));
     }
 
     void FixedUpdate()
     {
         if (CanMove && _attackStage == 0)
+        {
             RigidBody.velocity = _movementVelocity * MovementSpeed;
+            if (_movementVelocity != Vector2.zero)
+                LookDirection = _movementVelocity.normalized;
+        }
 
         Animator.SetFloat("MovementScale", RigidBody.velocity.magnitude / MovementSpeed);
     }
@@ -152,9 +173,9 @@ public class CharacterMovement : BaseCharacter
     {
         float rollTime = .2f;
         CanMove = false;
-        Animator.Play("Slide");
+        Animator.Play("Roll");
         yield return null;
-        while (Animator.GetCurrentAnimatorStateInfo(0).IsName("Slide"))
+        while (Animator.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
         {
             LookDirection = direction.normalized;
             rollTime -= Time.deltaTime;
@@ -176,29 +197,51 @@ public class CharacterMovement : BaseCharacter
     {
         if (context.started && _queueAttack && Stamina >= 10 && CanMove)
         {
+            // Set our look direction to where our mouse is:
+            if (playerInput.currentControlScheme == "Keyboard&Mouse")
+            {
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+                mousePosition.z = 0;
+                LookDirection = (mousePosition - transform.position).normalized;
+
+            }
+
             _attackStage++;
             Animator.Play($"Attack{_attackStage}");
             _queueAttack = false;
             Stamina -= 10;
-            RigidBody.velocity = _movementVelocity * MovementSpeed;   
+            RigidBody.velocity = LookDirection * MovementSpeed;
+        }
+
+
+    }
+    public void ResetAttackStage(AnimationEvent e)
+    {
+        if (e.animatorClipInfo.weight > 0.5f)
+        {
+            _attackStage = 0;
+            _queueAttack = true;
         }
     }
-    public void ResetAttackStage() 
-    { 
-        _attackStage = 0; 
-        _queueAttack = true;
-    }
-    public void CanQueueAttack() { _queueAttack = true; }
-
-    public void DealDamage()
+    public void CanQueueAttack(AnimationEvent e)
     {
-
-        Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, 1.5f);
-        foreach (Collider2D target in targets)
+        if (e.animatorClipInfo.weight > 0.5f)
         {
-            if (target.CompareTag("Mob"))
+            _queueAttack = true;
+        }
+    }
+
+    public void DealDamage(AnimationEvent e)
+    {
+        if (e.animatorClipInfo.weight > 0.5f)
+        {
+            Collider2D[] targets = Physics2D.OverlapCircleAll((Vector2)transform.position + LookDirection.normalized, 1.5f);
+            foreach (Collider2D target in targets)
             {
-                target.GetComponent<BaseMob>().TakeDamage(this, Damage);
+                if (target.CompareTag("Mob"))
+                {
+                    target.GetComponent<BaseMob>().TakeDamage(this, Damage);
+                }
             }
         }
     }
@@ -279,15 +322,21 @@ public class CharacterMovement : BaseCharacter
         }
     }
 
-    public void CastAbility()
+    public void CastAbility(AnimationEvent e)
     {
-        Mana -= SelectedAbility.ManaCost;
-        SelectedAbility.Cast(transform.position, LookDirection, Target, this);
+        if (e.animatorClipInfo.weight > 0.5f)
+        {
+            Mana -= SelectedAbility.ManaCost;
+            SelectedAbility.Cast(abilityCastPosition.position, LookDirection, Target, this, 0.0f);
+        }
     }
 
-    public void FinishCast()
+    public void FinishCast(AnimationEvent e)
     {
-        CanMove = true;
+        if (e.animatorClipInfo.weight > 0.5f)
+        {
+            CanMove = true;
+        }
     }
 
     public void UseItem(InputAction.CallbackContext context)

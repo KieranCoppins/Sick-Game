@@ -53,13 +53,14 @@ public class A_CastAbility : A_Attack
             yield return null;
 
             // Whilst we are casting, we want to get the average of our player's movement vector
-            yield return new DoTaskWhilstWaitingUntil(() => {
+            yield return new DoTaskWhilstWaitingUntil(() =>
+            {
                 if (Mob.Target != null)
                 {
                     _totalTargetVelocity += Mob.Target.GetComponent<Rigidbody2D>().velocity;
                     _totalVelocityEntries += 1;
                 }
-            }, 
+            },
             () =>
             {
                 timer -= Time.deltaTime;

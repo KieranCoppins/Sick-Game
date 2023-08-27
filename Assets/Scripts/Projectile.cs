@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour
 
     [SerializeField] private UnityEvent _onAwake;
     [SerializeField] private UnityEvent _onDeath;
-    
+
     private Rigidbody2D _rigidBody;
     private float _aliveTime = 0;
     private float _velocity = 0;
