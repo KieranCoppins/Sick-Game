@@ -12,6 +12,7 @@ public delegate void CharacterInteractable(BaseCharacter character);
 public class CharacterMovement : BaseCharacter
 {
     [SerializeField] int Damage;
+    [SerializeField] int HeavyDamage;
 
     [Header("UI Elements")]
     [SerializeField] private Slider _healthBar;
@@ -212,8 +213,23 @@ public class CharacterMovement : BaseCharacter
             Stamina -= 10;
             RigidBody.velocity = LookDirection * MovementSpeed;
         }
-
-
+    }
+    public void HeavyAttack(InputAction.CallbackContext context)
+    {
+        if (context.started && _queueAttack && Stamina >= 20 && CanMove)
+        {
+            // Set our look direction to where our mouse is:
+            if (playerInput.currentControlScheme == "Keyboard&Mouse")
+            {
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+                mousePosition.z = 0;
+                LookDirection = (mousePosition - transform.position).normalized;
+            }
+            Animator.Play($"Heavy Attack");
+            Stamina -= 20;
+            RigidBody.velocity = LookDirection * MovementSpeed;
+            CanMove = false;
+        }
     }
     public void ResetAttackStage(AnimationEvent e)
     {
@@ -221,6 +237,7 @@ public class CharacterMovement : BaseCharacter
         {
             _attackStage = 0;
             _queueAttack = true;
+            CanMove = true;
         }
     }
     public void CanQueueAttack(AnimationEvent e)
@@ -241,6 +258,21 @@ public class CharacterMovement : BaseCharacter
                 if (target.CompareTag("Mob"))
                 {
                     target.GetComponent<BaseMob>().TakeDamage(this, Damage);
+                }
+            }
+        }
+    }
+
+    public void DealHeavyDamage(AnimationEvent e)
+    {
+        if (e.animatorClipInfo.weight > 0.5f)
+        {
+            Collider2D[] targets = Physics2D.OverlapCircleAll((Vector2)transform.position + LookDirection.normalized, 1.5f);
+            foreach (Collider2D target in targets)
+            {
+                if (target.CompareTag("Mob"))
+                {
+                    target.GetComponent<BaseMob>().TakeDamage(this, HeavyDamage);
                 }
             }
         }
