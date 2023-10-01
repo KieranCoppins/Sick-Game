@@ -62,6 +62,7 @@ public class Projectile : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         BaseCharacter character = collision.collider.GetComponent<BaseCharacter>();
+        if (character == Caster) return;
         if (character)
         {
             character.TakeDamage(Caster, Damage);

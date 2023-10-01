@@ -209,7 +209,7 @@ MonoBehaviour:
     height: 147
   TrueNode: {fileID: -1171055390889947812}
   FalseNode: {fileID: -3426700646990903084}
-  _attackRange: 2
+  _attackRange: 0.8
 --- !u!114 &-1171055390889947812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,12 +226,12 @@ MonoBehaviour:
   PositionalData:
     serializedVersion: 2
     x: -1293
-    y: 1202.9998
+    y: 1203
     width: 150
     height: 94
   _flags: 2
   Cooldown: 3
-  attackSpeed: 1
+  attackSpeed: 2
 --- !u!114 &-1072545937017072917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,8 +266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b172a3453879dc42b31ffab07278046, type: 3}
   m_Name: Melee Mob Decision Tree
   m_EditorClassIdentifier: 
-  _viewPosition: {x: 591, y: 91, z: 0}
-  _viewScale: {x: 0.32690176, y: 0.32690176, z: 1}
+  _viewPosition: {x: 1426, y: -730, z: 0}
+  _viewScale: {x: 1, y: 1, z: 1}
   Root: {fileID: 2284205306676989956}
   Nodes:
   - {fileID: 2284205306676989956}

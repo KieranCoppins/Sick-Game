@@ -1,0 +1,2410 @@
+fileFormatVersion: 2
+guid: daf1ebbd443d2564fb8606db7683d1e2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: E-Dying_0_001
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1550
+        width: 59
+        height: 105
+      alignment: 9
+      pivot: {x: 0.23728813, y: 0.23809524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b19edbe3dc6f5ac47a6760cb9fe101a0
+      internalID: 2001598096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Dying_0_008
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1070
+        width: 80
+        height: 101
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36633664}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9bfc6f2a568df4788b5209ec58df7b
+      internalID: 662145542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Dying_0_015
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 1146
+        width: 72
+        height: 106
+      alignment: 9
+      pivot: {x: 0.16666667, y: 0.35849056}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6604876db284e96439d8e0418b339f49
+      internalID: 635483282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Dying_0_022
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 939
+        width: 71
+        height: 103
+      alignment: 9
+      pivot: {x: 0.1971831, y: 0.32038835}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c0bbcf65478334da814275e7b70036
+      internalID: -1249578766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Dying_0_029
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 917
+        width: 71
+        height: 102
+      alignment: 9
+      pivot: {x: 0.29577464, y: 0.27450982}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55437b905bfb20c4a80cb3a0ef594a4c
+      internalID: -1463977480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Dying_0_036
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 869
+        width: 69
+        height: 97
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0.29896906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 898ee1c646f57e049bcd02f2be2bb938
+      internalID: -2066472198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Dying_0_043
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 1349
+        width: 92
+        height: 97
+      alignment: 9
+      pivot: {x: 0.6195652, y: 0.24742268}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b73d7bed39608b41ac6677a4e85df64
+      internalID: -182567510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Dying_0_050
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1379
+        width: 117
+        height: 77
+      alignment: 9
+      pivot: {x: 0.75213677, y: 0.20779221}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81ff3f38583c7594b89469c1f45c5031
+      internalID: -1632645595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Dying_0_057
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 1446
+        width: 97
+        height: 104
+      alignment: 9
+      pivot: {x: 1.0103092, y: 0.48076922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c540274322a303448a830909a7d60f74
+      internalID: 2084813948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Dying_0_064
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1478
+        width: 109
+        height: 94
+      alignment: 9
+      pivot: {x: 0.9174312, y: 0.5425532}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb6fe2758e3636741937d36de3e9605b
+      internalID: 2133385605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Dying_0_071
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1277
+        width: 105
+        height: 102
+      alignment: 9
+      pivot: {x: 0.9142857, y: 0.61764705}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5935b150a6da35b49bbc4d5ebcd2d35c
+      internalID: -754605435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Dying_0_078
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 1515
+        width: 113
+        height: 83
+      alignment: 9
+      pivot: {x: 0.86725664, y: 0.57831323}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee851d60656a154698c7e5d32c393f9
+      internalID: 12554431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Dying_0_085
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1350
+        width: 107
+        height: 87
+      alignment: 9
+      pivot: {x: 0.92523366, y: 0.55172414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4897d1d82727c4b408dc5ee43e625f27
+      internalID: -2133679659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Dying_90_001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1181
+        width: 93
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5483871, y: 0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f25dfd853165246b86785ecea62932
+      internalID: -1467303598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Dying_90_008
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 1234
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5714286, y: 0.10714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69125e3ad3a8c0146ba162a204952af8
+      internalID: -2040817283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Dying_90_015
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1119
+        width: 79
+        height: 90
+      alignment: 9
+      pivot: {x: 0.6075949, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87fe445c81e428843a05dd058ebbddef
+      internalID: 1310313519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Dying_90_022
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 1295
+        width: 85
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5529412, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbdaa0375e7ab474db0777e08a396bbc
+      internalID: -181515253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Dying_90_029
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 1171
+        width: 86
+        height: 81
+      alignment: 9
+      pivot: {x: 0.61627907, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 265d53689787df545af0673ce7927bc7
+      internalID: -1230969628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Dying_90_036
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1141
+        width: 81
+        height: 74
+      alignment: 9
+      pivot: {x: 0.5802469, y: 0.13513513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a7b18d697f55a46b7cfa2864bd49fa
+      internalID: 1712247345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Dying_90_043
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 1291
+        width: 88
+        height: 94
+      alignment: 9
+      pivot: {x: 0.48863637, y: 0.39361703}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d161e762cad45849ba64e766acf1caa
+      internalID: 1172070427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Dying_90_050
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1790
+        width: 114
+        height: 78
+      alignment: 9
+      pivot: {x: 0.51754385, y: 0.6025641}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d36859f6b459b49b44adc91536bc88
+      internalID: 154056550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Dying_90_057
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1918
+        width: 162
+        height: 130
+      alignment: 9
+      pivot: {x: 0.59876543, y: 0.6230769}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f192c81445ee0c45b23e68e811150f3
+      internalID: -125791907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Dying_90_064
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1941
+        width: 152
+        height: 107
+      alignment: 9
+      pivot: {x: 0.5263158, y: 0.6542056}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27b7e7b9cd3d44b4490e79e95e18aa70
+      internalID: -536982041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Dying_90_071
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1954
+        width: 155
+        height: 94
+      alignment: 9
+      pivot: {x: 0.57419354, y: 0.7659575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e071883e641c2bd4f81d150215552e57
+      internalID: -2134184606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Dying_90_078
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1812
+        width: 144
+        height: 106
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0.6698113}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f1261c5a186cc841bd5ab6ec43e5433
+      internalID: 1880051495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Dying_90_085
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1939
+        width: 158
+        height: 109
+      alignment: 9
+      pivot: {x: 0.5443038, y: 0.6972477}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d54cc6570dde9d4e81a145df7f2cc87
+      internalID: -1364589968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Dying_45_001
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 1492
+        width: 72
+        height: 120
+      alignment: 9
+      pivot: {x: 0.3611111, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ceeb539cea3954abc285d91476bcf1
+      internalID: -163988570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Dying_45_008
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 867
+        width: 70
+        height: 104
+      alignment: 9
+      pivot: {x: 0.25714287, y: 0.26923078}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e6d74304ad449448a122fe94cadb5c
+      internalID: -614040830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Dying_45_015
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 971
+        width: 78
+        height: 99
+      alignment: 9
+      pivot: {x: 0.25641027, y: 0.27272728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe536e6a675ab6488ca7a8d8e28e19d
+      internalID: 1716187436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Dying_45_022
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 1612
+        width: 70
+        height: 105
+      alignment: 9
+      pivot: {x: 0.24285714, y: 0.2761905}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87228f4ad59e20a4682e2b0548039d45
+      internalID: 1084698591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Dying_45_029
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1154
+        width: 69
+        height: 87
+      alignment: 9
+      pivot: {x: 0.28985506, y: 0.21839081}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2a30937408ebbf4ab9ccc7a4ef0384c
+      internalID: -1263138221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Dying_45_036
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 966
+        width: 74
+        height: 86
+      alignment: 9
+      pivot: {x: 0.45945945, y: 0.20930232}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75b0e0b1c58af224c9d4d0d4d7afad69
+      internalID: 662589846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Dying_45_043
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1385
+        width: 96
+        height: 93
+      alignment: 9
+      pivot: {x: 0.65625, y: 0.2795699}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8768a366e4382604b8ad123f6abfaa7c
+      internalID: -1746879497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Dying_45_050
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 1692
+        width: 133
+        height: 87
+      alignment: 9
+      pivot: {x: 0.6616541, y: 0.50574714}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ff0d5c5e482b549bfc0ff0b8d7c1ec
+      internalID: -2007705891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Dying_45_057
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1529
+        width: 127
+        height: 110
+      alignment: 9
+      pivot: {x: 0.8425197, y: 0.6181818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd1aa1085b391f9488f2a8813e4c041b
+      internalID: -542358131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Dying_45_064
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 1731
+        width: 131
+        height: 103
+      alignment: 9
+      pivot: {x: 0.79389316, y: 0.70873785}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19723935da87d2d4f88c8523fd158bac
+      internalID: 1906064492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Dying_45_071
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 1779
+        width: 139
+        height: 105
+      alignment: 9
+      pivot: {x: 0.77697843, y: 0.63809526}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f200284322c7a1740b07498171e3724b
+      internalID: 671974734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Dying_45_078
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 1834
+        width: 141
+        height: 94
+      alignment: 9
+      pivot: {x: 0.75886524, y: 0.7234042}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 681b1057ba696ec44b9310d224e9bed2
+      internalID: -1422076461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Dying_45_085
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 1847
+        width: 142
+        height: 94
+      alignment: 9
+      pivot: {x: 0.7605634, y: 0.70212764}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea81cb19d4fb5e40a79c24f78bbca0b
+      internalID: 238606603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Dying_135_001
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 1019
+        width: 74
+        height: 100
+      alignment: 9
+      pivot: {x: 0.6081081, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f1da2c5aa59df4e9f285e8a50e8df7
+      internalID: -1543501236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Dying_135_008
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 1318
+        width: 88
+        height: 97
+      alignment: 9
+      pivot: {x: 0.77272725, y: 0.21649484}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95a9a9f347928cd4496f70383d460732
+      internalID: -1250393914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Dying_135_015
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 1194
+        width: 79
+        height: 101
+      alignment: 9
+      pivot: {x: 0.7468355, y: 0.21782178}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b805c822d610ac4d8b9ef0a7f05ebc7
+      internalID: 1137933600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Dying_135_022
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 968
+        width: 66
+        height: 95
+      alignment: 9
+      pivot: {x: 0.7121212, y: 0.17894737}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87be8a27abffc1e47871c846da7db938
+      internalID: 1032998068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Dying_135_029
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 891
+        width: 66
+        height: 95
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.22105263}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f594822fe8ae74996f4c1b9528eadc
+      internalID: 668416026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Dying_135_036
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1048
+        width: 66
+        height: 98
+      alignment: 9
+      pivot: {x: 0.57575756, y: 0.26530612}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e798780fbac496a4ab73f7c4e2b4f8e7
+      internalID: -382937703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Dying_135_043
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1385
+        width: 93
+        height: 80
+      alignment: 9
+      pivot: {x: 0.41935483, y: 0.275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b96c0f5f46d50fa4a9853418f63f859f
+      internalID: 819029582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Dying_135_050
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 1761
+        width: 137
+        height: 86
+      alignment: 9
+      pivot: {x: 0.35036495, y: 0.54651165}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1fa547a3fed1e144953728b1dc83ad6
+      internalID: 1003401049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Dying_135_057
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1928
+        width: 143
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25874126, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a883c708d57ef44eb354924aa13c8c7
+      internalID: -1227340164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Dying_135_064
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1731
+        width: 137
+        height: 100
+      alignment: 9
+      pivot: {x: 0.28467155, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caab8faf93107074b8e056ab35e50782
+      internalID: -1170206703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Dying_135_071
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 1643
+        width: 129
+        height: 109
+      alignment: 9
+      pivot: {x: 0.24806201, y: 0.7522936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8117211ce69a6524081028edd2fa2a4c
+      internalID: -1011644821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Dying_135_078
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1831
+        width: 144
+        height: 108
+      alignment: 9
+      pivot: {x: 0.3402778, y: 0.6759259}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c859b72f47c52b743ada59ec8da080bc
+      internalID: 457784503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Dying_135_085
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1533
+        width: 127
+        height: 105
+      alignment: 9
+      pivot: {x: 0.2519685, y: 0.71428573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab6fbb9cf0792204f916c9657d0b6b67
+      internalID: -200251559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Dying_270_001
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 1868
+        width: 98
+        height: 96
+      alignment: 9
+      pivot: {x: 0.45918366, y: 0.23958333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1b87bdd1a56f45428976dc7beb4e9f0
+      internalID: -1380933426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Dying_270_008
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1328
+        width: 95
+        height: 106
+      alignment: 9
+      pivot: {x: 0.4105263, y: 0.31132075}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2142a59822e2aa4eb360868542ec610
+      internalID: 616940018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Dying_270_015
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1209
+        width: 82
+        height: 82
+      alignment: 9
+      pivot: {x: 0.47560975, y: 0.2804878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957f11a6f0372bc4f9685ab9ff26530a
+      internalID: 177981702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Dying_270_022
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1166
+        width: 78
+        height: 96
+      alignment: 9
+      pivot: {x: 0.46153846, y: 0.26041666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc82e4c09c0d9a54d87326a1df76d0e6
+      internalID: 661846545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Dying_270_029
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 1052
+        width: 79
+        height: 89
+      alignment: 9
+      pivot: {x: 0.443038, y: 0.25842696}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95d72e44c2eecf448971cae35e9b117
+      internalID: -796832982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Dying_270_036
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1215
+        width: 87
+        height: 113
+      alignment: 9
+      pivot: {x: 0.40229884, y: 0.37168142}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9848c728fbc4634c9f0fb09b89e431f
+      internalID: -594969043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Dying_270_043
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 1296
+        width: 91
+        height: 106
+      alignment: 9
+      pivot: {x: 0.50549453, y: 0.3962264}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c87e1894c1bad7745a666d31df31a4eb
+      internalID: -937835748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Dying_270_050
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 1964
+        width: 100
+        height: 84
+      alignment: 9
+      pivot: {x: 0.55, y: 0.15476191}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed26ee14605f4ec40bdb05d5bc44a005
+      internalID: -1368309765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Dying_270_057
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 1832
+        width: 140
+        height: 60
+      alignment: 9
+      pivot: {x: 0.47142857, y: -0.11666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e30067f38312b4f9e2633bfd3d7e01
+      internalID: -1063330643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Dying_270_064
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 1892
+        width: 152
+        height: 75
+      alignment: 9
+      pivot: {x: 0.49342105, y: 0.093333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 476a0f1664898f344a10ff3e1f3b8869
+      internalID: -1125428745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Dying_270_071
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 1717
+        width: 131
+        height: 73
+      alignment: 9
+      pivot: {x: 0.46564886, y: 0.1369863}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c36ebfbc44f58843b5d4b89e9cc073c
+      internalID: 1387327319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Dying_270_078
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 1967
+        width: 153
+        height: 81
+      alignment: 9
+      pivot: {x: 0.4640523, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c8c76e854c09b4abd107fed61a80aa
+      internalID: -1783045662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Dying_270_085
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1884
+        width: 145
+        height: 70
+      alignment: 9
+      pivot: {x: 0.44827586, y: 0.12857144}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd0cfd24760e804e8bea6f6d52f9090
+      internalID: 453253321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Dying_315_001
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 1187
+        width: 72
+        height: 109
+      alignment: 9
+      pivot: {x: 0.3888889, y: 0.34862384}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb180bcc164fc59428e5521f5797b982
+      internalID: 465348801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Dying_315_008
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 1262
+        width: 84
+        height: 95
+      alignment: 9
+      pivot: {x: 0.27380952, y: 0.29473683}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 929eb0a771feb994ea1a308867e9c4bf
+      internalID: 1166834642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Dying_315_015
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1085
+        width: 85
+        height: 96
+      alignment: 9
+      pivot: {x: 0.31764707, y: 0.30208334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63749d88793e87147ae5c6eeb8c694f2
+      internalID: -795678975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Dying_315_022
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1060
+        width: 67
+        height: 94
+      alignment: 9
+      pivot: {x: 0.26865673, y: 0.28723404}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 684aae1c0508d874a9ae3e5bc386982a
+      internalID: 1741760464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Dying_315_029
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 1241
+        width: 73
+        height: 108
+      alignment: 9
+      pivot: {x: 0.30136988, y: 0.37037036}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12664ab89d96634b9ce78d99c7a6770
+      internalID: 1117256009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Dying_315_036
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1063
+        width: 72
+        height: 103
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.32038835}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985fc2c8fe92bdb47b43f9cdf3da36a2
+      internalID: -1344712802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Dying_315_043
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1252
+        width: 94
+        height: 98
+      alignment: 9
+      pivot: {x: 0.5744681, y: 0.2857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57375350e4621ac4cb6e56f6bf862e0a
+      internalID: -84553544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Dying_315_050
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 1599
+        width: 129
+        height: 93
+      alignment: 9
+      pivot: {x: 0.72868216, y: 0.17204301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59eda14f23aec934b911e2b3273de823
+      internalID: -1152989602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Dying_315_057
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1525
+        width: 120
+        height: 74
+      alignment: 9
+      pivot: {x: 0.78333336, y: 0.13513513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23b0145c8f64c224ab069ea50d4c6a7d
+      internalID: 550265696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Dying_315_064
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 1674
+        width: 130
+        height: 87
+      alignment: 9
+      pivot: {x: 0.75384617, y: 0.27586207}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b22a79bd61db34fa1b2daac2770ddc
+      internalID: 2101058099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Dying_315_071
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1572
+        width: 124
+        height: 71
+      alignment: 9
+      pivot: {x: 0.7903226, y: 0.23943663}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a9684cb7059e194782b2fc42ff2ff87
+      internalID: -985835642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Dying_315_078
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1598
+        width: 124
+        height: 76
+      alignment: 9
+      pivot: {x: 0.7741935, y: 0.2631579}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c46464b5b8119824880bb8451adaa041
+      internalID: -1288047578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Dying_315_085
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 1655
+        width: 130
+        height: 76
+      alignment: 9
+      pivot: {x: 0.75384617, y: 0.27631578}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 251724cfde281b34dac68be278b19b0e
+      internalID: -396883399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Dying_225_001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 971
+        width: 79
+        height: 114
+      alignment: 9
+      pivot: {x: 0.6455696, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca5d9b7861f3cc444af85da60b818c29
+      internalID: -1489594882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Dying_225_008
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 886
+        width: 71
+        height: 85
+      alignment: 9
+      pivot: {x: 0.7605634, y: 0.31764707}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d317a7846c7b24d95ee5649150ddab
+      internalID: -267051531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Dying_225_015
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 1402
+        width: 82
+        height: 90
+      alignment: 9
+      pivot: {x: 0.75609756, y: 0.32222223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 483dcd52610083f42b8c0f2418f5daaa
+      internalID: 883911529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Dying_225_022
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 1100
+        width: 77
+        height: 94
+      alignment: 9
+      pivot: {x: 0.71428573, y: 0.30851063}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e3c495312fce1c47b9a573c45470be6
+      internalID: -1761481391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Dying_225_029
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 1252
+        width: 78
+        height: 97
+      alignment: 9
+      pivot: {x: 0.6282051, y: 0.31958762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa880cdc91340941bf665c98b87b299
+      internalID: -1340504096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Dying_225_036
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 986
+        width: 71
+        height: 114
+      alignment: 9
+      pivot: {x: 0.57746476, y: 0.35964912}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a0ba1a0f7838043869c3701b8132fd
+      internalID: 269779852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Dying_225_043
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 1415
+        width: 97
+        height: 100
+      alignment: 9
+      pivot: {x: 0.4226804, y: 0.37}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77bd2be941a989145aae5518b9c47c57
+      internalID: 936429605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Dying_225_050
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 1437
+        width: 118
+        height: 92
+      alignment: 9
+      pivot: {x: 0.29661018, y: 0.2173913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9834e5f809322814db7dffd6423e750b
+      internalID: 818720456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Dying_225_057
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1456
+        width: 125
+        height: 77
+      alignment: 9
+      pivot: {x: 0.208, y: 0.19480519}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9af1b6d8665d4c4a95196a37baf99b2
+      internalID: -245222868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Dying_225_064
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1638
+        width: 132
+        height: 85
+      alignment: 9
+      pivot: {x: 0.24242425, y: 0.27058825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b084e6bbe163b849bec089cd268e716
+      internalID: -1498555428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Dying_225_071
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 1752
+        width: 136
+        height: 80
+      alignment: 9
+      pivot: {x: 0.27941176, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23645542caf00b64d8627dc41617e788
+      internalID: -1924931354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Dying_225_078
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1723
+        width: 137
+        height: 89
+      alignment: 9
+      pivot: {x: 0.27737227, y: 0.3483146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d93699cd9900d5f4b9d1ad990cabd962
+      internalID: 1642557439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Dying_225_085
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1639
+        width: 132
+        height: 92
+      alignment: 9
+      pivot: {x: 0.25, y: 0.3152174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f6f7987ba91c04681fc11b34677e6f
+      internalID: 163893445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Dying_180_001
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1357
+        width: 57
+        height: 108
+      alignment: 9
+      pivot: {x: 0.71929824, y: 0.2685185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 482d34e059a2d8347a817cacf62abf33
+      internalID: 166843245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Dying_180_008
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 1134
+        width: 79
+        height: 100
+      alignment: 9
+      pivot: {x: 0.8101266, y: 0.28}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ddf066783915249b5d33dde2a156b4
+      internalID: 499478992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Dying_180_015
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 1042
+        width: 75
+        height: 92
+      alignment: 9
+      pivot: {x: 0.82666665, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 700acc26233668542853ea2650b7835c
+      internalID: 439093102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Dying_180_022
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 1134
+        width: 68
+        height: 107
+      alignment: 9
+      pivot: {x: 0.8382353, y: 0.25233644}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bbf342f48c1d014fa65226d09aefbdf
+      internalID: 1477718867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Dying_180_029
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 792
+        width: 70
+        height: 94
+      alignment: 9
+      pivot: {x: 0.7, y: 0.25531915}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef6061207dd2a94da68ac8efda38b32
+      internalID: 1954423364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Dying_180_036
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 1242
+        width: 63
+        height: 107
+      alignment: 9
+      pivot: {x: 0.52380955, y: 0.35514018}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28b63f2be62a2ae43be81f201931c7f9
+      internalID: -873679622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Dying_180_043
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 1349
+        width: 92
+        height: 94
+      alignment: 9
+      pivot: {x: 0.35869566, y: 0.35106382}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c448936205b90c4ba1d86ef61ed737e
+      internalID: -690981996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Dying_180_050
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 1443
+        width: 105
+        height: 89
+      alignment: 9
+      pivot: {x: 0.1904762, y: 0.26966292}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13077b2d71db0964b8f8da5505c1b98b
+      internalID: -1108725371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Dying_180_057
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 1465
+        width: 105
+        height: 97
+      alignment: 9
+      pivot: {x: 0, y: 0.48453608}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25eb820f666f0848885070288516889
+      internalID: -1029881541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Dying_180_064
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 1622
+        width: 113
+        height: 95
+      alignment: 9
+      pivot: {x: 0.053097345, y: 0.5263158}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc4ae41ae5d0f164e93f48de2406dfb3
+      internalID: -635936327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Dying_180_071
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 1562
+        width: 113
+        height: 93
+      alignment: 9
+      pivot: {x: 0.07964602, y: 0.53763443}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e4200bfaf62fc49ae140b78951fc28
+      internalID: 259412265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Dying_180_078
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 1434
+        width: 107
+        height: 91
+      alignment: 9
+      pivot: {x: 0.06542056, y: 0.53846157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16df3cdc55172e64faa151b054b130a1
+      internalID: -1149280818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Dying_180_085
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 1532
+        width: 113
+        height: 90
+      alignment: 9
+      pivot: {x: 0.088495575, y: 0.54444444}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cf0ca5a09c3b2841acee5c657b2b447
+      internalID: 1257443543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: da3aee6662a4b4b40bc97542d8bb3bdf
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SE-Dying_315_057: 550265696
+      E-Dying_0_050: -1632645595
+      E-Dying_0_029: -1463977480
+      SW-Dying_225_043: 936429605
+      E-Dying_0_015: 635483282
+      E-Dying_0_071: -754605435
+      S-Dying_270_001: -1380933426
+      SW-Dying_225_029: -1340504096
+      NE-Dying_45_085: 238606603
+      NE-Dying_45_022: 1084698591
+      SE-Dying_315_050: -1152989602
+      NE-Dying_45_029: -1263138221
+      N-Dying_90_022: -181515253
+      W-Dying_180_085: 1257443543
+      W-Dying_180_078: -1149280818
+      W-Dying_180_064: -635936327
+      SW-Dying_225_022: -1761481391
+      E-Dying_0_001: 2001598096
+      E-Dying_0_078: 12554431
+      N-Dying_90_064: -536982041
+      N-Dying_90_001: -1467303598
+      S-Dying_270_022: 661846545
+      SW-Dying_225_036: 269779852
+      S-Dying_270_050: -1368309765
+      NW-Dying_135_078: 457784503
+      NW-Dying_135_001: -1543501236
+      NW-Dying_135_008: -1250393914
+      SE-Dying_315_064: 2101058099
+      NE-Dying_45_064: 1906064492
+      N-Dying_90_057: -125791907
+      N-Dying_90_043: 1172070427
+      S-Dying_270_057: -1063330643
+      N-Dying_90_015: 1310313519
+      SE-Dying_315_071: -985835642
+      N-Dying_90_071: -2134184606
+      SE-Dying_315_001: 465348801
+      W-Dying_180_036: -873679622
+      NW-Dying_135_064: -1170206703
+      SW-Dying_225_050: 818720456
+      N-Dying_90_008: -2040817283
+      SW-Dying_225_008: -267051531
+      SE-Dying_315_085: -396883399
+      SW-Dying_225_064: -1498555428
+      SE-Dying_315_022: 1741760464
+      N-Dying_90_085: -1364589968
+      S-Dying_270_008: 616940018
+      SW-Dying_225_085: 163893445
+      NE-Dying_45_071: 671974734
+      SW-Dying_225_015: 883911529
+      SW-Dying_225_071: -1924931354
+      E-Dying_0_057: 2084813948
+      W-Dying_180_022: 1477718867
+      NW-Dying_135_022: 1032998068
+      NW-Dying_135_015: 1137933600
+      SW-Dying_225_001: -1489594882
+      NW-Dying_135_071: -1011644821
+      S-Dying_270_078: -1783045662
+      NE-Dying_45_078: -1422076461
+      W-Dying_180_057: -1029881541
+      W-Dying_180_071: 259412265
+      NE-Dying_45_036: 662589846
+      S-Dying_270_029: -796832982
+      E-Dying_0_043: -182567510
+      NE-Dying_45_001: -163988570
+      SE-Dying_315_043: -84553544
+      S-Dying_270_064: -1125428745
+      NW-Dying_135_057: -1227340164
+      SE-Dying_315_036: -1344712802
+      NW-Dying_135_043: 819029582
+      S-Dying_270_085: 453253321
+      E-Dying_0_085: -2133679659
+      SE-Dying_315_078: -1288047578
+      S-Dying_270_043: -937835748
+      NW-Dying_135_085: -200251559
+      E-Dying_0_022: -1249578766
+      N-Dying_90_050: 154056550
+      W-Dying_180_001: 166843245
+      S-Dying_270_036: -594969043
+      E-Dying_0_008: 662145542
+      NW-Dying_135_036: -382937703
+      W-Dying_180_008: 499478992
+      NE-Dying_45_043: -1746879497
+      W-Dying_180_029: 1954423364
+      N-Dying_90_078: 1880051495
+      NE-Dying_45_015: 1716187436
+      SW-Dying_225_057: -245222868
+      E-Dying_0_064: 2133385605
+      NE-Dying_45_008: -614040830
+      W-Dying_180_015: 439093102
+      W-Dying_180_050: -1108725371
+      S-Dying_270_015: 177981702
+      SE-Dying_315_029: 1117256009
+      NE-Dying_45_050: -2007705891
+      S-Dying_270_071: 1387327319
+      SW-Dying_225_078: 1642557439
+      NW-Dying_135_029: 668416026
+      W-Dying_180_043: -690981996
+      NE-Dying_45_057: -542358131
+      SE-Dying_315_015: -795678975
+      SE-Dying_315_008: 1166834642
+      N-Dying_90_036: 1712247345
+      NW-Dying_135_050: 1003401049
+      N-Dying_90_029: -1230969628
+      E-Dying_0_036: -2066472198
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

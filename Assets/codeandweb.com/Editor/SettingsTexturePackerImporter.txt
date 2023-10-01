@@ -1,31 +1,85 @@
 version: 2
 tpsheetFileNames:
-- Assets/Graphics/Pre Rendered Assets/Character V2/attack-1-unity.tpsheet
-- Assets/Graphics/Pre Rendered Assets/Character V2/attack-2-cut-unity.tpsheet
-- Assets/Graphics/Pre Rendered Assets/Character V2/attack-2-unity.tpsheet
-- Assets/Graphics/Pre Rendered Assets/Character V2/attack-heavy-unity.tpsheet
-- Assets/Graphics/Pre Rendered Assets/Character V2/casting-unity.tpsheet
-- Assets/Graphics/Pre Rendered Assets/Character V2/death-unity.tpsheet
-- Assets/Graphics/Pre Rendered Assets/Character V2/idle-hit-unity.tpsheet
-- Assets/Graphics/Pre Rendered Assets/Character V2/idle-unity.tpsheet
-- Assets/Graphics/Pre Rendered Assets/Character V2/kick-unity.tpsheet
-- Assets/Graphics/Pre Rendered Assets/Character V2/roll-unity.tpsheet
-- Assets/Graphics/Pre Rendered Assets/Character V2/run-back-unity.tpsheet
-- Assets/Graphics/Pre Rendered Assets/Character V2/run-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character/attack-1-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character/attack-2-cut-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character/attack-2-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character/attack-heavy-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character/casting-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character/death-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character/idle-hit-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character/idle-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character/kick-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character/roll-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character/run-back-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Character/run-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Mutant/attack-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Mutant/dying-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Mutant/idle-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Mutant/jump-attack-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Mutant/run-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Mutant/walk-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Nightshade/aoe-cast-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Nightshade/basic-cast-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Nightshade/death-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Nightshade/heavy-cast-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Nightshade/hit-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Nightshade/idle-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Nightshade/run-back-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Nightshade/run-forward-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Nightshade/run-left-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Nightshade/run-right-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Nightshade/stagger-unity.tpsheet
+- Assets/Graphics/Pre Rendered Assets/Nightshade/walk-forward-unity.tpsheet
 textureFileNames:
-- Assets/Graphics/Pre Rendered Assets/Character V2/attack-1-unity.png
-- Assets/Graphics/Pre Rendered Assets/Character V2/attack-2-cut-unity.png
-- Assets/Graphics/Pre Rendered Assets/Character V2/attack-2-unity.png
-- Assets/Graphics/Pre Rendered Assets/Character V2/attack-heavy-unity.png
-- Assets/Graphics/Pre Rendered Assets/Character V2/casting-unity.png
-- Assets/Graphics/Pre Rendered Assets/Character V2/death-unity.png
-- Assets/Graphics/Pre Rendered Assets/Character V2/idle-hit-unity.png
-- Assets/Graphics/Pre Rendered Assets/Character V2/idle-unity.png
-- Assets/Graphics/Pre Rendered Assets/Character V2/kick-unity.png
-- Assets/Graphics/Pre Rendered Assets/Character V2/roll-unity.png
-- Assets/Graphics/Pre Rendered Assets/Character V2/run-back-unity.png
-- Assets/Graphics/Pre Rendered Assets/Character V2/run-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character/attack-1-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character/attack-2-cut-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character/attack-2-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character/attack-heavy-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character/casting-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character/death-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character/idle-hit-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character/idle-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character/kick-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character/roll-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character/run-back-unity.png
+- Assets/Graphics/Pre Rendered Assets/Character/run-unity.png
+- Assets/Graphics/Pre Rendered Assets/Mutant/attack-unity.png
+- Assets/Graphics/Pre Rendered Assets/Mutant/dying-unity.png
+- Assets/Graphics/Pre Rendered Assets/Mutant/idle-unity.png
+- Assets/Graphics/Pre Rendered Assets/Mutant/jump-attack-unity.png
+- Assets/Graphics/Pre Rendered Assets/Mutant/run-unity.png
+- Assets/Graphics/Pre Rendered Assets/Mutant/walk-unity.png
+- Assets/Graphics/Pre Rendered Assets/Nightshade/aoe-cast-unity.png
+- Assets/Graphics/Pre Rendered Assets/Nightshade/basic-cast-unity.png
+- Assets/Graphics/Pre Rendered Assets/Nightshade/death-unity.png
+- Assets/Graphics/Pre Rendered Assets/Nightshade/heavy-cast-unity.png
+- Assets/Graphics/Pre Rendered Assets/Nightshade/hit-unity.png
+- Assets/Graphics/Pre Rendered Assets/Nightshade/idle-unity.png
+- Assets/Graphics/Pre Rendered Assets/Nightshade/run-back-unity.png
+- Assets/Graphics/Pre Rendered Assets/Nightshade/run-forward-unity.png
+- Assets/Graphics/Pre Rendered Assets/Nightshade/run-left-unity.png
+- Assets/Graphics/Pre Rendered Assets/Nightshade/run-right-unity.png
+- Assets/Graphics/Pre Rendered Assets/Nightshade/stagger-unity.png
+- Assets/Graphics/Pre Rendered Assets/Nightshade/walk-forward-unity.png
 normalmapFileNames:
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 - 
 - 
 - 

@@ -1,0 +1,2586 @@
+fileFormatVersion: 2
+guid: 44aea24e416cc7c4aa349be5b48a27a4
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: E-AoE Cast_0_000
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 166
+        width: 60
+        height: 119
+      alignment: 9
+      pivot: {x: 0.38333333, y: 0.1764706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66df304d7653e564ebcb227a77bb3d19
+      internalID: -235644424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-AoE Cast_0_005
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 327
+        width: 64
+        height: 112
+      alignment: 9
+      pivot: {x: 0.390625, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd460a9f8ee721499c820207d236024
+      internalID: -2031514828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-AoE Cast_0_010
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 675
+        width: 65
+        height: 114
+      alignment: 9
+      pivot: {x: 0.41538462, y: 0.18421052}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8badbe943031b0b4e9f229ac96c88743
+      internalID: -689730972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-AoE Cast_0_015
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 622
+        width: 68
+        height: 126
+      alignment: 9
+      pivot: {x: 0.42647058, y: 0.1984127}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8868718ca5eefca489103b33365e61a2
+      internalID: -1983114231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-AoE Cast_0_020
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 288
+        width: 74
+        height: 86
+      alignment: 9
+      pivot: {x: 0.44594595, y: 0.26744187}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ee0c09b8f8ede140b051abd7689c9e1
+      internalID: 1793069910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-AoE Cast_0_025
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 287
+        width: 82
+        height: 82
+      alignment: 9
+      pivot: {x: 0.3902439, y: 0.2804878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d25f0e1c31f8e4095004d607adb766
+      internalID: 1024694367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-AoE Cast_0_030
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 943
+        width: 79
+        height: 80
+      alignment: 9
+      pivot: {x: 0.36708862, y: 0.275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c7ddcd76bdffd4d89247f2743f1b2e
+      internalID: -1590639492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-AoE Cast_0_035
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 838
+        width: 75
+        height: 94
+      alignment: 9
+      pivot: {x: 0.42666668, y: 0.22340426}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f03855675fb1f546ba168edbc73d16f
+      internalID: 481695560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-AoE Cast_0_040
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 441
+        width: 78
+        height: 113
+      alignment: 9
+      pivot: {x: 0.51282054, y: 0.17699115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 221ecf53f28a46a44922712da6a1aa4e
+      internalID: 1576218155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-AoE Cast_0_045
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 156
+        width: 69
+        height: 128
+      alignment: 9
+      pivot: {x: 0.42028984, y: 0.1640625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 778fe637f2d3ed1468a881493cc98640
+      internalID: -1197575575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-AoE Cast_0_050
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 893
+        width: 71
+        height: 130
+      alignment: 9
+      pivot: {x: 0.43661973, y: 0.18461539}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3028435ace070e449dfc776d61efb19
+      internalID: -801472982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-AoE Cast_0_055
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 799
+        width: 70
+        height: 110
+      alignment: 9
+      pivot: {x: 0.3857143, y: 0.21818182}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4e82fea0c7cfd46b287a369c885f17
+      internalID: -533597998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-AoE Cast_0_060
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 790
+        width: 69
+        height: 115
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0.20869565}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d177e5c1c2f8341a95944a07ddec0c
+      internalID: -399663959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-AoE Cast_0_065
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 650
+        width: 60
+        height: 119
+      alignment: 9
+      pivot: {x: 0.38333333, y: 0.1764706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eccf0bc540a8d4458b0586ac037ddbb
+      internalID: 538227409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-AoE Cast_90_000
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 530
+        width: 52
+        height: 118
+      alignment: 9
+      pivot: {x: 0.30769232, y: 0.18644068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d041326bc1b38d04db71768bb38c3cc4
+      internalID: -1608530137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-AoE Cast_90_005
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 651
+        width: 52
+        height: 118
+      alignment: 9
+      pivot: {x: 0.32692307, y: 0.18644068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7f15d9b57a080478eda3dc9b98722d
+      internalID: 1490257322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-AoE Cast_90_010
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 447
+        width: 56
+        height: 128
+      alignment: 9
+      pivot: {x: 0.4107143, y: 0.171875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1e335a4dd3118409289f980a1a0078
+      internalID: -2061139887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-AoE Cast_90_015
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 143
+        width: 57
+        height: 130
+      alignment: 9
+      pivot: {x: 0.42105263, y: 0.26153848}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95b95c2e5ff3a6242b4a93ae9577ae31
+      internalID: 1122316483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-AoE Cast_90_020
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 805
+        width: 80
+        height: 106
+      alignment: 9
+      pivot: {x: 0.425, y: 0.23584905}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea2e82239bad07846b020e81f8facdad
+      internalID: 856541086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-AoE Cast_90_025
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 602
+        width: 52
+        height: 101
+      alignment: 9
+      pivot: {x: 0.44230768, y: 0.24752475}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b2ef96b2d38c64787fe0d78aeb2f6d
+      internalID: 2125827459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-AoE Cast_90_030
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 104
+        width: 59
+        height: 110
+      alignment: 9
+      pivot: {x: 0.44067797, y: 0.18181819}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2129e7f9316605c49ae79b748064e26e
+      internalID: 1798414868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-AoE Cast_90_035
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 292
+        width: 53
+        height: 117
+      alignment: 9
+      pivot: {x: 0.43396226, y: 0.24786325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057fa0f4dbe560d45b787d0dc83d1db1
+      internalID: 1236498240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-AoE Cast_90_040
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 411
+        width: 67
+        height: 117
+      alignment: 9
+      pivot: {x: 0.40298507, y: 0.1965812}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a92bc7beadb9ec14d8d6b01a12e4b1a3
+      internalID: 1149503232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-AoE Cast_90_045
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 765
+        width: 61
+        height: 126
+      alignment: 9
+      pivot: {x: 0.40983605, y: 0.18253969}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b4d57e1914ecb47bd31ffe32419131
+      internalID: -485261787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-AoE Cast_90_050
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 417
+        width: 63
+        height: 135
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.22222222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a640d05bf3458d2409836e0dc477213c
+      internalID: 1158872409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-AoE Cast_90_055
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 771
+        width: 67
+        height: 125
+      alignment: 9
+      pivot: {x: 0.4477612, y: 0.192}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f7215314ff2af84693d9324fd3157f2
+      internalID: 155673424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-AoE Cast_90_060
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 50
+        width: 59
+        height: 117
+      alignment: 9
+      pivot: {x: 0.30508474, y: 0.1965812}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 961b7fa638794fc4c8d8afea53e30d7a
+      internalID: -1190159457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-AoE Cast_90_065
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 413
+        width: 53
+        height: 117
+      alignment: 9
+      pivot: {x: 0.3207547, y: 0.18803419}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fffff5c2cfc2174695cf1fdebbe82ca
+      internalID: -1135014618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-AoE Cast_45_000
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 496
+        width: 49
+        height: 124
+      alignment: 9
+      pivot: {x: 0.36734694, y: 0.2983871}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 358aec62b310e1d40a6cd4ceb8002079
+      internalID: -159020281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-AoE Cast_45_005
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 794
+        width: 44
+        height: 113
+      alignment: 9
+      pivot: {x: 0.27272728, y: 0.22123894}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1211c5810780384f835b4d9d01187c6
+      internalID: 297019052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-AoE Cast_45_010
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 317
+        width: 45
+        height: 128
+      alignment: 9
+      pivot: {x: 0.2888889, y: 0.2421875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757db85d57d1abf4ab98681b6f742c44
+      internalID: 835681402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-AoE Cast_45_015
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 909
+        width: 48
+        height: 114
+      alignment: 9
+      pivot: {x: 0.35416666, y: 0.2631579}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1128126f9d9c22241936cdd1a0c06b6e
+      internalID: -1015854229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-AoE Cast_45_020
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 286
+        width: 54
+        height: 129
+      alignment: 9
+      pivot: {x: 0.24074075, y: 0.35658914}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8cf1d5e34c076e43ac66c2769309e61
+      internalID: -318699823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-AoE Cast_45_025
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 705
+        width: 48
+        height: 98
+      alignment: 9
+      pivot: {x: 0.1875, y: 0.31632653}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 312a78945dba6db4e8737b7e46c3db4a
+      internalID: 1574468416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-AoE Cast_45_030
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 153
+        width: 52
+        height: 102
+      alignment: 9
+      pivot: {x: 0.15384616, y: 0.29411766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddc5633047eeba84db6ba44dc9d686a8
+      internalID: -1080547112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-AoE Cast_45_035
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 792
+        width: 53
+        height: 114
+      alignment: 9
+      pivot: {x: 0.20754717, y: 0.21929824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7083a3c455944a48afaf68bc1e2cc32
+      internalID: 1251232332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-AoE Cast_45_040
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 11
+        width: 48
+        height: 130
+      alignment: 9
+      pivot: {x: 0.25, y: 0.23846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d116caeee58dc9438dec4eecf80c4cb
+      internalID: 1759465906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-AoE Cast_45_045
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 701
+        width: 39
+        height: 151
+      alignment: 9
+      pivot: {x: 0.25641027, y: 0.19205298}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 551fcd002a8673a4fb834cd5c6c9df19
+      internalID: 531078564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-AoE Cast_45_050
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 854
+        width: 53
+        height: 169
+      alignment: 9
+      pivot: {x: 0.35849056, y: 0.2662722}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 564e7ee45e86c504c87cdb05fd253f79
+      internalID: 309804103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-AoE Cast_45_055
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 554
+        width: 47
+        height: 145
+      alignment: 9
+      pivot: {x: 0.25531915, y: 0.35172415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b7f18e7da4176f498cba10697110dad
+      internalID: 1324542131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-AoE Cast_45_060
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 556
+        width: 46
+        height: 115
+      alignment: 9
+      pivot: {x: 0.3043478, y: 0.26086956}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d76f770d8eabb054ba683b5e5568dfac
+      internalID: -1630371573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-AoE Cast_45_065
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 798
+        width: 45
+        height: 111
+      alignment: 9
+      pivot: {x: 0.31111112, y: 0.23423423}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59c5ee621911d74fb8ac02a1e12dbac
+      internalID: 2032371505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-AoE Cast_135_000
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 564
+        width: 59
+        height: 111
+      alignment: 9
+      pivot: {x: 0.4915254, y: 0.13513513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7964d79d91cf46749835dbd03ac1cb89
+      internalID: -1429392892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-AoE Cast_135_005
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 453
+        width: 62
+        height: 109
+      alignment: 9
+      pivot: {x: 0.516129, y: 0.13761468}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 208f12306125cc04ca0eed6691d60aa6
+      internalID: 1741596777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-AoE Cast_135_010
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 176
+        width: 65
+        height: 116
+      alignment: 9
+      pivot: {x: 0.53846157, y: 0.12931034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dd8da38f72d4df4cac074c82c33eb32
+      internalID: 1350010241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-AoE Cast_135_015
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 229
+        width: 69
+        height: 105
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.123809524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1db21aee1870e24c93665a7cf65271c
+      internalID: -976613726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-AoE Cast_135_020
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 925
+        width: 76
+        height: 98
+      alignment: 9
+      pivot: {x: 0.47368422, y: 0.14285715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd9d954bd3456cb4d84b612dfd5299eb
+      internalID: 1922090772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-AoE Cast_135_025
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 644
+        width: 68
+        height: 91
+      alignment: 9
+      pivot: {x: 0.5, y: 0.18681319}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9732c3c2724188f468afc496a8589760
+      internalID: 1681891814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-AoE Cast_135_030
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 413
+        width: 70
+        height: 88
+      alignment: 9
+      pivot: {x: 0.51428574, y: 0.17045455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8ee7d773ed0f14db4d5d3f3f6738da
+      internalID: -1523020831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-AoE Cast_135_035
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 843
+        width: 75
+        height: 98
+      alignment: 9
+      pivot: {x: 0.53333336, y: 0.10204082}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ebdde517ada024f9586b80d40cbe6d
+      internalID: -1585850654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-AoE Cast_135_040
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 908
+        width: 67
+        height: 115
+      alignment: 9
+      pivot: {x: 0.5074627, y: 0.08695652}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8668a8725ccc8048a3487f5e98f5489
+      internalID: 234618130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-AoE Cast_135_045
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 47
+        width: 64
+        height: 117
+      alignment: 9
+      pivot: {x: 0.53125, y: 0.06837607}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a691f5d44e11ddc439104515910aaf53
+      internalID: -1381458400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-AoE Cast_135_050
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 673
+        width: 60
+        height: 115
+      alignment: 9
+      pivot: {x: 0.45, y: 0.08695652}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f647c7803a7a8f46a1eae4d3a4b4e04
+      internalID: -1960298969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-AoE Cast_135_055
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 913
+        width: 70
+        height: 110
+      alignment: 9
+      pivot: {x: 0.51428574, y: 0.15454546}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ce9db4c1484c945a12e62265a3bca7
+      internalID: 1042625408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-AoE Cast_135_060
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 169
+        width: 64
+        height: 117
+      alignment: 9
+      pivot: {x: 0.5625, y: 0.14529915}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe9dc75a7f99584b8481a5d61a72739
+      internalID: -586783197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-AoE Cast_135_065
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 681
+        width: 59
+        height: 111
+      alignment: 9
+      pivot: {x: 0.4915254, y: 0.13513513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3bfd3a029be354ea097338709c4085
+      internalID: -190141873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-AoE Cast_270_000
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 26
+        width: 57
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5964912, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362baba6e3f9567429bfc6b6e0ce1530
+      internalID: -1050134139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-AoE Cast_270_005
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 908
+        width: 51
+        height: 115
+      alignment: 9
+      pivot: {x: 0.6862745, y: 0.2521739}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee41152010c8fd64a9ef8affcf4bd469
+      internalID: -393003775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-AoE Cast_270_010
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 275
+        width: 61
+        height: 137
+      alignment: 9
+      pivot: {x: 0.6229508, y: 0.35036495}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ccfa912d39b87f4da65081971230e35
+      internalID: -751390150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-AoE Cast_270_015
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 50
+        width: 50
+        height: 117
+      alignment: 9
+      pivot: {x: 0.56, y: 0.35897437}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2165d6956260ce4d8483c9ce83e5f27
+      internalID: -1001239411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-AoE Cast_270_020
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 1
+        width: 84
+        height: 101
+      alignment: 9
+      pivot: {x: 0.60714287, y: 0.3960396}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9efe28d3d4cc0d54d9d53af7a13ee0b7
+      internalID: 427078907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-AoE Cast_270_025
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 638
+        width: 48
+        height: 74
+      alignment: 9
+      pivot: {x: 0.6041667, y: 0.33783785}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea64108c52f5d7d4c86e40a6f9b790c3
+      internalID: -742919040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-AoE Cast_270_030
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 662
+        width: 54
+        height: 82
+      alignment: 9
+      pivot: {x: 0.5740741, y: 0.34146342}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ec1dcc655e747438b01c7882adfe5c
+      internalID: 2048118997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-AoE Cast_270_035
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 257
+        width: 57
+        height: 102
+      alignment: 9
+      pivot: {x: 0.5614035, y: 0.24509804}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad0c1b3f03b4324b85157a388d87967
+      internalID: -1669902323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-AoE Cast_270_040
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 750
+        width: 63
+        height: 133
+      alignment: 9
+      pivot: {x: 0.5873016, y: 0.34586465}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea9ec4872c0c4634dbe23776717ec37c
+      internalID: 1996181234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-AoE Cast_270_045
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 712
+        width: 57
+        height: 140
+      alignment: 9
+      pivot: {x: 0.6315789, y: 0.31428573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f50bb6f015a4d1469f9207de9a2cbe5
+      internalID: -861932768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-AoE Cast_270_050
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 371
+        width: 63
+        height: 123
+      alignment: 9
+      pivot: {x: 0.5873016, y: 0.25203252}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95b888bf92eac6944bd18b372df5146a
+      internalID: 1069409082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-AoE Cast_270_055
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 497
+        width: 62
+        height: 123
+      alignment: 9
+      pivot: {x: 0.6451613, y: 0.28455284}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b4294834dd485d40952be76b7dbf368
+      internalID: -223840910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-AoE Cast_270_060
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 169
+        width: 55
+        height: 117
+      alignment: 9
+      pivot: {x: 0.6545454, y: 0.24786325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 169944daf63bb0b4da76d0ca211b5c4c
+      internalID: 910091993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-AoE Cast_270_065
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 58
+        width: 56
+        height: 116
+      alignment: 9
+      pivot: {x: 0.76785713, y: 0.29310346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf07ea1c96b83654daed222926b4f38e
+      internalID: -879834946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-AoE Cast_315_000
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 101
+        width: 69
+        height: 110
+      alignment: 9
+      pivot: {x: 0.4057971, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6508c59f9fa2302419ba271b3a2ebd16
+      internalID: -875333439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-AoE Cast_315_005
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 791
+        width: 60
+        height: 115
+      alignment: 9
+      pivot: {x: 0.46666667, y: 0.2173913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ae5602198fdda4ea7bb8c7d4cdaf5a
+      internalID: -339397555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-AoE Cast_315_010
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 361
+        width: 67
+        height: 102
+      alignment: 9
+      pivot: {x: 0.43283582, y: 0.19607843}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f52e0ebe0f33049a5d6f9053c76e78
+      internalID: 1503375930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-AoE Cast_315_015
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 50
+        width: 69
+        height: 101
+      alignment: 9
+      pivot: {x: 0.49275362, y: 0.1980198}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c34d3d751408fd459243d28cefcf894
+      internalID: 1201123440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-AoE Cast_315_020
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 934
+        width: 78
+        height: 89
+      alignment: 9
+      pivot: {x: 0.53846157, y: 0.25842696}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f06d98f9263ee2a40834877b48192d0d
+      internalID: -1618057267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-AoE Cast_315_025
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 746
+        width: 71
+        height: 95
+      alignment: 9
+      pivot: {x: 0.5070422, y: 0.25263157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe109c191243ea143a899f3497470aa1
+      internalID: -293262308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-AoE Cast_315_030
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 748
+        width: 71
+        height: 75
+      alignment: 9
+      pivot: {x: 0.47887325, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49db4e8a3fa542846beb708402a505e0
+      internalID: -94948679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-AoE Cast_315_035
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 465
+        width: 73
+        height: 104
+      alignment: 9
+      pivot: {x: 0.47945204, y: 0.29807693}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 705d817e3b40f48489557d0b78ceb0f4
+      internalID: -568196329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-AoE Cast_315_040
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 571
+        width: 73
+        height: 108
+      alignment: 9
+      pivot: {x: 0.4520548, y: 0.21296297}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aae88251f95e9340975e0423a7e22bf
+      internalID: -1551484445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-AoE Cast_315_045
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 12
+        width: 69
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5362319, y: 0.18604651}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a04271b2d5110154098f8c05bf8c5128
+      internalID: 1696222748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-AoE Cast_315_050
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 898
+        width: 78
+        height: 125
+      alignment: 9
+      pivot: {x: 0.55128205, y: 0.208}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61357f493448fa6488b0a42b5835b1d1
+      internalID: -895959048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-AoE Cast_315_055
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 328
+        width: 68
+        height: 111
+      alignment: 9
+      pivot: {x: 0.44117647, y: 0.21621622}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d8855842c649694e9aee3ba1ea2478c
+      internalID: 130047685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-AoE Cast_315_060
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 336
+        width: 75
+        height: 109
+      alignment: 9
+      pivot: {x: 0.38666666, y: 0.20183486}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 100f23615266069419b45b3d8e12cd6f
+      internalID: 1846172461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-AoE Cast_315_065
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 213
+        width: 57
+        height: 112
+      alignment: 9
+      pivot: {x: 0.49122807, y: 0.21428572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a30c5e611531bc4aad656cb35b289da
+      internalID: -1871622985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-AoE Cast_225_000
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 890
+        width: 40
+        height: 133
+      alignment: 9
+      pivot: {x: 0.725, y: 0.21804512}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 160dc7915a014744eb708ca95befa1ca
+      internalID: -1551744725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-AoE Cast_225_005
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 294
+        width: 47
+        height: 117
+      alignment: 9
+      pivot: {x: 0.7234042, y: 0.24786325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dce12fa806a728143bf21db5f856735c
+      internalID: 1520153729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-AoE Cast_225_010
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 576
+        width: 42
+        height: 134
+      alignment: 9
+      pivot: {x: 0.71428573, y: 0.3283582}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5c1589a7972d641888ba0469867253
+      internalID: -344913219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-AoE Cast_225_015
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 123
+        width: 48
+        height: 104
+      alignment: 9
+      pivot: {x: 0.7083333, y: 0.22115384}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5fbdb4f408ef545b2d0ea224ed431d
+      internalID: -1576772741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-AoE Cast_225_020
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 714
+        width: 50
+        height: 89
+      alignment: 9
+      pivot: {x: 0.78, y: 0.24719101}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d37ba821a0b39748b3e3b4324aac7aa
+      internalID: 308263047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-AoE Cast_225_025
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 558
+        width: 54
+        height: 84
+      alignment: 9
+      pivot: {x: 0.8518519, y: 0.27380952}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98bce81e0ea508f46b15270cf699a1c6
+      internalID: 167879316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-AoE Cast_225_030
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 737
+        width: 58
+        height: 99
+      alignment: 9
+      pivot: {x: 0.67241377, y: 0.43434343}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81d691e00b8431840bcfeecfb35f7644
+      internalID: -1992122045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-AoE Cast_225_035
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 26
+        width: 59
+        height: 128
+      alignment: 9
+      pivot: {x: 0.69491524, y: 0.34375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5708a7d35a332204282940dbd5859ac6
+      internalID: 82245843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-AoE Cast_225_040
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 173
+        width: 49
+        height: 117
+      alignment: 9
+      pivot: {x: 0.7755102, y: 0.2735043}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383538bd452e3f149ab3e7a19071b9fe
+      internalID: -942503441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-AoE Cast_225_045
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 414
+        width: 41
+        height: 138
+      alignment: 9
+      pivot: {x: 0.75609756, y: 0.2173913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa645aa7d102794583199f790f7d220
+      internalID: -2058196506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-AoE Cast_225_050
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 885
+        width: 45
+        height: 138
+      alignment: 9
+      pivot: {x: 0.73333335, y: 0.2536232}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc65985fcff623418c6c14d5571fd5a
+      internalID: -701303141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-AoE Cast_225_055
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 907
+        width: 51
+        height: 116
+      alignment: 9
+      pivot: {x: 0.7254902, y: 0.23275863}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9141b9014763c04e99a913b5428bb4f
+      internalID: -357368316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-AoE Cast_225_060
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 677
+        width: 48
+        height: 113
+      alignment: 9
+      pivot: {x: 0.7708333, y: 0.22123894}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57a20bd9a4d7e1747984943c14f6f874
+      internalID: -43092087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-AoE Cast_225_065
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 54
+        width: 45
+        height: 117
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.24786325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a31fa3bb4ed4574419aa01d9892fd659
+      internalID: -714686885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-AoE Cast_180_000
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 18
+        width: 62
+        height: 103
+      alignment: 9
+      pivot: {x: 0.5967742, y: 0.13592233}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b57a715304fed0459e47e5ba57e44e3
+      internalID: 1934372794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-AoE Cast_180_005
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 216
+        width: 62
+        height: 110
+      alignment: 9
+      pivot: {x: 0.62903225, y: 0.12727273}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbfe628a4a112cb4ab1eaa450f38377a
+      internalID: -1810747119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-AoE Cast_180_010
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 532
+        width: 65
+        height: 117
+      alignment: 9
+      pivot: {x: 0.5846154, y: 0.16239317}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91b2aedb1abd76940b8246dc1c416b7a
+      internalID: -1061701739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-AoE Cast_180_015
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 376
+        width: 70
+        height: 119
+      alignment: 9
+      pivot: {x: 0.6, y: 0.14285715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a8c73e84bc4a544b0fde1973ae5a74
+      internalID: -1487439920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-AoE Cast_180_020
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 825
+        width: 73
+        height: 98
+      alignment: 9
+      pivot: {x: 0.56164384, y: 0.2755102}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b67b5c88a816e94089b10e970e854ec
+      internalID: 1816037904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-AoE Cast_180_025
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 918
+        width: 71
+        height: 105
+      alignment: 9
+      pivot: {x: 0.6056338, y: 0.22857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38d7800c5eb013b4ebd9ebdf5986f989
+      internalID: -1507398271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-AoE Cast_180_030
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1
+        width: 77
+        height: 98
+      alignment: 9
+      pivot: {x: 0.64935064, y: 0.30612245}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f7519004a78cc4ba10f8e05789780a
+      internalID: 1887133595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-AoE Cast_180_035
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 503
+        width: 68
+        height: 97
+      alignment: 9
+      pivot: {x: 0.60294116, y: 0.21649484}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da216a72dfd30c2409ca67bae3f7ac30
+      internalID: 1640539674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-AoE Cast_180_040
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 560
+        width: 69
+        height: 113
+      alignment: 9
+      pivot: {x: 0.5652174, y: 0.17699115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 654000135aa97a540ab47a47f19f5116
+      internalID: -1465079668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-AoE Cast_180_045
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 577
+        width: 65
+        height: 133
+      alignment: 9
+      pivot: {x: 0.63076925, y: 0.17293233}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6310f17b59bfde64c8b5fd805766ba95
+      internalID: -1901720014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-AoE Cast_180_050
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 144
+        width: 57
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5964912, y: 0.17054264}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b29589c56a4b14ca5bc489418b1b48
+      internalID: 367865128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-AoE Cast_180_055
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 911
+        width: 72
+        height: 112
+      alignment: 9
+      pivot: {x: 0.6111111, y: 0.13392857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff01a839e158f7b42b6402e79daff9d3
+      internalID: -1746547674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-AoE Cast_180_060
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 689
+        width: 69
+        height: 108
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.16666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 776139b02572a104f820c07925868cb6
+      internalID: -171361584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-AoE Cast_180_065
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 447
+        width: 62
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5967742, y: 0.12612613}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d43118379f8a24ba1c6394e7740a7e
+      internalID: -239678098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 389ee77b7e8a01b438d8eed9e1365cf9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      W-AoE Cast_180_055: -1746547674
+      SW-AoE Cast_225_065: -714686885
+      SW-AoE Cast_225_035: 82245843
+      SE-AoE Cast_315_010: 1503375930
+      E-AoE Cast_0_015: -1983114231
+      N-AoE Cast_90_060: -1190159457
+      NW-AoE Cast_135_065: -190141873
+      NE-AoE Cast_45_045: 531078564
+      NE-AoE Cast_45_060: -1630371573
+      W-AoE Cast_180_010: -1061701739
+      N-AoE Cast_90_020: 856541086
+      SW-AoE Cast_225_030: -1992122045
+      E-AoE Cast_0_025: 1024694367
+      E-AoE Cast_0_065: 538227409
+      W-AoE Cast_180_045: -1901720014
+      W-AoE Cast_180_025: -1507398271
+      SW-AoE Cast_225_010: -344913219
+      S-AoE Cast_270_045: -861932768
+      NW-AoE Cast_135_050: -1960298969
+      NW-AoE Cast_135_035: -1585850654
+      E-AoE Cast_0_010: -689730972
+      NW-AoE Cast_135_010: 1350010241
+      NW-AoE Cast_135_005: 1741596777
+      S-AoE Cast_270_055: -223840910
+      S-AoE Cast_270_040: 1996181234
+      NW-AoE Cast_135_055: 1042625408
+      S-AoE Cast_270_020: 427078907
+      W-AoE Cast_180_040: -1465079668
+      E-AoE Cast_0_045: -1197575575
+      NE-AoE Cast_45_040: 1759465906
+      SE-AoE Cast_315_015: 1201123440
+      SW-AoE Cast_225_040: -942503441
+      W-AoE Cast_180_065: -239678098
+      S-AoE Cast_270_030: 2048118997
+      NW-AoE Cast_135_000: -1429392892
+      N-AoE Cast_90_030: 1798414868
+      SW-AoE Cast_225_000: -1551744725
+      NE-AoE Cast_45_010: 835681402
+      SE-AoE Cast_315_005: -339397555
+      NW-AoE Cast_135_030: -1523020831
+      SE-AoE Cast_315_020: -1618057267
+      SE-AoE Cast_315_050: -895959048
+      SE-AoE Cast_315_045: 1696222748
+      SE-AoE Cast_315_065: -1871622985
+      E-AoE Cast_0_020: 1793069910
+      E-AoE Cast_0_040: 1576218155
+      N-AoE Cast_90_025: 2125827459
+      S-AoE Cast_270_060: 910091993
+      SE-AoE Cast_315_040: -1551484445
+      NE-AoE Cast_45_050: 309804103
+      SW-AoE Cast_225_015: -1576772741
+      E-AoE Cast_0_060: -399663959
+      NW-AoE Cast_135_040: 234618130
+      NW-AoE Cast_135_045: -1381458400
+      W-AoE Cast_180_030: 1887133595
+      SW-AoE Cast_225_050: -701303141
+      SW-AoE Cast_225_020: 308263047
+      SW-AoE Cast_225_005: 1520153729
+      W-AoE Cast_180_005: -1810747119
+      SW-AoE Cast_225_060: -43092087
+      N-AoE Cast_90_040: 1149503232
+      E-AoE Cast_0_030: -1590639492
+      SE-AoE Cast_315_000: -875333439
+      N-AoE Cast_90_000: -1608530137
+      W-AoE Cast_180_000: 1934372794
+      NE-AoE Cast_45_000: -159020281
+      S-AoE Cast_270_025: -742919040
+      W-AoE Cast_180_050: 367865128
+      SW-AoE Cast_225_055: -357368316
+      N-AoE Cast_90_035: 1236498240
+      E-AoE Cast_0_005: -2031514828
+      N-AoE Cast_90_050: 1158872409
+      NE-AoE Cast_45_030: -1080547112
+      NE-AoE Cast_45_020: -318699823
+      E-AoE Cast_0_055: -533597998
+      S-AoE Cast_270_015: -1001239411
+      NE-AoE Cast_45_025: 1574468416
+      W-AoE Cast_180_035: 1640539674
+      N-AoE Cast_90_010: -2061139887
+      W-AoE Cast_180_060: -171361584
+      N-AoE Cast_90_015: 1122316483
+      S-AoE Cast_270_005: -393003775
+      NE-AoE Cast_45_005: 297019052
+      NE-AoE Cast_45_015: -1015854229
+      NW-AoE Cast_135_015: -976613726
+      SE-AoE Cast_315_035: -568196329
+      N-AoE Cast_90_005: 1490257322
+      NE-AoE Cast_45_035: 1251232332
+      N-AoE Cast_90_055: 155673424
+      E-AoE Cast_0_035: 481695560
+      E-AoE Cast_0_050: -801472982
+      E-AoE Cast_0_000: -235644424
+      SE-AoE Cast_315_025: -293262308
+      W-AoE Cast_180_020: 1816037904
+      NE-AoE Cast_45_055: 1324542131
+      S-AoE Cast_270_035: -1669902323
+      SE-AoE Cast_315_060: 1846172461
+      NW-AoE Cast_135_020: 1922090772
+      NE-AoE Cast_45_065: 2032371505
+      NW-AoE Cast_135_025: 1681891814
+      S-AoE Cast_270_050: 1069409082
+      S-AoE Cast_270_000: -1050134139
+      S-AoE Cast_270_065: -879834946
+      SW-AoE Cast_225_025: 167879316
+      W-AoE Cast_180_015: -1487439920
+      N-AoE Cast_90_045: -485261787
+      S-AoE Cast_270_010: -751390150
+      NW-AoE Cast_135_060: -586783197
+      SE-AoE Cast_315_030: -94948679
+      N-AoE Cast_90_065: -1135014618
+      SE-AoE Cast_315_055: 130047685
+      SW-AoE Cast_225_045: -2058196506
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

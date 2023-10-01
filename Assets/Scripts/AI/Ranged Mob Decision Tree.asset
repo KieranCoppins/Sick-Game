@@ -167,7 +167,7 @@ MonoBehaviour:
     height: 130
   TrueNode: {fileID: 7300636659034561220}
   FalseNode: {fileID: 5791533500390349296}
-  _attackRange: 10
+  _attackRange: 5
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,8 +180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b172a3453879dc42b31ffab07278046, type: 3}
   m_Name: Ranged Mob Decision Tree
   m_EditorClassIdentifier: 
-  _viewPosition: {x: 1347, y: -669, z: 0}
-  _viewScale: {x: 1, y: 1, z: 1}
+  _viewPosition: {x: 983, y: -253, z: 0}
+  _viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
   Root: {fileID: 8143352960183102081}
   Nodes:
   - {fileID: 8143352960183102081}
@@ -587,6 +587,7 @@ MonoBehaviour:
   _flags: 2
   Cooldown: 2
   _ability: {fileID: 11400000, guid: 5297a7bd1e5fda34995d6cc951561c89, type: 2}
+  animationStateName: Basic Cast
 --- !u!114 &7554385428378509554
 MonoBehaviour:
   m_ObjectHideFlags: 0

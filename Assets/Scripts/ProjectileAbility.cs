@@ -28,6 +28,7 @@ public class ProjectileAbility : AbilityBase
         {
             Vector2 projectileDirection = Quaternion.AngleAxis(angleStep * i, new Vector3(0, 0, 1)) * minDirection;
             GameObject go = Instantiate(_projectile, position + projectileDirection.normalized * directionalOffset, Quaternion.identity);
+            Physics2D.IgnoreCollision(go.GetComponent<Collider2D>(), caster.GetComponent<Collider2D>(), true);
             go.transform.up = projectileDirection.normalized;
             Projectile projectileComp = go.GetComponent<Projectile>();
             projectileComp.Target = target;

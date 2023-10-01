@@ -14,6 +14,9 @@ public class A_CastAbility : A_Attack
     private Vector2 _totalTargetVelocity;
     private int _totalVelocityEntries = 0;
 
+    [Header("Animation States")]
+    [SerializeField] private string animationStateName;
+
     public A_CastAbility() : base()
     {
     }
@@ -47,7 +50,7 @@ public class A_CastAbility : A_Attack
             Mob.RigidBody.velocity = Vector2.zero;
             Mob.CanAttack = false;
 
-            Mob.Animator.Play("Attack");
+            Mob.Animator.Play(animationStateName);
             EmitAlert.Emit(Mob.transform.position, 10f);
             float timer = _ability.CastTime;
             yield return null;
@@ -64,7 +67,7 @@ public class A_CastAbility : A_Attack
             () =>
             {
                 timer -= Time.deltaTime;
-                return !Mob.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") || !Mob.Target || timer <= 0f;
+                return !Mob.Animator.GetCurrentAnimatorStateInfo(0).IsName(animationStateName) || !Mob.Target || timer <= 0f;
             });
 
             if (!Mob.Target)
@@ -83,7 +86,7 @@ public class A_CastAbility : A_Attack
             }
         }
 
-        yield return new WaitUntil(() => !Mob.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"));
+        yield return new WaitUntil(() => !Mob.Animator.GetCurrentAnimatorStateInfo(0).IsName(animationStateName));
     }
 
     Vector2 PredictLocation()

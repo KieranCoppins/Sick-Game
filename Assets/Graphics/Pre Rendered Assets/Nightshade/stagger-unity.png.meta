@@ -1,0 +1,2586 @@
+fileFormatVersion: 2
+guid: 0ab6edaa53ec8f14d90b97c74b1635fc
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: E-Stagger_0_000
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 641
+        width: 61
+        height: 121
+      alignment: 9
+      pivot: {x: 0.39344263, y: 0.23140496}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9dbe06d40bed9847be1e9c601066144
+      internalID: 1472087174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Stagger_0_003
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 918
+        width: 58
+        height: 105
+      alignment: 9
+      pivot: {x: 0.37931034, y: 0.21904762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 822bda1b46cef694a98ae2f777cfa176
+      internalID: 619374553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Stagger_0_006
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 709
+        width: 70
+        height: 99
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14141414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8131fae3e7832f7418059dd6e7510f74
+      internalID: 2127327805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Stagger_0_009
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 371
+        width: 83
+        height: 121
+      alignment: 9
+      pivot: {x: 0.44578314, y: 0.1983471}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c7391c04d44ba4faab5b8c6e33b82e
+      internalID: 609886712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Stagger_0_012
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 81
+        width: 76
+        height: 108
+      alignment: 9
+      pivot: {x: 0.4473684, y: 0.24074075}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf9a01e6100cabb46b6aed5eb749b7ed
+      internalID: -1262300888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Stagger_0_015
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 131
+        width: 60
+        height: 118
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0.3220339}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9c6d29bafa0b564381c9128c18edaa2
+      internalID: 1894624322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Stagger_0_018
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 226
+        width: 61
+        height: 107
+      alignment: 9
+      pivot: {x: 0.21311475, y: 0.21495327}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b0a28d658122643a621ebd3e9ec82d
+      internalID: -1077033879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Stagger_0_021
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 820
+        width: 74
+        height: 103
+      alignment: 9
+      pivot: {x: 0.27027026, y: 0.2524272}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef57ac6bfd13b85408a023cf3feaaea9
+      internalID: -544374062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Stagger_0_024
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 191
+        width: 76
+        height: 112
+      alignment: 9
+      pivot: {x: 0.43421054, y: 0.22321428}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb5c1feaa267bc41a4a5bd77237e6f9
+      internalID: 1951247739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Stagger_0_027
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 574
+        width: 74
+        height: 109
+      alignment: 9
+      pivot: {x: 0.43243244, y: 0.3027523}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cccd05cf248df654cb83c4e812a5c944
+      internalID: -1755243053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Stagger_0_030
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 282
+        width: 69
+        height: 116
+      alignment: 9
+      pivot: {x: 0.44927537, y: 0.28448275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43ceebc8530d25a4db05751e5f61751a
+      internalID: -1995794923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Stagger_0_033
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 251
+        width: 61
+        height: 118
+      alignment: 9
+      pivot: {x: 0.39344263, y: 0.18644068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fffba691687c84e46ad3d3c04a2b3c4c
+      internalID: -1389245105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Stagger_0_036
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 514
+        width: 65
+        height: 121
+      alignment: 9
+      pivot: {x: 0.41538462, y: 0.21487603}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1773dd90ef9ba744aa52dabd69b7ad9
+      internalID: -1266545297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Stagger_0_039
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 810
+        width: 64
+        height: 105
+      alignment: 9
+      pivot: {x: 0.421875, y: 0.21904762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1aeb81066197542b9cecd3e972d40b
+      internalID: -525804991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Stagger_45_000
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 664
+        width: 44
+        height: 116
+      alignment: 9
+      pivot: {x: 0.38636363, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f532aa89cc0944c8f318202e94518a
+      internalID: 423137887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Stagger_45_003
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 541
+        width: 45
+        height: 116
+      alignment: 9
+      pivot: {x: 0.2888889, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8881b1390dcc6ed4bbc6e77d98675998
+      internalID: 1645508366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Stagger_45_006
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 620
+        width: 50
+        height: 124
+      alignment: 9
+      pivot: {x: 0.46, y: 0.28225806}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415dfb952f13abc40b8d6ea8970b5bef
+      internalID: -1230300913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Stagger_45_009
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 337
+        width: 53
+        height: 125
+      alignment: 9
+      pivot: {x: 0.4528302, y: 0.232}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 442d8c5414dc53040abb314d00f8eb91
+      internalID: 2096474333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Stagger_45_012
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 165
+        width: 57
+        height: 115
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0.2521739}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b256782ffe2433438f78c193e931f00
+      internalID: -831371880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Stagger_45_015
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 912
+        width: 51
+        height: 111
+      alignment: 9
+      pivot: {x: 0.25490198, y: 0.24324325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae7e30c9fb95de43971f7def8ef2dc6
+      internalID: -347061254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Stagger_45_018
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 580
+        width: 55
+        height: 107
+      alignment: 9
+      pivot: {x: 0.29090908, y: 0.21495327}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa3de1feecd2834e8e8bac124275763
+      internalID: 73085583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Stagger_45_021
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 693
+        width: 48
+        height: 107
+      alignment: 9
+      pivot: {x: 0.35416666, y: 0.22429906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c7d2c535b51dcb4d92816c4e4fec086
+      internalID: 896310746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Stagger_45_024
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 424
+        width: 53
+        height: 115
+      alignment: 9
+      pivot: {x: 0.35849056, y: 0.2347826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1da927b2545df0f4fae0d4873c80618c
+      internalID: 1608397480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Stagger_45_027
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 494
+        width: 49
+        height: 124
+      alignment: 9
+      pivot: {x: 0.2857143, y: 0.23387097}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 161728bafc632de4094b40de954ec75e
+      internalID: 937192443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Stagger_45_030
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 540
+        width: 45
+        height: 117
+      alignment: 9
+      pivot: {x: 0.31111112, y: 0.25641027}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1293456bff5b7ab49b0752b5db02ea66
+      internalID: -1151032374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Stagger_45_033
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 323
+        width: 47
+        height: 127
+      alignment: 9
+      pivot: {x: 0.3617021, y: 0.22834645}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d457bba61e47e4fae315a21329636f
+      internalID: 1346601724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Stagger_45_036
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 792
+        width: 50
+        height: 114
+      alignment: 9
+      pivot: {x: 0.34, y: 0.23684211}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d91592ce3065d343a4cccc78589ba36
+      internalID: -1002408716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Stagger_45_039
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 786
+        width: 40
+        height: 116
+      alignment: 9
+      pivot: {x: 0.325, y: 0.25862068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8329a478f3cec894e8981b4d4f786d92
+      internalID: -640073659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Stagger_90_000
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 182
+        width: 49
+        height: 133
+      alignment: 9
+      pivot: {x: 0.30612245, y: 0.30075186}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4016d7919e9bd2b439e1970063834ab0
+      internalID: -587385068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Stagger_90_003
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 11
+        width: 54
+        height: 118
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0.1779661}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a301d60522ecbee42a689dd58ae11f1d
+      internalID: 704090658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Stagger_90_006
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 310
+        width: 52
+        height: 112
+      alignment: 9
+      pivot: {x: 0.3846154, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28f18db06b01994286052427e188816
+      internalID: 463636998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Stagger_90_009
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 913
+        width: 60
+        height: 110
+      alignment: 9
+      pivot: {x: 0.43333334, y: 0.24545455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28baa23046444af4da1e8c088cd086a8
+      internalID: 91411847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Stagger_90_012
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 196
+        width: 61
+        height: 125
+      alignment: 9
+      pivot: {x: 0.40983605, y: 0.368}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 705aadb4033c8b943b9809dcbba65801
+      internalID: -1711749993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Stagger_90_015
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 510
+        width: 61
+        height: 101
+      alignment: 9
+      pivot: {x: 0.36065573, y: 0.15841584}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3b9056db8c2a524ebc2ab518caf8dd2
+      internalID: -2035696500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Stagger_90_018
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 323
+        width: 59
+        height: 110
+      alignment: 9
+      pivot: {x: 0.33898306, y: 0.15454546}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcc36a764a482564abd1b7feb52cb4d8
+      internalID: -264379796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Stagger_90_021
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 445
+        width: 55
+        height: 110
+      alignment: 9
+      pivot: {x: 0.38181818, y: 0.11818182}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ca98a337548931488c7a55cd6257705
+      internalID: 226932905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Stagger_90_024
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 519
+        width: 51
+        height: 120
+      alignment: 9
+      pivot: {x: 0.29411766, y: 0.21666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95831eb99298c124db77b440fb709361
+      internalID: -374686798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Stagger_90_027
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 780
+        width: 57
+        height: 120
+      alignment: 9
+      pivot: {x: 0.2982456, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb6270eee81772d498c36e1c58784845
+      internalID: -288995192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Stagger_90_030
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 592
+        width: 57
+        height: 135
+      alignment: 9
+      pivot: {x: 0.2982456, y: 0.32592592}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a17aa191db3b93a4e943884a5681c67b
+      internalID: 1965933820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Stagger_90_033
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 908
+        width: 57
+        height: 115
+      alignment: 9
+      pivot: {x: 0.2982456, y: 0.20869565}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c932eefaf4a6d54ca8c0c0b0c16d209
+      internalID: 1367087246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Stagger_90_036
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 746
+        width: 52
+        height: 135
+      alignment: 9
+      pivot: {x: 0.28846154, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12133f84faeb22a4d90884d56a105da8
+      internalID: 1696922749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Stagger_90_039
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 875
+        width: 54
+        height: 148
+      alignment: 9
+      pivot: {x: 0.3148148, y: 0.27702704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ff6ab9412b591344b67d2dd70dfe9da
+      internalID: -1250212036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Stagger_135_000
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 797
+        width: 60
+        height: 111
+      alignment: 9
+      pivot: {x: 0.46666667, y: 0.16216215}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 261e408467de9c64083629b042287b93
+      internalID: 520378568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Stagger_135_003
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 213
+        width: 63
+        height: 108
+      alignment: 9
+      pivot: {x: 0.4920635, y: 0.1388889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dacfcfb5cd5e394382c9349e2ca24c1
+      internalID: -1774495489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Stagger_135_006
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 516
+        width: 59
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5084746, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b612ca8f5e0e7b94e993db7c43447463
+      internalID: 492244824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Stagger_135_009
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 921
+        width: 75
+        height: 102
+      alignment: 9
+      pivot: {x: 0.48, y: 0.19607843}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce180b046ca7ca478b7121f5956be12
+      internalID: -1734157370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Stagger_135_012
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 618
+        width: 65
+        height: 102
+      alignment: 9
+      pivot: {x: 0.5538462, y: 0.18627451}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da54a2106c4981145a85cd20572f7135
+      internalID: 31072859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Stagger_135_015
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 519
+        width: 64
+        height: 102
+      alignment: 9
+      pivot: {x: 0.640625, y: 0.10784314}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b95b5fc253ef14c9d0acdd61d92179
+      internalID: -1723663897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Stagger_135_018
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 335
+        width: 63
+        height: 108
+      alignment: 9
+      pivot: {x: 0.63492066, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb780eaebf5867408a30c6d639b2c38
+      internalID: -658825565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Stagger_135_021
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 579
+        width: 58
+        height: 108
+      alignment: 9
+      pivot: {x: 0.62068963, y: 0.083333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e9a9c43c2911b146b3af281afde1cdd
+      internalID: -1347349352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Stagger_135_024
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 104
+        width: 72
+        height: 107
+      alignment: 9
+      pivot: {x: 0.5138889, y: 0.12149533}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c9a6f10e79bab4bbe60085b0c3fca8
+      internalID: 1854675740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Stagger_135_027
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 557
+        width: 67
+        height: 111
+      alignment: 9
+      pivot: {x: 0.47761193, y: 0.117117114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 211dff61ec3257a4186d1bea53b4a1c4
+      internalID: 750848228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Stagger_135_030
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 76
+        width: 63
+        height: 118
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.15254237}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64c122c4dd5aa664bbcc23cee2b9e9d1
+      internalID: -1322469198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Stagger_135_033
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 355
+        width: 60
+        height: 107
+      alignment: 9
+      pivot: {x: 0.46666667, y: 0.14018692}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b132ea8fd8ecdce409292f7d9da51b59
+      internalID: -2107919957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Stagger_135_036
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 470
+        width: 59
+        height: 107
+      alignment: 9
+      pivot: {x: 0.47457626, y: 0.14018692}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3785e7c443c20e142a5cbd807565ddb7
+      internalID: -1065179850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Stagger_135_039
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 682
+        width: 61
+        height: 111
+      alignment: 9
+      pivot: {x: 0.47540984, y: 0.16216215}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8710b705016e4f45838976c24ee4703
+      internalID: -946272124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Stagger_315_000
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 910
+        width: 59
+        height: 113
+      alignment: 9
+      pivot: {x: 0.5254237, y: 0.21238938}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9981ffba9f0cb34db821fcc83f3d8d7
+      internalID: 1552112528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Stagger_315_003
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 488
+        width: 59
+        height: 102
+      alignment: 9
+      pivot: {x: 0.4915254, y: 0.21568628}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb23631abc4cfb40b3923b3f61d06a0
+      internalID: -703519872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Stagger_315_006
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 11
+        width: 58
+        height: 118
+      alignment: 9
+      pivot: {x: 0.4827586, y: 0.22033899}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ae14798f8823f4d9a9e63d4d06a82f
+      internalID: -1046616613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Stagger_315_009
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 70
+        height: 132
+      alignment: 9
+      pivot: {x: 0.5, y: 0.21212122}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0afaa4e7465af5141ac2474a08987008
+      internalID: 1588746449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Stagger_315_012
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 685
+        width: 68
+        height: 110
+      alignment: 9
+      pivot: {x: 0.47058824, y: 0.17272727}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835506a32ef54264aa23e87c5bfcd226
+      internalID: 1566679245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Stagger_315_015
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 729
+        width: 71
+        height: 91
+      alignment: 9
+      pivot: {x: 0.4084507, y: 0.15384616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb414404fa0c394fa915b08270a1b45
+      internalID: 1244509134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Stagger_315_018
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 822
+        width: 72
+        height: 97
+      alignment: 9
+      pivot: {x: 0.375, y: 0.20618556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4acd5285e18d1144be9221501f68b3c
+      internalID: -1885377342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Stagger_315_021
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 722
+        width: 69
+        height: 96
+      alignment: 9
+      pivot: {x: 0.44927537, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860cda374c400db4d8478b6beb30461b
+      internalID: 36083043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Stagger_315_024
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 925
+        width: 75
+        height: 98
+      alignment: 9
+      pivot: {x: 0.49333334, y: 0.2244898}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adff06ba370e8b644aa7291362b3fdb9
+      internalID: -383657069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Stagger_315_027
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 689
+        width: 74
+        height: 109
+      alignment: 9
+      pivot: {x: 0.5540541, y: 0.23853211}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322867f8b9ead2e44aaf356cc7eeef80
+      internalID: 967340436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Stagger_315_030
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 795
+        width: 61
+        height: 113
+      alignment: 9
+      pivot: {x: 0.52459013, y: 0.23893805}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b84d880cf026345ba90649ed14bb6c
+      internalID: -950702901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Stagger_315_033
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 13
+        width: 61
+        height: 117
+      alignment: 9
+      pivot: {x: 0.52459013, y: 0.1965812}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d3077358826c1447bfbcf7326a1fd78
+      internalID: -1184902857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Stagger_315_036
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 400
+        width: 60
+        height: 117
+      alignment: 9
+      pivot: {x: 0.5, y: 0.20512821}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c16574423799c4f98d5bc2f3b3fdb1
+      internalID: -464903933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Stagger_315_039
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 305
+        width: 57
+        height: 115
+      alignment: 9
+      pivot: {x: 0.50877196, y: 0.20869565}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44b88f07a33b9754880e684a315bbcc0
+      internalID: 1435143029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Stagger_270_000
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 317
+        width: 52
+        height: 133
+      alignment: 9
+      pivot: {x: 0.71153843, y: 0.35338345}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3ac1a3d4727f004fb5a52561f1063ef
+      internalID: 71229007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Stagger_270_003
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 548
+        width: 60
+        height: 114
+      alignment: 9
+      pivot: {x: 0.68333334, y: 0.27192983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ba36fddbb7c734286497cb11746b7d
+      internalID: -1680972551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Stagger_270_006
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 889
+        width: 54
+        height: 134
+      alignment: 9
+      pivot: {x: 0.6296296, y: 0.35820895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279b571df1313ba45a19ac1563867dde
+      internalID: -492271790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Stagger_270_009
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 883
+        width: 59
+        height: 140
+      alignment: 9
+      pivot: {x: 0.6101695, y: 0.31428573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 370e04f6ae273a746a9b9684fcd52b7e
+      internalID: 1937172988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Stagger_270_012
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 452
+        width: 62
+        height: 135
+      alignment: 9
+      pivot: {x: 0.5967742, y: 0.34074074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e447cbfb71c3d1649a6028323fd45b7f
+      internalID: 443946631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Stagger_270_015
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 613
+        width: 66
+        height: 94
+      alignment: 9
+      pivot: {x: 0.6060606, y: 0.13829787}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8680f01d4c57f044684aca666c250d3f
+      internalID: 737192212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Stagger_270_018
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1
+        width: 67
+        height: 101
+      alignment: 9
+      pivot: {x: 0.64179105, y: 0.1980198}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f7e832aad8b83141b67cfdbad2e5f07
+      internalID: -1349679524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Stagger_270_021
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 910
+        width: 64
+        height: 113
+      alignment: 9
+      pivot: {x: 0.5625, y: 0.25663716}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02bbad59caf6c343ae4bce546d75ccd
+      internalID: -2094342355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Stagger_270_024
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 464
+        width: 61
+        height: 108
+      alignment: 9
+      pivot: {x: 0.6393443, y: 0.2685185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b23db418ad2b947af02fb342242729
+      internalID: 1567066082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Stagger_270_027
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 670
+        width: 56
+        height: 114
+      alignment: 9
+      pivot: {x: 0.75, y: 0.2982456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f37cbeab527c5044acb767813d52aca
+      internalID: 369323902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Stagger_270_030
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 903
+        width: 52
+        height: 120
+      alignment: 9
+      pivot: {x: 0.7307692, y: 0.31666666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54bcde383d8f78646ad8d6ab415c9419
+      internalID: 1471396232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Stagger_270_033
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 802
+        width: 52
+        height: 109
+      alignment: 9
+      pivot: {x: 0.7692308, y: 0.2293578}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c396463188fd945aab91cedaffd574
+      internalID: 673413589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Stagger_270_036
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 637
+        width: 48
+        height: 124
+      alignment: 9
+      pivot: {x: 0.75, y: 0.24193548}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530faa7f3d93df94bbe3ca54f018be94
+      internalID: 774583106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Stagger_270_039
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 763
+        width: 50
+        height: 124
+      alignment: 9
+      pivot: {x: 0.68, y: 0.30645162}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb5d9f386682f040977407b11156f86
+      internalID: 432870247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Stagger_225_000
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 412
+        width: 40
+        height: 105
+      alignment: 9
+      pivot: {x: 0.7, y: 0.20952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a8d231ac18ac88458088002c43cfd93
+      internalID: 416471070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Stagger_225_003
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 190
+        width: 42
+        height: 113
+      alignment: 9
+      pivot: {x: 0.64285713, y: 0.24778761}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73594baa054798c48ae97afab62ef976
+      internalID: -2069396512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Stagger_225_006
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 47
+        width: 45
+        height: 133
+      alignment: 9
+      pivot: {x: 0.5555556, y: 0.34586465}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d2e069f85f76f2489567495f723514a
+      internalID: -1772250481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Stagger_225_009
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 729
+        width: 63
+        height: 144
+      alignment: 9
+      pivot: {x: 0.5873016, y: 0.3472222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ce9b6676da16d498c6f98198d2ed74
+      internalID: 1074925665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Stagger_225_012
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 589
+        width: 49
+        height: 138
+      alignment: 9
+      pivot: {x: 0.67346936, y: 0.32608697}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8c6f7f63a999e54d88e4fcfad1fbbfc
+      internalID: -1621811078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Stagger_225_015
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 464
+        width: 47
+        height: 126
+      alignment: 9
+      pivot: {x: 0.7446808, y: 0.26190478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9171fa09bbb76b04a8e7790344067cae
+      internalID: -502715208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Stagger_225_018
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 819
+        width: 46
+        height: 97
+      alignment: 9
+      pivot: {x: 0.73913044, y: 0.185567}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc4983cf720f6d489d182faac216e4b
+      internalID: -435555668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Stagger_225_021
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 914
+        width: 49
+        height: 109
+      alignment: 9
+      pivot: {x: 0.63265306, y: 0.17431192}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ebd6028471ffe442bcf3cf5b63521ce
+      internalID: -465987755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Stagger_225_024
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 103
+        width: 43
+        height: 108
+      alignment: 9
+      pivot: {x: 0.76744187, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3480538a73c684468ea6250c317cdc2
+      internalID: 868951591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Stagger_225_027
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 764
+        width: 52
+        height: 123
+      alignment: 9
+      pivot: {x: 0.75, y: 0.35772356}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5834674b3e48b894097b30aed5ead871
+      internalID: 1960060159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Stagger_225_030
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 904
+        width: 50
+        height: 119
+      alignment: 9
+      pivot: {x: 0.76, y: 0.31092438}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a73d48aee3212a48b666e6cd6077781
+      internalID: 2069195189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Stagger_225_033
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 515
+        width: 42
+        height: 101
+      alignment: 9
+      pivot: {x: 0.71428573, y: 0.1980198}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8607fcc0c179334fbeb153d5d027d94
+      internalID: -1898238942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Stagger_225_036
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 805
+        width: 48
+        height: 107
+      alignment: 9
+      pivot: {x: 0.6458333, y: 0.22429906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a523f6ea1d88d84bb58c556991c230b
+      internalID: -1844123476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Stagger_225_039
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 186
+        width: 47
+        height: 129
+      alignment: 9
+      pivot: {x: 0.63829786, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f720c65b0c2bb468c2c4f1cfc5a246
+      internalID: -1173230559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Stagger_180_000
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 132
+        width: 64
+        height: 117
+      alignment: 9
+      pivot: {x: 0.609375, y: 0.17948718}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f621ac1152ee8e44589c993d7f20a61d
+      internalID: -1816395720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Stagger_180_003
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 251
+        width: 60
+        height: 118
+      alignment: 9
+      pivot: {x: 0.6, y: 0.16949153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191d826642d94b04e8c4c82e33d1859c
+      internalID: 1255817756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Stagger_180_006
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 698
+        width: 73
+        height: 105
+      alignment: 9
+      pivot: {x: 0.5753425, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8db631ebf9d446d43a8e3c57a461f0f1
+      internalID: 1296381554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Stagger_180_009
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 902
+        width: 88
+        height: 121
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1570248}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fff36d48231fcd74599190526a930f49
+      internalID: -1398089762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Stagger_180_012
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 1
+        width: 71
+        height: 100
+      alignment: 9
+      pivot: {x: 0.57746476, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 734111c0451fb9a409ff9ee36b972de4
+      internalID: 1000251281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Stagger_180_015
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 782
+        width: 60
+        height: 119
+      alignment: 9
+      pivot: {x: 0.73333335, y: 0.15126051}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e32190c24e044a946af097ad210cc82f
+      internalID: 1306439006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Stagger_180_018
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 50
+        width: 59
+        height: 113
+      alignment: 9
+      pivot: {x: 0.7457627, y: 0.13274336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: affe26c2642c4e74dae2a5cd83ce8e25
+      internalID: -2012398707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Stagger_180_021
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 659
+        width: 61
+        height: 119
+      alignment: 9
+      pivot: {x: 0.75409836, y: 0.18487395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32419b5f3557294488c31e93ff1a7702
+      internalID: -1485996317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Stagger_180_024
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 435
+        width: 75
+        height: 111
+      alignment: 9
+      pivot: {x: 0.62666667, y: 0.10810811}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65c623aa8fc837946806cf2ac05f930c
+      internalID: -1958257468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Stagger_180_027
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 917
+        width: 77
+        height: 106
+      alignment: 9
+      pivot: {x: 0.5584416, y: 0.11320755}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1210b95c0311d748aaec424bb5ede24
+      internalID: 409963966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Stagger_180_030
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 623
+        width: 66
+        height: 104
+      alignment: 9
+      pivot: {x: 0.6060606, y: 0.17307693}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b5c450ca033e0498116d1446479b79
+      internalID: -2052860630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Stagger_180_033
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 592
+        width: 65
+        height: 104
+      alignment: 9
+      pivot: {x: 0.6, y: 0.16346154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57fd9e27b1efc34b998b38df7fedde3
+      internalID: 1793085960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Stagger_180_036
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 422
+        width: 63
+        height: 116
+      alignment: 9
+      pivot: {x: 0.6031746, y: 0.15517241}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f372f003ec954e14e86d7772f7250d77
+      internalID: -190965612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Stagger_180_039
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 800
+        width: 66
+        height: 110
+      alignment: 9
+      pivot: {x: 0.6060606, y: 0.14545454}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d08df8a877d525c479529ddada437fae
+      internalID: -969164752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 67c0cc13c759d7046985692e7ae8ac0d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      E-Stagger_0_009: 609886712
+      N-Stagger_90_024: -374686798
+      W-Stagger_180_015: 1306439006
+      N-Stagger_90_009: 91411847
+      SE-Stagger_315_015: 1244509134
+      NW-Stagger_135_012: 31072859
+      S-Stagger_270_003: -1680972551
+      SW-Stagger_225_024: 868951591
+      SW-Stagger_225_018: -435555668
+      W-Stagger_180_000: -1816395720
+      W-Stagger_180_036: -190965612
+      NW-Stagger_135_000: 520378568
+      NW-Stagger_135_030: -1322469198
+      SW-Stagger_225_000: 416471070
+      SW-Stagger_225_036: -1844123476
+      E-Stagger_0_030: -1995794923
+      S-Stagger_270_018: -1349679524
+      NE-Stagger_45_015: -347061254
+      SW-Stagger_225_033: -1898238942
+      NE-Stagger_45_018: 73085583
+      N-Stagger_90_039: -1250212036
+      E-Stagger_0_006: 2127327805
+      N-Stagger_90_030: 1965933820
+      W-Stagger_180_003: 1255817756
+      NW-Stagger_135_003: -1774495489
+      SE-Stagger_315_006: -1046616613
+      SE-Stagger_315_012: 1566679245
+      NW-Stagger_135_024: 1854675740
+      S-Stagger_270_033: 673413589
+      NE-Stagger_45_036: -1002408716
+      SE-Stagger_315_021: 36083043
+      E-Stagger_0_015: 1894624322
+      SW-Stagger_225_003: -2069396512
+      N-Stagger_90_006: 463636998
+      SE-Stagger_315_009: 1588746449
+      S-Stagger_270_021: -2094342355
+      W-Stagger_180_033: 1793085960
+      S-Stagger_270_012: 443946631
+      SW-Stagger_225_021: -465987755
+      W-Stagger_180_021: -1485996317
+      N-Stagger_90_003: 704090658
+      S-Stagger_270_030: 1471396232
+      SW-Stagger_225_012: -1621811078
+      E-Stagger_0_024: 1951247739
+      NE-Stagger_45_012: -831371880
+      NE-Stagger_45_027: 937192443
+      SW-Stagger_225_015: -502715208
+      E-Stagger_0_027: -1755243053
+      NW-Stagger_135_021: -1347349352
+      E-Stagger_0_018: -1077033879
+      NE-Stagger_45_033: 1346601724
+      SE-Stagger_315_027: 967340436
+      SW-Stagger_225_027: 1960060159
+      N-Stagger_90_012: -1711749993
+      NE-Stagger_45_039: -640073659
+      SW-Stagger_225_039: -1173230559
+      W-Stagger_180_006: 1296381554
+      N-Stagger_90_015: -2035696500
+      E-Stagger_0_021: -544374062
+      SE-Stagger_315_003: -703519872
+      E-Stagger_0_003: 619374553
+      NW-Stagger_135_009: -1734157370
+      W-Stagger_180_027: 409963966
+      W-Stagger_180_018: -2012398707
+      SW-Stagger_225_006: -1772250481
+      SE-Stagger_315_033: -1184902857
+      NE-Stagger_45_009: 2096474333
+      SW-Stagger_225_009: 1074925665
+      SE-Stagger_315_018: -1885377342
+      NE-Stagger_45_006: -1230300913
+      N-Stagger_90_027: -288995192
+      E-Stagger_0_039: -525804991
+      N-Stagger_90_018: -264379796
+      S-Stagger_270_015: 737192212
+      S-Stagger_270_039: 432870247
+      W-Stagger_180_030: -2052860630
+      NE-Stagger_45_021: 896310746
+      E-Stagger_0_000: 1472087174
+      NW-Stagger_135_006: 492244824
+      NW-Stagger_135_018: -658825565
+      NW-Stagger_135_033: -2107919957
+      E-Stagger_0_033: -1389245105
+      NE-Stagger_45_024: 1608397480
+      E-Stagger_0_036: -1266545297
+      SE-Stagger_315_036: -464903933
+      SE-Stagger_315_000: 1552112528
+      N-Stagger_90_036: 1696922749
+      NW-Stagger_135_036: -1065179850
+      NE-Stagger_45_000: 423137887
+      N-Stagger_90_000: -587385068
+      NE-Stagger_45_030: -1151032374
+      S-Stagger_270_009: 1937172988
+      NW-Stagger_135_015: -1723663897
+      NW-Stagger_135_027: 750848228
+      S-Stagger_270_006: -492271790
+      S-Stagger_270_036: 774583106
+      W-Stagger_180_024: -1958257468
+      N-Stagger_90_033: 1367087246
+      W-Stagger_180_039: -969164752
+      SE-Stagger_315_030: -950702901
+      W-Stagger_180_012: 1000251281
+      SW-Stagger_225_030: 2069195189
+      E-Stagger_0_012: -1262300888
+      S-Stagger_270_000: 71229007
+      S-Stagger_270_024: 1567066082
+      NE-Stagger_45_003: 1645508366
+      NW-Stagger_135_039: -946272124
+      S-Stagger_270_027: 369323902
+      SE-Stagger_315_039: 1435143029
+      SE-Stagger_315_024: -383657069
+      N-Stagger_90_021: 226932905
+      W-Stagger_180_009: -1398089762
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

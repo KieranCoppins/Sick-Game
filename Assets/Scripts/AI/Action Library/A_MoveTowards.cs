@@ -18,7 +18,7 @@ public class A_MoveTowards : CustomAction
             Vector2 dir = Mob.GetMovementVector(_desiredPosition);
             if ((Mob.DebugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
             {
-                Debug.DrawRay((Vector2)Mob.transform.position + (dir * 0.45f), dir);
+                Debug.DrawRay((Vector2)Mob.transform.position, dir);
                 Debug.DrawRay((Vector2)Mob.transform.position, _desiredPosition - (Vector2)Mob.transform.position, Color.blue);
             }
             Mob.RigidBody.velocity = dir.normalized * Mob.MovementSpeed;

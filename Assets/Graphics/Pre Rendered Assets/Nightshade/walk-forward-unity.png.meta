@@ -1,0 +1,1530 @@
+fileFormatVersion: 2
+guid: e052863ea0ebf6a4094a6024de367c59
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: E-Walk Forward_0_000
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 316
+        width: 44
+        height: 107
+      alignment: 9
+      pivot: {x: 0.45454547, y: 0.1588785}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc10eb317978945478fd783d96349538
+      internalID: -1364365180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Walk Forward_0_004
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 268
+        width: 45
+        height: 114
+      alignment: 9
+      pivot: {x: 0.42222223, y: 0.1754386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9638516241af1124295340e703d18a87
+      internalID: 1400568291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Walk Forward_0_008
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 887
+        width: 76
+        height: 136
+      alignment: 9
+      pivot: {x: 0.43421054, y: 0.11764706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8417bf2e60a7134fb73f224c7282d27
+      internalID: -888814053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Walk Forward_0_012
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 906
+        width: 83
+        height: 117
+      alignment: 9
+      pivot: {x: 0.5060241, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f49e02ee2b32d85499954a15501d99a7
+      internalID: 879030289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Walk Forward_0_016
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 151
+        width: 42
+        height: 114
+      alignment: 9
+      pivot: {x: 0.30952382, y: 0.20175439}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d0d701c67a3764f982b2c83b299972
+      internalID: 452906360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Walk Forward_0_020
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 908
+        width: 64
+        height: 115
+      alignment: 9
+      pivot: {x: 0.34375, y: 0.104347825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaa5b8ecbf1e85448a35c9bc290663d5
+      internalID: -553038081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Walk Forward_0_024
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 693
+        width: 66
+        height: 102
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12745099}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51afb7197742a4b4aa0baff98038fbb5
+      internalID: 1414837052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Walk Forward_0_028
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 774
+        width: 55
+        height: 110
+      alignment: 9
+      pivot: {x: 0.54545456, y: 0.15454546}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f33c8b4971baab4eadb923214a09d03
+      internalID: -520660060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Walk Forward_45_000
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 148
+        width: 37
+        height: 117
+      alignment: 9
+      pivot: {x: 0.5405405, y: 0.20512821}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aab0830472224c4d96a54f9597c6085
+      internalID: -709005915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Walk Forward_45_004
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 268
+        width: 44
+        height: 114
+      alignment: 9
+      pivot: {x: 0.52272725, y: 0.1491228}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e86b5443cecd54183d6af7a1c6fd69
+      internalID: -586431031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Walk Forward_45_008
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 669
+        width: 57
+        height: 127
+      alignment: 9
+      pivot: {x: 0.42105263, y: 0.26771653}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f9841a96f8ebc40a1f2f1ae3886ed6
+      internalID: -1591750323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Walk Forward_45_012
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 653
+        width: 52
+        height: 119
+      alignment: 9
+      pivot: {x: 0.5576923, y: 0.21008404}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35dc0d8a1779d0e4a9a5082d409f1f09
+      internalID: 2076390784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Walk Forward_45_016
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 273
+        width: 43
+        height: 109
+      alignment: 9
+      pivot: {x: 0.53488374, y: 0.119266056}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: febf178903e1a664ca15b670c968ead7
+      internalID: 1991556739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Walk Forward_45_020
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 569
+        width: 53
+        height: 122
+      alignment: 9
+      pivot: {x: 0.35849056, y: 0.20491803}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93dcfd72947f85547b5954d4cc29b074
+      internalID: -1532161981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Walk Forward_45_024
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 678
+        width: 58
+        height: 119
+      alignment: 9
+      pivot: {x: 0.51724136, y: 0.22689076}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef03c180a63bde043be4fc0d63a1e7f1
+      internalID: -1359775147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Walk Forward_45_028
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 658
+        width: 54
+        height: 117
+      alignment: 9
+      pivot: {x: 0.6296296, y: 0.20512821}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3fde68c788ad404e8fa6e0211d925f2
+      internalID: -622353031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Walk Forward_90_000
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 425
+        width: 42
+        height: 121
+      alignment: 9
+      pivot: {x: 0.54761904, y: 0.20661157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b1927f8d2ef6a4092b952f28a844ee
+      internalID: -1003919956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Walk Forward_90_004
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 548
+        width: 42
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.203125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55da90568cb539e47a8d1e2c8047d903
+      internalID: 404453618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Walk Forward_90_008
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 267
+        width: 46
+        height: 151
+      alignment: 9
+      pivot: {x: 0.5652174, y: 0.37748346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53513c83e71ad524fae6f4c4b9b60aab
+      internalID: -489955929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Walk Forward_90_012
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 5
+        width: 41
+        height: 140
+      alignment: 9
+      pivot: {x: 0.5365854, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8130005997e75a5469e74d503f08b82d
+      internalID: 1294065132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Walk Forward_90_016
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 433
+        width: 45
+        height: 108
+      alignment: 9
+      pivot: {x: 0.62222224, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027e3888e7ea0024e9cce48488ea717a
+      internalID: -322463120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Walk Forward_90_020
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 510
+        width: 45
+        height: 132
+      alignment: 9
+      pivot: {x: 0.64444447, y: 0.24242425}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eddd1d9eb38ae014b85af8cf052bdfdd
+      internalID: 1784648826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Walk Forward_90_024
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 149
+        width: 40
+        height: 116
+      alignment: 9
+      pivot: {x: 0.6, y: 0.18965517}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90ca36df36a0d34cb7c33dbc600b638
+      internalID: 1103110749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Walk Forward_90_028
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 394
+        width: 41
+        height: 114
+      alignment: 9
+      pivot: {x: 0.5609756, y: 0.21052632}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6735e5f073ba30458e93de4d484df5f
+      internalID: 2025842631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Walk Forward_135_000
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 384
+        width: 43
+        height: 132
+      alignment: 9
+      pivot: {x: 0.55813956, y: 0.3181818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ef9088b80629d54eae50de9189fe79b
+      internalID: -1335265745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Walk Forward_135_004
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 392
+        width: 40
+        height: 116
+      alignment: 9
+      pivot: {x: 0.65, y: 0.15517241}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a11c63f30a6c2164e962b55d7a706ca3
+      internalID: -659663005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Walk Forward_135_008
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 909
+        width: 63
+        height: 114
+      alignment: 9
+      pivot: {x: 0.6031746, y: 0.21929824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2360c45e14140594196a786882778060
+      internalID: -1113979666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Walk Forward_135_012
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 905
+        width: 65
+        height: 118
+      alignment: 9
+      pivot: {x: 0.4923077, y: 0.1779661}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8067eaadb619b24981d0bc78c422cf0
+      internalID: 1181336604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Walk Forward_135_016
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 97
+        width: 41
+        height: 113
+      alignment: 9
+      pivot: {x: 0.6585366, y: 0.15929204}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526b70e2c925fd24eb34773ff0f26005
+      internalID: 1388193588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Walk Forward_135_020
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 149
+        width: 41
+        height: 116
+      alignment: 9
+      pivot: {x: 0.6097561, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 202ab8e6c3cc898439110c1e7f8dc5fe
+      internalID: 916764462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Walk Forward_135_024
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 536
+        width: 49
+        height: 131
+      alignment: 9
+      pivot: {x: 0.6122449, y: 0.29007635}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d6281d8a304a045aac22b4e53378e6
+      internalID: -825012299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Walk Forward_135_028
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 385
+        width: 45
+        height: 123
+      alignment: 9
+      pivot: {x: 0.53333336, y: 0.20325203}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06c1deac3670ebc47b09c7c6b8ddb273
+      internalID: -609664805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Walk Forward_315_000
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 209
+        width: 43
+        height: 105
+      alignment: 9
+      pivot: {x: 0.4651163, y: 0.13333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f39acbcbe36218443895b3a882a21785
+      internalID: 508359178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Walk Forward_315_004
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 549
+        width: 52
+        height: 107
+      alignment: 9
+      pivot: {x: 0.30769232, y: 0.1495327}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87864638061ca384c812fd1615551bef
+      internalID: 3518677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Walk Forward_315_008
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 798
+        width: 62
+        height: 109
+      alignment: 9
+      pivot: {x: 0.4032258, y: 0.1559633}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cbba22769e3cb44db3c263f04afcabc
+      internalID: 1968945735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Walk Forward_315_012
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 778
+        width: 58
+        height: 125
+      alignment: 9
+      pivot: {x: 0.5, y: 0.192}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed90d99096ab44b4cb4e155137b94ab3
+      internalID: 263898400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Walk Forward_315_016
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 148
+        width: 41
+        height: 117
+      alignment: 9
+      pivot: {x: 0.34146342, y: 0.102564104}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f5491322cf78e4eb0a2024a34ee4c5
+      internalID: 941570951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Walk Forward_315_020
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 384
+        width: 47
+        height: 138
+      alignment: 9
+      pivot: {x: 0.4680851, y: 0.1884058}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee26e775fc9a3f42a1eda9474d5636c
+      internalID: 6873144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Walk Forward_315_024
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 543
+        width: 50
+        height: 133
+      alignment: 9
+      pivot: {x: 0.44, y: 0.24812031}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f95df87dace7c64b8f834528c893623
+      internalID: 1762585912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Walk Forward_315_028
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 321
+        width: 44
+        height: 110
+      alignment: 9
+      pivot: {x: 0.47727272, y: 0.16363636}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 343234173c7d4984c8241c923f13b58d
+      internalID: -638992501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Walk Forward_270_000
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 534
+        width: 44
+        height: 133
+      alignment: 9
+      pivot: {x: 0.54545456, y: 0.2706767}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 826acadbb41844a4399fa98b36045645
+      internalID: -1030739833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Walk Forward_270_004
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 5
+        width: 43
+        height: 140
+      alignment: 9
+      pivot: {x: 0.55813956, y: 0.22857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c1d1ea0e2a425f47a4a587896575247
+      internalID: -1178537806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Walk Forward_270_008
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 11
+        width: 43
+        height: 134
+      alignment: 9
+      pivot: {x: 0.55813956, y: 0.17910448}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf09e9038d0ea4e49b6675d35f4a60e5
+      internalID: -1164082964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Walk Forward_270_012
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 518
+        width: 41
+        height: 133
+      alignment: 9
+      pivot: {x: 0.4878049, y: 0.18045112}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4620a29e9834c843a9e94d39940feb0
+      internalID: 1986569489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Walk Forward_270_016
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 410
+        width: 47
+        height: 122
+      alignment: 9
+      pivot: {x: 0.42553192, y: 0.22131148}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71949595f52115439ccadbd53361e6d
+      internalID: -1265280931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Walk Forward_270_020
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 644
+        width: 52
+        height: 132
+      alignment: 9
+      pivot: {x: 0.40384614, y: 0.3181818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 567c4741c5f9cec4ca53ae3250b1de6e
+      internalID: -975255564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Walk Forward_270_024
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 267
+        width: 44
+        height: 115
+      alignment: 9
+      pivot: {x: 0.4318182, y: 0.20869565}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c531f88395a4f94ea160380061bcc94
+      internalID: 2091436811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Walk Forward_270_028
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 524
+        width: 49
+        height: 115
+      alignment: 9
+      pivot: {x: 0.48979592, y: 0.20869565}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d87f4ae503e062640b5d1a752cc84ded
+      internalID: -1113818061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Walk Forward_225_000
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 528
+        width: 38
+        height: 123
+      alignment: 9
+      pivot: {x: 0.47368422, y: 0.18699187}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e0c8f6f9f35c9c42b375debf8387e41
+      internalID: 1937388743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Walk Forward_225_004
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 19
+        width: 40
+        height: 126
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54389cf8dba18164b846f4e29cbdd210
+      internalID: -549521902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Walk Forward_225_008
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 411
+        width: 50
+        height: 156
+      alignment: 9
+      pivot: {x: 0.46, y: 0.2628205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9a2ca18c78bbb4886e66a69131dabf
+      internalID: -2088638696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Walk Forward_225_012
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 147
+        width: 45
+        height: 143
+      alignment: 9
+      pivot: {x: 0.51111114, y: 0.3006993}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28d3f945e9c7c9345bbbe666053b408f
+      internalID: 1694277725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Walk Forward_225_016
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 292
+        width: 46
+        height: 116
+      alignment: 9
+      pivot: {x: 0.6304348, y: 0.19827586}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd37241310884a4db0bf05854b2a0e2
+      internalID: 482376238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Walk Forward_225_020
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 641
+        width: 56
+        height: 113
+      alignment: 9
+      pivot: {x: 0.66071427, y: 0.20353982}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d794278f97724f45b23b38ff4484e72
+      internalID: 1563531560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Walk Forward_225_024
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 756
+        width: 60
+        height: 150
+      alignment: 9
+      pivot: {x: 0.51666665, y: 0.22666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27626ceb83c6465408089936069a03ea
+      internalID: -244404446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Walk Forward_225_028
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 420
+        width: 48
+        height: 114
+      alignment: 9
+      pivot: {x: 0.4375, y: 0.21052632}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd164038d2cbc4e46ace92d0dee94bcd
+      internalID: 1270855761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Walk Forward_180_000
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 267
+        width: 42
+        height: 115
+      alignment: 9
+      pivot: {x: 0.5714286, y: 0.2173913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726d0998a964c9b41bcf6072cf1fffe1
+      internalID: -1981349040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Walk Forward_180_004
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 212
+        width: 43
+        height: 107
+      alignment: 9
+      pivot: {x: 0.627907, y: 0.13084112}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 652c195ee248f684f9b07f0753a50d98
+      internalID: 1717058006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Walk Forward_180_008
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 886
+        width: 72
+        height: 137
+      alignment: 9
+      pivot: {x: 0.5833333, y: 0.124087594}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98920aad2117d834b95228cd85752b34
+      internalID: 503393528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Walk Forward_180_012
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 777
+        width: 70
+        height: 108
+      alignment: 9
+      pivot: {x: 0.45714286, y: 0.1574074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adf7a8e64f2c3af4583fef9a3c4cd8a4
+      internalID: -1666917780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Walk Forward_180_016
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 267
+        width: 39
+        height: 125
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.232}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50ea426405e37064bb51619db549c6e4
+      internalID: -1748796299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Walk Forward_180_020
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 907
+        width: 64
+        height: 116
+      alignment: 9
+      pivot: {x: 0.65625, y: 0.19827586}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0dfb5d044465354e92dc5fa154eb347
+      internalID: 778124289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Walk Forward_180_024
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 797
+        width: 76
+        height: 107
+      alignment: 9
+      pivot: {x: 0.56578946, y: 0.14018692}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca220613339ff724382c4ca59d4eff1c
+      internalID: 1596416921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Walk Forward_180_028
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 799
+        width: 60
+        height: 106
+      alignment: 9
+      pivot: {x: 0.41666666, y: 0.13207547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c694d56663a7e6f43b09a5347e442118
+      internalID: 1728256986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a2c4b82749ef05d4380a4fe32cf5ea5d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      NW-Walk Forward_135_020: 916764462
+      W-Walk Forward_180_008: 503393528
+      N-Walk Forward_90_024: 1103110749
+      NW-Walk Forward_135_024: -825012299
+      S-Walk Forward_270_012: 1986569489
+      E-Walk Forward_0_004: 1400568291
+      NE-Walk Forward_45_004: -586431031
+      N-Walk Forward_90_000: -1003919956
+      NW-Walk Forward_135_008: -1113979666
+      SW-Walk Forward_225_028: 1270855761
+      W-Walk Forward_180_024: 1596416921
+      S-Walk Forward_270_020: -975255564
+      E-Walk Forward_0_016: 452906360
+      NW-Walk Forward_135_012: 1181336604
+      W-Walk Forward_180_000: -1981349040
+      NE-Walk Forward_45_020: -1532161981
+      SW-Walk Forward_225_012: 1694277725
+      SW-Walk Forward_225_000: 1937388743
+      W-Walk Forward_180_012: -1666917780
+      SE-Walk Forward_315_020: 6873144
+      NW-Walk Forward_135_016: 1388193588
+      E-Walk Forward_0_000: -1364365180
+      NW-Walk Forward_135_028: -609664805
+      S-Walk Forward_270_008: -1164082964
+      SW-Walk Forward_225_004: -549521902
+      W-Walk Forward_180_004: 1717058006
+      N-Walk Forward_90_016: -322463120
+      N-Walk Forward_90_012: 1294065132
+      N-Walk Forward_90_020: 1784648826
+      SE-Walk Forward_315_016: 941570951
+      S-Walk Forward_270_016: -1265280931
+      S-Walk Forward_270_004: -1178537806
+      NE-Walk Forward_45_024: -1359775147
+      SE-Walk Forward_315_028: -638992501
+      N-Walk Forward_90_004: 404453618
+      SE-Walk Forward_315_012: 263898400
+      SW-Walk Forward_225_024: -244404446
+      E-Walk Forward_0_028: -520660060
+      W-Walk Forward_180_020: 778124289
+      NE-Walk Forward_45_000: -709005915
+      NE-Walk Forward_45_016: 1991556739
+      E-Walk Forward_0_008: -888814053
+      NW-Walk Forward_135_004: -659663005
+      NW-Walk Forward_135_000: -1335265745
+      S-Walk Forward_270_024: 2091436811
+      S-Walk Forward_270_000: -1030739833
+      NE-Walk Forward_45_028: -622353031
+      W-Walk Forward_180_016: -1748796299
+      SE-Walk Forward_315_000: 508359178
+      E-Walk Forward_0_024: 1414837052
+      SW-Walk Forward_225_020: 1563531560
+      SE-Walk Forward_315_004: 3518677
+      N-Walk Forward_90_008: -489955929
+      S-Walk Forward_270_028: -1113818061
+      SW-Walk Forward_225_008: -2088638696
+      SW-Walk Forward_225_016: 482376238
+      W-Walk Forward_180_028: 1728256986
+      E-Walk Forward_0_020: -553038081
+      NE-Walk Forward_45_012: 2076390784
+      N-Walk Forward_90_028: 2025842631
+      E-Walk Forward_0_012: 879030289
+      SE-Walk Forward_315_008: 1968945735
+      NE-Walk Forward_45_008: -1591750323
+      SE-Walk Forward_315_024: 1762585912
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

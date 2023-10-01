@@ -1,0 +1,1706 @@
+fileFormatVersion: 2
+guid: e6e4f976a82660a4d841b90b7304dc28
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: E-Kick_0_001
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 652
+        width: 66
+        height: 115
+      alignment: 9
+      pivot: {x: 0.5, y: 0.38260868}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01170745c4d1444f86791a8cc0b5de7
+      internalID: -605283276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Kick_0_005
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 921
+        width: 72
+        height: 103
+      alignment: 9
+      pivot: {x: 0.5138889, y: 0.21359223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7bd22a050505b143baf1d053cb56351
+      internalID: 808615271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Kick_0_009
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 485
+        width: 90
+        height: 117
+      alignment: 9
+      pivot: {x: 0.42222223, y: 0.18803419}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a929d8d6ec76df45aa9d733b7ac5390
+      internalID: 1280124524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Kick_0_013
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 2
+        width: 71
+        height: 90
+      alignment: 9
+      pivot: {x: 0, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95b8a2fdfceb12b4a943bcdf8e0b6c28
+      internalID: -1315963376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Kick_0_017
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 814
+        width: 97
+        height: 103
+      alignment: 9
+      pivot: {x: 0.10309278, y: 0.17475729}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2102f20e97ce6e04999ab87bc9c6bd41
+      internalID: 1609107722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Kick_0_021
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 926
+        width: 121
+        height: 98
+      alignment: 9
+      pivot: {x: 0.07438017, y: 0.15306123}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8356636482716444799a676640c97dbb
+      internalID: 1220495359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Kick_0_025
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 409
+        width: 60
+        height: 85
+      alignment: 9
+      pivot: {x: 0.033333335, y: 0.105882354}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7cdb470a191de543980dff43ffeb665
+      internalID: 143192492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Kick_0_029
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 347
+        width: 73
+        height: 105
+      alignment: 9
+      pivot: {x: 0.32876712, y: 0.20952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2589bb16ff990542af76faeb3b13cf7
+      internalID: -496106394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Kick_0_033
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 149
+        width: 67
+        height: 97
+      alignment: 9
+      pivot: {x: 0.46268657, y: 0.25773194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee9930e951fc5214489add4a71bba905
+      internalID: 291802448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Kick_45_001
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 705
+        width: 55
+        height: 104
+      alignment: 9
+      pivot: {x: 0.34545454, y: 0.28846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc2456612710a7a4b93744948a893e1c
+      internalID: 956977714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Kick_45_005
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 736
+        width: 54
+        height: 138
+      alignment: 9
+      pivot: {x: 0.35185185, y: 0.2173913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc593cfd657e28c4ba190a3aca3ead24
+      internalID: -442811335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Kick_45_009
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 462
+        width: 67
+        height: 136
+      alignment: 9
+      pivot: {x: 0.25373134, y: 0.22794117}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10cf2a81f836ce4eba98b5bab044049
+      internalID: -1937908914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Kick_45_013
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 246
+        width: 75
+        height: 102
+      alignment: 9
+      pivot: {x: 0.22666667, y: 0.0882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 393a366481e08384d983869f0871ceb4
+      internalID: -243445338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Kick_45_017
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 699
+        width: 89
+        height: 107
+      alignment: 9
+      pivot: {x: 0.24719101, y: 0.19626169}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9784624d6057305478a07139f18f235e
+      internalID: -1269118113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Kick_45_021
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 452
+        width: 100
+        height: 107
+      alignment: 9
+      pivot: {x: 0.24, y: 0.13084112}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2018ac9cb8e97e244a310b92d1f0da66
+      internalID: -45386824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Kick_45_025
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 604
+        width: 53
+        height: 101
+      alignment: 9
+      pivot: {x: 0.03773585, y: 0.10891089}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b114585a4e40f5d42a6a0ab698ad0931
+      internalID: 1273636656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Kick_45_029
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 444
+        width: 51
+        height: 112
+      alignment: 9
+      pivot: {x: 0.21568628, y: 0.21428572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e5cc0823cf3bd4985121cffed9e472
+      internalID: -1814731095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Kick_45_033
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 0
+        width: 64
+        height: 106
+      alignment: 9
+      pivot: {x: 0.40625, y: 0.26415095}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e08f45b8ccfb94887a19428a8f88ac
+      internalID: 1350243999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Kick_90_001
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 802
+        width: 46
+        height: 110
+      alignment: 9
+      pivot: {x: 0.32608697, y: 0.22727273}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 682e3b32e114abf4e9b432a3cd282b6a
+      internalID: 2100133994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Kick_90_005
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 338
+        width: 56
+        height: 124
+      alignment: 9
+      pivot: {x: 0.51785713, y: 0.19354838}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 326a38aa5ced672429cbd35a3957e9f6
+      internalID: 2039108347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Kick_90_009
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 598
+        width: 50
+        height: 138
+      alignment: 9
+      pivot: {x: 0.48, y: 0.1594203}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c45f4b7ae264b46b1ed5c45c085200
+      internalID: 1448948591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Kick_90_013
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 95
+        width: 89
+        height: 121
+      alignment: 9
+      pivot: {x: 0.5280899, y: 0.05785124}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c008568879d8b24ab191636ec55db36
+      internalID: -596944224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Kick_90_017
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 559
+        width: 86
+        height: 111
+      alignment: 9
+      pivot: {x: 0.53488374, y: 0.117117114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb15a5bf1f89dda4cbe508b3adbd766f
+      internalID: -779252613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Kick_90_021
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 10
+        width: 81
+        height: 85
+      alignment: 9
+      pivot: {x: 0.4814815, y: 0.03529412}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35f5abd8c2d4e54e82313bbff6bc7cc
+      internalID: 1710860168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Kick_90_025
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 783
+        width: 60
+        height: 115
+      alignment: 9
+      pivot: {x: 0.48333332, y: 0.13913043}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb22e09c55a308428c2eeff08abff0d
+      internalID: 841263782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Kick_90_029
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 214
+        width: 51
+        height: 124
+      alignment: 9
+      pivot: {x: 0.43137255, y: 0.19354838}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 363b2b80e01741545af88e4602f11a6f
+      internalID: 815040432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Kick_90_033
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 909
+        width: 47
+        height: 115
+      alignment: 9
+      pivot: {x: 0.3617021, y: 0.2173913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e7a87fd239d1ff4fa4e5061870f589f
+      internalID: -1053279364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Kick_135_001
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 915
+        width: 64
+        height: 109
+      alignment: 9
+      pivot: {x: 0.484375, y: 0.16513762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c896ba62b0ec84193a867a19d852ab
+      internalID: 85030267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Kick_135_005
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 767
+        width: 68
+        height: 127
+      alignment: 9
+      pivot: {x: 0.5441176, y: 0.24409449}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b94963aa8deb5ae4ba42c2a5ec8014ad
+      internalID: -1232816130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Kick_135_009
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 874
+        width: 80
+        height: 150
+      alignment: 9
+      pivot: {x: 0.475, y: 0.24666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e5f524a9b14c443a121f4a4dc2fad8
+      internalID: 2096738584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Kick_135_013
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 916
+        width: 66
+        height: 108
+      alignment: 9
+      pivot: {x: 0.8636364, y: 0.16666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10c7119e4100f66419ff69f60a18feed
+      internalID: -1759191964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Kick_135_017
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 715
+        width: 87
+        height: 99
+      alignment: 9
+      pivot: {x: 0.74712646, y: 0.15151516}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16858c1b93a201d46bf8b764ae012bd2
+      internalID: 384167072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Kick_135_021
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 374
+        width: 78
+        height: 101
+      alignment: 9
+      pivot: {x: 0.6923077, y: 0.11881188}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5346da376b7bd9d48af53aa2d9ebb86c
+      internalID: -1923200182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Kick_135_025
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 224
+        width: 72
+        height: 118
+      alignment: 9
+      pivot: {x: 0.7638889, y: 0.1440678}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4cc2d1885202bc42b58de64e1d3cabe
+      internalID: -1070599205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Kick_135_029
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 894
+        width: 63
+        height: 130
+      alignment: 9
+      pivot: {x: 0.6031746, y: 0.16153847}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf90fb25bace6c44838664a8225c8b3
+      internalID: -74771472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Kick_135_033
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 741
+        width: 66
+        height: 133
+      alignment: 9
+      pivot: {x: 0.45454547, y: 0.2556391}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e46ce5f9c95e3240a0bcb296380bc4b
+      internalID: -1194199929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Kick_315_001
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 921
+        width: 63
+        height: 103
+      alignment: 9
+      pivot: {x: 0.53968257, y: 0.33009708}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a3d56975ff56e46a58431453139363
+      internalID: -782085125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Kick_315_005
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 74
+        height: 92
+      alignment: 9
+      pivot: {x: 0.5135135, y: 0.22826087}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a493af42a93c404aa8d8f696b7a5272
+      internalID: -1407815844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Kick_315_009
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 278
+        width: 66
+        height: 96
+      alignment: 9
+      pivot: {x: 0.4090909, y: 0.20833333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d83f96ae959b0488908e44655b3d1e
+      internalID: -636040712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Kick_315_013
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 368
+        width: 72
+        height: 117
+      alignment: 9
+      pivot: {x: 0.16666667, y: 0.36752138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36ce7cd798355d546a11008586bcbdd0
+      internalID: -562337352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Kick_315_017
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 912
+        width: 103
+        height: 112
+      alignment: 9
+      pivot: {x: 0.21359223, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a40eb52a267a8c4f84f9e600352c655
+      internalID: 57539713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Kick_315_021
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 809
+        width: 79
+        height: 107
+      alignment: 9
+      pivot: {x: 0.24050634, y: 0.3271028}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9568aa57538a7524da9af83e359914d9
+      internalID: -2086988566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Kick_315_025
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 242
+        width: 71
+        height: 105
+      alignment: 9
+      pivot: {x: 0.23943663, y: 0.32380953}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 253f5b58df5592348a0bb75851ebf597
+      internalID: 1267342450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Kick_315_029
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 348
+        width: 70
+        height: 104
+      alignment: 9
+      pivot: {x: 0.3857143, y: 0.28846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a38b90bc483c37a4ea879dfe1b04a4d6
+      internalID: -145337183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Kick_315_033
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 206
+        width: 66
+        height: 106
+      alignment: 9
+      pivot: {x: 0.5151515, y: 0.29245284}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efcff41339929d448a25661631431398
+      internalID: 865743766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Kick_270_001
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 135
+        width: 52
+        height: 116
+      alignment: 9
+      pivot: {x: 0.65384614, y: 0.3275862}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52c6fe5aeff0ced4db7361f376a83eeb
+      internalID: 993726513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Kick_270_005
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 898
+        width: 60
+        height: 126
+      alignment: 9
+      pivot: {x: 0.48333332, y: 0.30952382}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fec694d1ef224245a8d2b803cf1e501
+      internalID: -1853941417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Kick_270_009
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 669
+        width: 58
+        height: 114
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3859649}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fface7efcf94ae742b00eeb0b52eeaed
+      internalID: 2095083110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Kick_270_013
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 95
+        height: 122
+      alignment: 9
+      pivot: {x: 0.4526316, y: 0.43442622}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb09faaf6c53f634e8e25e63c7a33ecd
+      internalID: -449561457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Kick_270_017
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 556
+        width: 91
+        height: 113
+      alignment: 9
+      pivot: {x: 0.48351648, y: 0.39823008}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344a02d64ced2dd46bcc8890cc0b1074
+      internalID: 173728881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Kick_270_021
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 686
+        width: 86
+        height: 111
+      alignment: 9
+      pivot: {x: 0.47674417, y: 0.2882883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae90d12a3ff8947429fc248ae6a6adf5
+      internalID: 299665517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Kick_270_025
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 475
+        width: 68
+        height: 104
+      alignment: 9
+      pivot: {x: 0.45588234, y: 0.32692307}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362f1e3c3340c2246b6d0c16c06a1f58
+      internalID: 253833318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Kick_270_029
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 917
+        width: 55
+        height: 107
+      alignment: 9
+      pivot: {x: 0.5272727, y: 0.34579438}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef2c65f601b88ac49b158168e675b2b7
+      internalID: 514486261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Kick_270_033
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 424
+        width: 52
+        height: 114
+      alignment: 9
+      pivot: {x: 0.6730769, y: 0.34210527}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0fb38a0802f1a4419446295552f6ebd
+      internalID: -1316769261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Kick_225_001
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 595
+        width: 56
+        height: 104
+      alignment: 9
+      pivot: {x: 0.625, y: 0.29807693}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d4f90b68e4ffa940a16684e0363cf07
+      internalID: -1053322314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Kick_225_005
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 106
+        width: 57
+        height: 118
+      alignment: 9
+      pivot: {x: 0.5964912, y: 0.31355932}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef3ee3cd18a2db41abca8c554818910
+      internalID: -1885967214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Kick_225_009
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 251
+        width: 70
+        height: 117
+      alignment: 9
+      pivot: {x: 0.7714286, y: 0.30769232}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e36f91a94e4aa2944b270de200e2e1eb
+      internalID: 1228720278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Kick_225_013
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 670
+        width: 72
+        height: 113
+      alignment: 9
+      pivot: {x: 0.7777778, y: 0.25663716}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc461954109ae644a2922c15ed70f33
+      internalID: -1542135639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Kick_225_017
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 342
+        width: 94
+        height: 120
+      alignment: 9
+      pivot: {x: 0.78723407, y: 0.39166668}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b760ba8ac0e5744f9312c9ef041af17
+      internalID: 1837335806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Kick_225_021
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 797
+        width: 104
+        height: 112
+      alignment: 9
+      pivot: {x: 0.77884614, y: 0.30357143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f98118ec4382fef4fa5aacf66549100d
+      internalID: 826926866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Kick_225_025
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 41
+        width: 67
+        height: 98
+      alignment: 9
+      pivot: {x: 0.92537314, y: 0.26530612}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c63b1b91ec9764c41b840cfc0e4f5bf2
+      internalID: -1575671777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Kick_225_029
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 806
+        width: 58
+        height: 109
+      alignment: 9
+      pivot: {x: 0.8103448, y: 0.32110092}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11acc19d1e48c5f4aa36fcba0a7c37df
+      internalID: 106927438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Kick_225_033
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 139
+        width: 63
+        height: 103
+      alignment: 9
+      pivot: {x: 0.5714286, y: 0.29126215}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b5739ad8a44457429c3ec21d0a0fc86
+      internalID: -1084780049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Kick_180_001
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 538
+        width: 67
+        height: 114
+      alignment: 9
+      pivot: {x: 0.5074627, y: 0.27192983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ddcdd7cd10280641b15ebc8ad882c88
+      internalID: 195930925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Kick_180_005
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 602
+        width: 73
+        height: 134
+      alignment: 9
+      pivot: {x: 0.53424656, y: 0.26119402}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb49f0207599d348be8624d293d2f88
+      internalID: 857107941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Kick_180_009
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 106
+        width: 84
+        height: 100
+      alignment: 9
+      pivot: {x: 0.63095236, y: 0.14}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa6943d56d6655a40b49c616cc50d027
+      internalID: -1559732927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Kick_180_013
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 494
+        width: 67
+        height: 101
+      alignment: 9
+      pivot: {x: 1.0149254, y: 0.20792079}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a33df71bf8f94646bedae4a99494c80
+      internalID: 958354701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Kick_180_017
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 579
+        width: 91
+        height: 107
+      alignment: 9
+      pivot: {x: 0.94505495, y: 0.24299066}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dee01b21b2dc2dd43bd6cb433c4e0b2f
+      internalID: 1264602806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Kick_180_021
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 0
+        width: 88
+        height: 106
+      alignment: 9
+      pivot: {x: 0.9886364, y: 0.23584905}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e0367587adc11489a6224a9538ea3b
+      internalID: 1605054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Kick_180_025
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 822
+        width: 55
+        height: 99
+      alignment: 9
+      pivot: {x: 0.92727274, y: 0.15151516}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b7374cf5c140544accd5b9c03353df
+      internalID: -1774667809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Kick_180_029
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 312
+        width: 74
+        height: 112
+      alignment: 9
+      pivot: {x: 0.6621622, y: 0.16964285}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6a4d3517ef373428d35531826e9154
+      internalID: -1826757467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Kick_180_033
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 216
+        width: 64
+        height: 122
+      alignment: 9
+      pivot: {x: 0.5625, y: 0.25409836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9b16fa900e8994b928cb890486f41f
+      internalID: -808146278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 6cfb582b2c157e44ab5546d3c9c47f35
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      S-Kick_270_005: -1853941417
+      SW-Kick_225_001: -1053322314
+      N-Kick_90_029: 815040432
+      NW-Kick_135_025: -1070599205
+      SE-Kick_315_013: -562337352
+      SE-Kick_315_017: 57539713
+      E-Kick_0_017: 1609107722
+      S-Kick_270_033: -1316769261
+      W-Kick_180_009: -1559732927
+      E-Kick_0_021: 1220495359
+      SE-Kick_315_033: 865743766
+      SW-Kick_225_009: 1228720278
+      NW-Kick_135_013: -1759191964
+      N-Kick_90_017: -779252613
+      SE-Kick_315_029: -145337183
+      SE-Kick_315_001: -782085125
+      SW-Kick_225_021: 826926866
+      E-Kick_0_013: -1315963376
+      NW-Kick_135_005: -1232816130
+      W-Kick_180_021: 1605054
+      NE-Kick_45_009: -1937908914
+      S-Kick_270_013: -449561457
+      S-Kick_270_021: 299665517
+      SW-Kick_225_013: -1542135639
+      N-Kick_90_021: 1710860168
+      NW-Kick_135_001: 85030267
+      E-Kick_0_033: 291802448
+      SE-Kick_315_005: -1407815844
+      NE-Kick_45_021: -45386824
+      W-Kick_180_017: 1264602806
+      W-Kick_180_005: 857107941
+      SE-Kick_315_021: -2086988566
+      NE-Kick_45_005: -442811335
+      S-Kick_270_029: 514486261
+      SW-Kick_225_033: -1084780049
+      N-Kick_90_013: -596944224
+      N-Kick_90_001: 2100133994
+      N-Kick_90_033: -1053279364
+      SE-Kick_315_025: 1267342450
+      N-Kick_90_025: 841263782
+      NE-Kick_45_033: 1350243999
+      NE-Kick_45_001: 956977714
+      E-Kick_0_001: -605283276
+      SW-Kick_225_017: 1837335806
+      S-Kick_270_025: 253833318
+      E-Kick_0_005: 808615271
+      W-Kick_180_029: -1826757467
+      NE-Kick_45_013: -243445338
+      E-Kick_0_029: -496106394
+      NE-Kick_45_017: -1269118113
+      N-Kick_90_005: 2039108347
+      NW-Kick_135_021: -1923200182
+      NW-Kick_135_017: 384167072
+      NW-Kick_135_009: 2096738584
+      NW-Kick_135_029: -74771472
+      SW-Kick_225_025: -1575671777
+      W-Kick_180_013: 958354701
+      S-Kick_270_001: 993726513
+      NE-Kick_45_025: 1273636656
+      N-Kick_90_009: 1448948591
+      E-Kick_0_025: 143192492
+      SE-Kick_315_009: -636040712
+      W-Kick_180_033: -808146278
+      SW-Kick_225_005: -1885967214
+      W-Kick_180_001: 195930925
+      S-Kick_270_009: 2095083110
+      S-Kick_270_017: 173728881
+      W-Kick_180_025: -1774667809
+      NE-Kick_45_029: -1814731095
+      E-Kick_0_009: 1280124524
+      NW-Kick_135_033: -1194199929
+      SW-Kick_225_029: 106927438
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

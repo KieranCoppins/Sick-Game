@@ -37,13 +37,13 @@ AnimationClip:
       value: {fileID: -1124716612, guid: 473ad48a7aceffb4984299e74cb0c91b, type: 3}
     - time: 0.51666665
       value: {fileID: -1997652638, guid: 473ad48a7aceffb4984299e74cb0c91b, type: 3}
-    - time: 0.6166667
-      value: {fileID: 67441649, guid: 473ad48a7aceffb4984299e74cb0c91b, type: 3}
-    - time: 0.71666664
-      value: {fileID: 967414610, guid: 473ad48a7aceffb4984299e74cb0c91b, type: 3}
     - time: 0.76666665
+      value: {fileID: 67441649, guid: 473ad48a7aceffb4984299e74cb0c91b, type: 3}
+    - time: 0.9166667
+      value: {fileID: 967414610, guid: 473ad48a7aceffb4984299e74cb0c91b, type: 3}
+    - time: 0.98333335
       value: {fileID: -927954686, guid: 473ad48a7aceffb4984299e74cb0c91b, type: 3}
-    - time: 0.8333333
+    - time: 1.0833334
       value: {fileID: -1468453879, guid: 473ad48a7aceffb4984299e74cb0c91b, type: 3}
     attribute: m_Sprite
     path: Graphics
@@ -82,7 +82,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.84999996
+    m_StopTime: 1.1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -109,7 +109,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.8333333
+  - time: 1.0833334
     functionName: ResetAttackStage
     data: 
     objectReferenceParameter: {fileID: 0}

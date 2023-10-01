@@ -1,0 +1,2410 @@
+fileFormatVersion: 2
+guid: 697dd97e1d7f79b4db70a8850645387f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: E-Roll_0_001
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 354
+        width: 56
+        height: 88
+      alignment: 9
+      pivot: {x: 0.83928573, y: 0.23863636}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f92bae0ec5c7e4d84f7c9f1ee1f429
+      internalID: -297956609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Roll_0_005
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 584
+        width: 77
+        height: 74
+      alignment: 9
+      pivot: {x: 0.6753247, y: 0.24324325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d99a715330b89648b9e0efb6396b188
+      internalID: 476327791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Roll_0_009
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 956
+        width: 106
+        height: 67
+      alignment: 9
+      pivot: {x: 0.6886792, y: 0.2835821}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838e515ee44e8644e872f2c4fcfa31c1
+      internalID: -636969441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Roll_0_013
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 896
+        width: 122
+        height: 67
+      alignment: 9
+      pivot: {x: 0.63114756, y: 0.3880597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10756be6c11eb3944b708b53ca3405ac
+      internalID: 1104550777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Roll_0_017
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 870
+        width: 110
+        height: 85
+      alignment: 9
+      pivot: {x: 0.6272727, y: 0.5411765}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349f8de170c3b0f498e9c0e20bb1be88
+      internalID: -2133220891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Roll_0_021
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 801
+        width: 87
+        height: 66
+      alignment: 9
+      pivot: {x: 0.54022986, y: 0.36363637}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8ea85bba225df94eb8847baebe08444
+      internalID: -1786819603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Roll_0_025
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 637
+        width: 68
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45833334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f863187cf57b8b4598d6ff83ffd5c3e
+      internalID: 685954817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Roll_0_029
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 755
+        width: 78
+        height: 66
+      alignment: 9
+      pivot: {x: 0.23076923, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c34b36ec6d556e45b31af691e493db1
+      internalID: 1509965256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Roll_0_033
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 660
+        width: 84
+        height: 79
+      alignment: 9
+      pivot: {x: 0.16666667, y: 0.3164557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d443396f5859324abac4c4341fdfccb
+      internalID: 1963618651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Roll_0_037
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 504
+        width: 57
+        height: 56
+      alignment: 9
+      pivot: {x: 0.03508772, y: 0.2857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f24a041c6632c06409316e65e175553e
+      internalID: 633043203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Roll_0_041
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 274
+        width: 59
+        height: 67
+      alignment: 9
+      pivot: {x: 0.2881356, y: 0.1641791}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e879ecc701e1fcb4489cec217f7f84fa
+      internalID: 278304149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Roll_0_045
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 444
+        width: 62
+        height: 87
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1954023}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a42b65354d4e74a84784329c559f64
+      internalID: -547487026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Roll_0_049
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 574
+        width: 71
+        height: 96
+      alignment: 9
+      pivot: {x: 0.7183099, y: 0.15625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a01b08ea1eca0e54bb70ddff5eb10146
+      internalID: 2057148649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Roll_45_001
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 444
+        width: 53
+        height: 116
+      alignment: 9
+      pivot: {x: 0.7924528, y: 0.4051724}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c75ee1e7db1460243b675720ac2c5ae5
+      internalID: -938418564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Roll_45_005
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 124
+        width: 52
+        height: 92
+      alignment: 9
+      pivot: {x: 0.8076923, y: 0.36956522}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c479f3f0c5c944741bcf9f83eaee714c
+      internalID: -1338945709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Roll_45_009
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 679
+        width: 86
+        height: 101
+      alignment: 9
+      pivot: {x: 0.6395349, y: 0.47524753}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced3f7e7e4d12cd479860477acef9f91
+      internalID: -1628066637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Roll_45_013
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 853
+        width: 100
+        height: 82
+      alignment: 9
+      pivot: {x: 0.62, y: 0.3902439}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43ad027096dccc64a9389df50ecee809
+      internalID: -2057890377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Roll_45_017
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 739
+        width: 85
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5647059, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8fc91a7ad149db4c85d7945be698829
+      internalID: 289732721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Roll_45_021
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 681
+        width: 82
+        height: 56
+      alignment: 9
+      pivot: {x: 0.34146342, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c5460f5d608fc4f94bad2f82765c07
+      internalID: -1371569898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Roll_45_025
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 562
+        width: 71
+        height: 72
+      alignment: 9
+      pivot: {x: 0.3802817, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44cda5e071cf8a24baf15952ad2330d8
+      internalID: 1363522534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Roll_45_029
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 467
+        width: 70
+        height: 75
+      alignment: 9
+      pivot: {x: 0.3857143, y: 0.26666668}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 527d70ed9a4fa22438ecdba5c5c093af
+      internalID: 1288502643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Roll_45_033
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 235
+        width: 54
+        height: 65
+      alignment: 9
+      pivot: {x: 0.12962963, y: 0.15384616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9533cb27c85d474184cf3c4ce74a9e7
+      internalID: 75553673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Roll_45_037
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 270
+        width: 45
+        height: 55
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0.10909091}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e74242132034224d8d999e0cb3aaa0f
+      internalID: 1672957918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Roll_45_041
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 799
+        width: 41
+        height: 68
+      alignment: 9
+      pivot: {x: 0.29268292, y: 0.11764706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3670235776d80df43a82b987367d0e9e
+      internalID: 670589188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Roll_45_045
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 438
+        width: 54
+        height: 87
+      alignment: 9
+      pivot: {x: 0.5740741, y: 0.13793103}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ee7e049f32a7340bf86fdcde8c6ee5
+      internalID: -58628793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Roll_45_049
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 531
+        width: 65
+        height: 104
+      alignment: 9
+      pivot: {x: 0.73846155, y: 0.26923078}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 878441cf94732a045b1b51f5b81363f7
+      internalID: -249528189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Roll_90_001
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 672
+        width: 77
+        height: 94
+      alignment: 9
+      pivot: {x: 0.64935064, y: 0.30851063}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb068117ccaca44c885d66231e1ac28
+      internalID: 1116401953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Roll_90_005
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 911
+        width: 81
+        height: 112
+      alignment: 9
+      pivot: {x: 0.54320985, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87f5b736a32fb2642a269f03a9cad62f
+      internalID: -374469982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Roll_90_009
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 748
+        width: 73
+        height: 113
+      alignment: 9
+      pivot: {x: 0.46575344, y: 0.44247788}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9933a00ae9b930542a188a438276d571
+      internalID: 208764593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Roll_90_013
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 437
+        width: 64
+        height: 105
+      alignment: 9
+      pivot: {x: 0.28125, y: 0.4952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b04f89591dbde0468b6d755e355ddf0
+      internalID: -1837730308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Roll_90_017
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 281
+        width: 51
+        height: 60
+      alignment: 9
+      pivot: {x: 0.27450982, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5964596cd190f5448b91c95c4e14837c
+      internalID: -409791696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Roll_90_021
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 276
+        width: 53
+        height: 81
+      alignment: 9
+      pivot: {x: 0.3207547, y: 0.3580247}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d41531758857b354c80b85ba75c27a0d
+      internalID: 1311381306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Roll_90_025
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 527
+        width: 71
+        height: 63
+      alignment: 9
+      pivot: {x: 0.1971831, y: 0.3968254}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a98bacfa7ecc4804484d845ef96b1bcc
+      internalID: -684708306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Roll_90_029
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 544
+        width: 67
+        height: 78
+      alignment: 9
+      pivot: {x: 0.37313432, y: 0.23076923}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f49b890d88b2c74ab7a6068f250e2b8
+      internalID: -1819441268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Roll_90_033
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 447
+        width: 54
+        height: 55
+      alignment: 9
+      pivot: {x: 0.4814815, y: 0.036363635}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa3d79ea2c6f0f47977ba733c6a18d6
+      internalID: -219637327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Roll_90_037
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 530
+        width: 63
+        height: 68
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.14705883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4745d3e01d34464db435442f0d85025
+      internalID: -221853129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Roll_90_041
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 592
+        width: 77
+        height: 87
+      alignment: 9
+      pivot: {x: 0.5584416, y: 0.1954023}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1af57bcaae9ab94181b026d77735df1
+      internalID: 360583346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Roll_90_045
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 711
+        width: 73
+        height: 99
+      alignment: 9
+      pivot: {x: 0.6164383, y: 0.21212122}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b53a00eff02f26648879c78982e1be82
+      internalID: 34208592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Roll_90_049
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 367
+        width: 69
+        height: 108
+      alignment: 9
+      pivot: {x: 0.7246377, y: 0.3611111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4db096f1dae7d9a478ff86982eedba03
+      internalID: 1042512328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Roll_135_001
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 823
+        width: 79
+        height: 103
+      alignment: 9
+      pivot: {x: 0.35443038, y: 0.34951457}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f3f04b7ce5d9e4cb9654251ef39635
+      internalID: 1266836894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Roll_135_005
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 812
+        width: 78
+        height: 97
+      alignment: 9
+      pivot: {x: 0.47435898, y: 0.41237113}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d62d5264fff9bbe4caaea0ad88d664e9
+      internalID: 55652642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Roll_135_009
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 698
+        width: 93
+        height: 102
+      alignment: 9
+      pivot: {x: 0.41935483, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11132014c285ebe4aa005a35d1ad5cc9
+      internalID: 115977782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Roll_135_013
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 937
+        width: 113
+        height: 86
+      alignment: 9
+      pivot: {x: 0.38053098, y: 0.3139535}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbade3c58d5fef343a7ae5b75ecd682c
+      internalID: 780491742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Roll_135_017
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 802
+        width: 100
+        height: 66
+      alignment: 9
+      pivot: {x: 0.4, y: 0.25757575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec986fd6863ca64d9964cf0a90755fc
+      internalID: 209993302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Roll_135_021
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 622
+        width: 84
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3090909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c290be36fd34efa43a80fb9b3bf3fe3b
+      internalID: 846131175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Roll_135_025
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 271
+        width: 53
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5471698, y: 0.48051947}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c6406a041365004daa45dcaf4f24902
+      internalID: -257104305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Roll_135_029
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 782
+        width: 94
+        height: 69
+      alignment: 9
+      pivot: {x: 0.5851064, y: 0.13043478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a41c85f77cb82d64fb5d4a0cbe3473ff
+      internalID: 1382967949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Roll_135_033
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 422
+        width: 70
+        height: 54
+      alignment: 9
+      pivot: {x: 0.6857143, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d52562126644ba94c9a68c85d20283cd
+      internalID: 1024890926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Roll_135_037
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 732
+        width: 82
+        height: 65
+      alignment: 9
+      pivot: {x: 0.63414633, y: 0.092307694}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e27a60803a5ab2449a189594e1fe021b
+      internalID: -365609882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Roll_135_041
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 768
+        width: 82
+        height: 92
+      alignment: 9
+      pivot: {x: 0.64634144, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b52fe630e8650b4c9b25206d5325af0
+      internalID: -1800255429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Roll_135_045
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 838
+        width: 83
+        height: 89
+      alignment: 9
+      pivot: {x: 0.44578314, y: 0.21348314}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d58f101009300a4498558488fc7893a
+      internalID: -1088540346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Roll_135_049
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 624
+        width: 64
+        height: 122
+      alignment: 9
+      pivot: {x: 0.34375, y: 0.22950819}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e36f84bdacd01a419aaea55be408448
+      internalID: 1181363998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Roll_315_001
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 639
+        width: 73
+        height: 69
+      alignment: 9
+      pivot: {x: 0.7123288, y: 0.014492754}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70562f3645787a64a8e1282295cf9301
+      internalID: 1650634860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Roll_315_005
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 600
+        width: 67
+        height: 64
+      alignment: 9
+      pivot: {x: 0.6268657, y: 0.03125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25defecbdc36104da12b2736cce5a84
+      internalID: -1367300622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Roll_315_009
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 862
+        width: 88
+        height: 73
+      alignment: 9
+      pivot: {x: 0.60227275, y: 0.1369863}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c5c51a94c71d64b81579722db442da
+      internalID: 289432705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Roll_315_013
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 869
+        width: 97
+        height: 82
+      alignment: 9
+      pivot: {x: 0.556701, y: 0.35365853}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34dcd9f2cfecb224eb0e713fb1cc5402
+      internalID: -1896196746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Roll_315_017
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 875
+        width: 101
+        height: 79
+      alignment: 9
+      pivot: {x: 0.63366336, y: 0.34177214}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 426923b2e00c317458b4937c0e922790
+      internalID: 379739083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Roll_315_021
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 666
+        width: 73
+        height: 87
+      alignment: 9
+      pivot: {x: 0.5890411, y: 0.3218391}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ad25e3ccd655645817ff8e04b522c6
+      internalID: 1225197279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Roll_315_025
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 200
+        width: 53
+        height: 72
+      alignment: 9
+      pivot: {x: 0.4716981, y: 0.4722222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f604298df4f15d49a6ea688ad62d1d0
+      internalID: -1452964267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Roll_315_029
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 809
+        width: 96
+        height: 64
+      alignment: 9
+      pivot: {x: 0.39583334, y: 0.46875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b239fc88c4954d4d87a24a12f33e54f
+      internalID: -1372145670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Roll_315_033
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 741
+        width: 87
+        height: 66
+      alignment: 9
+      pivot: {x: 0.3678161, y: 0.45454547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08df966a1b2301643b5712aba354a8e6
+      internalID: 1711644876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Roll_315_037
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 621
+        width: 86
+        height: 75
+      alignment: 9
+      pivot: {x: 0.23255815, y: 0.45333335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6591bb81a82b364aa4eac134e990a06
+      internalID: -1062028019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Roll_315_041
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 704
+        width: 92
+        height: 85
+      alignment: 9
+      pivot: {x: 0.41304347, y: 0.42352942}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34db8475907d8f9428cbb6cc135b91d3
+      internalID: 1243607221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Roll_315_045
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 934
+        width: 80
+        height: 89
+      alignment: 9
+      pivot: {x: 0.525, y: 0.23595506}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c06f72922f7b14c877056a8794519d
+      internalID: 1544158756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Roll_315_049
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 409
+        width: 61
+        height: 111
+      alignment: 9
+      pivot: {x: 0.6557377, y: 0.27027026}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9484b083efc30674dbead5f326306d7d
+      internalID: -1443568984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Roll_270_001
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 562
+        width: 85
+        height: 70
+      alignment: 9
+      pivot: {x: 0.31764707, y: 0.014285714}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a2164b27798c9c43a99f14ab9ac86a5
+      internalID: -1816271448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Roll_270_005
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 558
+        width: 75
+        height: 61
+      alignment: 9
+      pivot: {x: 0.48, y: 0.016393442}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856f6e2e6868cfc4b982670648e8e444
+      internalID: -1631100835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Roll_270_009
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 478
+        width: 74
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5675676, y: 0.115384616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d92e14e3a8133547a8a09d431fe1508
+      internalID: -1913704989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Roll_270_013
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 434
+        width: 61
+        height: 94
+      alignment: 9
+      pivot: {x: 0.6557377, y: 0.31914893}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50df3f0a2d5f8824abc314c8a939a63f
+      internalID: -1392593805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Roll_270_017
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 348
+        width: 53
+        height: 97
+      alignment: 9
+      pivot: {x: 0.754717, y: 0.29896906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b67d333ce963d4f988a366223211b1
+      internalID: 1898968209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Roll_270_021
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 327
+        width: 55
+        height: 105
+      alignment: 9
+      pivot: {x: 0.7818182, y: 0.3904762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a5c2ddd66066342aba3c70db4c5a78
+      internalID: 521693241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Roll_270_025
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 218
+        width: 50
+        height: 61
+      alignment: 9
+      pivot: {x: 0.74, y: 0.4262295}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef80b402f82115243b5569fd71188682
+      internalID: -973935815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Roll_270_029
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 863
+        width: 80
+        height: 69
+      alignment: 9
+      pivot: {x: 0.525, y: 0.47826087}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a61bbaedcf0bbb141bf61283ee10defb
+      internalID: -1974717147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Roll_270_033
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 302
+        width: 55
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5272727, y: 0.5625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a092cdb4947195c4294db0973957401b
+      internalID: -1657592662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Roll_270_037
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 660
+        width: 68
+        height: 86
+      alignment: 9
+      pivot: {x: 0.5882353, y: 0.54651165}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5a1e9b0b00f5346a8161da069f381e
+      internalID: -892936021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Roll_270_041
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 929
+        width: 88
+        height: 94
+      alignment: 9
+      pivot: {x: 0.47727272, y: 0.41489363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93fcedbc83035a845a9b7c909388f6e9
+      internalID: -297699371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Roll_270_045
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 474
+        width: 70
+        height: 108
+      alignment: 9
+      pivot: {x: 0.32857144, y: 0.2777778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d53345287a9f1764daf21c9e8812db81
+      internalID: 1853009063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Roll_270_049
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 304
+        width: 59
+        height: 103
+      alignment: 9
+      pivot: {x: 0.30508474, y: 0.21359223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c100c586bc31854b96e30331e31223d
+      internalID: -368285905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Roll_225_001
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 343
+        width: 60
+        height: 92
+      alignment: 9
+      pivot: {x: 0.15, y: 0.054347824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e744bd77f59e9c44b1d2766a3431f0a
+      internalID: -1033738996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Roll_225_005
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 294
+        width: 50
+        height: 58
+      alignment: 9
+      pivot: {x: 0.24, y: -0.01724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4a1bcd23cc6ed4a8702d315007fa99
+      internalID: 574119571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Roll_225_009
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 937
+        width: 98
+        height: 86
+      alignment: 9
+      pivot: {x: 0.41836736, y: 0.15116279}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 514507b7cc9f4db49944faae3a0cc9bd
+      internalID: 574464387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Roll_225_013
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 791
+        width: 108
+        height: 103
+      alignment: 9
+      pivot: {x: 0.39814815, y: 0.41747573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf425d3a954db1346bc627d2d448a340
+      internalID: 599727861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Roll_225_017
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 928
+        width: 83
+        height: 95
+      alignment: 9
+      pivot: {x: 0.5060241, y: 0.3263158}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07159f77676fddf43946b0ab395e2f06
+      internalID: 2106816490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Roll_225_021
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 636
+        width: 77
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5974026, y: 0.34042552}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6bdf26e1d2ca0c4d90b34920f7639b4
+      internalID: -1176396975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Roll_225_025
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 368
+        width: 61
+        height: 60
+      alignment: 9
+      pivot: {x: 0.6721311, y: 0.26666668}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab872b4054c1d4348a2ee4c4620337f2
+      internalID: -1365172447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Roll_225_029
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 775
+        width: 79
+        height: 61
+      alignment: 9
+      pivot: {x: 0.7468355, y: 0.4918033}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e74491aac5f8c94e91f4ed8246d2372
+      internalID: 928859450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Roll_225_033
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 222
+        width: 54
+        height: 80
+      alignment: 9
+      pivot: {x: 0.9444444, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe81b4097ab9ec42b3c0ac978725aef
+      internalID: -1967011831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Roll_225_037
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 350
+        width: 53
+        height: 92
+      alignment: 9
+      pivot: {x: 0.8490566, y: 0.4021739}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8fcd7b98d613a740b64941419e78507
+      internalID: 1400163384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Roll_225_041
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 430
+        width: 46
+        height: 99
+      alignment: 9
+      pivot: {x: 0.6956522, y: 0.35353535}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26242232fd4e07d4b9769713a62e6fc5
+      internalID: 1186213592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Roll_225_045
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 375
+        width: 61
+        height: 85
+      alignment: 9
+      pivot: {x: 0.40983605, y: 0.22352941}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52dfb27247ee95c4989aae98694486ff
+      internalID: -858398034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Roll_225_049
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 459
+        width: 63
+        height: 113
+      alignment: 9
+      pivot: {x: 0.26984128, y: 0.30088496}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44597996189edb042ba3f40816eccfd1
+      internalID: -961035898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Roll_180_001
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 359
+        width: 56
+        height: 98
+      alignment: 9
+      pivot: {x: 0.17857143, y: 0.2857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c027591a43e8ea41a8677feac47871b
+      internalID: 1956968465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Roll_180_005
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 634
+        width: 89
+        height: 68
+      alignment: 9
+      pivot: {x: 0.30337077, y: 0.19117647}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a80882d707b98478701c00c21ba6fb
+      internalID: -1189141910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Roll_180_009
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 953
+        width: 105
+        height: 70
+      alignment: 9
+      pivot: {x: 0.2761905, y: 0.25714287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666fb8c613a5b5e4c9672e2bba33412b
+      internalID: -1356122520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Roll_180_013
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 965
+        width: 125
+        height: 58
+      alignment: 9
+      pivot: {x: 0.352, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29f17834edb3bf43b061cbd414e8104
+      internalID: -493897892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Roll_180_017
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 957
+        width: 123
+        height: 66
+      alignment: 9
+      pivot: {x: 0.35772356, y: 0.28787878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3810f6577e5d240aec37c80dee68b2
+      internalID: 251562391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Roll_180_021
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 477
+        width: 74
+        height: 83
+      alignment: 9
+      pivot: {x: 0.4054054, y: 0.26506025}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c345368d584374ca5a93de5d9bd981
+      internalID: -2090403194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Roll_180_025
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 462
+        width: 62
+        height: 67
+      alignment: 9
+      pivot: {x: 0.5322581, y: 0.35820895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8fedf2f7621dab4aba44e0b7beac03e
+      internalID: 1767277985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Roll_180_029
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 609
+        width: 68
+        height: 49
+      alignment: 9
+      pivot: {x: 0.75, y: 0.24489796}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cedef45f90db87408d593bbbd274966
+      internalID: -738798356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Roll_180_033
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 710
+        width: 78
+        height: 63
+      alignment: 9
+      pivot: {x: 0.8974359, y: 0.26984128}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23dba8ace4cd5744f9c7ea9158b5879c
+      internalID: 1291847018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Roll_180_037
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 544
+        width: 75
+        height: 76
+      alignment: 9
+      pivot: {x: 0.9066667, y: 0.28947368}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea7b06a12439c441a5b38e5caf48511
+      internalID: 760167632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Roll_180_041
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 287
+        width: 55
+        height: 86
+      alignment: 9
+      pivot: {x: 0.76363635, y: 0.30232558}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628365f2e1e080944ad6967fdce743da
+      internalID: -1960578999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Roll_180_045
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 522
+        width: 65
+        height: 85
+      alignment: 9
+      pivot: {x: 0.44615385, y: 0.16470589}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac068272c2d493040b106ac1ae125657
+      internalID: -1938490364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Roll_180_049
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 533
+        width: 64
+        height: 104
+      alignment: 9
+      pivot: {x: 0.3125, y: 0.15384616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c025ee836b6bd44da87461d5e934acb
+      internalID: -1178945120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0112a43e3f755fe478178845839f5f23
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      E-Roll_0_041: 278304149
+      W-Roll_180_025: 1767277985
+      NE-Roll_45_005: -1338945709
+      NE-Roll_45_001: -938418564
+      SW-Roll_225_041: 1186213592
+      NW-Roll_135_021: 846131175
+      SW-Roll_225_045: -858398034
+      NW-Roll_135_025: -257104305
+      NW-Roll_135_001: 1266836894
+      SE-Roll_315_033: 1711644876
+      S-Roll_270_013: -1392593805
+      NE-Roll_45_013: -2057890377
+      NW-Roll_135_041: -1800255429
+      NW-Roll_135_029: 1382967949
+      NE-Roll_45_033: 75553673
+      E-Roll_0_021: -1786819603
+      SW-Roll_225_021: -1176396975
+      N-Roll_90_009: 208764593
+      W-Roll_180_033: 1291847018
+      SW-Roll_225_025: -1365172447
+      E-Roll_0_029: 1509965256
+      S-Roll_270_033: -1657592662
+      NE-Roll_45_045: -58628793
+      N-Roll_90_021: 1311381306
+      W-Roll_180_001: 1956968465
+      NW-Roll_135_037: -365609882
+      SE-Roll_315_049: -1443568984
+      W-Roll_180_013: -493897892
+      NE-Roll_45_009: -1628066637
+      W-Roll_180_037: 760167632
+      SW-Roll_225_005: 574119571
+      W-Roll_180_049: -1178945120
+      N-Roll_90_005: -374469982
+      NE-Roll_45_021: -1371569898
+      NE-Roll_45_025: 1363522534
+      NW-Roll_135_013: 780491742
+      SW-Roll_225_017: 2106816490
+      NW-Roll_135_005: 55652642
+      NW-Roll_135_017: 209993302
+      NE-Roll_45_029: 1288502643
+      SE-Roll_315_013: -1896196746
+      E-Roll_0_017: -2133220891
+      NE-Roll_45_037: 1672957918
+      SE-Roll_315_037: -1062028019
+      SE-Roll_315_001: 1650634860
+      W-Roll_180_009: -1356122520
+      S-Roll_270_037: -892936021
+      S-Roll_270_005: -1631100835
+      SW-Roll_225_033: -1967011831
+      E-Roll_0_049: 2057148649
+      SE-Roll_315_029: -1372145670
+      SE-Roll_315_021: 1225197279
+      SW-Roll_225_037: 1400163384
+      E-Roll_0_005: 476327791
+      E-Roll_0_013: 1104550777
+      NE-Roll_45_017: 289732721
+      N-Roll_90_013: -1837730308
+      S-Roll_270_041: -297699371
+      NW-Roll_135_049: 1181363998
+      NW-Roll_135_045: -1088540346
+      N-Roll_90_017: -409791696
+      E-Roll_0_025: 685954817
+      S-Roll_270_049: -368285905
+      N-Roll_90_001: 1116401953
+      W-Roll_180_021: -2090403194
+      SE-Roll_315_045: 1544158756
+      W-Roll_180_005: -1189141910
+      E-Roll_0_037: 633043203
+      NE-Roll_45_049: -249528189
+      SW-Roll_225_029: 928859450
+      NW-Roll_135_009: 115977782
+      N-Roll_90_041: 360583346
+      S-Roll_270_025: -973935815
+      NW-Roll_135_033: 1024890926
+      NE-Roll_45_041: 670589188
+      E-Roll_0_009: -636969441
+      W-Roll_180_029: -738798356
+      S-Roll_270_021: 521693241
+      E-Roll_0_001: -297956609
+      SE-Roll_315_005: -1367300622
+      SE-Roll_315_025: -1452964267
+      SW-Roll_225_013: 599727861
+      SW-Roll_225_001: -1033738996
+      SW-Roll_225_009: 574464387
+      S-Roll_270_009: -1913704989
+      N-Roll_90_049: 1042512328
+      E-Roll_0_033: 1963618651
+      N-Roll_90_025: -684708306
+      S-Roll_270_017: 1898968209
+      SW-Roll_225_049: -961035898
+      N-Roll_90_037: -221853129
+      S-Roll_270_029: -1974717147
+      SE-Roll_315_017: 379739083
+      S-Roll_270_045: 1853009063
+      E-Roll_0_045: -547487026
+      N-Roll_90_033: -219637327
+      SE-Roll_315_009: 289432705
+      W-Roll_180_017: 251562391
+      S-Roll_270_001: -1816271448
+      W-Roll_180_045: -1938490364
+      W-Roll_180_041: -1960578999
+      SE-Roll_315_041: 1243607221
+      N-Roll_90_029: -1819441268
+      N-Roll_90_045: 34208592
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

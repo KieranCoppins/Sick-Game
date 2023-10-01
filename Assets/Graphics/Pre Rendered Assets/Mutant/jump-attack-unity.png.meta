@@ -1,0 +1,2410 @@
+fileFormatVersion: 2
+guid: 5fe26c5e50a6039469b5f90188f9173d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: E-Jump Attack_0_001
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 882
+        width: 59
+        height: 118
+      alignment: 9
+      pivot: {x: 0.27118644, y: 0.27966103}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e69d2cb001c7df741b902a3b3d9f27b4
+      internalID: 960855584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Jump Attack_0_010
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 1536
+        width: 62
+        height: 114
+      alignment: 9
+      pivot: {x: 0.24193548, y: 0.24561404}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a3b910298c53846b0a0edc40a68a4c
+      internalID: 933408307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Jump Attack_0_019
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 1764
+        width: 94
+        height: 145
+      alignment: 9
+      pivot: {x: 0.30851063, y: 0.20689656}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12687ddfa06cb6b4cac3b2d79d26f174
+      internalID: -1500520782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Jump Attack_0_028
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 1002
+        width: 72
+        height: 106
+      alignment: 9
+      pivot: {x: 0.5694444, y: -0.6792453}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e751f4365e513848aad2bf050f89b31
+      internalID: 918286146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Jump Attack_0_037
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 1289
+        width: 83
+        height: 137
+      alignment: 9
+      pivot: {x: 0.67469877, y: -0.4379562}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085f61f3bd63570449353af1b3d93b76
+      internalID: -1965878860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Jump Attack_0_046
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 1115
+        width: 72
+        height: 148
+      alignment: 9
+      pivot: {x: 0.29166666, y: 0.12162162}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 952468173c4787547ada867b94fb0a9e
+      internalID: -1213406372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Jump Attack_0_055
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1596
+        width: 91
+        height: 77
+      alignment: 9
+      pivot: {x: 0.24175824, y: 0.33766234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1539a21cc2a5bb64bb0787770c8f1288
+      internalID: -406154290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Jump Attack_0_064
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1340
+        width: 92
+        height: 86
+      alignment: 9
+      pivot: {x: 0.36956522, y: 0.3372093}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d67392b3bbc2904eb25d1c8a3be5110
+      internalID: -1993244149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Jump Attack_0_073
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 1460
+        width: 90
+        height: 79
+      alignment: 9
+      pivot: {x: 0.3, y: 0.25316456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce6a6c5cdb848d4bb06396176b67c4b
+      internalID: -1393815811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Jump Attack_0_082
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 984
+        width: 76
+        height: 107
+      alignment: 9
+      pivot: {x: 0.23684211, y: 0.28037384}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97018cfa25ffe5e45994c091880a42d6
+      internalID: -1491945586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Jump Attack_0_091
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 1693
+        width: 53
+        height: 109
+      alignment: 9
+      pivot: {x: 0.26415095, y: 0.24770643}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5014c7ba645ec948b08847e34d912b5
+      internalID: 1794819318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Jump Attack_0_100
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 1425
+        width: 62
+        height: 109
+      alignment: 9
+      pivot: {x: 0.32258064, y: 0.26605505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02920abc6a01c942a972cff1f329236
+      internalID: 186765979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Jump Attack_0_109
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 842
+        width: 58
+        height: 113
+      alignment: 9
+      pivot: {x: 0.31034482, y: 0.33628318}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c398fef02d49e47b1751b11948aeaf
+      internalID: -1772663446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Jump Attack_45_001
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1062
+        width: 72
+        height: 120
+      alignment: 9
+      pivot: {x: 0.375, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03150ce710d5ae843976fa45acf70fcb
+      internalID: -1673206756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Jump Attack_45_010
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 1402
+        width: 89
+        height: 112
+      alignment: 9
+      pivot: {x: 0.4494382, y: 0.2767857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8cdba38341d69b4b8216d1f1fbc8c17
+      internalID: -1441972157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Jump Attack_45_019
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 1608
+        width: 93
+        height: 155
+      alignment: 9
+      pivot: {x: 0.37634408, y: 0.16129032}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10430207c8c25e34fbf5794ba7861893
+      internalID: 587762416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Jump Attack_45_028
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 1037
+        width: 75
+        height: 104
+      alignment: 9
+      pivot: {x: 0.70666665, y: -0.58653843}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da009b7033c78354398dc6a314c15e7c
+      internalID: -181094676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Jump Attack_45_037
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1278
+        width: 83
+        height: 129
+      alignment: 9
+      pivot: {x: 0.73493975, y: -0.37209302}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea76647c6a4290642966013ad2d5f0fc
+      internalID: 476670615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Jump Attack_45_046
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1911
+        width: 104
+        height: 136
+      alignment: 9
+      pivot: {x: 0.34615386, y: 0.11764706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a7c7dd42afdab419a9fbe0c883bc2d
+      internalID: -1872965997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Jump Attack_45_055
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1864
+        width: 104
+        height: 80
+      alignment: 9
+      pivot: {x: 0.28846154, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8874e7c09ab59f844897dfb1530896b1
+      internalID: 179539968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Jump Attack_45_064
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 1516
+        width: 90
+        height: 90
+      alignment: 9
+      pivot: {x: 0.37777779, y: 0.25555557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 178e899f3ba772d44ad96fc3ab5aa8b2
+      internalID: 1555054544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Jump Attack_45_073
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 1638
+        width: 99
+        height: 84
+      alignment: 9
+      pivot: {x: 0.3030303, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aed1a7e57a7d04478706660299d0dc9
+      internalID: -1958210860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Jump Attack_45_082
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1333
+        width: 84
+        height: 98
+      alignment: 9
+      pivot: {x: 0.30952382, y: 0.18367347}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb422cb9244f90d4cab0f505b61c785b
+      internalID: -1606271782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Jump Attack_45_091
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 1122
+        width: 81
+        height: 102
+      alignment: 9
+      pivot: {x: 0.3580247, y: 0.16666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88819e4f77e4eef498fb9aea7930d914
+      internalID: 1751743173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Jump Attack_45_100
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 1184
+        width: 75
+        height: 101
+      alignment: 9
+      pivot: {x: 0.42666668, y: 0.18811882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f5539cdeafad043abce9e796dd57af
+      internalID: 4004811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Jump Attack_45_109
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 1012
+        width: 69
+        height: 101
+      alignment: 9
+      pivot: {x: 0.39130434, y: 0.17821783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17824d3adf3a5f43aa0ade3b5d0ebe1
+      internalID: -286254897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Jump Attack_90_001
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1946
+        width: 107
+        height: 101
+      alignment: 9
+      pivot: {x: 0.5140187, y: 0.14851485}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48cd2aee18761d040af785a5de06e28f
+      internalID: -391261648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Jump Attack_90_010
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1962
+        width: 136
+        height: 85
+      alignment: 9
+      pivot: {x: 0.5808824, y: 0.12941177}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 995fb41bd68a40944b2b77293f1200c6
+      internalID: -2067367809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Jump Attack_90_019
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 1409
+        width: 88
+        height: 164
+      alignment: 9
+      pivot: {x: 0.6136364, y: 0.18292683}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa18cae5fbf4424598136b89c47548f
+      internalID: -172788163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Jump Attack_90_028
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1871
+        width: 118
+        height: 84
+      alignment: 9
+      pivot: {x: 0.66101694, y: -0.9166667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 802db8d9dd786684cb7a2f076f059cb2
+      internalID: 1044139743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Jump Attack_90_037
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 1678
+        width: 101
+        height: 125
+      alignment: 9
+      pivot: {x: 0.57425743, y: -0.352}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 130c9e9a68867df47853f31b6eba761f
+      internalID: -792679106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Jump Attack_90_046
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1804
+        width: 108
+        height: 137
+      alignment: 9
+      pivot: {x: 0.5740741, y: 0.11678832}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a485b9135bd4a29459f182023515a35c
+      internalID: -3884075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Jump Attack_90_055
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1150
+        width: 87
+        height: 83
+      alignment: 9
+      pivot: {x: 0.47126436, y: 0.22891566}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 142f6261d11309a43a8520cab1cd941a
+      internalID: 1794450444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Jump Attack_90_064
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 1958
+        width: 95
+        height: 89
+      alignment: 9
+      pivot: {x: 0.47368422, y: 0.21348314}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed9d0338d3959dd4ea625c9734add7bc
+      internalID: -2126543842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Jump Attack_90_073
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1235
+        width: 91
+        height: 103
+      alignment: 9
+      pivot: {x: 0.48351648, y: 0.3106796}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11a8277b85185842b60d425ebd2eab5
+      internalID: 343150016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Jump Attack_90_082
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 1805
+        width: 103
+        height: 107
+      alignment: 9
+      pivot: {x: 0.5048544, y: 0.10280374}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4d98372a4a4e741a0cf6e52acb2ce2
+      internalID: -1616972777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Jump Attack_90_091
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1764
+        width: 115
+        height: 105
+      alignment: 9
+      pivot: {x: 0.51304346, y: 0.15238096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 613921cb48e25cf4299f2172b2b080cb
+      internalID: 347940971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Jump Attack_90_100
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1520
+        width: 90
+        height: 109
+      alignment: 9
+      pivot: {x: 0.5, y: 0.18348624}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32b8fb3f4d360c43bad8d614e8e7581
+      internalID: -1608586170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Jump Attack_90_109
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 1765
+        width: 94
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5106383, y: 0.09}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea0f73a80dd15845b0e9477ad8a3d67
+      internalID: -150743381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Jump Attack_135_001
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 1131
+        width: 78
+        height: 100
+      alignment: 9
+      pivot: {x: 0.64102566, y: 0.19}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7038bc7ab5351e46acc5adef37547c5
+      internalID: -733893059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Jump Attack_135_010
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1848
+        width: 127
+        height: 112
+      alignment: 9
+      pivot: {x: 0.6929134, y: 0.26785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba1ae1851b7a9a4ca7bd74be30c1f5c
+      internalID: -180758072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Jump Attack_135_019
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1298
+        width: 92
+        height: 149
+      alignment: 9
+      pivot: {x: 0.7173913, y: 0.147651}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39d7976eeff89b4eaf9cc76bae115f5
+      internalID: -475962267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Jump Attack_135_028
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 1428
+        width: 86
+        height: 105
+      alignment: 9
+      pivot: {x: 0.47674417, y: -0.5809524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adfffa9eddc854d47b6fb0d913e5a997
+      internalID: -1606366955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Jump Attack_135_037
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1461
+        width: 84
+        height: 122
+      alignment: 9
+      pivot: {x: 0.3690476, y: -0.39344263}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0441ee7b667c9a348a0c070ab3dd4cda
+      internalID: 1253565365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Jump Attack_135_046
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 1178
+        width: 81
+        height: 138
+      alignment: 9
+      pivot: {x: 0.6296296, y: 0.13768116}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e3ee5880f5dc8d48afdfdfe6e765d9a
+      internalID: -663770300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Jump Attack_135_055
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 1215
+        width: 79
+        height: 84
+      alignment: 9
+      pivot: {x: 0.73417723, y: 0.2857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd98120908176a94cb58b13477559acf
+      internalID: 737954167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Jump Attack_135_064
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 1088
+        width: 78
+        height: 89
+      alignment: 9
+      pivot: {x: 0.7692308, y: 0.3258427}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba49b65fd6ebde44db3c84896e4ddd66
+      internalID: -1382623011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Jump Attack_135_073
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1050
+        width: 80
+        height: 98
+      alignment: 9
+      pivot: {x: 0.8125, y: 0.29591838}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b43707c57b999f84d83896362c31ecb7
+      internalID: -2068601261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Jump Attack_135_082
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1555
+        width: 99
+        height: 104
+      alignment: 9
+      pivot: {x: 0.6262626, y: 0.22115384}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d0039f5f726a9e4f9e803d8be9e90ff
+      internalID: 971153639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Jump Attack_135_091
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 1320
+        width: 88
+        height: 108
+      alignment: 9
+      pivot: {x: 0.60227275, y: 0.22222222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f84fff7550c546443b80c959708503c7
+      internalID: 1589944606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Jump Attack_135_100
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 1585
+        width: 70
+        height: 106
+      alignment: 9
+      pivot: {x: 0.64285713, y: 0.23584905}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc683d9426e64ee41866749e4490cb2d
+      internalID: 113808114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Jump Attack_135_109
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 938
+        width: 75
+        height: 110
+      alignment: 9
+      pivot: {x: 0.64, y: 0.25454545}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eea3010aa9bde144aab330096ce7d3e
+      internalID: -602462266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Jump Attack_315_001
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1145
+        width: 78
+        height: 107
+      alignment: 9
+      pivot: {x: 0.3974359, y: 0.28037384}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fe18b8230c63304cab1c05f5ed081bf
+      internalID: 966731156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Jump Attack_315_010
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1943
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.28125, y: 0.27884614}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 419984140d702014090e616f205e412b
+      internalID: -1248559034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Jump Attack_315_019
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 1735
+        width: 102
+        height: 127
+      alignment: 9
+      pivot: {x: 0.27450982, y: 0.23622048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbae3df605bebb8458af449c9f29a1d3
+      internalID: -2000568489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Jump Attack_315_028
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 1788
+        width: 76
+        height: 118
+      alignment: 9
+      pivot: {x: 0.59210527, y: -0.5423729}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77645c340f4cab7449594255bf6dbc49
+      internalID: -39060140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Jump Attack_315_037
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 1301
+        width: 83
+        height: 122
+      alignment: 9
+      pivot: {x: 0.6506024, y: -0.52459013}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d47a344e8fb68fc43bcb828194f77a2a
+      internalID: -30732065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Jump Attack_315_046
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1318
+        width: 88
+        height: 141
+      alignment: 9
+      pivot: {x: 0.3181818, y: 0.18439716}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d84b3dba100eb2479789605e317b6ba
+      internalID: 883223343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Jump Attack_315_055
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 1088
+        width: 78
+        height: 88
+      alignment: 9
+      pivot: {x: 0.2948718, y: 0.52272725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd4c87c1cdc0a144aba9a6710a32225
+      internalID: -246935904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Jump Attack_315_064
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1493
+        width: 90
+        height: 101
+      alignment: 9
+      pivot: {x: 0.23333333, y: 0.44554454}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d55fc89040bc054590acfbc6d222739
+      internalID: 1235158378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Jump Attack_315_073
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 1233
+        width: 82
+        height: 98
+      alignment: 9
+      pivot: {x: 0.29268292, y: 0.46938777}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50431512459329e488e3d788e0ba176f
+      internalID: -793920693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Jump Attack_315_082
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 1846
+        width: 104
+        height: 103
+      alignment: 9
+      pivot: {x: 0.33653846, y: 0.3592233}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7cf14467d895664cbbfd3abd9ebf317
+      internalID: -1011051271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Jump Attack_315_091
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 1575
+        width: 93
+        height: 101
+      alignment: 9
+      pivot: {x: 0.37634408, y: 0.2970297}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b963aee956514a34ab766777f683daf8
+      internalID: 1505303239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Jump Attack_315_100
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 1179
+        width: 78
+        height: 97
+      alignment: 9
+      pivot: {x: 0.3974359, y: 0.29896906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaba0ccae3a88e54084ef18ffe07b1be
+      internalID: -1960731501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Jump Attack_315_109
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 1110
+        width: 74
+        height: 103
+      alignment: 9
+      pivot: {x: 0.3918919, y: 0.34951457}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc07728e6a0b7784ba021c67487cc1c6
+      internalID: -10572223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Jump Attack_270_001
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 1369
+        width: 89
+        height: 89
+      alignment: 9
+      pivot: {x: 0.49438202, y: 0.26966292}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8574a07665e508458655604db088451
+      internalID: -1601555543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Jump Attack_270_010
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1957
+        width: 145
+        height: 90
+      alignment: 9
+      pivot: {x: 0.41379312, y: 0.32222223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4440f4bbfbf80f64088d8db2cbd3fc27
+      internalID: 1477868351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Jump Attack_270_019
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1616
+        width: 93
+        height: 117
+      alignment: 9
+      pivot: {x: 0.39784947, y: 0.25641027}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e9a438ff589ff74aa8405ad640f90a8
+      internalID: 685373664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Jump Attack_270_028
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 1541
+        width: 90
+        height: 115
+      alignment: 9
+      pivot: {x: 0.36666667, y: -0.66086954}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 478c6e6fe4eea2545909358f84291b69
+      internalID: 1449611011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Jump Attack_270_037
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 1727
+        width: 108
+        height: 119
+      alignment: 9
+      pivot: {x: 0.41666666, y: -0.5714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c71cb4ef1379b46be09592925d0d00
+      internalID: 11163669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Jump Attack_270_046
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 1914
+        width: 109
+        height: 133
+      alignment: 9
+      pivot: {x: 0.5321101, y: 0.17293233}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6f7e9b511e565e478a546ff1f3feae3
+      internalID: -270468414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Jump Attack_270_055
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 1226
+        width: 88
+        height: 92
+      alignment: 9
+      pivot: {x: 0.47727272, y: 0.5652174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58076b9e9bddc44fac8e9ef197d940f
+      internalID: 1978088070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Jump Attack_270_064
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1433
+        width: 86
+        height: 85
+      alignment: 9
+      pivot: {x: 0.45348838, y: 0.5529412}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cada7a70cc48654eadd91809a0995c2
+      internalID: 833092479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Jump Attack_270_073
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 1675
+        width: 91
+        height: 87
+      alignment: 9
+      pivot: {x: 0.53846157, y: 0.54022986}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd0d141ddae238145a6cef6b37437333
+      internalID: 41176208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Jump Attack_270_082
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1661
+        width: 108
+        height: 101
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.34653464}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42e46c756267fd043ae3f600f829062b
+      internalID: -1799724070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Jump Attack_270_091
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 1951
+        width: 106
+        height: 96
+      alignment: 9
+      pivot: {x: 0.4528302, y: 0.3125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb810bd4ad89184191a62a52f03b280
+      internalID: -1544073559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Jump Attack_270_100
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1449
+        width: 96
+        height: 91
+      alignment: 9
+      pivot: {x: 0.48958334, y: 0.25274727}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ba23501fd32964a9b607b16e19a5e3
+      internalID: -556160498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Jump Attack_270_109
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 1542
+        width: 98
+        height: 95
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.2631579}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2188fd51263ef304283ce06b9869ee41
+      internalID: 725088235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Jump Attack_225_001
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 1287
+        width: 79
+        height: 113
+      alignment: 9
+      pivot: {x: 0.65822786, y: 0.31858408}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f62767f8c6a87e4fb8d6fb03f6a05de
+      internalID: 1103931282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Jump Attack_225_010
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 1525
+        width: 96
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11863d2f8e19aa745b56f1efe9cd9016
+      internalID: 1150014634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Jump Attack_225_019
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1428
+        width: 96
+        height: 125
+      alignment: 9
+      pivot: {x: 0.6145833, y: 0.136}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e186f7be580056c46aa227fe3721002c
+      internalID: -1265886210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Jump Attack_225_028
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 1658
+        width: 89
+        height: 128
+      alignment: 9
+      pivot: {x: 0.26966292, y: -0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ed8d9b0e4719b4f8fcab0f05524ce2
+      internalID: -372776671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Jump Attack_225_037
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 1254
+        width: 82
+        height: 124
+      alignment: 9
+      pivot: {x: 0.2804878, y: -0.48387095}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f1e6ae42eb3de44b55b57f8fb74e57
+      internalID: -584345079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Jump Attack_225_046
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1713
+        width: 93
+        height: 131
+      alignment: 9
+      pivot: {x: 0.65591395, y: 0.114503816}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf05de1e352fa24ab6641522babaf68
+      internalID: -540712027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Jump Attack_225_055
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 1867
+        width: 95
+        height: 89
+      alignment: 9
+      pivot: {x: 0.68421054, y: 0.5168539}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50ecfe413f257ca4298a7098652a40db
+      internalID: -1859092626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Jump Attack_225_064
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 1639
+        width: 100
+        height: 86
+      alignment: 9
+      pivot: {x: 0.59, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfb45f8194724d947aeb03455c7428c2
+      internalID: 728032960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Jump Attack_225_073
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 1218
+        width: 88
+        height: 78
+      alignment: 9
+      pivot: {x: 0.6818182, y: 0.41025642}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b53b1dffff860439385e2e9ae58536
+      internalID: 315838514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Jump Attack_225_082
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 1430
+        width: 93
+        height: 93
+      alignment: 9
+      pivot: {x: 0.65591395, y: 0.26881722}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c4396e24acd5dd45b7dd7232445950b
+      internalID: 2021356938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Jump Attack_225_091
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1380
+        width: 85
+        height: 111
+      alignment: 9
+      pivot: {x: 0.6, y: 0.36936936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d80d9bb2cc734b45b8971a335384c70
+      internalID: 461436096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Jump Attack_225_100
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 1265
+        width: 75
+        height: 102
+      alignment: 9
+      pivot: {x: 0.62666667, y: 0.29411766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607178ee0141d4440ab2dad2ac70a299
+      internalID: 1996716004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Jump Attack_225_109
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 1093
+        width: 80
+        height: 123
+      alignment: 9
+      pivot: {x: 0.65, y: 0.3495935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60d3bf35cf924b4cbae9d69ba26de02
+      internalID: 1202307748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Jump Attack_180_001
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 1652
+        width: 52
+        height: 110
+      alignment: 9
+      pivot: {x: 0.75, y: 0.3181818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9aa20f561bf224d84fb3a831f35c34
+      internalID: 193024586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Jump Attack_180_010
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 904
+        width: 70
+        height: 104
+      alignment: 9
+      pivot: {x: 0.7285714, y: 0.30769232}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa09ff165889b324780bc30c334c31e9
+      internalID: 1280575142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Jump Attack_180_019
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 1143
+        width: 81
+        height: 144
+      alignment: 9
+      pivot: {x: 0.7654321, y: 0.19444445}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61da1125f0672104d9f15a121a421135
+      internalID: 1683612001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Jump Attack_180_028
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1010
+        width: 73
+        height: 133
+      alignment: 9
+      pivot: {x: 0.43835616, y: -0.38345864}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c78958e9f79c5e41801a585bdc381f0
+      internalID: 1287897427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Jump Attack_180_037
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 996
+        width: 73
+        height: 133
+      alignment: 9
+      pivot: {x: 0.3561644, y: -0.42105263}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc3a2a05301c9134d8cdcf12f04e9d6d
+      internalID: 1985491273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Jump Attack_180_046
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 1908
+        width: 76
+        height: 139
+      alignment: 9
+      pivot: {x: 0.69736844, y: 0.15107913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5040b69275d6c1e4d82a839a6d955a89
+      internalID: 1842210977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Jump Attack_180_055
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1724
+        width: 101
+        height: 78
+      alignment: 9
+      pivot: {x: 0.7326733, y: 0.32051283}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abbb405fc33af9d4888cc298c3984599
+      internalID: -1706453414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Jump Attack_180_064
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1631
+        width: 91
+        height: 80
+      alignment: 9
+      pivot: {x: 0.72527474, y: 0.3125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13636640b1c1d5d468f71ad9c501fd76
+      internalID: -1502064556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Jump Attack_180_073
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 1535
+        width: 89
+        height: 79
+      alignment: 9
+      pivot: {x: 0.76404494, y: 0.29113925}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43436abc2359a7c40a62d3eb92d93397
+      internalID: 767765007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Jump Attack_180_082
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 1011
+        width: 77
+        height: 109
+      alignment: 9
+      pivot: {x: 0.76623374, y: 0.26605505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff800ab22e3306f47876e4475f052e44
+      internalID: -1089702297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Jump Attack_180_091
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 901
+        width: 60
+        height: 109
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.2293578}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199020898704907409beab34f545848c
+      internalID: 1067498082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Jump Attack_180_100
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 1010
+        width: 61
+        height: 103
+      alignment: 9
+      pivot: {x: 0.78688526, y: 0.2815534}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f119c0ac0678749b8e3b68d5ba2bfa
+      internalID: -232186528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Jump Attack_180_109
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 957
+        width: 61
+        height: 103
+      alignment: 9
+      pivot: {x: 0.6721311, y: 0.2524272}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a7a78c473635304f9cb9d7c1d402cbd
+      internalID: 1977173788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a55cd268c3b0c2b4fa2a75cae80ab975
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      W-Jump Attack_180_082: -1089702297
+      N-Jump Attack_90_046: -3884075
+      W-Jump Attack_180_019: 1683612001
+      NE-Jump Attack_45_010: -1441972157
+      W-Jump Attack_180_100: -232186528
+      NE-Jump Attack_45_073: -1958210860
+      SW-Jump Attack_225_073: 315838514
+      NE-Jump Attack_45_091: 1751743173
+      SW-Jump Attack_225_037: -584345079
+      SW-Jump Attack_225_019: -1265886210
+      SE-Jump Attack_315_037: -30732065
+      SW-Jump Attack_225_109: 1202307748
+      E-Jump Attack_0_037: -1965878860
+      SE-Jump Attack_315_001: 966731156
+      NW-Jump Attack_135_001: -733893059
+      S-Jump Attack_270_010: 1477868351
+      S-Jump Attack_270_064: 833092479
+      E-Jump Attack_0_028: 918286146
+      SW-Jump Attack_225_100: 1996716004
+      E-Jump Attack_0_073: -1393815811
+      W-Jump Attack_180_055: -1706453414
+      SW-Jump Attack_225_064: 728032960
+      W-Jump Attack_180_037: 1985491273
+      S-Jump Attack_270_073: 41176208
+      S-Jump Attack_270_091: -1544073559
+      SE-Jump Attack_315_010: -1248559034
+      S-Jump Attack_270_019: 685373664
+      SW-Jump Attack_225_001: 1103931282
+      SW-Jump Attack_225_082: 2021356938
+      NE-Jump Attack_45_001: -1673206756
+      NE-Jump Attack_45_064: 1555054544
+      E-Jump Attack_0_109: -1772663446
+      N-Jump Attack_90_037: -792679106
+      W-Jump Attack_180_073: 767765007
+      SE-Jump Attack_315_082: -1011051271
+      NE-Jump Attack_45_055: 179539968
+      NE-Jump Attack_45_028: -181094676
+      W-Jump Attack_180_091: 1067498082
+      N-Jump Attack_90_064: -2126543842
+      N-Jump Attack_90_019: -172788163
+      E-Jump Attack_0_082: -1491945586
+      NW-Jump Attack_135_091: 1589944606
+      E-Jump Attack_0_010: 933408307
+      W-Jump Attack_180_010: 1280575142
+      N-Jump Attack_90_091: 347940971
+      E-Jump Attack_0_100: 186765979
+      NW-Jump Attack_135_055: 737954167
+      SE-Jump Attack_315_064: 1235158378
+      N-Jump Attack_90_082: -1616972777
+      E-Jump Attack_0_064: -1993244149
+      N-Jump Attack_90_010: -2067367809
+      W-Jump Attack_180_028: 1287897427
+      SE-Jump Attack_315_100: -1960731501
+      E-Jump Attack_0_055: -406154290
+      SE-Jump Attack_315_019: -2000568489
+      NW-Jump Attack_135_082: 971153639
+      S-Jump Attack_270_055: 1978088070
+      N-Jump Attack_90_001: -391261648
+      S-Jump Attack_270_109: 725088235
+      NW-Jump Attack_135_064: -1382623011
+      SE-Jump Attack_315_028: -39060140
+      S-Jump Attack_270_082: -1799724070
+      NW-Jump Attack_135_028: -1606366955
+      NE-Jump Attack_45_100: 4004811
+      E-Jump Attack_0_091: 1794819318
+      NW-Jump Attack_135_037: 1253565365
+      NW-Jump Attack_135_109: -602462266
+      W-Jump Attack_180_046: 1842210977
+      NW-Jump Attack_135_073: -2068601261
+      SE-Jump Attack_315_109: -10572223
+      NW-Jump Attack_135_010: -180758072
+      SE-Jump Attack_315_046: 883223343
+      NE-Jump Attack_45_082: -1606271782
+      S-Jump Attack_270_046: -270468414
+      SE-Jump Attack_315_055: -246935904
+      SW-Jump Attack_225_055: -1859092626
+      SW-Jump Attack_225_091: 461436096
+      S-Jump Attack_270_001: -1601555543
+      NW-Jump Attack_135_100: 113808114
+      SW-Jump Attack_225_010: 1150014634
+      W-Jump Attack_180_109: 1977173788
+      NE-Jump Attack_45_046: -1872965997
+      NW-Jump Attack_135_019: -475962267
+      N-Jump Attack_90_109: -150743381
+      S-Jump Attack_270_028: 1449611011
+      NE-Jump Attack_45_037: 476670615
+      E-Jump Attack_0_019: -1500520782
+      SE-Jump Attack_315_091: 1505303239
+      N-Jump Attack_90_100: -1608586170
+      SW-Jump Attack_225_028: -372776671
+      S-Jump Attack_270_037: 11163669
+      W-Jump Attack_180_001: 193024586
+      NE-Jump Attack_45_109: -286254897
+      S-Jump Attack_270_100: -556160498
+      NW-Jump Attack_135_046: -663770300
+      SW-Jump Attack_225_046: -540712027
+      E-Jump Attack_0_046: -1213406372
+      W-Jump Attack_180_064: -1502064556
+      NE-Jump Attack_45_019: 587762416
+      E-Jump Attack_0_001: 960855584
+      N-Jump Attack_90_073: 343150016
+      N-Jump Attack_90_028: 1044139743
+      SE-Jump Attack_315_073: -793920693
+      N-Jump Attack_90_055: 1794450444
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

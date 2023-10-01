@@ -82,6 +82,9 @@ public abstract class BaseMob : BaseCharacter
     // Values for our aggression system
     protected Dictionary<BaseCharacter, float> AggressionWeights = new Dictionary<BaseCharacter, float>();
 
+    [Header("Animation States")]
+    [SerializeField] private string hitAnimationState;
+
     [Header("DEBUG VALUES"), EnumFlags, SerializeField]
     public DebugFlags DebugFlags;
 
@@ -94,7 +97,7 @@ public abstract class BaseMob : BaseCharacter
     {
         if (Health <= 0) return;
         if (Animator)
-            Animator?.Play("Take Hit");
+            Animator?.Play(hitAnimationState);
         Health -= dmg;
         OnTakeDamage?.Invoke();
         switch (AggressionSystem)
@@ -160,6 +163,7 @@ public abstract class BaseMob : BaseCharacter
         }
 
         State = CombatState.Idle;
+        Animator.SetBool("InCombat", false);
 
         // Initialise our decision tree
         DecisionTree = DecisionTree.Clone(this.name);
@@ -190,6 +194,13 @@ public abstract class BaseMob : BaseCharacter
             LookDirection = RigidBody.velocity.normalized;
         }
 
+        if (LookDirection != Vector2.zero)
+        {
+            Animator.SetFloat("Vertical", Mathf.Round(LookDirection.normalized.y));
+            Animator.SetFloat("Horizontal", Mathf.Round(LookDirection.normalized.x));
+        }
+        Animator.SetFloat("Vertical Velocity", Mathf.Round(RigidBody.velocity.normalized.y));
+        Animator.SetFloat("Horizontal Velocity", Mathf.Round(RigidBody.velocity.normalized.x));
     }
 
     protected virtual void LateUpdate()
@@ -251,10 +262,12 @@ public abstract class BaseMob : BaseCharacter
         foreach (KeyValuePair<Vector2, float> pair in directionWeights)
         {
             // Check to see if moving in this direction will cause us to hit an obstruction - we dont want this
-            RaycastHit2D hit = Physics2D.CircleCast((Vector2)transform.position, .5f, pair.Key, 1f);
+            RaycastHit2D hit = Physics2D.CircleCast((Vector2)transform.position, .4f, pair.Key, .5f);
+            if ((DebugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
+                Debug.DrawRay((Vector2)transform.position, pair.Key * .5f, Color.cyan);
             if (!hit) return pair.Key;
             if ((DebugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
-                Debug.DrawRay((Vector2)transform.position, pair.Key * 2f, Color.magenta);
+                Debug.DrawRay((Vector2)transform.position, pair.Key * .5f, Color.magenta);
         }
 
         return Vector2.zero;
@@ -289,10 +302,10 @@ public abstract class BaseMob : BaseCharacter
         foreach (KeyValuePair<Vector2, float> pair in directionWeights)
         {
             // Check to see if moving in this direction will cause us to hit an obstruction - we dont want this
-            RaycastHit2D hit = Physics2D.CircleCast((Vector2)transform.position, .5f, pair.Key, 1f);
+            RaycastHit2D hit = Physics2D.CircleCast((Vector2)transform.position, .4f, pair.Key, .5f);
             if (!hit) return pair.Key;
             if ((DebugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
-                Debug.DrawRay((Vector2)transform.position, pair.Key * 2f, Color.magenta);
+                Debug.DrawRay((Vector2)transform.position, pair.Key * .5f, Color.magenta);
         }
 
         return Vector2.zero;
@@ -326,6 +339,7 @@ public abstract class BaseMob : BaseCharacter
         {
             AreaOfInterest = origin;
             State = CombatState.Investigate;
+            Animator.SetBool("InCombat", true);
         }
     }
 
@@ -340,6 +354,7 @@ public abstract class BaseMob : BaseCharacter
             State = CombatState.Combat;
             Target = collision.transform;
             EmitAlert.Emit(transform.position, 10f);
+            Animator.SetBool("InCombat", true);
         }
     }
 }

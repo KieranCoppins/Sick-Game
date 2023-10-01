@@ -1,0 +1,1882 @@
+fileFormatVersion: 2
+guid: d5fec8b717de6f942bea8acea3ae0da6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: E-Basic Cast_0_000
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 904
+        width: 60
+        height: 119
+      alignment: 9
+      pivot: {x: 0.38333333, y: 0.1764706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c93cfc4c9f7ec44848afe2ffb9823a
+      internalID: -423294543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Basic Cast_0_007
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 471
+        width: 63
+        height: 102
+      alignment: 9
+      pivot: {x: 0.3809524, y: 0.24509804}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a6bb7371f160641985d290e9732034
+      internalID: 2132892695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Basic Cast_0_014
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 694
+        width: 86
+        height: 107
+      alignment: 9
+      pivot: {x: 0.41860464, y: 0.23364486}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1edcd7c30914bf45a9f7025390b38b0
+      internalID: -349961672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Basic Cast_0_021
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 1
+        width: 70
+        height: 103
+      alignment: 9
+      pivot: {x: 0.47142857, y: 0.3106796}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a44546a354db7f748b2c1aa5f14e24fe
+      internalID: 457965080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Basic Cast_0_028
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 789
+        width: 119
+        height: 115
+      alignment: 9
+      pivot: {x: 0.3697479, y: 0.29565218}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1032e807b404554986945c6b6c76a5f
+      internalID: -49530074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Basic Cast_0_035
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 575
+        width: 120
+        height: 107
+      alignment: 9
+      pivot: {x: 0.41666666, y: 0.24299066}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d599d3416c00dd4e8fb7345c2e61624
+      internalID: -1470918992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Basic Cast_0_042
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 666
+        width: 113
+        height: 116
+      alignment: 9
+      pivot: {x: 0.46902654, y: 0.28448275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c14a7594d8a664a93d41fc9196b8d4
+      internalID: -1441385345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Basic Cast_0_049
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 897
+        width: 72
+        height: 126
+      alignment: 9
+      pivot: {x: 0.43055555, y: 0.1984127}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2759c1a4244c0a342b3fe1bb19b1e3b0
+      internalID: 1457287171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Basic Cast_0_056
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 344
+        width: 67
+        height: 103
+      alignment: 9
+      pivot: {x: 0.41791046, y: 0.21359223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c6b24d0aded7b439cb66e863c2a321
+      internalID: 395014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Basic Cast_0_063
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 159
+        width: 60
+        height: 115
+      alignment: 9
+      pivot: {x: 0.38333333, y: 0.1826087}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8917287a5fa480f4dbccfd6b31362af6
+      internalID: -481492265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Basic Cast_90_000
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 905
+        width: 52
+        height: 118
+      alignment: 9
+      pivot: {x: 0.30769232, y: 0.18644068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee4692dbeb170e429cee623afbd0b33
+      internalID: -1681874936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Basic Cast_90_007
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 795
+        width: 58
+        height: 111
+      alignment: 9
+      pivot: {x: 0.31034482, y: 0.1981982}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ef2d5ffcb12bde48808d1b934ccb470
+      internalID: -536051527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Basic Cast_90_014
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 106
+        width: 56
+        height: 122
+      alignment: 9
+      pivot: {x: 0.375, y: 0.3442623}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 134d355634dd2b945b3b82575c8a7a29
+      internalID: 1175850162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Basic Cast_90_021
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 913
+        width: 70
+        height: 110
+      alignment: 9
+      pivot: {x: 0.3857143, y: 0.23636363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1972215852faf44ba065dd92eb57de8
+      internalID: 1791609707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Basic Cast_90_028
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 205
+        width: 61
+        height: 132
+      alignment: 9
+      pivot: {x: 0.52459013, y: 0.22727273}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dfcd0b0a5559a5438a7a5da88d531aa
+      internalID: 1643014296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Basic Cast_90_035
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 654
+        width: 47
+        height: 119
+      alignment: 9
+      pivot: {x: 0.3617021, y: 0.24369748}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da90abee39f69a941a1eed9b6a8b382c
+      internalID: 1402712625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Basic Cast_90_042
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 432
+        width: 49
+        height: 115
+      alignment: 9
+      pivot: {x: 0.30612245, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ba4f15e61d9514da154c0415e6540f
+      internalID: 60447233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Basic Cast_90_049
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 609
+        width: 69
+        height: 135
+      alignment: 9
+      pivot: {x: 0.5942029, y: 0.2962963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65b376ae57be0540bb1f79e727bb629
+      internalID: -1769392225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Basic Cast_90_056
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 549
+        width: 61
+        height: 115
+      alignment: 9
+      pivot: {x: 0.3442623, y: 0.19130434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd097b53271b02849afc2f6081bbc363
+      internalID: -1559984837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Basic Cast_90_063
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 633
+        width: 51
+        height: 122
+      alignment: 9
+      pivot: {x: 0.3137255, y: 0.22131148}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e50beef7ee3874eb21c5dcd3afd3f4
+      internalID: 1912517491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Basic Cast_45_000
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 92
+        width: 49
+        height: 124
+      alignment: 9
+      pivot: {x: 0.36734694, y: 0.2983871}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a12ed6812d4e9640ad8a9d839a9c6fc
+      internalID: -998488736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Basic Cast_45_007
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 549
+        width: 46
+        height: 115
+      alignment: 9
+      pivot: {x: 0.26086956, y: 0.26086956}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62d53457d6161af439e5e7577dbfb7a5
+      internalID: -530940429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Basic Cast_45_014
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 565
+        width: 61
+        height: 109
+      alignment: 9
+      pivot: {x: 0.21311475, y: 0.25688073}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e03a3b8b910134bb303a01338495cc
+      internalID: 674173562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Basic Cast_45_021
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 480
+        width: 54
+        height: 127
+      alignment: 9
+      pivot: {x: 0.24074075, y: 0.39370078}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ee40c5e01b17f4196ca36d532584fb
+      internalID: -1405269564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Basic Cast_45_028
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 908
+        width: 101
+        height: 115
+      alignment: 9
+      pivot: {x: 0.35643566, y: 0.26086956}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ddee5d1ef443a40bdff0870aebe2a1
+      internalID: -1231751011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Basic Cast_45_035
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 885
+        width: 88
+        height: 138
+      alignment: 9
+      pivot: {x: 0.4659091, y: 0.36956522}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eb04ef8e36cc0a49a82f05367d39107
+      internalID: 314494712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Basic Cast_45_042
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 218
+        width: 75
+        height: 124
+      alignment: 9
+      pivot: {x: 0.45333335, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef76d6269bc0cf946b112eca2a78ba97
+      internalID: 1792344707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Basic Cast_45_049
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 230
+        width: 58
+        height: 122
+      alignment: 9
+      pivot: {x: 0.31034482, y: 0.24590164}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ef9a3d734cf46d41aa0a1a443ce72b7
+      internalID: -17542464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Basic Cast_45_056
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 187
+        width: 51
+        height: 112
+      alignment: 9
+      pivot: {x: 0.27450982, y: 0.23214285}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c3c816ee7e5c94caaca2ff7bb46a83
+      internalID: -1547130680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Basic Cast_45_063
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 354
+        width: 50
+        height: 124
+      alignment: 9
+      pivot: {x: 0.36, y: 0.29032257}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac1d87cedc091ab4487e4ae5d73d04b0
+      internalID: -1116546714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Basic Cast_135_000
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 676
+        width: 59
+        height: 111
+      alignment: 9
+      pivot: {x: 0.4915254, y: 0.13513513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59b5d2e2c4ecbb14992675af5e2610f7
+      internalID: 955607237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Basic Cast_135_007
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 916
+        width: 60
+        height: 107
+      alignment: 9
+      pivot: {x: 0.46666667, y: 0.14018692}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656d0fc5a76bee84284b3fcb0991dd1f
+      internalID: 1403357390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Basic Cast_135_014
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 806
+        width: 69
+        height: 107
+      alignment: 9
+      pivot: {x: 0.39130434, y: 0.1588785}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffdd7780844acc047bb8ab64cd6fef8b
+      internalID: 822169844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Basic Cast_135_021
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 814
+        width: 78
+        height: 101
+      alignment: 9
+      pivot: {x: 0.5769231, y: 0.10891089}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2456d4fc20568f543b7ecc69da3a1bc3
+      internalID: 1041660002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Basic Cast_135_028
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 923
+        width: 86
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5232558, y: 0.09}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20518baad2514e24580d67f2c4e46ab2
+      internalID: 1783170874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Basic Cast_135_035
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 1
+        width: 95
+        height: 91
+      alignment: 9
+      pivot: {x: 0.51578945, y: 0.0989011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59365f3206eadb34b8c8c31be7fe4b07
+      internalID: -1684943296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Basic Cast_135_042
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 137
+        width: 84
+        height: 100
+      alignment: 9
+      pivot: {x: 0.53571427, y: 0.09}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c3ba97704fc562408a09577107622fb
+      internalID: 1658137429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Basic Cast_135_049
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 757
+        width: 74
+        height: 126
+      alignment: 9
+      pivot: {x: 0.5135135, y: 0.11904762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 042fdc118ec7c954eb0e8b56934c221b
+      internalID: -27106169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Basic Cast_135_056
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 436
+        width: 68
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5588235, y: 0.13513513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b5c81d2e834f14a8c396cd4dd49bef
+      internalID: -1405880601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Basic Cast_135_063
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 697
+        width: 58
+        height: 107
+      alignment: 9
+      pivot: {x: 0.51724136, y: 0.1588785}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa3d28083685aa44bbf2262259db8214
+      internalID: -1308390550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Basic Cast_270_000
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 344
+        width: 57
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5964912, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5d47230dbbfe6488809acc018138c1
+      internalID: -1067575892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Basic Cast_270_007
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 535
+        width: 56
+        height: 117
+      alignment: 9
+      pivot: {x: 0.76785713, y: 0.2735043}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4e111f7ad46e34ea748fd880058d2a
+      internalID: -1801376786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Basic Cast_270_014
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 684
+        width: 54
+        height: 109
+      alignment: 9
+      pivot: {x: 0.7222222, y: 0.25688073}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be25991a772ba245aee62bbb55c274f
+      internalID: 1508406329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Basic Cast_270_021
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 746
+        width: 80
+        height: 137
+      alignment: 9
+      pivot: {x: 0.5625, y: 0.3941606}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 323f7438d0687474097dc85f45586a9c
+      internalID: -707405698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Basic Cast_270_028
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 218
+        width: 64
+        height: 104
+      alignment: 9
+      pivot: {x: 0.4375, y: 0.26923078}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44fd452ec261678419c518707beebcbf
+      internalID: -1582495262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Basic Cast_270_035
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 112
+        width: 45
+        height: 104
+      alignment: 9
+      pivot: {x: 0.64444447, y: 0.29807693}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec43d88568c817d418326a16edb3c5ff
+      internalID: 246812067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Basic Cast_270_042
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 593
+        width: 50
+        height: 102
+      alignment: 9
+      pivot: {x: 0.72, y: 0.29411766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b40db4065a4814db0ea781edc2dff6
+      internalID: -1746326942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Basic Cast_270_049
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 276
+        width: 66
+        height: 115
+      alignment: 9
+      pivot: {x: 0.43939394, y: 0.3043478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aff20dc827bd174fa5731ec8b663db4
+      internalID: 568565883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Basic Cast_270_056
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 77
+        width: 69
+        height: 126
+      alignment: 9
+      pivot: {x: 0.6231884, y: 0.26190478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b9eb07b5f580034ab8c0b9c57d89786
+      internalID: 344978436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Basic Cast_270_063
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 393
+        width: 60
+        height: 117
+      alignment: 9
+      pivot: {x: 0.75, y: 0.2905983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d760c45382f514489c4844c7dfa6056
+      internalID: -810032441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Basic Cast_315_000
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 206
+        width: 69
+        height: 110
+      alignment: 9
+      pivot: {x: 0.4057971, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fce383793e4751d4f9ba8917a120097a
+      internalID: 1275540073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Basic Cast_315_007
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 324
+        width: 62
+        height: 110
+      alignment: 9
+      pivot: {x: 0.5322581, y: 0.21818182}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11662ece81394724aab63da15ecfa589
+      internalID: 140806858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Basic Cast_315_014
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 808
+        width: 67
+        height: 106
+      alignment: 9
+      pivot: {x: 0.6268657, y: 0.21698113}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6966ea0304863478f034188ecfe653
+      internalID: 1053226213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Basic Cast_315_021
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 375
+        width: 83
+        height: 94
+      alignment: 9
+      pivot: {x: 0.38554215, y: 0.25531915}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ba8af37b8b8cb4ebda0dec55f01910
+      internalID: -1199412245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Basic Cast_315_028
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 471
+        width: 80
+        height: 102
+      alignment: 9
+      pivot: {x: 0.4625, y: 0.21568628}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61676ec1e4696b34585ca6c201a76a38
+      internalID: -505241599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Basic Cast_315_035
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 270
+        width: 97
+        height: 95
+      alignment: 9
+      pivot: {x: 0.49484536, y: 0.25263157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294b80c97a9373443809afe260b0c709
+      internalID: -1115910300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Basic Cast_315_042
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 1
+        width: 97
+        height: 97
+      alignment: 9
+      pivot: {x: 0.49484536, y: 0.2371134}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c5c638897a97714398c1d0e77d8c201
+      internalID: 1200801843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Basic Cast_315_049
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 367
+        width: 69
+        height: 102
+      alignment: 9
+      pivot: {x: 0.46376812, y: 0.23529412}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0555a1ec23312f142a20ab43670fea0b
+      internalID: -1090695858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Basic Cast_315_056
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 45
+        width: 81
+        height: 112
+      alignment: 9
+      pivot: {x: 0.45679012, y: 0.19642857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a297e8bce75e9ad41a157f91e04e37d2
+      internalID: -1796289497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Basic Cast_315_063
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 512
+        width: 58
+        height: 119
+      alignment: 9
+      pivot: {x: 0.4827586, y: 0.20168068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99989b07299ba0443b2068dc768f1e4b
+      internalID: 514694303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Basic Cast_225_000
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 339
+        width: 40
+        height: 133
+      alignment: 9
+      pivot: {x: 0.725, y: 0.21804512}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 193511537f6411842b18ec337013847f
+      internalID: 277316439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Basic Cast_225_007
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 917
+        width: 41
+        height: 106
+      alignment: 9
+      pivot: {x: 0.73170733, y: 0.20754717}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a875ff5626ad064894c643c961a45f6
+      internalID: -809379559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Basic Cast_225_014
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 617
+        width: 53
+        height: 127
+      alignment: 9
+      pivot: {x: 0.7924528, y: 0.24409449}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3886e9175572daa459d5aa053f2436d2
+      internalID: -536491360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Basic Cast_225_021
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 301
+        width: 56
+        height: 115
+      alignment: 9
+      pivot: {x: 0.71428573, y: 0.24347825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6dbfbb3a185e31488aa129b10afb4f7
+      internalID: -46720860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Basic Cast_225_028
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 784
+        width: 91
+        height: 118
+      alignment: 9
+      pivot: {x: 0.61538464, y: 0.29661018}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87eace93ac849394a98580e96566717d
+      internalID: 1084788006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Basic Cast_225_035
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 449
+        width: 87
+        height: 109
+      alignment: 9
+      pivot: {x: 0.62068963, y: 0.35779816}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70fcdf14fc5d0df48a9111b9eefa094e
+      internalID: -561615022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Basic Cast_225_042
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 906
+        width: 87
+        height: 117
+      alignment: 9
+      pivot: {x: 0.50574714, y: 0.3846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3065d2f45df8a9b4889538ff2e1b00e1
+      internalID: -446629960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Basic Cast_225_049
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 474
+        width: 68
+        height: 133
+      alignment: 9
+      pivot: {x: 0.64705884, y: 0.31578946}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223102374df2932479d9cca439ff8411
+      internalID: 1759483678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Basic Cast_225_056
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 318
+        width: 45
+        height: 112
+      alignment: 9
+      pivot: {x: 0.75555557, y: 0.22321428}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b6bbfcc79d1ba43b110bc4b18b1b4d
+      internalID: 1239876812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Basic Cast_225_063
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 673
+        width: 44
+        height: 114
+      alignment: 9
+      pivot: {x: 0.70454544, y: 0.25438598}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe8f4a8addee22d48a644a8d4f95c185
+      internalID: 1628030338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Basic Cast_180_000
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 239
+        width: 62
+        height: 103
+      alignment: 9
+      pivot: {x: 0.5967742, y: 0.13592233}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55c347634d17a84dbb9176031a3ba41
+      internalID: 1910624307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Basic Cast_180_007
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 418
+        width: 62
+        height: 115
+      alignment: 9
+      pivot: {x: 0.62903225, y: 0.16521738}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8292683eb00b94743bde4e7be4f41b7f
+      internalID: 1698824778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Basic Cast_180_014
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 560
+        width: 68
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5882353, y: 0.16216215}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c6d8e53b348fc44ae1d140f5548226
+      internalID: 372817422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Basic Cast_180_021
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 775
+        width: 65
+        height: 120
+      alignment: 9
+      pivot: {x: 0.6, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 572379e020697c94cb0462def6f3f746
+      internalID: -676595712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Basic Cast_180_028
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 705
+        width: 112
+        height: 101
+      alignment: 9
+      pivot: {x: 0.75, y: 0.16831683}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 965aab3940ca43c46a7c441e4a017fb0
+      internalID: -1681944229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Basic Cast_180_035
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 2
+        width: 111
+        height: 96
+      alignment: 9
+      pivot: {x: 0.7027027, y: 0.21875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 192525788475a0a428ec7bf533e7d6e2
+      internalID: -1680701500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Basic Cast_180_042
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 100
+        width: 122
+        height: 104
+      alignment: 9
+      pivot: {x: 0.55737704, y: 0.21153846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad44fc5f3bac5f34e810e2f977d747cb
+      internalID: -1821194448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Basic Cast_180_049
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 94
+        width: 67
+        height: 122
+      alignment: 9
+      pivot: {x: 0.58208954, y: 0.18852459}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee71ff1fef12674ebfcb6b192d9ecfa
+      internalID: 1267464147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Basic Cast_180_056
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 803
+        width: 68
+        height: 108
+      alignment: 9
+      pivot: {x: 0.5882353, y: 0.1388889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bdee10f636f2ca44bfe694bced6891c
+      internalID: -1291598491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Basic Cast_180_063
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 915
+        width: 61
+        height: 108
+      alignment: 9
+      pivot: {x: 0.6229508, y: 0.17592593}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2275bd36fc31ba4d9b25f70d2542b25
+      internalID: -173316866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 451ad35f24cbed1489d90b863f0dc022
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      S-Basic Cast_270_063: -810032441
+      W-Basic Cast_180_056: -1291598491
+      S-Basic Cast_270_042: -1746326942
+      SW-Basic Cast_225_000: 277316439
+      SW-Basic Cast_225_056: 1239876812
+      S-Basic Cast_270_035: 246812067
+      W-Basic Cast_180_035: -1680701500
+      E-Basic Cast_0_063: -481492265
+      SE-Basic Cast_315_063: 514694303
+      SE-Basic Cast_315_007: 140806858
+      E-Basic Cast_0_014: -349961672
+      NE-Basic Cast_45_007: -530940429
+      S-Basic Cast_270_014: 1508406329
+      SW-Basic Cast_225_049: 1759483678
+      S-Basic Cast_270_056: 344978436
+      SE-Basic Cast_315_014: 1053226213
+      W-Basic Cast_180_021: -676595712
+      NE-Basic Cast_45_056: -1547130680
+      N-Basic Cast_90_028: 1643014296
+      SE-Basic Cast_315_021: -1199412245
+      W-Basic Cast_180_042: -1821194448
+      SW-Basic Cast_225_014: -536491360
+      N-Basic Cast_90_021: 1791609707
+      W-Basic Cast_180_028: -1681944229
+      NW-Basic Cast_135_007: 1403357390
+      NW-Basic Cast_135_014: 822169844
+      E-Basic Cast_0_049: 1457287171
+      NE-Basic Cast_45_014: 674173562
+      N-Basic Cast_90_035: 1402712625
+      E-Basic Cast_0_021: 457965080
+      NE-Basic Cast_45_000: -998488736
+      NE-Basic Cast_45_021: -1405269564
+      NW-Basic Cast_135_028: 1783170874
+      NE-Basic Cast_45_049: -17542464
+      S-Basic Cast_270_028: -1582495262
+      W-Basic Cast_180_063: -173316866
+      E-Basic Cast_0_007: 2132892695
+      W-Basic Cast_180_000: 1910624307
+      N-Basic Cast_90_063: 1912517491
+      NW-Basic Cast_135_021: 1041660002
+      NW-Basic Cast_135_042: 1658137429
+      SE-Basic Cast_315_056: -1796289497
+      E-Basic Cast_0_056: 395014
+      SE-Basic Cast_315_000: 1275540073
+      E-Basic Cast_0_035: -1470918992
+      NW-Basic Cast_135_063: -1308390550
+      N-Basic Cast_90_049: -1769392225
+      S-Basic Cast_270_000: -1067575892
+      SE-Basic Cast_315_028: -505241599
+      NW-Basic Cast_135_035: -1684943296
+      NE-Basic Cast_45_063: -1116546714
+      SW-Basic Cast_225_007: -809379559
+      SW-Basic Cast_225_035: -561615022
+      N-Basic Cast_90_007: -536051527
+      SE-Basic Cast_315_049: -1090695858
+      W-Basic Cast_180_007: 1698824778
+      NW-Basic Cast_135_056: -1405880601
+      SW-Basic Cast_225_021: -46720860
+      NW-Basic Cast_135_000: 955607237
+      S-Basic Cast_270_007: -1801376786
+      W-Basic Cast_180_014: 372817422
+      W-Basic Cast_180_049: 1267464147
+      SE-Basic Cast_315_035: -1115910300
+      E-Basic Cast_0_042: -1441385345
+      N-Basic Cast_90_000: -1681874936
+      N-Basic Cast_90_042: 60447233
+      NE-Basic Cast_45_042: 1792344707
+      SW-Basic Cast_225_028: 1084788006
+      NE-Basic Cast_45_035: 314494712
+      E-Basic Cast_0_000: -423294543
+      SW-Basic Cast_225_063: 1628030338
+      NW-Basic Cast_135_049: -27106169
+      S-Basic Cast_270_021: -707405698
+      NE-Basic Cast_45_028: -1231751011
+      E-Basic Cast_0_028: -49530074
+      N-Basic Cast_90_014: 1175850162
+      N-Basic Cast_90_056: -1559984837
+      S-Basic Cast_270_049: 568565883
+      SW-Basic Cast_225_042: -446629960
+      SE-Basic Cast_315_042: 1200801843
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

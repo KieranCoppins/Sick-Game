@@ -1,0 +1,1530 @@
+fileFormatVersion: 2
+guid: f8dcf402fac6f1f4880bfacd528a858f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: E-Run Forward_0_000
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 469
+        width: 64
+        height: 108
+      alignment: 9
+      pivot: {x: 0.3125, y: 0.18518518}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fd56e8141600be4296b8c2909a5c1b3
+      internalID: 1312353799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Run Forward_0_003
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 582
+        width: 70
+        height: 115
+      alignment: 9
+      pivot: {x: 0.34285715, y: 0.19130434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bcf3c3ad63bfc94bad61e2ea1deca6a
+      internalID: -1737060664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Run Forward_0_006
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 924
+        width: 105
+        height: 99
+      alignment: 9
+      pivot: {x: 0.43809524, y: 0.14141414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf88c7643656d6d4fa6d4e45ab4c0bf2
+      internalID: 1304322077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Run Forward_0_009
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 827
+        width: 84
+        height: 89
+      alignment: 9
+      pivot: {x: 0.53571427, y: 0.101123594}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 138a4434ee89f1f4b97b668ead4ab778
+      internalID: 1878108198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Run Forward_0_012
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 604
+        width: 73
+        height: 110
+      alignment: 9
+      pivot: {x: 0.369863, y: 0.19090909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d7cea834f10d524c9fc453e10057b53
+      internalID: -1348190760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Run Forward_0_015
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 690
+        width: 77
+        height: 102
+      alignment: 9
+      pivot: {x: 0.45454547, y: 0.078431375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a351b29c74f876545bacb8d5f380a91d
+      internalID: -384674549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Run Forward_0_018
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 915
+        width: 116
+        height: 108
+      alignment: 9
+      pivot: {x: 0.55172414, y: 0.12037037}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631147a839be0524d9abce79a404cbfe
+      internalID: -89683954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Run Forward_0_021
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 471
+        width: 74
+        height: 121
+      alignment: 9
+      pivot: {x: 0.4054054, y: 0.21487603}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72bcad85af8017b46b2ff2b1eb75bdc6
+      internalID: 63032641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Run Forward_45_000
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 127
+        width: 54
+        height: 103
+      alignment: 9
+      pivot: {x: 0.2777778, y: 0.1553398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36e719a8ec81c6946a6d740b17c9d91f
+      internalID: 6457734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Run Forward_45_003
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 14
+        width: 50
+        height: 106
+      alignment: 9
+      pivot: {x: 0.3, y: 0.17924528}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdffd4e9222cf584abe4e00be580cb58
+      internalID: -240930919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Run Forward_45_006
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 579
+        width: 75
+        height: 138
+      alignment: 9
+      pivot: {x: 0.45333335, y: 0.32608697}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c203ad8ed0bfe9498284b89f69eeb84
+      internalID: -459957642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Run Forward_45_009
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 150
+        width: 56
+        height: 113
+      alignment: 9
+      pivot: {x: 0.48214287, y: 0.17699115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c7d21a6dc5eef2438d1318e2a4578bb
+      internalID: 1506522880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Run Forward_45_012
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 358
+        width: 62
+        height: 97
+      alignment: 9
+      pivot: {x: 0.41935483, y: 0.0927835}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7c76dfd8b885774680542963624bb5d
+      internalID: 183968215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Run Forward_45_015
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 900
+        width: 78
+        height: 123
+      alignment: 9
+      pivot: {x: 0.47435898, y: 0.22764228}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b1df1774816e104289285b5efeebca7
+      internalID: 9926362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Run Forward_45_018
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 678
+        width: 87
+        height: 119
+      alignment: 9
+      pivot: {x: 0.57471263, y: 0.2184874}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e093a902b3d340a4a874aaaf42da2de2
+      internalID: 460909923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Run Forward_45_021
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 565
+        width: 70
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08108108}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14c882dc0b57a1459bb7c3e2640b8f9
+      internalID: -2001097143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Run Forward_90_000
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 534
+        width: 49
+        height: 118
+      alignment: 9
+      pivot: {x: 0.3877551, y: 0.22881356}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4691cf58f09cf74cb7c4235a20e165f
+      internalID: -319647347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Run Forward_90_003
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 15
+        width: 48
+        height: 119
+      alignment: 9
+      pivot: {x: 0.3125, y: 0.22689076}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0aa900044f3cab4c9f439bef757ce0a
+      internalID: -162959711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Run Forward_90_006
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 381
+        width: 50
+        height: 151
+      alignment: 9
+      pivot: {x: 0.46, y: 0.3576159}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5453e236a9b09de43a23db96298c4add
+      internalID: 838259550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Run Forward_90_009
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 6
+        width: 51
+        height: 128
+      alignment: 9
+      pivot: {x: 0.50980395, y: 0.234375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe7d7535288ec744b4631e529f69bd3
+      internalID: -370995344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Run Forward_90_012
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 29
+        width: 42
+        height: 119
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.24369748}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d40038c4991b4d47bff061cd66e244b
+      internalID: -113228579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Run Forward_90_015
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 457
+        width: 41
+        height: 120
+      alignment: 9
+      pivot: {x: 0.4878049, y: 0.23333333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4403a5f780f6bb8438f2cb9d6a2e062d
+      internalID: 763018405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Run Forward_90_018
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 577
+        width: 41
+        height: 140
+      alignment: 9
+      pivot: {x: 0.4390244, y: 0.27142859}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b04b0db83fce5fb47b03d332796a44d5
+      internalID: 1315805992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Run Forward_90_021
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 12
+        width: 43
+        height: 113
+      alignment: 9
+      pivot: {x: 0.3488372, y: 0.17699115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9533a6a0879e5dd40b6a5ad1fd79baef
+      internalID: -1580912118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Run Forward_135_000
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 255
+        width: 59
+        height: 100
+      alignment: 9
+      pivot: {x: 0.6101695, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa0e9c138c045ae41977e8af202ca1d0
+      internalID: -916520235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Run Forward_135_003
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 225
+        width: 54
+        height: 110
+      alignment: 9
+      pivot: {x: 0.5925926, y: 0.16363636}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3980065aa71edd441ab41bd961e063bd
+      internalID: 1379686782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Run Forward_135_006
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 699
+        width: 89
+        height: 119
+      alignment: 9
+      pivot: {x: 0.5168539, y: 0.20168068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2504457ff0665544ab5d635988eb796
+      internalID: 158186913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Run Forward_135_009
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 716
+        width: 77
+        height: 99
+      alignment: 9
+      pivot: {x: 0.46753246, y: 0.09090909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 520b30397bb5cd940ac4f27d676abd9e
+      internalID: 553938448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Run Forward_135_012
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 48
+        width: 53
+        height: 118
+      alignment: 9
+      pivot: {x: 0.5660377, y: 0.15254237}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf6716b02ad6d93438c40e13d5eb48d8
+      internalID: 2047490799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Run Forward_135_015
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 238
+        width: 62
+        height: 141
+      alignment: 9
+      pivot: {x: 0.5967742, y: 0.34042552}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4d62b8af6105ce408d88a3b2949c832
+      internalID: 1908863033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Run Forward_135_018
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 382
+        width: 63
+        height: 116
+      alignment: 9
+      pivot: {x: 0.46031746, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6abb552851f7d3f4aa5251b5eb881c09
+      internalID: 1942563887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Run Forward_135_021
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 364
+        width: 62
+        height: 103
+      alignment: 9
+      pivot: {x: 0.48387095, y: 0.106796116}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 859c5c22a0c014e4ab905c7dea4ae088
+      internalID: -1256020706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Run Forward_315_000
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 157
+        width: 59
+        height: 96
+      alignment: 9
+      pivot: {x: 0.40677965, y: 0.22916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75cced1225992064cacf68bca71f331b
+      internalID: 1244360527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Run Forward_315_003
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 268
+        width: 59
+        height: 94
+      alignment: 9
+      pivot: {x: 0.40677965, y: 0.13829787}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff76ed9d5e605c94da271c0f783b4ac3
+      internalID: -1275440496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Run Forward_315_006
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 794
+        width: 78
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.24038461}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3022b4826e91ab4e9085b6f24908b79
+      internalID: 799347695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Run Forward_315_009
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 457
+        width: 65
+        height: 106
+      alignment: 9
+      pivot: {x: 0.53846157, y: 0.20754717}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662ff799eeb91bf49a06f22d4807bd03
+      internalID: 636383825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Run Forward_315_012
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 168
+        width: 57
+        height: 98
+      alignment: 9
+      pivot: {x: 0.42105263, y: 0.1632653}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488f14cc065135547a88b8d62b04fec1
+      internalID: 1226932789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Run Forward_315_015
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 235
+        width: 52
+        height: 100
+      alignment: 9
+      pivot: {x: 0.40384614, y: 0.21}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50cd3d0eaa3b37447988427b4de53e70
+      internalID: -445620788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Run Forward_315_018
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 265
+        width: 59
+        height: 115
+      alignment: 9
+      pivot: {x: 0.47457626, y: 0.28695652}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a2fd7c7d11e2245ab6b483e8a5eb33
+      internalID: -1167079994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Run Forward_315_021
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 232
+        width: 57
+        height: 124
+      alignment: 9
+      pivot: {x: 0.4385965, y: 0.31451613}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 307b2345f65f9d942b29ae3f5e0ddc6b
+      internalID: -2109231049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Run Forward_270_000
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 138
+        width: 52
+        height: 98
+      alignment: 9
+      pivot: {x: 0.61538464, y: 0.23469388}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc900caaf3b22543a368b0cb2e71075
+      internalID: 763265732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Run Forward_270_003
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 337
+        width: 47
+        height: 101
+      alignment: 9
+      pivot: {x: 0.63829786, y: 0.24752475}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 397bc64ae9bc85842969132d0f2d6ec4
+      internalID: -668963349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Run Forward_270_006
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 654
+        width: 47
+        height: 134
+      alignment: 9
+      pivot: {x: 0.5744681, y: 0.38059703}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60b13f44d06121245a4f51b97bceb802
+      internalID: 1443342317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Run Forward_270_009
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 14
+        width: 53
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5660377, y: 0.2882883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d246d2a1c7a45540a477f867f812a59
+      internalID: 783243243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Run Forward_270_012
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 135
+        width: 40
+        height: 88
+      alignment: 9
+      pivot: {x: 0.55, y: 0.14772727}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48ab69fb19f49d84bb36883afcf6aacd
+      internalID: -1940353827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Run Forward_270_015
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 790
+        width: 38
+        height: 108
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0.19444445}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d86557fb8323a14386b7d1bf3b68ee6
+      internalID: 1993838655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Run Forward_270_018
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 440
+        width: 40
+        height: 135
+      alignment: 9
+      pivot: {x: 0.575, y: 0.38518518}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ef5d61b6c50a164ab0649a99b5e9b30
+      internalID: 2040732368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Run Forward_270_021
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 5
+        width: 48
+        height: 129
+      alignment: 9
+      pivot: {x: 0.625, y: 0.37209302}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af2750db9f415c24787824fa74fb3004
+      internalID: -846290065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Run Forward_225_000
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 136
+        width: 55
+        height: 107
+      alignment: 9
+      pivot: {x: 0.6727273, y: 0.14018692}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 824b82ba9e2e5bc4da9fefeccf7e9eef
+      internalID: 2022515644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Run Forward_225_003
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 22
+        width: 51
+        height: 98
+      alignment: 9
+      pivot: {x: 0.7058824, y: 0.23469388}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11ee57b79740ead4b86bd18393f05364
+      internalID: 210998122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Run Forward_225_006
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 337
+        width: 63
+        height: 132
+      alignment: 9
+      pivot: {x: 0.5555556, y: 0.29545453}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb49d47108399546b4ee19d80b36287
+      internalID: 729088030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Run Forward_225_009
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 245
+        width: 59
+        height: 115
+      alignment: 9
+      pivot: {x: 0.55932206, y: 0.32173914}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19eb22271d447174896a0c55f7385823
+      internalID: -112112821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Run Forward_225_012
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 122
+        width: 51
+        height: 111
+      alignment: 9
+      pivot: {x: 0.7058824, y: 0.2882883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a8c7f8c8b20294c97bd4083fbf2fe7
+      internalID: -324392085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Run Forward_225_015
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 500
+        width: 69
+        height: 102
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0.1764706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8843f062128d8c49830853e5b6e57dd
+      internalID: 1848817804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Run Forward_225_018
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 799
+        width: 92
+        height: 114
+      alignment: 9
+      pivot: {x: 0.45652175, y: 0.21929824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb1b80af483a61b499009a09f17f72eb
+      internalID: 452186865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Run Forward_225_021
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 466
+        width: 67
+        height: 114
+      alignment: 9
+      pivot: {x: 0.5671642, y: 0.20175439}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e893def61b9875847bf004b3cd0a52a2
+      internalID: -27505888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Run Forward_180_000
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 362
+        width: 63
+        height: 102
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.18627451}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c13f36d9abd8b4e8eb3f1528a02ad6
+      internalID: 1090813825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Run Forward_180_003
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 594
+        width: 75
+        height: 94
+      alignment: 9
+      pivot: {x: 0.56, y: 0.12765957}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e7bf17d00cbed14abff5269fef51858
+      internalID: 1724955588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Run Forward_180_006
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 820
+        width: 93
+        height: 105
+      alignment: 9
+      pivot: {x: 0.50537634, y: 0.0952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95d5a9830a191194b90c806fb926ed5b
+      internalID: 1424191657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Run Forward_180_009
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 918
+        width: 91
+        height: 105
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.20952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bed63057ccf8d74e8fde6c43705399e
+      internalID: 2133906376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Run Forward_180_012
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 357
+        width: 63
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6984127, y: 0.1734694}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec0e983be2ad6a4bb1f2bbc7c626366
+      internalID: 1759312151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Run Forward_180_015
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 817
+        width: 90
+        height: 105
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1904762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeed32dbe6b69464d8761d2277430568
+      internalID: -405290906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Run Forward_180_018
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 927
+        width: 107
+        height: 96
+      alignment: 9
+      pivot: {x: 0.47663552, y: 0.083333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b2cf0d6057dc6f469fa5601f81f1b53
+      internalID: 2084673349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Run Forward_180_021
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 719
+        width: 77
+        height: 106
+      alignment: 9
+      pivot: {x: 0.6233766, y: 0.08490566}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b826e0911eac9e448dcc08c72e49b3b
+      internalID: -1724153665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7c2ef4dc4b1a161489812367c2fe048d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      NE-Run Forward_45_015: 9926362
+      E-Run Forward_0_003: -1737060664
+      E-Run Forward_0_012: -1348190760
+      NW-Run Forward_135_003: 1379686782
+      SW-Run Forward_225_009: -112112821
+      W-Run Forward_180_009: 2133906376
+      NE-Run Forward_45_006: -459957642
+      E-Run Forward_0_021: 63032641
+      NW-Run Forward_135_015: 1908863033
+      W-Run Forward_180_015: -405290906
+      NE-Run Forward_45_003: -240930919
+      SW-Run Forward_225_018: 452186865
+      S-Run Forward_270_006: 1443342317
+      W-Run Forward_180_018: 2084673349
+      SE-Run Forward_315_012: 1226932789
+      SW-Run Forward_225_015: 1848817804
+      S-Run Forward_270_000: 763265732
+      SE-Run Forward_315_006: 799347695
+      SE-Run Forward_315_021: -2109231049
+      SW-Run Forward_225_006: 729088030
+      S-Run Forward_270_009: 783243243
+      S-Run Forward_270_021: -846290065
+      N-Run Forward_90_021: -1580912118
+      NW-Run Forward_135_021: -1256020706
+      SE-Run Forward_315_003: -1275440496
+      NE-Run Forward_45_018: 460909923
+      E-Run Forward_0_006: 1304322077
+      E-Run Forward_0_018: -89683954
+      E-Run Forward_0_000: 1312353799
+      NE-Run Forward_45_000: 6457734
+      SE-Run Forward_315_009: 636383825
+      NW-Run Forward_135_018: 1942563887
+      SW-Run Forward_225_000: 2022515644
+      SW-Run Forward_225_021: -27505888
+      E-Run Forward_0_009: 1878108198
+      N-Run Forward_90_018: 1315805992
+      NW-Run Forward_135_012: 2047490799
+      S-Run Forward_270_015: 1993838655
+      W-Run Forward_180_012: 1759312151
+      W-Run Forward_180_003: 1724955588
+      S-Run Forward_270_012: -1940353827
+      N-Run Forward_90_009: -370995344
+      S-Run Forward_270_003: -668963349
+      S-Run Forward_270_018: 2040732368
+      W-Run Forward_180_021: -1724153665
+      SW-Run Forward_225_003: 210998122
+      SE-Run Forward_315_015: -445620788
+      SE-Run Forward_315_000: 1244360527
+      SE-Run Forward_315_018: -1167079994
+      NE-Run Forward_45_009: 1506522880
+      SW-Run Forward_225_012: -324392085
+      NW-Run Forward_135_006: 158186913
+      N-Run Forward_90_012: -113228579
+      W-Run Forward_180_006: 1424191657
+      NE-Run Forward_45_012: 183968215
+      N-Run Forward_90_015: 763018405
+      N-Run Forward_90_003: -162959711
+      NW-Run Forward_135_009: 553938448
+      W-Run Forward_180_000: 1090813825
+      E-Run Forward_0_015: -384674549
+      N-Run Forward_90_000: -319647347
+      NW-Run Forward_135_000: -916520235
+      NE-Run Forward_45_021: -2001097143
+      N-Run Forward_90_006: 838259550
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

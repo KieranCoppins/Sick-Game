@@ -30,15 +30,18 @@ public class MeleeMob : BaseMob
 
         if (!moveStraight && dist > 2f)
             return MovementCurve.Evaluate(Vector2.Dot(targetDir, dir)) + Vector2.Dot(RigidBody.velocity.normalized, dir);
-        
+
         return Vector2.Dot(targetDir, dir);
 
     }
 
-    public void DealDamage()
+    public void DealDamage(AnimationEvent e)
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + (Vector3)(LookDirection * MeleeRange), MeleeRange);
-        foreach(var collider in colliders)
+        if (e.animatorClipInfo.weight <= 0.5f) return;
+        Debug.DrawRay(transform.position, LookDirection.normalized * MeleeRange, Color.blue, 1f);
+        Debug.DrawRay((Vector2)transform.position + (LookDirection.normalized * MeleeRange), LookDirection.normalized * MeleeRange, Color.red, 1f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll((Vector2)transform.position + (LookDirection.normalized * MeleeRange), MeleeRange);
+        foreach (var collider in colliders)
         {
             // Check that the collider is a character and not ourselves
             BaseCharacter character = collider.GetComponent<BaseCharacter>();

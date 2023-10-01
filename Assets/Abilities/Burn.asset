@@ -15,7 +15,7 @@ MonoBehaviour:
   Icon: {fileID: 1959293380, guid: 5aa0e3dc593636849b2bdf4c991df64d, type: 3}
   AbilityCooldown: 16
   CastTime: 0
-  Range: 3
+  Range: 1.5
   ManaCost: 15
   _lifespan: 5
   _damageRate: 2

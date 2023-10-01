@@ -24,11 +24,11 @@ public class RangedMob : BaseMob
         if (!moveStraight)
         {
             // Move away from the target if too close
-            if (dist < Ability.Range - 3.0f)
+            if (dist < Ability.Range - 1.5f)
                 return MovementCurve.Evaluate(Vector2.Dot(targetDir * -1f, dir)) + Vector2.Dot(RigidBody.velocity.normalized, dir);  // We add the dot product of our current velocity so that we try and favor where we are currently going - prevents random switches in direction
 
             // Move towards the target
-            else if (dist < Ability.Range - 1.0f)
+            else if (dist < Ability.Range - 0.5f)
                 return MovementCurve.Evaluate(Vector2.Dot(targetDir, dir)) + Vector2.Dot(RigidBody.velocity.normalized, dir);
         }
 

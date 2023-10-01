@@ -1,0 +1,2410 @@
+fileFormatVersion: 2
+guid: 473ad48a7aceffb4984299e74cb0c91b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: E-Heavy Attack_0_001
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 816
+        width: 62
+        height: 102
+      alignment: 9
+      pivot: {x: 0.2580645, y: 0.28431374}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f183925650c6c4e9db5e241c5164c8
+      internalID: 130871988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Heavy Attack_0_007
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 401
+        width: 64
+        height: 95
+      alignment: 9
+      pivot: {x: 0.078125, y: 0.22105263}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bd4d8aa2dcdbe14cae2ca126db4f4dd
+      internalID: 1852889347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Heavy Attack_0_013
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 595
+        width: 61
+        height: 84
+      alignment: 9
+      pivot: {x: -0.016393442, y: 0.22619048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6b2103bb5d47b6459106a2a8592a807
+      internalID: -1415940367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Heavy Attack_0_019
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 854
+        width: 94
+        height: 82
+      alignment: 9
+      pivot: {x: 0.20212767, y: 0.20731707}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9688cb6331ca9154cb7c3c2365d262be
+      internalID: 192737116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Heavy Attack_0_025
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 568
+        width: 77
+        height: 108
+      alignment: 9
+      pivot: {x: 0.2857143, y: 0.1574074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf5dc8998ee80647a1df70ee22d5d31
+      internalID: -608638683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Heavy Attack_0_031
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 515
+        width: 83
+        height: 92
+      alignment: 9
+      pivot: {x: 0.4939759, y: -0.16304348}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41330dd3166ce9d47b6200e7a1b1701f
+      internalID: 1765744388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Heavy Attack_0_037
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 325
+        width: 75
+        height: 123
+      alignment: 9
+      pivot: {x: 0.64, y: 0.20325203}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b24761412a33946a23f8f7b87ad91b
+      internalID: -784096830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Heavy Attack_0_043
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 928
+        width: 94
+        height: 95
+      alignment: 9
+      pivot: {x: 0.14893617, y: 0.38947368}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5487ac0f5d2f2944e9f87f511d74f426
+      internalID: 499272259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Heavy Attack_0_049
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 331
+        width: 80
+        height: 64
+      alignment: 9
+      pivot: {x: 0.275, y: 0.46875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b18ba2a4580b2a44c8509133b8c403ab
+      internalID: -331965683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Heavy Attack_0_055
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 938
+        width: 102
+        height: 85
+      alignment: 9
+      pivot: {x: 0.19607843, y: 0.3882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b7a336fe7ad5949b7a47f3f15d824b
+      internalID: -640139246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Heavy Attack_0_061
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 168
+        width: 73
+        height: 99
+      alignment: 9
+      pivot: {x: 0.23287672, y: 0.37373737}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab3bcf067773ca148bc9146abf59c3d3
+      internalID: -390131874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Heavy Attack_0_067
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 691
+        width: 77
+        height: 108
+      alignment: 9
+      pivot: {x: 0.36363637, y: 0.30555555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e3995ac5bd27d743a575007c279950e
+      internalID: -1752739554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E-Heavy Attack_0_073
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 921
+        width: 61
+        height: 102
+      alignment: 9
+      pivot: {x: 0.45901638, y: 0.29411766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f1a77df015c25f47b1cb50b9616d3f0
+      internalID: -630423800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Heavy Attack_45_001
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 589
+        width: 54
+        height: 105
+      alignment: 9
+      pivot: {x: 0.18518518, y: 0.21904762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b71dea5968adb0468bf44cd2f6fab8e
+      internalID: -1042812640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Heavy Attack_45_007
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 143
+        width: 49
+        height: 102
+      alignment: 9
+      pivot: {x: 0.020408163, y: 0.14705883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d2dcd43dce6b4146a03d8c6e0fffccf
+      internalID: 3263270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Heavy Attack_45_013
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 399
+        width: 63
+        height: 115
+      alignment: 9
+      pivot: {x: 0.2857143, y: 0.15652174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4a2440f03f625c4fb3c99bc7d087cee
+      internalID: 2126574896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Heavy Attack_45_019
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 40
+        width: 90
+        height: 101
+      alignment: 9
+      pivot: {x: 0.2, y: 0.17821783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a259826bc26cbc5408061beb1e73a087
+      internalID: 752897887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Heavy Attack_45_025
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 903
+        width: 127
+        height: 120
+      alignment: 9
+      pivot: {x: 0.56692916, y: 0.23333333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee2db093e9a19e4097255eb9e47187b
+      internalID: 955270092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Heavy Attack_45_031
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 515
+        width: 73
+        height: 116
+      alignment: 9
+      pivot: {x: 0.43835616, y: 0.15517241}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6da5f984df04a458ea5b88c6b40f5c
+      internalID: -559952848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Heavy Attack_45_037
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 516
+        width: 71
+        height: 115
+      alignment: 9
+      pivot: {x: 0.57746476, y: 0.11304348}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c1b6e906b3dc4419235eb7b34bfae2
+      internalID: -334728966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Heavy Attack_45_043
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 191
+        width: 82
+        height: 94
+      alignment: 9
+      pivot: {x: 0.31707317, y: 0.34042552}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df640d835b9be3947941d372356bf42c
+      internalID: -1124716612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Heavy Attack_45_049
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 513
+        width: 73
+        height: 85
+      alignment: 9
+      pivot: {x: 0.30136988, y: 0.3764706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8965aff693e09e74986de9866d0cd04f
+      internalID: -1997652638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Heavy Attack_45_055
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 683
+        width: 83
+        height: 86
+      alignment: 9
+      pivot: {x: 0.25301206, y: 0.38372093}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61efab72a15155247b3e92216d421736
+      internalID: 67441649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Heavy Attack_45_061
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 626
+        width: 76
+        height: 89
+      alignment: 9
+      pivot: {x: 0.39473686, y: 0.30337077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b6ed1be8b875154eb055b6867664689
+      internalID: 967414610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Heavy Attack_45_067
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1
+        width: 59
+        height: 104
+      alignment: 9
+      pivot: {x: 0.23728813, y: 0.28846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae601a4530a5a2e4fb4a3f0a820c0da7
+      internalID: -927954686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NE-Heavy Attack_45_073
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 917
+        width: 52
+        height: 106
+      alignment: 9
+      pivot: {x: 0.30769232, y: 0.29245284}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d09ab7e6811fcfc48b34aab88074ff79
+      internalID: -1468453879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Heavy Attack_90_001
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 757
+        width: 48
+        height: 126
+      alignment: 9
+      pivot: {x: 0.41666666, y: 0.26190478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cbf60d7ed5d7cf409ea88bea5dfe046
+      internalID: 313789018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Heavy Attack_90_007
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 805
+        width: 57
+        height: 108
+      alignment: 9
+      pivot: {x: 0.42105263, y: 0.1574074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b054a0006a5797d4b997f8741e774913
+      internalID: -723958825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Heavy Attack_90_013
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 801
+        width: 62
+        height: 109
+      alignment: 9
+      pivot: {x: 0.5, y: 0.20183486}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9947bc9def5fbb640af2bc8c9782b2b3
+      internalID: -421884630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Heavy Attack_90_019
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 915
+        width: 52
+        height: 108
+      alignment: 9
+      pivot: {x: 0.32692307, y: 0.14814815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da5f33452c5f71469c3084078f9eb89
+      internalID: 1640787021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Heavy Attack_90_025
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 609
+        width: 130
+        height: 97
+      alignment: 9
+      pivot: {x: 0.6230769, y: 0.010309278}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ca6b2290465da408e91a94851a8b08
+      internalID: -48837459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Heavy Attack_90_031
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 590
+        width: 75
+        height: 131
+      alignment: 9
+      pivot: {x: 0.34666666, y: 0.19847329}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f27b5bfbfb376247ba5e4eb54f6a69e
+      internalID: -905443235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Heavy Attack_90_037
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 790
+        width: 76
+        height: 111
+      alignment: 9
+      pivot: {x: 0.65789473, y: 0.06306306}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8219c52a1b98b4c96ed6d86130c756
+      internalID: 1505594047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Heavy Attack_90_043
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 3
+        width: 64
+        height: 70
+      alignment: 9
+      pivot: {x: 0.515625, y: 0.15714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca07530fab0529a45a7eba55386e032a
+      internalID: 152891116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Heavy Attack_90_049
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 335
+        width: 64
+        height: 62
+      alignment: 9
+      pivot: {x: 0.46875, y: 0.24193548}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4176b1741e3ba2e4b8f592d0909478af
+      internalID: -311784533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Heavy Attack_90_055
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 74
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5405405, y: 0.2361111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83384766d4175f24ca34460c7582f72d
+      internalID: -922170034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Heavy Attack_90_061
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 681
+        width: 83
+        height: 84
+      alignment: 9
+      pivot: {x: 0.67469877, y: 0.22619048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a092e7490f440a4290e49bef8ef84e8
+      internalID: -204738788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Heavy Attack_90_067
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 465
+        width: 57
+        height: 123
+      alignment: 9
+      pivot: {x: 0.42105263, y: 0.30081302}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd777f48f2478844682bb248851e4e6d
+      internalID: 1424447398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N-Heavy Attack_90_073
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 696
+        width: 48
+        height: 107
+      alignment: 9
+      pivot: {x: 0.375, y: 0.22429906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba9c40cd7051de542976cbe765cf0839
+      internalID: 2134019204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Heavy Attack_135_001
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 678
+        width: 64
+        height: 110
+      alignment: 9
+      pivot: {x: 0.625, y: 0.14545454}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641a264e7d7b7734f95fdf8a6469ae84
+      internalID: 451242388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Heavy Attack_135_007
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 934
+        width: 54
+        height: 89
+      alignment: 9
+      pivot: {x: 0.8148148, y: 0.04494382}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4502e195653816d48b8c1b921feab9b6
+      internalID: 748212699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Heavy Attack_135_013
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 270
+        width: 56
+        height: 99
+      alignment: 9
+      pivot: {x: 0.875, y: 0.16161616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03878fb17b3cb394eafb3e5b4d0e0fb9
+      internalID: 1983838437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Heavy Attack_135_019
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 1
+        width: 75
+        height: 96
+      alignment: 9
+      pivot: {x: 0.7733333, y: 0.14583333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abf35a20705b96e4a84d78cb7653d349
+      internalID: 1196221784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Heavy Attack_135_025
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 323
+        width: 76
+        height: 125
+      alignment: 9
+      pivot: {x: 0.67105263, y: 0.256}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea408644637bc144e83b23e5de5f00b8
+      internalID: 1400907515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Heavy Attack_135_031
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 885
+        width: 107
+        height: 138
+      alignment: 9
+      pivot: {x: 0.47663552, y: 0.26086956}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4e810064d8dc0a4785f51d1dd32c466
+      internalID: 1488478171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Heavy Attack_135_037
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 586
+        width: 74
+        height: 135
+      alignment: 9
+      pivot: {x: 0.36486486, y: 0.25925925}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5755146d65487e4fb2a6bce0d77e883
+      internalID: 524372876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Heavy Attack_135_043
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 823
+        width: 68
+        height: 96
+      alignment: 9
+      pivot: {x: 0.60294116, y: 0.26041666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea4ef753e87496489f9f45a58abb409
+      internalID: 1811700581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Heavy Attack_135_049
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 516
+        width: 70
+        height: 77
+      alignment: 9
+      pivot: {x: 0.44285715, y: 0.23376623}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e45442c8aa507364eb47de8a511b1a54
+      internalID: -1070644993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Heavy Attack_135_055
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 600
+        width: 77
+        height: 81
+      alignment: 9
+      pivot: {x: 0.45454547, y: 0.24691358}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f912565ff4c7b0646af7a138d74a60c4
+      internalID: 856221055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Heavy Attack_135_061
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 145
+        width: 64
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5625, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b7f7bfbd7aee54586d3717c25fa7b9
+      internalID: -1010284644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Heavy Attack_135_067
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 708
+        width: 68
+        height: 102
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14705883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be9d0f8b3bdffaf47af0b9b8146cccca
+      internalID: 1981316046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NW-Heavy Attack_135_073
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 75
+        width: 63
+        height: 120
+      alignment: 9
+      pivot: {x: 0.4920635, y: 0.18333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d8485bd5cd4736409c345cdac0219af
+      internalID: 374567241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Heavy Attack_315_001
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 807
+        width: 65
+        height: 106
+      alignment: 9
+      pivot: {x: 0.3846154, y: 0.3773585}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a66b849bdcd2114a8367b986f850370
+      internalID: -1605304744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Heavy Attack_315_007
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 475
+        width: 61
+        height: 105
+      alignment: 9
+      pivot: {x: 0.21311475, y: 0.31428573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d89831486569b24192a288a187552f9
+      internalID: 2041402830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Heavy Attack_315_013
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 837
+        width: 65
+        height: 89
+      alignment: 9
+      pivot: {x: 0.12307692, y: 0.29213482}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dae9045d2dfe4bd408f238b558805fef
+      internalID: 776638294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Heavy Attack_315_019
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 717
+        width: 69
+        height: 97
+      alignment: 9
+      pivot: {x: 0.28985506, y: 0.36082473}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 095f1c4bcdde8af49967b4a14d96d227
+      internalID: 441412501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Heavy Attack_315_025
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 459
+        width: 75
+        height: 107
+      alignment: 9
+      pivot: {x: 0.36, y: 0.23364486}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6b1dc141b04234cbc932a38e37ae10
+      internalID: -1753156609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Heavy Attack_315_031
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 498
+        width: 118
+        height: 98
+      alignment: 9
+      pivot: {x: 0.5254237, y: -0.06122449}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfd84ec2df6d65a4593261f45293a9d4
+      internalID: 227642534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Heavy Attack_315_037
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 761
+        width: 60
+        height: 122
+      alignment: 9
+      pivot: {x: 0.6166667, y: 0.22131148}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cde048ac03cfae4b9d21cd8c58e0bfb
+      internalID: -390789381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Heavy Attack_315_043
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 771
+        width: 94
+        height: 81
+      alignment: 9
+      pivot: {x: 0.34042552, y: 0.28395063}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5faf57a39c681f40a16a53d507154e8
+      internalID: 1027954232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Heavy Attack_315_049
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 230
+        width: 59
+        height: 73
+      alignment: 9
+      pivot: {x: 0.47457626, y: 0.6164383}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97a8b29a037022c46be66b723bd82051
+      internalID: -343992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Heavy Attack_315_055
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 1
+        width: 69
+        height: 78
+      alignment: 9
+      pivot: {x: 0.46376812, y: 0.525641}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa96cc60bbbafa14dafa1cb5d1010919
+      internalID: 1337210709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Heavy Attack_315_061
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 1
+        width: 81
+        height: 80
+      alignment: 9
+      pivot: {x: 0.45679012, y: 0.2125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca78bcf21e746ce4385da0e866c7124a
+      internalID: 361287444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Heavy Attack_315_067
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 812
+        width: 67
+        height: 103
+      alignment: 9
+      pivot: {x: 0.53731346, y: 0.3398058}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87bc01c5aa8cdf845b25e32b8d4d73c1
+      internalID: -117937173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SE-Heavy Attack_315_073
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 920
+        width: 66
+        height: 103
+      alignment: 9
+      pivot: {x: 0.5151515, y: 0.32038835}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb7f7b40245f2ba4992df4f1f2f4826c
+      internalID: -960618490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Heavy Attack_270_001
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 99
+        width: 51
+        height: 114
+      alignment: 9
+      pivot: {x: 0.60784316, y: 0.4122807}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a927c7af52dbe7047b3112415513df54
+      internalID: -1574704167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Heavy Attack_270_007
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 582
+        width: 64
+        height: 107
+      alignment: 9
+      pivot: {x: 0.625, y: 0.36448598}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315ea3b9eb7625e40a259cd81e1e44b6
+      internalID: -515287184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Heavy Attack_270_013
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 598
+        width: 77
+        height: 102
+      alignment: 9
+      pivot: {x: 0.45454547, y: 0.37254903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 543e16218e30b8d4e94f02fa01c98489
+      internalID: -984680225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Heavy Attack_270_019
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 269
+        width: 60
+        height: 100
+      alignment: 9
+      pivot: {x: 0.7, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c36847492f5144f951f0f601d2ac52
+      internalID: -440580848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Heavy Attack_270_025
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 723
+        width: 131
+        height: 148
+      alignment: 9
+      pivot: {x: 0.47328246, y: 0.29054055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a5ad6edd0aa2084e93ee08d7df3dfa8
+      internalID: 1053230470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Heavy Attack_270_031
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 633
+        width: 85
+        height: 122
+      alignment: 9
+      pivot: {x: 0.62352943, y: 0.024590164}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4af49829e28bf5247949c4d19e8f816e
+      internalID: -447494904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Heavy Attack_270_037
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 450
+        width: 103
+        height: 134
+      alignment: 9
+      pivot: {x: 0.2815534, y: 0.21641791}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8d85c71a5e32f846af2a26a3d163fa3
+      internalID: 988343189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Heavy Attack_270_043
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 106
+        width: 69
+        height: 83
+      alignment: 9
+      pivot: {x: 0.49275362, y: 0.37349397}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b4914e0dabe7694ca2014831fb88d19
+      internalID: 334342653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Heavy Attack_270_049
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 767
+        width: 84
+        height: 85
+      alignment: 9
+      pivot: {x: 0.53571427, y: 0.5058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688f28ab321ad5447a773e73554cf65b
+      internalID: 559090947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Heavy Attack_270_055
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 287
+        width: 80
+        height: 95
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4526316}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6671438896cba254f813ae016ef20d99
+      internalID: -1379445662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Heavy Attack_270_061
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 732
+        width: 70
+        height: 89
+      alignment: 9
+      pivot: {x: 0.3857143, y: 0.28089887}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1094dee21d05be046a7f9caa6e4e8ad6
+      internalID: 1733737060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Heavy Attack_270_067
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 384
+        width: 55
+        height: 99
+      alignment: 9
+      pivot: {x: 0.56363636, y: 0.27272728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 906b91442883aea4aa6d98471e0edb62
+      internalID: -1343989556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S-Heavy Attack_270_073
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 83
+        width: 49
+        height: 119
+      alignment: 9
+      pivot: {x: 0.6122449, y: 0.34453782}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea6a286d671b6b647a632e5cccaa9667
+      internalID: -372193385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Heavy Attack_225_001
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 346
+        width: 51
+        height: 117
+      alignment: 9
+      pivot: {x: 0.8235294, y: 0.44444445}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7609a9f477f9a7409e2ac30a0d7ea12
+      internalID: 117474616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Heavy Attack_225_007
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 800
+        width: 47
+        height: 110
+      alignment: 9
+      pivot: {x: 1.0212766, y: 0.3272727}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b6aaa91bd6bf9c4abec26e7a6591e24
+      internalID: 7667731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Heavy Attack_225_013
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 912
+        width: 76
+        height: 111
+      alignment: 9
+      pivot: {x: 0.6315789, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9999dd721ca8b469c7c2aa07b89903
+      internalID: 1474545948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Heavy Attack_225_019
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 485
+        width: 90
+        height: 102
+      alignment: 9
+      pivot: {x: 0.84444445, y: 0.30392158}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b2f9762f5f4ed4db21a10815b02d3e
+      internalID: 626941918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Heavy Attack_225_025
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 371
+        width: 100
+        height: 102
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd439d7862c1ed4eba43ec5de720e52
+      internalID: -1370538038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Heavy Attack_225_031
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 873
+        width: 82
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2902a49daf89543bd347b86346c466
+      internalID: -904176375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Heavy Attack_225_037
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 352
+        width: 83
+        height: 105
+      alignment: 9
+      pivot: {x: 0.43373495, y: 0.104761906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da150de4f602f414082ffa92033520ff
+      internalID: -1522224986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Heavy Attack_225_043
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 404
+        width: 90
+        height: 92
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.35869566}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0682b2b2da8f3ad4aaeae0762ee05c12
+      internalID: -787971707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Heavy Attack_225_049
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 31
+        width: 70
+        height: 73
+      alignment: 9
+      pivot: {x: 0.75714284, y: 0.369863}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba9d44f56ffc43b43aa4bfcf2a57f7ee
+      internalID: 1493192780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Heavy Attack_225_055
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 599
+        width: 76
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6447368, y: 0.3375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f6c44d2054e3f488c6abcd6f870a5c
+      internalID: -1727477426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Heavy Attack_225_061
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 915
+        width: 83
+        height: 108
+      alignment: 9
+      pivot: {x: 0.5421687, y: 0.4074074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7eb224cd2b5b4a4f9386634d622b2ce
+      internalID: 283906343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Heavy Attack_225_067
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 81
+        width: 59
+        height: 120
+      alignment: 9
+      pivot: {x: 0.779661, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b03606945a996499b7710eb8b6a838
+      internalID: -1643656340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SW-Heavy Attack_225_073
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 397
+        width: 52
+        height: 116
+      alignment: 9
+      pivot: {x: 0.6923077, y: 0.38793105}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0258f599b901554b92cae92c64d2a06
+      internalID: -1775575074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Heavy Attack_180_001
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 215
+        width: 65
+        height: 114
+      alignment: 9
+      pivot: {x: 0.6923077, y: 0.20175439}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c4d8afdaa739fc45bc7b6fe60932dc2
+      internalID: 1574289582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Heavy Attack_180_007
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 203
+        width: 63
+        height: 120
+      alignment: 9
+      pivot: {x: 0.93650794, y: 0.275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b9ecd66afe43243a3717ce6e2198e6
+      internalID: 1948469918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Heavy Attack_180_013
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 247
+        width: 64
+        height: 103
+      alignment: 9
+      pivot: {x: 0.984375, y: 0.18446602}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8953907679cd27f4d8c672caf18ac515
+      internalID: -867821943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Heavy Attack_180_019
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 702
+        width: 87
+        height: 103
+      alignment: 9
+      pivot: {x: 0.8045977, y: 0.23300971}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e5e1cd6308370240b9d304c9d83bc0e
+      internalID: -1666098360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Heavy Attack_180_025
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 204
+        width: 75
+        height: 119
+      alignment: 9
+      pivot: {x: 0.62666667, y: 0.21008404}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca93a319e67406c4083e9f0c23ee75fb
+      internalID: -823199472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Heavy Attack_180_031
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 197
+        width: 82
+        height: 124
+      alignment: 9
+      pivot: {x: 0.5365854, y: 0.2016129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25952ec2191744b4e8510ad58367459a
+      internalID: -347014139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Heavy Attack_180_037
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 221
+        width: 94
+        height: 112
+      alignment: 9
+      pivot: {x: 0.30851063, y: 0.16964285}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec2aaaa04bd836c458e1f116311661de
+      internalID: 1421715520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Heavy Attack_180_043
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 107
+        width: 85
+        height: 112
+      alignment: 9
+      pivot: {x: 0.85882354, y: 0.36607143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c66a42941f06f8f438958ca71c80f7ca
+      internalID: 1946952675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Heavy Attack_180_049
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 516
+        width: 73
+        height: 81
+      alignment: 9
+      pivot: {x: 0.7671233, y: 0.37037036}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb3541b005f93dd4292ab88d175d0ed8
+      internalID: -1168110880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Heavy Attack_180_055
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 72
+        width: 86
+        height: 94
+      alignment: 9
+      pivot: {x: 0.7093023, y: 0.29787233}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff67a11d86204594692a6bf1e5bfaed8
+      internalID: 155007083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Heavy Attack_180_061
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 75
+        width: 70
+        height: 120
+      alignment: 9
+      pivot: {x: 0.75714284, y: 0.35833332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c279b706bed97e4996384f93338490d
+      internalID: -722233251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Heavy Attack_180_067
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 305
+        width: 77
+        height: 94
+      alignment: 9
+      pivot: {x: 0.6233766, y: 0.15957446}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7753a9e35582d0846bbfff4b0bb55d5d
+      internalID: -1670618752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W-Heavy Attack_180_073
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 645
+        width: 65
+        height: 114
+      alignment: 9
+      pivot: {x: 0.53846157, y: 0.2982456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f874511badedbb4ca83befff851d432
+      internalID: -1488249361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c3619e6378f5ced4a9ab2cc426b60244
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SE-Heavy Attack_315_019: 441412501
+      SW-Heavy Attack_225_061: 283906343
+      E-Heavy Attack_0_073: -630423800
+      S-Heavy Attack_270_061: 1733737060
+      W-Heavy Attack_180_025: -823199472
+      SW-Heavy Attack_225_019: 626941918
+      W-Heavy Attack_180_007: 1948469918
+      N-Heavy Attack_90_055: -922170034
+      NE-Heavy Attack_45_019: 752897887
+      E-Heavy Attack_0_007: 1852889347
+      NW-Heavy Attack_135_073: 374567241
+      S-Heavy Attack_270_073: -372193385
+      NE-Heavy Attack_45_067: -927954686
+      SE-Heavy Attack_315_031: 227642534
+      W-Heavy Attack_180_073: -1488249361
+      NW-Heavy Attack_135_019: 1196221784
+      S-Heavy Attack_270_055: -1379445662
+      W-Heavy Attack_180_049: -1168110880
+      NW-Heavy Attack_135_061: -1010284644
+      W-Heavy Attack_180_013: -867821943
+      W-Heavy Attack_180_001: 1574289582
+      W-Heavy Attack_180_061: -722233251
+      SE-Heavy Attack_315_049: -343992
+      S-Heavy Attack_270_043: 334342653
+      NE-Heavy Attack_45_013: 2126574896
+      N-Heavy Attack_90_049: -311784533
+      S-Heavy Attack_270_019: -440580848
+      NW-Heavy Attack_135_037: 524372876
+      S-Heavy Attack_270_067: -1343989556
+      NE-Heavy Attack_45_025: 955270092
+      N-Heavy Attack_90_037: 1505594047
+      NE-Heavy Attack_45_043: -1124716612
+      NW-Heavy Attack_135_031: 1488478171
+      S-Heavy Attack_270_031: -447494904
+      W-Heavy Attack_180_031: -347014139
+      NW-Heavy Attack_135_049: -1070644993
+      NW-Heavy Attack_135_007: 748212699
+      W-Heavy Attack_180_055: 155007083
+      E-Heavy Attack_0_037: -784096830
+      NW-Heavy Attack_135_013: 1983838437
+      W-Heavy Attack_180_019: -1666098360
+      SW-Heavy Attack_225_007: 7667731
+      E-Heavy Attack_0_061: -390131874
+      S-Heavy Attack_270_001: -1574704167
+      E-Heavy Attack_0_013: -1415940367
+      NW-Heavy Attack_135_043: 1811700581
+      S-Heavy Attack_270_049: 559090947
+      SE-Heavy Attack_315_043: 1027954232
+      N-Heavy Attack_90_001: 313789018
+      S-Heavy Attack_270_037: 988343189
+      S-Heavy Attack_270_025: 1053230470
+      NW-Heavy Attack_135_025: 1400907515
+      N-Heavy Attack_90_019: 1640787021
+      NW-Heavy Attack_135_067: 1981316046
+      SE-Heavy Attack_315_025: -1753156609
+      SE-Heavy Attack_315_073: -960618490
+      N-Heavy Attack_90_043: 152891116
+      NW-Heavy Attack_135_001: 451242388
+      SE-Heavy Attack_315_001: -1605304744
+      E-Heavy Attack_0_025: -608638683
+      SE-Heavy Attack_315_061: 361287444
+      S-Heavy Attack_270_007: -515287184
+      E-Heavy Attack_0_067: -1752739554
+      E-Heavy Attack_0_055: -640139246
+      N-Heavy Attack_90_031: -905443235
+      SE-Heavy Attack_315_055: 1337210709
+      SW-Heavy Attack_225_031: -904176375
+      W-Heavy Attack_180_043: 1946952675
+      NE-Heavy Attack_45_073: -1468453879
+      N-Heavy Attack_90_067: 1424447398
+      NW-Heavy Attack_135_055: 856221055
+      NE-Heavy Attack_45_049: -1997652638
+      E-Heavy Attack_0_049: -331965683
+      NE-Heavy Attack_45_001: -1042812640
+      W-Heavy Attack_180_037: 1421715520
+      SW-Heavy Attack_225_055: -1727477426
+      NE-Heavy Attack_45_007: 3263270
+      N-Heavy Attack_90_007: -723958825
+      SE-Heavy Attack_315_037: -390789381
+      SE-Heavy Attack_315_013: 776638294
+      SW-Heavy Attack_225_025: -1370538038
+      N-Heavy Attack_90_073: 2134019204
+      SW-Heavy Attack_225_043: -787971707
+      E-Heavy Attack_0_019: 192737116
+      SE-Heavy Attack_315_067: -117937173
+      SW-Heavy Attack_225_049: 1493192780
+      N-Heavy Attack_90_013: -421884630
+      E-Heavy Attack_0_031: 1765744388
+      N-Heavy Attack_90_025: -48837459
+      NE-Heavy Attack_45_055: 67441649
+      SE-Heavy Attack_315_007: 2041402830
+      SW-Heavy Attack_225_037: -1522224986
+      NE-Heavy Attack_45_031: -559952848
+      SW-Heavy Attack_225_001: 117474616
+      W-Heavy Attack_180_067: -1670618752
+      NE-Heavy Attack_45_061: 967414610
+      E-Heavy Attack_0_001: 130871988
+      SW-Heavy Attack_225_013: 1474545948
+      N-Heavy Attack_90_061: -204738788
+      NE-Heavy Attack_45_037: -334728966
+      S-Heavy Attack_270_013: -984680225
+      E-Heavy Attack_0_043: 499272259
+      SW-Heavy Attack_225_067: -1643656340
+      SW-Heavy Attack_225_073: -1775575074
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

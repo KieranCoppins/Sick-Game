@@ -11,9 +11,9 @@ public class A_Wander : CustomAction
     public override IEnumerator Execute()
     {
         Vector2 originPoint = Mob.transform.position;
-        while (true) 
+        while (true)
         {
-            if (Random.Range(0f, 1f) <= 0.1f)
+            if (Random.Range(0f, 1f) <= 0.2f)
             {
                 yield return new DoTaskWhilstWaitingForSeconds(() => Mob.RigidBody.velocity = Vector2.zero, Random.Range(0.3f, 2.0f));
             }
@@ -24,9 +24,13 @@ public class A_Wander : CustomAction
                 {
                     if ((Mob.DebugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
                     {
-                        Debug.DrawRay((Vector2)Mob.transform.position + (dir * 0.45f), dir);
+                        Debug.DrawRay((Vector2)Mob.transform.position, dir);
                     }
-                    Mob.RigidBody.velocity = dir.normalized * _wanderSpeed;
+                    RaycastHit2D hit = Physics2D.CircleCast((Vector2)Mob.transform.position, .4f, dir, .5f);
+                    if (!hit)
+                        Mob.RigidBody.velocity = dir.normalized * _wanderSpeed;
+                    else
+                        dir = Mob.WanderVector(originPoint, _wanderRange);
                 }, Random.Range(0.3f, 2.0f));
             }
         }

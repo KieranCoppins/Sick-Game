@@ -19,8 +19,20 @@ public class CharacterMovement : BaseCharacter
     [SerializeField] private Slider _staminaBar;
     [SerializeField] private Slider _manaBar;
     [SerializeField] private GameObject _targetGraphic;
+    private bool _canMove;
 
-    public bool CanMove { get; private set; }
+    public bool CanMove
+    {
+        get
+        {
+            // We cannot move if we are stunned
+            return _canMove && !Stunned;
+        }
+        private set
+        {
+            _canMove = value;
+        }
+    }
     private Vector2 _movementVelocity;
 
     private int _attackStage = 0;
@@ -103,11 +115,13 @@ public class CharacterMovement : BaseCharacter
 
     protected override bool Stunned
     {
-        get => base.Stunned;
-        set
+        get
         {
-            base.Stunned = value;
-            CanMove = !value;
+            // If we are in the take damage state we are stunned
+            if (Animator != null)
+                return Animator.GetCurrentAnimatorStateInfo(0).IsName("Take Hit");
+            else
+                return false;
         }
     }
 
@@ -190,8 +204,12 @@ public class CharacterMovement : BaseCharacter
 
     public override void TakeDamage(BaseCharacter character, int damage)
     {
+        RigidBody.velocity = Vector3.zero;
         Health -= damage;
-        StartCoroutine(Stun(0.5f));
+        if (Health > 0)
+        {
+            Animator.Play("Take Hit");
+        }
     }
 
     public void Attack(InputAction.CallbackContext context)
@@ -252,7 +270,7 @@ public class CharacterMovement : BaseCharacter
     {
         if (e.animatorClipInfo.weight > 0.5f)
         {
-            Collider2D[] targets = Physics2D.OverlapCircleAll((Vector2)transform.position + LookDirection.normalized, 1.5f);
+            Collider2D[] targets = Physics2D.OverlapCircleAll((Vector2)transform.position + (LookDirection.normalized * 0.3f), 0.4f);
             foreach (Collider2D target in targets)
             {
                 if (target.CompareTag("Mob"))
@@ -267,7 +285,7 @@ public class CharacterMovement : BaseCharacter
     {
         if (e.animatorClipInfo.weight > 0.5f)
         {
-            Collider2D[] targets = Physics2D.OverlapCircleAll((Vector2)transform.position + LookDirection.normalized, 1.5f);
+            Collider2D[] targets = Physics2D.OverlapCircleAll((Vector2)transform.position + (LookDirection.normalized * 0.4f), .6f);
             foreach (Collider2D target in targets)
             {
                 if (target.CompareTag("Mob"))

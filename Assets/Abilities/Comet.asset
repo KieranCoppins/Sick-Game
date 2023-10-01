@@ -15,10 +15,10 @@ MonoBehaviour:
   Icon: {fileID: -1860567321, guid: 5aa0e3dc593636849b2bdf4c991df64d, type: 3}
   AbilityCooldown: 2
   CastTime: 0.5
-  Range: 8
+  Range: 4
   ManaCost: 10
   _projectile: {fileID: 4616442037673614323, guid: 363c4827b8395a6498aafa62abef3057, type: 3}
   _angle: 0
   _numberProjectiles: 1
-  _projectileVelocity: 10
+  _projectileVelocity: 5
   _damage: 5
