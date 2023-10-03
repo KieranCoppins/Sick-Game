@@ -26,7 +26,7 @@ public class A_Wander : CustomAction
                     {
                         Debug.DrawRay((Vector2)Mob.transform.position, dir);
                     }
-                    RaycastHit2D hit = Physics2D.CircleCast((Vector2)Mob.transform.position, .4f, dir, .5f);
+                    RaycastHit2D hit = Physics2D.CircleCast((Vector2)Mob.transform.position, .35f, dir, .5f);
                     if (!hit)
                         Mob.RigidBody.velocity = dir.normalized * _wanderSpeed;
                     else

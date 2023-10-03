@@ -4,11 +4,11 @@ using UnityEngine;
 using KieranCoppins.DecisionTrees;
 
 // Replace function template type with the return type of your function
-public class F_RunEQS : Function<Vector2>
+public class F_RunEQS : Function<Vector2?>
 {
     [SerializeField] private EnvironmentQuerySystem _eqs;
     // Change type of this function to what you need it to be
-    public override Vector2 Invoke()
+    public override Vector2? Invoke()
     {
         return _eqs.Run();
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -17,7 +18,7 @@ public class PathfindingComponent : MonoBehaviour
 
     private float CalculateHeristicEstimate(Node n, Node target)
     {
-        return Vector2.Distance(n, target);
+        return Vector2.Distance(_tilemapController.GetGlobalPositionFromNode(n), _tilemapController.GetGlobalPositionFromNode(target));
     }
 
     private Vector2[] FormatPath(List<Node> path, Vector2 endPosition)
@@ -25,7 +26,7 @@ public class PathfindingComponent : MonoBehaviour
         List<Vector2> waypoints = new List<Vector2>();
         foreach (Node n in path)
         {
-            waypoints.Add(n);
+            waypoints.Add(_tilemapController.GetGlobalPositionFromNode(n));
         }
         waypoints.Add(endPosition);
         return waypoints.ToArray();
@@ -90,7 +91,7 @@ public class PathfindingComponent : MonoBehaviour
             open.Remove(curr);
 
             foreach (Node n in curr.Neighbours)
-            {                   
+            {
                 float tentativeGScore = gScore[curr] + n.MovementCost;
 
                 if (tentativeGScore < gScore[n])
@@ -114,7 +115,7 @@ public class PathfindingComponent : MonoBehaviour
         // Lets smooth this path since our movement isn't locked to each tile
 
         // To store our Vector3 positions
-        List<Vector2> waypoints = new List<Vector2>();
+        List<Vector2> waypoints = new() { _tilemapController.GetGlobalPositionFromNode(path[0]) };
 
         // Our current node is the first in the list
         Node currentNode = path[0];
@@ -122,44 +123,24 @@ public class PathfindingComponent : MonoBehaviour
         // Our previous node is null
         Node prevN = null;
 
+        float castRadius = 0.2f;
+
         // Iterate through each node in the current path
         foreach (Node n in path)
         {
             // Calculate a direction vector
-            Vector2 direction = currentNode - n;
+            Vector2 direction = _tilemapController.GetGlobalPositionFromNode(currentNode) - _tilemapController.GetGlobalPositionFromNode(n);
+            float distance = Vector2.Distance(_tilemapController.GetGlobalPositionFromNode(currentNode), _tilemapController.GetGlobalPositionFromNode(n));
 
-            Vector2 castLower;
-            Vector2 castUpper;
-
-            // Do the cross product of the current direction and a diagonal vector
-            float dotProd = Mathf.Abs(Vector2.Dot(direction, new Vector2(0.5f, 0.5f).normalized));
-
-            // We're in a forward slash
-            if (dotProd >= 0.75f)
-            {
-                castLower = n.LowerRight();
-                castUpper = n.UpperLeft();
-            }
-            // Otherwise its a backward slash
-            else
-            {
-                castLower = n.LowerLeft();
-                castUpper = n.UpperRight();
-            }
-
-            // Calculate the distance for our raycast to be
-            float distance = Vector2.Distance(currentNode, n);
-
-            // Cast a ray from currentNode to the node in iteration
-            RaycastHit2D hitLower = Physics2D.Raycast(castLower, direction.normalized, distance);
-            RaycastHit2D hitUpper = Physics2D.Raycast(castUpper, direction.normalized, distance);
+            // TODO: determine if nodes (tiles) have line of sight without using raycasts, there must be something mathematical we can use to reduce our raycasts
+            RaycastHit2D hit = Physics2D.CircleCast(_tilemapController.GetGlobalPositionFromNode(n), castRadius, direction.normalized, distance - castRadius);
 
             // If the raycast hit the tilemap (we cannot move in a straight line to the waypoint) and our previous N isnt null
             // We check hit.collider to see if we have hit before trying to call compare tag - if we didnt hit we cant still call it and we'll get a null reference exception - this prevents that
-            if ((hitLower.collider && hitLower.collider.CompareTag("Tilemap")) || (hitUpper.collider && hitUpper.collider.CompareTag("Tilemap")) && prevN != null)
+            if (hit.collider && hit.collider.CompareTag("Tilemap") && prevN != null)
             {
                 // Add the previous point (as it didnt get a hit with the raycast
-                waypoints.Add(prevN);
+                waypoints.Add(_tilemapController.GetGlobalPositionFromNode(prevN));
 
                 // Update our currentNodes
                 currentNode = prevN;
@@ -167,7 +148,7 @@ public class PathfindingComponent : MonoBehaviour
             // If we didnt get a hit but we're at our last node anyway we should be able to move to it
             else if (n == path[path.Count - 1])
             {
-                waypoints.Add(n);
+                waypoints.Add(_tilemapController.GetGlobalPositionFromNode(n));
             }
 
             prevN = n;

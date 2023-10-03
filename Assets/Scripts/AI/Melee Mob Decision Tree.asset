@@ -164,7 +164,7 @@ MonoBehaviour:
   PositionalData:
     serializedVersion: 2
     x: -1113
-    y: 1393.9998
+    y: 1394.0001
     width: 256
     height: 106
   _flags: 6
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b172a3453879dc42b31ffab07278046, type: 3}
   m_Name: Melee Mob Decision Tree
   m_EditorClassIdentifier: 
-  _viewPosition: {x: 1426, y: -730, z: 0}
+  _viewPosition: {x: -209, y: -61, z: 0}
   _viewScale: {x: 1, y: 1, z: 1}
   Root: {fileID: 2284205306676989956}
   Nodes:
@@ -315,10 +315,6 @@ MonoBehaviour:
     InputPortName: main
     OutputGUID: f62c4593dd457684eb143d67cac21b75
     OutputPortName: FALSE
-  - InputGUID: 751e572f53246974a898cf8fef367638
-    InputPortName: DestinationQuery
-    OutputGUID: 42c4cb92d6d64b8478e58631942faecd
-    OutputPortName: Output
   - InputGUID: 3450d9035b246644593a37ece759fd3a
     InputPortName: main
     OutputGUID: f62c4593dd457684eb143d67cac21b75
@@ -360,10 +356,6 @@ MonoBehaviour:
     OutputGUID: 625d2803e4c7f474db36ac2c8d1af3e9
     OutputPortName: FALSE
   - InputGUID: 5653dee28a84b254f848a1f4d02924c3
-    InputPortName: DestinationQuery
-    OutputGUID: ce54a3f89c277cd40b0920c63a899691
-    OutputPortName: Output
-  - InputGUID: 5653dee28a84b254f848a1f4d02924c3
     InputPortName: CancelPathfindingCondition
     OutputGUID: 3d2da3dc846a0c949952d5457feb3171
     OutputPortName: Output
@@ -387,6 +379,14 @@ MonoBehaviour:
     InputPortName: main
     OutputGUID: a68ae4bc3587a794196aec855690d142
     OutputPortName: TRUE
+  - InputGUID: 5653dee28a84b254f848a1f4d02924c3
+    InputPortName: DestinationQuery
+    OutputGUID: ce54a3f89c277cd40b0920c63a899691
+    OutputPortName: Output
+  - InputGUID: 751e572f53246974a898cf8fef367638
+    InputPortName: DestinationQuery
+    OutputGUID: 42c4cb92d6d64b8478e58631942faecd
+    OutputPortName: Output
 --- !u!114 &207609524928776118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,7 +506,7 @@ MonoBehaviour:
     y: 1011.87274
     width: 367
     height: 106
-  _flags: 6
+  _flags: 4
   DestinationQuery: {fileID: 7865059221967113193}
   CancelPathfindingCondition: {fileID: -8345699421367978191}
 --- !u!114 &3755595636243814577

@@ -7,16 +7,14 @@ using UnityEditor;
 [CreateAssetMenu(menuName = "Environment Queries/Ignore Walls")]
 public class R_IgnoreWalls : Rule
 {
-    public override Dictionary<Vector2Int, float> Run(Dictionary<Vector2Int, float> tiles, GameObject caller)
+    public override Dictionary<Vector2Int, float> Run(TilemapController tilemap, Dictionary<Vector2Int, float> tiles, GameObject caller)
     {
         Dictionary<Vector2Int, float> newTiles = new Dictionary<Vector2Int, float>();
 
-        TilemapController tilemapController = GameObject.FindGameObjectWithTag("Tilemap").GetComponent<TilemapController>();
-        
         foreach (var tile in tiles)
         {
-            Tile tileObj = (Tile)tilemapController.GetTileFromGlobalPosition(new Vector3(tile.Key.x, tile.Key.y, 0.0f));
-            if (tileObj != null && tileObj.colliderType == Tile.ColliderType.None)
+            Tile tileObj = (Tile)tilemap.Tilemap.GetTile(new Vector3Int(tile.Key.x, tile.Key.y, 0));
+            if (tileObj?.colliderType != Tile.ColliderType.Sprite && tileObj?.colliderType != Tile.ColliderType.Grid)
                 newTiles[tile.Key] = tiles[tile.Key];
         }
 

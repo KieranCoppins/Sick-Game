@@ -11,7 +11,7 @@ public class R_DistanceTo : Rule
     [SerializeField] private float _distance;
     [SerializeField] private Operators _operation;
 
-    public override Dictionary<Vector2Int, float> Run(Dictionary<Vector2Int, float> tiles, GameObject caller)
+    public override Dictionary<Vector2Int, float> Run(TilemapController tilemap, Dictionary<Vector2Int, float> tiles, GameObject caller)
     {
         Dictionary<Vector2Int, float> newTiles = new Dictionary<Vector2Int, float>();
 
@@ -20,7 +20,7 @@ public class R_DistanceTo : Rule
         foreach (var tile in tiles)
         {
             // Check the distance from the tile's mid point instead of the origin
-            float d = Vector2.Distance(tile.Key + new Vector2(0.5f, 0.5f), target);
+            float d = Vector2.Distance(tilemap.GetGlobalPositionFromTile(tile.Key), target);
             if (Decision(d))
                 newTiles[tile.Key] = tiles[tile.Key] + scoreModifier;
             else if (!ignoreFailedTiles)

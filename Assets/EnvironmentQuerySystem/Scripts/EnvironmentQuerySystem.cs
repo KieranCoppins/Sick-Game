@@ -30,7 +30,7 @@ public class EnvironmentQuerySystem : ScriptableObject
     private Dictionary<Vector2Int, float> _tileScore;
     private GameObject _caller;
 
-    public Vector2 Run()
+    public Vector2? Run()
     {
         // Get our controller
         TilemapController controller = GameObject.FindGameObjectWithTag("Tilemap").GetComponent<TilemapController>();
@@ -40,10 +40,10 @@ public class EnvironmentQuerySystem : ScriptableObject
         // Get the target for this given eqs system
         switch (Target)
         {
-            case (EQSTarget.TARGET):
+            case EQSTarget.TARGET:
                 target = Mob.Target;
                 break;
-            case (EQSTarget.CALLER):
+            case EQSTarget.CALLER:
                 target = Mob.transform;
                 break;
             default:
@@ -51,15 +51,12 @@ public class EnvironmentQuerySystem : ScriptableObject
                 return Vector2.zero;
         }
 
-        if (target== null) { return Vector2.zero; }
-
-        // Convert our float vector3 to a int vector 3 by flooring out ints to get the right tile coord
-        Vector3Int pos = new Vector3Int(Mathf.FloorToInt(target.position.x), Mathf.FloorToInt(target.position.y));
+        if (target == null) { Debug.LogError("EQS target is null!"); return null; }
 
         // Use the tilemap controller to get all tiles within range
-        Vector2Int[] tiles = controller.GetTilesInRange(pos, Mathf.CeilToInt(TileRange));
+        Vector2Int[] tiles = controller.GetTilesInRange(target.position, Mathf.CeilToInt(TileRange));
 
-        //Initialise our EQS system with these parameters
+        // Initialise our EQS system with these parameters
         _caller = Mob.gameObject;
 
         _tileScore = new Dictionary<Vector2Int, float>();
@@ -73,7 +70,7 @@ public class EnvironmentQuerySystem : ScriptableObject
 
         foreach (Rule rule in Rules)
         {
-            _tileScore = rule.Run(_tileScore, _caller);
+            _tileScore = rule.Run(controller, _tileScore, _caller);
         }
         float lowestScore = Mathf.Infinity;
         float highestScore = 0;
@@ -95,13 +92,13 @@ public class EnvironmentQuerySystem : ScriptableObject
             foreach (var tile in _tileScore)
             {
                 if (tile.Key == bestTile)
-                    Debug.DrawLine(new Vector3(tile.Key.x, tile.Key.y, 0.0f), new Vector3(tile.Key.x + 1.0f, tile.Key.y + 1.0f, 0), Color.yellow, 1f);
+                    Debug.DrawLine(controller.GetGlobalPositionFromTile(tile.Key), controller.GetGlobalPositionFromTile(tile.Key) + Vector2.up * 0.25f, Color.yellow, 1f);
                 else
-                    Debug.DrawLine(new Vector3(tile.Key.x, tile.Key.y, 0.0f), new Vector3(tile.Key.x + 1.0f, tile.Key.y + 1.0f, 0), Color.Lerp(Color.red, Color.green, 1 - ((tile.Value - lowestScore) / (highestScore - lowestScore))), 1f);
+                    Debug.DrawLine(controller.GetGlobalPositionFromTile(tile.Key), controller.GetGlobalPositionFromTile(tile.Key) + Vector2.up * 0.25f, Color.Lerp(Color.red, Color.green, 1 - ((tile.Value - lowestScore) / (highestScore - lowestScore))), 1f);
             }
         }
 
-        return new Vector2(bestTile.x + 0.5f, bestTile.y + 0.5f);
+        return controller.GetGlobalPositionFromTile(new Vector2Int(bestTile.x, bestTile.y));
     }
 
     public void Initialise(BaseMob mob)
@@ -138,7 +135,7 @@ public abstract class Rule : ScriptableObject
     [SerializeField] protected float scoreModifier = 1f;
     [SerializeField] protected EQSTarget target;
 
-    public abstract Dictionary<Vector2Int, float> Run(Dictionary<Vector2Int, float> tiles, GameObject caller);
+    public abstract Dictionary<Vector2Int, float> Run(TilemapController tilemap, Dictionary<Vector2Int, float> tiles, GameObject caller);
 
     public void Initialise()
     {

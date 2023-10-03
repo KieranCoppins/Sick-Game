@@ -155,7 +155,7 @@ public abstract class BaseMob : BaseCharacter
 
         // Set up movement directions
         MovementDirections = new List<Vector2>();
-        float angle = 18f;
+        float angle = 15f;
         Vector2 dir = Vector2.up;
         for (int i = 0; i <= 360 / angle; i++)
         {
@@ -220,32 +220,27 @@ public abstract class BaseMob : BaseCharacter
     public bool HasLineOfSight(Vector2 position)
     {
         Vector3 direction = position - (Vector2)transform.position;
+        float distance = Vector2.Distance(position, (Vector2)transform.position);
 
-        RaycastHit2D lowerHit;
-        RaycastHit2D upperHit;
-        float angle = Vector2.Angle(Vector2.up, (Vector2)direction);
-        angle = direction.x > 0 ? angle : -angle;
-        Vector2 lowerStart = (Vector2)transform.position + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(-0.42f, 0));
-        Vector2 upperStart = (Vector2)transform.position + (Vector2)(Quaternion.AngleAxis(angle, Vector3.back) * new Vector2(0.42f, 0));
-        lowerHit = Physics2D.Raycast(lowerStart, position - lowerStart);
-        upperHit = Physics2D.Raycast(upperStart, position - upperStart);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.1f, direction, distance - 0.1f);
+
         if ((DebugFlags & DebugFlags.Combat) == DebugFlags.Combat)
         {
-            Debug.DrawRay(lowerStart, position - lowerStart, Color.magenta);
-            Debug.DrawRay(upperStart, position - upperStart, Color.magenta);
+            Debug.DrawRay(transform.position, direction, Color.magenta);
         }
-        if ((lowerHit.collider == null && lowerHit.collider == null) ||
-            ((Vector2)lowerHit.collider.transform.position == position && (Vector2)upperHit.collider.transform.position == position))
+        if (hit.collider == null || (Vector2)hit.collider.transform.position == position)
             return true;
 
         return false;
-
-
     }
 
     public Vector2 GetMovementVector(Vector2 target, bool moveStraight = false)
     {
         Vector2 targetDir = (target - (Vector2)transform.position).normalized;
+        if ((DebugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
+        {
+            Debug.DrawRay((Vector2)transform.position, targetDir * 1f, Color.cyan);
+        }
 
         List<KeyValuePair<Vector2, float>> directionWeights = new List<KeyValuePair<Vector2, float>>();
 
@@ -262,12 +257,12 @@ public abstract class BaseMob : BaseCharacter
         foreach (KeyValuePair<Vector2, float> pair in directionWeights)
         {
             // Check to see if moving in this direction will cause us to hit an obstruction - we dont want this
-            RaycastHit2D hit = Physics2D.CircleCast((Vector2)transform.position, .4f, pair.Key, .5f);
-            if ((DebugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
-                Debug.DrawRay((Vector2)transform.position, pair.Key * .5f, Color.cyan);
+            RaycastHit2D hit = Physics2D.CircleCast((Vector2)transform.position, .2f, pair.Key, .2f);
             if (!hit) return pair.Key;
             if ((DebugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
+            {
                 Debug.DrawRay((Vector2)transform.position, pair.Key * .5f, Color.magenta);
+            }
         }
 
         return Vector2.zero;
@@ -302,10 +297,10 @@ public abstract class BaseMob : BaseCharacter
         foreach (KeyValuePair<Vector2, float> pair in directionWeights)
         {
             // Check to see if moving in this direction will cause us to hit an obstruction - we dont want this
-            RaycastHit2D hit = Physics2D.CircleCast((Vector2)transform.position, .4f, pair.Key, .5f);
+            RaycastHit2D hit = Physics2D.CircleCast((Vector2)transform.position, .2f, pair.Key, 0.2f);
             if (!hit) return pair.Key;
             if ((DebugFlags & DebugFlags.Pathfinding) == DebugFlags.Pathfinding)
-                Debug.DrawRay((Vector2)transform.position, pair.Key * .5f, Color.magenta);
+                Debug.DrawRay((Vector2)transform.position, pair.Key * .2f, Color.magenta);
         }
 
         return Vector2.zero;

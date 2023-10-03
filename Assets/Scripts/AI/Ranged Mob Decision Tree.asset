@@ -180,8 +180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b172a3453879dc42b31ffab07278046, type: 3}
   m_Name: Ranged Mob Decision Tree
   m_EditorClassIdentifier: 
-  _viewPosition: {x: 983, y: -253, z: 0}
-  _viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
+  _viewPosition: {x: 51, y: -110, z: 0}
+  _viewScale: {x: 0.8695652, y: 0.8695652, z: 1}
   Root: {fileID: 8143352960183102081}
   Nodes:
   - {fileID: 8143352960183102081}
@@ -232,10 +232,6 @@ MonoBehaviour:
     InputPortName: main
     OutputGUID: 07a083063b414364696404e6cf61ab15
     OutputPortName: FALSE
-  - InputGUID: 24d13bb5f0a98fc4fabf06fe9a28904c
-    InputPortName: DestinationQuery
-    OutputGUID: 580dcf0ce37c0e74087e9cf9f367bd1a
-    OutputPortName: Output
   - InputGUID: 0b7d5f4233badfb4784914061240b0bf
     InputPortName: main
     OutputGUID: 07a083063b414364696404e6cf61ab15
@@ -305,16 +301,20 @@ MonoBehaviour:
     OutputGUID: 1f4a5f19414760b4e80276ceb1b6fb0e
     OutputPortName: FALSE
   - InputGUID: 931c4b604d39e784c9ca47e43ba84e5a
-    InputPortName: DestinationQuery
-    OutputGUID: 1e2794fc7cf8ac54a884eaad74d1a555
-    OutputPortName: Output
-  - InputGUID: 931c4b604d39e784c9ca47e43ba84e5a
     InputPortName: CancelPathfindingCondition
     OutputGUID: d78edb94725729741a5cb48487262597
     OutputPortName: Output
   - InputGUID: 1f4a5f19414760b4e80276ceb1b6fb0e
     InputPortName: Condition
     OutputGUID: 86803cc099ced144b86ddb0e02d92ca3
+    OutputPortName: Output
+  - InputGUID: 931c4b604d39e784c9ca47e43ba84e5a
+    InputPortName: DestinationQuery
+    OutputGUID: 1e2794fc7cf8ac54a884eaad74d1a555
+    OutputPortName: Output
+  - InputGUID: 24d13bb5f0a98fc4fabf06fe9a28904c
+    InputPortName: DestinationQuery
+    OutputGUID: 580dcf0ce37c0e74087e9cf9f367bd1a
     OutputPortName: Output
 --- !u!114 &262738723815393702
 MonoBehaviour:
@@ -516,11 +516,11 @@ MonoBehaviour:
   Guid: 931c4b604d39e784c9ca47e43ba84e5a
   PositionalData:
     serializedVersion: 2
-    x: -690.25977
-    y: 1123
+    x: -685
+    y: 1147
     width: 367
     height: 106
-  _flags: 6
+  _flags: 4
   DestinationQuery: {fileID: 7878975707635799410}
   CancelPathfindingCondition: {fileID: 712911002472573570}
 --- !u!114 &5791533500390349296

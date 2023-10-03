@@ -29,6 +29,5 @@ public class DebugUIHandler : MonoBehaviour
             _hasLOS.text = "LoS: " + _mob.HasLineOfSight(_mob.Target.position);
         else
             _hasLOS.text = "LoS: null";
-
     }
 }
