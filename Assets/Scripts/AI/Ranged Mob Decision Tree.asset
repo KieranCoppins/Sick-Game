@@ -180,8 +180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b172a3453879dc42b31ffab07278046, type: 3}
   m_Name: Ranged Mob Decision Tree
   m_EditorClassIdentifier: 
-  _viewPosition: {x: 51, y: -110, z: 0}
-  _viewScale: {x: 0.8695652, y: 0.8695652, z: 1}
+  _viewPosition: {x: 2040, y: -174, z: 0}
+  _viewScale: {x: 1, y: 1, z: 1}
   Root: {fileID: 8143352960183102081}
   Nodes:
   - {fileID: 8143352960183102081}
@@ -276,10 +276,6 @@ MonoBehaviour:
     InputPortName: B
     OutputGUID: 9ace1644c682fe4438c82e490e5fc9ad
     OutputPortName: Output
-  - InputGUID: 01f974c4e47548e41905150d65727a07
-    InputPortName: main
-    OutputGUID: c0734bc36d66a66419cc63afd649bff0
-    OutputPortName: TRUE
   - InputGUID: d9612d6606425074aa605a7d0693a059
     InputPortName: main
     OutputGUID: 61c8c732aff9fa84f880a7524a283a68
@@ -316,6 +312,10 @@ MonoBehaviour:
     InputPortName: DestinationQuery
     OutputGUID: 580dcf0ce37c0e74087e9cf9f367bd1a
     OutputPortName: Output
+  - InputGUID: 01f974c4e47548e41905150d65727a07
+    InputPortName: main
+    OutputGUID: c0734bc36d66a66419cc63afd649bff0
+    OutputPortName: TRUE
 --- !u!114 &262738723815393702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +412,7 @@ MonoBehaviour:
   Guid: ee82278b04e709f44b876f9c1e144ef9
   PositionalData:
     serializedVersion: 2
-    x: 16.652443
+    x: -0.000120162964
     y: 460.00003
     width: 306
     height: 109

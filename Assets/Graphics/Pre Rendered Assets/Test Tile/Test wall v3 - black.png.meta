@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3df0924618480f94f9a547ea9e21fbac
+guid: 4ea082ea4914c3945b9a137292da9427
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,12 +104,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Test wall v3 1_0
+      name: Test wall v3 - black_0
       rect:
         serializedVersion: 2
-        x: 76
+        x: 75
         y: 90
-        width: 104
+        width: 106
         height: 156
       alignment: 9
       pivot: {x: 0.5, y: 0.225}
@@ -118,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f5bd2daf99b4ed43aea4f4ea73a5985
-      internalID: -1350892799
+      spriteID: a9bda3350fb4f4145832ebc84bd0392f
+      internalID: 1504166663
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Test wall v3 1_0: -1350892799
+      Test wall v3 - black_0: 1504166663
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

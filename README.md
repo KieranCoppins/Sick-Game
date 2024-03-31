@@ -1,6 +1,6 @@
 ![banner](Sick%20Game%20Banner.png)
 # Sick-Game
-I have decided to revive this project given my new discovery of created prerendered assets - this way I don't need to draw!
+This is a very on again off again project. I am extremely proud of the current state but without an artist to see the vision through my motivation takes a hit to continue it on
 
 ## Setup
 To set up the project you need to install the version of Unity this project uses (2021.1.16f1). You can find all version of unity [here](https://unity3d.com/get-unity/download/archive) and install them through the Unity Hub.
@@ -13,6 +13,7 @@ Once you have cloned and opened this project you can create a folder called "Tes
 
 ## Showcases [yyyy-mm-dd]
 A list of all the existing showcases, the most recent ones will be shown at the top
+  - Prerendered Assets & 2D Lighting [[2024-03-31](https://youtu.be/4KtvFRru3WQ)]
   - Improved Decision Tree Visual Editor [[2023-01-12](https://youtu.be/XpIU5DhorpM)]
   - AI Perception [[2022-11-26](https://youtu.be/JN8lkrqjjlU)]
   - Inventory System [[2022-11-20](https://youtu.be/fsAmt_4c6Rc)]

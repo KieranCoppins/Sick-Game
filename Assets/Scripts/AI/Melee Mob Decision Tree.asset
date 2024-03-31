@@ -266,8 +266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b172a3453879dc42b31ffab07278046, type: 3}
   m_Name: Melee Mob Decision Tree
   m_EditorClassIdentifier: 
-  _viewPosition: {x: -209, y: -61, z: 0}
-  _viewScale: {x: 1, y: 1, z: 1}
+  _viewPosition: {x: 690, y: -1, z: 0}
+  _viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
   Root: {fileID: 2284205306676989956}
   Nodes:
   - {fileID: 2284205306676989956}
